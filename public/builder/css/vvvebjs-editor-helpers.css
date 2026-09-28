@@ -149,12 +149,12 @@ section:hover .container-fluid div > .row > [class*="col-"],
 section:hover .container-fluid div > .row > .col,
 section:hover .container-fluid > .row > [class*="col-"],
 section:hover .container-fluid > .row > .col {
-  outline: 1px dashed rgba(var(--bs-success-rgb), 0.35);
+  outline: 1px dashed rgba(25, 135, 84, 0.35);
   outline-offset: -2px;
 }
 
 .row:hover > [class*="col-"],
 .row:hover > .col {
-  outline: 1px dashed rgba(var(--bs-success-rgb), 0.35);
+  outline: 1px dashed rgba(25, 135, 84, 0.35);
   outline-offset: -2px;
 }

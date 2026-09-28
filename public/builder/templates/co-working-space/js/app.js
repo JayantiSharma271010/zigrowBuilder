@@ -1,67 +1,60 @@
+// nav bar toggle feature
 const toggle = document.querySelector(".cw-nav-toggle");
 const nav = document.querySelector(".cw-nav");
-const toggleIcon = toggle.querySelector("i");
 
-const setNavigationOpen = (open) => {
-  nav.classList.toggle("is-open", open);
+toggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  const open = nav.classList.toggle("is-open");
   toggle.classList.toggle("is-open", open);
   toggle.setAttribute("aria-expanded", open ? "true" : "false");
-  toggleIcon.classList.toggle("bi-list", !open);
-  toggleIcon.classList.toggle("bi-x-lg", open);
-};
-
-toggle.addEventListener("click", () => {
-  setNavigationOpen(!nav.classList.contains("is-open"));
 });
 
-nav.addEventListener("click", (event) => {
-  if (!event.target.closest(".cw-nav__list")) {
-    setNavigationOpen(false);
-    toggle.focus();
+// Close when clicking backdrop (outside the drawer list)
+nav.addEventListener("click", (e) => {
+  const clickedInsidePanel = e.target.closest(".cw-nav__list");
+  if (!clickedInsidePanel) {
+    nav.classList.remove("is-open");
+    toggle.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
   }
 });
 
-nav.querySelectorAll(".cw-nav__link").forEach((link) => {
-  link.addEventListener("click", () => setNavigationOpen(false));
+// Close on link click
+nav.querySelectorAll(".cw-nav__link").forEach((a) => {
+  a.addEventListener("click", () => {
+    nav.classList.remove("is-open");
+    toggle.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  });
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && nav.classList.contains("is-open")) {
-    setNavigationOpen(false);
-    toggle.focus();
-  }
-});
-
+// back to top button feature
 const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.addEventListener("scroll", () => {
-  backToTopBtn.classList.toggle("show", document.documentElement.scrollTop > 300);
+  if (document.documentElement.scrollTop > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
 });
 
-backToTopBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (
-  window.innerWidth > 768 &&
-  !reducedMotion &&
-  window.gsap &&
-  window.ScrollTrigger
-) {
+// gsap animation start
+if (window.innerWidth > 768) {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".cw-logo .logo-img", {
+  // Hero Section Animation
+  gsap.from(".hero-logo", {
     opacity: 0,
     y: -50,
     duration: 1,
     ease: "power3.out",
   });
 
-  gsap.from(".cw-nav .cw-nav__item", {
+  gsap.from(".hero-nav ul li", {
     opacity: 0,
     y: -20,
     stagger: 0.2,
@@ -70,44 +63,212 @@ if (
   });
 
   gsap.from(
-    ".cw-hero__kicker, .cw-hero__title, .cw-hero__desc, .cw-hero__contact, .cw-hero__actions",
+    ".hero-content h4, .hero-content h2, .hero-content p, .hero-contact",
     {
+      scrollTrigger: {
+        trigger: ".hero-content",
+        start: "top 80%",
+      },
       opacity: 0,
       y: 40,
-      stagger: 0.16,
+      stagger: 0.2,
       duration: 1,
       ease: "power3.out",
     }
   );
 
-  const reveal = (selector, trigger, options = {}) => {
-    gsap.from(selector, {
-      scrollTrigger: { trigger, start: "top 85%" },
+  // Creative Minds Section Animation
+  gsap.from("#creative-minds .sub-heading", {
+    scrollTrigger: {
+      trigger: "#creative-minds",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+  });
+
+  gsap.from("#creative-minds .main-heading", {
+    scrollTrigger: {
+      trigger: "#creative-minds",
+      start: "top 75%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from("#creative-minds .description", {
+    scrollTrigger: {
+      trigger: "#creative-minds .description",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#creative-minds .image-box", {
+    scrollTrigger: {
+      trigger: "#creative-minds .images-wrapper",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 60,
+    stagger: 0.3,
+    duration: 1,
+    ease: "power3.out",
+  });
+  // Facilities Section
+  gsap.from("#facilities .description", {
+    scrollTrigger: {
+      trigger: "#facilities .description",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from("#facilities .btn-custom", {
+    scrollTrigger: {
+      trigger: "#facilities .btn-custom",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    ease: "power2.out",
+    delay: 0.2,
+  });
+
+  gsap.from(
+    "#facilities .sub-heading, #facilities .main-heading, #facilities .line",
+    {
+      scrollTrigger: {
+        trigger: "#facilities .facilities-heading",
+        start: "top 80%",
+      },
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power3.out",
+    }
+  );
+
+  gsap.from("#features .feature-item .icon", {
+    scrollTrigger: {
+      trigger: "#features .row",
+      start: "top 85%",
+    },
+    scale: 0,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.6,
+    ease: "back.out(1.7)", // bounce-like pop effect
+  });
+  // Gallery Section
+  gsap.from("#gallery .gallery-item", {
+    scrollTrigger: {
+      trigger: "#gallery .row",
+      start: "top 85%",
+    },
+    opacity: 0,
+    scale: 0.8,
+    y: 50,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  // Membership Section Heading
+  gsap.from(
+    "#membership .section-heading p, #membership .section-heading h2, #membership .section-heading .outline",
+    {
+      scrollTrigger: {
+        trigger: "#membership .section-heading",
+        start: "top 80%",
+      },
       opacity: 0,
       y: 40,
-      duration: 0.9,
+      stagger: 0.2,
+      duration: 1,
       ease: "power3.out",
-      ...options,
-    });
-  };
+    }
+  );
+  // Testimonial Section
+  gsap.from("#testimonial .quote-icon", {
+    scrollTrigger: {
+      trigger: "#testimonial",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    ease: "back.out(1.7)",
+  });
 
-  reveal(".creative-minds__content", ".creative-minds__content");
-  reveal(".creative-minds__image-wrap", ".creative-minds__images-row", {
-    stagger: 0.2,
-    y: 60,
+  gsap.from("#testimonial .testimonial-text", {
+    scrollTrigger: {
+      trigger: "#testimonial .testimonial-text",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.2,
   });
-  reveal(".facilities__content", ".facilities__content");
-  reveal(".facilities__heading", ".facilities__heading");
-  reveal(".features__item", ".features .row", { stagger: 0.12 });
-  reveal(".gallery__item", ".gallery .row", {
-    stagger: 0.12,
-    scale: 0.92,
+
+  gsap.from("#testimonial .testimonial-author", {
+    scrollTrigger: {
+      trigger: "#testimonial .testimonial-author",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.4,
   });
-  reveal(".membership__heading", ".membership__heading");
-  reveal(".membership__card", ".membership .row.g-4", { stagger: 0.16 });
-  reveal(".testimonial__icon", ".testimonial", { y: -30 });
-  reveal(".testimonial__text", ".testimonial__text");
-  reveal(".testimonial__author", ".testimonial__author");
-  reveal(".cta__logo-box", ".cta", { scale: 0.8 });
-  reveal(".cta__btn-wrap", ".cta__btn-wrap");
+
+  gsap.from("#testimonial .testimonial-author .author-img", {
+    scrollTrigger: {
+      trigger: "#testimonial .testimonial-author",
+      start: "top 85%",
+    },
+    scale: 0,
+    opacity: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    delay: 0.6,
+  });
+
+  // CTA Section
+  gsap.from("#cta .cta-logo", {
+    scrollTrigger: {
+      trigger: "#cta",
+      start: "top 85%",
+    },
+    opacity: 0,
+    scale: 0.5,
+    duration: 1,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from("#cta .btn-cta", {
+    scrollTrigger: {
+      trigger: "#cta .btn-cta",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.4,
+  });
 }

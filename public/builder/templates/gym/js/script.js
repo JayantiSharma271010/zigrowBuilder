@@ -1,165 +1,524 @@
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const testimonialSwiper = new Swiper(".testimonial-swiper", {
-  loop: true,
-  pagination: { el: ".testimonial-swiper .swiper-pagination", clickable: true },
-  slidesPerView: 1,
-  spaceBetween: 20,
-});
+// Swiper
+new Swiper(".testimonial-swiper", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 1,
+    breakpoints: { 
+      769: {
+        slidesPerView: 2,
+      },
+    },
+    spaceBetween: 20,
+  });
 
-const plans = {
+
+  
+  // Pricing Data
+  const plans = {
   monthly: [
-    { title: "Foundation Plan", price: "₹1,500/mo", summary: "Build a reliable routine with structured coaching and clear weekly goals.", features: ["Four guided sessions", "Movement assessment", "Weekly progress review"] },
-    { title: "Progress Plan", price: "₹2,500/mo", summary: "Train consistently with personal feedback, nutrition guidance, and accountability.", features: ["Eight guided sessions", "Nutrition guidance", "Fortnightly measurements"] },
-    { title: "Performance Plan", price: "₹4,000/mo", summary: "Pursue an ambitious goal with intensive coaching and detailed program updates.", features: ["Twelve guided sessions", "Custom training split", "Priority coach support"] },
+    { title: 'Beginner Plan', price: '₹10/mo',para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ", features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
+    { title: 'Premium Plan', price: '₹15/mo',para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ", features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
+    { title: 'Expert Plan', price: '₹20/mo', para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
   ],
   yearly: [
-    { title: "Foundation Plan", price: "₹16,500/yr", summary: "Build a reliable routine with structured coaching and clear weekly goals.", features: ["Four guided sessions monthly", "Movement assessment", "Quarterly plan refresh"] },
-    { title: "Progress Plan", price: "₹27,500/yr", summary: "Train consistently with personal feedback, nutrition guidance, and accountability.", features: ["Eight guided sessions monthly", "Nutrition guidance", "Monthly measurements"] },
-    { title: "Performance Plan", price: "₹44,000/yr", summary: "Pursue an ambitious goal with intensive coaching and detailed program updates.", features: ["Twelve sessions monthly", "Custom training split", "Priority coach support"] },
-  ],
+    { title: 'Beginner Plan', price: '₹100/yr',para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ", features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
+    { title: 'Premium Plan', price: '₹150/yr',para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ", features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
+    { title: 'Expert Plan', price: '₹200/yr',para:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ", features: ['Lorem ipsum dolor sit amet, ','Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet, '] },
+  ]
 };
 
-let currentPlan = "monthly";
-let mobilePricingSwiper;
-
-function priceCardMarkup(plan, active, mobile) {
-  const card = `<div class="price-card${active ? " active" : ""}"><h3>${plan.title}</h3><h2>${plan.price}</h2><p>${plan.summary}</p><ul>${plan.features.map((feature) => `<li>${feature}</li>`).join("")}</ul><div class="pricing-actions zg-align-center"><a href="#contact" class="plan-btn" data-btn="pricing-plan">Choose Plan</a></div></div>`;
-  return mobile ? `<div class="swiper-slide">${card}</div>` : `<div class="col-md-4 clonable-card pricing-card-item">${card}</div>`;
-}
+let currentPlan = 'monthly';
+let swiper;
 
 function renderCards() {
-  const cardsContainer = document.getElementById("pricingCards");
-  const slidesContainer = document.getElementById("swiperSlides");
-  if (!cardsContainer || !slidesContainer) return;
-  cardsContainer.innerHTML = plans[currentPlan].map((plan, index) => priceCardMarkup(plan, index === 1, false)).join("");
-  slidesContainer.innerHTML = plans[currentPlan].map((plan, index) => priceCardMarkup(plan, index === 1, true)).join("");
-  if (mobilePricingSwiper) mobilePricingSwiper.destroy(true, true);
-  mobilePricingSwiper = new Swiper(".mobile-swiper", {
+  const cardsContainer = document.getElementById('pricingCards');
+  const slidesContainer = document.getElementById('swiperSlides');
+  cardsContainer.innerHTML = '';
+  slidesContainer.innerHTML = '';
+
+  plans[currentPlan].forEach((plan, idx) => {
+    const isActive = idx === 1;
+    // Desktop card
+    cardsContainer.innerHTML += `
+      <div class="col-md-4">
+        <div class="card p-4 price-card ${isActive ? 'active' : ''}">
+          <h5>${plan.title}</h5>
+          <h2>${plan.price}</h2>
+          <p>${plan.para}</p>
+          <ul>${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>
+          <a class="btn btn-outline-dark w-100">Choose Plan</a>
+        </div>
+      </div>
+    `;
+    // Mobile slide
+    slidesContainer.innerHTML += `
+      <div class="swiper-slide">
+        <div class="card p-4 price-card ${isActive ? 'active' : ''}">
+          <h5>${plan.title}</h5>
+          <h2>${plan.price}</h2>
+            <p>${plan.para}</p>
+          <ul>${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>
+          <a class="btn btn-outline-dark w-100">Choose Plan</a>
+        </div>
+      </div>
+    `;
+  });
+
+  // Refresh/swipe
+  if (swiper) swiper.destroy();
+  swiper = new Swiper('.mobile-swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
-    pagination: { el: ".mobile-swiper .swiper-pagination", clickable: true },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
   });
 }
 
-document.querySelectorAll("#pricingToggle button").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelector("#pricingToggle .active")?.classList.remove("active");
-    button.classList.add("active");
-    currentPlan = button.dataset.plan;
+document.querySelectorAll('#pricingToggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('#pricingToggle .active').classList.remove('active');
+    btn.classList.add('active');
+    currentPlan = btn.dataset.plan;
     renderCards();
   });
 });
+
 renderCards();
 
-const backToTopButton = document.getElementById("backToTop");
-window.addEventListener("scroll", () => backToTopButton?.classList.toggle("show", window.scrollY > 300), { passive: true });
-backToTopButton?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" }));
 
-const navbar = document.getElementById("mainNavbar");
-window.addEventListener("scroll", () => navbar?.classList.toggle("sticky-navbar", window.scrollY > 100), { passive: true });
+// FAQS Toggle 
 
-const toggler = document.querySelector(".navbar-toggler");
-toggler?.addEventListener("click", () => toggler.classList.toggle("is-active"));
-document.querySelectorAll(".navbar .nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.querySelectorAll(".navbar .nav-link").forEach((item) => item.classList.remove("active"));
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = document.querySelectorAll('#faqAccordion .accordion-button');
+
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(() => {
+        faqButtons.forEach(button => {
+          const icon = button.querySelector('.icon');
+          const contentId = button.getAttribute('data-bs-target');
+          const content = document.querySelector(contentId);
+          if (icon && content) {
+            icon.textContent = content.classList.contains('show') ? 'remove' : 'add';
+          }
+        });
+      }, 200); // Enough delay for Bootstrap collapse to finish
+    });
+  });
+});
+
+ new Swiper(".testimonial-swiper", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  
+/* -------------------------------------------------------------------------- */
+/*                            // Back to top button                           */
+/* -------------------------------------------------------------------------- */
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+
+/* -------------------------------------------------------------------------- */
+/*                         // Sticky navbar on scroll                         */
+/* -------------------------------------------------------------------------- */
+(() => {
+  const nav = document.getElementById("mainNavbar");
+  if (!nav) return;
+
+  let spacer = null;
+  let isSticky = false;
+
+  // thresholds to avoid flicker
+  const STICKY_ON  = 120; // add sticky when > 120px
+  const STICKY_OFF = 80;  // remove sticky when < 80px
+
+  const addSticky = () => {
+    if (isSticky) return;
+    nav.classList.add("sticky-navbar");
+    spacer = document.createElement("div");
+    spacer.style.height = nav.offsetHeight + "px";
+    nav.after(spacer);
+    isSticky = true;
+  };
+
+  const removeSticky = () => {
+    if (!isSticky) return;
+    nav.classList.remove("sticky-navbar");
+    if (spacer) { spacer.remove(); spacer = null; }
+    isSticky = false;
+  };
+
+  const onScroll = () => {
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    if (!isSticky && y > STICKY_ON) addSticky();
+    else if (isSticky && y < STICKY_OFF) removeSticky();
+  };
+
+  const onResize = () => {
+    if (isSticky && spacer) spacer.style.height = nav.offsetHeight + "px";
+  };
+
+  // keep spacer height in sync when mobile menu opens/closes
+  const collapse = document.getElementById("navbarContent");
+  if (collapse) {
+    collapse.addEventListener("shown.bs.collapse", onResize);
+    collapse.addEventListener("hidden.bs.collapse", onResize);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onResize);
+  onScroll(); // initialize once
+})();
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                // Smooth scroll with offset on anchor click                */
+/* -------------------------------------------------------------------------- */
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    // Set active manually
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((l) => l.classList.remove("active"));
     link.classList.add("active");
-    const collapseElement = document.getElementById("navbarContent");
-    if (collapseElement?.classList.contains("show") && window.bootstrap?.Collapse) {
-      window.bootstrap.Collapse.getOrCreateInstance(collapseElement).hide();
-      toggler?.classList.remove("is-active");
+
+    /* -------------------------------------------------------------------------- */
+    /*                          // Close navbar in mobile                         */
+    /* -------------------------------------------------------------------------- */
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector("#navbarContent");
+
+    if (navbarToggler && navbarCollapse.classList.contains("show")) {
+      navbarToggler.click();
     }
   });
 });
 
-if (!reducedMotion && window.gsap && window.ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.from(".hero-section-header", { y: 28, opacity: 0, duration: 0.8, ease: "power2.out" });
-  gsap.from(".hero-section-body", { y: 24, opacity: 0, duration: 0.8, delay: 0.2, ease: "power2.out" });
-  gsap.from(".hero-media", { x: 40, opacity: 0, duration: 0.9, delay: 0.35, ease: "power2.out" });
-  document.querySelectorAll("main section:not(.hero-section) .section-body").forEach((element) => {
-    gsap.from(element, { scrollTrigger: { trigger: element, start: "top 90%", once: true }, y: 24, opacity: 0, duration: 0.65, ease: "power2.out" });
+
+/* -------------------------------------------------------------------------- */
+/*                   // Close navbar on link click (mobile)                   */
+/* -------------------------------------------------------------------------- */
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector("#navbarContent");
+
+    if (navbarToggler && navbarCollapse.classList.contains("show")) {
+      navbarToggler.click();
+    }
+  });
+});
+
+
+/* -------------------------------------------------------------------------- */
+/*                     // Close navbar if clicking outside                    */
+/* -------------------------------------------------------------------------- */
+document.addEventListener("click", function (event) {
+  const navbar = document.getElementById("mainNavbar");
+  const navbarCollapse = document.getElementById("navbarContent");
+  const toggler = document.querySelector(".navbar-toggler");
+
+  const isClickInside = navbar.contains(event.target);
+
+  if (!isClickInside && navbarCollapse.classList.contains("show")) {
+    toggler.click();
+  }
+});
+
+
+/* -------------------------------------------------------------------------- */
+/*                         // Hamburger menu animation                        */
+/* -------------------------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+
+  toggler.addEventListener("click", function () {
+    toggler.classList.toggle("is-active");
+  });
+});
+
+
+/* -------------------------------------------------------------------------- */
+/*                     // Update active nav link on scroll                    */
+/* -------------------------------------------------------------------------- */
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  navLinks.forEach((link) => {
+    const targetSection = document.querySelector(link.getAttribute("href"));
+
+    if (targetSection) {
+      const rect = targetSection.getBoundingClientRect();
+      const sectionTop = rect.top + scrollY;
+      const sectionHeight = targetSection.offsetHeight;
+
+      if (
+        scrollY >= sectionTop - 150 &&
+        scrollY < sectionTop + sectionHeight - 150
+      ) {
+        navLinks.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+      }
+    }
+  });
+});
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                               GSAP Animation                               */
+/* -------------------------------------------------------------------------- */
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth >= 768) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Sections 
+
+    const aboutSection = document.querySelector("#about");
+
+if (aboutSection) {
+  // Animate image (from left)
+  gsap.from("#about .about-img", {
+    scrollTrigger: {
+      trigger: aboutSection,
+      start: "top 80%", // when top of section hits 80% viewport
+    },
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Animate text card (from right)
+  gsap.from("#about .about-card", {
+    scrollTrigger: {
+      trigger: aboutSection,
+      start: "top 80%",
+    },
+    x: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "power2.out",
   });
 }
 
-(function setupZigrowForms() {
-  const forms = Array.from(document.querySelectorAll("form[data-zigrow-form]"));
-  if (!forms.length) return;
+const programItems = document.querySelectorAll("#programs .program-item");
 
-  const serializeForm = (form) => {
-    const raw = {};
-    for (const [name, value] of new FormData(form).entries()) {
-      if (raw[name] === undefined) raw[name] = value;
-      else if (Array.isArray(raw[name])) raw[name].push(value === "" ? true : value);
-      else raw[name] = [raw[name], value === "" ? true : value];
-    }
-    return raw;
-  };
+programItems.forEach((item, index) => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%", // animation starts when each item reaches 85% of viewport height
+      toggleActions: "play none none none", // play only once
+    },
+    x: index % 2 === 0 ? -50 : 50, // alternate from left/right
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    delay: index * 0.1, // stagger delay slightly
+  });
+});
 
-  const pickPrimaryValue = (raw) => {
-    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
-    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
-    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
-    return "";
-  };
+const testimonialSection = document.querySelector("#testimonials");
 
-  forms.forEach((form) => {
-    const domainInput = form.querySelector('input[name="domain"]');
-    const pageUrlInput = form.querySelector('input[name="page_url"]');
-    if (domainInput) domainInput.value = location.host;
-    if (pageUrlInput) pageUrlInput.value = location.href;
+if (testimonialSection) {
+  const testimonialSlides = document.querySelectorAll("#testimonials .swiper-slide");
 
-    let message = form.querySelector(".form-submit-message");
-    if (!message) {
-      message = document.createElement("div");
-      message.className = "form-submit-message";
-      message.setAttribute("role", "status");
-      message.setAttribute("aria-live", "polite");
-      form.appendChild(message);
-    }
+  testimonialSlides.forEach((slide, index) => {
+    const card = slide.querySelector(".testimonial-card");
+    const image = slide.querySelector(".testimonial-image");
 
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const submitButton = form.querySelector(':scope > button[type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.dataset.oldText = submitButton.innerText;
-        submitButton.innerText = "Submitting...";
-      }
-      message.textContent = "";
-      message.removeAttribute("data-status");
-      try {
-        const raw = serializeForm(form);
-        const body = new URLSearchParams();
-        body.set("domain", domainInput?.value || location.host);
-        body.set("form_key", form.querySelector('input[name="form_key"]')?.value || "contact");
-        body.set("page_url", pageUrlInput?.value || location.href);
-        body.set("payload", JSON.stringify(raw));
-        const primary = pickPrimaryValue(raw);
-        if (primary) body.set("value", primary);
-        if (raw._company) body.set("_company", raw._company);
-        const response = await fetch(form.action, { method: "POST", headers: { Accept: "application/json" }, body });
-        const data = await response.json().catch(() => ({}));
-        if (response.ok && (data.ok ?? true)) {
-          form.reset();
-          message.textContent = "Thanks! Your request has been submitted.";
-          message.dataset.status = "success";
-        } else {
-          message.textContent = data.message || `Failed (HTTP ${response.status})`;
-          message.dataset.status = "error";
-        }
-      } catch (error) {
-        console.error(error);
-        message.textContent = "Something went wrong. Please try again.";
-        message.dataset.status = "error";
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.innerText = submitButton.dataset.oldText || "Send";
-        }
-      }
+    // Animate card (left side)
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: slide,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    // Animate image (right side)
+    gsap.from(image, {
+      scrollTrigger: {
+        trigger: slide,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: "power2.out",
     });
   });
-})();
+}
+
+// Animate desktop pricing cards
+const pricingCards = document.querySelectorAll("#pricingCards .card"); // Adjust selector if different
+pricingCards.forEach((card, index) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    y: 40,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    delay: index * 0.1,
+  });
+});
+
+// Animate mobile swiper slides
+const pricingSlides = document.querySelectorAll("#swiperSlides .swiper-slide"); // again, adjust if needed
+pricingSlides.forEach((slide, index) => {
+  gsap.from(slide, {
+    scrollTrigger: {
+      trigger: slide,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    y: 40,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    delay: index * 0.1,
+  });
+});
+
+
+const faqItems = document.querySelectorAll("#faqs .accordion-item");
+
+faqItems.forEach((item, index) => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    delay: index * 0.1,
+  });
+});
+
+const contactSection = document.querySelector("#contact");
+
+if (contactSection) {
+  const leftContact = contactSection.querySelector(".left-contact");
+  const contactForm = contactSection.querySelector("form");
+
+  // Animate left (contact info)
+  gsap.from(leftContact, {
+    scrollTrigger: {
+      trigger: contactSection,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Animate right (form)
+  gsap.from(contactForm, {
+    scrollTrigger: {
+      trigger: contactSection,
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    x: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.2,
+    ease: "power2.out",
+  });
+}
+const heroSection = document.querySelector("#hero");
+
+if (heroSection) {
+  // Animate title
+  gsap.from(".hero-title", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Animate subtitle
+  gsap.from(".hero-subtitle", {
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "power2.out",
+  });
+
+
+
+  // Animate right-side image
+  gsap.from(".hero-image", {
+    x: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.8,
+    ease: "power2.out",
+  });
+
+  // Animate background text (optional)
+  gsap.from(".bg-text", {
+    scale: 0.95,
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+    ease: "power2.out",
+  });
+}
+
+      }
+});

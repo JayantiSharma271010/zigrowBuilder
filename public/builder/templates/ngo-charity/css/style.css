@@ -1,9 +1,3 @@
-:root {
-  --primary-colors: #f26d34;
-  --secondary-colors: #1f2927;
-  --territory-colors: #368672;
-}
-
 html {
   font-family: "Quicksand", sans-serif;
 }
@@ -12,37 +6,36 @@ body {
   color: var(--secondary-colors, #1f2927);
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.navbar-brand-column {
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.brand-logo {
-  color: var(--secondary-colors, #1f2927);
-  display: inline-block;
-  font-family: "Quicksand", sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1.2;
-  text-decoration: none;
-  white-space: nowrap;
+.logo img {
+  height: 40px;
+  max-width: 100%;
 }
 @media (max-width: 369.98px) {
-  .brand-logo {
-    font-size: 28px;
+  .logo img {
+    height: 25px;
   }
+}
+.logo .logo-name {
+  margin-left: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 36px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 800;
 }
 
 nav {
-  box-sizing: border-box;
   width: 100%;
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   padding: 1.5rem 1.2rem;
   display: flex;
   justify-content: space-between;
@@ -87,14 +80,14 @@ nav .nav-links .menu-link::after {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background: var(--primary-colors, #f26d34);
+  background: #f26d34;
   transition: width 0.3s ease;
 }
 nav .nav-links .menu-link:hover::after {
   width: 100%;
 }
 nav .nav-links .menu-link:hover {
-  color: var(--primary-colors, #f26d34);
+  color: #f26d34;
 }
 nav .nav-links .menu-link.active {
   color: var(--primary-colors, #f26d34);
@@ -120,7 +113,7 @@ nav .nav-links .dropdown .dropdown-menu {
   position: absolute;
   top: 120%;
   left: 0;
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   list-style: none;
@@ -142,8 +135,8 @@ nav .nav-links .dropdown .dropdown-menu li a {
   transition: background 0.3s, color 0.3s;
 }
 nav .nav-links .dropdown .dropdown-menu li a:hover {
-  background: var(--primary-colors, #f26d34);
-  color: #faf6f1;
+  background: #f26d34;
+  color: var(--territory-colors, #faf6f1);
 }
 nav .nav-links .dropdown:hover .dropdown-menu {
   display: flex;
@@ -155,27 +148,29 @@ nav .nav-links .dropdown:hover .fa-chevron-down {
 nav .hamburger {
   display: none;
   cursor: pointer;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5px;
-  width: 44px;
+  width: -moz-fit-content;
+  width: fit-content;
   justify-content: center;
   align-items: center;
   margin-right: 0;
   margin-left: auto;
-  min-width: 0;
-  min-height: 44px;
-  max-width: 100%;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--primary-colors, #f26d34);
 }
-nav .hamburger i {
-  flex: 0 0 auto;
-  font-size: 25px;
+nav .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--secondary-colors, #f26d34);
   transition: 0.4s;
+}
+nav .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5.5px, 5.5px);
+}
+nav .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+nav .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -5.5px);
 }
 nav .social-icons {
   display: flex;
@@ -185,25 +180,9 @@ nav .social-icons {
   align-items: center;
   font-size: 25px;
   gap: 1rem;
-  flex-wrap: wrap;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 nav .social-icons a {
   color: var(--secondary-colors, #1f2927);
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-nav .social-icons a i {
-  flex: 0 0 auto;
 }
 nav .social-icons a:hover {
   color: var(--primary-colors, #f26d34);
@@ -214,7 +193,7 @@ nav .social-icons a:hover {
     top: -100vh;
     left: 0;
     width: 100vw;
-    background: #faf6f1;
+    background: var(--territory-colors, #faf6f1);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -237,68 +216,27 @@ nav .social-icons a:hover {
   width: fit-content;
 }
 
-.zg-align-center {
-  align-items: center;
-}
-
-.nav-actions,
-.hero-actions,
-.empowering-actions,
-.initiative-actions,
-.join-actions {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.nav-actions,
-.hero-actions,
-.initiative-actions {
-  justify-content: center;
-}
-
 .donate-now-btn {
   width: -moz-fit-content;
   width: fit-content;
-  border: 2px solid var(--primary-colors, #f26d34);
+  border: 2px solid #f26d34;
   text-decoration: none;
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 30px;
-  background-color: var(--primary-colors, #f26d34);
+  background-color: var(--secondary-colors, #f26d34);
   font-size: clamp(12px, 4vw, 15px);
   font-weight: 600;
   transition: background 0.4s ease-in-out;
 }
 .donate-now-btn:hover {
-  border-color: var(--primary-colors, #f26d34);
-  background-color: #faf6f1;
-  color: var(--primary-colors, #f26d34);
-}
-
-[data-btn],
-[data-btn]:hover,
-[data-btn]:focus,
-[data-btn]:active,
-[data-btn]:visited {
-  text-decoration: none;
-}
-
-[data-btn]:focus-visible,
-.hamburger:focus-visible,
-.scroll-top:focus-visible,
-.footer a:focus-visible,
-form[data-zigrow-form] > button[type="submit"]:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 3px;
+  border-color: var(--secondary-colors, #f26d34);
+  background-color: var(--primary-colors, #faf6f1);
+  color: var(--secondary-colors, #f26d34);
 }
 
 .each-section-name {
@@ -316,7 +254,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   font-family: "Quicksand", sans-serif;
 }
 .each-section-heading .highlight {
-  color: var(--territory-colors, #368672);
+  color: #368672; /* greenish like screenshot */
 }
 
 .hero-section {
@@ -364,7 +302,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 }
 .hero-section h1 span {
   display: block;
-  color: var(--territory-colors, #368672);
+  color: #368672;
 }
 .hero-section p {
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -378,14 +316,19 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 369.98px) {
+  .hero-section .hero-buttons {
+    flex-direction: column;
+  }
+}
 .hero-section .hero-buttons .campaign-btn {
   border-color: var(--secondary-colors, #1f2927);
-  background-color: #faf6f1;
+  background-color: var(--territory-colors, #faf6f1);
   color: var(--secondary-colors, #1f2927);
 }
 .hero-section .hero-buttons .campaign-btn:hover {
   background-color: var(--secondary-colors, #1f2927);
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
   border-color: var(--secondary-colors, #1f2927);
 }
 .hero-section .hero-stats {
@@ -428,28 +371,22 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   bottom: 30px;
   width: 42px;
   height: 42px;
-  border: 3px solid rgb(from var(--territory-colors, #368672) calc(r - 14) calc(g - 46) calc(b - 38));
+  border: 3px solid #28584c;
   border-radius: 50%;
-  background: #faf6f1;
-  color: rgb(from var(--territory-colors, #368672) calc(r - 14) calc(g - 46) calc(b - 38));
+  background: var(--territory-colors, #faf6f1);
+  color: #28584c;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.3s;
   z-index: 1099;
 }
 .scroll-top:hover {
-  background: var(--primary-colors, #f26d34);
-  color: #faf6f1;
-  border-color: var(--primary-colors, #f26d34);
+  background: #f26d34;
+  color: var(--territory-colors, #faf6f1);
+  border-color: #f26d34;
 }
 
 .image-gallery {
@@ -461,51 +398,16 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   align-items: center;
 }
 .image-gallery .row .gallery-item {
-  width: 100%;
-  aspect-ratio: 1;
-  min-height: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-gallery .row .gallery-item img {
   border-radius: 12px;
-}
-.image-gallery .row .gallery-item-one {
-  background-image: url("../assets/images/1.webp");
-}
-.image-gallery .row .gallery-item-two {
-  background-image: url("../assets/images/2.webp");
-  aspect-ratio: 2 / 3;
-}
-.image-gallery .row .gallery-item-three {
-  background-image: url("../assets/images/3.webp");
-}
-.image-gallery .row .gallery-item-four {
-  background-image: url("../assets/images/4.webp");
-  aspect-ratio: 2 / 3;
-}
-
-.image-gallery .clonable-card,
-.sponsors-section .clonable-card {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: calc(var(--bs-gutter-y, 0px) - 8px);
-  margin-bottom: -8px;
-}
-.initiatives-section .row.mt-5-style > .clonable-card {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: -8px;
-  margin-bottom: calc(1.5rem - 8px);
-}
-.initiatives-section .stats > .clonable-card {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: -8px;
-  margin-bottom: -8px;
 }
 
 .sponsors-section {
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   position: relative;
 }
 .sponsors-section .blub-image {
@@ -532,13 +434,10 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 }
 
 .empowering-section {
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   overflow-x: hidden;
   position: relative;
   overflow: hidden;
-}
-.empowering-section > .container-fluid {
-  padding-inline: 0;
 }
 @media (max-width: 991.98px) {
   .empowering-section {
@@ -624,19 +523,19 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   display: flex;
   justify-content: start;
   align-items: center;
+  /* Animation keyframes */
 }
 .scroll-container .scroll-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  animation: none;
+  display: inline-block;
+  animation: scroll-left 30s linear infinite;
 }
 .scroll-container .scroll-content span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: clamp(32px, 8vw, 157px);
   font-weight: bold;
   color: var(--secondary-colors, #1f2927);
@@ -652,10 +551,18 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 .initiatives-section {
-  background: rgb(from var(--territory-colors, #368672) calc(r - 14) calc(g - 46) calc(b - 38));
-  color: #faf6f1;
+  background: #28584c;
+  color: var(--territory-colors, #faf6f1);
   position: relative;
 }
 .initiatives-section .first-decor {
@@ -700,13 +607,13 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   height: auto; /* keeps proportions */
 }
 .initiatives-section .each-section-name {
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
 }
 .initiatives-section .each-section-heading {
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
 }
 .initiatives-section .initiative-card {
-  background: rgb(from var(--territory-colors, #368672) calc(r - 24) calc(g - 59) calc(b - 50));
+  background: #1e4b40;
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
@@ -723,7 +630,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   width: 100%;
   height: auto;
 }
-.initiatives-section .initiative-card h3 {
+.initiatives-section .initiative-card h4 {
   font-size: 20px;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
@@ -735,7 +642,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   margin-bottom: 1rem;
 }
 .initiatives-section .btn-donate {
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
   opacity: 1;
 }
 .initiatives-section .btn-donate:hover {
@@ -743,24 +650,19 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 }
 .initiatives-section .stats h3 {
   font-size: clamp(40px, 4vw, 80px);
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
 }
-.initiatives-section .stats .stat-card-surface {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
 .initiatives-section .stats p {
   font-size: clamp(18px, 5vw, 23px);
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
   font-weight: 600;
 }
 
 .testimonial-section {
   padding: 0 2rem 4rem 2rem;
-  background-color: #faf6f1;
+  background-color: var(--territory-colors, #faf6f1);
   position: relative;
 }
 .testimonial-section .testimonial-container {
@@ -770,17 +672,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   justify-content: center;
 }
 .testimonial-section .testimonial-container .testimonial-text .stars {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-height: 24px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   font-size: 1rem;
-  color: rgb(from var(--primary-colors, #f26d34) calc(r - 1) calc(g - 19) calc(b - 11));
+  color: #f15a29;
   margin-bottom: 1rem;
 }
 .testimonial-section .testimonial-container .testimonial-text .quote {
@@ -811,6 +704,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 .testimonial-section .testimonial-container .testimonial-image img {
   max-width: 100%;
   border-radius: 12px;
+  display: block;
   position: relative;
   z-index: 2;
   margin-top: -80px;
@@ -835,7 +729,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 
 .donation-section {
   padding: 4rem 0 0 0;
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   overflow: hidden;
   position: relative;
 }
@@ -879,18 +773,18 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   border-radius: 10px;
   padding: 2rem;
   max-width: 600px;
-  margin-block: 0;
-  margin-inline: auto;
+  margin: 0 auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 .donation-section .donation-card .donation-title {
   font-weight: 600;
   font-size: 1rem;
-  line-height: 1.5;
   border-bottom: 2px solid #eee;
   padding-bottom: 0.8rem;
   margin-bottom: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .donation-section .donation-card .donation-subtext {
   font-size: 0.9rem;
@@ -941,12 +835,12 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   }
 }
 .donation-section .donation-card .donation-btn:hover {
-  border-color: var(--primary-colors, #f26d34);
+  border-color: #f26d34;
 }
 .donation-section .donation-card .donation-btn.active {
-  background: var(--primary-colors, #f26d34);
+  background: #f26d34;
   color: #fff;
-  border-color: var(--primary-colors, #f26d34);
+  border-color: #f26d34;
 }
 .donation-section .donation-card .custom-input {
   width: 100%;
@@ -959,13 +853,13 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
 }
 .donation-section .donation-card .custom-input:focus {
   outline: none;
-  border-color: var(--primary-colors, #f26d34);
+  border-color: #f26d34; /* replace with your desired color */
 }
 .donation-section .donation-card .donate-submit {
   width: 100%;
   margin-top: 1rem;
   padding: 1rem;
-  background: var(--primary-colors, #f26d34);
+  background: #f26d34;
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -973,21 +867,12 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 .donation-section .donation-card .donate-submit i {
-  flex: 0 0 auto;
+  margin-left: 20px;
 }
 .donation-section .donation-card .donate-submit:hover {
-  background: rgb(from var(--primary-colors, #f26d34) calc(r - 25) calc(g - 31) calc(b - 18));
+  background: #d94e22;
 }
 .donation-section .donation-card .secure-text {
   margin-top: 1rem;
@@ -995,75 +880,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible {
   text-align: center;
   opacity: 0.7;
 }
-.donation-section .donation-card .secure-icon {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.donation-section .donation-card .secure-icon .fa-lock {
+.donation-section .donation-card .secure-text .fa-lock {
   color: rgb(82, 82, 246);
-}
-
-form[data-zigrow-form] {
-  width: 100%;
-  min-width: 0;
-  display: flow-root;
-}
-form[data-zigrow-form] [form-question-zigrow] {
-  min-width: 0;
-  margin-block: 1rem;
-}
-form[data-zigrow-form] [form-question-zigrow] > label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-form[data-zigrow-form] [form-question-zigrow] > input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="file"]),
-form[data-zigrow-form] [form-question-zigrow] > select,
-form[data-zigrow-form] [form-question-zigrow] > textarea {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 0.8rem;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-  font-size: clamp(13px, 4vw, 16px);
-}
-form[data-zigrow-form] [form-question-zigrow] > textarea {
-  min-height: 120px;
-}
-form[data-zigrow-form] [form-question-zigrow] > input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="file"]):focus,
-form[data-zigrow-form] [form-question-zigrow] > select:focus,
-form[data-zigrow-form] [form-question-zigrow] > textarea:focus {
-  border-color: var(--primary-colors, #f26d34);
-  outline: 2px solid var(--primary-colors, #f26d34);
-  outline-offset: 2px;
-}
-form[data-zigrow-form] [form-question-zigrow] > input[type="checkbox"],
-form[data-zigrow-form] [form-question-zigrow] > input[type="radio"] {
-  width: auto;
-}
-form[data-zigrow-form] > button[type="submit"] {
-  max-width: 100%;
-}
-.form-submit-message {
-  margin-block-start: 0.5rem;
-  font-size: 0.875rem;
-  text-align: center;
-}
-.form-submit-message[data-status="success"] {
-  color: #287a3e;
-}
-.form-submit-message[data-status="error"] {
-  color: #b42318;
 }
 @media (max-width: 768px) {
   .donation-section .donation-header h2 {
@@ -1099,7 +917,7 @@ form[data-zigrow-form] > button[type="submit"] {
   margin: 50px 50px 50px auto;
 }
 .join-section .white-text-div .hero-card {
-  background: #faf6f1;
+  background: var(--territory-colors, #faf6f1);
   border-radius: 12px;
   padding: 2rem;
   max-width: 420px;
@@ -1154,36 +972,25 @@ form[data-zigrow-form] > button[type="submit"] {
 }
 
 .footer {
-  background-color: rgb(from var(--territory-colors, #368672) calc(r - 14) calc(g - 46) calc(b - 38));
-  color: #fff;
+  background-color: var(--secondary-colors, #28584c);
+  color: var(--primary-colors, #fff);
   padding: 4rem 0;
   position: relative;
 }
-.footer-main-row {
-  justify-content: space-between;
-}
-.footer-brand-logo {
-  color: #fff;
-  display: inline-block;
-  font-family: "Quicksand", sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1.2;
-  text-decoration: none;
-  white-space: nowrap;
+.footer .footer-logo img {
+  max-height: 41px;
 }
 .footer .footer-logo p {
   margin-top: 1rem;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #d1e1da;
+  color: var(--primary-colors, #d1e1da);
 }
-.footer h2 {
+.footer h5 {
   font-size: 19px;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--primary-colors, #fff);
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
@@ -1191,10 +998,9 @@ form[data-zigrow-form] > button[type="submit"] {
   padding-left: 0px;
 }
 .footer p,
-.footer li a,
-.footer p a {
+.footer li a {
   font-size: 1rem;
-  color: #d1e1da;
+  color: var(--primary-colors, #d1e1da);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -1203,19 +1009,14 @@ form[data-zigrow-form] > button[type="submit"] {
   margin-bottom: 0.6rem;
 }
 .footer li a:hover {
-  color: #faf6f1;
+  color: var(--territory-colors, #faf6f1);
 }
 .footer .phone {
   font-weight: 600;
   font-size: 19px;
   margin-top: 0.5rem;
-  color: #faf6f1;
+  color: var(--primary-colors, #faf6f1);
   opacity: 1;
-}
-.footer .phone a {
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
 }
 .footer .phone:hover {
   opacity: 0.7;
@@ -1231,25 +1032,13 @@ form[data-zigrow-form] > button[type="submit"] {
 }
 .footer .website-company-name span {
   font-size: clamp(32px, 12vw, 220px);
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-family: "Quicksand", sans-serif;
   opacity: 0.2;
   font-weight: 700;
   padding: 0;
   width: 100%;
-}
-.footer .footer-attribution {
-  margin-block-start: 1.5rem;
-  text-align: center;
-}
-.footer .footer-attribution a {
-  color: #d1e1da;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-.footer .footer-attribution a:hover {
-  color: #faf6f1;
 }
 @media (max-width: 567.98px) {
   .footer .website-company-name {

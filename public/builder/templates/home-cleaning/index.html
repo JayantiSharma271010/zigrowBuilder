@@ -11,26 +11,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css" />
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=2.13.0-home-cleaning-4" />
-  <link rel="stylesheet" href="https://static.zigrow.com/animations/z.animation.style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <header id="header" data-section="header">
-  <nav id="navbarSection" class="navbar navbar-expand-lg sticky-top top-0 navbar-color py-3-style navbar-animate" aria-label="Primary navigation">
+  <nav class="navbar navbar-expand-lg sticky-top top-0 navbar-color py-3-style navbar-animate" data-section="navbarSection" id="navbarSection">
     <div class="container">
-      <a class="navbar-brand brand-logo" href="#home" data-logo="navbar">Cleany</a>
+      <a class="navbar-brand d-flex align-items-sm-center fw-semibold-style fs-4-style" href="#">
+        <div data-logo="navbar" class="d-flex align-items-center-style">
+          Cleany
+        </div>
+      </a>
 
       <div class="d-lg-none d-flex align-items-center-style justify-content-lg-end-style">
-        <button class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle" type="button" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
           <div class="hamburger-box">
             <div class="hamburger-inner"></div>
           </div>
-        </button>
+        </div>
       </div>
 
       <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
-        <ul class="navbar-nav gap-3 " style="margin-left: auto; margin-right: auto;">
+        <ul class="navbar-nav gap-3">
           <li><a class="nav-link fw-semibold-style" href="#home">Home</a></li>
           <li><a class="nav-link fw-semibold-style" href="#aboutus">About Us</a></li>
           <li><a class="nav-link fw-semibold-style" href="#services">Services</a></li>
@@ -39,18 +41,22 @@
           <li><a class="nav-link fw-semibold-style" href="#contactus">Contact Us</a></li>
         </ul>
 
-        <div class="navbar-actions zg-align-center"><a href="#contactus" class="btn btn-darkgreen" data-btn="navbar-book-appointment">Book Appointment</a></div>
+        <div class="nav-item d-lg-none">
+          <a href="#contactus" class="btn btn-darkgreen">Book Appointment</a>
+        </div>
+      </div>
+
+      <div class="d-none d-lg-block">
+        <a href="#contactus" class="btn btn-darkgreen">Book Appointment</a>
       </div>
     </div>
   </nav>
-  </header>
 
   <main>
     <section class="hero-section py-5-style hero-animate" id="home" data-section="home">
-      <div class="container d-lg-flex justify-content-between-style">
-        <div class="row align-items-center-style justify-content-between-style g-sm-5">
-          <div class="col-lg-6 hero-content">
-            <div class="section-header hero-section-header">
+      <div class="container d-lg-flex justify-content-between">
+        <div class="row align-items-center-style justify-content-between g-sm-5">
+          <div class="col-lg-6">
             <p class="text-uppercase mb-2-style each-section-name">
               Cleany - Cleaning Services
             </p>
@@ -58,28 +64,28 @@
               Home Cleaning Services at Your Doorstep
             </h1>
             <p class="text-secondary-theme my-4-style each-section-para">
-              Professional home cleaning designed around your schedule. Our trained team brings reliable care,
-              careful attention, and a fresh finish to every room in your home.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis. Sagittis a sapien pulvinar etiam senectus
+              adipiscing tempor diam tellus.
             </p>
-            </div>
-            <div class="section-body hero-actions zg-align-center"><a href="tel:+919123456789" class="btn btn-darkgreen nav-item" data-btn="hero-book-appointment">Book Appointment</a></div>
+            <a href="tel:9123456789" class="btn btn-darkgreen nav-item">Book Appointment</a>
           </div>
 
           <div class="col-lg-6 right-image-hero-section">
             <div class="img-container img-wrapper-style col-lg-8 position-relative mx-auto-style">
-              <img src="assets/images/cleaning-services-header.webp" alt="Professional cleaner ready for a home appointment" class="img-fluid rounded-start" />
+              <img src="assets/images/cleaning-services-header.webp" alt="Cleaner Image" class="img-fluid rounded-start" style="object-fit: cover;" />
 
               <div class="bi-stars-of-hero-section">
-                <i class="bi bi-stars" data-icon="stars"></i>
+                <span data-icon="stars"></span>
               </div>
-              <div class="bg-shape" data-zg-editable="surface"></div>
+              <div class="bg-shape"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <a href="#home" class="btn rounded-circle floating-btn" aria-label="Back to top">
+    <a href="#home" class="btn rounded-circle floating-btn">
       <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
     </a>
 
@@ -111,12 +117,11 @@
         <div class="row align-items-center-style g-5 d-lg-flex flex-lg-row">
           <div class="col-lg-6 why-choose-us-image-div text-center-style">
             <div class="img-wrapper-style">
-              <img src="assets/images/cleaning-2.webp" alt="Cleaner carefully wiping a window" class="img-fluid rounded shadow-sm" loading="lazy" />
+              <img src="assets/images/cleaning-2.webp" alt="Cleaning Image" class="img-fluid rounded shadow-sm" loading="lazy" style="object-fit: cover;" />
             </div>
           </div>
 
-          <div class="col-lg-6 ps-lg-5-style px-1-style about-content">
-            <div class="section-header about-section-header">
+          <div class="col-lg-6 ps-lg-5 px-1">
             <p class="text-uppercase each-section-name mb-3-style">
               About Us
             </p>
@@ -126,13 +131,11 @@
             </h2>
 
             <p class="text-secondary-theme each-section-para aboutus-para">
-              We pair trained cleaners with thoughtful checklists so every visit leaves your home comfortable,
-              tidy, and consistently cared for.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis. Sagittis a sapien pulvinar etiam.
             </p>
-            </div>
 
-            <div class="section-body about-section-body">
-            <div class="row text-center-style text-md-start-style mt-4-style px-auto-style about-section-stats-section">
+            <div class="row text-center-style text-md-start mt-4-style px-auto-style about-section-stats-section">
               <div class="col-6 div-150 position-relative">
                 <h3 class="fw-semibold-style fs-1-style">
                   150 <span class="four-point-star fs-5-style"><i class="bi bi-stars" data-icon="star"></i></span>
@@ -151,7 +154,8 @@
               </div>
             </div>
 
-            <div class="about-actions zg-align-center"><a href="#services" class="btn btn-darkgreen" data-btn="about-explore-services">Explore More</a></div>
+            <div class="mt-4-style">
+              <a href="#services" class="btn btn-darkgreen">Explore More</a>
             </div>
           </div>
         </div>
@@ -160,23 +164,21 @@
 
     <section class="process-section py-5-style" id="process" data-section="process">
       <div class="container text-center-style">
-        <div class="section-header process-section-header">
         <p class="text-uppercase each-section-name mb-3-style d-flex justify-content-center-style align-items-center-style">
           Our Process
         </p>
         <h2 class="each-section-heading fs-1-style mb-5-style">
           This is How We <span class="text-territory-theme">Work</span>
         </h2>
-        </div>
 
-        <div class="section-body d-flex steps-wrapper justify-content-center-style align-items-start-style flex-wrap pt-sm-5-style pt-1-style mt-5-style">
+        <div class="d-flex steps-wrapper justify-content-center-style align-items-start-style flex-wrap pt-sm-5-style pt-1-style mt-5-style">
           <div class="step py-sm-4-style">
             <div class="step-icon">
               <i class="bi bi-calendar-event-fill" data-icon="calendar-event-fill"></i>
             </div>
             <h5 class="step-title fw-bold-style my-4-style">Appointment</h5>
             <p class="step-text">
-              Tell us what you need<br />and choose a service
+              Lorem Ipsum dolor sit AMet<br />Apdvfv fsfdf
             </p>
           </div>
 
@@ -188,7 +190,7 @@
             </div>
             <h5 class="step-title fw-bold-style my-4-style">Choose Date</h5>
             <p class="step-text">
-              Pick a convenient date<br />and arrival window
+              Lorem Ipsum dolor sit AMet<br />Apdvfv fsfdf
             </p>
           </div>
 
@@ -200,7 +202,7 @@
             </div>
             <h5 class="step-title fw-bold-style my-4-style">Cleaning Process</h5>
             <p class="step-text">
-              Our trained team follows<br />a detailed checklist
+              Lorem Ipsum dolor sit AMet<br />Apdvfv fsfdf
             </p>
           </div>
 
@@ -212,7 +214,7 @@
             </div>
             <h5 class="step-title fw-bold-style my-4-style">Final Result</h5>
             <p class="step-text">
-              Review your refreshed home<br />before we leave
+              Lorem Ipsum dolor sit AMet<br />Apdvfv fsfdf
             </p>
           </div>
         </div>
@@ -221,7 +223,7 @@
 
     <section class="our-services-section py-sm-5-style py-3-style my-5-style services-animate" id="services" data-section="services">
       <div class="container">
-        <div class="row align-items-center-style mb-5-style section-header services-section-header">
+        <div class="row align-items-center-style mb-5-style">
           <div class="col-lg-6">
             <p class="text-uppercase mb-3-style each-section-name d-flex justify-content-lg-start-style align-items-center-style">
               Our Services
@@ -229,19 +231,20 @@
             <h2 class="each-section-heading d-flex mb-3-style">
               Services We Provide</h2>
             <p class="text-secondary-theme each-section-para">
-              From routine upkeep to focused room care, choose a service that fits your home, priorities, and schedule.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis.
             </p>
           </div>
-          <div class="col-lg-6 text-lg-end-style text-center-style mt-4-style mt-md-0-style all-services-btn services-actions zg-align-center">
-            <a href="#contactus" class="btn btn-darkgreen all-services-btn" data-btn="services-consultation">All Services</a>
+          <div class="col-lg-6 text-lg-end-style text-center-style mt-4-style mt-md-0-style all-services-btn">
+            <a href="#" class="btn btn-darkgreen all-services-btn">All Services</a>
           </div>
         </div>
 
-        <div class="row text-center-style g-4 section-body services-grid">
+        <div class="row text-center-style g-4">
           <div class="col-sm-6 col-lg-3 clonable-card">
             <div class="service-item px-3-style">
               <div class="icon-circle d-lg-flex mb-3-style position-relative ms-lg-0-style mx-auto-style">
-                <div class="fs-4-style text-dark-style service-icon-symbol">
+                <div class="fs-4-style text-dark-style">
                   <i class="bi bi-buildings-fill" data-icon="buildings-fill"></i>
                 </div>
                 <div class="star-overlay">
@@ -250,16 +253,18 @@
               </div>
               <h5 class="fw-bold-style d-lg-flex justify-content-start-style">Office Cleaning</h5>
               <p class="text-secondary-theme small-style text-lg-start-style d-lg-flex justify-content-start-style">
-                Desks, shared spaces, and high-touch surfaces cleaned with minimal disruption to your workday.
+                Ut quis euismod at vivamus nunc duis. Tempus leo id phasellus at
+                tellus non orci consectetur.
               </p>
-              <div class="service-actions zg-align-center"><a href="#contactus" class="fw-semibold-style our-services-learnmore-btn" data-btn="office-cleaning-details">Learn More</a></div>
+              <a href="#" class="fw-semibold-style d-lg-flex justify-content-start-style our-services-learnmore-btn">Learn
+                More</a>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-3 clonable-card">
             <div class="service-item px-3-style">
               <div class="icon-circle mb-3-style position-relative ms-lg-0-style mx-auto-style">
-                <div class="fs-4-style text-dark-style service-icon-symbol">
+                <div class="fs-4-style text-dark-style">
                   <i class="bi bi-house-fill" data-icon="house-fill"></i>
                 </div>
                 <div class="star-overlay">
@@ -268,16 +273,18 @@
               </div>
               <h5 class="fw-bold-style d-lg-flex justify-content-start-style">House Cleaning</h5>
               <p class="text-secondary-theme small-style text-lg-start-style d-lg-flex justify-content-start-style">
-                Thorough room-by-room care that keeps everyday living spaces fresh, neat, and welcoming.
+                Ut quis euismod at vivamus nunc duis. Tempus leo id phasellus at
+                tellus non orci consectetur.
               </p>
-              <div class="service-actions zg-align-center"><a href="#contactus" class="fw-semibold-style our-services-learnmore-btn" data-btn="house-cleaning-details">Learn More</a></div>
+              <a href="#" class="fw-semibold-style d-lg-flex justify-content-start-style our-services-learnmore-btn">Learn
+                More</a>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-3 clonable-card">
             <div class="service-item px-3-style">
               <div class="icon-circle mb-3-style position-relative ms-lg-0-style mx-auto-style">
-                <div class="fs-4-style text-dark-style service-icon-symbol">
+                <div class="fs-4-style text-dark-style">
                   <i class="bi bi-bucket-fill" data-icon="bucket-fill"></i>
                 </div>
                 <div class="star-overlay">
@@ -286,16 +293,18 @@
               </div>
               <h5 class="fw-bold-style d-lg-flex justify-content-start-style">Carpet Cleaning</h5>
               <p class="text-secondary-theme small-style text-lg-start-style d-lg-flex justify-content-start-style">
-                Targeted vacuuming and spot treatment that lift everyday dirt while protecting carpet fibres.
+                Ut quis euismod at vivamus nunc duis. Tempus leo id phasellus at
+                tellus non orci consectetur.
               </p>
-              <div class="service-actions zg-align-center"><a href="#contactus" class="fw-semibold-style our-services-learnmore-btn" data-btn="carpet-cleaning-details">Learn More</a></div>
+              <a href="#" class="fw-semibold-style d-lg-flex justify-content-start-style our-services-learnmore-btn">Learn
+                More</a>
             </div>
           </div>
 
           <div class="col-sm-6 col-lg-3 clonable-card">
             <div class="service-item px-3-style">
               <div class="icon-circle mb-3-style position-relative ms-lg-0-style mx-auto-style">
-                <div class="fs-4-style text-dark-style service-icon-symbol">
+                <div class="fs-4-style text-dark-style">
                   <i class="bi bi-door-closed-fill" data-icon="door-closed-fill"></i>
                 </div>
                 <div class="star-overlay">
@@ -304,9 +313,11 @@
               </div>
               <h5 class="fw-bold-style d-lg-flex justify-content-start-style">Kitchen Cleaning</h5>
               <p class="text-secondary-theme small-style text-lg-start-style d-lg-flex justify-content-start-style">
-                Detailed cleaning for worktops, appliances, sinks, and the hard-to-reach corners around them.
+                Ut quis euismod at vivamus nunc duis. Tempus leo id phasellus at
+                tellus non orci consectetur.
               </p>
-              <div class="service-actions zg-align-center"><a href="#contactus" class="fw-semibold-style our-services-learnmore-btn" data-btn="kitchen-cleaning-details">Learn More</a></div>
+              <a href="#" class="fw-semibold-style d-lg-flex justify-content-start-style our-services-learnmore-btn">Learn
+                More</a>
             </div>
           </div>
         </div>
@@ -318,30 +329,27 @@
         <div class="row align-items-center-style g-sm-5 d-lg-flex">
           <div class="col-lg-6 why-choose-us-image-div text-center-style">
             <div class="img-wrapper-style">
-              <img src="assets/images/cleaning-3.webp" alt="Cleaner vacuuming a modern office" class="img-fluid rounded shadow-sm" loading="lazy" />
+              <img src="assets/images/cleaning-3.webp" alt="Cleaning Image" class="img-fluid rounded shadow-sm" loading="lazy" style="object-fit: cover;" />
             </div>
           </div>
 
           <div class="col-lg-6">
-            <div class="section-header why-section-header">
             <p class="text-uppercase each-section-name mb-3-style d-flex align-items-center-style">
-              <span class="section-label-icon"><i class="bi bi-stars" data-icon="star"></i></span> Why Choose Us
+              <span class="me-1-style" data-icon="star"></span> Why Choose Us
             </p>
             <h2 class="each-section-heading mb-xl-4-style">
               We Are Your All Purpose Cleaner
             </h2>
             <p class="text-secondary-theme each-section-para mb-xl-5-style mb-md-3-style mb-3-style">
-              Dependable people, practical equipment, and clear quality checks help us deliver a consistent clean every time.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis. Sagittis a sapien pulvinar etiam.
             </p>
-            </div>
 
-            <div class="row section-body feature-grid">
-            <div class="col-12 clonable-card">
-              <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card">
+            <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card col-12 clonable-card">
               <div class="icon-container me-sm-3-style">
                 <div class="feature-icon mb-3-style">
-                  <div class="fs-4-style text-dark-style feature-icon-symbol">
-                    <i class="bi bi-tools" data-icon="tools"></i>
+                  <div class="fs-4-style text-dark-style">
+                    <i class="bi bi-tools" data-icon="toolsbi-tools"></i>
                   </div>
                   <div class="star-overlay">
                     <i class="bi bi-stars" data-icon="stars"></i>
@@ -351,18 +359,16 @@
               <div class="feature-card-sub-div">
                 <h6 class="fw-bold-style mb-3-style why-section-sub-heading">Best Equipments</h6>
                 <p class="text-secondary-theme mb-0-style fw-semibold-style">
-                  Professional tools selected for safe, efficient everyday cleaning.
+                  Faucibus commodo a aenean et sit quisque ipsum.
                 </p>
-              </div>
               </div>
             </div>
 
-            <div class="col-12 clonable-card">
-              <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card">
+            <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card col-12 clonable-card">
               <div class="icon-container me-sm-3-style">
                 <div class="feature-icon mb-3-style">
-                  <div class="fs-4-style text-dark-style feature-icon-symbol">
-                    <i class="bi bi-ui-checks-grid" data-icon="quality-checks"></i>
+                  <div class="fs-4-style text-dark-style">
+                    <i class="bi bi-ui-checks-grid" data-icon="uibi-ui-checks-grid"></i>
                   </div>
                   <div class="star-overlay">
                     <i class="bi bi-stars" data-icon="stars"></i>
@@ -372,17 +378,15 @@
               <div class="feature-card-sub-div">
                 <h6 class="fw-bold-style mb-3-style why-section-sub-heading">Top Gadgets</h6>
                 <p class="text-secondary-theme mb-0-style fw-semibold-style">
-                  Room-by-room checklists keep the service thorough and consistent.
+                  Sed dapibus nunc et libero tincidunt, pharetra mollis mi.
                 </p>
-              </div>
               </div>
             </div>
 
-            <div class="col-12 clonable-card">
-              <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card">
+            <div class="d-flex align-items-start-style mb-xl-5-style mb-md-4-style mb-3-style p-1-style feature-card col-12 clonable-card">
               <div class="icon-container me-sm-3-style">
                 <div class="feature-icon mb-3-style">
-                  <div class="fs-4-style text-dark-style feature-icon-symbol">
+                  <div class="fs-4-style text-dark-style">
                     <i class="bi bi-gear-fill" data-icon="gear-fill"></i>
                   </div>
                   <div class="star-overlay">
@@ -393,11 +397,9 @@
               <div class="feature-card-sub-div">
                 <h6 class="fw-bold-style mb-3-style why-section-sub-heading">Essential Gear</h6>
                 <p class="text-secondary-theme mb-0-style fw-semibold-style">
-                  Reliable supplies for dusting, washing, polishing, and finishing.
+                  Quisque auctor velit in erat malesuada.
                 </p>
               </div>
-              </div>
-            </div>
             </div>
 
           </div>
@@ -407,112 +409,123 @@
 
     <section class="section7 py-5-style text-dark-style" id="pricing" data-section="pricing">
       <div class="container">
-        <div class="section-header pricing-section-header">
         <p class="text-uppercase each-section-name mb-3-style d-flex justify-content-center-style align-items-center-style">
-          <span class="section-label-icon"><i class="bi bi-stars" data-icon="star"></i></span>
+          <span class="me-1-style" data-icon="star"></span>
           Pricing Table
         </p>
         <h2 class="each-section-heading mb-xl-4-style d-flex justify-content-center-style">
           Pricing Plans for Every Budget
         </h2>
         <p class="text-secondary-theme col-lg-5 text-center-style mb-5-style mx-auto-style d-flex justify-content-center-style">
-          Select a practical service level for the size of your home and the depth of cleaning you need.
+          Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+          dolor felis quis.
         </p>
-        </div>
 
-        <div class="row g-3 d-md-flex justify-content-around-style section-body pricing-grid">
-          <div class="col-md-4 plans-card clonable-card basic-plan-card rounded-4 my-3-style basic-plan-card-indiv">
+        <div class="row g-3 d-md-flex justify-content-around">
+          <div class="plans-card clonable-card basic-plan-card rounded-4 card rounded-4 my-3-style basic-plan-card-indiv border-0">
             <div class="card-body p-4-style">
               <p class="text-uppercase each-section-name card-name d-flex align-items-center-style basic-card-name fw-semibold-style mb-4-style">
-              <span class="plan-name-icon"><i class="bi bi-patch-check-fill" data-icon="patch-check-fill"></i></span>
+              <div class="d-inline-flex">
+                <i class="bi bi-patch-check-fill" data-icon="patch-check-fill"></i>
+              </div>
               Basic Cleaning
               </p>
-              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2-style">
+              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2">
                 ₹350 <small class="text-secondary-theme fs-6-style my-auto-style ms-2-style">/service</small>
               </h3>
               <p class="each-card-para mt-3-style text-secondary-theme">
-                Essential cleaning for bedrooms, shared areas, and common touchpoints.
+                Faucibus commodo a aenean et sit quisque ipsum.
               </p>
               <hr class="card-content-divider" />
               <ul class="list-unstyled text-start-style">
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex plan-feature-icon">
+                  <div class="me-2-style d-flex">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
-                  60 Minutes of Cleaning
+                  60 Minutes Consultation
                 </li>
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex plan-feature-icon">
+                  <div class="me-2-style d-flex">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
                   2 Bedroom Cleaning
                 </li>
               </ul>
-              <div class="pricing-actions zg-align-center"><a href="#contactus" class="btn btn-darkgreen pro-plan-card-button" data-btn="basic-cleaning-book">Book Now</a></div>
+              <div class="mt-4-style">
+                <a href="#contactus" class="btn btn-darkgreen pro-plan-card-button w-100">Book Now</a>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-4 plans-card clonable-card pro-plan-card rounded-4 my-3-style pro-plan-card-indiv">
+          <div class="plans-card clonable-card pro-plan-card rounded-4 card rounded-4 my-3-style border-0 pro-plan-card-indiv">
             <div class="card-body p-4-style">
               <p class="text-uppercase each-section-name d-flex align-items-center-style card-name fw-semibold-style mb-4-style">
-              <span class="plan-name-icon"><i class="bi bi-patch-check-fill" data-icon="patch-check-fill"></i></span>
+              <div class="d-inline-flex">
+                <i class="bi bi-patch-check-fill"></i>
+              </div>
               Pro Cleaning
               </p>
-              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2-style">
+              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2">
                 ₹650
                 <small class="text-territory-theme fs-6-style my-auto-style ms-2-style">/service</small>
               </h3>
               <p class="each-card-para mt-3-style">
-                Deeper cleaning for larger homes, busy routines, and high-use rooms.
+                Faucibus commodo a aenean et sit quisque ipsum.
               </p>
               <hr class="card-content-divider" />
               <ul class="list-unstyled text-start-style">
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex border-black plan-feature-icon">
+                  <div class="me-2-style d-flex border-black">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
-                  120 Minutes of Cleaning
+                  120 Minutes Consultation
                 </li>
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex border-black plan-feature-icon">
+                  <div class="me-2-style d-flex border-black">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
                   4 Bedroom Cleaning
                 </li>
               </ul>
-              <div class="pricing-actions zg-align-center"><a href="#contactus" class="btn btn-darkgreen pro-plan-card-button" data-btn="pro-cleaning-book">Book Now</a></div>
+              <div class="mt-4-style">
+                <a href="#contactus" class="btn btn-darkgreen pro-plan-card-button w-100">Book Now</a>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-4 plans-card clonable-card deluxe-plan-card basic-plan-card rounded-4 my-3-style basic-plan-card-indiv">
+          <div class="plans-card clonable-card deluxe-plan-card basic-plan-card rounded-4 card rounded-4 my-3-style basic-plan-card-indiv border-0">
             <div class="card-body p-4-style">
               <p class="text-uppercase each-section-name d-flex align-items-center-style card-name basic-card-name fw-semibold-style mb-4-style">
-              <span class="plan-name-icon"><i class="bi bi-patch-check-fill" data-icon="patch-check-fill"></i></span>
+              <div class="d-inline-flex">
+                <i class="bi bi-patch-check-fill"></i>
+              </div>
               Deluxe Cleaning
               </p>
-              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2-style">
+              <h3 class="fw-semibold-style d-flex fs-1-style align-items-center-style mb-4-style pb-2">
                 ₹950
                 <small class="text-secondary-theme fs-6-style my-auto-style ms-2-style">/service</small>
               </h3>
               <p class="each-card-para mt-3-style text-secondary-theme">
-                Whole-home attention with extended time for detailed finishing work.
+                Faucibus commodo a aenean et sit quisque ipsum.
               </p>
               <hr class="card-content-divider" />
               <ul class="list-unstyled text-start-style">
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex border-black plan-feature-icon">
+                  <div class="me-2-style d-flex border-black">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
-                  120 Minutes of Cleaning
+                  120 Minutes Consultation
                 </li>
                 <li class="mb-2-style li-arrow-text d-flex">
-                  <div class="me-2-style d-flex border-black plan-feature-icon">
+                  <div class="me-2-style d-flex border-black">
                     <i class="bi bi-arrow-right-circle" data-icon="arrow-right-circle"></i>
                   </div>
                   All Bedrooms Cleaning
                 </li>
               </ul>
-              <div class="pricing-actions zg-align-center"><a href="#contactus" class="btn btn-darkgreen pro-plan-card-button" data-btn="deluxe-cleaning-book">Book Now</a></div>
+              <div class="mt-4-style">
+                <a href="#contactus" class="btn btn-darkgreen pro-plan-card-button w-100">Book Now</a>
+              </div>
             </div>
           </div>
         </div>
@@ -521,9 +534,9 @@
 
     <section class="section8 py-5-style" id="faq" data-section="faq">
       <div class="container">
-        <div class="text-center-style mb-sm-5-style mb-3-style section-header faq-section-header">
+        <div class="text-center-style mb-sm-5 mb-3-style">
           <p class="text-uppercase each-section-name mb-3-style d-flex justify-content-center-style align-items-center-style">
-            <span class="section-label-icon"><i class="bi bi-stars" data-icon="star"></i></span>
+            <span class="me-1-style" data-icon="star"></span>
             FAQs
           </p>
           <h2 class="each-section-heading mb-xl-4-style d-flex justify-content-center-style">
@@ -531,25 +544,29 @@
           </h2>
         </div>
 
-        <div class="accordion p-3-style section-body" id="faqAccordion">
+        <div class="accordion p-3-style" id="faqAccordion">
           <div class="accordion-item mb-4-style border-0">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button fw-semibold-style px-0-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button fw-semibold-style px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 What types of cleaning services do you offer?
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary-theme ps-0-style"><span>We offer regular home cleaning, deep cleaning, kitchen cleaning, and more.</span></div>
+              <div class="accordion-body text-secondary-theme ps-0">
+                We offer regular home cleaning, deep cleaning, kitchen cleaning, and more.
+              </div>
             </div>
           </div>
           <div class="accordion-item mb-4-style border-0">
             <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed fw-semibold-style px-0-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button class="accordion-button collapsed fw-semibold-style px-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Do I need to provide cleaning supplies?
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-secondary-theme ps-0-style"><span>No, our cleaners arrive with the supplies and equipment needed for the selected service.</span></div>
+              <div class="accordion-body text-secondary-theme ps-0">
+                No, our cleaners come fully equipped.
+              </div>
             </div>
           </div>
         </div>
@@ -558,21 +575,19 @@
 
     <section class="bg-white-style pb-5-style pt-0-style testimonial-section" id="testimonials" data-section="testimonials">
       <div class="container text-center-style">
-        <div class="section-header testimonial-section-header">
         <p class="text-uppercase each-section-name mb-3-style d-flex justify-content-center-style align-items-center-style">
-          <span class="section-label-icon"><i class="bi bi-stars" data-icon="star"></i></span>
+          <span class="me-1-style" data-icon="star"></span>
           Testimonial
         </p>
         <h2 class="each-section-heading mb-xl-4-style d-flex justify-content-center-style">
           Hear What Our Clients Say
         </h2>
-        </div>
 
-        <div class="swiper testimonial-swiper section-body">
+        <div class="swiper testimonial-swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-              <div class="border rounded-3 h-100 mx-4-style p-3-style">
+              <div class="border rounded-3 h-100 mx-4 p-3-style">
                 <div class="p-4-style border-bottom">
                   <div class="mb-2-style star-div">
                     <i class="bi bi-star-fill" data-icon="star-fill"></i>
@@ -582,12 +597,13 @@
                     <i class="bi bi-star-half" data-icon="star-half"></i>
                   </div>
                   <p class="slide-para mb-0-style text-secondary-theme">
-                    The team arrived on time, worked carefully, and left our office feeling fresh without disrupting the day.
+                    Purus ipsum facilisis cursus nunc egestas vel praesent
+                    auctor dolor. Et proin dolor rhoncus sit.
                   </p>
                 </div>
                 <div class="d-flex align-items-center-style gap-3 p-4-style">
                   <div class="img-wrapper-style">
-                    <img src="assets/images/testimonials-1.webp" alt="Amisha Patel" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" />
+                    <img src="assets/images/testimonials-1.webp" alt="Amisha Patel" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" style="object-fit: cover;" />
                   </div>
                   <div class="text-start-style">
                     <p class="fw-bold-style mb-0-style text-dark-style">Amisha Patel</p>
@@ -598,7 +614,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="border rounded-3 h-100 mx-4-style p-3-style">
+              <div class="border rounded-3 h-100 mx-4 p-3-style">
                 <div class="p-4-style border-bottom">
                   <div class="mb-2-style star-div">
                     <i class="bi bi-star-fill" data-icon="star-fill"></i>
@@ -608,12 +624,13 @@
                     <i class="bi bi-star-fill" data-icon="star-fill"></i>
                   </div>
                   <p class="slide-para mb-0-style text-secondary-theme">
-                    Booking was simple, the cleaners were respectful, and every room received the attention we had requested.
+                    Purus ipsum facilisis cursus nunc egestas vel praesent
+                    auctor dolor. Et proin dolor rhoncus sit.
                   </p>
                 </div>
                 <div class="d-flex align-items-center-style gap-3 p-4-style">
                   <div class="img-wrapper-style">
-                    <img src="assets/images/testimonials-2.webp" alt="Priya Singh" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" />
+                    <img src="assets/images/testimonials-2.webp" alt="Priya Singh" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" style="object-fit: cover;" />
                   </div>
                   <div class="text-start-style">
                     <p class="fw-bold-style mb-0-style text-dark-style">Priya Singh</p>
@@ -624,7 +641,7 @@
             </div>
 
             <div class="swiper-slide">
-              <div class="border rounded-3 h-100 mx-4-style p-3-style">
+              <div class="border rounded-3 h-100 mx-4 p-3-style">
                 <div class="p-4-style border-bottom">
                   <div class="mb-2-style star-div">
                     <i class="bi bi-star-fill" data-icon="star-fill"></i>
@@ -634,16 +651,17 @@
                     <i class="bi bi-star" data-icon="star"></i>
                   </div>
                   <p class="slide-para mb-0-style text-secondary-theme">
-                    Our home looked noticeably brighter after the visit, and the team checked every detail before leaving.
+                    Purus ipsum facilisis cursus nunc egestas vel praesent
+                    auctor dolor. Et proin dolor rhoncus sit.
                   </p>
                 </div>
                 <div class="d-flex align-items-center-style gap-3 p-4-style">
                   <div class="img-wrapper-style">
-                    <img src="assets/images/testimonials-3.webp" alt="Neha Kapoor" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" />
+                    <img src="assets/images/testimonials-3.webp" alt="Priya Singh" class="rounded-circle img-fluid" width="48" height="48" loading="lazy" style="object-fit: cover;" />
                   </div>
                   <div class="text-start-style">
-                    <p class="fw-bold-style mb-0-style text-dark-style">Neha Kapoor</p>
-                    <p class="text-secondary-theme mb-0-style small-style">Homeowner</p>
+                    <p class="fw-bold-style mb-0-style text-dark-style">Priya Singh</p>
+                    <p class="text-secondary-theme mb-0-style small-style">Office Manager</p>
                   </div>
                 </div>
               </div>
@@ -656,54 +674,50 @@
 
     <section class="contact-section contactus-outer py-5-style" id="contactus" data-section="contactus">
       <div class="container">
-        <div class="row align-items-start-style section-body contact-grid">
+        <div class="row align-items-start-style">
           <div class="col-lg-6 contact-left">
-            <div class="section-header contact-section-header">
             <p class="text-uppercase each-section-name mb-3-style d-flex justify-content-lg-start-style align-items-center-style">
               Contact Us
             </p>
-            <h2 class="contactus-section-heading d-flex  mb-xl-4-style">
+            <h2 class="contactus-section-heading d-flex justify-content-center mb-xl-4-style">
               Let's discuss your cleaning needs
             </h2>
             <p class="text-secondary-theme each-section-para mb-xl-5-style mb-md-3-style mb-3-style">
-              Tell us about your space, preferred time, and priorities so we can recommend the right cleaning service.
+              Faucibus commodo a aenean et sit quisque ipsum. Consequat eu id ut
+              dolor felis quis.
             </p>
-            </div>
 
-            <ul class="contact-info ps-0-style">
-              <li><span class="contact-info-icon"><i class="bi bi-telephone-fill" data-icon="telephone-fill"></i></span><a href="tel:+919123456789">+91-9123456789</a></li>
-              <li><span class="contact-info-icon"><i class="bi bi-envelope-fill" data-icon="envelope-fill"></i></span><a href="mailto:hello@cleany.example">hello@cleany.example</a></li>
-              <li><span class="contact-info-icon"><i class="bi bi-geo-alt-fill" data-icon="geo-alt-fill"></i></span><span>E-123, ABC Plaza, XYZ Street, New Delhi 110077</span></li>
+            <ul class="contact-info ps-0">
+              <li><i class="bi bi-telephone-fill" data-icon="telephone-fill"></i>+91-9123456789</li>
+              <li><i class="bi bi-envelope-fill" data-icon="envelope-fill"></i> yourname@domainname.com</li>
+              <li><i class="bi bi-geo-alt-fill" data-icon="geo-alt-fill"></i>E-123, ABC Plaza, XYZ Street, New Delhi
+                110077</li>
             </ul>
           </div>
 
-          <div class="col-lg-6 ps-lg-5-style">
+          <div class="col-lg-6 ps-lg-5">
             <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="contact-form">
-              <input type="hidden" name="domain" value="">
-              <input type="hidden" name="form_key" value="contact">
-              <input type="hidden" name="page_url" value="">
-              <input type="hidden" name="_company" value="">
               <div form-question-zigrow>
-                <label for="cleaning-name">Name</label>
-                <input id="cleaning-name" type="text" name="name" placeholder="Your name" required />
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your name" required />
               </div>
 
               <div form-question-zigrow>
-                <label for="cleaning-email">Email</label>
-                <input id="cleaning-email" type="email" name="email" placeholder="you@company.com" required />
+                <label>Email</label>
+                <input type="email" name="email" placeholder="you@company.com" required />
               </div>
 
               <div form-question-zigrow>
-                <label for="cleaning-phone">Phone number</label>
-                <input id="cleaning-phone" type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a phone number using 7 to 15 digits, spaces, or hyphens" placeholder="Enter your phone number" name="phone" required>
+                <label>Phone number</label>
+                <input type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="Enter your phone number here" name="phone-number">
               </div>
 
               <div form-question-zigrow>
-                <label for="cleaning-message">How can we help?</label>
-                <textarea id="cleaning-message" name="message" placeholder="Tell us about your cleaning needs"></textarea>
+                <label>How can we help?</label>
+                <textarea name="how-can-we-help?" placeholder="Tell us a little about the project..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-darkgreen w-100 mt-lg-4-style">Get In Touch</button>
+              <button type="submit" class="btn btn-darkgreen w-100 mt-lg-4">Get In Touch</button>
             </form>
           </div>
         </div>
@@ -713,16 +727,19 @@
 
   <footer class="footer footer-outer p-4-style" id="footer" data-section="footer">
     <div class="container">
-      <div class="row gy-5 mb-lg-5-style py-lg-2-style">
+      <div class="row gy-5 mb-lg-5 py-lg-2">
         <div class="col-md-3 col-sm-6 col-12 footer-logo-and-intro-section">
-          <a class="footer-brand-logo" href="#home" data-logo="footer">Cleany</a>
+          <div class="logo d-flex align-items-center-style footer-logo-div fs-4-style" data-logo="footer">
+            Cleany
+          </div>
           <p class="mt-3-style pe-4-style footer-section-para">
-            Thoughtful cleaning for comfortable homes, dependable routines, and easier everyday living.
+            Leo elementum iaculis quam massa vitae odio sed. Morbi tincidunt
+            senectus.
           </p>
           <div class="social-icons d-flex mt-3-style">
-            <a href="#" aria-label="Cleany on Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a>
-            <a href="#" aria-label="Cleany on Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a>
-            <a href="#" aria-label="Cleany on YouTube"><i class="bi bi-youtube" data-icon="youtube"></i></a>
+            <a href="#"><i class="bi bi-twitter" data-icon="twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram" data-icon="instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube" data-icon="youtube"></i></a>
           </div>
         </div>
 
@@ -750,28 +767,28 @@
           <h5>Contact Us</h5>
           <ul class="list-unstyled">
             <li class="navigation-menus">
-              <span class="footer-contact-icon">
+              <span class="me-2-style">
                 <i class="bi bi-geo-alt-fill" data-icon="geo-alt"></i>
               </span> E-123, ABC Plaza, XYZ Street, New Delhi 110077
             </li>
             <li class="navigation-menus">
-              <span class="footer-contact-icon">
+              <span class="me-2-style">
                 <i class="bi bi-telephone" data-icon="telephone"></i>
-              </span><a href="tel:+919123456789">+91-9123456789</a>
+              </span> +91-9123456789
             </li>
           </ul>
         </div>
       </div>
 
       <div class="row bottom-bar mt-5-style py-lg-2-style">
-        <div class="col-md-6 text-center-style text-md-start-style">
+        <div class="col-md-6 text-center-style text-md-start">
           <span>COPYRIGHT © Cleany</span>
         </div>
         <div class="col-md-6 text-center-style text-md-end-style">
-          <ul class="footer-policy-links"><li><a href="#">TERM OF USE</a></li><li><a href="#">PRIVACY POLICY</a></li></ul>
+          <a href="#" class="me-2-style">TERM OF USE</a> |
+          <a href="#" class="ms-2-style">PRIVACY POLICY</a>
         </div>
       </div>
-      <div class="row powered-by-zigrow-row"><div class="col-12"><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></div></div>
     </div>
   </footer>
 
@@ -779,7 +796,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="js/script.js?v=2.13.0-home-cleaning-4"></script>
+  <script src="js/script.js"></script>
 
   <script>
     (function() {
@@ -821,22 +838,20 @@
         let msgContainer = form.querySelector('.form-submit-message');
         if (!msgContainer) {
           msgContainer = document.createElement('div');
-          msgContainer.className = 'form-submit-message';
-          msgContainer.setAttribute('role', 'status');
-          msgContainer.setAttribute('aria-live', 'polite');
+          msgContainer.className = 'form-submit-message mt-2-style text-sm';
           form.appendChild(msgContainer);
         }
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const submitBtn = form.querySelector(':scope > button[type="submit"]');
+          const submitBtn = form.querySelector('[type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.dataset._oldText = submitBtn.innerText;
             submitBtn.innerText = 'Submitting...';
           }
-          msgContainer.textContent = '';
-          msgContainer.removeAttribute('data-status');
+          msgContainer.innerText = '';
+          msgContainer.style.color = '';
 
           try {
             const raw = serializeForm(form);
@@ -861,16 +876,16 @@
 
             if (res.ok && (data.ok ?? true)) {
               form.reset();
-              msgContainer.textContent = 'Thanks! Your request has been submitted.';
-              msgContainer.dataset.status = 'success';
+              msgContainer.innerText = 'Thanks! Your request has been submitted.';
+              msgContainer.style.color = '#28a745';
             } else {
-              msgContainer.textContent = `${data.message || 'Failed (HTTP ' + res.status + ')'}`;
-              msgContainer.dataset.status = 'error';
+              msgContainer.innerText = `x ${data.message || 'Failed (HTTP ' + res.status + ')'}`;
+              msgContainer.style.color = '#dc3545';
             }
           } catch (err) {
             console.error(err);
-            msgContainer.textContent = 'Something went wrong. Please try again.';
-            msgContainer.dataset.status = 'error';
+            msgContainer.innerText = 'x Something went wrong. Please try again.';
+            msgContainer.style.color = '#dc3545';
           } finally {
             if (submitBtn) {
               submitBtn.disabled = false;

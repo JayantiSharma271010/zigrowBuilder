@@ -21,11 +21,11 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css?v=20260813" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <a href="#hero" id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+    <a href="#" id="backToTopBtn" class="back-to-top" aria-label="Back to top">
       <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
     </a>
 
@@ -34,26 +34,33 @@
         <div class="row">
           <div class="col-12">
             <div class="cw-logo">
-              <div class="logo-img" data-logo="navbar">
+              <div class="logo-img">
                 <img
                   class="cw-logo__img"
-                  src="assets/images/logo.webp"
+                  src="assets/images/logo.png"
                   alt="Coworking Logo"
                 />
               </div>
+              <h1 class="cw-logo__title" data-logo="navbar">
+                Co Working <br />
+                <span class="cw-logo__subtitle">Space</span>
+              </h1>
             </div>
           </div>
 
           <div class="col-12">
-            <button
-              type="button"
+            <a
+              href="#"
               class="cw-nav-toggle"
               aria-label="Toggle menu"
               aria-controls="heroNav"
               aria-expanded="false"
+              data-icon="menu"
             >
-              <i class="bi bi-list" data-icon="menu" aria-hidden="true"></i>
-            </button>
+              <span class="cw-nav-toggle__bar"></span>
+              <span class="cw-nav-toggle__bar"></span>
+              <span class="cw-nav-toggle__bar"></span>
+            </a>
 
             <nav id="heroNav" class="cw-nav" data-section="hero-nav">
               <ul class="cw-nav__list">
@@ -74,11 +81,15 @@
                 </li>
                 <li class="cw-nav__item">
                   <a
-                    class="cw-nav__link cw-nav__social-link"
-                    href="https://twitter.com"
+                    class="cw-nav__link"
+                    href="#"
                     aria-label="Twitter"
+                    data-icon="twitter"
                   >
-                    <i class="bi bi-twitter" data-icon="twitter"></i>
+                    <i
+                      class="bi bi-twitter cw-nav__icon"
+                      data-icon="twitter"
+                    ></i>
                   </a>
                 </li>
               </ul>
@@ -87,17 +98,16 @@
         </div>
       </div>
     </header>
-    <main>
     <!-- Hero Section -->
     <section id="hero" class="cw-hero" data-section="hero">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-8 cw-hero__col">
             <div class="cw-hero__content">
-              <p class="cw-hero__kicker">
+              <h4 class="cw-hero__kicker">
                 Flexible Workspaces for Modern Teams
-              </p>
-              <h1 class="cw-hero__title">Coworking Space</h1>
+              </h4>
+              <h2 class="cw-hero__title">Coworking Space</h2>
               <p class="cw-hero__desc">
                 Work your way—hot desks, dedicated seating, private cabins, and
                 quiet meeting rooms. Enjoy fast Wi-Fi, print support, and a
@@ -105,17 +115,21 @@
               </p>
 
               <div class="cw-hero__contact">
-                <i class="bi bi-telephone-fill" data-icon="phone"></i>
+                <i
+                  class="bi bi-telephone-fill cw-hero__contact-icon"
+                  data-icon="phone"
+                ></i>
                 <span>+91 9123456789</span>
               </div>
 
-              <div class="cw-hero__actions zg-align-center">
-                <a
-                  class="cw-hero__cta"
-                  href="tel:+919123456789"
-                  data-btn="hero"
-                >Book A Tour</a>
-              </div>
+              <a
+                class="cw-hero__cta"
+                href="tel:+919123456789"
+                data-icon="book-tour"
+                data-btn="hero"
+              >
+                Book A Tour
+              </a>
             </div>
           </div>
         </div>
@@ -125,7 +139,7 @@
     <!-- Creative Minds Section -->
     <section
       id="creative-minds"
-      class="creative-minds section-spaced"
+      class="creative-minds py-6"
       data-section="creative-minds"
     >
       <div class="container">
@@ -146,20 +160,28 @@
 
         <!-- Images Row -->
         <div class="row creative-minds__images-row">
-          <div class="col-12 col-md-6 clonable-card">
-            <div
-              class="creative-minds__image-wrap creative-minds__image-wrap--team"
-              role="img"
-              aria-label="Team working in coworking space"
-            ></div>
+          <div class="col-12 col-md-6">
+            <div class="creative-minds__image-wrap">
+              <div class="creative-minds__image-box">
+                <img
+                  class="creative-minds__img"
+                  src="assets/images/co-working-space-1.webp"
+                  alt="Team working in coworking space"
+                />
+              </div>
+            </div>
           </div>
 
-          <div class="col-12 col-md-6 clonable-card">
-            <div
-              class="creative-minds__image-wrap creative-minds__image-wrap--office"
-              role="img"
-              aria-label="Modern office coworking space"
-            ></div>
+          <div class="col-12 col-md-6">
+            <div class="creative-minds__image-wrap">
+              <div class="creative-minds__image-box">
+                <img
+                  class="creative-minds__img"
+                  src="assets/images/co-working-space-2.webp"
+                  alt="Modern office coworking space"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -179,8 +201,8 @@
                 without distractions.
               </p>
 
-              <div class="facilities__cta-wrap zg-align-center">
-                <a href="#features" class="facilities__btn" data-btn="facilities">Read More</a>
+              <div class="facilities__cta-wrap">
+                <a href="#" class="facilities__btn" data-btn="facilities">Read More</a>
               </div>
             </div>
           </div>
@@ -200,18 +222,18 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features section-spaced" data-section="features">
+    <section id="features" class="features py-6" data-section="features">
       <div class="container">
         <div class="row">
           <!-- Feature Item -->
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-wifi" data-icon="wifi"></i>
                 </div>
               </div>
-              <h3 class="features__title">Free 5G WiFi</h3>
+              <h5 class="features__title">Free 5G WiFi</h5>
               <p class="features__desc">
                 High-speed internet access across the workspace to keep you
                 connected and productive all day.
@@ -219,14 +241,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-tv" data-icon="conference"></i>
                 </div>
               </div>
-              <h3 class="features__title">Conference Hall</h3>
+              <h5 class="features__title">Conference Hall</h5>
               <p class="features__desc">
                 Fully equipped meeting rooms for team discussions,
                 presentations, and client calls.
@@ -234,14 +256,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-utensils" data-icon="kitchen"></i>
                 </div>
               </div>
-              <h3 class="features__title">Kitchen & Bar</h3>
+              <h5 class="features__title">Kitchen & Bar</h5>
               <p class="features__desc">
                 A relaxed kitchen space with refreshments to recharge during
                 long work hours.
@@ -249,14 +271,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-parking" data-icon="parking"></i>
                 </div>
               </div>
-              <h3 class="features__title">Car Parking</h3>
+              <h5 class="features__title">Car Parking</h5>
               <p class="features__desc">
                 Secure and spacious parking facilities available for members and
                 visitors.
@@ -264,14 +286,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-gamepad" data-icon="gaming"></i>
                 </div>
               </div>
-              <h3 class="features__title">Game Zone</h3>
+              <h5 class="features__title">Game Zone</h5>
               <p class="features__desc">
                 A fun breakout zone to relax, refresh your mind, and boost
                 creativity.
@@ -279,14 +301,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-print" data-icon="printer"></i>
                 </div>
               </div>
-              <h3 class="features__title">Office Equipment</h3>
+              <h5 class="features__title">Office Equipment</h5>
               <p class="features__desc">
                 Access to printers, scanners, and office tools whenever you need
                 them.
@@ -294,14 +316,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-coffee" data-icon="coffee"></i>
                 </div>
               </div>
-              <h3 class="features__title">Tea & Coffee</h3>
+              <h5 class="features__title">Tea & Coffee</h5>
               <p class="features__desc">
                 Unlimited tea and coffee to keep your energy levels high
                 throughout the day.
@@ -309,14 +331,14 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-4 col-sm-6 clonable-card">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="features__item">
               <div class="features__icon-wrap">
                 <div class="features__icon">
                   <i class="fas fa-dumbbell" data-icon="fitness"></i>
                 </div>
               </div>
-              <h3 class="features__title">Fitness Center</h3>
+              <h5 class="features__title">Fitness Center</h5>
               <p class="features__desc">
                 On-site fitness facilities to maintain a healthy work-life
                 balance.
@@ -328,38 +350,98 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery section-spaced" data-section="gallery">
+    <section id="gallery" class="gallery py-6" data-section="gallery">
       <div class="container">
         <div class="row g-2">
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--one" role="img" aria-label="Coworking office interior"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-1.webp"
+                    alt="Coworking office interior"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--two" role="img" aria-label="Modern coworking workspace"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-5.webp"
+                    alt="Modern coworking workspace"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--three" role="img" aria-label="Creative office environment"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-3.webp"
+                    alt="Creative office environment"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--four" role="img" aria-label="Shared office space"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-4.webp"
+                    alt="Shared office space"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--five" role="img" aria-label="Collaborative work area"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-2.webp"
+                    alt="Collaborative work area"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
-            <div class="gallery__item gallery__item--six" role="img" aria-label="Office meeting zone"></div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery__item">
+              <div class="gallery__image-wrap">
+                <div class="gallery__image-box">
+                  <img
+                    src="assets/images/co-working-gallery-6.webp"
+                    alt="Office meeting zone"
+                    class="gallery__img"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Membership Section -->
-    <section id="membership" class="membership section-spaced" data-section="membership">
+    <section id="membership" class="membership py-6" data-section="membership">
       <div class="container">
         <!-- Section Heading -->
         <div class="row">
@@ -375,10 +457,10 @@
         <!-- Membership Cards -->
         <div class="row g-4">
           <!-- Card 1 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
+          <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="membership__card">
               <div class="membership__card-inner">
-                <h3 class="membership__plan">Desk</h3>
+                <h4 class="membership__plan">Desk</h4>
 
                 <div class="membership__price">
                   <span class="membership__amount">₹3,750</span>
@@ -393,18 +475,18 @@
                 <div class="membership__features">
                   <ul>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       24/7 Access
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       Free WiFi
                     </li>
                   </ul>
                 </div>
 
-                <div class="membership__cta zg-align-center">
-                  <a href="tel:+919123456789" class="membership__btn" data-btn="membership"
+                <div class="membership__cta">
+                  <a href="#" class="membership__btn" data-btn="membership"
                     >Join Now</a
                   >
                 </div>
@@ -413,10 +495,10 @@
           </div>
 
           <!-- Card 2 (Featured) -->
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
+          <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="membership__card membership__card--featured">
               <div class="membership__card-inner">
-                <h3 class="membership__plan">Virtual</h3>
+                <h4 class="membership__plan">Virtual</h4>
 
                 <div class="membership__price">
                   <span class="membership__amount">₹5,400</span>
@@ -431,26 +513,26 @@
                 <div class="membership__features">
                   <ul>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       24/7 Access
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       Free WiFi
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       Kitchen & Bar
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       All Area Access
                     </li>
                   </ul>
                 </div>
 
-                <div class="membership__cta zg-align-center">
-                  <a href="tel:+919123456789" class="membership__btn" data-btn="membership"
+                <div class="membership__cta">
+                  <a href="#" class="membership__btn" data-btn="membership"
                     >Join Now</a
                   >
                 </div>
@@ -459,10 +541,10 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 clonable-card">
+          <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="membership__card">
               <div class="membership__card-inner">
-                <h3 class="membership__plan">Office</h3>
+                <h4 class="membership__plan">Office</h4>
 
                 <div class="membership__price">
                   <span class="membership__amount">₹3,750</span>
@@ -477,26 +559,26 @@
                 <div class="membership__features">
                   <ul>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       24/7 Access
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       Free WiFi
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       Kitchen & Bar
                     </li>
                     <li>
-                      <span class="membership__feature-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>
+                      <i class="bi bi-check-lg" data-icon="check"></i>
                       All Area Access
                     </li>
                   </ul>
                 </div>
 
-                <div class="membership__cta zg-align-center">
-                  <a href="tel:+919123456789" class="membership__btn" data-btn="membership"
+                <div class="membership__cta">
+                  <a href="#" class="membership__btn" data-btn="membership"
                     >Join Now</a
                   >
                 </div>
@@ -510,13 +592,13 @@
     <!-- testimonial -->
     <section
       id="testimonial"
-      class="testimonial section-spaced"
+      class="testimonial py-6"
       data-section="testimonial"
     >
       <div class="container">
         <!-- Quote Icon -->
-        <div class="row testimonial__quote-row">
-          <div class="col-12 testimonial__quote-col">
+        <div class="row mb-3">
+          <div class="col-12 text-center">
             <div class="testimonial__icon-wrap">
               <div class="testimonial__icon">
                 <i class="fas fa-quote-left" data-icon="quote"></i>
@@ -526,7 +608,7 @@
         </div>
 
         <!-- Testimonial Text -->
-        <div class="row testimonial__text-row">
+        <div class="row mb-4">
           <div class="col-12">
             <p class="testimonial__text">
               Designed for modern professionals, our coworking space offers a
@@ -543,7 +625,7 @@
               <div class="testimonial__author-img-wrap">
                 <div class="testimonial__author-img-box">
                   <img
-                    src="assets/images/testimonial-1.webp"
+                    src="assets/images/testimonial-1.png"
                     alt="Manshi Kumari"
                     class="testimonial__author-img"
                   />
@@ -551,7 +633,7 @@
               </div>
 
               <div class="testimonial__author-info">
-                <p class="testimonial__author-name">Manshi Kumari</p>
+                <h6 class="testimonial__author-name">Manshi Kumari</h6>
                 <span class="testimonial__author-role">Freelancer</span>
               </div>
             </div>
@@ -561,59 +643,51 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="cta section-spaced" data-section="cta">
+    <section id="cta" class="cta py-6" data-section="cta">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="cta__content">
+            <div class="cta__content text-center">
               <!-- Logo -->
               <div class="cta__logo-wrap">
-                <div class="cta__logo-box" data-logo="cta">
+                <div class="cta__logo-box">
                   <img
-                    src="assets/images/logo.webp"
+                    src="assets/images/logo.png"
                     alt="Co-Working Space Logo"
                     class="cta__logo"
+                    data-icon="brand-logo"
                   />
                 </div>
               </div>
 
               <!-- Heading -->
-              <h2 class="cta__title">
+              <h3 class="cta__title">
                 Co-Working <br />
                 <span class="cta__subtitle">Space</span>
-              </h2>
+              </h3>
 
               <!-- CTA Button -->
-              <div class="cta__btn-wrap zg-align-center">
-                <a href="tel:+919123456789" class="cta__btn" data-btn="cta">Become A Member</a>
+              <div class="cta__btn-wrap">
+                <a href="#" class="cta__btn" data-btn="cta">Become A Member</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
 
     <!-- Footer Section -->
     <footer id="footer" class="footer" data-section="footer">
-      <div class="container footer__main">
+      <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="footer__content">
               <p class="footer__text">
-                Copyright © 2025 All Rights Reserved
+                Copyright © 2025 All Right Reserved | Powered by Zigrow
               </p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer__attribution-row">
-        <a
-          class="footer__attribution-link"
-          href="https://zigrow.com"
-          target="_blank"
-          rel="nofollow sponsored noopener noreferrer"
-        >Powered by Zigrow</a>
       </div>
     </footer>
 
@@ -625,6 +699,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js?v=20260813"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

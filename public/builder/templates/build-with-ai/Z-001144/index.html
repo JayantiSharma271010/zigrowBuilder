@@ -1,0 +1,4149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aanaya ac service  - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #6B7280;
+      --border-radius-btn: 14px;
+      --box-radius: 12px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #3A86FF;
+      --secondary-colors: #1A1A1A;
+      --territory-colors: #FFBE0B;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 14px 28px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 16px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 18px;
+      --fs-h3-base: 44px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 44px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #1A1A1A ;
+      font-family: Inter;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Oswald ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #1A1A1A;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+   <header id="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold " href="#">
+          Aanaya ac service 
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav">
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>
+  .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color: var(--primary-colors);
+  }
+
+  .nav-link {
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-colors);
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+</style>
+   <!-- Bold -->
+<section class=" hero-zigrow-section_15" id="hero" data-section="hero">
+  <div class="container-fluid h-custom-100 px-custom-0">
+    <div class="row g-0 align-custom-stretch min-vh-100 position-relative">
+
+      <!-- LEFT SECTION -->
+      <div class="col-md-6 bg-custom-dark text-custom-white p-custom-0">
+        <div class="content-area d-flex flex-column justify-custom-center h-custom-100 ">
+          <p class="text-custom-uppercase small-custom letter-spacing mb-custom-3 text-custom-secondary-emphasis ">Cool Comfort, Guaranteed</p>
+          <h1 class="fw-custom-bold hero-heading mb-custom-4 lh-custom-sm">Expert AC Services You Can Trust</h1>
+          <a href="#" class="primary-btn   w-auto align-self-md-start align-custom-center">Explore Now</a>
+        </div>
+      </div>
+
+   <!-- RIGHT SECTION -->
+<div class="col-md-6 image-area position-relative">
+  <div class="col-12 img-wrapper-center">
+    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBlb3BsZXxlbnwwfHx8fDE3NzA0MDgwMzh8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Main Image" class="img-fluid w-custom-100 h-custom-100 object-fit-cover" />
+    
+  </div>
+  <!-- 📸 Main Image Credit -->
+<span class="img-credit">
+  Photo by 
+  <a 
+    href="https://unsplash.com/@thisisengineering?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    ThisisEngineering
+  </a> on 
+  <a 
+    href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Unsplash
+  </a>
+</span>
+
+</div>
+
+
+      <!-- 🟢 VIDEO THUMBNAIL -->
+     
+
+<div class="video-thumbnail shadow-lg ">
+
+  <div class="position-relative text-custom-center">
+
+
+  <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzcwMzc1Mzg2fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Video Thumbnail" class="img-fluid rounded-4 border border-white border-3">
+
+  <!-- 📸 Video Thumbnail Credit -->
+<span class="img-credit">
+  Photo by 
+  <a 
+    href="https://unsplash.com/@sunday_digital?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Nastuh Abootalebi
+  </a> on 
+  <a 
+    href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Unsplash
+  </a>
+</span>
+  <!-- ▶️ Play button overlay (ADD THIS) -->
+    <a class="play-button" href="#" aria-label="Play video" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    </a>
+
+    </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-zigrow-section_15 {
+  background-color: #0f0f0f;
+  color: white;
+
+
+ .row {
+  min-height: 100vh;
+}
+
+.hero-heading{
+  font-size: 3.4rem;
+  text-transform: capitalize;
+}
+.content-area {
+  padding: 80px 60px 80px 117px;
+  background-color: #0f0f0f;
+}
+
+.content-area h1 {
+  line-height: 1.2;
+}
+
+.letter-spacing {
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #bbbbbb;
+}
+
+.btn.transition {
+  transition: all 0.3s ease;
+}
+
+.btn.transition:hover {
+  transform: translateY(-2px);
+}
+
+.image-area {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.image-area img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* 📽️ Video Thumbnail */
+/* 📽️ Square video thumbnail */
+.video-thumbnail {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  width: 280px;              /* desktop size */
+  aspect-ratio: 1 / 1;       /* 👈 perfect square */
+  z-index: 10;
+  /* border-radius: 16px;        keep rounded look (optional) */
+  overflow: hidden;           /* clip image edges */
+  transition: transform 0.3s ease;
+  /* border: 3px solid #fff;     move border to container */
+}
+
+/* ▶️ Play button */
+.video-thumbnail .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;                 /* credit text se upar rahe */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+  outline: none;
+}
+
+.video-thumbnail .play-button:hover,
+.video-thumbnail .play-button:focus {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.video-thumbnail .play-button svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  margin-left: 2px; /* triangle ko thoda center feel dene ke liye */
+}
+
+/* optional: small-custom screens */
+@media (max-width: 768px) {
+  .video-thumbnail .play-button {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* fill the square */
+.video-thumbnail .position-relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* no distortion */
+  /* display: block; */
+  /* remove border classes on <img> or override: */
+  border: 0 ;
+  border-radius: 0 ;
+}
+
+/* credit position inside square */
+.video-thumbnail .img-credit {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 10px;
+}
+
+/* hover */
+.video-thumbnail:hover {
+  transform: translateX(-50%) scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .hero-heading{
+    font-size: 2rem;
+  }
+}
+
+/* 📱 mobile size */
+@media (max-width: 768px) {
+  .hero-heading{
+    font-size: 1.8rem;
+  }
+  .video-thumbnail {
+    width: 240px;
+    aspect-ratio: 1 / 1;
+    bottom: 20px;
+  }
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    padding: 50px 25px;
+    text-align: center;
+  }
+
+  .btn.transition {
+    align-self: center ;
+  }
+
+
+}}
+
+</style>   <!-- BOLD -->
+
+<section class="about-zigrow-section_5 section-padding" id="about" data-section="about">
+  <div class="container">
+    <div class="row g-xl-5 align-custom-center">
+
+      <!-- ▸▸ Media Grid -->
+      <div class="col-12 col-xl-6 order-2 order-xl-1">
+        <div class="media-grid-modern">
+          
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1529119368496-2dfda6ec2804?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHN0cmF0ZWd5fGVufDB8fHx8MTc3MDQwODAzOXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 1" />
+
+              
+                <span class="play-overlay"><i></i></span>
+                
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@startaeteam?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Startaê Team
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBlb3BsZXxlbnwwfHx8fDE3NzA0MDgwMzh8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 2" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@thisisengineering?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      ThisisEngineering
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzcwMzc1Mzg2fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 3" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@sunday_digital?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Nastuh Abootalebi
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1716703435551-4326ab111ae2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHx3b3Jrc3BhY2UlMjBkZXNpZ258ZW58MHx8fHwxNzcwNDA4MDM4fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 4" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@musemindagency?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Musemind UX Agency
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+
+        </div>
+      </div>
+
+      <!-- ▸▸ Content Block -->
+      <div class="col-12 col-xl-6 content-box order-1 order-xl-2">
+        <div class="content-block">
+          <p class="label">Our Goals</p>
+          <h2 class="section-heading mb-custom-4 main-heading">
+            About Aanaya AC Service
+          </h2>
+          <p class=" para-muted mb-custom-4 font-body">
+            At Aanaya AC Service, we specialize in reliable AC maintenance, repair, installation, and uninstallation. Our skilled technicians ensure your comfort with prompt and professional service. We pride ourselves on customer satisfaction and transparent pricing. Trust us to keep your air conditioning system running smoothly all year round! Our trained professionals handle all AC issues with expertise and care, ensuring quality service every time.
+          </p>
+
+          <ul class=" feature-bullets mb-custom-5">
+              
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Our trained professionals handle all AC issues with expertise and care, ensuring quality service every time.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  We understand the urgency of AC problems. Our team is ready to assist you promptly, minimizing downtime.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Enjoy competitive rates without compromising on quality. We provide transparent quotes with no hidden fees.
+                </li>
+                
+                  </ul>
+
+         <a href="#" class="primary-btn">Learn more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .about-zigrow-section_5 {
+    --clr-primary: var(--primary-colors);
+    --clr-accent: var(--territory-colors);
+    --clr-bg: #ffffff;
+    --clr-muted: #6c757d;
+
+    background: var(--clr-bg);
+    overflow: hidden;
+    position: relative;
+
+
+    .label {
+      font-size: 0.75rem;
+      margin-bottom: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-primary);
+      font-weight: 600;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .section-heading::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary));
+      display: block;
+      margin-top: 1rem;
+    border-radius: var(--box-radius);
+    }
+
+    /* Media grid */
+    .media-grid-modern {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    .media-card {
+      position: relative;
+      aspect-ratio: 1 / 1;
+   border-radius: var(--box-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-section);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .media-card:hover {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    figure{
+      margin: 0 ;
+    }
+    /* Play icon overlay */
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-overlay i {
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 20px solid #fff;
+      transform: translateX(2px);
+    }
+
+    /* Features */
+    .feature-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+  /* Features */
+.feature-bullets li {
+  display: flex;
+  align-items: center;
+  /* font-weight: 500; */
+  color: var(--para-muted);
+  line-height: var(--lh-body);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.feature-bullets li:hover {
+  color: var(--clr-primary);
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary));
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkmark::after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: block;
+  animation: check-appear 0.4s ease;
+}
+
+.checkmark:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Animation for tick */
+@keyframes check-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+ @media (max-width: 425px) {  .media-grid-modern {
+        grid-template-columns: 1fr;
+      }}
+ @media (max-width: 1024px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }}
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }
+    
+
+      .section-heading::after {
+        margin-inline: auto;
+      }
+
+      .content-block {
+        text-align: center;
+      }
+
+      .feature-bullets li {
+        justify-content: center;
+      }
+    }
+  }
+</style>   <!-- ====================== service-zigrow-section_14 : START ====================== -->
+
+<section id="services" data-section="services" class="section-padding service-zigrow-section_14">
+  <div class="container px-custom-3 px-md-custom-4">
+
+    
+
+    <!-- Header -->
+    <div class="row align-custom-center g-4 mb-custom-3 mb-md-5">
+      <div class="col-lg-8">
+        <div class="d-inline-flex align-custom-center gap-2 badge-chip mb-custom-3">
+          <span><span>Services</span></span>
+        </div>
+
+        <h2 class="mb-custom-2 main-heading">
+          <span>Our AC Services</span>
+        </h2>
+
+        <p class="font-subheading para-muted mb-custom-0">
+          <span>Expert solutions for all your air conditioning needs, ensuring comfort and efficiency in your space.</span>
+        </p>
+      </div>
+
+      <div class="col-lg-4 text-lg-end">
+        <a href="#!" class="primary-btn">
+          <span>Explore More</span> 
+          <span class="ms-custom-2 arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- =================== Tabs Wrapper (Builder Compatible) =================== -->
+    <div data-component-tabs id="services-tabs">
+      <!-- Nav Tabs -->
+      <nav>
+        <div class="nav nav-tabs tabs-row flex-wrap align-custom-center gap-3 mb-custom-4" role="tablist">
+          
+            <button
+              class="nav-link tab-chip active"
+              id="services-tab-0"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-0"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-0"
+              aria-selected="true"
+            >
+              <span class="tab-dot">
+                <i class="bi-tools"></i>
+              </span>
+              <span class="tab-text">
+                <span>AC Repair</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-1"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-1"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-1"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-calendar-check"></i>
+              </span>
+              <span class="tab-text">
+                <span>Maintenance Plans</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-2"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-2"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-2"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-house-door"></i>
+              </span>
+              <span class="tab-text">
+                <span>Installation Services</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-3"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-3"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-3"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-trash"></i>
+              </span>
+              <span class="tab-text">
+                <span>Uninstallation Services</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-4"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-4"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-4"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-alarm"></i>
+              </span>
+              <span class="tab-text">
+                <span>Emergency Services</span>
+              </span>
+            </button>
+          
+        </div>
+      </nav>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        
+          <div
+            class="tab-pane fade show active"
+            id="services-pane-0"
+            role="tabpanel"
+            aria-labelledby="services-tab-0"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>repair</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>AC Repair</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Quick and reliable AC repair services to restore your system&#39;s functionality. Enjoy cool air and peace of mind with our expert technicians.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">repair</span>
+                      
+                        <span class="badge tag-chip">cooling</span>
+                      
+                        <span class="badge tag-chip">expert</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1765020553734-2c050ddb9494?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjb25zdWx0aW5nJTIwc2VydmljZXN8ZW58MHx8fHwxNzcwMzg4OTQyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="AC Repair"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@wafiqraza?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Wafiq Raza</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-1"
+            role="tabpanel"
+            aria-labelledby="services-tab-1"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>maintenance</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Maintenance Plans</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Regular maintenance plans to keep your AC running smoothly. Prevent breakdowns and save on energy costs with our tailored services.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">maintenance</span>
+                      
+                        <span class="badge tag-chip">savings</span>
+                      
+                        <span class="badge tag-chip">reliable</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1649478680984-01586ce84ac0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NzAzNTcwMDN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Maintenance Plans"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@alphabag?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Alphabag</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-2"
+            role="tabpanel"
+            aria-labelledby="services-tab-2"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>installation</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Installation Services</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Professional installation of new AC units to ensure optimal performance. Trust our team for a seamless setup that meets your needs.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">installation</span>
+                      
+                        <span class="badge tag-chip">new</span>
+                      
+                        <span class="badge tag-chip">professional</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1768839721776-038d3070721e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhZHZpc29yeXxlbnwwfHx8fDE3NzA0MDgwNDB8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Installation Services"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@sasun1990?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Sasun Bughdaryan</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-3"
+            role="tabpanel"
+            aria-labelledby="services-tab-3"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>uninstallation</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Uninstallation Services</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Safe and efficient uninstallation of old AC units. We handle the heavy lifting, ensuring a hassle-free experience for you.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">uninstallation</span>
+                      
+                        <span class="badge tag-chip">safe</span>
+                      
+                        <span class="badge tag-chip">hassle-free</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1687862528147-0ecb1aa4b81d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBzdHJhdGVnaWVzfGVufDB8fHx8MTc3MDQwODA0MHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Uninstallation Services"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@pockethustle?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">TheMarketingHustle.com</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-4"
+            role="tabpanel"
+            aria-labelledby="services-tab-4"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>emergency</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Emergency Services</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>24/7 emergency AC services to address urgent issues. Count on us to restore comfort in your home or office at any hour.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">emergency</span>
+                      
+                        <span class="badge tag-chip">24/7</span>
+                      
+                        <span class="badge tag-chip">fast</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc3MDQwODA0MHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Emergency Services"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@imaginebuddy?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Imagine Buddy</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+    <!-- =================== /Tabs Wrapper =================== -->
+
+  </div>
+</section>
+<!-- ====================== service-zigrow-section_14 : END ====================== -->
+
+
+<style>
+  /* =============== White Theme – Modern, crisp, interactive =============== */
+  .service-zigrow-section_14 {
+    background: #ffffff;
+  }
+
+  .service-zigrow-section_14 .title-oversized {
+    letter-spacing: -.5px;
+  }
+
+  /* badge at top */
+  .service-zigrow-section_14 .badge-chip {
+    padding: .4rem .75rem;
+    border: 1px solid #e8ebf2;
+      border-radius: var(--box-radius);
+    background: #fff;
+ box-shadow: var(--shadow-section);
+    color: #111;
+    font-weight: 600;
+    font-size: .85rem;
+  }
+
+  .service-zigrow-section_14 .badge-chip .chip-icon {
+    font-size: 1rem;
+    line-height: 1
+  }
+
+
+
+ 
+  .service-zigrow-section_14 .primary-btn:hover .arrow {
+    transform: translateX(3px);
+  }
+  .service-zigrow-section_14 .card-title {
+    color: var(--secondary-colors);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+  }
+  .service-zigrow-section_14 .card-desc {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+
+
+  /* tabs row */
+  .service-zigrow-section_14 .tabs-row {
+    border-bottom: 1px solid #eef1f6;
+  }
+
+  .service-zigrow-section_14 .tab-chip {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .75rem 1rem;
+       border-radius: var(--box-radius);
+    background: #fff;
+    border: 1px solid #e9eef4;
+    color: #111;
+    text-decoration: none;
+   box-shadow: var(--shadow-section);
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+  }
+
+  .service-zigrow-section_14 .tab-chip .tab-dot {
+ 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: .8;
+  }
+
+  .service-zigrow-section_14 .tab-chip .tab-text {
+    font-weight: 700;
+    font-size: var(--fs-body);
+    color: var(--para-muted);
+    line-height: var(--lh-body);
+  }
+
+  .service-zigrow-section_14 .tab-chip:hover {
+    transform: translateY(-2px);
+    border-color: #dfe6ef;
+  }
+
+  .service-zigrow-section_14 .tab-chip.active {
+    background: #ffffff;
+    border-color: var(--primary-colors);
+
+    color: var(--primary-colors) ;
+    .tab-text{
+
+        color: var(--primary-colors) ;
+    }
+  }
+
+  /* feature area */
+  .service-zigrow-section_14 .feature-wrap {
+    background: #ffffff;
+    border: 1px solid #e9edf4;
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section-hover);
+    overflow: hidden;
+  }
+
+  .service-zigrow-section_14 .mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    color: #111;
+    font-size: .85rem;
+    background: #fff;
+    border: 1px solid #e9edf4;
+    border-radius: var(--box-radius);
+    padding: .3rem .65rem;
+  }
+
+  .service-zigrow-section_14 .mini-badge .mini-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #111;
+    display: inline-block;
+  }
+
+  /* CTA button */
+  .service-zigrow-section_14 .cta-btn {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+    box-shadow: var(--shadow-section);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .service-zigrow-section_14 .cta-btn:hover {
+    transform: translateY(-2px);
+     box-shadow: var(--shadow-section-hover);
+  }
+
+  .service-zigrow-section_14 .cta-btn .cta-ico {
+    display: inline-block;
+    transform: translateY(1px);
+  }
+
+  /* right media card with grid overlay */
+  .service-zigrow-section_14 .feature-media {
+    background: linear-gradient(180deg, #fafbff, #ffffff);
+  }
+
+  .service-zigrow-section_14 .media-card {
+    position: relative;
+    border-radius: var(--box-radius);
+    overflow: hidden;
+    border: 1px solid #e9edf4;
+     box-shadow: var(--shadow-section);
+    background: #fff;
+  }
+
+  .service-zigrow-section_14 .media-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    filter: saturate(1.02) contrast(1.03);
+    transition: transform .6s ease;
+  }
+
+  .service-zigrow-section_14 .media-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .service-zigrow-section_14 .media-card .grid-line {
+    position: absolute;
+    background: rgba(255, 255, 255, .85);
+    mix-blend: soft-light;
+  }
+
+  .service-zigrow-section_14 .media-card .v1 {
+    top: 0;
+    bottom: 0;
+    left: 33.333%;
+    width: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .v2 {
+    top: 0;
+    bottom: 0;
+    left: 66.666%;
+    width: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .h1 {
+    left: 0;
+    right: 0;
+    top: 33.333%;
+    height: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .h2 {
+    left: 0;
+    right: 0;
+    top: 66.666%;
+    height: 2px;
+  }
+
+  /* small-custom tweaks */
+  @media (max-width: 991.98px) {
+    .service-zigrow-section_14 .feature-media {
+      padding-top: 0;
+      padding-bottom: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Server se aayi images ko global bana do
+  window.serviceImgUrls = [{"imageUrl":"https://images.unsplash.com/photo-1765020553734-2c050ddb9494?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjb25zdWx0aW5nJTIwc2VydmljZXN8ZW58MHx8fHwxNzcwMzg4OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Wafiq Raza","photographerUrl":"https://unsplash.com/@wafiqraza","photographerUsername":"wafiqraza"},{"imageUrl":"https://images.unsplash.com/photo-1649478680984-01586ce84ac0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NzAzNTcwMDN8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Alphabag","photographerUrl":"https://unsplash.com/@alphabag","photographerUsername":"alphabag"},{"imageUrl":"https://images.unsplash.com/photo-1768839721776-038d3070721e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhZHZpc29yeXxlbnwwfHx8fDE3NzA0MDgwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Sasun Bughdaryan","photographerUrl":"https://unsplash.com/@sasun1990","photographerUsername":"sasun1990"},{"imageUrl":"https://images.unsplash.com/photo-1687862528147-0ecb1aa4b81d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYXJrZXRpbmclMjBzdHJhdGVnaWVzfGVufDB8fHx8MTc3MDQwODA0MHww&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"TheMarketingHustle.com","photographerUrl":"https://unsplash.com/@pockethustle","photographerUsername":"pockethustle"},{"imageUrl":"https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc3MDQwODA0MHww&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Imagine Buddy","photographerUrl":"https://unsplash.com/@imaginebuddy","photographerUsername":"imaginebuddy"},{"imageUrl":"https://images.unsplash.com/photo-1765020553734-2c050ddb9494?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjb25zdWx0aW5nJTIwc2VydmljZXN8ZW58MHx8fHwxNzcwMzg4OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Wafiq Raza","photographerUrl":"https://unsplash.com/@wafiqraza","photographerUsername":"wafiqraza"}];
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const data = [{"title":"AC Repair","paragraph":"Quick and reliable AC repair services to restore your system's functionality. Enjoy cool air and peace of mind with our expert technicians.","button":"Learn More","tags":["repair","cooling","expert"],"icon":"bi-tools"},{"title":"Maintenance Plans","paragraph":"Regular maintenance plans to keep your AC running smoothly. Prevent breakdowns and save on energy costs with our tailored services.","button":"Learn More","tags":["maintenance","savings","reliable"],"icon":"bi-calendar-check"},{"title":"Installation Services","paragraph":"Professional installation of new AC units to ensure optimal performance. Trust our team for a seamless setup that meets your needs.","button":"Learn More","tags":["installation","new","professional"],"icon":"bi-house-door"},{"title":"Uninstallation Services","paragraph":"Safe and efficient uninstallation of old AC units. We handle the heavy lifting, ensuring a hassle-free experience for you.","button":"Learn More","tags":["uninstallation","safe","hassle-free"],"icon":"bi-trash"},{"title":"Emergency Services","paragraph":"24/7 emergency AC services to address urgent issues. Count on us to restore comfort in your home or office at any hour.","button":"Learn More","tags":["emergency","24/7","fast"],"icon":"bi-alarm"}];
+
+  function getImg(i) {
+    const arr = Array.isArray(window.serviceImgUrls) ? window.serviceImgUrls : [];
+    const item = arr[i];
+    return (item && item.imageUrl) ? item.imageUrl : "";
+  }
+
+  const tabs = document.querySelectorAll(".service-zigrow-section_14 .tab-chip");
+  const title = document.getElementById("f-title").querySelector("span");
+  const para = document.getElementById("f-paragraph").querySelector("span");
+  const btn = document.getElementById("f-btn").querySelector("span");
+  const img = document.getElementById("f-img");
+  const tags = document.getElementById("f-tags");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const idx = parseInt(tab.getAttribute("data-idx"));
+      const c = data[idx];
+      if (!c) return;
+
+      title.textContent = c.title || "";
+      para.textContent = c.paragraph || "";
+      btn.textContent = c.button || "Learn More";
+
+      tags.innerHTML = "";
+      if (c.tags?.length) {
+        c.tags.forEach(t => {
+          const sp = document.createElement("span");
+          sp.className = "badge tag-chip";
+          sp.textContent = t;
+          tags.appendChild(sp);
+        });
+      }
+
+      img.src = getImg(idx);
+      img.alt = c.title || "Service";
+    });
+  });
+});
+</script>
+   <!-- 🤍 Our Clients Grid -->
+<section class="logo-zigrow-section_5 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- Heading -->
+    <h2 class="fw-custom-bold display-custom-5 mb-custom-3 main-heading">Our Dear Clients</h2>
+    <p class="lead-custom para-muted font-subheading mb-custom-5 px-lg-custom-5 col-md-8 mx-custom-auto">
+     A showcase of trusted partners and brands we've collaborated with—highlighting the strength, diversity, and credibility behind our network.
+    </p>
+
+    <!-- Logo table -->
+    <div class="row gx-0 gy-0 border-grid">
+
+      <!-- Repeat for 8 logos -->
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  /* SECTION WRAP */
+.logo-zigrow-section_5{
+  background:#fff;
+}
+
+/* GRID: only inner lines, no outer border */
+.logo-zigrow-section_5 .border-grid .cell{ position: relative; }
+.logo-zigrow-section_5 .border-grid .cell::before,
+.logo-zigrow-section_5 .border-grid .cell::after{
+  content:"";
+  position:absolute;
+  background: var(--grid-line, #e8e9ee); /* subtle line */
+}
+
+/* draw TOP and LEFT separators on every cell */
+.logo-zigrow-section_5 .border-grid .cell::before{ /* top line */
+  height:1px; left:0; right:0; top:0;
+}
+.logo-zigrow-section_5 .border-grid .cell::after{  /* left line */
+  width:1px; top:0; bottom:0; left:0;
+}
+
+/* ≤ LG (mobile/tablet) => 2 columns (col-6) — hide outer edges */
+@media (max-width: 991.98px){
+  /* first row (items 1–2): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+2)::before{ display:none; }
+  /* first column in each row (1,3,5,7): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(2n+1)::after{ display:none; }
+}
+
+/* ≥ LG (desktop) => 4 columns (col-lg-3) — hide outer edges */
+@media (min-width: 992px){
+  /* first row (items 1–4): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+4)::before{ display:none; }
+  /* first column in each row (1,5): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(4n+1)::after{ display:none; }
+}
+
+/* LOGO visuals */
+.logo-zigrow-section_5 .logo{
+  max-width:170px; width:100%; object-fit:contain;
+  filter:grayscale(100%) opacity(.8);
+  transition: filter .3s ease;
+}
+.logo-zigrow-section_5 .logo:hover{ filter:grayscale(0%); }
+
+/* small-custom screens logo size */
+@media (max-width:575.98px){
+  .logo-zigrow-section_5 .logo{ max-width:140px; }
+}
+
+</style>
+   <!-- Full-page background wrapper -->
+<section class=" section-padding product-zigrow-section_1" id="products" data-section="products">
+    <div class="container">
+        <!-- White rounded card -->
+        <div class="featured-products p-custom-4 p-md-custom-5">
+
+            <!-- Header -->
+            <div class="d-flex justify-custom-between align-custom-center mb-custom-4 flex-wrap gap-3">
+                <div>
+                    <h5 class="fw-custom-bold mb-custom-1" style="color: var(--secondary-colors);">
+                        Our AC Services
+                    </h5>
+                    <p class="para-muted mb-custom-0 ">
+                        Expert solutions for all your AC needs
+                    </p>
+                </div>
+                <a href="#"
+           class="primary-btn d-inline-flex align-custom-center gap-2">
+          <i class="bi bi-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="product-card position-relative overflow-hidden">
+                        
+                            <div class="position-relative img-wrapper-center">
+                                <img src="https://images.unsplash.com/photo-1492540747731-d05a66dc2461?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHRvb2xzfGVufDB8fHx8MTc3MDM1NzAwNHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                                    class="img-fluid w-custom-100 h-custom-100 object-cover" alt="Athletic Shoe">
+
+                                
+                                    <span class="img-credit">
+                                        Photo by
+                                         <a href="https://unsplash.com/@mikael_k?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                                            Mikael Kristenson
+                                        </a>
+                                        on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                                    </span>
+                                    
+                            </div>
+
+
+                            <div class="card-overlay p-custom-3">
+                                <h6 class="fw-custom-semibold mb-custom-1">
+                                    AC Installation Services
+                                </h6>
+                                <p class="para-muted font-body-sm mb-custom-1">
+                                    Professional installation for optimal cooling performance and efficiency.
+                                </p>
+                                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+                            </div>
+                    </div>
+
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="product-card position-relative overflow-hidden">
+                        
+                            <div class="position-relative img-wrapper-center">
+                                <img src="https://images.unsplash.com/photo-1765020553552-6286dde23660?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjByZXNvdXJjZXN8ZW58MHx8fHwxNzcwNDA4MDQxfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                                    class="img-fluid w-custom-100 h-custom-100 object-cover" alt="Athletic Shoe">
+
+                                
+                                    <span class="img-credit">
+                                        Photo by
+                                       <a href="https://unsplash.com/@wafiqraza?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                                            Wafiq Raza
+                                        </a>
+                                        on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                                    </span>
+                                    
+                            </div>
+
+
+                            <div class="card-overlay p-custom-3">
+                                <h6 class="fw-custom-semibold mb-custom-1">
+                                    AC Repair Services
+                                </h6>
+                                <p class="para-muted font-body-sm mb-custom-1">
+                                    Fast and reliable repairs to keep your AC running smoothly.
+                                </p>
+                                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="product-card position-relative overflow-hidden">
+                        
+                            <div class="position-relative img-wrapper-center">
+                                <img src="https://images.unsplash.com/photo-1762320723943-527ff68405c3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxzZXJ2aWNlJTIwcGFja2FnZXN8ZW58MHx8fHwxNzcwNDA4MDQwfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                                    class="img-fluid w-custom-100 h-custom-100 object-cover" alt="Athletic Shoe">
+
+                                
+                                    <span class="img-credit">
+                                        Photo by
+                                        <a href="https://unsplash.com/@jaym30?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                                            Josh Marty
+                                        </a>
+                                        on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                                    </span>
+                                    
+                            </div>
+
+                            <div class="card-overlay p-custom-3">
+                                <h6 class="fw-custom-semibold mb-custom-1">
+                                    AC Maintenance Plans
+                                </h6>
+                                <p class="para-muted font-body-sm mb-custom-1">
+                                    Regular maintenance to extend the life of your AC unit.
+                                </p>
+                                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .product-zigrow-section_1 {
+        background: #fafafa;
+
+
+        .featured-products {
+            background-color: #ffffff;
+           border-radius: var(--box-radius);
+            box-shadow: var(--shadow-section);
+        }
+
+        .product-card {
+            height: 100%;
+         border-radius: var(--box-radius);
+            background-color: #f9f9f9;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+           border-radius: var(--box-radius);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+        border-radius: var(--box-radius);
+            margin: 1rem;
+           box-shadow: var(--shadow-section);
+        }
+
+
+        .featured-products {
+            background-color: #f8f9fb;
+            border-radius: var(--box-radius);
+        }
+
+        .product-card {
+            background: #fff;
+             border-radius: var(--box-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            h6 {
+                color: var(--primary-colors);
+            }
+
+            img {
+                aspect-ratio: 1/1 ;
+            }
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+               box-shadow: var(--shadow-section-hover);
+        }
+    }
+</style>   <!-- Travel-Driven Shipping Section -->
+<!-- Why Choose Us (same grid as Travel-Driven Shipping) -->
+<section class="whyChooseUs-zigrow-section_7  section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <div class="row align-custom-center gy-5">
+      
+      <!-- ▸ Left column: heading, copy, buttons -->
+      <div class="col-lg-4">
+        <div class="text-custom-start">
+          <span class="tag">Aanaya ac service </span>   <!-- keep style; text is up to you -->
+          
+          <h2 class="main-heading mt-custom-3 ">Why Choose Us</h2>
+          <p class="section-subtitle fw-custom-normal mt-custom-2 ">Reliable AC services for your comfort and peace of mind.</p>
+          <p class="section-description mt-custom-3 ">We prioritize your satisfaction with top-notch AC repair and maintenance services tailored to your needs.</p>
+
+         
+        </div>
+      </div>
+
+      <div class="col-lg-1 d-lg-block "><span class="d-none"></span></div> <!-- spacer stays -->
+
+      <!-- ▸ Right column: feature cards -->
+      <div class="col-lg-7">
+        <div class="row g-4">
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <h5 class="feature-title">Expert Technicians</h5>
+                <p class="feature-text">Our skilled technicians are trained to handle all AC brands, ensuring high-quality repair and maintenance services that you can trust.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-clock"></i>
+                </div>
+                <h5 class="feature-title">Timely Service</h5>
+                <p class="feature-text">We understand the importance of your time, offering prompt service to get your AC up and running without unnecessary delays.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <h5 class="feature-title">Guaranteed Satisfaction</h5>
+                <p class="feature-text">We stand by our work with a satisfaction guarantee, ensuring you receive the best service and results every time.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-currency-dollar"></i>
+                </div>
+                <h5 class="feature-title">Affordable Pricing</h5>
+                <p class="feature-text">Our competitive pricing ensures you receive top-quality service without breaking the bank, making AC maintenance accessible for everyone.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>.whyChooseUs-zigrow-section_7 {
+  background-color: #ffffff;
+
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #444;
+  background: #f5f5f5;
+  padding: 6px 14px;
+ border-radius: var(--box-radius);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+ color: var(--lead-custom-color-mute);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin-bottom: 8px;
+
+}
+
+.section-description {
+  font-size: var(--fs-body);
+   color: var(--para-muted);
+  max-width: 90%;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+ border-radius: var(--box-radius);
+  padding: 25px 20px;
+  box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--lead-custom-color-mute);
+  margin-bottom: 6px;
+}
+
+.feature-text {
+  font-size: var(--fs-body-sm);
+   color: var(--para-muted);
+  line-height: 1.45;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 767.98px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}}
+</style>   
+<section class=" team-zigrow-section_2 section-padding" id="team" data-section="team">
+  <div class="container">
+    <!-- Title -->
+    <div class="text-custom-center mb-custom-5">
+      <small class="section-subtitle text-custom-uppercase fw-custom-semibold">Our Team</small>
+      <h2 class="fw-custom-bold display-custom-6 mt-custom-2  main-heading">   Meet Our Team</h2>
+      <p class="para-muted mt-custom-3  col-md-8 mx-custom-auto font-subheading">
+   Our team is committed to providing exceptional AC service and repair. With expertise and a friendly approach, we ensure your comfort is our priority. 
+      </p>
+    </div>
+
+    <!-- Team Cards -->
+    <div class="row g-4">
+      <!-- Member 1 -->
+      <div class="col-md-4">
+        <div class="team-card text-custom-center p-custom-3">
+          <img   src="https://i.postimg.cc/Kv4g4kN0/1.png" class="team-img mb-custom-3" alt="Ahmed Kamal">
+          <h6 class="fw-custom-bold mb-custom-0  font-body-sm"> John Smith</h6>
+          <p class="para-muted font-body mb-custom-0 ">Service Technician</p>
+          
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-md-4">
+        <div class="team-card text-custom-center p-custom-3">
+          <img   src="https://i.postimg.cc/fWqV4WNm/10.png" class="team-img mb-custom-3" alt="Mona Zaghloul">
+          <h6 class="fw-custom-bold font-body-sm mb-custom-0 "> Emily Johnson</h6>
+          <p class="para-muted font-body mb-custom-0 ">Customer Support</p>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-md-4">
+        <div class="team-card text-custom-center p-custom-3">
+          <img   src="https://i.postimg.cc/gk5Lhztm/2.png" class="team-img mb-custom-3" alt="Ali Anoer">
+           <h6 class="fw-custom-bold font-body-sm mb-custom-0 "> Michael Brown</h6>
+          <p class="para-muted font-body mb-custom-0 ">Installation Expert</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-zigrow-section_2 {
+    background-color: var(--theme-bg);
+  
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .team-card {
+    background-color: #fff;
+      border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section);
+    transition: all 0.3s ease;
+    h6{
+      color: var(--secondary-colors);
+    }
+  }
+
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-section-hover);
+  }
+
+  .team-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+         border-radius: var(--box-radius);
+    transition: 0.3s ease;
+  }
+
+  .team-card:hover .team-img {
+    filter: brightness(1.05);
+  }
+
+  h2 {
+    color: var(--secondary-colors);
+  }
+
+  @media (max-width: 768px) {
+    .team-img {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+    .team-img {
+      height: 250px;
+    }
+  }}
+</style>
+   <section class="portfolio-zigrow-section_2 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">
+        Our Recent Projects
+      </h2>
+    </div>
+
+    <div class="row justify-custom-center g-3">
+      <!-- Card 1 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-top-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1542621334-a254cf47733d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2plY3RzfGVufDB8fHx8MTc3MDQwODA0MXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Storage & Seating"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            <span>
+              Residential AC Repair <br />
+              Home Service
+            </span>
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+          <a
+            href="https://unsplash.com/@sxoxm?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Sven Mieke
+          </a>
+          on
+          <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-bottom-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjYXNlJTIwc3R1ZGllc3xlbnwwfHx8fDE3NzAzNzk4NTN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Tables & Desks"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Commercial Installation <br />
+            Business Service
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+          <a
+            href="https://unsplash.com/@charlesdeluvio?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            charlesdeluvio
+          </a>
+          on
+      <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a>
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-top-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1644229945454-4fe5a4cc452f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3JrJTIwZXhhbXBsZXN8ZW58MHx8fHwxNzcwNDA4MDQxfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Lighting & Decor"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Routine Maintenance <br />
+            Preventive Care
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+           <a
+            href="https://unsplash.com/@themarketingsoc?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Amelia White
+          </a>
+          on
+         <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-bottom-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1694499377697-f21e1da42b8b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxzdWNjZXNzJTIwc3Rvcmllc3xlbnwwfHx8fDE3NzA0MDgwNDF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Office Accessories"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Emergency Repair <br />
+            Quick Response
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+            <a
+            href="https://unsplash.com/@gurwill?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            sonia kaur
+          </a>
+          on
+         <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-zigrow-section_2 {
+    background-color: #fff;
+
+    .offer-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .offer-card img {
+      width: 100%;
+      height: auto;
+      /* display: block; */
+      transition: transform 0.3s ease;
+      aspect-ratio: 3/4;
+    }
+
+    /* On hover, zoom the image */
+    .offer-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Rounded shapes */
+    .rounded-top-only img {
+      border-top-left-radius: 50% 30%;
+      border-top-right-radius: 50% 30%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .rounded-bottom-only img {
+      border-bottom-left-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .offer-label {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 1.5rem 1.95rem;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 1.9);
+    }
+
+    /* Overlay background for bottom label */
+    .rounded-top-only .offer-label {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    }
+
+    /* Overlay background for top label */
+    .rounded-bottom-only .offer-label {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+    }
+  }
+</style>
+   <section class="testimonial-zigrow-section_1  section-padding" id="testimonials"  data-section="testimonials">
+  <div class="container">
+    <h2 class="text-custom-center  main-heading mb-custom-5">Client Testimonials </h2>
+    <div class="row justify-custom-center">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-custom-4">
+        <div class="testimonial-card">
+          <div class="img-wrapper-center">
+            <img
+              src="https://i.postimg.cc/Kv4g4kN0/1.png"
+              alt="Client 1"
+            />
+          </div>
+          <h5 class="client-name">John Smith</h5>
+          <p class="client-text">
+       Aanaya AC Service provided quick and efficient repair. My air conditioner works perfectly now. Highly recommend their services!
+          </p>
+               <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-custom-4">
+        <div class="testimonial-card">
+          <div class="img-wrapper-center">
+            <img
+             src="https://i.postimg.cc/fWqV4WNm/10.png"
+              alt="Client 2"
+            />
+          </div>
+         <h5 class="client-name">Sarah Johnson</h5>
+          <p class="client-text">
+       Their team was professional and friendly. They installed our new AC unit seamlessly. Great service overall!
+          </p>
+              <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-custom-4">
+        <div class="testimonial-card">
+          <div class="img-wrapper-center">
+            <img
+             src="https://i.postimg.cc/gk5Lhztm/2.png"
+              alt="Client 3"
+            />
+          </div>
+           <h5 class="client-name">Mike Brown</h5>
+          <p class="client-text">
+       I trust Aanaya with all my AC needs. Their maintenance service keeps my systems running smoothly year-round.
+          </p>
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-zigrow-section_1 {
+    background-color: #fff;
+    color: #222;
+  
+
+
+
+.testimonial-card {
+  background: #fff;
+  padding: 30px 20px;
+  text-align: center;
+border-radius: var(--box-radius);
+  border: 1px solid #eee;
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+
+  /* Smooth, elevated shadow */
+     box-shadow: var(--shadow-section);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+
+  /* Slightly deeper shadow on hover */
+    box-shadow: var(--shadow-section-hover);
+}
+
+
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+   border-radius: var(--box-radius);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .client-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .client-text {
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .stars {
+    color: rgb(255, 196, 0); /* Custom star color (orange-ish), change as needed */
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+
+  .stars i {
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover .stars i {
+    transform: scale(1.2);
+  }}
+</style>
+   <section class="pricing-zigrow-section_3 section-padding" id="pricing" data-section="pricing">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-custom-center mb-custom-5">
+      <span class="badge bg-custom-light border px-custom-3 py-custom-1 text-custom-dark fw-custom-normal mb-custom-3 text-custom-uppercase font-body">
+        Our Pricing 🪄
+      </span>
+      <h2 class="fw-custom-bold display-custom-6">Access Our Private Beta</h2>
+      <p class="para-muted font-subheading mt-custom-2 ">
+
+        Basic maintenance plan for peace of mind.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4 justify-custom-center">
+
+      <!-- Free Plan -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card h-custom-100">
+          <div class="icon-circle"><i class="fa-regular fa-heart"></i></div>
+          <h5 class="fw-custom-semibold">Pay-as-you-go</h5>
+          <p class="para-muted font-body-sm mb-custom-3">  Basic maintenance plan for peace of mind.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹0</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+    
+            <li>
+              Monthly check-up
+            </li>
+            
+            <li>
+              Filter cleaning
+            </li>
+            
+            <li>
+              System diagnostics
+            </li>
+            
+            <li>
+              Priority service
+            </li>
+            
+            <li>
+              Discount on repairs
+            </li>
+            
+            <li>
+              Expert technicians
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hobby Plan (Highlighted) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card featured h-custom-100 position-relative">
+          <div class="highlight-tag text-custom-center fw-custom-semibold font-body">
+            Our Recommendation ✨
+          </div>
+          <div class="icon-circle"><i class="fa-solid fa-bolt"></i></div>
+          <h5 class="fw-custom-semibold">Hobby</h5>
+          <p class="para-muted font-body-sm mb-custom-3"> Professional installation for your new AC unit.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹19</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+            
+            <li>
+              Full installation service
+            </li>
+            
+            <li>
+              Safety checks
+            </li>
+            
+            <li>
+              System setup
+            </li>
+            
+            <li>
+              Warranty support
+            </li>
+            
+            <li>
+              Expert advice
+            </li>
+            
+            <li>
+              Post-installation support
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card h-custom-100">
+          <div class="icon-circle"><i class="fa-regular fa-gem"></i></div>
+          <h5 class="fw-custom-semibold">Premium</h5>
+          <p class="para-muted font-body-sm mb-custom-3"> Quick and reliable repair services when you need it.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹79</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+           
+            <li>
+              Same-day service
+            </li>
+            
+            <li>
+              Comprehensive diagnostics
+            </li>
+            
+            <li>
+              Parts replacement
+            </li>
+            
+            <li>
+              Satisfaction guarantee
+            </li>
+            
+            <li>
+              Expert technicians
+            </li>
+            
+            <li>
+              Follow-up service
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+.pricing-zigrow-section_3 {
+  background: #fff;
+  color: black;
+
+.btn{
+ border-radius: var(--border-radius-btn);
+}
+/* ===== Card Base ===== */
+.plan-card {
+  background: #fefefe;
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+     border-radius: var(--box-radius);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.plan-card:hover {
+  transform: translateY(-4px);
+     box-shadow: var(--shadow-section);
+}
+.plan-card h5 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.plan-card .icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+.plan-card .price-label {
+  margin-top: 1rem;
+}
+.plan-card .features {
+  text-align: left;
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+}
+.plan-card .features li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.plan-card .features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: 600;
+}
+
+/* ===== Featured Plan ===== */
+.featured {
+  border: 2px solid #000;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+     box-shadow: var(--shadow-section);
+}
+.highlight-tag {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: #000;
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-top-left-radius: var(--box-radius);
+  border-top-right-radius: var(--box-radius);
+}
+
+/* ===== Buttons ===== */
+.plan-card .btn {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+ border-radius: var(--border-radius-btn);
+  transition: all 0.25s ease;
+}
+.plan-card .btn:hover {
+  transform: translateY(-2px);
+  
+     box-shadow: var(--shadow-section-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 575.98px) {
+  .plan-card {
+    padding: 1.5rem;
+  }
+  .plan-card .features {
+    font-size: 0.8rem;
+  }
+}}
+</style>
+   <section class="faq-zigrow-section_3 section-padding" id="faq" data-section="faq">
+  <div class="container">
+
+    <div class="text-custom-start mb-custom-5">
+      <h2 class="main-heading">
+        <span>Explore Common Questions</span>
+      </h2>
+      <p class="font-subheading para-muted">
+        <span>Get instant answers to your common questions</span>
+      </p>
+    </div>
+
+    <div class="accordion" id="faqAccordion2">
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern0">
+          <button 
+            class="accordion-button "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern0"
+            aria-expanded="true"
+            aria-controls="collapseModern0"
+          >
+            <span>What services do you offer?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern0"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingModern0"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We provide AC installation, repair, maintenance, and uninstallation services to ensure your system runs smoothly.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern1">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern1"
+            aria-expanded="false"
+            aria-controls="collapseModern1"
+          >
+            <span>How can I schedule a service?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern1"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern1"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>You can schedule a service by calling us directly or filling out the contact form on our website.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern2">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern2"
+            aria-expanded="false"
+            aria-controls="collapseModern2"
+          >
+            <span>What brands do you service?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern2"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern2"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We service all major AC brands, ensuring quality care for your specific model and needs.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern3">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern3"
+            aria-expanded="false"
+            aria-controls="collapseModern3"
+          >
+            <span>Do you offer emergency services?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern3"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern3"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Yes, we offer emergency AC repair services to address urgent issues promptly and efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern4">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern4"
+            aria-expanded="false"
+            aria-controls="collapseModern4"
+          >
+            <span>How long does a service take?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern4"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern4"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Service duration varies by task, but most repairs and maintenance take between one to three hours.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern5">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern5"
+            aria-expanded="false"
+            aria-controls="collapseModern5"
+          >
+            <span>Are your technicians certified?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern5"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern5"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Yes, all our technicians are certified and trained to provide high-quality AC services.</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-zigrow-section_3 {
+    background-color: #fff;
+  
+
+  .faq-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .faq-subtext {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    margin-top: 0.3rem;
+  }
+
+  /* Accordion Clean Style */
+  .accordion-button {
+    font-size: 1.2rem ;
+    color: #45505e ;
+    font-weight: 400 ;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #45505e ;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0 ;
+  }
+
+  .accordion-button {
+    background-color: transparent ;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: none ;
+    padding: 1.25rem 0;
+  }
+
+  .accordion-body {
+    font-size: var(--fs-body);
+    color: var(--para-muted);
+    padding: 0 0 1rem;
+  }
+
+  .accordion-button::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    padding: 15px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #666;
+    font-size: 1rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E"); /* same gray icon */
+    border: 1px solid #666;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .faq-heading {
+      font-size: 1.5rem ;
+    }
+
+    .accordion-button {
+      font-size: 0.95rem ;
+      }}
+  }
+</style>
+   <section class="cta-zigrow-section_3 text-custom-white" id="cta" data-section="cta">
+  <div class="container px-lg-custom-5">
+    <div class="row g-4 g-lg-5 align-custom-center text-custom-lg-start text-custom-center">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <div class="copy">
+          <span class="overline">Expert service at your convenience.</span>
+          <h2 class="display mb-custom-3">Get Your AC Ready Today!</h2>
+          <p class="lead-custom font-body mb-custom-4">Don’t wait for the heat! Schedule your AC service or repair now and enjoy a cool, comfortable environment. Our friendly team is ready to help you.</p>
+
+      <div class="cta-actions d-inline-flex gap-2">
+  <a href="#" class="btn-solid primary-btn">
+    <span class="me-custom-2"><i class="bi bi-lightning-charge-fill "></i> </span>
+    Learn how we can help
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6">
+        <div class="visual img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1698429770468-6535b4e2f44d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNhbGwlMjB0byUyMGFjdGlvbnxlbnwwfHx8fDE3NzA0MDgwNDJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Recovery Help"
+            class="hero-img img-fluid"
+          />
+          <span class="img-credit">
+            Photo by
+            <a
+              href="https://unsplash.com/@neocody?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Cody McLain</a
+            >
+            on
+            <a
+              href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Unsplash</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-zigrow-section_3 {
+    --brand: var(--theme-4);
+    --bg-custom-dark: var(--theme-3);
+
+    /* New smoother gradient */
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--bg-custom-dark) 92%, #000) 0%,
+        var(--bg-custom-dark) 100%
+      ),
+      radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.06),
+        transparent 70%
+      );
+
+    color: var(--theme-4);
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-muted);
+    border-bottom: 1px solid var(--border-muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-zigrow-section_3 .copy {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .cta-zigrow-section_3 .overline {
+    display: inline-block;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+  .cta-zigrow-section_3 .display {
+    font-size: clamp(1.9rem, 1.2rem + 2vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--theme-4);
+    margin: 0;
+  }
+  .cta-zigrow-section_3 .lead-custom {
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+
+
+  
+  .cta-zigrow-section_3 .btn-solid {
+    background: var(--theme-4);
+    color: var(--theme-3);
+  }
+  .cta-zigrow-section_3 .btn-solid i{
+   font-size: 1.1rem;
+   line-height: 1;
+  }
+  .cta-zigrow-section_3 .btn-solid:hover {
+    transform: translateY(-2px);
+  }
+ 
+
+  /* Visual wrapper */
+  .cta-zigrow-section_3 .visual {
+    position: relative;
+    width: min(420px, 100%); /* ✅ vertical card jaisa narrow */
+    margin-inline: auto;
+  }
+
+  .cta-zigrow-section_3 .hero-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 3/4; /* ✅ portrait ratio */
+    object-fit: cover; /* crop karega image ko */
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section);
+  }
+
+  .cta-zigrow-section_3 .img-credit {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-zigrow-section_3 .visual {
+      width: 100%;
+    }
+  }
+
+  /* Spacing + responsiveness */
+  @media (min-width: 992px) {
+    .cta-zigrow-section_3 .row {
+      align-items: center;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .cta-zigrow-section_3 {
+      padding: 3.2rem 0;
+    }
+    .cta-zigrow-section_3 .copy {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .cta-zigrow-section_3 .lead-custom {
+      font-size: 1rem;
+    }
+  }
+</style>
+   <section class="contact-zigrow-section_2 section-padding" id="contact" data-section="contact">
+  <div class="container">
+    <div class="row text-custom-center mb-custom-4 contact-info-boxes">
+      <div class="col-md-3 mb-custom-4 contact-box fade-in-up">
+        <div class="contact-icon"><i class="bi bi-geo-alt-fill " data-icon="geo"></i></div>
+        <h6 class="contact-title">Address</h6>
+        <p class="contact-text">Rajan Nagar Attapur 50003</p>
+      </div>
+      <div class="col-md-3 mb-custom-4 contact-box fade-in-up delay-1">
+        <div class="contact-icon"><i class="bi bi-telephone-fill " data-icon="telephone"></i></div>
+        <h6 class="contact-title">Call Us</h6>
+        <p class="contact-text">9112031368</p>
+      </div>
+      <div class="col-md-3 mb-custom-4 contact-box fade-in-up delay-2">
+        <div class="contact-icon"><i class="bi bi-envelope-fill "></i></div>
+        <h6 class="contact-title">General Enquiries</h6>
+        <p class="contact-text">aanayaacservice@gmail.com</p>
+      </div>
+      <div class="col-md-3 mb-custom-4 contact-box fade-in-up delay-3">
+        <div class="contact-icon"><i class="bi bi-clock-fill "></i></div>
+        <h6 class="contact-title">Our Timings</h6>
+        <p class="contact-text">Mon - Sun: 10:00 AM - 07:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="map-wrapper fade-in-up delay-4">
+      <div class="position-relative">
+
+
+        <div class="map-container text-center">
+  <a href="https://www.google.com/maps/search/?api=1&query=12.894370090902344%2C77.6343217148211"
+     target="_blank"
+     class="btn  primary-btn map-btn">
+    GET DIRECTIONS <i class="bi bi-arrow-right-short"></i>
+  </a>
+
+  <div data-component-maps style="width:100%; height:350px;">
+    <iframe
+      frameborder="0"
+    src="https://maps.google.com/maps?q=12.894370090902344%2C77.6343217148211&z=14&t=q&output=embed"
+      width="100%"
+      height="100%"
+      style="width:100%; height:100%; left:0"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .contact-zigrow-section_2 {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .contact-zigrow-section_2 .contact-box {
+    padding: 20px;
+    transition: all 0.4s ease;
+  }
+
+  .contact-zigrow-section_2 .contact-box:hover {
+    transform: translateY(-5px);
+    background-color: #f9f9f9;
+    border-radius: var(--box-radius);
+  }
+
+  .contact-zigrow-section_2 .contact-icon {
+    font-size: 2rem;
+    color: var(--secondary-colors);
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-zigrow-section_2 .contact-box:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .contact-zigrow-section_2 .contact-title {
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--secondary-colors);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-zigrow-section_2 .contact-text {
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+    margin-top: 5px;
+  }
+
+  .contact-zigrow-section_2 .map-wrapper {
+    border-radius: var(--box-radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-section);
+  }
+
+  .contact-zigrow-section_2 .map-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    border: none;
+    padding: 8px 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-zigrow-section_2 .map-btn:hover {
+    opacity: 0.9;
+
+
+    transform: translateY(-2px);
+  }
+
+  /* Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards ease-in-out;
+  }
+
+  .fade-in-up.delay-1 {
+    animation-delay: 0.2s;
+  }
+
+  .fade-in-up.delay-2 {
+    animation-delay: 0.4s;
+  }
+
+  .fade-in-up.delay-3 {
+    animation-delay: 0.6s;
+  }
+
+  .fade-in-up.delay-4 {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>  
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+          window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

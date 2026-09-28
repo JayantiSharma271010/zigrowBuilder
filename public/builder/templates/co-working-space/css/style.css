@@ -77,6 +77,10 @@
   padding-top: 1rem;
   background: transparent;
   color: var(--light-colors);
+  /* =========================
+     MOBILE (≤ 768px)
+     Modern slide-in nav + overlay + X toggle
+  ========================== */
 }
 .cw-header .cw-logo {
   text-align: center;
@@ -161,15 +165,12 @@
 .cw-header .cw-nav .cw-nav__icon {
   font-size: 1.2rem;
 }
-.cw-header {
-  /* =========================
-     MOBILE (≤ 768px)
-     Modern slide-in nav + overlay + X toggle
-  ========================== */
-}
 @media (max-width: 767.98px) {
   .cw-header {
     /* Logo image left + text right using flex */
+    /* Hamburger top-right */
+    /* NAV becomes a right-side drawer */
+    /* Hamburger -> X (when nav open) */
   }
   .cw-header .cw-logo {
     display: flex;
@@ -197,9 +198,6 @@
     font-size: 0.9rem;
     opacity: 0.95;
   }
-  .cw-header {
-    /* Hamburger top-right */
-  }
   .cw-header .cw-nav-toggle {
     display: block;
     position: absolute;
@@ -207,9 +205,6 @@
     right: 16px;
     margin: 0;
     z-index: 10002; /* above overlay + drawer */
-  }
-  .cw-header {
-    /* NAV becomes a right-side drawer */
   }
   .cw-header .cw-nav {
     margin-top: 0;
@@ -223,6 +218,7 @@
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease;
     /* drawer panel */
+    /* open state */
   }
   .cw-header .cw-nav .cw-nav__list {
     position: absolute;
@@ -233,7 +229,8 @@
     padding: 90px 22px 28px;
     margin: 0;
     background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     transform: translateX(100%);
     transition: transform 0.28s ease;
     border-left: 1px solid rgba(255, 255, 255, 0.12);
@@ -256,18 +253,12 @@
     background: rgba(255, 255, 255, 0.08);
     color: var(--light-colors);
   }
-  .cw-header .cw-nav {
-    /* open state */
-  }
   .cw-header .cw-nav.is-open {
     opacity: 1;
     visibility: visible;
   }
   .cw-header .cw-nav.is-open .cw-nav__list {
     transform: translateX(0);
-  }
-  .cw-header {
-    /* Hamburger -> X (when nav open) */
   }
   .cw-header .cw-nav-toggle.is-open .cw-nav-toggle__bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
@@ -286,6 +277,12 @@
   color: var(--light-colors);
   text-align: center;
   background: linear-gradient(200deg, rgba(233, 78, 161, 0.7), rgba(71, 19, 244, 0.85)), url("../assets/images/co-working-hero.webp") center/cover no-repeat;
+  /* =========================
+     MOBILE (≤ 768px)
+     - fits exactly in viewport (100vh)
+     - avoids header overlap
+     - vertically centers content in remaining space
+  ========================== */
 }
 .cw-hero .cw-hero__col {
   margin: 0 auto;
@@ -329,14 +326,6 @@
 .cw-hero .cw-hero__cta:hover {
   box-shadow: 0 4px 20px var(--light-colors);
 }
-.cw-hero {
-  /* =========================
-     MOBILE (≤ 768px)
-     - fits exactly in viewport (100vh)
-     - avoids header overlap
-     - vertically centers content in remaining space
-  ========================== */
-}
 @media (max-width: 767.98px) {
   .cw-hero {
     /* adjust if your header height differs */
@@ -379,6 +368,8 @@
 .creative-minds {
   background-color: #f9f9f9;
   text-align: center;
+  /* Bootstrap row spacing control */
+  /* Separate div for each image (wrap + box) */
 }
 .creative-minds__content {
   max-width: 800px;
@@ -401,14 +392,8 @@
   color: var(--secondary-colors);
   margin: 0;
 }
-.creative-minds {
-  /* Bootstrap row spacing control */
-}
 .creative-minds__images-row {
   row-gap: 1.5rem; /* works because Bootstrap row is flex */
-}
-.creative-minds {
-  /* Separate div for each image (wrap + box) */
 }
 .creative-minds__image-wrap {
   width: 100%;
@@ -436,6 +421,7 @@
   text-align: center;
   font-size: large;
   padding: 1rem 0;
+  /* CTA wrapper (future-safe) */
 }
 .facilities__content {
   max-width: 800px;
@@ -446,9 +432,6 @@
   line-height: 1.7;
   color: var(--secondary-colors);
   margin-bottom: 1.5rem;
-}
-.facilities {
-  /* CTA wrapper (future-safe) */
 }
 .facilities__cta-wrap {
   margin-top: 0.5rem;
@@ -466,6 +449,9 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 2px solid var(--primary-colors);
+  color: var(--primary-colors);
+  text-decoration: none;
 }
 .facilities__btn:after {
   content: "";
@@ -494,11 +480,6 @@
 }
 .facilities__btn:hover:before {
   width: 100%;
-}
-.facilities__btn {
-  border: 2px solid var(--primary-colors);
-  color: var(--primary-colors);
-  text-decoration: none;
 }
 .facilities__btn:hover {
   background: var(--primary-colors);
@@ -594,6 +575,7 @@
 
 .membership {
   background-color: #f8f9fc;
+  /* Featured (middle card) */
 }
 .membership__heading {
   text-align: center;
@@ -676,6 +658,9 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 2px solid var(--primary-colors);
+  color: var(--primary-colors);
+  text-decoration: none;
 }
 .membership__btn:after {
   content: "";
@@ -705,17 +690,9 @@
 .membership__btn:hover:before {
   width: 100%;
 }
-.membership__btn {
-  border: 2px solid var(--primary-colors);
-  color: var(--primary-colors);
-  text-decoration: none;
-}
 .membership__btn:hover {
   background: var(--primary-colors);
   color: var(--light-colors);
-}
-.membership {
-  /* Featured (middle card) */
 }
 @media (min-width: 992px) {
   .membership__card--featured {
@@ -784,6 +761,7 @@
   background: linear-gradient(200deg, rgba(233, 78, 161, 0.7), rgba(71, 19, 244, 0.829)), url("../assets/images/co-working-testimonial.webp") center/cover no-repeat;
   color: var(--light-colors);
   text-align: center;
+  /* Mobile adjustments */
 }
 .cta__logo-wrap {
   margin-bottom: 1rem;
@@ -828,6 +806,10 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--light-colors);
+  color: var(--primary-colors);
+  text-decoration: none;
 }
 .cta__btn:after {
   content: "";
@@ -857,18 +839,9 @@
 .cta__btn:hover:before {
   width: 100%;
 }
-.cta__btn {
-  padding: 0.7rem 1.5rem;
-  background-color: var(--light-colors);
-  color: var(--primary-colors);
-  text-decoration: none;
-}
 .cta__btn:hover {
   background-color: var(--primary-colors);
   color: var(--light-colors);
-}
-.cta {
-  /* Mobile adjustments */
 }
 @media (max-width: 767.98px) {
   .cta__subtitle {

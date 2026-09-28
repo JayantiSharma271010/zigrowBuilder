@@ -4,7 +4,6 @@
 const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-  if (!backToTopBtn) return;
   if (window.scrollY > 300) {
     backToTopBtn.classList.add("show");
   } else {
@@ -12,10 +11,10 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTopBtn?.addEventListener("click", () => {
+backToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    behavior: "smooth",
   });
 });
 
@@ -26,7 +25,6 @@ backToTopBtn?.addEventListener("click", () => {
 /* -------------------------------------------------------------------------- */
 const navbar = document.getElementById("mainNavbar");
 window.addEventListener("scroll", () => {
-  if (!navbar) return;
   if (window.scrollY > 80) {
     navbar.classList.add("sticky-navbar");
   } else {
@@ -48,7 +46,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('#navbarContent');
 
-    if (navbarToggler && navbarCollapse?.classList.contains('show')) {
+    if (navbarToggler && navbarCollapse.classList.contains('show')) {
       navbarToggler.click();
     }
   });
@@ -62,7 +60,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('#navbarContent');
 
-    if (navbarToggler && navbarCollapse?.classList.contains('show')) {
+    if (navbarToggler && navbarCollapse.classList.contains('show')) {
       navbarToggler.click();
     }
   });
@@ -76,7 +74,6 @@ document.addEventListener('click', function (event) {
   const navbarCollapse = document.getElementById('navbarContent');
   const toggler = document.querySelector('.navbar-toggler');
 
-  if (!navbar || !navbarCollapse || !toggler) return;
   const isClickInside = navbar.contains(event.target);
 
   if (!isClickInside && navbarCollapse.classList.contains('show')) {
@@ -90,7 +87,7 @@ document.addEventListener('click', function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   const toggler = document.querySelector(".navbar-toggler");
 
-  toggler?.addEventListener("click", function () {
+  toggler.addEventListener("click", function () {
     toggler.classList.toggle("is-active");
   });
 });
@@ -147,7 +144,7 @@ document.querySelectorAll(".zoom-container").forEach((container) => {
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 768 && window.gsap && window.ScrollTrigger && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (window.innerWidth >= 768) {
     gsap.registerPlugin(ScrollTrigger);
 
 
@@ -156,7 +153,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (hero) {
       // Animate left background image
-      gsap.from("#hero .hero-main-img", {
+      gsap.from("#hero img.d-lg-flex", {
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -168,7 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       // Animate right stacked images
-      gsap.from("#hero .hero-right img", {
+      gsap.from("#hero .col-2 img", {
         scrollTrigger: {
           trigger: hero,
           start: "top 80%",
@@ -181,7 +178,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       // Animate heading inside .hero-text
-      gsap.from("#hero .hero-text h1", {
+      gsap.from("#hero .hero-text h2", {
         scrollTrigger: {
           trigger: hero,
           start: "top 75%",
@@ -226,7 +223,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (popDest) {
       // Animate image card from left
-      gsap.from("#popular-destinations .destination-card", {
+      gsap.from("#popular-destinations .local-card", {
         scrollTrigger: {
           trigger: popDest,
           start: "top 80%",
@@ -347,7 +344,7 @@ window.addEventListener("DOMContentLoaded", () => {
   
 
       // Animate the testimonial box on the right
-      gsap.from("#review-highlight .review-box", {
+      gsap.from("#review-highlight .border-round", {
         scrollTrigger: {
           trigger: reviewHighlight,
           start: "top 85%",
@@ -404,7 +401,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       // Animate all text cards (excluding image-only containers)
-      gsap.utils.toArray("#travel-stories .story-panel").forEach((card, i) => {
+      gsap.utils.toArray("#travel-stories .col-lg-5 .border-round").forEach((card, i) => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
@@ -512,7 +509,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       // Animate card titles and paragraphs
-      gsap.utils.toArray("#app-promo .promo-title, #app-promo p").forEach((el, i) => {
+      gsap.utils.toArray("#app-promo h4, #app-promo p").forEach((el, i) => {
         gsap.from(el, {
           scrollTrigger: {
             trigger: el,
@@ -544,7 +541,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       // Animate form inputs
-      gsap.utils.toArray("#plan-your-journey form [form-question-zigrow]").forEach((input, i) => {
+      gsap.utils.toArray("#plan-your-journey form .form-control").forEach((input, i) => {
         gsap.from(input, {
           scrollTrigger: {
             trigger: planSection,
@@ -589,94 +586,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
   }
 });
-
-(function () {
-  const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
-  if (!forms.length) return;
-
-  function serializeForm(form) {
-    const fd = new FormData(form);
-    const raw = {};
-    for (const [name, value] of fd.entries()) {
-      const existing = raw[name];
-      if (existing === undefined) raw[name] = value;
-      else if (Array.isArray(existing)) existing.push(value === '' ? true : value);
-      else raw[name] = [existing, value === '' ? true : value];
-    }
-    return raw;
-  }
-
-  function pickPrimaryValue(raw) {
-    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
-    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-    const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim();
-    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
-    if (nameCombo) return nameCombo;
-    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
-    return '';
-  }
-
-  forms.forEach((form) => {
-    const domainInput = form.querySelector('input[name="domain"]');
-    const pageUrlInput = form.querySelector('input[name="page_url"]');
-    if (domainInput) domainInput.value = location.host;
-    if (pageUrlInput) pageUrlInput.value = location.href;
-
-    let message = form.querySelector('.form-submit-message');
-    if (!message) {
-      message = document.createElement('div');
-      message.className = 'form-submit-message';
-      message.setAttribute('role', 'status');
-      message.setAttribute('aria-live', 'polite');
-      form.appendChild(message);
-    }
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const submitButton = form.querySelector(':scope > [type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.dataset.oldText = submitButton.textContent || '';
-        submitButton.textContent = 'Submitting...';
-      }
-      message.textContent = '';
-      message.removeAttribute('data-status');
-
-      try {
-        const raw = serializeForm(form);
-        const body = new URLSearchParams();
-        body.set('domain', form.querySelector('input[name="domain"]')?.value || location.host);
-        body.set('form_key', form.querySelector('input[name="form_key"]')?.value || 'contact');
-        body.set('page_url', form.querySelector('input[name="page_url"]')?.value || location.href);
-        body.set('payload', JSON.stringify(raw));
-        const primary = pickPrimaryValue(raw);
-        if (primary) body.set('value', primary);
-        if (raw._company) body.set('_company', raw._company);
-
-        const response = await fetch(form.action, {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body
-        });
-        const result = await response.json().catch(() => ({}));
-        if (response.ok && (result.ok ?? true)) {
-          form.reset();
-          message.textContent = 'Thanks! Your request has been submitted.';
-          message.dataset.status = 'success';
-        } else {
-          message.textContent = result.message || `Failed (HTTP ${response.status})`;
-          message.dataset.status = 'error';
-        }
-      } catch (error) {
-        console.error(error);
-        message.textContent = 'Something went wrong. Please try again.';
-        message.dataset.status = 'error';
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = submitButton.dataset.oldText || 'Send';
-        }
-      }
-    });
-  });
-})();

@@ -1,10 +1,12 @@
 
 // New Code for Ai Writer Api
 
+
 window.AIWriterAPI = {
   async generate({ action, tone, selectedText, userPrompt,  context }) {
     const cfg = window.chatgptOptions || {};
     // if (!cfg.key) throw new Error("No API key configured");
+
 
     const AI_DEBUG = true; // false kar do prod me
 
@@ -89,7 +91,7 @@ window.AIWriterAPI = {
     // -----------------------------
     // Prompts
     // -----------------------------
-  const buildContextText = () => {
+   const buildContextText = () => {
   const ctx = context || {};
 
   return `
@@ -313,6 +315,9 @@ ${actionRules[action] || actionRules.rewrite}
 };
 
 
+
+
+
 //     try {
 //   const res = await window.AIWriterAPI.generate(opts);
 // } catch (e) {
@@ -320,7 +325,7 @@ ${actionRules[action] || actionRules.rewrite}
 //   throw e;
 // }
 
-const buildUserContent = () => {
+ const buildUserContent = () => {
   if (action === "transform") {
     return `
 USER PROMPT:
@@ -548,7 +553,6 @@ body: JSON.stringify({
   model: cfg.model || "gpt-4o-mini",
 }),
 });
-
 const data = await window.ZigrowTokenAPI._safeJson(res);
 
 if (!res.ok) {
@@ -571,6 +575,7 @@ return { text, usedTokens, usage: data.usage || {} };
 
   },
 };
+
 
 
 

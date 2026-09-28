@@ -14,16 +14,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="css/style.css?v=2.13.0-1" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <a
-      href="#header"
+      href="#top"
       id="backToTopBtn"
       class="back-to-top"
       aria-label="Back to top"
+      data-icon="arrow-up"
     >
-      <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
+      <i class="bi bi-arrow-up"></i>
     </a>
 
     <!-- header section -->
@@ -31,28 +32,28 @@
       <nav class="site-nav">
         <div class="container">
           <div class="bar">
-            <a href="#hero" class="brand-logo" data-logo="navbar">Urban&#10;Nest</a>
+            <h5 class="brand m-0" data-logo="navbar">urban<br />nest</h5>
 
             <a href="tel:+91-9123456789" class="call-link">
               Make a call: +91-9123456789
             </a>
 
             <div class="social-icons">
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook"></i></a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" data-icon="linkedin"></i></a>
+              <i class="bi bi-facebook" data-icon="Facebook"></i>
+              <i class="bi bi-twitter" data-icon="Twitter"></i>
+              <i class="bi bi-instagram" data-icon="Instagram"></i>
+              <i class="bi bi-linkedin" data-icon="LinkedIn"></i>
             </div>
 
-            <button
-              type="button"
+            <a
+              href="#"
               class="nav-toggle"
               aria-label="Toggle navigation"
               aria-controls="mobileMenu"
               aria-expanded="false"
             >
               <span></span><span></span><span></span>
-            </button>
+            </a>
           </div>
 
           <hr class="divider" />
@@ -75,18 +76,15 @@
                 <a class="nav-link" href="#quote-faq">Contact</a>
               </li>
             </ul>
-            <div class="nav-actions zg-align-center">
-              <a href="#quote-faq" class="primary-btn" data-btn="navbar">Get a quote</a>
-            </div>
+            <a href="#" class="primary-btn">Get a quote</a>
           </div>
         </div>
       </nav>
     </header>
-    <main>
     <!-- hero section -->
     <!-- HERO -->
     <section id="hero" class="hero" data-section="hero">
-      <div class="hero__bg" data-zg-editable="surface">
+      <div class="hero__bg">
         <div class="hero__overlay"></div>
 
         <div class="container hero__container">
@@ -104,11 +102,11 @@
                   transparent updates, and a premium finish that lasts.
                 </p>
 
-                <div class="hero__actions zg-align-center">
-                  <a href="#services" class="hero__btn hero__btn--primary" data-btn="hero"
+                <div class="hero__actions">
+                  <a href="#" class="hero__btn hero__btn--primary"
                     >Our Services</a
                   >
-                  <a href="#quote-faq" class="hero__btn hero__btn--outline" data-btn="hero"
+                  <a href="#" class="hero__btn hero__btn--outline"
                     >Contact Us</a
                   >
                 </div>
@@ -127,7 +125,7 @@
     <!-- success section -->
     <section id="success" class="success" data-section="success">
       <div class="container success__container">
-        <div class="success__card" data-zg-editable="surface">
+        <div class="success__card">
           <div class="row success__row">
             <!-- Left -->
             <div class="col-12 col-md-6 success__col">
@@ -141,9 +139,9 @@
                   disciplined team that stays accountable.
                 </p>
 
-                <div class="success__actions zg-align-center">
-                  <a href="#quote-faq" class="success__btn success__btn--dark" data-btn="success">Work with us</a>
-                </div>
+                <a href="#" class="success__btn success__btn--dark"
+                  >Work with us</a
+                >
               </div>
             </div>
 
@@ -207,8 +205,8 @@
           </div>
 
           <div class="col-12 col-lg-4">
-            <div class="services__heading-right services__actions zg-align-center">
-              <a href="#get-in-touch" class="services__link" data-btn="services">
+            <div class="services__heading-right">
+              <a href="#" class="services__link">
                 View All
                 <i
                   class="bi bi-arrow-right"
@@ -222,7 +220,7 @@
 
         <!-- Cards -->
         <div class="row services__grid">
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -241,7 +239,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -260,7 +258,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -279,7 +277,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -298,7 +296,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -317,7 +315,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 services__col">
             <div class="services__card">
               <div class="services__media">
                 <img
@@ -346,7 +344,7 @@
           <!-- Left -->
           <div class="col-12 col-lg-6 touch__col">
             <div class="touch__panel touch__panel--left">
-              <div class="touch__bg touch__bg--left" data-zg-editable="surface">
+              <div class="touch__bg touch__bg--left">
                 <span class="d-none"></span>
               </div>
               <div class="touch__overlay touch__overlay--left">
@@ -364,9 +362,7 @@
                   step is planned to protect your team, your property, and your
                   timeline.
                 </p>
-                <div class="touch__actions zg-align-center">
-                  <a href="#quote-faq" class="touch__btn" data-btn="get-in-touch">Get in Touch</a>
-                </div>
+                <a href="#" class="touch__btn">Get in Touch</a>
               </div>
             </div>
           </div>
@@ -374,7 +370,7 @@
           <!-- Right -->
           <div class="col-12 col-lg-6 touch__col">
             <div class="touch__panel touch__panel--right">
-              <div class="touch__bg touch__bg--right" data-zg-editable="surface">
+              <div class="touch__bg touch__bg--right">
                 <span class="d-none"></span>
               </div>
               <div class="touch__overlay touch__overlay--right">
@@ -458,13 +454,13 @@
 
         <!-- Cards -->
         <div class="row offices__grid">
-          <div class="col-12 col-md-6 col-lg-4 offices__col clonable-card">
-            <div class="offices__card">
+          <div class="col-12 col-md-6 col-lg-4 offices__col">
+            <article class="offices__card">
               <h4 class="offices__city">New Delhi</h4>
               <p class="offices__address">
                 E-123, ABC Plaza, XYZ Street, New Delhi — 110077
               </p>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=New+Delhi+110077" class="offices__link" target="_blank" rel="noopener noreferrer">
+              <a href="#" class="offices__link">
                 Direction
                 <i
                   class="bi bi-arrow-right offices__icon"
@@ -472,16 +468,16 @@
                   data-icon="arrow"
                 ></i>
               </a>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 offices__col clonable-card">
-            <div class="offices__card">
+          <div class="col-12 col-md-6 col-lg-4 offices__col">
+            <article class="offices__card">
               <h4 class="offices__city">Bengaluru</h4>
               <p class="offices__address">
                 2nd Floor, Orion Hub, MG Road, Bengaluru — 560001
               </p>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=MG+Road+Bengaluru+560001" class="offices__link" target="_blank" rel="noopener noreferrer">
+              <a href="#" class="offices__link">
                 Direction
                 <i
                   class="bi bi-arrow-right offices__icon"
@@ -489,16 +485,16 @@
                   data-icon="arrow"
                 ></i>
               </a>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 offices__col clonable-card">
-            <div class="offices__card">
+          <div class="col-12 col-md-6 col-lg-4 offices__col">
+            <article class="offices__card">
               <h4 class="offices__city">Haryana</h4>
               <p class="offices__address">
                 Plot 18, Sector 44, Gurugram, Haryana — 122003
               </p>
-              <a href="https://www.google.com/maps/search/?api=1&amp;query=Sector+44+Gurugram+Haryana+122003" class="offices__link" target="_blank" rel="noopener noreferrer">
+              <a href="#" class="offices__link">
                 Direction
                 <i
                   class="bi bi-arrow-right offices__icon"
@@ -506,13 +502,13 @@
                   data-icon="arrow"
                 ></i>
               </a>
-            </div>
+            </article>
           </div>
         </div>
 
         <!-- Bottom CTA -->
-        <div class="offices__cta zg-align-center">
-          <a href="#quote-faq" class="offices__cta-btn" data-btn="offices">View Our Offices</a>
+        <div class="offices__cta">
+          <a href="#" class="offices__cta-btn">View Our Offices</a>
         </div>
       </div>
     </section>
@@ -530,12 +526,12 @@
 
         <!-- Cards -->
         <div class="row founders__grid">
-          <div class="col-12 col-sm-6 col-lg-4 founders__col clonable-card">
-            <div class="founders__card">
+          <div class="col-12 col-sm-6 col-lg-4 founders__col">
+            <article class="founders__card">
               <div class="founders__media">
                 <img
                   src="assets/construction-img/company-5a.webp"
-                  alt="Arjun Mehta portrait"
+                  alt="Steven Marks portrait"
                   class="founders__img"
                 />
               </div>
@@ -543,18 +539,18 @@
               <div class="founders__overlay"><span class="d-none"></span></div>
 
               <div class="founders__meta">
-                <h4 class="founders__name">Arjun Mehta</h4>
+                <h4 class="founders__name">Steven Marks</h4>
                 <span class="founders__role">CEO</span>
               </div>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 founders__col clonable-card">
-            <div class="founders__card">
+          <div class="col-12 col-sm-6 col-lg-4 founders__col">
+            <article class="founders__card">
               <div class="founders__media">
                 <img
                   src="assets/construction-img/company-5b.webp"
-                  alt="Kavya Iyer portrait"
+                  alt="Lara Smith portrait"
                   class="founders__img"
                 />
               </div>
@@ -562,18 +558,18 @@
               <div class="founders__overlay"><span class="d-none"></span></div>
 
               <div class="founders__meta">
-                <h4 class="founders__name">Kavya Iyer</h4>
+                <h4 class="founders__name">Lara Smith</h4>
                 <span class="founders__role">CTO</span>
               </div>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 founders__col clonable-card">
-            <div class="founders__card">
+          <div class="col-12 col-sm-6 col-lg-4 founders__col">
+            <article class="founders__card">
               <div class="founders__media">
                 <img
                   src="assets/construction-img/company-5c.webp"
-                  alt="Rohan Verma portrait"
+                  alt="John Doe portrait"
                   class="founders__img"
                 />
               </div>
@@ -581,16 +577,16 @@
               <div class="founders__overlay"><span class="d-none"></span></div>
 
               <div class="founders__meta">
-                <h4 class="founders__name">Rohan Verma</h4>
+                <h4 class="founders__name">John Doe</h4>
                 <span class="founders__role">COO</span>
               </div>
-            </div>
+            </article>
           </div>
         </div>
 
         <!-- CTA -->
-        <div class="founders__cta zg-align-center">
-          <a href="#about-founder" class="founders__btn" data-btn="founders">About Us</a>
+        <div class="founders__cta">
+          <a href="#" class="founders__btn">About Us</a>
         </div>
       </div>
     </section>
@@ -608,17 +604,25 @@
           </div>
 
           <div class="col-12 col-lg-4">
-            <div class="works__header-action zg-align-center">
-              <a href="#get-in-touch" class="works__btn" data-btn="projects">View Projects</a>
+            <div class="works__header-action">
+              <a href="#" class="works__btn">View Projects</a>
             </div>
           </div>
         </div>
 
         <!-- Cards -->
         <div class="row works__grid g-4">
-          <div class="col-12 col-sm-6 col-lg-3 works__col clonable-card">
-            <div class="works__card works__card--delhi">
+          <div class="col-12 col-sm-6 col-lg-3 works__col">
+            <div class="works__card">
               <div class="works__media">
+                <div class="works__image-wrap">
+                  <img
+                    src="assets/construction-img/delhi.webp"
+                    alt="Delhi City project"
+                    class="works__img"
+                  />
+                </div>
+
                 <div class="works__details">
                   <h5 class="works__name">Delhi City</h5>
                   <p class="works__location">India</p>
@@ -627,9 +631,17 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-3 works__col clonable-card">
-            <div class="works__card works__card--mumbai">
+          <div class="col-12 col-sm-6 col-lg-3 works__col">
+            <div class="works__card">
               <div class="works__media">
+                <div class="works__image-wrap">
+                  <img
+                    src="assets/construction-img/mumbai.webp"
+                    alt="Mumbai City project"
+                    class="works__img"
+                  />
+                </div>
+
                 <div class="works__details">
                   <h5 class="works__name">Mumbai City</h5>
                   <p class="works__location">India</p>
@@ -638,9 +650,17 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-3 works__col clonable-card">
-            <div class="works__card works__card--ahmedabad">
+          <div class="col-12 col-sm-6 col-lg-3 works__col">
+            <div class="works__card">
               <div class="works__media">
+                <div class="works__image-wrap">
+                  <img
+                    src="assets/construction-img/ahemdabad.webp"
+                    alt="Ahmedabad City project"
+                    class="works__img"
+                  />
+                </div>
+
                 <div class="works__details">
                   <h5 class="works__name">Ahmedabad City</h5>
                   <p class="works__location">India</p>
@@ -649,9 +669,17 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-3 works__col clonable-card">
-            <div class="works__card works__card--bengaluru">
+          <div class="col-12 col-sm-6 col-lg-3 works__col">
+            <div class="works__card">
               <div class="works__media">
+                <div class="works__image-wrap">
+                  <img
+                    src="assets/construction-img/banglor.webp"
+                    alt="Bengaluru City project"
+                    class="works__img"
+                  />
+                </div>
+
                 <div class="works__details">
                   <h5 class="works__name">Bengaluru City</h5>
                   <p class="works__location">India</p>
@@ -677,7 +705,7 @@
           </div>
 
           <div class="row testimonial__row">
-            <div class="col-12 col-md-6 testimonial__col clonable-card">
+            <div class="col-12 col-md-6 testimonial__col">
               <div class="testimonial__card">
                 <div class="testimonial__client-img">
                   <div class="testimonial__img-wrap">
@@ -698,7 +726,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-6 testimonial__col clonable-card">
+            <div class="col-12 col-md-6 testimonial__col">
               <div class="testimonial__card">
                 <div class="testimonial__client-img">
                   <div class="testimonial__img-wrap">
@@ -718,7 +746,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-6 testimonial__col clonable-card">
+            <div class="col-12 col-md-6 testimonial__col">
               <div class="testimonial__card">
                 <div class="testimonial__client-img">
                   <div class="testimonial__img-wrap">
@@ -738,7 +766,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-6 testimonial__col clonable-card">
+            <div class="col-12 col-md-6 testimonial__col">
               <div class="testimonial__card">
                 <div class="testimonial__client-img">
                   <div class="testimonial__img-wrap">
@@ -768,7 +796,7 @@
         <div class="row quote-faq__row">
           <!-- LEFT : QUOTE FORM -->
           <div class="col-12 col-md-6 quote-faq__left">
-            <div class="quote-faq__form" data-zg-editable="surface">
+            <div class="quote-faq__form">
               <h3 class="quote-faq__form-title">Request a Quote</h3>
               <p class="quote-faq__form-desc">
                 Ready to collaborate? Tell us about your project and we’ll guide
@@ -776,7 +804,7 @@
               </p>
 
               <form
-                action="https://api.zigrow.com/api/forms/submit"
+                action="https://api-uat.zigrow.com/api/forms/submit"
                 method="post"
                 data-zigrow-form
               >
@@ -796,11 +824,17 @@
                 />
 
                 <!-- Honeypot -->
-                <input type="hidden" name="_company" value="" />
+                <input
+                  type="text"
+                  id="zf-company"
+                  name="_company"
+                  style="display: none"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
 
                 <!-- Name -->
-                <div form-question-zigrow>
-                  <label for="zf-name">Your name</label>
+                <label class="quote-faq__field" for="zf-name">
                   <input
                     type="text"
                     id="zf-name"
@@ -809,11 +843,10 @@
                     required
                     autocomplete="name"
                   />
-                </div>
+                </label>
 
                 <!-- Email -->
-                <div form-question-zigrow>
-                  <label for="zf-email">Email address</label>
+                <label class="quote-faq__field" for="zf-email">
                   <input
                     type="email"
                     id="zf-email"
@@ -822,11 +855,10 @@
                     required
                     autocomplete="email"
                   />
-                </div>
+                </label>
 
                 <!-- Subject -->
-                <div form-question-zigrow>
-                  <label for="zf-subject">Subject</label>
+                <label class="quote-faq__field" for="zf-subject">
                   <input
                     type="text"
                     id="zf-subject"
@@ -834,11 +866,10 @@
                     placeholder="Subject"
                     required
                   />
-                </div>
+                </label>
 
                 <!-- Message -->
-                <div form-question-zigrow>
-                  <label for="zf-message">Project details</label>
+                <label class="quote-faq__field" for="zf-message">
                   <textarea
                     id="zf-message"
                     name="message"
@@ -846,7 +877,7 @@
                     placeholder="Tell us about your requirement"
                     required
                   ></textarea>
-                </div>
+                </label>
 
                 <!-- Submit -->
                 <button type="submit" class="quote-faq__btn" id="zf-submit">
@@ -899,7 +930,6 @@
         </div>
       </div>
     </section>
-    </main>
 
     <!-- footer -->
     <footer id="footer" class="footer py-6" data-section="footer">
@@ -908,7 +938,7 @@
         <div class="row footer__top">
           <!-- Column 1 -->
           <div class="col-12 col-md-6 col-lg-3 footer__col">
-            <a href="#hero" class="footer-brand-logo" data-logo="footer">Urban Nest</a>
+            <h5 class="footer__title" data-logo="footer">Build With Urban Nest</h5>
             <p class="footer__text">
               We design and build long-lasting spaces with precision, safety,
               and modern engineering standards at the core.
@@ -921,11 +951,11 @@
           <div class="col-12 col-md-6 col-lg-3 footer__col">
             <h5 class="footer__title">Our Services</h5>
             <ul class="footer__list">
-              <li><a href="#services">Chemical Engineering Projects</a></li>
-              <li><a href="#services">Mining Infrastructure Works</a></li>
-              <li><a href="#services">Industrial Welding Solutions</a></li>
-              <li><a href="#services">Structural Engineering</a></li>
-              <li><a href="#services">Large-Scale Space Facilities</a></li>
+              <li><a href="#">Chemical Engineering Projects</a></li>
+              <li><a href="#">Mining Infrastructure Works</a></li>
+              <li><a href="#">Industrial Welding Solutions</a></li>
+              <li><a href="#">Structural Engineering</a></li>
+              <li><a href="#">Large-Scale Space Facilities</a></li>
             </ul>
           </div>
 
@@ -966,37 +996,32 @@
           <div class="col-12 col-md-6 footer__social">
             <div class="footer__icons">
               <div class="footer__icon-wrap">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a href="#" aria-label="Facebook">
                   <i class="bi bi-facebook" data-icon="facebook"></i>
                 </a>
               </div>
               <div class="footer__icon-wrap">
-                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <a href="#" aria-label="Twitter">
                   <i class="bi bi-twitter" data-icon="twitter"></i>
                 </a>
               </div>
               <div class="footer__icon-wrap">
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="#" aria-label="Instagram">
                   <i class="bi bi-instagram" data-icon="instagram"></i>
                 </a>
               </div>
               <div class="footer__icon-wrap">
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="#" aria-label="LinkedIn">
                   <i class="bi bi-linkedin" data-icon="linkedin"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="row footer-attribution">
-          <div class="col-12">
-            <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
-          </div>
-        </div>
       </div>
     </footer>
 
-    <script src="js/app.js?v=2.13.0-1"></script><!--
+    <script>
       (function () {
         // Find ALL Zigrow forms
         const forms = Array.from(
@@ -1125,7 +1150,7 @@
           });
         });
       })();
-    -->
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -1134,5 +1159,6 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

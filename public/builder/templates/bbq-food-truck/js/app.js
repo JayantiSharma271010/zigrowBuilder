@@ -4,31 +4,6 @@ const navLinks = document.getElementById("navLinks");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("is-active");
   navLinks.classList.toggle("is-open");
-  const menuIcon = hamburger.querySelector("i");
-  if (menuIcon) {
-    const active = hamburger.classList.contains("is-active");
-    menuIcon.classList.toggle("bi-list", !active);
-    menuIcon.classList.toggle("bi-x-lg", active);
-    menuIcon.dataset.icon = active ? "close-menu" : "menu";
-  }
-  hamburger.setAttribute(
-    "aria-expanded",
-    hamburger.classList.contains("is-active") ? "true" : "false"
-  );
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("is-active");
-    navLinks.classList.remove("is-open");
-    hamburger.setAttribute("aria-expanded", "false");
-    const menuIcon = hamburger.querySelector("i");
-    if (menuIcon) {
-      menuIcon.classList.add("bi-list");
-      menuIcon.classList.remove("bi-x-lg");
-      menuIcon.dataset.icon = "menu";
-    }
-  });
 });
 
 // back to top botton functionality
@@ -36,22 +11,18 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.classList.add("is-visible");
+    backToTopBtn.style.display = "block";
   } else {
-    backToTopBtn.classList.remove("is-visible");
+    backToTopBtn.style.display = "none";
   }
 };
 
 backToTopBtn.onclick = () => {
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 // gsap animation start heare
-if (
-  window.innerWidth > 768 &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
+if (window.innerWidth > 768) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Animate the heading + text

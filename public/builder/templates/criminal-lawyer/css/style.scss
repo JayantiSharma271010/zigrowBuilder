@@ -1,7 +1,5 @@
 body {
   font-family: "Playfair Display", serif;
-  color: var(--secondary-colors, #222);
-  overflow-x: clip;
 }
 $white-col: white;
 $primary-color: #000036;
@@ -9,11 +7,16 @@ $button-bg-col: #c89e4e;
 
 :root {
   --primary-colors: #c89e4e;
-  --secondary-colors: #222;
+  --secondary-colors: #555;
   --territory-colors: #000036;
-  --muted-colors: #555;
-  --dark-colors: var(--secondary-colors, #222);
+  --dark-colors: #000;
   --light-colors: #fff;
+}
+.py-6 {
+  padding: 3rem 0;
+  @media (max-width:568px) {
+    padding: 2rem 0;
+  }
 }
 @mixin my-button {
   background-color: $button-bg-col;
@@ -29,7 +32,7 @@ $button-bg-col: #c89e4e;
     background-color: #b38f35;
   }
 }
-.back-to-top {
+#backToTopBtn {
   position: fixed;
   bottom: 5%;
   right: 3%;
@@ -43,6 +46,7 @@ $button-bg-col: #c89e4e;
   border-radius: 50%;
   text-decoration: none;
 
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -610,7 +614,7 @@ $button-bg-col: #c89e4e;
   &__bg {
     position: absolute;
     inset: 0;
-    background: url(../assets/criminal-lawyer/lawyer-website-template-experience.webp)
+    background: url(../assets/criminal-lawyer/LawyerwebsitetemplateExperience.webp)
       no-repeat center center / cover;
     z-index: 0;
   }
@@ -1017,7 +1021,7 @@ $button-bg-col: #c89e4e;
   &__bg {
     position: absolute;
     inset: 0;
-    background: url(../assets/criminal-lawyer/lawyer-website-template-reviews.webp)
+    background: url(../assets/criminal-lawyer/LawyerwebsitetemplateReviews.webp)
       center center / cover no-repeat;
     z-index: 0;
     pointer-events: none;
@@ -1258,7 +1262,7 @@ $button-bg-col: #c89e4e;
   &__bg {
     position: absolute;
     inset: 0;
-    background: url(../assets/criminal-lawyer/lawyer-website-template-footer.webp)
+    background: url(../assets/criminal-lawyer/Lawyerwebsitetemplatefooter.webp)
       center center / cover no-repeat;
     z-index: 0;
     pointer-events: none;
@@ -1477,23 +1481,4 @@ $button-bg-col: #c89e4e;
       }
     }
   }
-
-  &.show {
-    display: flex;
-  }
 }
-
-/* Zigrow Builder compatibility */
-img { max-width: 100%; height: auto; }
-.zg-align-center { align-items: center; }
-.navbar-actions, .mobile-nav-actions, .section-hero__actions, .practice-areas-section__actions, .reviews-section__actions, .contact-lawyer-section__actions { display: flex; flex-flow: row wrap; gap: 0.5rem; min-width: 0; max-width: 100%; box-sizing: border-box; }
-.practice-areas-section__actions, .reviews-section__actions, .contact-lawyer-section__actions { justify-content: center; }
-[data-btn] { display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; max-width: 100%; white-space: normal; text-decoration: none; }
-[data-btn]:hover, [data-btn]:focus { text-decoration: none; }
-[data-btn]:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--primary-colors); outline-offset: 3px; }
-.clonable-card { padding: 8px; min-width: 0; }
-.top-bar .social-icons a, .site-footer__social a, .experience-section__play, .media-section__play { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
-.zigrow-attribution { margin-top: 1rem; text-align: center; }
-.zigrow-attribution a { color: var(--territory-colors); }
-@media (max-width: 991.98px) { .mobile-nav-actions .consult-btn { display: inline-flex; width: auto; } }
-@media (max-width: 575.98px) { .section-hero__title br, .contact-lawyer-section__title br { display: none; } .section-hero__title, .contact-lawyer-section__title { overflow-wrap: anywhere; } }

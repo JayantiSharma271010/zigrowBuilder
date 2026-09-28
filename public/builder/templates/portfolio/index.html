@@ -5,37 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Portfolio</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Bootstrap link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-
-    <!-- jonsuh hamburger icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
   </head>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Bootstrap link -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+
+  <!-- jonsuh hamburger icon  -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
+    integrity="sha512-...your-integrity-hash..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
 
   <body>
     <!-- Back to Top Button -->
-    <a id="backToTop" href="#" class="back-to-top zg-icon-parent" aria-label="Back to Top">
+    <a id="backToTop" href="#" class="back-to-top" aria-label="Back to Top">
       <i class="bi bi-arrow-up-short" data-icon="arrow-up"></i>
     </a>
 
@@ -55,9 +56,10 @@
             </a>
 
             <!-- Toggle (same position & behavior) -->
-            <button
-              type="button"
+            <a
+              href="#navbarContent"
               class="navbar-toggler hamburger hamburger--elastic only-mobile"
+              role="button"
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
@@ -65,7 +67,7 @@
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
               </span>
-            </button>
+            </a>
 
             <!-- Menu -->
             <div class="navbar-collapse" id="navbarContent">
@@ -81,7 +83,7 @@
                 </li>
               </ul>
 
-              <div class="navbar-cta navbar-actions zg-align-center only-desktop">
+              <div class="navbar-cta only-desktop">
                 <a href="#ready-to-light" class="resume-link">Resume</a>
               </div>
             </div>
@@ -91,8 +93,6 @@
     </header>
 
     <!-- Header ends here -->
-
-    <main>
 
     <!-- Hero -->
     <section id="hero" class="hero-section" data-section="hero">
@@ -116,13 +116,13 @@
 
             <!-- Social icons -->
             <div class="social">
-              <a href="#" class="social-link zg-icon-parent" aria-label="Twitter">
+              <a href="#" class="social-link" aria-label="Twitter">
                 <i class="bi bi-twitter" data-icon="twitter"></i>
               </a>
-              <a href="#" class="social-link zg-icon-parent" aria-label="LinkedIn">
+              <a href="#" class="social-link" aria-label="LinkedIn">
                 <i class="bi bi-linkedin" data-icon="linkedin"></i>
               </a>
-              <a href="#" class="social-link zg-icon-parent" aria-label="Behance">
+              <a href="#" class="social-link" aria-label="Behance">
                 <i class="bi bi-behance" data-icon="behance"></i>
               </a>
             </div>
@@ -133,7 +133,7 @@
             <div class="hero-image-wrap">
               <div class="hero-image">
                 <img
-                  src="assets/img/portfolio-template-hero.webp"
+                  src="assets/img/portfolio template hero.webp"
                   alt="Profile"
                 />
               </div>
@@ -142,7 +142,7 @@
               <a
                 id="scrollDown"
                 href="#about"
-                class="scroll-down zg-icon-parent"
+                class="scroll-down"
                 aria-label="Scroll Down"
               >
                 scroll down
@@ -153,66 +153,42 @@
         </div>
 
         <!-- Logos row -->
-        <div class="row hero-logos">
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 1">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-1.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+        <div class="hero-logos">
+          <a href="#" class="logo-pill" aria-label="Logo 1">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-1.png" alt="Logo 1" />
             </div>
-          </div>
+          </a>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 2">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-2.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+          <a href="#" class="logo-pill" aria-label="Logo 2">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-2.png" alt="Logo 2" />
             </div>
-          </div>
+          </a>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 3">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-3.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+          <a href="#" class="logo-pill" aria-label="Logo 3">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-3.png" alt="Logo 3" />
             </div>
-          </div>
+          </a>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 4">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-1.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+          <a href="#" class="logo-pill" aria-label="Logo 4">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-1.png" alt="Logo 4" />
             </div>
-          </div>
+          </a>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 5">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-2.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+          <a href="#" class="logo-pill" aria-label="Logo 5">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-2.png" alt="Logo 5" />
             </div>
-          </div>
+          </a>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 6">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-3.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
+          <a href="#" class="logo-pill" aria-label="Logo 6">
+            <div class="logo-img">
+              <img src="assets/img/hero-logo-3.png" alt="Logo 6" />
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -222,21 +198,21 @@
     <!-- About -->
     <section id="about" class="about-section" data-section="about">
       <div class="container">
-        <div class="about-head">
-          <span class="about-pill-btn">About me</span>
+        <!-- About Me Button -->
+        <a href="#about" class="about-pill-btn">About me</a>
 
-          <h2 class="about-title">
-            Design is not just a job for me, it’s a passion that drives me
-          </h2>
+        <!-- Full-width Heading & Paragraph -->
+        <h2 class="about-title">
+          Design is not just a job for me, it’s a passion that drives me
+        </h2>
 
-          <p class="about-desc">
-            I’m Rohit, a self-taught product designer based in Boston. Four years
-            ago, during my final year of university, I co-founded a mobile
-            marketplace and created its entire front-end myself, teaching me how
-            products are built from scratch. I build websites, mobile-first UIs,
-            emails, and internal tools — all designed around everything I’d want.
-          </p>
-        </div>
+        <p class="about-desc">
+          I’m Rohit, a self-taught product designer based in Boston. Four years
+          ago, during my final year of university, I co-founded a mobile
+          marketplace and created its entire front-end myself, teaching me how
+          products are built from scratch. I build websites, mobile-first UIs,
+          emails, and internal tools — all designed around everything I’d want.
+        </p>
 
         <!-- Image + Stats Row -->
         <div class="row about-row">
@@ -247,8 +223,8 @@
                 <img src="assets/img/about.webp" alt="Video thumbnail" />
               </div>
 
-              <a href="#" class="about-play-btn zg-icon-parent" aria-label="Play video">
-                <i class="bi bi-play-circle-fill" data-icon="play-circle"></i>
+              <a href="#" class="about-play-btn" aria-label="Play video">
+                <i class="fas fa-play-circle" data-icon="play-circle"></i>
               </a>
             </div>
           </div>
@@ -257,17 +233,17 @@
           <div class="col-md-4">
             <div class="about-stats">
               <div class="stat-block">
-                <h3 class="stat-number">12 startups</h3>
+                <h5 class="stat-number">12 startups</h5>
                 <small class="stat-label">worked with</small>
               </div>
 
               <div class="stat-block">
-                <h3 class="stat-number">5+ years</h3>
+                <h5 class="stat-number">5+ years</h5>
                 <small class="stat-label">experience</small>
               </div>
 
               <div class="stat-block">
-                <h3 class="stat-number">20+ projects</h3>
+                <h5 class="stat-number">20+ projects</h5>
                 <small class="stat-label">completed successfully</small>
               </div>
             </div>
@@ -287,7 +263,7 @@
       <div class="container">
         <!-- Section Heading -->
         <div class="experience-head">
-          <span class="section-pill-btn">Experience</span>
+          <a href="#experience" class="section-pill-btn">Experience</a>
           <h2 class="experience-title">
             A Yearly Snapshot of my creative growth
           </h2>
@@ -296,10 +272,10 @@
         <!-- Experience Items -->
         <div class="row experience-list">
           <!-- Item -->
-          <div class="col-12 experience-item clonable-card">
+          <div class="col-12 experience-item">
             <div class="experience-item-row">
               <div class="experience-left">
-                <h3 class="experience-role">Content Strategist at HubSpot</h3>
+                <h5 class="experience-role">Content Strategist at HubSpot</h5>
                 <p class="experience-desc">
                   Orchestrated complex content strategies that increased organic
                   traffic by 140%. Collaborated with SEO specialists to optimize
@@ -311,10 +287,10 @@
             </div>
           </div>
 
-          <div class="col-12 experience-item clonable-card">
+          <div class="col-12 experience-item">
             <div class="experience-item-row">
               <div class="experience-left">
-                <h3 class="experience-role">Product Manager at Shopify</h3>
+                <h5 class="experience-role">Product Manager at Shopify</h5>
                 <p class="experience-desc">
                   Led a cross-functional team to develop and launch a new
                   payment feature that improved user retention by 20%.
@@ -327,10 +303,10 @@
             </div>
           </div>
 
-          <div class="col-12 experience-item clonable-card">
+          <div class="col-12 experience-item">
             <div class="experience-item-row">
               <div class="experience-left">
-                <h3 class="experience-role">Graphic Designer at Zoho</h3>
+                <h5 class="experience-role">Graphic Designer at Zoho</h5>
                 <p class="experience-desc">
                   Led foundations for interface mockups and created
                   illustrations that support design thinking and grow knowledge
@@ -343,10 +319,10 @@
             </div>
           </div>
 
-          <div class="col-12 experience-item experience-item-last clonable-card">
+          <div class="col-12 experience-item experience-item-last">
             <div class="experience-item-row">
               <div class="experience-left">
-                <h3 class="experience-role">Frontend Developer at Atlassian</h3>
+                <h5 class="experience-role">Frontend Developer at Atlassian</h5>
                 <p class="experience-desc">
                   Built dynamic user interfaces and applications using ReactJS,
                   ensuring user engagement through intuitive UIs. Worked on
@@ -369,7 +345,7 @@
       <div class="container">
         <!-- Badge + Heading -->
         <div class="portfolio-head">
-          <span class="section-pill-btn">Portfolio</span>
+          <a href="#portfolio" class="section-pill-btn">Portfolio</a>
           <h2 class="portfolio-title">
             Explore my portfolio of creative Solutions
           </h2>
@@ -377,97 +353,133 @@
 
         <!-- Portfolio Grid (grid only) -->
         <div class="row portfolio-grid">
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-1" role="img" aria-label="Mobile cleaning campaign design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-1.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-2" role="img" aria-label="Comedy podcast cover design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-2.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-3" role="img" aria-label="Romance book cover design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-3.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-4" role="img" aria-label="Organic honey packaging design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-4.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-5" role="img" aria-label="SaaS launch campaign design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-5.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-6" role="img" aria-label="Pencil brand identity design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="portfolio-item">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio-6.webp" alt="portfolio item" />
+              </div>
               <div class="portfolio-overlay">
                 <a
                   href="#"
                   class="portfolio-link"
                   aria-label="Open portfolio item"
                 >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
+                  <div class="portfolio-arrow">
+                    <img
+                      src="assets/img/portfolio-arrow-icon.svg"
+                      alt="Arrow"
+                    />
+                  </div>
                 </a>
               </div>
             </div>
@@ -499,7 +511,7 @@
                 <p class="testimonial-text">
                   “I was impressed by how reliable, friendly, and professional
                   they were—the entire process felt personal and tailored to my
-                  needs, and I wouldn’t hesitate to recommend them to anyone.”
+                  needs, and I wouldn’t hesitate to recommend them to anyone..”
                 </p>
 
                 <div class="testimonial-user">
@@ -507,7 +519,7 @@
                     <img src="assets/img/testimonial-1.webp" alt="User" />
                   </div>
                   <div class="user-meta">
-                    <p class="user-name">Ananya Sharma</p>
+                    <h6 class="user-name">Ananya Sharma</h6>
                     <small class="user-role">Founder, Denq</small>
                   </div>
                 </div>
@@ -535,8 +547,8 @@
                     <img src="assets/img/testimonial-2.webp" alt="User" />
                   </div>
                   <div class="user-meta">
-                    <p class="user-name">Tanvi</p>
-                    <small class="user-role">CEO, Aarna Labs</small>
+                    <h6 class="user-name">Taniq</h6>
+                    <small class="user-role">CEO, ABC Corp</small>
                   </div>
                 </div>
               </div>
@@ -563,8 +575,8 @@
                     <img src="assets/img/testimonial-3.webp" alt="User" />
                   </div>
                   <div class="user-meta">
-                    <p class="user-name">Abhijeet Kumar</p>
-                    <small class="user-role">CTO, Yuva Labs</small>
+                    <h6 class="user-name">Abhijeet Kumar</h6>
+                    <small class="user-role">CTO, XYZ Inc</small>
                   </div>
                 </div>
               </div>
@@ -572,12 +584,12 @@
           </div>
 
           <!-- Navigation buttons (keep Swiper default classes) -->
-          <div class="swiper-button-next custom-nav zg-icon-parent">
+          <div class="swiper-button-next custom-nav">
             <div class="nav-img">
               <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
             </div>
           </div>
-          <div class="swiper-button-prev custom-nav zg-icon-parent">
+          <div class="swiper-button-prev custom-nav">
             <div class="nav-img">
               <i class="bi bi-arrow-left" data-icon="arrow-left"></i>
             </div>
@@ -591,12 +603,10 @@
 
     <!-- Testimonials ends here -->
 
-    </main>
-
     <!-- footer -->
     <footer id="footer" class="footer-section" data-section="footer">
-      <div id="ready-to-light" class="container footer-top">
-        <div id="contact" class="row footer-top-row">
+      <div class="container footer-top">
+        <div class="row footer-top-row">
           <!-- Text content -->
           <div class="col-md-8 footer-top-left">
             <h2 class="footer-title">Let's build something today!</h2>
@@ -607,8 +617,8 @@
           </div>
 
           <!-- CTA Button -->
-          <div class="col-md-4 footer-top-right footer-actions zg-align-center">
-            <a href="#contact" class="footer-cta" data-btn="contact">Get in touch</a>
+          <div class="col-md-4 footer-top-right">
+            <a href="#contact" class="footer-cta">Get in touch</a>
           </div>
         </div>
       </div>
@@ -616,41 +626,37 @@
       <!-- Footer bottom -->
       <div class="container footer-bottom">
         <div class="row footer-bottom-row">
-          <ul class="col-md-6 footer-links">
-            <li><a href="#" class="footer-link">Behance</a></li>
-            <li><a href="#" class="footer-link">Medium</a></li>
-            <li><a href="#" class="footer-link">Twitter</a></li>
-            <li><a href="#" class="footer-link">LinkedIn</a></li>
-          </ul>
+          <div class="col-md-4 footer-brand">
+            <span>Zigrow</span>
+          </div>
 
-          <div class="col-md-6 footer-copy">
+          <div class="col-md-4 footer-links">
+            <a href="#" class="footer-link">Behance</a>
+            <a href="#" class="footer-link">Medium</a>
+            <a href="#" class="footer-link">Twitter</a>
+            <a href="#" class="footer-link">LinkedIn</a>
+          </div>
+
+          <div class="col-md-4 footer-copy">
             <span>© 2024-25 Zigrow</span>
           </div>
         </div>
       </div>
-
-      <div class="container powered-by-zigrow-row">
-        <a
-          href="https://zigrow.com/"
-          target="_blank"
-          rel="noopener noreferrer nofollow sponsored"
-        >Powered by Zigrow</a>
-      </div>
     </footer>
 
     <!-- footer ends here -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- Gsap animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script src="js/script.js"></script>
-    <!-- Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
   </body>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Gsap animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="js/script.js"></script>
+  <!-- Bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"
+  ></script>
 </html>

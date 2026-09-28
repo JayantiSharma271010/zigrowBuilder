@@ -609,7 +609,7 @@ nav,
                 cursor: pointer;
                 transition: all 0.3s ease;
 
-                .bi {
+                .material-symbols-outlined {
                     font-size: 24px;
                     color: $primary-color;
                 }
@@ -617,7 +617,7 @@ nav,
                 &:hover {
                     background-color: $primary-color;
 
-                    .bi {
+                    .material-symbols-outlined {
                         color: #fff;
                     }
                 }
@@ -764,21 +764,6 @@ nav,
             font-size: 2rem;
             color: #000;
         }
-    }
-
-    .social-follow-row a {
-        color: $primary-color;
-    }
-
-    .social-follow-row a > .bi {
-        width: 38px;
-        height: 38px;
-        margin-right: 1rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        flex: 0 0 auto;
     }
 }
 

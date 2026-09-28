@@ -8,7 +8,7 @@
     content="Transform your look with Kanika – a professional makeup and fitness coach offering face makeup, wedding makeup, eyebrow makeup and more." />
   <meta name="keywords" content="Makeup, Kanika, Face Makeup, Wedding Makeup, Eyebrow, Beauty, Salon, India" />
   <meta name="author" content="Kanika" />
-  <link rel="icon" href="makeup.webp" type="image/webp" />
+  <link rel="icon" href="assets/images/meet image.webp" type="image/x-icon" />
 
   <title>Transform with Kanika</title>
 
@@ -22,13 +22,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <link rel="stylesheet" href="css/style.css?v=20260925" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/customutility.css" />
 </head>
 
 <body>
-  <header id="header" data-section="header">
-  <nav class="navbar-section navbar navbar-expand-xl sticky-top py-0-style navbar-animate" id="navbarSection">
+  <nav class="navbar-section navbar navbar-expand-xl sticky-top py-0-style navbar-animate" id="navbarSection"
+    data-section="navbarSection">
     <div class="container-fluid p-0-style">
       <div class="navbar-contact d-flex">
         <div class="mail-details align-items-center-style px-4-style envelope-icon">
@@ -42,18 +42,17 @@
       </div>
 
       <div class="d-xl-none d-flex align-items-center-style justify-content-lg-end-style h-100">
-        <button type="button" class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle"
-          aria-label="Open navigation" aria-controls="navbarMenu" aria-expanded="false">
+        <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
           <div class="hamburger-box">
             <div class="hamburger-inner"></div>
           </div>
-        </button>
+        </div>
       </div>
 
       <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
-        <ul class="navbar-nav gap-3 my-0-style h-100 align-items-center-style">
+        <ul class="navbar-nav gap-3 my-0 h-100 align-items-center-style">
           <li class="nav-item">
-            <a class="nav-link fw-semibold-style" href="#home">Home</a>
+            <a class="nav-link fw-semibold-style" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fw-semibold-style" href="#about">About</a>
@@ -67,53 +66,45 @@
           <li class="nav-item">
             <a class="nav-link fw-semibold-style" href="#contact">Contact</a>
           </li>
-          <li class="nav-item d-xl-none navbar-mobile-actions zg-align-center">
-            <a href="#contact" class="btn btn-custom" data-btn="nav">Book Now</a>
+          <li class="nav-item d-xl-none">
+            <a class="btn btn-custom">Book Now</a>
           </li>
         </ul>
       </div>
 
-      <div class="social-icons d-xl-flex align-items-center-style px-4-style">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-icon-link fs-4-style social-icon"><i
+      <div class="social-icons d-xl-flex justify-content-between align-items-center-style px-4-style">
+        <a href="https://twitter.com" target="_blank" class="social-icon-link fs-4-style social-icon"><i
             class="bi bi-twitter" data-icon="bi-twitter"></i></a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-link fs-4-style social-icon"><i
+        <a href="https://facebook.com" target="_blank" class="social-icon-link fs-4-style social-icon"><i
             class="bi bi-facebook" data-icon="bi-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-link fs-4-style social-icon"><i
-            class="bi bi-instagram" data-icon="bi-instagram"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-icon-link fs-4-style social-icon"><i
+            class="bi bi-instagram" data-icon="bi-instagram" data-icon="bi-instagram"></i></a>
       </div>
 
-      <div class="d-none d-xl-flex navbar-desktop-actions zg-align-center">
-        <a href="#contact" class="btn btn-custom" data-btn="nav">Book Now</a>
+      <div class="d-none d-xl-block">
+        <a class="btn btn-custom"><span>Book Now</span></a>
       </div>
     </div>
   </nav>
-  </header>
 
-  <main>
-  <section id="home" data-section="home"
-    class="hero-section d-flex align-items-center-style justify-content-center-style text-center-style">
+  <section id="hero-section" data-section="hero-section"
+    class="hero-section d-flex align-items-center-style justify-content-center-style text-center-style" id="home">
     <div class="container-fluid">
       <div class="overlay"></div>
-      <div class="row">
-        <div class="col-12">
-          <div class="content position-relative z-2">
-            <p class="small-text-of-content">IDEAL PLACE TO UNWIND</p>
-            <h1 class="hero-section-main-heading">
-              Transform your look with Kanika
-            </h1>
-            <div class="hero-actions zg-align-center">
-              <a href="tel:9123456789" class="btn btn-custom" data-btn="hero">BOOK AN APPOINTMENT</a>
-            </div>
-          </div>
-        </div>
+      <div class="content position-relative z-2">
+        <p class="small-text-of-content">IDEAL PLACE TO UNWIND</p>
+        <h1 class="hero-section-main-heading">
+          Transform your look with Kanika
+        </h1>
+        <a href="tel:9123456789" class="btn btn-custom"><span>BOOK AN APPOINTMENT</span></a>
       </div>
-      <a href="https://wa.me/9123456789" class="whatsapp-icon" aria-label="Contact Kanika on WhatsApp">
+      <a href="https://wa.me/9123456789" class="whatsapp-icon">
         <i class="bi bi-whatsapp" data-icon="bi-whatsapp"></i>
       </a>
     </div>
   </section>
 
-  <a href="#home" class="btn rounded-circle floating-btn" aria-label="Back to top">
+  <a href="#" class="btn rounded-circle floating-btn">
     <i class="bi bi-arrow-up" data-icon="bi-arrow-up"></i>
   </a>
 
@@ -147,19 +138,19 @@
 
           <div class="d-flex flex-wrap gap-3 mb-4-style">
             <span class="service-pill">
-              <span class="service-pill-icon me-2-style">
+              <span class="me-2-style ">
                 <i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i>
               </span>
               Face Makeup
             </span>
             <span class="service-pill">
-              <span class="service-pill-icon me-2-style">
+              <span class="me-2-style ">
                 <i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i>
               </span>
               Wedding Makeup
             </span>
             <span class="service-pill">
-              <span class="service-pill-icon me-2-style">
+              <span class="me-2-style ">
                 <i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i>
               </span>
               Eyebrow Makeup
@@ -173,8 +164,8 @@
         </div>
 
         <div class="col-lg-6 text-center-style section2-img img-wrapper-style">
-          <img src="assets/images/makeupartistwebsitetemplate2.webp" alt="Kanika"
-            class="img-fluid about-portrait" />
+          <img src="assets/images/makeupartistwebsitetemplate2.webp" style="max-height: 600px;" alt="Kanika"
+            class="img-fluid" />
         </div>
       </div>
     </div>
@@ -200,9 +191,7 @@
                 Flawless, radiant skin with expert contouring, highlighting,
                 and a natural glow.
               </p>
-              <div class="services-actions zg-align-center">
-                <a href="#contact" class="btn btn-outline-light custom-btn" data-btn="services">Learn More</a>
-              </div>
+              <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
             </div>
           </div>
         </div>
@@ -219,9 +208,7 @@
                 Long-lasting, elegant bridal look enhancing your natural
                 beauty for your special day.
               </p>
-              <div class="services-actions zg-align-center">
-                <a href="#contact" class="btn btn-outline-light custom-btn" data-btn="services">Learn More</a>
-              </div>
+              <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
             </div>
           </div>
         </div>
@@ -238,9 +225,7 @@
                 Perfectly shaped, defined brows to beautifully frame your
                 face.
               </p>
-              <div class="services-actions zg-align-center">
-                <a href="#contact" class="btn btn-outline-light custom-btn" data-btn="services">Learn More</a>
-              </div>
+              <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
             </div>
           </div>
         </div>
@@ -258,13 +243,16 @@
       <h5 class="fw-semibold-style mb-3-style gallery-section-subheading my-3-style">Photos</h5>
       <div class="row g-3 my-4-style">
         <div class="col-6 col-md-4 px-3-style img-wrapper-style clonable-card">
-          <div class="gallery-img gallery-card-surface gallery-photo-one" role="img" aria-label="Kanika makeup gallery portrait"></div>
+          <img loading="lazy" src="assets/images/makeupartistwebsitetemplatesection4a.webp" alt="Photo 1"
+            class="img-fluid rounded gallery-img" />
         </div>
         <div class="col-6 col-md-4 px-3-style img-wrapper-style clonable-card">
-          <div class="gallery-img gallery-card-surface gallery-photo-two" role="img" aria-label="Kanika bridal makeup gallery portrait"></div>
+          <img loading="lazy" src="assets/images/makeupartistwebsitetemplatesection4b.webp" alt="Photo 2"
+            class="img-fluid rounded gallery-img" />
         </div>
         <div class="col-6 col-md-4 px-3-style img-wrapper-style clonable-card">
-          <div class="gallery-img gallery-card-surface gallery-photo-three" role="img" aria-label="Kanika event makeup gallery portrait"></div>
+          <img loading="lazy" src="assets/images/makeupartistwebsitetemplatesection4c.webp" alt="Photo 3"
+            class="img-fluid rounded gallery-img" />
         </div>
       </div>
 
@@ -272,8 +260,8 @@
       <div class="swiper mySwiper videos-swiper pb-5-style">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-link" aria-label="Watch makeup video 1 on YouTube">
-              <div class="video-frame">
+            <a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
+              <div style="position: relative">
                 <div class="img-wrapper-style">
                   <img loading="lazy" src="assets/images/makeupartistwebsitetemplate5a.webp" alt="Video 1"
                     class="img-fluid rounded video-gallery-img" />
@@ -284,9 +272,9 @@
           </div>
 
           <div class="swiper-slide">
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-link" aria-label="Watch makeup video 2 on YouTube">
+            <a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
 
-              <div class="video-frame">
+              <div class="" style="position: relative">
                 <div class="img-wrapper-style">
                   <img loading="lazy" src="assets/images/makeupartistwebsitetemplatephotoshootmodelmakeup-5b.webp"
                     alt="Video 2" class="img-fluid rounded video-gallery-img" />
@@ -297,9 +285,9 @@
           </div>
 
           <div class="swiper-slide">
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-link" aria-label="Watch makeup video 3 on YouTube">
+            <a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
 
-              <div class="video-frame">
+              <div class="" style="position: relative">
                 <div class="img-wrapper-style">
                   <img loading="lazy" src="assets/images/makeupartistwebsitetemplate5c.webp" alt="Video 3"
                     class="img-fluid rounded video-gallery-img" />
@@ -310,9 +298,9 @@
           </div>
 
           <div class="swiper-slide">
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-link" aria-label="Watch makeup video 4 on YouTube">
+            <a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
 
-              <div class="video-frame">
+              <div class="" style="position: relative">
                 <div class="img-wrapper-style">
                   <img loading="lazy" src="assets/images/makeupartistwebsitetemplate5d.webp" alt="Video 4"
                     class="img-fluid rounded video-gallery-img" />
@@ -323,11 +311,11 @@
           </div>
 
           <div class="swiper-slide">
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="video-link" aria-label="Watch makeup video 5 on YouTube">
+            <a href="https://www.youtube.com" target="_blank" style="text-decoration: none;">
 
-              <div class="video-frame">
+              <div class="" style="position: relative">
                 <div class="img-wrapper-style">
-                  <img loading="lazy" src="assets/images/makeupartistwebsitetemplate5a.webp" alt="Video 5"
+                  <img loading="lazy" src="assets/images/makeupartistwebsitetemplate5a.webp" alt="Video 4"
                     class="img-fluid rounded video-gallery-img" />
                 </div>
                 <span class="video-icon"><i class="bi bi-play-fill" data-icon="bi-play-fill"></i></span>
@@ -338,9 +326,12 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <div class="gallery-actions zg-align-center">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-custom" data-btn="gallery"><span class="me-2-style gallery-btn-content"><i class="bi bi-instagram" data-icon="bi-instagram"></i> TAKE A LOOK</span></a>
-      </div>
+      <a class="btn btn-custom">
+        <span class="me-2-style">
+          <i class="bi bi-instagram" data-icon="bi-instagram"></i>
+          TAKE A LOOK
+        </span>
+      </a>
     </div>
   </section>
 
@@ -353,7 +344,7 @@
       </div>
 
       <div class="col-1 d-none d-md-block left-quote-div">
-        <span class="review-quote-icon"><i class="bi bi-quote" data-icon="bi-quote"></i></span>
+        <i class="bi bi-quote" data-icon="bi-quote"></i>
       </div>
 
       <div class="swiper review-swiper">
@@ -366,11 +357,11 @@
               </div>
               <div class="col-12 col-md-7 d-flex justify-content-center-style align-items-start-style flex-column">
                 <p class="review-text">
-                  Kanika created a polished look that felt natural. Every
-                  detail stayed fresh throughout my celebration.
+                  Ante facilisi ipsum sit eget dolor maecenas sed. Fringilla
+                  laoreet tincidunt nec nulla ullamcorper.
                 </p>
                 <p class="fw-bold-style mb-0-style fs-5-style mt-4-style">Kriti Kharbanda</p>
-                <small class="author-designation">Bridal Client</small>
+                <small class="author-designation">Co-owner at LionEnergy</small>
               </div>
             </div>
           </div>
@@ -383,11 +374,11 @@
               </div>
               <div class="col-12 col-md-7 d-flex justify-content-center-style align-items-start-style flex-column">
                 <p class="review-text">
-                  Kanika understood my vision and delivered a graceful look
-                  that stayed flawless throughout the evening.
+                  Great service and quality! Highly recommend for anyone
+                  looking for professional training.
                 </p>
                 <p class="fw-bold-style mb-0-style fs-5-style mt-4-style">Sarah Khan</p>
-                <small class="author-designation">Event Client</small>
+                <small class="author-designation">Fitness Blogger</small>
               </div>
             </div>
           </div>
@@ -400,11 +391,11 @@
               </div>
               <div class="col-12 col-md-7 d-flex justify-content-center-style align-items-start-style flex-column">
                 <p class="review-text">
-                  The makeup felt light, looked radiant, and stayed beautiful
-                  through every moment of the celebration.
+                  Great service and quality! Highly recommend for anyone
+                  looking for professional training.
                 </p>
                 <p class="fw-bold-style mb-0-style fs-5-style mt-4-style">Harshita</p>
-                <small class="author-designation">Party Client</small>
+                <small class="author-designation">Fitness Blogger</small>
               </div>
             </div>
           </div>
@@ -413,12 +404,12 @@
 
         <div class="swiper-pagination"></div>
 
-        <button type="button" class="swiper-button-prev review-control" aria-label="Previous review"><i class="bi bi-chevron-left" data-icon="bi-chevron-left"></i></button>
-        <button type="button" class="swiper-button-next review-control" aria-label="Next review"><i class="bi bi-chevron-right" data-icon="bi-chevron-right"></i></button>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
 
       <div class="col-1 d-none d-md-block left-quote-div right-quote-div ms-auto">
-        <span class="review-quote-icon"><i class="bi bi-quote" data-icon="bi-quote"></i></span>
+        <i class="bi bi-quote" data-icon="bi-quote"></i>
       </div>
     </div>
   </section>
@@ -427,8 +418,8 @@
     data-section="beauty-packages-section">
     <div class="container">
       <div class="mb-5-style text-stack">
-        <h2 class="each-section-name-outline">Beauty Packages</h2>
-        <h2 class="each-section-name">Beauty Packages</h2>
+        <h2 class="each-section-name-outline">Customer Reviews</h2>
+        <h2 class="each-section-name">Customer Reviews</h2>
       </div>
 
       <div class="row g-4">
@@ -437,26 +428,26 @@
             <h3 class="price">
               ₹10,000 <span class="text-muted-color-style fs-6-style">+ GST</span>
             </h3>
-            <h5 class="mt-3-style my-4-style fs-4-style">Face Makeup</h5>
+            <h5 class="mt-3-style my-4-style d-flex fs-4-style">Face Makeup</h5>
             <ul class="list-unstyled text-start-style">
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Skin preparation (cleansing, moisturizing, priming)</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Skin preparation (cleansing, moisturizing, priming)</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Foundation matching & application</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Foundation matching & application</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Contouring & highlighting</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Contouring & highlighting</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Blush application & blending</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Blush application & blending</div>
               </li>
             </ul>
-            <div class="package-actions zg-align-center mt-auto-style"><a href="#contact" class="btn book-btn" data-btn="pricing">Book Now</a></div>
+            <a class="btn book-btn mt-auto-style">Book Now</a>
           </div>
         </div>
 
@@ -465,30 +456,30 @@
             <h3 class="price">
               ₹15,000 <span class="text-muted-color-style fs-6-style">+ GST</span>
             </h3>
-            <h5 class="mt-3-style my-4-style fs-4-style">Wedding Makeup</h5>
+            <h5 class="mt-3-style my-4-style d-flex fs-4-style">Wedding Makeup</h5>
             <ul class="list-unstyled text-start-style">
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Personalized bridal consultation</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Personalized bridal consultation</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Foundation matching & application</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Foundation matching & application</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>HD or Airbrush makeup options</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>HD or Airbrush makeup options</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Bridal party makeup services</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Bridal party makeup services</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>On-site makeup services for convenience</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>On-site makeup services for convenience</div>
               </li>
             </ul>
-            <div class="package-actions zg-align-center mt-auto-style"><a href="#contact" class="btn book-btn" data-btn="pricing">Book Now</a></div>
+            <a class="btn book-btn mt-auto-style">Book Now</a>
           </div>
         </div>
 
@@ -497,31 +488,31 @@
             <h3 class="price">
               ₹20,000 <span class="text-muted-color-style fs-6-style">+ GST</span>
             </h3>
-            <h5 class="mt-3-style my-4-style fs-4-style">Party Makeup</h5>
+            <h5 class="mt-3-style my-4-style d-flex fs-4-style">Party Makeup</h5>
             <ul class="list-unstyled text-start-style">
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Personalized bridal consultation</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Personalized bridal consultation</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
 
-                <span>Foundation matching & application</span>
+                <div>Foundation matching & application</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>HD or Airbrush makeup options</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>HD or Airbrush makeup options</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>Bridal party makeup services</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>Bridal party makeup services</div>
               </li>
               <li>
-                <span class="package-feature-icon"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></span>
-                <span>On-site makeup services</span>
+                <div class="me-2-style"><i class="bi bi-check-circle-fill" data-icon="bi-check-circle-fill"></i></div>
+                <div>On-site makeup services</div>
               </li>
             </ul>
-            <div class="package-actions zg-align-center mt-auto-style"><a href="#contact" class="btn book-btn" data-btn="pricing">Book Now</a></div>
+            <a class="btn book-btn mt-auto-style">Book Now</a>
           </div>
         </div>
       </div>
@@ -566,7 +557,7 @@
 
       <div class="map-container text-center-style">
         <a href="https://www.google.com/maps/search/?api=1&query=12.894370090902344%2C77.6343217148211" target="_blank"
-          rel="noopener noreferrer" class="btn btn-directions mb-3-style">
+          class="btn btn-directions mb-3">
           GET DIRECTIONS <i class="bi bi-arrow-right-short" data-icon="bi-arrow-right-short"></i>
         </a>
 
@@ -579,9 +570,8 @@
 
     </div>
   </section>
-  </main>
 
-  <footer class="footer-section text-white-style py-5-style" id="footer" data-section="footer">
+  <footer class="footer-section text-white-style py-5-style" id="footer-section" data-section="footer-section">
     <div class="container">
       <div class="row gy-4 text-center-style d-flex justify-content-between text-md-start-style">
         <div class="col-12 col-md-3 contact-info">
@@ -592,10 +582,10 @@
         <div class="col-12 col-md-3">
           <h6 class="footer-heading">Links</h6>
           <ul class="list-unstyled">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#beauty-packages-section">Pricing Plans</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Pricing Plans</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
@@ -610,9 +600,9 @@
 
         <div class="col-12 col-md-2">
           <div class="footer-social mb-2-style">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter" data-icon="bi-twitter"></i></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" data-icon="bi-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" data-icon="bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter" data-icon="bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook" data-icon="bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram" data-icon="bi-instagram"></i></a>
           </div>
           <p class="address-of-footer">
             E-123, ABC Plaza, XYZ Street, New Delhi - 110077
@@ -622,11 +612,6 @@
 
       <div class="text-center-style pt-4-style mt-4-style small-style copyright-div">
         © Copyright 2025 by Kanika
-      </div>
-      <div class="row powered-by-zigrow-row">
-        <div class="col-12">
-          <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -640,7 +625,113 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script src="js/script.js?v=20260827a"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    (function () {
+      // Find ALL Zigrow forms
+      const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
+      if (!forms.length) return;
+
+      // Helper: turn FormData into a plain object
+      function serializeForm(form) {
+        const fd = new FormData(form);
+        const raw = {};
+        for (const [name, value] of fd.entries()) {
+          const el = form.elements[name];
+          const isGroup = el && (el.length && el[0] && el[0].type === 'checkbox');
+          if (isGroup) {
+            if (!raw[name]) raw[name] = [];
+            raw[name].push(value === '' ? true : value);
+          } else {
+            raw[name] = value;
+          }
+        }
+        return raw;
+      }
+
+      // Helper: pick primary value for quick list view
+      function pickPrimaryValue(raw) {
+        if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
+        if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
+        const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
+        if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
+        if (nameCombo) return nameCombo;
+        if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
+        return '';
+      }
+
+      forms.forEach((form) => {
+        // Ensure hidden fields are filled
+        const domainInput = form.querySelector('input[name="domain"]');
+        const pageUrlInput = form.querySelector('input[name="page_url"]');
+        if (domainInput) domainInput.value = location.host;
+        if (pageUrlInput) pageUrlInput.value = location.href;
+
+        // Create a container for messages if not already exists
+        let msgContainer = form.querySelector('.form-submit-message');
+        if (!msgContainer) {
+          msgContainer = document.createElement('div');
+          msgContainer.className = 'form-submit-message mt-2 text-sm';
+          form.appendChild(msgContainer);
+        }
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector('[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.dataset._oldText = submitBtn.innerText;
+            submitBtn.innerText = 'Submitting...';
+          }
+
+          // Clear previous message
+          msgContainer.innerText = '';
+          msgContainer.style.color = '';
+
+          try {
+            const raw = serializeForm(form);
+            const body = new URLSearchParams();
+            body.set('domain', (form.querySelector('input[name="domain"]')?.value || location.host));
+            body.set('form_key', (form.querySelector('input[name="form_key"]')?.value || 'contact'));
+            body.set('page_url', (form.querySelector('input[name="page_url"]')?.value || location.href));
+            body.set('payload', JSON.stringify(raw));
+
+            const primary = pickPrimaryValue(raw);
+            if (primary) body.set('value', primary);
+
+            if (raw._company) body.set('_company', raw._company);
+
+            const res = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body
+            });
+
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && (data.ok ?? true)) {
+              form.reset();
+              msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
+              msgContainer.style.color = '#28a745'; // green success
+            } else {
+              msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
+              msgContainer.style.color = '#dc3545'; // red error
+            }
+          } catch (err) {
+            console.error(err);
+            msgContainer.innerText = '❌ Something went wrong. Please try again.';
+            msgContainer.style.color = '#dc3545';
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
+            }
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 

@@ -3,7 +3,6 @@
   const nav = document.querySelector(".custom-navbar");
   const toggle = document.getElementById("menuToggle");
   const menu = document.getElementById("mainNav");
-  const toggleIcon = toggle?.querySelector("[data-icon]");
 
   if (!nav || !toggle || !menu) return;
 
@@ -11,20 +10,12 @@
     toggle.classList.add("active");
     menu.classList.add("active");
     toggle.setAttribute("aria-expanded", "true");
-    if (toggleIcon) {
-      toggleIcon.classList.replace("bi-list", "bi-x-lg");
-      toggleIcon.dataset.icon = "close-menu";
-    }
   };
 
   const closeMenu = () => {
     toggle.classList.remove("active");
     menu.classList.remove("active");
     toggle.setAttribute("aria-expanded", "false");
-    if (toggleIcon) {
-      toggleIcon.classList.replace("bi-x-lg", "bi-list");
-      toggleIcon.dataset.icon = "menu";
-    }
   };
 
   // Toggle click
@@ -58,14 +49,13 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.classList.add("is-visible");
+    backToTopBtn.style.display = "block";
   } else {
-    backToTopBtn.classList.remove("is-visible");
+    backToTopBtn.style.display = "none";
   }
 };
 
-backToTopBtn.onclick = (event) => {
-  event.preventDefault();
+backToTopBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
@@ -76,8 +66,7 @@ if (!trailContainer) {
 }
 
 let lastTime = 0;
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-if (!reducedMotion.matches) document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", (e) => {
   // throttle to ~60fps (you can raise the ms for fewer dots)
   const now = performance.now();
   if (now - lastTime < 16) return; // 16ms = 60fps
@@ -90,20 +79,25 @@ if (!reducedMotion.matches) document.addEventListener("mousemove", (e) => {
 
   const dot = document.createElement("div");
   dot.className = "trail-dot";
+  dot.style.left = `${x}px`;
+  dot.style.top = `${y}px`;
+
   trailContainer.appendChild(dot);
-  const trailAnimation = dot.animate(
-    [
-      { transform: `translate(${x}px, ${y}px) translate(-50%, -50%) scale(1)`, opacity: 0.9 },
-      { transform: `translate(${x}px, ${y}px) translate(-50%, -50%) scale(0.5)`, opacity: 0 },
-    ],
-    { duration: 700, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)" }
-  );
-  trailAnimation.addEventListener("finish", () => dot.remove(), { once: true });
+
+  // trigger fade/scale next frame for smooth transition
+  requestAnimationFrame(() => {
+    dot.style.transform = "translate(-50%, -50%) scale(0.5)";
+    dot.style.opacity = "0";
+  });
+
+  // remove after animation (match the CSS transition duration)
+  setTimeout(() => {
+    dot.remove();
+  }, 700);
 });
 
 // gsap animation
 
-if (window.gsap && window.ScrollTrigger && !reducedMotion.matches) {
 gsap.registerPlugin(ScrollTrigger);
 if (window.innerWidth > 768) {
   // Navbar Animation on Page Load
@@ -115,7 +109,7 @@ if (window.innerWidth > 768) {
   });
 
   // Hero Section Animation
-  gsap.from(".hero-content", {
+  gsap.from(".hero-text", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -126,7 +120,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".hero-media__images", {
+  gsap.from(".hero-images", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -138,7 +132,7 @@ if (window.innerWidth > 768) {
   });
 
   // About Section Animation
-  gsap.from(".about-section__media", {
+  gsap.from(".about-image", {
     x: -80,
     opacity: 0,
     duration: 1,
@@ -149,7 +143,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".about-section__content", {
+  gsap.from(".about-content", {
     y: 80,
     opacity: 0,
     duration: 1,
@@ -161,7 +155,7 @@ if (window.innerWidth > 768) {
   });
 
   // Testimonial section animation
-  gsap.from(".testimonial-section__img", {
+  gsap.from(".testimonial-image", {
     x: -100,
     opacity: 0,
     duration: 1,
@@ -172,7 +166,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".testimonial-section__content", {
+  gsap.from(".testimonial-content", {
     y: 100,
     opacity: 0,
     duration: 1,
@@ -184,33 +178,33 @@ if (window.innerWidth > 768) {
   });
 
   // Daycare schedule cards animation
-  gsap.from(".day-care-options-section__card", {
+  gsap.from(".card-boxs", {
     y: 50,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".day-care-options-section",
+      trigger: ".daycare-section",
       start: "top 80%",
     },
   });
 
   // Heading animations in Daycare section
-  gsap.from(".day-care-options-section__label, .day-care-options-section__title", {
+  gsap.from(".daycare-section .subheading, .daycare-section .heading", {
     y: 30,
     opacity: 0,
     duration: 0.8,
     stagger: 0.1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".day-care-options-section",
+      trigger: ".daycare-section",
       start: "top 85%",
     },
   });
 
   /** WHY US SECTION **/
-  gsap.from(".why-us-section__left", {
+  gsap.from(".why-us-section .left", {
     x: -100,
     opacity: 0,
     duration: 1,
@@ -222,7 +216,7 @@ if (window.innerWidth > 768) {
   });
 
   /** GALLERY SECTION **/
-  gsap.from(".gallery-section__item", {
+  gsap.from(".gallery-grid img", {
     scale: 0.8,
     opacity: 0,
     duration: 0.8,
@@ -236,7 +230,7 @@ if (window.innerWidth > 768) {
 
   /** DAILY ACTIVITIES **/
   gsap.from(
-    ".daily-activities-section__subtitle, .daily-activities-section__title",
+    ".daily-activities .section-subtitle, .daily-activities .section-title",
     {
       y: 30,
       opacity: 0,
@@ -244,63 +238,63 @@ if (window.innerWidth > 768) {
       stagger: 0.1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".daily-activities-section",
+        trigger: ".daily-activities",
         start: "top 85%",
       },
     }
   );
 
-  gsap.from(".daily-activities-section__media", {
+  gsap.from(".daily-activities .video-wrapper", {
     scale: 0.9,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".daily-activities-section__media",
+      trigger: ".daily-activities .video-wrapper",
       start: "top 85%",
     },
   });
 
   /** PROGRAM HIGHLIGHTS **/
-  gsap.from(".program-highlights-section__item", {
+  gsap.from(".program-highlights .highlight-item", {
     y: 50,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".program-highlights-section",
+      trigger: ".program-highlights",
       start: "top 80%",
     },
   });
 
   /** MEET THE TEACHERS **/
-  gsap.from(".meet-teachers-section__subtitle, .meet-teachers-section__title", {
+  gsap.from(".meet-teachers .section-subtitle, .meet-teachers .section-title", {
     y: 30,
     opacity: 0,
     duration: 0.8,
     stagger: 0.1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".meet-teachers-section",
+      trigger: ".meet-teachers",
       start: "top 85%",
     },
   });
 
-  gsap.from(".meet-teachers-section__card", {
+  gsap.from(".teachers-grid .teacher-card", {
     scale: 0.9,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".meet-teachers-section__row",
+      trigger: ".teachers-grid",
       start: "top 80%",
     },
   });
 
   /** PARENT TESTIMONIAL **/
-  gsap.from(".parent-testimonial__subtitle", {
+  gsap.from(".parent-testimonial .section-subtitle", {
     y: 30,
     opacity: 0,
     duration: 0.8,
@@ -312,7 +306,7 @@ if (window.innerWidth > 768) {
   });
 
   /** FOOTER CTA **/
-  gsap.from(".footer-cta__title", {
+  gsap.from(".footer-cta-title", {
     y: 40,
     opacity: 0,
     duration: 0.8,
@@ -323,7 +317,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".footer-cta__text", {
+  gsap.from(".footer-cta-text", {
     y: 30,
     opacity: 0,
     duration: 0.8,
@@ -335,7 +329,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".footer-cta__button", {
+  gsap.from(".footer-cta-button", {
     scale: 0.9,
     opacity: 0,
     duration: 0.6,
@@ -348,7 +342,7 @@ if (window.innerWidth > 768) {
   });
 
   /** FOOTER **/
-  gsap.from(".site-footer__copy", {
+  gsap.from(".footer-copy", {
     x: -50,
     opacity: 0,
     duration: 0.8,
@@ -359,7 +353,8 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".site-footer__social a", {
+  gsap.from(".footer-social a", {
+    y: 20,
     opacity: 0,
     duration: 0.6,
     stagger: 0.15,
@@ -369,5 +364,4 @@ if (window.innerWidth > 768) {
       start: "top 90%",
     },
   });
-}
 }

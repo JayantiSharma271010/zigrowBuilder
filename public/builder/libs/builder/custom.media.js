@@ -350,7 +350,7 @@ this.setTab(initialTab);
       this.activeTab = tab;
       this.mediaContext.activeTabType = tab;
 
-      this.setSourceMode("url");
+         this.setSourceMode("url");
 
       if (this.elements.tabs) {
         this.elements.tabs.forEach((btn) => {
@@ -465,14 +465,20 @@ this.setTab(initialTab);
         sourceMode: "url",
         initialTab: "uploads",
       },
-      function (imageData) {
-        // self.handleGallerySelection(imageData);
+        function (imageData) {
+  const payload =
+    typeof imageData === "string" ? { src: imageData } : imageData || {};
 
-        requestAnimationFrame(function(){
-          if (!self.selectedNode) return;
-          self.applySelectedMedia()
-        })
-      },
+  const src = payload.src || payload.url || "";
+  if (!src) return;
+
+  self.handleGallerySelection(payload);
+
+  requestAnimationFrame(function () {
+    if (!self.selectedNode) return;
+    self.applySelectedMedia();
+  });
+},
     );
 
     // Safety sync after open, but without visible delay issue

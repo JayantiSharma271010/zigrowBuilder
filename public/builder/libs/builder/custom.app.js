@@ -32,6 +32,7 @@ const ImageMaskEditor = {
             .shape.none::after { content: '🚫'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #dc3545; font-size: 20px; font-weight: bold; }
             .mask-popup { display: none; position: absolute; bottom: 100%; left: 0; z-index: 1101; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #dee2e6; border-radius: 6px; padding: 12px; width: 260px; margin-bottom: 10px; }
             .mask-popup.show { display: block; }
+            .mask-popup .edit-options-mask { display: none; }
             ${this.shapes.map(s => s.name !== 'none' ? `.shape.${s.name} { clip-path: ${s.path}; }` : '').join('\n')}
         `;
         document.head.appendChild(style);
@@ -53,6 +54,7 @@ const ImageMaskEditor = {
 
     bindEvents: function () {
         const maskingBtn = document.getElementById("masking-btn");
+        const selectBox = document.getElementById("select-box");
         const maskPopup = document.querySelector(".mask-popup");
         const shapesGrid = document.querySelector('.shapes-grid');
         const imagePosition = document.getElementById("image-mask-position");
@@ -63,16 +65,30 @@ const ImageMaskEditor = {
                 e.stopPropagation();
 
                 this.syncSelectedShape();
-
-                const topDistance = maskingBtn.getBoundingClientRect().top;
-                if (topDistance > 270) {
-                    maskPopup.style.bottom = "100%";
-                    maskPopup.style.top = "auto";
+                if (maskPopup.style.display == "none") {
+                    maskPopup.style.display = "block";
                 } else {
-                    maskPopup.style.bottom = "auto";
-                    maskPopup.style.top = "110%";
+                    maskPopup.style.display = "none";
                 }
-                maskPopup.classList.toggle("show");
+
+                // const topDistance = selectBox.getBoundingClientRect().top;
+                const leftDistance = selectBox.getBoundingClientRect().left;
+                const rightDistance = selectBox.getBoundingClientRect().right;
+                const iframeWidth = window.innerWidth;
+                console.log("iframeWidth: ", iframeWidth);                
+
+                console.log("selectBox.getBoundingClientRect(): ", selectBox.getBoundingClientRect());
+
+                if (leftDistance > 260) {
+                    maskPopup.style.left = "-265px";
+                    maskPopup.style.top = "5px";
+                } else if ((iframeWidth - rightDistance) > 260) {
+                    maskPopup.style.left = "100%";
+                    maskPopup.style.top = "5px";
+                } else {
+                    maskPopup.style.top = "0%";
+                    maskPopup.style.left = "0%";
+                }
             });
 
             maskPopup.addEventListener("click", (e) => e.stopPropagation());
@@ -87,6 +103,8 @@ const ImageMaskEditor = {
                 item.classList.add('active');
 
                 this.applyStyleToSelected("clip-path", item.dataset.shape);
+
+                this.updateImagePositionVisibility();
             });
         }
 
@@ -119,7 +137,7 @@ const ImageMaskEditor = {
                 }
             }
 
-            
+            // Record Undo history using Vvveb core
             if (window.Vvveb && Vvveb.Undo) {
                 Vvveb.Undo.addMutation({
                     type: "attributes",
@@ -132,19 +150,56 @@ const ImageMaskEditor = {
         }
     },
 
+    updateImagePositionVisibility: function (selectedEl = null) {
+        if (!selectedEl) {
+            selectedEl = window.Vvveb ? Vvveb.Builder.selectedEl : null;
+        }
+
+        const positionOptions = document.querySelector(
+            ".mask-popup .edit-options-mask"
+        );
+
+        if (!positionOptions) return;
+
+        if (!selectedEl || selectedEl.tagName !== "IMG") {
+            positionOptions.style.display = "none";
+            return;
+        }
+
+        const computedStyle = window.getComputedStyle(selectedEl);
+
+        let clipPath =
+            selectedEl.style.getPropertyValue("clip-path") ||
+            selectedEl.style.getPropertyValue("-webkit-clip-path") ||
+            computedStyle.getPropertyValue("clip-path") ||
+            computedStyle.getPropertyValue("-webkit-clip-path") ||
+            "none";
+
+        clipPath = clipPath.trim().toLowerCase();
+
+        const hasMask =
+            clipPath &&
+            clipPath !== "none" &&
+            clipPath !== "initial" &&
+            clipPath !== "unset";
+
+        positionOptions.style.display = hasMask ? "block" : "none";
+    },
+
     syncSelectedShape: function () {
         const selectedEl = window.Vvveb ? Vvveb.Builder.selectedEl : null;
         const shapesGrid = document.querySelector('.shapes-grid');
+        this.updateImagePositionVisibility(selectedEl);
 
         if (!selectedEl || !shapesGrid || selectedEl.tagName !== "IMG") return;
 
-        
+        // Get current clip-path
         let currentClipPath =
             selectedEl.style.clipPath ||
             window.getComputedStyle(selectedEl).clipPath ||
             "none";
 
-        
+        // Normalize browser values
         if (
             !currentClipPath ||
             currentClipPath === "initial" ||
@@ -163,7 +218,7 @@ const ImageMaskEditor = {
             }
         });
 
-        
+        // If no match found, select "none"
         if (!matchedItem) {
             matchedItem = shapesGrid.querySelector('[data-shape="none"]');
         }
@@ -582,9 +637,11 @@ document.addEventListener("click", () => {
 
 
 
+// Jayanti code add for Surface/container editor
 
 
-
+//  Surface Style Editor Controller 
+// Purpose: Card/container style editor logic only.
 
 
 

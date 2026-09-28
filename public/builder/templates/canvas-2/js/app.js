@@ -8,12 +8,6 @@
     menu.classList.toggle("active", open);
     toggle.classList.toggle("active", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    const icon = toggle.querySelector("i");
-    if (icon) {
-      icon.classList.toggle("bi-list", !open);
-      icon.classList.toggle("bi-x-lg", open);
-      icon.setAttribute("data-icon", open ? "close-menu" : "menu");
-    }
   };
 
   toggle.addEventListener("click", () => {
@@ -43,21 +37,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTopBtn.addEventListener("click", (event) => {
-  event.preventDefault();
+backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 // GSAP Animations
 
-if (
-  window.gsap &&
-  window.ScrollTrigger &&
-  window.innerWidth > 768 &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+if (window.innerWidth > 768) {
   // Header Animation
-  gsap.from(".site-header", {
+  gsap.from("#header", {
     y: -100,
     opacity: 0,
     duration: 1,
@@ -65,46 +53,46 @@ if (
   });
 
   // Hero Section
-  gsap.from(".hero-section__content", {
-    scrollTrigger: ".hero-section",
+  gsap.from("#hero .text-content", {
+    scrollTrigger: "#hero",
     y: -100,
     opacity: 0,
     duration: 1,
   });
 
-  gsap.from(".hero-section__image-wrap", {
-    scrollTrigger: ".hero-section",
+  gsap.from("#hero .hero-img", {
+    scrollTrigger: "#hero",
     y: 100,
     opacity: 0,
     duration: 1,
   });
 
   // About Section
-  gsap.from(".about-section__image-wrap", {
-    scrollTrigger: ".about-section",
+  gsap.from("#about img", {
+    scrollTrigger: "#about",
     y: -100,
     opacity: 0,
     duration: 1,
   });
 
-  gsap.from(".about-section__content", {
-    scrollTrigger: ".about-section",
+  gsap.from("#about .ps-lg-5", {
+    scrollTrigger: "#about",
     y: 100,
     opacity: 0,
     duration: 1,
   });
 
   // CTA Section
-  gsap.from(".cta-section__wrap", {
-    scrollTrigger: ".cta-section",
+  gsap.from("#cta", {
+    scrollTrigger: "#cta",
     scale: 0.8,
     opacity: 0,
     duration: 1,
   });
 
   // Gallery Items
-  gsap.from(".gallery-section__box", {
-    scrollTrigger: ".gallery-section",
+  gsap.from(".gallery-box", {
+    scrollTrigger: "#gallery",
     opacity: 0,
     y: 50,
     duration: 0.5,
@@ -112,16 +100,17 @@ if (
   });
 
   // Testimonials
-  gsap.from(".testimonial-section__card", {
-    scrollTrigger: ".testimonial-section",
+  gsap.from("#testimonial .p-3", {
+    scrollTrigger: "#testimonial",
+    opacity: 0,
     y: 50,
     duration: 0.6,
     stagger: 0.2,
   });
 
   // Footer
-  gsap.from(".site-footer__wrap", {
-    scrollTrigger: ".site-footer",
+  gsap.from("#footer", {
+    scrollTrigger: "#footer",
     opacity: 0,
     y: 50,
     duration: 1,

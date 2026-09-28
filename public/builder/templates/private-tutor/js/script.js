@@ -1,8 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                  // Swiper                                 */
 /* -------------------------------------------------------------------------- */
-if (typeof Swiper !== "undefined" && document.querySelector(".mySwiper")) {
-  new Swiper(".mySwiper", {
+  const swiper = new Swiper(".mySwiper", {
     loop: true,
     centeredSlides: true,
     slidesPerView: 3,
@@ -21,7 +20,6 @@ if (typeof Swiper !== "undefined" && document.querySelector(".mySwiper")) {
       768: { slidesPerView: 4.5 },
     }
   });
-}
 
 /* -------------------------------------------------------------------------- */
 /*                            // Back to top button                           */
@@ -39,7 +37,7 @@ window.addEventListener("scroll", () => {
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    behavior: "smooth",
   });
 });
 
@@ -195,12 +193,7 @@ window.addEventListener("scroll", () => {
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("DOMContentLoaded", () => {
-  if (
-    window.innerWidth >= 768 &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-    typeof gsap !== "undefined" &&
-    typeof ScrollTrigger !== "undefined"
-  ) {
+  if (window.innerWidth >= 768) {
     gsap.registerPlugin(ScrollTrigger);
 
 
@@ -518,7 +511,7 @@ if (featuresSection) {
     });
 
     // Animate card heading
-    gsap.from(card.querySelector("h3"), {
+    gsap.from(card.querySelector("h5"), {
       scrollTrigger: {
         trigger: card,
         start: "top 85%",
@@ -563,7 +556,7 @@ const highlightProgram = document.querySelector("#highlight-program");
 
 if (highlightProgram) {
   // Animate image
-  gsap.from("#highlight-program .highlight-media img", {
+  gsap.from("#highlight-program img.img-fluid", {
     scrollTrigger: {
       trigger: highlightProgram,
       start: "top 80%",
@@ -601,12 +594,12 @@ if (highlightProgram) {
   });
 
   // Animate list items (icons + text blocks)
-  const listItems = highlightProgram.querySelectorAll(".highlight-point");
+  const listItems = highlightProgram.querySelectorAll(".d-flex.align-items-start");
   listItems.forEach((item, index) => {
     const delay = 0.6 + index * 0.2;
 
     // Icon
-    gsap.from(item.querySelector(".highlight-icon"), {
+    gsap.from(item.querySelector("img"), {
       scrollTrigger: {
         trigger: item,
         start: "top 85%",
@@ -619,7 +612,7 @@ if (highlightProgram) {
     });
 
     // Text block (h6 + p)
-    gsap.from(item.querySelector(".highlight-icon + div"), {
+    gsap.from(item.querySelector("div"), {
       scrollTrigger: {
         trigger: item,
         start: "top 85%",
@@ -710,7 +703,7 @@ const contactSection = document.querySelector("#contact");
 
 if (contactSection) {
   // Animate "Contact Information" heading
-  gsap.from("#contact .contact-info h2", {
+  gsap.from("#contact .left-contact h5", {
     scrollTrigger: {
       trigger: contactSection,
       start: "top 80%",
@@ -722,7 +715,7 @@ if (contactSection) {
   });
 
   // Animate contact info list items
-  gsap.utils.toArray("#contact .contact-list li").forEach((item, index) => {
+  gsap.utils.toArray("#contact .left-contact ul li").forEach((item, index) => {
     gsap.from(item, {
       scrollTrigger: {
         trigger: contactSection,
@@ -737,7 +730,7 @@ if (contactSection) {
   });
 
   // Animate social icons
-  gsap.from("#contact .social-links a", {
+  gsap.from("#contact .left-contact div a", {
     scrollTrigger: {
       trigger: contactSection,
       start: "top 75%",
@@ -751,7 +744,7 @@ if (contactSection) {
   });
 
   // Animate form fields
-  gsap.utils.toArray("#contact form [form-question-zigrow]").forEach((field, index) => {
+  gsap.utils.toArray("#contact form .form-custom").forEach((field, index) => {
     gsap.from(field, {
       scrollTrigger: {
         trigger: contactSection,

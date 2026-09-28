@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spike stack  - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Tinos:wght@400;700&family=Marcellus&display=swap"
+  rel="stylesheet"
+/>
+
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #242429;
+      --border-radius-btn: 8px;
+      --box-radius: 24px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #0D47A1;
+      --secondary-colors: #1C1C1C;
+      --territory-colors: #42A5F5;
+      --theme-3: #000000;
+      --theme-4: #fff;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 8px 16px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 17.5px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 24px;
+      --fs-h3-base: 54px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 54px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #1C1C1C ;
+      font-family: Source Sans Pro;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+.white-border-btn{
+  background-color: #fff;
+      color: var(--secondary-colors) ;
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+      text-decoration: none ;
+      
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+}
+
+ .white-border-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Playfair Display ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #1C1C1C;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+ 
+
+
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top custom-navbar">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold" href="#">
+          Spike stack 
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav align-lg-custom-center -center">
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#portfolio">Portfolio</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#faq">Faq</a>
+            </li>
+          
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" class="primary-btn">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+    .custom-navbar {
+  padding: 0.8rem 0;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 1.2rem;
+  color: var(--para-muted);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-colors);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sticky navbar small-custom shadow on scroll */
+.sticky-top.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile menu background */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+</style>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".sticky-top");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
+
+
+    <section class="hero-zigrow-section_5" id="hero" data-section="hero">
+  <div class="overlay pointer-custom-none"></div>
+
+  <div class="container">
+    <div class="row justify-custom-start">
+      <div class="col-lg-6 col-md-8 col-12">
+
+        <div class="hero-content text-custom-white">
+          <h1>Reliable Web Support You Can Trust</h1>
+          <p>Experience seamless website care with our quick fixes, security updates, and ongoing support. We&#39;re here to keep your site running smoothly.</p>
+
+          <a href="#" class="white-btn btn-hover" data-btn="hero">
+            Message on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p class="img-credit text-custom-white small-custom position-absolute">
+    Photo by
+    <a 
+      href="https://unsplash.com/@safarslife?utm_source=zigrow&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Safar Safarov
+    </a> 
+    on 
+    <a 
+      href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Unsplash</a>
+  </p>
+</section>
+
+<style>
+  .hero-zigrow-section_5 {
+    background: url(https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxOHx8d2Vic2l0ZSUyMG1haW50ZW5hbmNlJTIwc3VwcG9ydCUyMHdvcmtpbmclMjB3aXRoJTIwY2xpZW50fGVufDF8fHx8MTc3MjYwMzA0NXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080) center center/cover no-repeat;
+    height: 90vh;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: var(--box-radius);
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }}
+</style>
+
+  
+    <!-- ABOUT SECTION 9 -->
+<section
+  class="about-zigrow-section_9 section-padding"
+  id="about"
+  data-section="about"
+>
+  <div class="container">
+    
+
+    <!-- TOP -->
+    <div class="about9-top text-custom-center mx-custom-auto ">
+      <div class="about9-kicker">About us</div>
+
+      <h2 class="about9-title main-heading mb-custom-0  ">
+        At Spike Stack, we specialize in reliable web
+       <span class="heading-inline">
+
+           development support. Our mission is to ensure your website runs smoothly and securely, giving you peace of mind.
+        </span>
+      </h2>
+
+    </div>
+
+    <!-- ICON PILLS -->
+    <div class="about9-pills d-flex justify-custom-center flex-wrap">
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Reliable Support</div>
+        </div>
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-clock"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Quick Fixes</div>
+        </div>
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-gear"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Ongoing Care</div>
+        </div>
+      
+    </div>
+
+    <!-- IMAGES -->
+    <div class="row justify-custom-center g-4 mt-custom-4  img-container">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="about9-imgCard img-wrapper-center">
+          <img src="https://images.unsplash.com/photo-1620748229976-a78c7e0932a0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyM3x8d2Vic2l0ZSUyMG1haW50ZW5hbmNlJTIwc3VwcG9ydCUyMHRlYW18ZW58MXx8fHwxNzcyNjAzMDQ2fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="About image" loading="lazy" />
+          <div class="img-credit">
+            Photo by
+            <a href="https://unsplash.com/@afgprogrammer" target="_blank" rel="noopener noreferrer">
+              Mohammad Rahmani
+            </a>
+            on
+            <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+              Unsplash
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="about9-imgCard img-wrapper-center">
+          <img src="https://images.unsplash.com/photo-1702479744062-1880502275b1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw5fHx3ZWJzaXRlJTIwbWFpbnRlbmFuY2UlMjBzdXBwb3J0JTIwbW9kZXJufGVufDF8fHx8MTc3MjYwMzA0NXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Secondary about image" loading="lazy" />
+          <div class="img-credit">
+            Photo by
+            <a href="https://unsplash.com/@mockupfreenet" target="_blank" rel="noopener noreferrer">
+              Mockup Free
+            </a>
+            on
+            <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+              Unsplash
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTIONAL BUTTON (hidden in ref, but available) -->
+    <!-- <div class="text-custom-center mt-custom-4 ">
+      <a class="about9-btn" href="#contact">CONTACT</a>
+    </div> -->
+  </div>
+</section>
+
+<style>
+#about.about-zigrow-section_9{
+  background: #ffffff;
+  color: #121212;
+}
+
+#about.about-zigrow-section_9 .about9-top{
+  max-width: 920px;
+}
+
+#about.about-zigrow-section_9 .about9-kicker{
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18,18,18,0.55);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+#about.about-zigrow-section_9 .about9-title{
+  /* font-family: Playfair Display; */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  /* font-size: clamp(1.45rem, 1.05rem + 2.2vw, 2.6rem); */
+  color: rgba(18,18,18,0.92);
+}
+
+#about.about-zigrow-section_9 .about9-title .heading-inline{
+    color: var(--primary-colors, #e11d2e);
+}
+
+#about.about-zigrow-section_9 .about9-inline-img{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 10px;
+  box-shadow: var(--shadow-section);
+  transform: translateY(-2px);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+#about.about-zigrow-section_9 .about9-inline-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about.about-zigrow-section_9 .img-container{
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+#about.about-zigrow-section_9 .about9-sub{
+  margin-top: 1rem;
+  max-width: 740px;
+  color: rgba(18,18,18,0.62);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+#about.about-zigrow-section_9 .about9-pills{
+  gap: 26px;
+  margin-top: 1.6rem;
+}
+
+#about.about-zigrow-section_9 .about9-pill{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 92px;
+}
+
+#about.about-zigrow-section_9 .about9-pill-icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+  color: rgba(18,18,18,0.75);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+#about.about-zigrow-section_9 .about9-pill-icon i{
+  font-size: 1.05rem;
+}
+
+#about.about-zigrow-section_9 .about9-pill.is-active .about9-pill-icon{
+  background: rgba(18,18,18,0.92);
+  color: #fff;
+  border-color: rgba(18,18,18,0.20);
+}
+
+#about.about-zigrow-section_9 .about9-pill:hover .about9-pill-icon{
+  background: #111;
+  color: #fff;
+  border-color: rgba(17,17,17,0.35);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+
+#about.about-zigrow-section_9 .about9-pill:hover .about9-pill-label{
+  color: #111;
+}
+
+#about.about-zigrow-section_9 .about9-pill-label{
+  /* font-size: 0.78rem; */
+  /* color: rgba(18,18,18,0.55); */
+  font-weight: 600;
+}
+
+#about.about-zigrow-section_9 .about9-imgCard{
+  position: relative;
+   border-radius: var(--box-radius);
+  overflow: hidden;
+  background: #f7f7f8;
+  box-shadow: var(--shadow-section);
+  aspect-ratio: 1 / 1;
+}
+
+#about.about-zigrow-section_9 .about9-imgCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about.about-zigrow-section_9 .about9-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.4rem;
+  border-radius: var(--border-radius-btn, 999px);
+  background: var(--primary-colors, #e11d2e);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-section, 0 10px 24px rgba(0,0,0,0.18));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#about.about-zigrow-section_9 .about9-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-section-hover, 0 12px 28px rgba(0,0,0,0.22));
+  color: #fff;
+}
+
+/* mobile spacing */
+@media (max-width: 575.98px){
+  #about.about-zigrow-section_9 .about9-pills{
+    gap: 18px;
+  }
+  #about.about-zigrow-section_9 .about9-inline-img{
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+  }
+}
+</style>
+
+  
+    <!-- PROFESSIONAL -->
+
+<section class="section-padding service-zigrow-section_1" id="services" data-section="services"> 
+
+  <div class="container text-custom-center mb-custom-5">
+    <h2 class="main-heading">
+      Our Services
+    </h2>
+
+    <p class="col-md-8 mx-custom-auto para-muted font-subheading">
+      Reliable website care and support tailored to your needs. Quick fixes and ongoing assistance to keep your site running smoothly.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-5"><!-- g-5 → larger gaps -->
+      
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.1s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1505728068082-c4e7a2a3a46d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw3fHx3ZWJzaXRlJTIwbWFpbnRlbmFuY2UlMjBzdXBwb3J0JTIwY29uc3VsdGF0aW9ufGVufDF8fHx8MTc3MjYwMzA0N3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Bug Fixes icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@christopher__burns?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Christopher Burns
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Bug Fixes
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Identify and resolve issues swiftly to ensure your website functions flawlessly. We tackle bugs so you can focus on your business.
+  </p>
+</div>
+
+        </div>
+        
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.2s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1692699203597-b5a4464f3f9c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwzfHx3ZWJzaXRlJTIwbWFpbnRlbmFuY2UlMjBzdXBwb3J0JTIwc2VydmljZSUyMGluJTIwcHJvZ3Jlc3N8ZW58MXx8fHwxNzcyNjAzMDQ3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Security Updates icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@matildaonthemove?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Matilda Alloway
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Security Updates
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Keep your website secure with regular updates and monitoring. Protect your data and your users with our proactive security measures.
+  </p>
+</div>
+
+        </div>
+        
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.30000000000000004s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1763568258299-0bac211f204e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxMnx8d2Vic2l0ZSUyMG1haW50ZW5hbmNlJTIwc3VwcG9ydCUyMHdvcmtpbmclMjB3aXRoJTIwY2xpZW50fGVufDF8fHx8MTc3MjYwMzA0NXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Performance Optimization icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@dkomow?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Daniil Komov
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Performance Optimization
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Enhance your website&#39;s speed and efficiency. We optimize performance to provide a seamless experience for your visitors.
+  </p>
+</div>
+
+        </div>
+        
+    </div>
+  </div>
+
+  <style>
+    /* section backdrop (theme fallback) + extra breathing room */
+    .service-zigrow-section_1 {
+      background: #fff;
+    
+
+    /* card */
+    .service-block_1 {
+      background: #fff ;
+      border: 1px solid #eee;
+      box-shadow:var(--shadow-section);
+      padding: 2.75rem 2rem;
+      /* ⬅️ deeper padding for a bolder feel */
+      transition: transform .3s ease, box-shadow .3s ease;
+      min-height: 290px;
+      border-radius: var(--box-radius);
+      @media (max-width: 768px) {
+        padding: 1rem;
+      }
+    }
+
+    .service-block:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .service-card {
+      h5 {
+        color: var(--lead-custom-color-mute);
+      }
+      p{
+         color: var(   --para-muted);
+      }
+    }
+
+    /* icon – slightly larger */
+    .service-icon {
+      width: 310px;
+      height: 200px;
+      object-fit: cover;
+    border-radius: var(--box-radius);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .1);
+    }
+
+    /* reveal animation (unchanged) */
+    .fade-in-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all .6s ease-out;
+    }
+
+    .fade-in-on-scroll.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* responsive heading tweak */
+    @media(max-width:768px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+  }
+  </style>
+
+  <script>
+    /* intersection-observer reveal (unchanged) */
+    document.addEventListener('DOMContentLoaded', () => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.fade-in-on-scroll').forEach(el => io.observe(el));
+    });
+  </script>
+</section>
+  
+    <section class="portfolio-zigrow-section_1 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">Our Recent Work</h2>
+      <p class="section-subtitle">
+        Performance Boost
+      </p>
+    </div>
+
+    <div class="row g-0">
+      <!-- Area Card -->
+    <div class="col-12 col-md-4 col-lg-3" clonable-card>
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1693905371621-9443f11bab10?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxOXx8d2Vic2l0ZSUyMG1haW50ZW5hbmNlJTIwc3VwcG9ydCUyMHdvcmslMjBzaG93Y2FzZXxlbnwxfHx8fDE3NzI2MDMwNDd8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="E-commerce Site"
+    />
+    <div class="area-name">
+      <span>E-commerce Site</span>
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@melanisticfox?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Matteo Manfredi
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-12 col-md-4 col-lg-3" clonable-card>
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1662845851419-9b727124f29c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxM3x8d2Vic2l0ZSUyMG1haW50ZW5hbmNlJTIwc3VwcG9ydCUyMGNvbXBsZXRlZCUyMHByb2plY3R8ZW58MXx8fHwxNzcyNjAzMDQ3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Blog Revamp"
+    />
+    <div class="area-name">
+      Blog Revamp
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@alecmeelan?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Alec Meelan
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="col-12 col-md-4 col-lg-3" clonable-card>
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw1fHx3ZWJzaXRlJTIwbWFpbnRlbmFuY2UlMjBzdXBwb3J0JTIwcmVzdWx0c3xlbnwxfHx8fDE3NzI2MDMwNDd8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Portfolio Showcase"
+    />
+    <div class="area-name">
+      Portfolio Showcase
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@justin_morgan?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Justin Morgan
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+   <div class="col-12 col-md-4 col-lg-3" clonable-card>
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1566915896913-549d796d2166?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwbWFpbnRlbmFuY2UlMjBzdXBwb3J0JTIwYmVmb3JlJTIwYWZ0ZXJ8ZW58MXx8fHwxNzcyNjAzMDQ4fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Corporate Website"
+    />
+    <div class="area-name">
+      Corporate Website
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@_ferh97?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Fernando Hernandez
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-zigrow-section_1 {
+    background-color: #fff;
+  
+
+
+
+  .section-subtitle {
+    color: var( --lead-custom-color-mute);
+    font-size: var(--fs-sub);
+  }
+
+  .area-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .area-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+  }
+
+  .area-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .area-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+  }}
+</style>
+
+  
+    <!-- ✅ Trusted Companies Section -->
+<section class="logo-zigrow-section_3 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- Title -->
+    <div class="trusted-box mx-custom-auto mb-custom-4">
+      <p class="trusted-title">Trusted by <span class="highlight">30,000+</span> Companies Worldwide</p>
+    </div>
+
+    <!-- Logos Row -->
+    <div class="row justify-custom-center align-custom-center g-4">
+
+      <div class="col-6 col-md-2">
+        <div class="logo-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEE3QAcR7UEYeDh20wR_8wnp7eUumxWBN4Vw&s" alt="logo 1">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="logo-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEE3QAcR7UEYeDh20wR_8wnp7eUumxWBN4Vw&s" alt="logo 1">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+       <div class="logo-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEE3QAcR7UEYeDh20wR_8wnp7eUumxWBN4Vw&s" alt="logo 1">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="logo-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEE3QAcR7UEYeDh20wR_8wnp7eUumxWBN4Vw&s" alt="logo 1">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="logo-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEE3QAcR7UEYeDh20wR_8wnp7eUumxWBN4Vw&s" alt="logo 1">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Custom Styles -->
+<style>
+  .logo-zigrow-section_3 {
+    background: linear-gradient(to right, var(--primary-colors), var(--territory-colors),  var(--primary-colors));
+    color: #fff;
+    overflow: hidden;
+  
+
+  .trusted-box {
+    background: rgba(255, 255, 255, 0.05);
+   
+      border-radius: var(--box-radius);
+    padding: 16px 24px;
+    display: inline-block;
+    backdrop-filter: blur(6px);
+     box-shadow: var(--shadow-section);
+    animation: fadeInUp 0.8s ease-out both;
+  }
+
+  .trusted-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .trusted-title .highlight {
+    color: var(--primary-colors);
+    font-weight: 600;
+  }
+
+  .logo-card {
+    padding: 12px;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-out both;
+
+    img{
+      
+      border-radius: var(--box-radius);
+    }
+  }
+
+  .logo-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .trusted-logo {
+    max-height: 48px;
+    max-width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    filter: brightness(1) invert(0) opacity(0.6);
+    transition: all 0.3s ease;
+  }
+
+  .trusted-logo:hover {
+    opacity: 1;
+    filter: brightness(1) invert(0);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Tweaks */
+  @media (max-width: 576px) {
+    .trusted-logo {
+      max-height: 40px;
+    }
+
+    .trusted-box {
+      padding: 12px 18px;
+    }}
+  }
+</style>
+  
+    <section class="faq-zigrow-section_3 section-padding" id="faq" data-section="faq">
+  <div class="container">
+
+    <div class="text-custom-start mb-custom-5">
+      <h2 class="main-heading">
+        <span>Explore Common Questions</span>
+      </h2>
+      <p class="font-subheading para-muted">
+        <span>Get instant answers to your common questions</span>
+      </p>
+    </div>
+
+    <div class="accordion" id="faqAccordion2">
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern0">
+          <button 
+            class="accordion-button "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern0"
+            aria-expanded="true"
+            aria-controls="collapseModern0"
+          >
+            <span>What services do you offer?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern0"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingModern0"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We provide bug fixes, security updates, performance optimization, backups, and content changes for your website.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern1">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern1"
+            aria-expanded="false"
+            aria-controls="collapseModern1"
+          >
+            <span>How do I raise a support request?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern1"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern1"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Simply fill out our online form, and our team will respond promptly to your request.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern2">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern2"
+            aria-expanded="false"
+            aria-controls="collapseModern2"
+          >
+            <span>What is your response time?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern2"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern2"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We promise to respond to all support requests within 24 hours, ensuring timely assistance.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern3">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern3"
+            aria-expanded="false"
+            aria-controls="collapseModern3"
+          >
+            <span>Do you offer ongoing support plans?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern3"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern3"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Yes, we offer simple support plans tailored to your website&#39;s needs for long-term care.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern4">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern4"
+            aria-expanded="false"
+            aria-controls="collapseModern4"
+          >
+            <span>How do you ensure website security?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern4"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern4"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We perform regular security updates and monitoring to protect your website from vulnerabilities.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern5">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern5"
+            aria-expanded="false"
+            aria-controls="collapseModern5"
+          >
+            <span>Can I change my support plan later?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern5"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern5"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Absolutely! You can upgrade or modify your support plan at any time to suit your needs.</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-zigrow-section_3 {
+    background-color: #fff;
+  
+
+  .faq-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .faq-subtext {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    margin-top: 0.3rem;
+  }
+
+  /* Accordion Clean Style */
+  .accordion-button {
+    font-size: 1.2rem ;
+    color: #45505e ;
+    font-weight: 400 ;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #45505e ;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0 ;
+  }
+
+  .accordion-button {
+    background-color: transparent ;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: none ;
+    padding: 1.25rem 0;
+  }
+
+  .accordion-body {
+    font-size: var(--fs-body);
+    color: var(--para-muted);
+    padding: 0 0 1rem;
+  }
+
+  .accordion-button::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    padding: 15px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #666;
+    font-size: 1rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E"); /* same gray icon */
+    border: 1px solid #666;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .faq-heading {
+      font-size: 1.5rem ;
+    }
+
+    .accordion-button {
+      font-size: 0.95rem ;
+      }}
+  }
+</style>
+
+  
+    <!-- 📮 Minimal Split Contact -->
+<section class="contact-zigrow-section_4 section-padding" id="contact" data-section="contact">
+  <div class="container-xl">
+    <div class="contact-grid overflow-hidden">
+      <div class="row g-0">
+        <!-- ◼︎ Info -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="info p-custom-5 h-custom-100">
+            <h2 class="main-heading mb-custom-4">Get in touch</h2>
+
+            <ul class="list-unstyled mb-custom-0 ">
+              <li>
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <h6>Mailing address</h6>
+                  <p>123 Business St, City</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <h6>Email</h6>
+                  <p>neela.raviteja@gmail.com</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <h6>Phone</h6>
+                  <p>7329811660</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ◼︎ Image -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="hero h-custom-100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* ========== TOKENS ========== */
+  :root {
+    --stroke: rgba(0, 0, 0, .07);
+  }
+
+  /* ========== WRAPPER ========== */
+  .contact-zigrow-section_4 {
+    background: #fdfdfd;
+  
+
+  /* outer card */
+  .contact-zigrow-section_4 .contact-grid {
+    background: var(--bg, #ffffff);
+    box-shadow: var(--shadow-section);
+    border-radius: var(--box-radius);
+    overflow: hidden;
+  }
+
+  /* list layout */
+  .contact-zigrow-section_4 .info ul li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-zigrow-section_4 .info .icon {
+    color: var(--primary-colors);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-zigrow-section_4 .info h6 {
+    font-size: .8rem;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--primary-colors);
+    margin-bottom: .25rem;
+  }
+
+  .contact-zigrow-section_4 .info p {
+    margin: 0;
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+  }
+
+  /* ========== HERO IMAGE ========== */
+  .hero {
+     background: url("https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png") center/cover no-repeat;
+    min-height: 420px;
+  }
+
+  @media (max-width: 767.98px) {
+    .contact-zigrow-section_4 .info {
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-zigrow-section_4 .hero {
+      min-height: 300px;
+    }
+
+    .contact-zigrow-section_4 .info ul li {
+      justify-content: center;
+      text-align: left;
+    }
+  }}
+</style>
+
+  
+    
+<footer class="footer-zigrow-section_2 section-padding" data-section="footer" id="footer">
+  <div class="container">
+    <div class="row gy-4 justify-custom-between align-custom-start">
+
+      <!-- Logo & Tagline -->
+      <div class="col-md-3">
+      <div data-logo="footer"><h4>Spike stack </h4></div>
+        <p class="footer-tagline">Experience seamless website care with our quick fixes, security updates, and ongoing support. We&#39;re here to keep your site running smoothly.</p>
+      </div>
+
+      <!-- Company -->
+      <div class="col-6 col-md-2">
+        <h6 class="footer-heading">Company</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Navigation -->
+      <div class="col-6 col-md-3">
+        <h6 class="footer-heading">Navigation</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Key Benefits</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Why Us</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3">
+        <h6 class="footer-heading">Contact</h6>
+        <ul class="list-unstyled contact-info">
+          <li><i class="bi bi-envelope"></i> neela.raviteja@gmail.com</li>
+          <li><i class="bi bi-telephone"></i> 7329811660</li>
+          <li><i class="bi bi-geo-alt"></i> 123 Business St, City</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="my-custom-4">
+
+    <!-- Bottom Bar -->
+    <div class="row align-custom-center justify-custom-between">
+      <div class="col-md-6 small-custom para-muted"><span>&copy; 2026 Spike stack . All rights reserved.</span></div>
+      <div class="col-md-6 text-custom-md-end small-custom bottom-bar-links">
+        <a href="#" class="me-custom-3 text-decoration-custom-none">Terms & Conditions</a>
+        <a href="#" class="me-custom-3 text-decoration-custom-none">Privacy Policy</a>
+        <a href="#" class="text-decoration-custom-none">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  .footer-zigrow-section_2 {
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    font-family: 'Inter', sans-serif;
+  
+  .footer-logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .footer-tagline {
+    font-size: 0.95rem;
+    color: var(--para-muted);
+  }
+
+  .footer-heading {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--secondary-colors);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--para-muted);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover, .bottom-bar-links a:hover {
+    color:  var(--primary-colors);
+  }
+
+  .contact-info li {
+    font-size: 0.95rem;
+    color: var(--para-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-info i {
+    color: var(--primary-colors);
+    margin-right: 0.5rem;
+  }
+
+  hr {
+    border-color: var(--border-muted);
+    height: .02rem;
+  }
+
+  @media (max-width: 767px) {
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      text-align: left;
+    }
+
+    .custom-footer .text-custom-md-end {
+      text-align: left ;
+      margin-top: 1rem;
+    }
+  }}
+</style>
+
+  
+
+
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api-uat.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+            window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    if(type === "footer" ) return; // Skip footer for animations
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    if(type === "footer") return; // Skip footer for child animations
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

@@ -16,11 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=2.13.0-1" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <a
-      href="#header"
+      href="#top"
       id="backToTopBtn"
       class="back-to-top"
       aria-label="Back to top"
@@ -34,7 +34,13 @@
           <div class="container">
             <div class="nav-bar">
               <!-- Brand -->
-              <a href="#hero" class="nav-brand-logo" data-logo="navbar">PRECISION&#10;ENGINEERING</a>
+              <a href="#" class="nav-brand" data-logo="navbar">
+                <span class="brand-logo">PE</span>
+                <span class="brand-text">
+                  PRECISION <br />
+                  ENGINEERING
+                </span>
+              </a>
 
               <!-- Nav -->
               <div class="nav-right">
@@ -46,8 +52,8 @@
                   <li class="nav-item"><a href="#why-us">Industries</a></li>
                   <li class="nav-item"><a href="#service">About us</a></li>
                   <li class="nav-item"><a href="#help-sec">Contact</a></li>
-                  <li class="nav-cta zg-align-center">
-                    <a href="tel:+9123456789" class="quote-link" data-btn="navbar">Get A Quote</a>
+                  <li class="nav-cta">
+                    <a href="tel:+9123456789" class="quote-link">Get A Quote</a>
                   </li>
                 </ul>
 
@@ -57,8 +63,6 @@
                   id="hamburger"
                   type="button"
                   aria-label="Open menu"
-                  aria-controls="nav-ul"
-                  aria-expanded="false"
                 >
                   <span></span><span></span><span></span>
                 </button>
@@ -68,7 +72,6 @@
         </nav>
       </div>
     </header>
-    <main>
 
     <!-- hero section -->
     <section class="hero-section" id="hero" data-section="hero">
@@ -89,9 +92,7 @@
               to the diverse needs of our customers.
             </p>
 
-            <div class="hero-actions zg-align-center">
-              <a href="tel:+9123456789" class="hero-btn" data-btn="hero">Get in touch</a>
-            </div>
+            <a href="tel:+9123456789" class="hero-btn">Get in touch</a>
           </div>
         </div>
       </div>
@@ -113,21 +114,21 @@
             <!-- Counts -->
             <div class="col-12 col-lg-8">
               <div class="row">
-                <div class="col-12 col-md-4 clonable-card">
+                <div class="col-12 col-md-4">
                   <div class="impact-count">
                     <h3 class="impact-number">100%</h3>
                     <p class="impact-text">Customer <br />Satisfaction</p>
                   </div>
                 </div>
 
-                <div class="col-12 col-md-4 clonable-card">
+                <div class="col-12 col-md-4">
                   <div class="impact-count">
                     <h3 class="impact-number">120+</h3>
                     <p class="impact-text">Customer <br />Worldwide</p>
                   </div>
                 </div>
 
-                <div class="col-12 col-md-4 clonable-card">
+                <div class="col-12 col-md-4">
                   <div class="impact-count">
                     <h3 class="impact-number">650+</h3>
                     <p class="impact-text">Skilled <br />Employees</p>
@@ -158,8 +159,16 @@
         <!-- Cards -->
         <div class="row g-4 service-row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="service-card service-card--design">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-img-wrap">
+                <img
+                  src="assets/eq-image/impact-1.webp"
+                  class="service-img"
+                  alt="Product Design"
+                />
+              </div>
+
               <div class="service-overlay"></div>
 
               <div class="service-content">
@@ -174,17 +183,23 @@
                     development services to help bring your ideas to life and
                     stay ahead in the market.
                   </p>
-                  <div class="service-actions zg-align-center">
-                    <a href="#help-sec" class="service-link">Read More</a>
-                  </div>
+                  <a href="#" class="service-link">Read More</a>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="service-card service-card--manufacturing">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-img-wrap">
+                <img
+                  src="assets/eq-image/impact-2.webp"
+                  class="service-img"
+                  alt="Manufacturing & Production"
+                />
+              </div>
+
               <div class="service-overlay"></div>
 
               <div class="service-content">
@@ -199,17 +214,23 @@
                     team ensure efficient and high-quality production to meet
                     your demands.
                   </p>
-                  <div class="service-actions zg-align-center">
-                    <a href="#help-sec" class="service-link">Read More</a>
-                  </div>
+                  <a href="#" class="service-link">Read More</a>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="service-card service-card--quality">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+              <div class="service-img-wrap">
+                <img
+                  src="assets/eq-image/impact-3.webp"
+                  class="service-img"
+                  alt="Quality Assurance"
+                />
+              </div>
+
               <div class="service-overlay"></div>
 
               <div class="service-content">
@@ -224,9 +245,7 @@
                     control measures in place, ensuring that our products meet
                     the highest industry standards.
                   </p>
-                  <div class="service-actions zg-align-center">
-                    <a href="#help-sec" class="service-link">Read More</a>
-                  </div>
+                  <a href="#" class="service-link">Read More</a>
                 </div>
               </div>
             </div>
@@ -241,7 +260,7 @@
       <div class="container">
         <div class="row why-row">
           <!-- LEFT -->
-          <div class="col-12 col-md-6 clonable-card">
+          <div class="col-12 col-md-6">
             <div class="why-card why-left">
               <h6 class="why-tag">why us</h6>
 
@@ -266,7 +285,7 @@
           </div>
 
           <!-- RIGHT -->
-          <div class="col-12 col-md-6 clonable-card">
+          <div class="col-12 col-md-6">
             <div class="why-card why-right">
               <div class="why-img">
                 <img src="assets/eq-image/why-us-2.webp" alt="manufacturing" />
@@ -317,25 +336,25 @@
         <!-- Logos -->
         <div class="brands-logos">
           <div class="row brands-logos-row">
-            <div class="col-6 col-md-3 clonable-card">
+            <div class="col-6 col-md-3">
               <div class="brand-logo-item">
                 <img src="assets/logo/logoipsum-373.svg" alt="logoipsum" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 clonable-card">
+            <div class="col-6 col-md-3">
               <div class="brand-logo-item">
                 <img src="assets/logo/logoipsum-2.svg" alt="logoipsum" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 clonable-card">
+            <div class="col-6 col-md-3">
               <div class="brand-logo-item">
                 <img src="assets/logo/logoipsum-373.svg" alt="logoipsum" />
               </div>
             </div>
 
-            <div class="col-6 col-md-3 clonable-card">
+            <div class="col-6 col-md-3">
               <div class="brand-logo-item">
                 <img src="assets/logo/logoipsum-2.svg" alt="logoipsum" />
               </div>
@@ -347,7 +366,12 @@
     <!--  quality section-->
     <section class="quality-section" id="quality" data-section="quality">
       <!-- Background Image Wrapper -->
-      <div class="quality-bg" data-zg-editable="surface" role="img" aria-label="Precision manufacturing equipment"></div>
+      <div class="quality-bg">
+        <img
+          src="assets/eq-image/quality-section.webp"
+          alt="quality background"
+        />
+      </div>
 
       <!-- Overlay -->
       <div class="quality-overlay"></div>
@@ -369,9 +393,7 @@
                 production.
               </p>
 
-              <div class="quality-actions zg-align-center">
-                <a href="tel:+9123456789" class="quality-btn" data-btn="quality">Get in touch</a>
-              </div>
+              <a href="tel:+9123456789" class="quality-btn">Get in touch</a>
             </div>
           </div>
         </div>
@@ -395,7 +417,7 @@
 
         <div class="row testimonial-row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 clonable-card">
+          <div class="col-12 col-md-6">
             <div class="testimonial-card">
               <p class="testimonial-text">
                 The communication was clear from day one, and the delivery
@@ -418,7 +440,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 clonable-card">
+          <div class="col-12 col-md-6">
             <div class="testimonial-card">
               <p class="testimonial-text">
                 We needed a manufacturing partner who could maintain consistency
@@ -447,7 +469,7 @@
     <!-- help section -->
     <section class="help-section" id="help-sec" data-section="help-sec">
       <div class="help-media">
-        <div class="help-bg" data-zg-editable="surface"></div>
+        <div class="help-bg"></div>
         <div class="help-overlay"></div>
       </div>
 
@@ -466,15 +488,12 @@
                 meets strict industrial standards.
               </p>
 
-              <div class="help-actions zg-align-center">
-                <a class="help-btn" href="tel:+9123456789" data-btn="help">Get in touch</a>
-              </div>
+              <a class="help-btn" href="tel:+9123456789">Get in touch</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
 
     <!-- foooter section -->
     <footer class="site-footer" id="footer" data-section="footer">
@@ -483,7 +502,13 @@
         <div class="row footer-top-row">
           <!-- Brand -->
           <div class="col-12 col-lg-3">
-            <a href="#hero" class="footer-brand-logo" data-logo="footer">PRECISION&#10;ENGINEERING</a>
+            <a href="#" class="footer-brand" data-logo="footer">
+              <span class="footer-brand-badge">PE</span>
+              <span class="footer-brand-text">
+                PRECISION <br />
+                ENGINEERING
+              </span>
+            </a>
           </div>
 
           <!-- Links -->
@@ -500,13 +525,13 @@
           <!-- Social -->
           <div class="col-12 col-lg-3">
             <div class="footer-social">
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Twitter">
+              <a href="#" class="footer-social-link" aria-label="Twitter">
                 <i class="bi bi-twitter" data-icon="twitter"></i>
               </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+              <a href="#" class="footer-social-link" aria-label="LinkedIn">
                 <i class="bi bi-linkedin" data-icon="linkedin"></i>
               </a>
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+              <a href="#" class="footer-social-link" aria-label="Facebook">
                 <i class="bi bi-facebook" data-icon="facebook"></i>
               </a>
             </div>
@@ -526,17 +551,12 @@
             <p class="footer-powered">Powered by Precision Engineering</p>
           </div>
         </div>
-        <div class="row footer-attribution">
-          <div class="col-12">
-            <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
-          </div>
-        </div>
       </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js?v=2.13.0-1"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

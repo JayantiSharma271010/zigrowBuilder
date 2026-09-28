@@ -1,0 +1,3420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RK fashion  - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #242429;
+      --border-radius-btn: 8px;
+      --box-radius: 24px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #3D5A80;
+      --secondary-colors: #111111;
+      --territory-colors: #98C1D9;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 8px 16px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 17.5px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 24px;
+      --fs-h3-base: 54px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 54px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #111111 ;
+      font-family: Calibri;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Merriweather ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #111111;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+   <header id="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold " href="#">
+          RK fashion 
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav">
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>
+  .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color: var(--primary-colors);
+  }
+
+  .nav-link {
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-colors);
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+</style>
+   <section id="hero" class="hero-zigrow-section_3" data-section="hero">
+  <div class="container">
+    <div class="row hero-content ">
+      <div class="hero-left col-md-6 mb-custom-4 mb-md-0">
+        <h1 class="hero-heading">Elevate Your Style with RK Fashion</h1>
+        <p class="hero-subtitle">Discover our exquisite range of beauty care products and stunning fashion pieces. From luxurious oils to elegant sarees, we have everything to enhance your beauty.</p>
+        <a href="#contact" class="white-btn text-custom-center">Get Started</a>
+      </div>
+      <div class="hero-right col-md-6">
+        <div class="position-relative d-inline-block img-wrapper text-custom-center">
+          <img
+            src="https://images.unsplash.com/photo-1551184451-76b762941ad6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiZWF1dHl8ZW58MHx8fHwxNzcwNjI3MDcyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Dream House"
+            class="img-fluid"
+          />
+          
+          <span class="img-credit">
+            Photo by
+            <a
+              href="https://unsplash.com/@the_change_designer?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kamila Maciejewska
+            </a>
+            on
+            <a
+              href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Unsplash
+            </a>
+          </span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative SVG Wave -->
+  <svg class="hero-wave-svg" viewBox="0 0 1440 320">
+    <path
+      fill="#fff"
+      fill-opacity="1"
+      d="M0,224L48,202.7C96,181,192,139,288,133.3C384,128,480,160,576,160C672,160,768,128,864,128C960,128,1056,160,1152,154.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+    ></path>
+  </svg>
+</section>
+
+<style>
+  /* Section Background */
+  .hero-zigrow-section_3 {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      var(--territory-colors),
+      var(--primary-colors)
+    );
+    color: white;
+    overflow: hidden;
+    padding: 4rem 2rem 20rem;
+
+    /* Flex container */
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Left Content */
+    .hero-left {
+      flex: 1 1 50%;
+      max-width: 600px;
+    }
+
+    .hero-heading {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .hero-heading span {
+      color: var(--primary-colors);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 2.4rem;
+      max-width: 400px;
+      color: var(--theme-bg);
+    }
+
+ 
+    /* Right Side Image */
+    .hero-right {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+    
+    .hero-right .img-wrapper{
+      height: 600px;
+      aspect-ratio: 2/2.5;
+
+    }
+
+    .hero-right img {
+width: 100%; 
+height: 100%;
+      border-radius: var(--box-radius);
+        box-shadow: var(--shadow-section);
+
+    }
+
+    /* Wave */
+    /* 1) SVG ko text baseline gap se bachaao */
+    .hero-wave-svg {
+      position: absolute;
+      bottom: -1px; /* 👈 nudge down to cover hairline */
+      left: 0;
+      width: 100%;
+      height: auto; /* set an explicit height (adjust as needed) */
+      display: block; /* removes inline SVG baseline gap */
+      line-height: 0; /* extra safety */
+      pointer-events: none;
+      transform: translateZ(0); /* avoid sub-pixel rendering issues */
+      backface-visibility: hidden; /* avoid hairlines on some GPUs */
+    }
+
+    /* 2) Ensure no stroke is adding a 1px edge */
+    .hero-wave-svg path {
+      stroke: none; /* make sure there is no border at all */
+    }
+
+    /* 3) (Optional) If kuch screens par still dikhe, thoda width overdraw */
+    @media (min-width: 768px) {
+      .hero-wave-svg {
+        width: 100.2%;
+      } /* overdraw by 0.2% */
+    }
+
+    /* 4) (Optional) Next section bg #fff hi ho, ya yahan force kar do */
+    .next-section-after-hero {
+      background: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-left,
+      .hero-right {
+        flex: 1 1 100%;
+      }
+      .hero-heading {
+        font-size: 2rem;
+      }
+    }
+  }
+</style>
+   <!-- PROFESSIONAL -->
+
+<section class="about-zigrow-section_3 section-padding" id="about" data-section="about">
+  <div class="container">
+    <div class="row g-0 row-vcenter">
+
+      <!-- Left: Image with overlay -->
+      <div class="col-lg-6 img-holder">
+        <div class="img-layer">
+        <div class="img-bg img-wrapper-center">
+
+
+            <img src="https://images.unsplash.com/photo-1665410819914-802b54032967?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBiZWF1dHl8ZW58MHx8fHwxNzcwNjEzMDg3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="About us image" />
+            <span class="img-overlay"></span>
+            <span class="img-credit">
+              Photo by  <a 
+        href="https://unsplash.com/@klarin_steffens?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Klarin Steffens
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+            </span>
+          </div>
+        </div>
+      
+      </div>
+
+      <!-- Right: Text -->
+      <div class="col-lg-6 d-flex justify-custom-center align-custom-center">
+        <div class="content p-custom-4 p-lg-custom-5">
+          <h1 class="display-title mb-custom-4">
+            <span>About RK Fashion</span>
+          </h1>
+
+          <p class="mb-custom-3 para-muted font-body">At RK Fashion, we believe in enhancing your beauty and style. Our curated selection of beauty care products, elegant dresses, and stunning sarees caters to every occasion.</p>
+          <p class="mb-custom-4 para-muted font-body">With a commitment to quality and customer satisfaction, we strive to provide a friendly shopping experience. Discover the perfect blend of fashion and beauty with us!</p>
+
+          <a href="#contact" class="primary-btn">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    :root {
+      --hero-primary: var(--primary-colors);
+      --hero-bg: var(--theme-bg);
+      --hero-text: var(--secondary-colors);
+    }
+
+    .about-zigrow-section_3 {
+      background: var(--hero-bg);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    
+
+    .img-holder {
+      position: relative;
+      min-height: 600px;
+      height: 100%;
+    }
+
+    .img-layer{
+      height: 100%;
+      overflow: visible;
+    }
+
+    .img-bg {
+      position: relative;
+      width: 100%;
+      
+      height: 100%;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .img-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.6s ease, transform 0.6s ease;
+    }
+
+    .img-holder:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    .img-overlay {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      transition: background 0.4s ease;
+    }
+
+    .img-holder:hover .img-overlay {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .content {
+      color: var(--hero-text);
+      max-width: 640px;
+      animation: fadeSlideIn 0.85s ease both;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .display-title span {
+      display: inline-block;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      background: linear-gradient(to right, var(--territory-colors), var(--hero-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content p {
+      line-height: 1.8;
+    }
+
+  
+
+    /* MOBILE OPTIMIZATION */
+    @media (max-width: 991.98px) {
+      .img-holder {
+        order: -1;
+        min-height: 300px;
+      }
+
+      .img-bg img {
+        filter: grayscale(0);
+      }
+
+      .content {
+        padding-top: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+  </style>
+</section>
+   <!-- PROFESSIONAL -->
+
+<section class="section-padding service-zigrow-section_1" id="services" data-section="services"> 
+
+  <div class="container text-custom-center mb-custom-5">
+    <h2 class="main-heading">
+      Our Exceptional Services
+    </h2>
+
+    <p class="col-md-8 mx-custom-auto para-muted font-subheading">
+      Discover tailored beauty and fashion solutions designed for your unique style and needs.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-5"><!-- g-5 → larger gaps -->
+      
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.1s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzZXJ2aWNlc3xlbnwwfHx8fDE3NzA2MTMwODh8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Personalized Styling icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@giorgiotrovato?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Giorgio Trovato
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Personalized Styling
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Get expert fashion advice tailored to your style. Our team helps you choose outfits that enhance your beauty and confidence.
+  </p>
+</div>
+
+        </div>
+        
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.2s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1611955874253-78c6c3959c41?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwY29uc3VsdGluZ3xlbnwwfHx8fDE3NzA1OTk5MzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Quality Beauty Oils icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@jaygame?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Jay Argame
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Quality Beauty Oils
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Experience the nourishing power of our premium beauty oils. Perfect for all skin types, they promote healthy, glowing skin.
+  </p>
+</div>
+
+        </div>
+        
+        <div class="col-md-6 col-lg-4 fade-in-on-scroll service-card" style="transition-delay:0.30000000000000004s">
+       <div class="service-block_1 text-custom-center rounded-4 h-custom-100">
+  <div class="position-relative img-wrapper-center">
+    <img 
+      src="https://images.unsplash.com/photo-1587089879249-87bf7d2972df?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxzdHlsaW5nJTIwc2VydmljZXN8ZW58MHx8fHwxNzcwNjI3MDczfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+      class="service-icon mb-custom-3"
+      alt="Elegant Sarees icon">
+    
+      <span class="img-credit">
+        Photo by 
+        <a 
+        href="https://unsplash.com/@uxindo?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        UX Indonesia
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+  </div>
+
+  <h5 class="fw-custom-semibold mb-custom-2">
+    Elegant Sarees
+  </h5>
+  <p class="para-muted font-body-sm mb-custom-0 ">
+    Explore our exquisite collection of sarees, designed for every occasion. Elevate your wardrobe with timeless elegance and style.
+  </p>
+</div>
+
+        </div>
+        
+    </div>
+  </div>
+
+  <style>
+    /* section backdrop (theme fallback) + extra breathing room */
+    .service-zigrow-section_1 {
+      background: #fff;
+    
+
+    /* card */
+    .service-block_1 {
+      background: #fff ;
+      border: 1px solid #eee;
+      box-shadow:var(--shadow-section);
+      padding: 2.75rem 2rem;
+      /* ⬅️ deeper padding for a bolder feel */
+      transition: transform .3s ease, box-shadow .3s ease;
+      min-height: 290px;
+      border-radius: var(--box-radius);
+      @media (max-width: 768px) {
+        padding: 1rem;
+      }
+    }
+
+    .service-block:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .service-card {
+      h5 {
+        color: var(--lead-custom-color-mute);
+      }
+      p{
+         color: var(   --para-muted);
+      }
+    }
+
+    /* icon – slightly larger */
+    .service-icon {
+      width: 310px;
+      height: 200px;
+      object-fit: cover;
+    border-radius: var(--box-radius);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .1);
+    }
+
+    /* reveal animation (unchanged) */
+    .fade-in-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all .6s ease-out;
+    }
+
+    .fade-in-on-scroll.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* responsive heading tweak */
+    @media(max-width:768px) {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+  }
+  </style>
+
+  <script>
+    /* intersection-observer reveal (unchanged) */
+    document.addEventListener('DOMContentLoaded', () => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.fade-in-on-scroll').forEach(el => io.observe(el));
+    });
+  </script>
+</section>   <section class="logo-zigrow-section_2 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- Heading -->
+    <h2 class=" mb-custom-1 main-heading">Our Esteemed Clients</h2>
+    <div class="heading-underline mx-custom-auto my-custom-3"></div>
+    <p class="para-muted font-subheading mb-custom-5">Proud to be trusted by world-class brands and innovators.</p>
+
+    <!-- Carousel -->
+    <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center g-4">
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item"><img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" alt="logo 1"></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+     <div class="logo-item"><img src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png" alt="logo 2"></div>
+              </div>
+            </div>
+           <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item"><img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" alt="logo 1"></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+     <div class="logo-item"><img src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png" alt="logo 2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center g-4">
+             <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" alt="logo 1">
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+     <div class="logo-item"><img src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png" alt="logo 2"></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item"><img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" alt="logo 1"></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+     <div class="logo-item"><img src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png" alt="logo 2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  <!-- Controls -->
+<button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel" data-bs-slide="prev">
+  <span class="arrow-icon"><i class="fa-solid fa-angle-left"></i></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel" data-bs-slide="next">
+  <span class="arrow-icon"><i class="fa-solid fa-angle-right"></i></span>
+</button>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+  <style>
+.logo-zigrow-section_2 {
+  background: linear-gradient(to bottom right, #f9f9f9, #ffffff);
+
+
+/* Heading underline */
+.heading-underline {
+  width: 90px;
+  height: 4px;
+  background: var(--primary-colors);
+  border-radius: 2px;
+}
+
+/* Client Cards */
+.client-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-section);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section);
+}
+
+/* Logos */
+.client-logo {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6);
+  transition: filter 0.3s ease;
+}
+.client-logo:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Arrows */
+.arrow-icon {
+  color: #333;
+  font-size: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-section);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.arrow-icon:hover {
+  background: var(--primary-colors);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  opacity: 1;
+}
+
+/* Desktop / default: thoda bahar side pe */
+.carousel-control-prev {
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+}
+.carousel-control-next {
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+}
+
+/* 🔁 Mobile: arrows bilkul side se, 0px left/right */
+@media (max-width: 576px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-control-prev {
+    left: 0;
+  }
+
+  .carousel-control-next {
+    right: 0;
+  }
+}}
+
+</style>
+   <section  id="products" class="section-padding product-zigrow-section_2" data-section="products">
+  <div class="container text-custom-center">
+
+    <!-- Dynamic heading + subtitle -->
+    <h2 class="mb-custom-2 main-heading">
+      Explore Our Fashion &amp; Beauty
+      <br class="d-none d-md-block">
+      <p class="lead-custom para-muted font-subheading mb-custom-4 mt-custom-2 ">Discover products that enhance your beauty and style.</p>
+    </h2>
+
+    <!-- CTA -->
+    <a href="#!" class=" primary-btn ">
+      See more
+    </a>
+
+    <!-- Cards -->
+    <div class="row g-4 mt-custom-5 ">
+      
+        
+<div class="col-12 col-md-4">
+  <div class="program-card">
+    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1569388330292-79cc1ec67270?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzcwNTk5ODQ0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080')"></div>
+
+    
+      <span class="img-credit bg-custom-dark bg-opacity-50 text-custom-white position-absolute small-custom">
+        Photo by 
+      <a 
+        href="https://unsplash.com/@harpersunday?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Harper Sunday
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+
+    <div class="card-overlay">
+      <h3 class="card-title">Luxury Beauty Oils</h3>
+      <p class="card-desc font-body-sm mb-custom-0 ">Nourish your skin with our premium beauty oils for a radiant glow.</p>
+    </div>
+  </div>
+</div>
+
+      
+        
+<div class="col-12 col-md-4">
+  <div class="program-card">
+    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYWtldXAlMjBwcm9kdWN0c3xlbnwwfHx8fDE3NzA1Njc1MTJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080')"></div>
+
+    
+      <span class="img-credit bg-custom-dark bg-opacity-50 text-custom-white position-absolute small-custom">
+        Photo by 
+      <a 
+        href="https://unsplash.com/@shamblenstudios?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Shamblen Studios
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+
+    <div class="card-overlay">
+      <h3 class="card-title">Elegant Dresses</h3>
+      <p class="card-desc font-body-sm mb-custom-0 ">Find the perfect dress for any occasion that enhances your elegance.</p>
+    </div>
+  </div>
+</div>
+
+      
+        
+<div class="col-12 col-md-4">
+  <div class="program-card">
+    <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1581182800629-7d90925ad072?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxza2luY2FyZXxlbnwwfHx8fDE3NzA2MjcwNzJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080')"></div>
+
+    
+      <span class="img-credit bg-custom-dark bg-opacity-50 text-custom-white position-absolute small-custom">
+        Photo by 
+      <a 
+        href="https://unsplash.com/@fleuraimeekaan?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fleur Kaan
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+      </span>
+    
+
+    <div class="card-overlay">
+      <h3 class="card-title">Traditional Sarees</h3>
+      <p class="card-desc font-body-sm mb-custom-0 ">Embrace culture with our exquisite collection of traditional sarees.</p>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- 🔥 Custom Styles -->
+<style>
+:root{
+  --brand: var(--primary-colors);          /* original brand color */
+  --brand-tint: color-mix(in srgb, var(--brand) 15%, #fff); /* 25 % brand + 75 % white */
+}
+
+.product-zigrow-section_2{
+  background: radial-gradient(
+              ellipse at 1% 5%,
+              var(--brand-tint) 0%,
+              #ffffff 35%);
+
+
+
+
+/* ====== Card Container ====== */
+.program-card {
+  position: relative;
+  overflow: hidden;
+    border-radius: var(--box-radius);
+  min-height: 420px;
+ box-shadow: var(--shadow-section);
+  transition: transform .35s ease, box-shadow .35s ease;
+  backdrop-filter: blur(0);
+}
+.program-card:hover {
+  transform: translateY(-6px) scale(1.03);
+      box-shadow: var(--shadow-section-hover);
+}
+
+/* ====== Background Image ====== */
+.program-card .card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .45s ease;
+}
+.program-card:hover .card-img {
+  transform: scale(1.08) rotate(.5deg);
+}
+
+/* ====== Overlay ====== */
+.program-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1.5rem 1.75rem;
+  background: linear-gradient(180deg,
+              rgba(0,0,0,0) 10%,
+              rgba(0,0,0,.55) 70%);
+  color: #fff;
+  transition: background .35s ease;
+}
+.program-card:hover .card-overlay {
+  background: linear-gradient(180deg,
+              rgba(0,0,0,0) 0%,
+              rgba(0,0,0,.65) 75%);
+}
+
+/* ====== Text ====== */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  line-height: 1.35;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+.card-desc {
+  line-height: 1.4;
+  opacity: .85;
+}
+
+/* ====== Responsive Tweaks ====== */
+@media (min-width: 1400px) {
+  .program-card {
+    min-height: 500px;
+  }
+}
+@media (max-width: 575.98px) {
+  .card-title { font-size: 1.15rem; }
+  .card-desc  { font-size: .85rem; }
+}}
+</style>
+   <!-- Why Choose Us -->
+<section class="whyChooseUs-zigrow-section_8 section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <!-- ▸ Heading -->
+    <div class="text-custom-start ">
+      <span class="section-label mb-custom-3 ">WHY CHOOSE US</span>
+
+      
+      <h2 class="section-title">
+        Why Choose
+        <span class="highlight">RK Fashion</span>
+      </h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- ▸ Left-side info cards (first 3) -->
+      <div class="col-lg-8">
+        <div class="row g-4">
+          
+            <div class="col-md-6 ">
+              <div class="info-card">
+                <div class="icon-circle"><i class="bi bi-star"></i></div>
+                <h5 class="info-title">Quality Products</h5>
+                <p class="info-text">We offer only the highest quality beauty care and fashion items, ensuring you look and feel your best every day.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6 ">
+              <div class="info-card">
+                <div class="icon-circle"><i class="bi bi-people"></i></div>
+                <h5 class="info-title">Personalized Service</h5>
+                <p class="info-text">Our friendly staff is dedicated to providing personalized assistance, helping you find exactly what you need for your unique style.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6 col-12">
+              <div class="info-card">
+                <div class="icon-circle"><i class="bi bi-bag"></i></div>
+                <h5 class="info-title">Wide Selection</h5>
+                <p class="info-text">Explore our extensive range of dresses, sarees, and beauty oils, catering to diverse tastes and preferences for every occasion.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+      <!-- ▸ Right-side highlight card (4th card) -->
+      <div class="col-lg-4">
+        
+        <div class="highlight-card">
+          <div class="icon-circle-light mb-custom-3">
+            <i class="bi bi-heart"></i>
+          </div>
+          <h5 class="highlight-title">Customer Satisfaction</h5>
+
+          <!-- main paragraph + card-specific text -->
+          <p class="highlight-text">At RK Fashion, we prioritize quality and customer satisfaction, ensuring you find the best beauty and fashion products tailored for you.</p>
+          <p class="highlight-text">We prioritize your happiness, offering a hassle-free return policy and support to ensure you love your purchases.</p>
+
+          <!-- primary CTA -->
+          <a href="#" class="cta-button">
+            Shop Now <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+    .whyChooseUs-zigrow-section_8 {
+  background-color: #fff;
+  color: #111;
+
+
+.section-label {
+  font-size: 0.70rem;
+  text-transform: uppercase;
+  color: #424242;
+  background: transparent;
+  border: 1px solid #888;
+  font-weight: 600;
+  padding: .3rem .5rem;
+border-radius: var(--box-radius);
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--secondary-colors);
+}
+
+.section-title .highlight {
+  color: var(--primary-colors);
+  font-weight: 600;
+}
+
+.info-card {
+  background-color: #f7f8fa;
+border-radius: var(--box-radius);
+  padding: 30px 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #c0c1c4;
+}
+
+.info-card:hover {
+  background-color: #eef2f6;
+  box-shadow: var(--shadow-section-hover);
+  transform: translateY(-4px);
+}
+
+.icon-circle {
+  background-color: #f1f6fc;
+  color:#111111;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.info-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--lead-custom-color-mute);
+}
+
+.info-text {
+  font-size: var(--fs-body-sm);
+  color: var(--para-muted);
+  line-height: 1.5;
+}
+
+/* Right Highlight Card */
+.highlight-card {
+  background: linear-gradient(145deg, var(--primary-colors), var(--territory-colors));
+  color: #fff;
+border-radius: var(--box-radius);
+  padding: 35px 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.highlight-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.highlight-text {
+  font-size: var(--fs-body-sm);
+  color: #dcdcdc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.icon-circle-light {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  display: inline;
+  width: 50px;
+  color: #fff;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #fff;
+  color: black;
+  padding: 10px 18px;
+  border-radius: var(--border-radius-btn);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.cta-button:hover {
+   background: #fff;
+  text-decoration: none;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .highlight-card {
+    text-align: center;
+  }
+}}
+
+</style>   <!-- 🌟 Expert Team Modern Section -->
+<section class=" section-padding team-zigrow-section_5" id="team" data-section="team">
+  <div class="container text-custom-center">
+    <!-- Section Header -->
+    <h2 class="section-title mb-custom-2 fw-custom-bold main-heading">Meet Our Team</h2>
+    <p class="section-sub mb-custom-5 para-muted font-subheading">Dedicated professionals passionate about beauty and fashion.</p>
+
+    <!-- Grid -->
+    <div class="row g-4 justify-custom-center " style="margin-top: 5rem;">
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="expert-card-glass h-custom-100">
+          <div class="avatar-glow img-wrapper-center">
+            <img src="https://i.postimg.cc/Kv4g4kN0/1.png" alt="Aisha Khan" />
+          </div>
+          <h5 class="expert-name mt-custom-5 ">Aisha Khan</h5>
+          <p class="expert-role para-muted font-body mb-custom-1">Store Manager</p>
+          <p class="expert-bio small-custom font-body-sm para-muted px-custom-3">Aisha brings over 10 years of retail experience and a passion for fashion to our store.</p>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="expert-card-glass h-custom-100">
+          <div class="avatar-glow img-wrapper-center">
+            <img src="https://i.postimg.cc/fWqV4WNm/10.png" alt="Raj Patel" />
+          </div>
+          <h5 class="expert-name mt-custom-5 ">Raj Patel</h5>
+          <p class="expert-role para-muted font-body mb-custom-1">Beauty Consultant</p>
+          <p class="expert-bio small-custom font-body-sm para-muted px-custom-3">Raj specializes in beauty care and is dedicated to helping customers find their perfect products.</p>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="expert-card-glass h-custom-100">
+          <div class="avatar-glow img-wrapper-center">
+            <img src="https://i.postimg.cc/gk5Lhztm/2.png" alt="Maya Singh" />
+          </div>
+          <h5 class="expert-name mt-custom-5 ">Maya Singh</h5>
+          <p class="expert-role para-muted font-body mb-custom-1">Fashion Stylist</p>
+          <p class="expert-bio small-custom font-body-sm para-muted px-custom-3">Maya is a creative stylist who loves to curate stunning outfits for every occasion.</p>
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="expert-card-glass h-custom-100">
+          <div class="avatar-glow img-wrapper-center">
+            <img src="https://i.postimg.cc/TPjKBrd3/3.png" alt="Nina Desai" />
+          </div>
+          <h5 class="expert-name mt-custom-5 ">Nina Desai</h5>
+          <p class="expert-role para-muted font-body mb-custom-1">Customer Support</p>
+          <p class="expert-bio small-custom font-body-sm para-muted px-custom-3">Nina ensures every customer has a delightful shopping experience with her friendly approach.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<style>
+.team-zigrow-section_5 {
+  background: linear-gradient(135deg, #fdfdfd, #f5f5f5);
+
+
+.section-title {
+  font-size: clamp(2rem, 3vw + 1rem, 2.7rem);
+  letter-spacing: -0.3px;
+}
+.section-sub {
+  max-width: 600px;
+  margin: 0 auto ;
+
+}
+
+/* ────────── Card ────────── */
+.expert-card-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: var(--box-radius);
+  padding: 5.5rem 1rem 2.5rem;
+box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+}
+.expert-card-glass:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--shadow-section-hover);
+}
+
+/* ────────── Avatar ────────── */
+.avatar-glow {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dcbfff, #f3e6ff);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-glow img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ────────── Text ────────── */
+.expert-name {
+  font-size: 1.15rem;
+  color: var(--secondary-colors);
+  font-weight: 600;
+}
+.expert-role {
+}
+.expert-bio {
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* ────────── Responsive ────────── */
+@media (max-width: 767.98px) {
+  .avatar-glow {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+  }
+  .expert-name {
+    font-size: 1rem;
+  }
+  .expert-card-glass {
+    padding: 5rem 1rem 2rem;
+  }
+}}
+</style>
+   <section class="portfolio-zigrow-section_1 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">Our Fashion Highlights</h2>
+      <p class="section-subtitle">
+        Traditional Wear
+      </p>
+    </div>
+
+    <div class="row g-0">
+      <!-- Area Card -->
+    <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1648111144138-023d24d16a95?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcG9ydGZvbGlvfGVufDB8fHx8MTc3MDYyNzA3Mnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Elegant Sarees"
+    />
+    <div class="area-name">
+      <span>Elegant Sarees</span>
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@arrogant_7007?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        otabek xatipov
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1603479838647-c4446a036f40?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBwaG90b2dyYXBoeXxlbnwwfHx8fDE3NzA2MjcwNzJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Luxury Oils"
+    />
+    <div class="area-name">
+      Luxury Oils
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@ialexavalos?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Alex Avalos
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1635724287614-018e383ee98c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxzdHlsaW5nJTIwc2FtcGxlc3xlbnwwfHx8fDE3NzA2MjcwNzJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Trendy Dresses"
+    />
+    <div class="area-name">
+      Trendy Dresses
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@dulceylima?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Dulcey Lima
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+   <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1642071538073-b7f7f81467f9?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2RlbCUyMHNob290c3xlbnwwfHx8fDE3NzA2MjcwNzJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Bridal Collection"
+    />
+    <div class="area-name">
+      Bridal Collection
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@michellej20?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Michelle Jessup
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-zigrow-section_1 {
+    background-color: #fff;
+  
+
+
+
+  .section-subtitle {
+    color: var( --lead-custom-color-mute);
+    font-size: var(--fs-sub);
+  }
+
+  .area-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .area-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+  }
+
+  .area-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .area-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+  }}
+</style>
+   
+
+<section class="testimonial-zigrow-section_4"id="testimonials"  data-section="testimonials">
+  <div class="container-fluid px-custom-0">
+    <div class="row g-0 align-custom-stretch">
+      <!-- Left Image Column -->
+      <div class="col-md-6 testimonial-img-col img-wrapper-center">
+        <img
+           src="https://i.postimg.cc/mDsh0w2K/1.png"
+        
+          class="img-fluid h-custom-100 w-custom-100 object-fit-cover"
+          alt="Happy team"
+          style="aspect-ratio: 3/2"
+        />
+      </div>
+
+      <!-- Right Swiper Column -->
+      <div
+        class="col-md-6 testimonial-content-col d-flex align-custom-center"
+      >
+        <div class="swiper  w-custom-100 px-custom-4 py-custom-5" id="testimonial-swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-slide">
+                <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                <div class="stars mb-custom-3">  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i></div>
+                <p class="quote-text">
+                    RK Fashion has transformed my wardrobe! Their sarees are stunning and the beauty oils have worked wonders for my skin.
+                </p>
+                <div class="author-info d-flex align-custom-center mt-custom-4  ">
+                  <img
+                   src="https://i.postimg.cc/fWqV4WNm/10.png"
+                    alt="Mona Kamal"
+                  />
+                  <div class="ms-custom-3">
+                    <h6 class="mb-custom-0 ">Anita Sharma</h6>
+                    <small class="para-muted">Happy Customer</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-slide">
+                <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                <div class="stars mb-custom-3">  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i></div>
+                <p class="quote-text">
+                    I love shopping at RK Fashion. The quality of their dresses is exceptional, and the staff is always so helpful and friendly.
+                </p>
+                <div class="author-info d-flex align-custom-center mt-custom-4 ">
+                  <img
+                   src="https://i.postimg.cc/gk5Lhztm/2.png"
+                    alt="Rahul Dev"
+                  />
+                  <div class="ms-custom-3">
+                    <h6 class="mb-custom-0 ">Raj Patel</h6>
+                    <small class="text-custom-muted "> Regular Shopper</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-slide">
+                <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                <div class="stars mb-custom-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="quote-text">
+                      The selection at RK Fashion is amazing! I found the perfect outfit for my sister&#39;s wedding, and I received so many compliments.
+                </p>
+                <div class="author-info d-flex align-custom-center mt-custom-4 ">
+                  <img
+                     src="https://i.postimg.cc/TPjKBrd3/3.png"
+                    alt="Anika Sharma"
+                  />
+                  <div class="ms-custom-3">
+                    <h6 class="mb-custom-0 ">Meera Singh</h6>
+                    <small class="text-custom-muted ">Fashion Enthusiast</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination mt-custom-4 "></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper("#testimonial-swiper", {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style>
+  .testimonial-zigrow-section_4 {
+
+  
+
+  .testimonial-img-col img {
+    object-fit: cover;
+    height: 100%;
+    min-height: 350px;
+    border-top-right-radius: var(--box-radius);
+    border-bottom-right-radius: var(--box-radius);
+
+  }
+
+  .testimonial-content-col {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .testimonial-slide {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .quote-icon {
+    font-size: 48px;
+    color:var(--theme-3);
+    font-weight: bold;
+  }
+
+  .quote-text {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+
+    color:var(--theme-3);
+  }
+
+  .stars {
+    font-size: 20px;
+    color: #f5b443;
+    letter-spacing: 3px;
+  }
+
+  .author-info img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+  }
+
+  /* Default state of pagination dots */
+  .swiper-pagination-bullet {
+    background-color: #888 ; /* Change this to your desired default color */
+    opacity: 1;
+  }
+
+  /* Active dot */
+  .swiper-pagination-bullet-active {
+    background-color: var(--primary-colors) ; /* Example: Indigo color for active dot */
+  }}
+</style>
+   <section class="pricing-zigrow-section_1 section-padding" id="pricing" data-section="pricing">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <span class="price-badge mb-custom-3"
+        >OUR PRICING <i class="bi bi-tags"></i
+      ></span>
+      <h2 class="main-heading">Affordable Pricing Plans</h2>
+      <p class="para-muted font-subheading">Quality beauty and fashion at great prices.</p>
+    </div>
+
+    <div class="row g-4 justify-custom-center">
+      <!-- Pay-as-you-go -->
+      <div class="col-md-6 col-lg-4">
+        <div class="price-card h-custom-100 text-custom-start">
+          <div class="icon-circle"><i class="bi bi-heart"></i></div>
+          <h5 class="fw-custom-bold mb-custom-1">Pay-as-you-go</h5>
+          <p class="para-muted small-custom">
+            Perfect for daily beauty needs and fashion updates.
+          </p>
+          <div class="price-display my-custom-3">
+            <span class="display-custom-6 fw-custom-bold">
+              ₹499/month</span
+            >
+          </div>
+          <a href="#" class="btn primary-btn w-custom-100 mb-custom-3">Build agent now →</a>
+          <ul class="features-list list-unstyled text-custom-start me-custom-auto">
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Exclusive discounts on products
+            </li>
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Access to new arrivals
+            </li>
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Personalized beauty tips
+            </li>
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Monthly fashion lookbook
+            </li>
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Free shipping on orders
+            </li>
+            
+            <li>
+              <span class="me-custom-2 tick-icon"><i class="bi bi-check2-circle "></i> </span>Loyalty rewards program
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hobby - Recommended -->
+      <div class="col-md-6 col-lg-4">
+        <div class="price-card h-custom-100 text-custom-start recommended-card">
+          <div class="recommendation-tag">
+            Our Recommendation <i class="bi bi-lightning"></i>
+          </div>
+          <div class="icon-circle"><i class="bi bi-lightning-charge"></i></div>
+          <h5 class="fw-custom-bold mb-custom-1">Hobby</h5>
+          <p class="para-muted small-custom">
+            Ideal for fashion enthusiasts and beauty lovers.
+          </p>
+          <div class="price-display my-custom-3">
+            <span class="display-custom-6 fw-custom-bold">
+              ₹999/month</span
+            >
+          </div>
+          <a href="#" class="btn primary-btn w-custom-100 mb-custom-3">Build agent now →</a>
+          <ul class="features-list list-unstyled text-custom-start me-custom-auto">
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> All previous plan features
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Monthly beauty consultation
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Early access to sales
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Special members-only events
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Curated fashion boxes
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Priority customer support
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="col-md-6 col-lg-4">
+        <div class="price-card h-custom-100 text-custom-start">
+          <div class="icon-circle"><i class="bi bi-gem"></i></div>
+          <h5 class="fw-custom-bold mb-custom-1">Premium</h5>
+          <p class="para-muted small-custom">
+            Ultimate package for fashion and beauty aficionados.
+          </p>
+          <div class="price-display my-custom-3">
+            <span class="display-custom-6 fw-custom-bold">
+              ₹1499/month</span
+            >
+          </div>
+          <a href="#" class="btn primary-btn w-custom-100 mb-custom-3">Build agent now →</a>
+          <ul class="features-list list-unstyled text-custom-start me-custom-auto">
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> All previous plan features
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Personal stylist sessions
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Exclusive product launches
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Complimentary gift with purchase
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> VIP access to events
+            </li>
+            
+            <li>
+              <i class="bi bi-check2-circle me-custom-2 tick-icon"></i> Tailored skincare regimen
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-zigrow-section_1 {
+    background-color: #fff;
+ color: var(--secondary-colors) ;
+  
+  .price-card {
+    background-color: #fff;
+    border: 1px solid #ebeaea;
+    padding: 2rem 1.5rem;
+
+      border-radius: var(--box-radius);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .btn{
+    border-radius: var(--border-radius-btn);
+  }
+  .price-card:hover {
+    border-color: #ccc;
+       box-shadow: var(--shadow-section-hover);
+    transform: translateY(-8px);
+  }
+
+  .icon-circle {
+    background: #f1f1f1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;  
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .price-badge {
+    font-size: 0.7rem ;
+    border: 1px solid #f1f1f1;
+    color: #000 ;
+    padding: 0.2rem;
+
+      border-radius: var(--box-radius);
+  }
+  .price-tag {
+    font-size: 0.7rem ;
+    border: 1px solid #f1f1f1;
+    margin-left: 1rem ;
+    vertical-align: super;
+    color: #000 ;
+    padding: 0.2rem;
+  
+      border-radius: var(--box-radius);
+  }
+
+  .recommended-card {
+    border: 2px solid #ccc;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  }
+
+  .recommendation-tag {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-colors);
+    color: #fff;
+    padding: 4px 14px;
+    font-size: 0.75rem;
+ 
+      border-radius: var(--box-radius);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .features-list {
+    max-width: 260px;
+    font-size: 0.95rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-size: var(--fs-body);
+      color: var(--para-muted);
+    }
+  }
+
+  .tick-icon {
+    color: #000;
+  }
+  .price-display span {
+    font-size: 1.5rem;
+  }}
+</style>
+   <section class="faq-zigrow-section_2 section-padding" id="faq" data-section="faq">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="main-heading fw-custom-bold text-custom-uppercase">
+        <span>Commonly Asked Questions</span>
+      </h2>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion" id="faqAccordion">
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading0">
+            <button
+              class="accordion-button custom-accordion-btn "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse0"
+              aria-expanded="true"
+              aria-controls="collapse0"
+            >
+              <span>What products do you offer?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse0"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading0"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>We offer a range of beauty oils, dresses, and sarees to enhance your fashion and beauty needs.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading1">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              <span>Where is RK Fashion located?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading1"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>RK Fashion is located in your neighborhood, providing easy access to all our beauty and fashion products.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              <span>Do you offer online shopping?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading2"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Yes, you can shop our products online for convenience and have them delivered to your doorstep.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              <span>What payment methods are accepted?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading3"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>We accept various payment methods, including credit cards, debit cards, and digital wallets for your convenience.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading4">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+              aria-expanded="false"
+              aria-controls="collapse4"
+            >
+              <span>Can I return or exchange items?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse4"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading4"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Yes, we have a return and exchange policy to ensure you are satisfied with your purchase.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading5">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse5"
+              aria-expanded="false"
+              aria-controls="collapse5"
+            >
+              <span>Do you have special promotions?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse5"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading5"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Yes, we frequently offer promotions and discounts. Check our website for the latest deals!</p>
+            </div>
+          </div>
+
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+
+<style>
+  .faq-zigrow-section_2 {
+  background-color: #fff;
+
+
+.faq-title {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Accordion button base */
+.accordion-button {
+  background-color: transparent ;
+  color: #555 ;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1rem;
+  box-shadow: none ;
+  border: 0 ;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Icon replacement: "+" by default */
+.accordion-button::after {
+  content: '+'; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  background-image: none ;
+  margin-left: auto;
+  transition: all 0.3s ease;
+}
+
+/* On open: change "+" to "–" */
+.accordion-button:not(.collapsed)::after {
+  content: '–';
+  color: #555;
+}
+
+/* Remove focus ring */
+.accordion-button:focus {
+  box-shadow: none ;
+}
+
+/* Accordion item container */
+.accordion-item {
+  border: none ;
+  box-shadow: none ;
+}
+
+/* Accordion header styling */
+.accordion-header {
+  color: #000;
+}
+
+/* Accordion body content */
+.accordion-body {
+  font-size: var(--fs-body);
+  padding: 0 1rem 1rem;
+  color: var(--para-muted);
+  line-height: 1.6;
+  background-color: transparent;
+}
+
+/* Collapse border fix */
+.accordion-collapse {
+  border-top: none ;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 1.75rem;
+  }
+
+  .accordion-button {
+    font-size: 1rem;
+  }
+
+  .accordion-button::after {
+    font-size: 1.25rem;
+  }
+}
+  }
+</style>   <section class="cta-zigrow-section_1 position-relative text-custom-white" id="cta" data-section="cta">
+  <div class="container h-custom-100" style="z-index: 999;">
+    <div class="row h-custom-100 justify-custom-center align-custom-center text-custom-center">
+      <div class="col-12 col-lg-6">
+        <div class="hero-content">
+          <h1 class="display-custom-4 fw-custom-bold mb-custom-3">Elevate Your Style Today</h1>
+          <p class="lead-custom mb-custom-3">Discover beauty and fashion essentials.</p>
+          <p class="mb-custom-4 text-custom-light font-body">Explore our exclusive collection of dresses, sarees, and beauty oils. Transform your look and feel fabulous with RK Fashion’s curated selections!</p>
+
+          <div class="row justify-custom-center">
+            <div class="col-auto">
+              <a href="#" class="primary-btn">Browse Collection</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="img-credit text-custom-white small-custom position-absolute" style="bottom: 10px; right: 10px; z-index: 3;">
+    Photo by 
+    <a href="https://unsplash.com/@mikepetrucci?utm_source=zigrow&utm_medium=referral" target="_blank"> Mike Petrucci </a>
+    on 
+    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank">Unsplash</a>
+  </p>
+</section>
+
+
+<style>
+  .cta-zigrow-section_1 {
+  background: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxzaG9wJTIwbm93fGVufDB8fHx8MTc3MDU2NTQ1M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080') center/cover no-repeat;
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+
+
+&::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-content p.lead-custom {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-content p.small {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.btn-primary {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-rescue {
+    height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p.lead-custom {
+    font-size: 1.2rem;
+  }
+
+  .hero-content p.small {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+  }
+</style>   <!-- 📮 Minimal Split Contact -->
+<section class="contact-zigrow-section_4 section-padding" id="contact" data-section="contact">
+  <div class="container-xl">
+    <div class="contact-grid overflow-hidden">
+      <div class="row g-0">
+        <!-- ◼︎ Info -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="info p-custom-5 h-custom-100">
+            <h2 class="main-heading mb-custom-4">Get in touch</h2>
+
+            <ul class="list-unstyled mb-custom-0 ">
+              <li>
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <h6>Mailing address</h6>
+                  <p>123 Business St, City</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <h6>Email</h6>
+                  <p>renukumar6@gmail.com</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <h6>Phone</h6>
+                  <p>8005776650</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ◼︎ Image -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="hero h-custom-100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* ========== TOKENS ========== */
+  :root {
+    --stroke: rgba(0, 0, 0, .07);
+  }
+
+  /* ========== WRAPPER ========== */
+  .contact-zigrow-section_4 {
+    background: #fdfdfd;
+  
+
+  /* outer card */
+  .contact-zigrow-section_4 .contact-grid {
+    background: var(--bg, #ffffff);
+    box-shadow: var(--shadow-section);
+    border-radius: var(--box-radius);
+    overflow: hidden;
+  }
+
+  /* list layout */
+  .contact-zigrow-section_4 .info ul li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-zigrow-section_4 .info .icon {
+    color: var(--primary-colors);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-zigrow-section_4 .info h6 {
+    font-size: .8rem;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--primary-colors);
+    margin-bottom: .25rem;
+  }
+
+  .contact-zigrow-section_4 .info p {
+    margin: 0;
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+  }
+
+  /* ========== HERO IMAGE ========== */
+  .hero {
+    background: url('https://i.postimg.cc/XJCcgx1h/3.png') center/cover no-repeat;
+    min-height: 420px;
+  }
+
+  @media (max-width: 767.98px) {
+    .contact-zigrow-section_4 .info {
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-zigrow-section_4 .hero {
+      min-height: 300px;
+    }
+
+    .contact-zigrow-section_4 .info ul li {
+      justify-content: center;
+      text-align: left;
+    }
+  }}
+</style>
+  
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+          window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

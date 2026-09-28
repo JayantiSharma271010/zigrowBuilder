@@ -1,40 +1,24 @@
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
-function closeNavigation() {
-  hamburger.classList.remove("active");
-  navLinks.classList.remove("active");
-  hamburger.setAttribute("aria-expanded", "false");
-  hamburger.setAttribute("aria-label", "Open navigation");
-  const menuIcon = hamburger.querySelector("i");
-  menuIcon.classList.add("fa-bars");
-  menuIcon.classList.remove("fa-xmark");
-  menuIcon.setAttribute("data-icon", "menu");
-}
-
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");
-  const expanded = hamburger.classList.contains("active");
-  hamburger.setAttribute("aria-expanded", String(expanded));
-  hamburger.setAttribute("aria-label", expanded ? "Close navigation" : "Open navigation");
-  const menuIcon = hamburger.querySelector("i");
-  menuIcon.classList.toggle("fa-bars", !expanded);
-  menuIcon.classList.toggle("fa-xmark", expanded);
-  menuIcon.setAttribute("data-icon", expanded ? "close" : "menu");
 });
 
 // Close nav when any link inside navLinks is clicked
 document.querySelectorAll("#navLinks a").forEach((link) => {
   link.addEventListener("click", () => {
-    closeNavigation();
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
   });
 });
 
 // Close nav when clicking outside of it
 document.addEventListener("click", (event) => {
   if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
-    closeNavigation();
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
   }
 });
 
@@ -118,7 +102,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animate logo & name
-    gsap.from(".brand-logo", {
+    gsap.from(".logo, .logo-name", {
       duration: 1,
       opacity: 0,
       x: -50, // slide from left
@@ -138,7 +122,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animate social icons
-    gsap.from(".desktop-social-icons a", {
+    gsap.from(".navbar-section .social-icons a", {
       duration: 0.8,
       opacity: 0,
       scale: 0.5, // zoom in effect

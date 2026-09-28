@@ -18,22 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle: false,
   });
 
-  const setNavigationState = (isOpen) => {
-    hamburger.classList.toggle("is-active", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-    hamburger.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    navbarSection.classList.toggle("nav-dark2", isOpen);
-  };
-
-  menu.addEventListener("shown.bs.collapse", () => setNavigationState(true));
-  menu.addEventListener("hidden.bs.collapse", () => setNavigationState(false));
-
   // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
+      // Remove nav-dark2 after 300 milliseconds
+      setTimeout(() => {
+        navbarSection.classList.remove("nav-dark2");
+      }, 300);
     } else {
       bsCollapse.show();
+      navbarSection.classList.add("nav-dark2");
     }
   });
 
@@ -42,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", () => {
       if (menu.classList.contains("show")) {
         bsCollapse.hide();
+        hamburger.classList.remove("is-active");
+        navbarSection.classList.remove("nav-dark2");
       }
     });
   });
@@ -53,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.contains("show")
     ) {
       bsCollapse.hide();
+      hamburger.classList.remove("is-active");
+      navbarSection.classList.remove("nav-dark2");
     }
   });
 });
@@ -105,12 +105,6 @@ var swiper = new Swiper(".review-swiper", {
 
 // Floating button js
 const btn = document.querySelector(".floating-btn");
-
-btn.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.history.replaceState(null, "", "#home");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
 // Show/hide button on scroll
 window.addEventListener("scroll", () => {
@@ -427,7 +421,7 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       })
       .from(
-        ".customer-reviews-section .review-quote-icon",
+        ".customer-reviews-section .dual-quote",
         {
           scale: 0,
           opacity: 0,

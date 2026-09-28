@@ -54,21 +54,20 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.style.display = "flex";
+    backToTopBtn.style.display = "block";
   } else {
     backToTopBtn.style.display = "none";
   }
 };
 backToTopBtn.onclick = () => {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 // gsap animation start heare
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.innerWidth > 768 && window.gsap && window.ScrollTrigger) {
+if (window.innerWidth > 768) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Animate Left Text
-  gsap.from(".zg-hero__left", {
+  gsap.from(".hero-left", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -82,7 +81,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
   });
 
   // Animate Right Text
-  gsap.from(".zg-hero__right", {
+  gsap.from(".hero-right", {
     x: 100,
     opacity: 0,
     duration: 1.2,
@@ -96,7 +95,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
   });
 
   // Animate Join Us Right (text)
-  gsap.from(".zg-join__right", {
+  gsap.from(".join-right", {
     y: 100,
     opacity: 0,
     duration: 1.2,
@@ -109,7 +108,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
     },
   });
   // Mission Header Animation
-  gsap.from(".zg-mission__header", {
+  gsap.from(".mission-header", {
     y: -50,
     opacity: 0,
     duration: 1,
@@ -122,34 +121,34 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
   });
 
   // Mission Items Animation (staggered)
-  gsap.from(".zg-mission__item", {
+  gsap.from(".mission-item", {
     y: 100,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: ".zg-mission__row",
+      trigger: ".mission-wrapper",
       start: "top 80%",
       toggleActions: "play none none",
     },
   });
 
   // Mission Button Animation
-  gsap.from(".zg-mission__btn", {
+  gsap.from(".mission-btn", {
     scale: 0.8,
     opacity: 0,
     duration: 1,
     ease: "back.out(1.7)",
     scrollTrigger: {
-      trigger: ".zg-mission__btn",
+      trigger: ".mission-btn",
       start: "top 90%",
       toggleActions: "play none none",
     },
   });
 
   // Project Heading Animation
-  gsap.from(".zg-projects__heading", {
+  gsap.from(".project-heading", {
     y: -50,
     opacity: 0,
     duration: 1,
@@ -162,21 +161,21 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
   });
 
   // Project Cards Animation (staggered)
-  gsap.from(".zg-projects__card", {
+  gsap.from(".project-card", {
     y: 120,
     opacity: 0,
     duration: 1.2,
     ease: "power3.out",
     stagger: 0.25,
     scrollTrigger: {
-      trigger: ".zg-projects__row",
+      trigger: ".card-wraper",
       start: "top 80%",
       toggleActions: "play none none",
     },
   });
 
   // Partners Section
-  gsap.from(".zg-partners__text", {
+  gsap.from(".partners-text", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -188,21 +187,21 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
     },
   });
 
-  gsap.from(".zg-partners__logo-col", {
+  gsap.from(".partners-logos img", {
     y: 80,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: ".zg-partners__logos",
+      trigger: ".partners-logos",
       start: "top 85%",
       toggleActions: "play none none",
     },
   });
 
   // Testimonial Section
-  gsap.from(".zg-testimonial__content", {
+  gsap.from(".testimonial-content", {
     scale: 0.8,
     opacity: 0,
     duration: 1.2,
@@ -215,7 +214,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
   });
 
   // Footer Section
-  gsap.from(".zg-footer__col", {
+  gsap.from(".footer-col", {
     y: 100,
     opacity: 0,
     duration: 1,
@@ -228,14 +227,14 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.inn
     },
   });
 
-  gsap.from(".zg-footer__bottom", {
+  gsap.from(".footer-bottom", {
     y: 50,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     delay: 0.3,
     scrollTrigger: {
-      trigger: ".zg-footer__bottom",
+      trigger: ".footer-bottom",
       start: "top 95%",
       toggleActions: "play none none",
     },

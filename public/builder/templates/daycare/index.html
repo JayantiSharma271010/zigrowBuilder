@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="css/style.css?configured=5" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- BACK TO TOP -->
@@ -26,13 +26,14 @@
     </a>
     <div id="mouse-trail"><span class="d-none"></span></div>
     <!-- NAVBAR -->
-    <header id="header" data-section="header">
-    <nav class="custom-navbar" id="siteNav">
+    <nav class="custom-navbar" id="siteNav" data-section="navbar">
       <div class="container custom-navbar__container">
         <!-- Logo -->
-        <a href="#hero" class="brand-logo" aria-label="Kidie home" data-logo="navbar">Kidie</a>
+        <a href="#" class="logo" aria-label="Kidie home" data-logo="navbar"
+          ><span>Kid</span>ie</a
+        >
 
-        <!-- Mobile navigation toggle -->
+        <!-- Toggle (NO button tag, span based) -->
         <a
           href="#"
           class="menu-toggle"
@@ -42,7 +43,9 @@
           aria-expanded="false"
           role="button"
         >
-          <i class="bi bi-list" data-icon="menu" aria-hidden="true"></i>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
 
         <!-- Menu -->
@@ -50,20 +53,17 @@
           <ul class="nav-menu">
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#admission">Admission</a></li>
+            <li><a href="#Program">Program</a></li>
+            <li><a href="#Admission">Admission</a></li>
             <li><a href="#footer-cta">Contact</a></li>
           </ul>
 
-          <div class="navbar-actions zg-align-center">
-            <a href="tel:+9123456789" class="btn-enroll" data-btn="nav">Enroll now</a>
-          </div>
+          <a href="tel:+9123456789" class="btn-enroll" data-btn="navbar"
+            >Enroll now</a
+          >
         </div>
       </div>
     </nav>
-    </header>
-
-    <main>
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero" data-section="hero">
@@ -81,9 +81,7 @@
             </p>
 
             <div class="hero-actions">
-              <div class="hero-cta-actions zg-align-center">
-                <a href="#footer-cta" class="hero-btn" data-btn="hero">Enroll Your Child</a>
-              </div>
+              <a href="#" class="hero-btn" data-btn="hero">Enroll Your Child</a>
 
               <!-- ⭐ BOOTSTRAP ICON STARS -->
               <div class="hero-rating">
@@ -132,7 +130,7 @@
     </section>
 
     <!-- about section -->
-    <section id="about" class="about-section zg-section-space" data-section="about">
+    <section id="about" class="about-section py-6" data-section="about">
       <div class="container">
         <div class="row about-section__row">
           <!-- Image -->
@@ -169,9 +167,9 @@
                 confidence—step by step.
               </p>
 
-              <div class="about-section__actions zg-align-center">
-                <a href="#footer-cta" class="about-section__btn" data-btn="about">Know more about us</a>
-              </div>
+              <a href="#footer-cta" class="about-section__btn" data-btn="about">
+                Know more about us
+              </a>
             </div>
           </div>
         </div>
@@ -181,7 +179,7 @@
     <!-- testimonial section -->
     <section
       id="testimonial"
-      class="testimonial-section zg-section-space"
+      class="testimonial-section py-6"
       data-section="testimonial"
     >
       <div class="container">
@@ -212,7 +210,7 @@
               <p class="testimonial-section__sign">Signature</p>
 
               <h5 class="testimonial-section__name">Yamini Singh</h5>
-              <p class="testimonial-section__role">Founder &amp; Head of School</p>
+              <p class="testimonial-section__role">Founder & Head of School</p>
             </div>
           </div>
         </div>
@@ -221,15 +219,15 @@
 
     <!-- day care option -->
     <section
-      id="program"
-      class="day-care-options-section zg-section-space"
+      id="Program"
+      class="day-care-options-section py-6"
       data-section="program"
     >
       <div class="container">
         <!-- Heading -->
         <div class="row g-4">
           <div class="col-12">
-            <div class="day-care-options-section__heading zg-section-header">
+            <div class="day-care-options-section__heading">
               <h6 class="day-care-options-section__label">DAY CARE OPTIONS</h6>
               <h2 class="day-care-options-section__title">
                 Age-based learning support <br />
@@ -240,9 +238,9 @@
         </div>
 
         <!-- Cards -->
-        <div class="row day-care-options-section__grid zg-section-body">
+        <div class="row day-care-options-section__grid">
           <!-- Card 1 -->
-          <div class="col-12 col-md-4 clonable-card">
+          <div class="col-12 col-md-4">
             <div class="day-care-options-section__card">
               <div class="day-care-options-section__img">
                 <img
@@ -267,7 +265,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-4 clonable-card">
+          <div class="col-12 col-md-4">
             <div class="day-care-options-section__card">
               <div class="day-care-options-section__img">
                 <img
@@ -292,7 +290,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-4 clonable-card">
+          <div class="col-12 col-md-4">
             <div class="day-care-options-section__card">
               <div class="day-care-options-section__img">
                 <img
@@ -322,18 +320,16 @@
     <!-- day care -->
     <section
       id="admission"
-      class="pricing-section zg-section-space"
+      class="pricing-section py-6"
       data-section="admission"
     >
       <div class="container">
-        <div class="pricing-section__header zg-section-header">
-          <p class="pricing-section__subheading">DAY CARE</p>
-          <h2 class="pricing-section__heading">Schedule &amp; Tuition</h2>
-        </div>
+        <p class="pricing-section__subheading">DAY CARE</p>
+        <h2 class="pricing-section__heading">Schedule & Tuition</h2>
 
-        <div class="row g-4 g-md-0 pricing-row zg-section-body">
+        <div class="row g-4 g-md-0 pricing-row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-4 pricing-section__col clonable-card">
+          <div class="col-12 col-md-4 pricing-section__col">
             <div class="pricing-section__card">
               <p class="pricing-section__number">01</p>
               <h3 class="pricing-section__title">Half Day</h3>
@@ -344,7 +340,7 @@
 
               <div class="pricing-section__info">
                 <span class="pricing-section__time">
-                  <span class="pricing-section__time-icon"><i class="bi bi-stopwatch-fill" data-icon="time" aria-hidden="true"></i></span>
+                  <i class="bi bi-stopwatch-fill" data-icon="time"></i>
                   8:30 – 12:00
                 </span>
 
@@ -354,7 +350,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-4 pricing-section__col clonable-card">
+          <div class="col-12 col-md-4 pricing-section__col">
             <div class="pricing-section__card">
               <p class="pricing-section__number">02</p>
               <h3 class="pricing-section__title">Full Day</h3>
@@ -365,7 +361,7 @@
 
               <div class="pricing-section__info">
                 <span class="pricing-section__time">
-                  <span class="pricing-section__time-icon"><i class="bi bi-stopwatch-fill" data-icon="time" aria-hidden="true"></i></span>
+                  <i class="bi bi-stopwatch-fill" data-icon="time"></i>
                   8:30 – 3:30
                 </span>
 
@@ -375,7 +371,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-4 pricing-section__col clonable-card">
+          <div class="col-12 col-md-4 pricing-section__col">
             <div class="pricing-section__card">
               <p class="pricing-section__number">03</p>
               <h3 class="pricing-section__title">Extended Day</h3>
@@ -386,7 +382,7 @@
 
               <div class="pricing-section__info">
                 <span class="pricing-section__time">
-                  <span class="pricing-section__time-icon"><i class="bi bi-stopwatch-fill" data-icon="time" aria-hidden="true"></i></span>
+                  <i class="bi bi-stopwatch-fill" data-icon="time"></i>
                   8:30 – 5:30
                 </span>
 
@@ -400,19 +396,17 @@
           Admissions are based on age-group eligibility and availability.
         </p>
 
-        <div class="pricing-section__actions zg-align-center">
-          <a href="#footer-cta" class="pricing-section__btn" data-btn="pricing">Enroll Your Child</a>
-        </div>
+        <a href="#" class="pricing-section__btn" data-btn="pricing">Enroll Your Child</a>
       </div>
     </section>
 
     <!-- why us section -->
-    <section class="why-us-section zg-section-space" id="why-us" data-section="why-us">
+    <section class="why-us-section py-6" id="why-us" data-section="why-us">
       <div class="container">
         <div class="row">
           <!-- LEFT -->
           <div class="col-12 col-lg-6">
-            <div class="why-us-section__left zg-section-header">
+            <div class="why-us-section__left">
               <p class="why-us-section__subheading">Why Us</p>
 
               <h2 class="why-us-section__heading">
@@ -426,22 +420,22 @@
 
               <ul class="why-us-section__features">
                 <li>
-                  <span class="why-us-section__feature-icon"><i class="bi bi-check-circle-fill" data-icon="check" aria-hidden="true"></i></span>
+                  <i class="bi bi-check-circle-fill" data-icon="check"></i>
                   Holistic development focus
                 </li>
                 <li>
-                  <span class="why-us-section__feature-icon"><i class="bi bi-check-circle-fill" data-icon="check" aria-hidden="true"></i></span>
+                  <i class="bi bi-check-circle-fill" data-icon="check"></i>
                   Friendly and trained teachers
                 </li>
                 <li>
-                  <span class="why-us-section__feature-icon"><i class="bi bi-check-circle-fill" data-icon="check" aria-hidden="true"></i></span>
+                  <i class="bi bi-check-circle-fill" data-icon="check"></i>
                   Safe supervision throughout the day
                 </li>
               </ul>
 
-              <div class="why-us-section__actions zg-align-center">
-                <a href="#about" class="why-us-section__btn" data-btn="why-us">Know More</a>
-              </div>
+              <a href="#about" class="why-us-section__btn" data-btn="why-us">
+                Know More
+              </a>
             </div>
           </div>
 
@@ -451,8 +445,8 @@
               <div class="row">
                 <!-- Column 1 -->
                 <div class="col-12 col-sm-6">
-                  <div class="why-us-section__stack row">
-                    <div class="col-12 clonable-card"><div class="why-us-section__card">
+                  <div class="why-us-section__stack">
+                    <div class="why-us-section__card">
                       <div class="why-us-section__icon">
                         <i class="bi bi-heart-fill" data-icon="heart"></i>
                       </div>
@@ -461,9 +455,9 @@
                         We encourage empathy, sharing, and respectful behaviour
                         in daily routines.
                       </p>
-                    </div></div>
+                    </div>
 
-                    <div class="col-12 clonable-card"><div class="why-us-section__card">
+                    <div class="why-us-section__card">
                       <div class="why-us-section__icon">
                         <i class="bi bi-emoji-smile-fill" data-icon="smile"></i>
                       </div>
@@ -472,16 +466,16 @@
                         Kids learn confidence, patience, and communication
                         through guided play.
                       </p>
-                    </div></div>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="col-12 col-sm-6">
                   <div
-                    class="why-us-section__stack why-us-section__stack--down row"
+                    class="why-us-section__stack why-us-section__stack--down"
                   >
-                    <div class="col-12 clonable-card"><div class="why-us-section__card">
+                    <div class="why-us-section__card">
                       <div class="why-us-section__icon">
                         <i class="bi bi-boombox" data-icon="creativity"></i>
                       </div>
@@ -490,9 +484,9 @@
                         Art, music, and imagination activities help children
                         express ideas freely.
                       </p>
-                    </div></div>
+                    </div>
 
-                    <div class="col-12 clonable-card"><div class="why-us-section__card">
+                    <div class="why-us-section__card">
                       <div class="why-us-section__icon">
                         <i class="bi bi-graph-up" data-icon="growth"></i>
                       </div>
@@ -501,7 +495,7 @@
                         Smart learning games build problem-solving and early
                         logic skills.
                       </p>
-                    </div></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -513,48 +507,57 @@
     </section>
 
     <!-- gallery section -->
-    <section class="gallery-section zg-section-space" id="gallery" data-section="gallery">
+    <section class="gallery-section py-6" id="gallery" data-section="gallery">
       <div class="container">
         <div class="row g-4">
           <!-- img 1 (wide) -->
-          <div class="col-12 col-md-6 col-lg-6 clonable-card">
-            <div class="gallery-section__item gallery-section__item--wide gallery-section__item--image-a" role="img" aria-label="Children playing">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="gallery-section__item gallery-section__item--wide">
+              <img src="assets/images/section-6a.webp" alt="Children playing" />
             </div>
           </div>
 
           <!-- img 2 -->
-          <div class="col-12 col-md-6 col-lg-3 clonable-card">
-            <div class="gallery-section__item gallery-section__item--square gallery-section__item--image-b" role="img" aria-label="Child in snow">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="gallery-section__item gallery-section__item--square">
+              <img src="assets/images/section-6b.webp" alt="Child in snow" />
             </div>
           </div>
 
           <!-- img 3 -->
-          <div class="col-12 col-md-6 col-lg-3 clonable-card">
-            <div class="gallery-section__item gallery-section__item--square gallery-section__item--image-c" role="img" aria-label="Child stacking blocks">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="gallery-section__item gallery-section__item--square">
+              <img
+                src="assets/images/section-6c.webp"
+                alt="Child stacking blocks"
+              />
             </div>
           </div>
 
           <!-- img 4 -->
-          <div class="col-12 col-md-6 col-lg-3 clonable-card">
-            <div class="gallery-section__item gallery-section__item--square gallery-section__item--image-d" role="img" aria-label="Coloring activity">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="gallery-section__item gallery-section__item--square">
+              <img
+                src="assets/images/section-6d.webp"
+                alt="Coloring activity"
+              />
             </div>
           </div>
 
           <!-- img 5 -->
-          <div class="col-12 col-md-6 col-lg-3 clonable-card">
-            <div class="gallery-section__item gallery-section__item--square gallery-section__item--image-e" role="img" aria-label="Smiling child">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="gallery-section__item gallery-section__item--square">
+              <img src="assets/images/section-6e.webp" alt="Smiling child" />
             </div>
           </div>
 
           <!-- img 6 (wide) ✅ FIXED: col-md-6 (not 12) -->
-          <div class="col-12 col-md-6 col-lg-6 clonable-card">
-            <div class="gallery-section__item gallery-section__item--wide gallery-section__item--image-f" role="img" aria-label="Kids with letter blocks">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="gallery-section__item gallery-section__item--wide">
+              <img
+                src="assets/images/section-6f.webp"
+                alt="Kids with letter blocks"
+              />
             </div>
           </div>
         </div>
@@ -563,14 +566,14 @@
 
     <!-- daily activity -->
     <section
-      class="daily-activities-section zg-section-space"
+      class="daily-activities-section py-6"
       id="daily-activities"
       data-section="daily-activities"
     >
       <div class="container">
         <div class="row">
           <!-- Heading -->
-          <div class="col-12 zg-section-header">
+          <div class="col-12">
             <p class="daily-activities-section__subtitle">DAILY ACTIVITIES</p>
             <h2 class="daily-activities-section__title">
               Built to spark curiosity <br />
@@ -579,7 +582,7 @@
           </div>
 
           <!-- Video -->
-          <div class="col-12 zg-section-body">
+          <div class="col-12">
             <div class="daily-activities-section__media">
               <div class="daily-activities-section__img">
                 <img
@@ -594,8 +597,9 @@
                 href="#"
                 class="daily-activities-section__play"
                 aria-label="Play video"
+                data-btn="daily-activities"
               >
-                <i class="bi bi-play-fill" data-icon="play" aria-hidden="true"></i>
+                <span aria-hidden="true">&#9658;</span>
               </a>
             </div>
           </div>
@@ -605,14 +609,14 @@
 
     <!-- program -->
     <section
-      class="program-highlights-section zg-section-space"
+      class="program-highlights-section py-6"
       id="program-highlights"
       data-section="program-highlights"
     >
       <div class="container">
         <div class="row program-highlights-section__row">
           <!-- 1 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">Morning Huddles</h3>
               <p class="program-highlights-section__text">
@@ -625,7 +629,7 @@
           </div>
 
           <!-- 2 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">Learning Lab</h3>
               <p class="program-highlights-section__text">
@@ -637,7 +641,7 @@
           </div>
 
           <!-- 3 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">The Basics</h3>
               <p class="program-highlights-section__text">
@@ -649,7 +653,7 @@
           </div>
 
           <!-- 4 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">Superfoods</h3>
               <p class="program-highlights-section__text">
@@ -661,7 +665,7 @@
           </div>
 
           <!-- 5 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">Play Stations</h3>
               <p class="program-highlights-section__text">
@@ -673,7 +677,7 @@
           </div>
 
           <!-- 6 -->
-          <div class="col-12 col-md-6 program-highlights-section__col clonable-card">
+          <div class="col-12 col-md-6 program-highlights-section__col">
             <div class="program-highlights-section__item">
               <h3 class="program-highlights-section__title">Outdoor Play</h3>
               <p class="program-highlights-section__text">
@@ -689,13 +693,13 @@
 
     <!-- meet teachers -->
     <section
-      class="meet-teachers-section zg-section-space"
+      class="meet-teachers-section py-6"
       id="meet-teachers"
       data-section="meet-teachers"
     >
       <div class="container">
         <div class="row">
-          <div class="col-12 meet-colom zg-section-header">
+          <div class="col-12 meet-colom">
             <p class="meet-teachers-section__subtitle">MEET THE TEACHERS</p>
             <h2 class="meet-teachers-section__title">
               Experts who help your <br />
@@ -704,9 +708,9 @@
           </div>
         </div>
 
-        <div class="row meet-teachers-section__row zg-section-body">
+        <div class="row meet-teachers-section__row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-4 meet-teachers-section__col clonable-card">
+          <div class="col-12 col-md-4 meet-teachers-section__col">
             <div class="meet-teachers-section__card">
               <div class="meet-teachers-section__img">
                 <img
@@ -723,7 +727,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-4 meet-teachers-section__col clonable-card">
+          <div class="col-12 col-md-4 meet-teachers-section__col">
             <div class="meet-teachers-section__card">
               <div class="meet-teachers-section__img">
                 <img
@@ -740,7 +744,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-4 meet-teachers-section__col clonable-card">
+          <div class="col-12 col-md-4 meet-teachers-section__col">
             <div class="meet-teachers-section__card">
               <div class="meet-teachers-section__img">
                 <img
@@ -761,16 +765,14 @@
 
     <!-- paresn testimonial -->
     <section
-      class="parent-testimonial zg-section-space"
+      class="parent-testimonial py-6"
       id="parent-testimonial"
       data-section="parent-testimonial"
     >
       <div class="container">
-        <div class="parent-testimonial__header zg-section-header">
-          <p class="parent-testimonial__subtitle">WHAT PARENTS SAY</p>
-        </div>
+        <p class="parent-testimonial__subtitle">WHAT PARENTS SAY</p>
 
-        <div class="parent-testimonial__card zg-section-body">
+        <div class="parent-testimonial__card">
           <div class="row g-0 parent-testimonial__row">
             <!-- Image Column -->
             <div class="col-12 col-md-5">
@@ -788,7 +790,11 @@
             <div class="col-12 col-md-7">
               <div class="parent-testimonial__content">
                 <div class="parent-testimonial__content-inner">
-                  <span class="parent-testimonial__quote-wrap"><i class="bi bi-quote" data-icon="quote" aria-hidden="true"></i></span>
+                  <i
+                    class="parent-testimonial__quote-icon"
+                    data-icon="quote"
+                    aria-hidden="true"
+                  ></i>
 
                   <p class="parent-testimonial__text">
                     The learning environment is calm, structured, and very
@@ -807,24 +813,24 @@
     <!-- footer cta -->
     <section class="footer-cta" id="footer-cta" data-section="footer-cta">
       <!-- Background Image -->
-      <div class="footer-cta__bg" data-zg-editable="surface" aria-hidden="true"><span class="d-none"></span></div>
+      <div class="footer-cta__bg" aria-hidden="true"><span class="d-none"></span></div>
 
       <!-- Overlay -->
       <div class="footer-cta__overlay">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-10 footer-cta__col">
+            <div class="col-12 col-lg-10 mx-auto">
               <div class="footer-cta__content">
-                <div class="footer-cta__header zg-section-header">
-                  <h2 class="footer-cta__title">More than just a joyful place</h2>
-                  <p class="footer-cta__text">
-                    A nurturing environment where children feel safe, stay
-                    curious, and grow confidently with care and creativity.
-                  </p>
-                </div>
-                <div class="footer-cta__actions zg-align-center zg-section-body">
-                  <a href="tel:+919123456789" class="footer-cta__button" data-btn="footer-cta">Enroll your kid</a>
-                </div>
+                <h2 class="footer-cta__title">More than just a joyful place</h2>
+
+                <p class="footer-cta__text">
+                  A nurturing environment where children feel safe, stay
+                  curious, and grow confidently with care and creativity.
+                </p>
+
+                <a href="#enroll" class="footer-cta__button" data-btn="footer-cta">
+                  Enroll your kid
+                </a>
               </div>
             </div>
           </div>
@@ -832,44 +838,42 @@
       </div>
     </section>
 
-    </main>
-
     <!-- footer -->
-    <footer class="site-footer" id="footer" data-section="footer">
+    <footer class="site-footer" id="site-footer" data-section="site-footer">
       <div class="container">
         <div class="row site-footer__row">
           <!-- Left: Copyright -->
           <div class="col-12 col-md-6">
             <p class="site-footer__copy">
-              © 2025. All Rights Reserved.
+              © 2025. All Rights Reserved. Powered by Zigrow.
             </p>
           </div>
 
           <!-- Right: Social -->
           <div class="col-12 col-md-6">
             <div class="site-footer__social">
-              <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
                 <i
                   class="bi bi-facebook"
                   data-icon="facebook"
                   aria-hidden="true"
                 ></i>
               </a>
-              <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
                 <i
                   class="bi bi-instagram"
                   data-icon="instagram"
                   aria-hidden="true"
                 ></i>
               </a>
-              <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
                 <i
                   class="bi bi-linkedin"
                   data-icon="linkedin"
                   aria-hidden="true"
                 ></i>
               </a>
-              <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+              <a href="#" aria-label="Twitter" target="_blank" rel="noopener">
                 <i
                   class="bi bi-twitter"
                   data-icon="twitter"
@@ -880,15 +884,12 @@
           </div>
         </div>
       </div>
-      <div class="powered-by-zigrow-row">
-        <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
-      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js?configured=4"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

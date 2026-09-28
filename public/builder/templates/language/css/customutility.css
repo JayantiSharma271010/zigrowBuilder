@@ -1335,27 +1335,3 @@ img {
 .bg-white-style{
   background-color: #fff;
 }
-
-.justify-content-between-style {
-  justify-content: space-between;
-}
-
-.justify-content-end-style {
-  justify-content: flex-end;
-}
-
-.text-end-style {
-  text-align: end;
-}
-
-@media (min-width: 768px) {
-  .justify-content-md-end-style {
-    justify-content: flex-end;
-  }
-}
-
-@media (min-width: 992px) {
-  .justify-content-lg-start-style {
-    justify-content: flex-start;
-  }
-}

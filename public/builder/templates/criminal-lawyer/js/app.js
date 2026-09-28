@@ -24,16 +24,14 @@ if (menuToggle && mobileNav) {
 const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.addEventListener("scroll", () => {
-  backToTopBtn.classList.toggle("show", window.scrollY > 300);
+  backToTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
 });
 
 backToTopBtn.addEventListener("click", (e) => {
   e.preventDefault();
   window.scrollTo({
     top: 0,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "auto"
-      : "smooth",
+    behavior: "smooth",
   });
 });
 
@@ -424,8 +422,8 @@ if (window.innerWidth > 768) {
   // =========================
   // FOOTER (BEM)
   // =========================
-  gsap.from("#footer .site-footer__block", {
-    scrollTrigger: { trigger: "#footer", start: "top 90%" },
+  gsap.from("#site-footer .site-footer__block", {
+    scrollTrigger: { trigger: "#site-footer", start: "top 90%" },
     opacity: 0,
     y: 30,
     duration: 0.8,
@@ -433,8 +431,8 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
   });
 
-  gsap.from("#footer .site-footer__bottom", {
-    scrollTrigger: { trigger: "#footer", start: "top 85%" },
+  gsap.from("#site-footer .site-footer__bottom", {
+    scrollTrigger: { trigger: "#site-footer", start: "top 85%" },
     opacity: 0,
     y: 20,
     duration: 0.8,

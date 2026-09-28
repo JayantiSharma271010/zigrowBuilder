@@ -29,14 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  menu.addEventListener("shown.bs.collapse", function () {
-    hamburger.setAttribute("aria-expanded", "true");
-  });
-
-  menu.addEventListener("hidden.bs.collapse", function () {
-    hamburger.setAttribute("aria-expanded", "false");
-  });
-
   // Close on link click
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
@@ -188,6 +180,15 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.5, // after navbar appears
     });
 
+    // Animate Contact Us button (desktop)
+    gsap.from("#navbarSection .custom-btn", {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+      delay: 1.2,
+    });
+
     // Hero section
     // Hero Title
     gsap.from("#home .hero-title", {
@@ -205,6 +206,15 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
       stagger: 0.3,
       delay: 0.6,
+    });
+
+    // Button + Play Icon
+    gsap.from("#home .button-div", {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      ease: "back.out(1.5)",
+      delay: 1.2,
     });
 
     // Hero Image

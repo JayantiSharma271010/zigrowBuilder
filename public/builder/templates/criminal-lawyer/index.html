@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="css/style.css?v=2.13.0-2" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <a
@@ -31,10 +31,10 @@
         <div class="container">
           <div class="nav-top">
             <div class="social-icons">
-              <a href="#" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook"></i></a>
-              <a href="#" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a>
-              <a href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" data-icon="linkedin"></i></a>
+              <i class="bi bi-facebook" data-icon="facebook"></i>
+              <i class="bi bi-twitter" data-icon="twitter"></i>
+              <i class="bi bi-instagram" data-icon="instagram"></i>
+              <i class="bi bi-linkedin" data-icon="linkedin"></i>
             </div>
 
             <a href="tel:+91-9123456789" class="call-link">
@@ -46,8 +46,8 @@
 
           <div class="nav-bottom">
             <div class="nav-brand">
-              <a href="#home" class="brand-logo" data-logo="navbar">Ram Jethmalani</a>
-              <p class="nav-brand-tagline">CRIMINAL LAWYER</p>
+              <h4>Ram Jethmalani</h4>
+              <h6>CRIMINAL LAWYER</h6>
             </div>
 
             <div class="list-item-box" id="navMenu">
@@ -57,12 +57,17 @@
                 <li><a href="#practice-areas">Practice Areas</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#media-section">FAQ</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="#site-footer">Contact</a></li>
               </ul>
 
-              <div class="navbar-actions zg-align-center">
-                <a href="#footer" class="consult-btn" data-btn="navbar">Free Consultation</a>
-              </div>
+              <a
+                href="#site-footer"
+                class="consult-btn"
+                role="button"
+                data-btn="navbar"
+              >
+                Free Consultation
+              </a>
             </div>
 
             <!-- Hamburger (span-based, no icon) -->
@@ -87,23 +92,27 @@
               <li><a href="#practice-areas">Practice Areas</a></li>
               <li><a href="#reviews">Reviews</a></li>
               <li><a href="#media-section">FAQ</a></li>
-              <li><a href="#footer">Contact</a></li>
+              <li><a href="#site-footer">Contact</a></li>
             </ul>
 
-            <div class="mobile-nav-actions zg-align-center">
-              <a href="#footer" class="consult-btn consult-btn--mobile" data-btn="navbar">Free Consultation</a>
-            </div>
+            <a
+              href="#site-footer"
+              class="consult-btn consult-btn--mobile"
+              role="button"
+              data-btn="navbar"
+            >
+              Free Consultation
+            </a>
           </div>
         </div>
       </nav>
     </header>
-    <main>
 
     <!-- hero section -->
     <section id="home" class="section-hero" data-section="home">
       <div class="section-hero__bg">
         <!-- keep image in separate wrapper (as requested) -->
-        <div class="section-hero__bg-img" data-zg-editable="surface"><span class="d-none"></span></div>
+        <div class="section-hero__bg-img"><span class="d-none"></span></div>
       </div>
 
       <div class="section-hero__overlay">
@@ -127,9 +136,9 @@
                   legal matters.
                 </p>
 
-                <div class="section-hero__actions zg-align-center">
-                  <a href="#footer" class="section-hero__btn" data-btn="hero">Contact Us Today</a>
-                </div>
+                <a href="#site-footer" class="section-hero__btn" data-btn="hero"
+                  >Contact Us Today</a
+                >
               </div>
             </div>
           </div>
@@ -138,7 +147,7 @@
     </section>
     <!-- lawyer section -->
     <section
-      class="lawyer-section"
+      class="lawyer-section py-6"
       id="lawyer-section"
       data-section="lawyer"
     >
@@ -149,7 +158,7 @@
             <div class="lawyer-media">
               <div class="lawyer-media__lady">
                 <img
-                  src="assets/criminal-lawyer/justice-lady.webp"
+                  src="assets/criminal-lawyer/Justice Lady.webp"
                   alt="Lady Justice statue"
                   loading="lazy"
                 />
@@ -157,7 +166,7 @@
 
               <div class="lawyer-media__badge">
                 <img
-                  src="assets/criminal-lawyer/badge.webp"
+                  src="assets/criminal-lawyer/Badge.webp"
                   alt="Top Rated Badge"
                   loading="lazy"
                 />
@@ -168,9 +177,9 @@
           <!-- RIGHT: CONTENT -->
           <div class="col-12 col-lg-7">
             <div class="lawyer-content">
-              <h2 class="lawyer-content__title">
+              <h1 class="lawyer-content__title">
                 Trusted Lawyers In <br />Canada
-              </h2>
+              </h1>
 
               <div class="lawyer-content__underline"></div>
 
@@ -188,12 +197,12 @@
 
               <div class="lawyer-stats">
                 <div class="lawyer-stats__item">
-                  <h3>2,850+</h3>
+                  <h2>2,850+</h2>
                   <p>Criminal Charges <br />Handled</p>
                 </div>
 
                 <div class="lawyer-stats__item">
-                  <h3>450+</h3>
+                  <h2>450+</h2>
                   <p>Criminal Appeals <br />Argued</p>
                 </div>
               </div>
@@ -207,12 +216,12 @@
 
     <!-- experience section -->
     <section
-      class="experience-section"
+      class="experience-section py-6"
       id="experience"
       data-section="experience"
     >
       <!-- Background image in separate div -->
-      <div class="experience-section__bg" data-zg-editable="surface" aria-hidden="true">
+      <div class="experience-section__bg" aria-hidden="true">
         <span class="d-none"></span>
       </div>
 
@@ -235,9 +244,15 @@
                 With Focus And Speed.
               </h2>
 
-              <button type="button" class="experience-section__play" aria-label="Play video">
+              <a
+                href="#"
+                class="experience-section__play"
+                aria-label="Play video"
+                role="button"
+                data-btn="experience-section"
+              >
                 <i class="bi bi-play-fill" data-icon="play"></i>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -247,7 +262,7 @@
     <!-- practice areas -->
     <section
       id="practice-areas"
-      class="practice-areas-section"
+      class="practice-areas-section py-6"
       data-section="practice-areas"
     >
       <div class="container">
@@ -261,23 +276,23 @@
                 cases we handle most often. You’ll always know the next step.
               </p>
 
-              <div class="practice-areas-section__actions zg-align-center">
-                <a href="#contact-lawyer" class="practice-areas-section__btn" data-btn="practice-areas">Request a Consultation</a>
-              </div>
+              <a href="#contact" class="practice-areas-section__btn" data-btn="practice-areas">
+                View All Practice Areas
+              </a>
             </div>
           </div>
         </div>
 
         <div class="row g-0">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div
               class="practice-areas-section__card border-lg-end border-lg-bottom"
             >
               <span class="practice-areas-section__num">01</span>
-              <h3 class="practice-areas-section__card-title">
+              <h5 class="practice-areas-section__card-title">
                 Domestic Assault
-              </h3>
+              </h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -289,14 +304,14 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div
               class="practice-areas-section__card border-lg-end border-lg-bottom"
             >
               <span class="practice-areas-section__num">02</span>
-              <h3 class="practice-areas-section__card-title">
+              <h5 class="practice-areas-section__card-title">
                 Weapons Offences
-              </h3>
+              </h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -308,10 +323,10 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="practice-areas-section__card border-lg-bottom">
               <span class="practice-areas-section__num">03</span>
-              <h3 class="practice-areas-section__card-title">Drug Offences</h3>
+              <h5 class="practice-areas-section__card-title">Drug Offences</h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -323,10 +338,10 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="practice-areas-section__card border-lg-end">
               <span class="practice-areas-section__num">04</span>
-              <h3 class="practice-areas-section__card-title">Bail Hearings</h3>
+              <h5 class="practice-areas-section__card-title">Bail Hearings</h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -338,10 +353,10 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="practice-areas-section__card border-lg-end">
               <span class="practice-areas-section__num">05</span>
-              <h3 class="practice-areas-section__card-title">Property Crime</h3>
+              <h5 class="practice-areas-section__card-title">Property Crime</h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -353,12 +368,12 @@
           </div>
 
           <!-- Card 6 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="practice-areas-section__card">
               <span class="practice-areas-section__num">06</span>
-              <h3 class="practice-areas-section__card-title">
+              <h5 class="practice-areas-section__card-title">
                 Criminal Harassment
-              </h3>
+              </h5>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -373,7 +388,7 @@
     </section>
 
     <!-- media section -->
-    <section id="media-section" class="media-section" data-section="media">
+    <section id="media-section" class="media-section py-6" data-section="media">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -388,12 +403,12 @@
 
         <div class="row">
           <!-- Item 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media-3-1.webp"
+                    src="assets/criminal-lawyer/media 3 (1).webp"
                     alt="Interview clip thumbnail"
                     loading="lazy"
                   />
@@ -403,15 +418,16 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
+                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h3 class="media-section__card-title">
+                <h5 class="media-section__card-title">
                   Case Strategy: What To Do In The First 24 Hours
-                </h3>
+                </h5>
                 <p class="media-section__text">
                   Quick guidance on the early steps that protect your rights and
                   set your case up correctly.
@@ -424,12 +440,12 @@
           </div>
 
           <!-- Item 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media-3-2.webp"
+                    src="assets/criminal-lawyer/media 3 (2).webp"
                     alt="News segment thumbnail"
                     loading="lazy"
                   />
@@ -439,15 +455,16 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
+                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h3 class="media-section__card-title">
+                <h5 class="media-section__card-title">
                   Bail Hearings: How Release Conditions Work
-                </h3>
+                </h5>
                 <p class="media-section__text">
                   Learn what the court looks for and how a strong release plan
                   is prepared in practice.
@@ -460,12 +477,12 @@
           </div>
 
           <!-- Item 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media-3-3.webp"
+                    src="assets/criminal-lawyer/media 3 (3).webp"
                     alt="Panel discussion thumbnail"
                     loading="lazy"
                   />
@@ -475,15 +492,16 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
+                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h3 class="media-section__card-title">
+                <h5 class="media-section__card-title">
                   Search &amp; Seizure: When Evidence Can Be Challenged
-                </h3>
+                </h5>
                 <p class="media-section__text">
                   A simple breakdown of lawful searches, rights violations, and
                   how they impact outcomes.
@@ -499,46 +517,46 @@
     </section>
 
     <!-- logo section -->
-    <section id="logo" class="logo-section" data-section="logo">
+    <section id="logo" class="logo-section py-6" data-section="logo">
       <div class="container">
         <div class="row logo-section__row">
           <!-- Title -->
           <div class="col-12 col-lg-2">
             <div class="logo-section__title-wrap">
-              <h2 class="logo-section__title">Featured On Trusted Platforms</h2>
+              <h5 class="logo-section__title">Featured On Trusted Platforms</h5>
             </div>
           </div>
 
           <!-- Logos -->
           <div class="col-12 col-lg-10">
             <div class="row logo-section__logos">
-              <div class="col-4 col-md-3 col-lg clonable-card">
+              <div class="col-4 col-md-3 col-lg">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.webp" alt="Media logo 1" />
+                  <img src="assets/logo/1.png" alt="Media logo 1" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg clonable-card">
+              <div class="col-4 col-md-3 col-lg">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/2.webp" alt="Media logo 2" />
+                  <img src="assets/logo/2.png" alt="Media logo 2" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg clonable-card">
+              <div class="col-4 col-md-3 col-lg">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.webp" alt="Media logo 3" />
+                  <img src="assets/logo/1.png" alt="Media logo 3" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg clonable-card">
+              <div class="col-4 col-md-3 col-lg">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/2.webp" alt="Media logo 4" />
+                  <img src="assets/logo/2.png" alt="Media logo 4" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg clonable-card">
+              <div class="col-4 col-md-3 col-lg">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.webp" alt="Media logo 5" />
+                  <img src="assets/logo/1.png" alt="Media logo 5" />
                 </div>
               </div>
             </div>
@@ -548,9 +566,9 @@
     </section>
 
     <!-- reviews sections -->
-    <section id="reviews" class="reviews-section" data-section="reviews">
+    <section id="reviews" class="reviews-section py-6" data-section="reviews">
       <!-- background image -->
-      <div class="reviews-section__bg" data-zg-editable="surface" aria-hidden="true"></div>
+      <div class="reviews-section__bg" aria-hidden="true"></div>
 
       <!-- dark overlay -->
       <div class="reviews-section__overlay" aria-hidden="true"></div>
@@ -571,39 +589,41 @@
 
         <!-- Reviews -->
         <div class="row reviews-section__grid">
-          <div class="col-12 col-sm-6 col-md-4 clonable-card">
+          <div class="col-12 col-sm-6 col-md-4">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 The team handled my case with clarity and confidence. Every step
                 was explained clearly, and I always felt prepared before court.
               </p>
-              <p class="reviews-section__author">R. Mehta</p>
+              <p class="reviews-section__author">R.H.</p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4 clonable-card">
+          <div class="col-12 col-sm-6 col-md-4">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 Professional, responsive, and honest. I never felt rushed, and
                 my questions were answered quickly and clearly.
               </p>
-              <p class="reviews-section__author">J. Kapoor</p>
+              <p class="reviews-section__author">J.K.</p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4 clonable-card">
+          <div class="col-12 col-sm-6 col-md-4">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 Strong representation from start to finish. The attention to
                 detail and preparation made a real difference in my case.
               </p>
-              <p class="reviews-section__author">D. Malhotra</p>
+              <p class="reviews-section__author">D.M.</p>
             </div>
           </div>
 
           <!-- BUTTON ROW -->
-          <div class="col-12 reviews-section__actions zg-align-center">
-            <a href="#contact-lawyer" class="reviews-section__btn" data-btn="review">Book a Consultation</a>
+          <div class="col-12">
+            <a href="#" class="reviews-section__btn" data-btn="review">
+              View All Reviews
+            </a>
           </div>
         </div>
       </div>
@@ -612,7 +632,7 @@
     <!-- service areas -->
     <section
       id="serving-areas"
-      class="serving-areas-section"
+      class="serving-areas-section py-6"
       data-section="serving-areas"
     >
       <div class="container">
@@ -746,55 +766,55 @@
         <div class="row">
           <div class="col-12">
             <div class="serving-areas-section__associations">
-              <h3 class="serving-areas-section__subheading">
+              <h4 class="serving-areas-section__subheading">
                 Associations &amp; Memberships
-              </h3>
+              </h4>
 
               <div class="row serving-areas-section__logos">
-                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
+                <div class="col-6 col-sm-4 col-md-3 col-lg">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.webp"
+                      src="assets/logo/1.png"
                       alt="Association logo 1"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
+                <div class="col-6 col-sm-4 col-md-3 col-lg">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/2.webp"
+                      src="assets/logo/2.png"
                       alt="Association logo 2"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
+                <div class="col-6 col-sm-4 col-md-3 col-lg">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.webp"
+                      src="assets/logo/1.png"
                       alt="Association logo 3"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
+                <div class="col-6 col-sm-4 col-md-3 col-lg">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/2.webp"
+                      src="assets/logo/2.png"
                       alt="Association logo 4"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
+                <div class="col-6 col-sm-4 col-md-3 col-lg">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.webp"
+                      src="assets/logo/1.png"
                       alt="Association logo 5"
                       loading="lazy"
                     />
@@ -810,11 +830,11 @@
     <!-- contact-lawyer section -->
     <section
       id="contact-lawyer"
-      class="contact-lawyer-section"
+      class="contact-lawyer-section py-6"
       data-section="contact-lawyer"
     >
       <!-- background image in separate div -->
-      <div class="contact-lawyer-section__bg" data-zg-editable="surface" aria-hidden="true">
+      <div class="contact-lawyer-section__bg" aria-hidden="true">
         <span class="d-none"></span>
       </div>
       <!-- overlay in separate div -->
@@ -842,36 +862,40 @@
                 representation—starting with a confidential call.
               </p>
 
-              <div class="contact-lawyer-section__actions zg-align-center">
-                <a href="tel:+91-9123456789" class="contact-lawyer-section__btn" data-btn="contact-lawyer">+91-9123456789 <i class="bi bi-telephone-fill" data-icon="phone" aria-hidden="true"></i></a>
-              </div>
+              <a
+                href="tel:+91-9123456789"
+                class="contact-lawyer-section__btn"
+                data-btn="contact-lawyer"
+              >
+                <i class="bi bi-telephone-fill" data-icon="phone"></i>
+                <span>+91-9123456789</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
 
     <!-- footer section -->
-    <footer id="footer" class="site-footer" data-section="footer">
+    <footer id="site-footer" class="site-footer" data-section="site-footer">
       <div class="container">
         <!-- Top Footer -->
         <div class="row site-footer__top">
           <!-- Company Info -->
           <div class="col-12 col-md-4">
             <div class="site-footer__block">
-              <p class="site-footer__text">
+              <h6 class="site-footer__text">
                 We’re a full-service criminal defence firm supporting clients
                 across major cities with clear advice, strong advocacy, and fast
                 action.
-              </p>
+              </h6>
             </div>
           </div>
 
           <!-- Contact Info -->
           <div class="col-12 col-md-4">
             <div class="site-footer__block">
-              <h2 class="site-footer__title">Contact Us</h2>
+              <h6 class="site-footer__title">Contact Us</h6>
 
               <address class="site-footer__address">
                 <strong>E-123, ABC Plaza, XYZ Street</strong><br />
@@ -887,14 +911,14 @@
           <!-- Quick Links -->
           <div class="col-12 col-md-3">
             <div class="site-footer__block">
-              <h2 class="site-footer__title">Quick Links</h2>
+              <h6 class="site-footer__title">Quick Links</h6>
 
               <ul class="site-footer__links">
-                <li><a href="#practice-areas">Practice Areas</a></li>
-                <li><a href="#lawyer-section">Our Lawyers</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#media-section">FAQ</a></li>
-                <li><a href="#contact-lawyer">Book a Free Consultation</a></li>
+                <li><a href="#">Practice Areas</a></li>
+                <li><a href="#">Our Lawyers</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Book a Free Consultation</a></li>
               </ul>
             </div>
           </div>
@@ -906,7 +930,9 @@
         <div class="row site-footer__bottom">
           <div class="col-12 col-md-6">
             <div class="site-footer__copyright">
-              <small>&copy; 2025 All Rights Reserved</small>
+              <small
+                >&copy; 2025 All Right Reserved| Powered by Zigrow</small
+              >
             </div>
           </div>
 
@@ -927,12 +953,6 @@
             </div>
           </div>
         </div>
-
-        <div class="row footer-attribution-row">
-          <div class="col-12">
-            <p><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
-          </div>
-        </div>
       </div>
     </footer>
 
@@ -944,6 +964,6 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js?v=2.13.0"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -48,6 +48,10 @@
       document.body.appendChild(_floatingTip);
     }
     _floatingTip.textContent = text;
+    _floatingTip.classList.toggle(
+  'zp-upgrade-tooltip',
+  String(text).trim().toLowerCase() === 'upgrade to unlock'
+);
     _floatingTip.style.display = 'block';
     var r = refEl.getBoundingClientRect();
     _floatingTip.style.left = (r.left + r.width / 2) + 'px';
@@ -174,6 +178,39 @@
   function _deriveSlug(name) {
     return '/' + name.trim().toLowerCase().replace(/[\s_]+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-').replace(/^-|-$/g, '');
   }
+
+  // ── Build a valid and unique clone page name ───────────────
+function _buildClonePageName(name) {
+  var base = String(name || 'page')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  if (!base) base = 'page';
+
+  var copyIndex = 1;
+  var candidate = '';
+
+  do {
+    var suffix = copyIndex === 1
+      ? '-copy'
+      : '-copy-' + copyIndex;
+
+    var maxBaseLength = 50 - suffix.length;
+    var safeBase = base
+      .slice(0, maxBaseLength)
+      .replace(/[-_]+$/g, '');
+
+    if (!safeBase) safeBase = 'page';
+
+    candidate = safeBase + suffix;
+    copyIndex++;
+  } while (_isDuplicatePageName(candidate));
+
+  return candidate;
+}
 
   // ── Check if the builder has unsaved changes ────────────────
   function _isDirty() {
@@ -536,7 +573,7 @@
         _showBuilderInput({
           title: 'Clone Page',
           label: 'Enter a name for the cloned page:',
-          defaultValue: pd._pageName + ' (Copy)',
+          defaultValue: _buildClonePageName(pd._pageName),
           placeholder: 'e.g. About Us',
           validate: function(val) {
             var err = _validatePageName(val);

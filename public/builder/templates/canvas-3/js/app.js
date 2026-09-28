@@ -8,27 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeMenu() {
     navToggle.classList.remove("active");
     navMenu.classList.remove("active");
-    navToggle.setAttribute("aria-expanded", "false");
-    const icon = navToggle.querySelector("i");
-    if (icon) {
-      icon.classList.remove("bi-x-lg");
-      icon.classList.add("bi-list");
-      icon.setAttribute("data-icon", "menu");
-    }
   }
 
   navToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     navToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
-    const isOpen = navMenu.classList.contains("active");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    const icon = navToggle.querySelector("i");
-    if (icon) {
-      icon.classList.toggle("bi-list", !isOpen);
-      icon.classList.toggle("bi-x-lg", isOpen);
-      icon.setAttribute("data-icon", isOpen ? "close-menu" : "menu");
-    }
   });
 
   navLinks.forEach((link) => {
@@ -61,10 +46,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTopBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 // GSAP Animations
@@ -105,13 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Hero
   makeReveal("#hero .hero-title", { y: 30, duration: 0.9, trigger: "#hero" });
-  makeReveal("#hero .hero-desc", {
+  makeReveal("#hero .text-content p", {
     y: 30,
     duration: 0.9,
     delay: 0.12,
     trigger: "#hero",
   });
-  makeReveal("#hero .hero-btn", {
+  makeReveal("#hero .text-content .btn", {
     y: 26,
     duration: 0.8,
     delay: 0.18,
@@ -168,27 +151,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Map and contact
-  gsap.from("#contact-map .map-wrap", {
+  gsap.from("#testimonial .map-wrap", {
     y: 30,
     autoAlpha: 0,
     scrollTrigger: {
-      trigger: "#contact-map .map-wrap",
+      trigger: "#testimonial .map-wrap",
       start: "top 85%",
       once: true,
     },
   });
   gsap.from(
     [
-      "#contact-map .contact-title",
-      "#contact-map .info-row",
-      "#contact-map .location-btn",
+      "#testimonial .contact-title",
+      "#testimonial .info-row",
+      "#testimonial .location-btn",
     ],
     {
       y: 26,
       autoAlpha: 0,
       stagger: 0.12,
       scrollTrigger: {
-        trigger: "#contact-map .contact-box",
+        trigger: "#testimonial .contact-box",
         start: "top 85%",
         once: true,
       },
@@ -196,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // Footer
-  gsap.from("#footer .footer-row", {
+  gsap.from("#footer .footer-grid", {
     y: 24,
     autoAlpha: 0,
     scrollTrigger: { trigger: "#footer", start: "top 90%", once: true },
@@ -209,6 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
       start: 400,
       onEnter: () => backBtn.classList.add("show"),
       onLeaveBack: () => backBtn.classList.remove("show"),
+    });
+    backBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 

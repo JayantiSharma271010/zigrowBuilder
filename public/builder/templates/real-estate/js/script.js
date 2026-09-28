@@ -12,28 +12,15 @@ navLinks.forEach((link) => {
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger-toggle");
   const menu = document.getElementById("navbarMenu");
-  if (!hamburger || !menu) return;
-
-  const menuIcon = hamburger.querySelector("[data-icon]");
+  const navbarSection = document.getElementById("navbarSection");
 
   const bsCollapse = new bootstrap.Collapse(menu, {
     toggle: false,
   });
 
-  function syncMenuState(isOpen) {
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-    hamburger.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    if (menuIcon) {
-      menuIcon.classList.toggle("bi-list", !isOpen);
-      menuIcon.classList.toggle("bi-x-lg", isOpen);
-      menuIcon.setAttribute("data-icon", isOpen ? "close" : "menu");
-    }
-  }
-
-  menu.addEventListener("shown.bs.collapse", () => syncMenuState(true));
-  menu.addEventListener("hidden.bs.collapse", () => syncMenuState(false));
-
+  // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
     } else {
@@ -46,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", () => {
       if (menu.classList.contains("show")) {
         bsCollapse.hide();
+        hamburger.classList.remove("is-active");
       }
     });
   });
@@ -57,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.contains("show")
     ) {
       bsCollapse.hide();
+      hamburger.classList.remove("is-active");
     }
   });
 });
@@ -64,8 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
-  loop: false,
-  rewind: true,
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -79,19 +67,27 @@ var swiper = new Swiper(".mySwiper", {
 // Floating button js
 const btn = document.querySelector(".floating-btn");
 
-if (btn) {
-  window.addEventListener("scroll", () => {
-    btn.classList.toggle("is-visible", window.scrollY > 10);
-  });
-}
+// Show/hide button on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    // Show button
+    btn.style.opacity = 1;
+    btn.style.transform = "translateY(0)";
+    btn.style.pointerEvents = "auto";
+  } else {
+    // Hide button
+    btn.style.opacity = 0;
+    btn.style.transform = "translateY(50px)";
+    btn.style.pointerEvents = "none";
+  }
+});
 
 window.addEventListener("DOMContentLoaded", () => {
-  const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (window.innerWidth >= 767.98 && motionAllowed) {
+  if (window.innerWidth >= 767.98) {
     // For the intersection overflow
     // For to active the menu links
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("#navbarMenu .nav-link");
+    const navLinks = document.querySelectorAll("#navbarMenu a");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -114,12 +110,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => observer.observe(section));
 
+    // Bounce animation on hover
+    btn.addEventListener("mouseenter", () => {
+      gsap.to(btn, { scale: 1.1, duration: 0.2, ease: "power1.out" });
+    });
+    btn.addEventListener("mouseleave", () => {
+      gsap.to(btn, { scale: 1, duration: 0.2, ease: "power1.out" });
+    });
+
     // Always enable this regardless of screen size
     gsap.registerPlugin(ScrollTrigger);
 
     /// GSAP animation for the navbar
     // GSAP animation for the navbar only
-    gsap.from("#header", {
+    gsap.from("#navbarSection", {
       y: -100,
       opacity: 0,
       duration: 1,
@@ -416,7 +420,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     testimonialTL.from(
-      ".testimonials-section .text-muted-style",
+      ".testimonials-section p.text-muted",
       {
         y: 30,
         opacity: 0,
@@ -470,7 +474,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     contactTL.from(
-      ".contact-help-section .text-muted-style",
+      ".contact-help-section p.text-muted",
       {
         y: 30,
         opacity: 0,
@@ -482,12 +486,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Animate each form field
     contactTL.from(
-      ".contact-help-section form[data-zigrow-form] [form-question-zigrow]",
+      ".contact-help-section .custom-input",
       {
         x: 40,
         opacity: 0,
         duration: 0.5,
         stagger: 0.15,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
+
+    // Animate checkbox
+    contactTL.from(
+      ".contact-help-section .form-check",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.4,
         ease: "power2.out",
       },
       "-=0.3"

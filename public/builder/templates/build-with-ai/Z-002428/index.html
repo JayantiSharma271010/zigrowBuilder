@@ -1,0 +1,3712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesha - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Tinos:wght@400;700&family=Marcellus&display=swap"
+  rel="stylesheet"
+/>
+
+  <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #242429;
+      --border-radius-btn: 8px;
+      --box-radius: 24px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #1B998B;
+      --secondary-colors: #2E2E2E;
+      --territory-colors: #56CFE1;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 8px 16px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 17.5px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 24px;
+      --fs-h3-base: 54px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 54px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #2E2E2E ;
+      font-family: Open Sans;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+      
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+.white-border-btn{
+  background-color: #fff;
+      color: var(--secondary-colors) ;
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+      text-decoration: none ;
+      
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+}
+
+ .white-border-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+
+/* Commented out image credit styles */
+    /* .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    } */
+
+    /* Adding new image credit styles */
+  .img-credit,
+.unsplash-credit {
+  display: none !important;
+}
+
+body.preview-credit-mode .img-credit,
+body.preview-credit-mode .unsplash-credit {
+  display: inline-block !important;
+}
+
+body.preview-credit-mode .img-credit,
+body.preview-credit-mode .unsplash-credit {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff !important;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 5;
+  max-width: calc(100% - 20px);
+  backdrop-filter: blur(3px);
+}
+
+body.preview-credit-mode .img-credit a,
+body.preview-credit-mode .unsplash-credit a {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  body.preview-credit-mode .img-credit,
+  body.preview-credit-mode .unsplash-credit {
+    font-size: 0.62rem;
+    padding: 3px 6px;
+    bottom: 6px;
+    right: 8px;
+  }
+}
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Lora ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #2E2E2E;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+ 
+
+
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top custom-navbar">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold" href="#">
+          Kesha
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav align-lg-custom-center -center">
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#whyChooseUs">Why Choose Us</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#testimonials">Testimonials</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#pricing">Pricing</a>
+            </li>
+          
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" data-btn="nav"   class="primary-btn">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+    .custom-navbar {
+  padding: 0.8rem 0;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 1.2rem;
+  color: var(--para-muted);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-colors);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sticky navbar small-custom shadow on scroll */
+.sticky-top.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile menu background */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+</style>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".sticky-top");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
+
+
+    <!-- Professional -->
+<section class=" hero-zigrow-section_10 d-flex align-custom-center justify-custom-center" id="hero" data-section="hero">
+  <!-- INNER BOX -->
+  <div class="hero-inner-box container position-relative text-custom-center pointer-custom-none">
+    
+    <!-- Decorative Badge -->
+    <img src="https://i.postimg.cc/SN3P9rtB/3.png" alt="badge" class="hero-badge">
+
+    <!-- Decorative Stars -->
+    <img src="https://i.postimg.cc/SsbqG41p/2.png" class="decor-star star-green" alt="star" />
+    <img src="https://i.postimg.cc/NFNWZvDF/5.png" class="decor-arrow " alt="star" />
+    <img src="https://i.postimg.cc/VNnPvTfZ/4.png" class="decor-star star-blue" alt="arrow" />
+
+    <!-- Headline -->
+    <h1 class="hero-title">
+      Simplify Your Ritual Booking Experience
+    </h1>
+
+    <!-- Subtext -->
+    <p class="hero-subtext">
+       Discover, compare, and book trusted ritual services across India with ease and transparency, especially in tier 2 and tier 3 cities.
+    </p>
+
+    <!-- Buttons -->
+    <div class="hero-buttons d-flex justify-custom-center gap-3 mt-custom-4  flex-wrap">
+      <a href="#" class="primary-btn" data-btn="hero">Get Started →</a>
+      <a href="#" class="white-btn"v data-btn="hero">Blog →</a>
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+
+/* Outer wrapper with border effect */
+.hero-zigrow-section_10 {
+  background-color: var(--primary-colors); /* soft purple */
+  padding: 16px;
+  min-height: 95vh;
+
+
+/* Inner box */
+.hero-inner-box {
+  background-color:black;
+     border-radius: var(--box-radius);
+  padding: 80px 20px;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  min-width: 98vw;
+}
+
+/* Headline */
+.hero-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: white;
+  max-width: 900px;
+  margin: 4% auto;
+  line-height: 1.3;
+}
+
+.hero-title .hero-invest {
+  background: var(--blue-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .hero-invest::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 6px;
+  background: url('underline.svg') no-repeat center;
+  background-size: contain;
+}
+
+/* Subtext */
+.hero-subtext {
+  font-size: 1.05rem;
+  color: white;
+  max-width: 700px;
+  margin: 1.2rem auto 0;
+  line-height: 1.8;
+}
+
+
+
+/* Badge */
+.hero-badge {
+    position: absolute;
+    top: 26%;
+    left: 16%;
+    width: 62px;
+    z-index: 2;
+}
+
+/* Decorative Stars */
+.decor-star {
+  position: absolute;
+  width: 40px;
+}
+
+.star-green {
+    top: 60%;
+    left: 20%;
+}
+
+.star-blue {
+     top: 12%;
+    right: 23%;
+}
+
+/* Arrow */
+.decor-arrow {
+position: absolute;
+
+   top: 72%;
+        right: 32%;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+  }
+
+  .hero-badge {
+    top: -25px;
+    left: 20px;
+    width: 60px;
+  }
+
+  .decor-star {
+    width: 24px;
+  }
+
+  .decor-arrow {
+    width: 40px;
+  }
+}}
+
+</style>
+  
+    <!-- ========== Services Switcher (service-zigrow-section_10) ========== -->
+<!-- ========== Services Switcher (service-zigrow-section_10) ========== -->
+<section class="service-zigrow-section_10 section-padding" id="services" data-section="services">
+  <div class="container">
+
+    <!-- data-component-tabs wrapper -->
+    <div class="row g-4 g-lg-5 align-custom-start" data-component-tabs id="tabs-services">
+
+      <!-- LEFT: Tabs -->
+      <div class="col-lg-4">
+        <p class="svc-eyebrow mb-custom-2">(Our Service)</p>
+        <h2 class="main-heading mb-custom-3">
+          <span>Our Ritual Services</span>
+        </h2>
+
+        <p class="svc-subtext mb-custom-4">
+          <span>Kesha is revolutionizing ritual services in India by providing a trusted platform for booking. We simplify the process, ensuring users find reliable providers effortlessly.</span>
+        </p>
+
+        <!-- Builder-friendly nav-tabs -->
+        <nav>
+          <div class="nav nav-tabs svc-tablist" role="tablist" aria-label="Services">
+            
+              <button
+                class="nav-link svc-tab active is-active"
+                id="nav-tab-services-0"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-0"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-0"
+                aria-selected="true"
+              >
+                <span>Puja Services</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-1"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-1"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-1"
+                aria-selected="false"
+              >
+                <span>Havan Ceremonies</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-2"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-2"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-2"
+                aria-selected="false"
+              >
+                <span>Life Events</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-3"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-3"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-3"
+                aria-selected="false"
+              >
+                <span>Astrology Consultations</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-4"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-4"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-4"
+                aria-selected="false"
+              >
+                <span>Vastu Services</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-5"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-5"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-5"
+                aria-selected="false"
+              >
+                <span>Grief Support</span>
+              </button>
+            
+          </div>
+        </nav>
+      </div>
+
+      <!-- RIGHT: Panels -->
+      <div class="col-lg-8">
+        <div class="tab-content svc-panels">
+          
+
+          <div
+            class="tab-pane p-0 show active"
+            id="nav-services-0"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-0"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1567025033939-86acf877fe0a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw4fHxoYW5kcyUyMHVzaW5nJTIwdGFibGV0JTIwZm9yJTIwYm9va2luZ3xlbnwxfDJ8fHwxNzc3MTk0MjIxfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Puja Services"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@amirhanna?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Amir Hanna</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Puja Services</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Book professional puja services tailored to your specific requirements, ensuring a meaningful and authentic experience for all occasions.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-1"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-1"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1467139840664-96b244a66825?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw0fHxjbG9zZXVwJTIwb2YlMjBzZXJ2aWNlJTIwdG9vbHN8ZW58MXwyfHx8MTc3NzE5NDIyMXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Havan Ceremonies"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@randomlies?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Ashim D’Silva</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Havan Ceremonies</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Schedule havan ceremonies led by experienced priests, creating a sacred atmosphere for blessings and purification in your home or community.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-2"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-2"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1585399090149-de01d4c28e70?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBhc3Npc3RpbmclMjBjdXN0b21lcnxlbnwxfDJ8fHwxNzc3MTk0MjIxfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Life Events"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@aleno?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Adomas Aleno</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Life Events</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Reserve services for life events like weddings, birthdays, and anniversaries, ensuring every ritual is performed with care and dedication.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-3"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-3"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1745930743491-799ff8538cf1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw3fHxzdGFmZiUyMHByZXBhcmluZyUyMGZvciUyMHNlcnZpY2V8ZW58MXwyfHx8MTc3NzE5NDIyMXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Astrology Consultations"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@haberdoedas?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Haberdoedas</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Astrology Consultations</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Consult with professional astrologers to gain insights and guidance for your life journey, enhancing your spiritual understanding.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-4"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-4"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw4fHxoYW5kcyUyMHR5cGluZyUyMG9uJTIwbGFwdG9wfGVufDF8Mnx8fDE3NzcwOTQ4NTF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Vastu Services"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@pakata?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Pakata Goh</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Vastu Services</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Get expert vastu consultations to harmonize your living spaces, promoting positive energy and well-being in your home.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-5"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-5"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1698342380915-c766590ee7da?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw2fHxzZXJ2aWNlJTIwZGVsaXZlcnklMjBpbiUyMGFjdGlvbnxlbnwxfDJ8fHwxNzc3MTk0MjIxfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Grief Support"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@aboodi_vm?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>aboodi vesakaran</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Grief Support</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Access compassionate grief support services to help navigate the rituals associated with loss, providing comfort and closure during difficult times.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn" data-btn="service">
+                  <span>Book</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  /* ===== service-zigrow-section_10 (scoped) ===== */
+  .service-zigrow-section_10 {
+    --svc-text: #0f0f0f;
+  
+    color: var(--svc-text);
+    background: #fff;
+  }
+
+  .py-lg-6 {
+    padding-top: 4.5rem ;
+    padding-bottom: 4.5rem ;
+  }
+
+  /* Headings */
+  .service-zigrow-section_10 .svc-eyebrow {
+    color: var(--svc-muted);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.25px;
+  }
+  .service-zigrow-section_10 .svc-heading {
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.05;
+    font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3rem);
+    margin: 0 0 0.4rem;
+  }
+  .service-zigrow-section_10 .svc-subtext {
+    color: var(--para-muted);
+    max-width: 42ch;
+      line-height: var(--lh-body);
+    font-size: var(--fs-body);
+    margin: 0;
+  }
+
+  /* ================= LEFT — Tablist ================= */
+  .service-zigrow-section_10 .svc-tablist {
+    --rowH: 56px;
+    position: relative;
+    margin-top: 1.25rem;
+    padding: 0.35rem;
+  border-radius: var(--box-radius);
+    background: #fff;
+    border: 1px solid #eef0f3;
+    box-shadow: var(--shadow-section);
+    overflow: hidden;
+  }
+
+  /* sliding highlight */
+  .service-zigrow-section_10 .svc-tablist::before {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.35rem;
+    width: calc(100% - 0.7rem);
+    height: var(--rowH);
+    border-radius: var(--box-radius);
+    /* fallback + preferred */
+    background: #f1f5f9;
+    background: color-mix(in srgb, var(--primary-colors) 8%, #f4f6f9);
+    box-shadow: inset 0 0 0 1px
+      color-mix(in srgb, var(--primary-colors) 12%, transparent);
+    transform: translateY(calc(var(--active, 0) * var(--rowH)));
+    transition: transform 0.25s ease, background 0.25s ease,
+      box-shadow 0.25s ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .service-zigrow-section_10 .svc-tab {
+    position: relative;
+    z-index: 1; /* above slider */
+    display: flex;
+    align-items: center;
+    height: var(--rowH);
+    padding: 0 14px 0 22px;
+    border-radius: var(--box-radius);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #8a919c;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.15s ease;
+    background: transparent;
+  }
+  .service-zigrow-section_10 .svc-tab:hover {
+    color: #1b1f23;
+    transform: translateX(2px);
+  }
+  .service-zigrow-section_10 .svc-tab.is-active {
+    color: #0f0f0f;
+  }
+
+
+  /* Bootstrap nav-tabs override inside this section */
+.service-zigrow-section_10 .svc-tablist.nav-tabs {
+  display: block;        /* vertical stack */
+  border-bottom: 0;      /* remove BS bottom border */
+  padding: 0.35rem;      /* tumhaara padding retain */
+}
+
+/* Nav-link defaults clean up */
+.service-zigrow-section_10 .svc-tablist .nav-link {
+  border: 0;             /* BS border hatao */
+  margin-bottom: 0;      /* extra gaps avoid */
+  border-radius: var(--box-radius);
+}
+
+/* Make tabs full width inside left tablist */
+.service-zigrow-section_10 .svc-tablist .nav-link {
+  display: block;
+  width: 100%;
+  text-align: left; /* optional: left align text like your design */
+}
+
+/* Remove Bootstrap's default white background on active nav-link */
+.service-zigrow-section_10 .svc-tablist .nav-link.active {
+  background-color: transparent ;
+  color: #0f0f0f; /* tumhaare active text color ke saath match */
+  border-color: transparent ; /* BS border bhi hata do */
+}
+
+  /* Left indicator bar on all; primary on active */
+  .service-zigrow-section_10 .svc-tab::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 4px;
+    height: 22px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    background: #e2e8f0;
+    transition: background 0.25s ease;
+  }
+  .service-zigrow-section_10 .svc-tab.is-active::after {
+    background: var(--primary-colors);
+  }
+
+  /* Sync active state via :has() (progressive enhancement) */
+  @supports (selector(:has(*))) {
+    .service-zigrow-section_10:has(#svc-tab-0:checked) .svc-tablist::before {
+      transform: translateY(calc(0 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-1:checked) .svc-tablist::before {
+      transform: translateY(calc(1 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-2:checked) .svc-tablist::before {
+      transform: translateY(calc(2 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-3:checked) .svc-tablist::before {
+      transform: translateY(calc(3 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-4:checked) .svc-tablist::before {
+      transform: translateY(calc(4 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-5:checked) .svc-tablist::before {
+      transform: translateY(calc(5 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-6:checked) .svc-tablist::before {
+      transform: translateY(calc(6 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-7:checked) .svc-tablist::before {
+      transform: translateY(calc(7 * var(--rowH)));
+    }
+
+    /* text + left bar primary on active */
+    .service-zigrow-section_10:has(#svc-tab-0:checked)
+      .svc-tablist
+      label:nth-child(1),
+    .service-zigrow-section_10:has(#svc-tab-1:checked)
+      .svc-tablist
+      label:nth-child(2),
+    .service-zigrow-section_10:has(#svc-tab-2:checked)
+      .svc-tablist
+      label:nth-child(3),
+    .service-zigrow-section_10:has(#svc-tab-3:checked)
+      .svc-tablist
+      label:nth-child(4),
+    .service-zigrow-section_10:has(#svc-tab-4:checked)
+      .svc-tablist
+      label:nth-child(5),
+    .service-zigrow-section_10:has(#svc-tab-5:checked)
+      .svc-tablist
+      label:nth-child(6),
+    .service-zigrow-section_10:has(#svc-tab-6:checked)
+      .svc-tablist
+      label:nth-child(7),
+    .service-zigrow-section_10:has(#svc-tab-7:checked)
+      .svc-tablist
+      label:nth-child(8) {
+      color: #0f0f0f;
+    }
+    .service-zigrow-section_10:has(#svc-tab-0:checked)
+      .svc-tablist
+      label:nth-child(1)::after,
+    .service-zigrow-section_10:has(#svc-tab-1:checked)
+      .svc-tablist
+      label:nth-child(2)::after,
+    .service-zigrow-section_10:has(#svc-tab-2:checked)
+      .svc-tablist
+      label:nth-child(3)::after,
+    .service-zigrow-section_10:has(#svc-tab-3:checked)
+      .svc-tablist
+      label:nth-child(4)::after,
+    .service-zigrow-section_10:has(#svc-tab-4:checked)
+      .svc-tablist
+      label:nth-child(5)::after,
+    .service-zigrow-section_10:has(#svc-tab-5:checked)
+      .svc-tablist
+      label:nth-child(6)::after,
+    .service-zigrow-section_10:has(#svc-tab-6:checked)
+      .svc-tablist
+      label:nth-child(7)::after,
+    .service-zigrow-section_10:has(#svc-tab-7:checked)
+      .svc-tablist
+      label:nth-child(8)::after {
+      background: var(--primary-colors);
+    }
+  }
+
+  /* ================= RIGHT — Panels ================= */
+  .service-zigrow-section_10 .svc-panels {
+    position: relative;
+    padding: 1.6rem;
+   border-radius: var(--box-radius);
+    background: #fff;
+    box-shadow: var(--shadow-section);
+    overflow: hidden;
+  }
+
+  /* take radios off-screen so label click won't scroll */
+  .service-zigrow-section_10 .svc-radio {
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .service-zigrow-section_10 .svc-radio + .svc-panel {
+    display: none;
+  }
+  .service-zigrow-section_10 .svc-radio:checked + .svc-panel {
+    display: block;
+    animation: svcFade 0.45s ease both;
+  }
+  @keyframes svcFade {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .service-zigrow-section_10 .svc-figure {
+    margin: 0 0 1.25rem;
+ border-radius: var(--box-radius);
+    overflow: hidden;
+    background: #f6f7f9;
+    box-shadow: var(--shadow-section-hover);
+  }
+  .service-zigrow-section_10 .svc-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .service-zigrow-section_10 .svc-figure:hover .svc-image {
+    transform: scale(1.035);
+  }
+
+  .service-zigrow-section_10 .svc-panel-title {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    margin: 0.25rem 0 0.6rem;
+    font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.9rem);
+  }
+  .service-zigrow-section_10 .svc-panel-text {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    max-width: 92%;
+    margin-bottom: 1.2rem;
+  }
+
+
+
+
+  /* ================= Responsive ================= */
+  @media (max-width: 991.98px) {
+    .service-zigrow-section_10 .svc-tablist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35rem;
+      --rowH: 52px;
+    }
+    .service-zigrow-section_10 .svc-tablist::before {
+      display: none;
+    } /* slider off on grid */
+    .service-zigrow-section_10 .svc-tab {
+      justify-content: center;
+      border: 1px solid #eef0f3;
+      color: #50555c;
+      background: #fff;
+    }
+    .service-zigrow-section_10 .svc-tab.is-active {
+      background: color-mix(in srgb, var(--primary-colors) 10%, #fff);
+      color: #0f0f0f;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+    .service-zigrow-section_10 .svc-tab.is-active::after {
+      background: var(--primary-colors);
+    }
+    .service-zigrow-section_10 .svc-panel-text {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+(function(){
+  const sec = document.querySelector('.service-zigrow-section_10');
+  if (!sec) return;
+
+  const tablist = sec.querySelector('.svc-tablist');
+  if (!tablist) return;
+
+  const tabs = Array.from(tablist.querySelectorAll('.svc-tab'));
+
+  function syncActive(idx) {
+    tabs.forEach((btn, i) => btn.classList.toggle('is-active', i === idx));
+    tablist.style.setProperty('--active', idx);
+  }
+
+  // Initial active from .active class (jo builder/Bootstrap set karega)
+  let initial = tabs.findIndex(btn => btn.classList.contains('active'));
+  if (initial < 0) initial = 0;
+  syncActive(initial);
+
+  tabs.forEach((btn, i) => {
+    // Bootstrap tab event (agar use ho raha hai)
+    btn.addEventListener('shown.bs.tab', function () {
+      syncActive(i);
+    });
+
+    // Backup – agar Bootstrap nahi ho toh click se bhi chale
+    btn.addEventListener('click', function () {
+      syncActive(i);
+    });
+  });
+})();
+</script>
+
+
+  
+    <!-- Travel-Driven Shipping Section -->
+<!-- Why Choose Us (same grid as Travel-Driven Shipping) -->
+<section class="whyChooseUs-zigrow-section_7  section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <div class="row align-custom-center gy-5">
+      
+      <!-- ▸ Left column: heading, copy, buttons -->
+      <div class="col-lg-4">
+        <div class="text-custom-start">
+          <span class="tag">Kesha</span>   <!-- keep style; text is up to you -->
+          
+          <h2 class="main-heading mt-custom-3 ">Why Choose Kesha</h2>
+          <p class="section-subtitle fw-custom-normal mt-custom-2 ">Experience seamless ritual bookings with trusted providers and transparent pricing, tailored for your needs.</p>
+          <p class="section-description mt-custom-3 ">Kesha revolutionizes ritual services by offering a reliable platform, ensuring peace of mind while you connect with verified providers effortlessly.</p>
+
+         
+        </div>
+      </div>
+
+      <div class="col-lg-1 d-lg-block d-none"><span class="d-none"></span></div> <!-- spacer stays -->
+
+      <!-- ▸ Right column: feature cards -->
+      <div class="col-lg-7">
+        <div class="row g-4">
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <h5 class="feature-title">Verified Providers</h5>
+                <p class="feature-text">We ensure all service providers are thoroughly vetted, giving you confidence in your choices and a stress-free booking experience. for your business without the hassle with clear results so you can grow for your business.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-coin"></i>
+                </div>
+                <h5 class="feature-title">Transparent Pricing</h5>
+                <p class="feature-text">Say goodbye to hidden fees. Our clear pricing structure allows you to compare options and choose what fits your budget best. for your business without the hassle with clear results so you can grow for.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-calendar-check"></i>
+                </div>
+                <h5 class="feature-title">Easy Scheduling</h5>
+                <p class="feature-text">Book your rituals at your convenience. Our user-friendly platform makes scheduling appointments quick and hassle-free. for your business without the hassle with clear results so you can grow for your business without the hassle with.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h5 class="feature-title">Cultural Expertise</h5>
+                <p class="feature-text">Our providers are not just service professionals; they are cultural experts who understand the significance of each ritual. for your business without the hassle with clear results so you can grow for your business without.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>.whyChooseUs-zigrow-section_7 {
+  background-color: #ffffff;
+
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #444;
+  background: #f5f5f5;
+  padding: 6px 14px;
+ border-radius: var(--box-radius);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+ color: var(--lead-custom-color-mute);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin-bottom: 8px;
+
+}
+
+.section-description {
+  font-size: var(--fs-body);
+   color: var(--para-muted);
+  max-width: 90%;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+ border-radius: var(--box-radius);
+  padding: 25px 20px;
+  box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--lead-custom-color-mute);
+  margin-bottom: 6px;
+}
+
+.feature-text {
+  font-size: var(--fs-body-sm);
+   color: var(--para-muted);
+  line-height: 1.45;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 767.98px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}}
+</style>
+  
+    <!-- ▰ Testimonials Section -->
+<section class="testimonial-zigrow-section_8 section-padding" id="testimonials"  data-section="testimonials">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="fw-custom-bold main-heading">What Our Customers Say</h2>
+      <p class="para-muted  font-subheading">Hear from those who have trusted Kesha for their ritual needs.</p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Kesha made booking my family’s puja so easy. The service was reliable, and the pricing was transparent. Highly recommend!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=40" class="avatar me-custom-3" alt="Aditi Sharma"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Aditi Sharma</h6>
+                <small class="para-muted">Satisfied Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I was impressed by the professionalism of the service providers. Kesha took the stress out of arranging our wedding rituals.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=41" class="avatar me-custom-3" alt="Ravi Kumar"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Ravi Kumar</h6>
+                <small class="para-muted">Happy Client</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Kesha’s platform is a game-changer! I found exactly what I needed without any hassle. The process was smooth and straightforward.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=42" class="avatar me-custom-3" alt="Neha Patel"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Neha Patel</h6>
+                <small class="para-muted">Regular User</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I was skeptical at first, but Kesha exceeded my expectations. The service was prompt, and the ritual was conducted beautifully.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=43" class="avatar me-custom-3" alt="Suresh Iyer"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Suresh Iyer</h6>
+                <small class="para-muted">First-Time User</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Thanks to Kesha, I could easily book a homam for my parents. The entire experience was seamless and stress-free.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=44" class="avatar me-custom-3" alt="Priya Desai"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Priya Desai</h6>
+                <small class="para-muted">Grateful Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4 clonable-card" >
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Kesha simplified the entire process of booking rituals. The transparency in pricing was refreshing and made my decision easy.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=45" class="avatar me-custom-3" alt="Vikram Singh"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Vikram Singh</h6>
+                <small class="para-muted">Delighted Client</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+.testimonial-zigrow-section_8 {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+.testimonials-section {
+  background-color: #f9fafb;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow-section); /* ➕ add subtle base shadow */
+    border-radius: var(--box-radius);
+
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/*** headline tweaks ***/
+ .text-accent{
+  color:#5f6f7f;
+}
+ .badge-pill{
+  letter-spacing:.04em;
+}
+.line-tip{
+  content:"";
+  position:absolute;
+  bottom:-6px;left:50%;
+  width:34px;height:2px;
+  background:#ff5b57;
+  transform:translateX(-50%) rotate(3deg);
+  border-radius:2px;
+}
+
+/*** cards ***/
+.t-card{
+  background:#fff;
+  border:0;
+border-radius: var(--box-radius);
+   box-shadow: var(--shadow-section);
+  transition:transform .25s ease, box-shadow .25s ease;
+  position:relative;
+}
+.t-card:hover{
+  transform:translateY(-6px);
+     box-shadow: var(--shadow-section-hover);
+}
+.t-dark{
+  background:#0f0f0f;
+  color:#f0f0f0;
+}
+.t-metric{
+  font-size:3.5rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.04em;
+  display:block;
+  color:#000;
+  margin-bottom:.25rem;
+}
+
+/*** avatar + brand ***/
+.avatar{
+  width:48px;height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.brand-logo{
+  width:24px;opacity:.7;
+}
+
+/*** button hover ***/
+.btn-outline-dark:hover i{
+  transform:translateX(4px);
+  transition:transform .25s;
+}
+
+/*** dark-card text-tone ***/
+.text-custom-white-80{color:rgba(255,255,255,.8);}
+
+/*** responsiveness ***/
+@media(max-width:991.98px){
+  .t-metric{font-size:2.8rem;}
+}
+@media(max-width:575.98px){
+  .results-testimonials .btn{width:100%;}
+  .line-tip{display:none;}
+}}
+</style>
+  
+    <!-- PRICING SECTION 6 (SERVICE TYPES CARDS) -->
+
+<!-- AI_SPEC:
+{
+  "pricing": {
+    "titleWords": [4, 8],
+    "subtitleWords": [22, 30],
+    "plansCount": 2,
+    "priceWords": [1, 3],
+    "buttonsCount": 1,
+    "buttonWords": [1, 3],
+    "featuresCount": [10, 12],
+    "featureWords": [5, 8],
+    "extra": {
+      "topTextWords": [3, 6],
+       "cardTitles": { "count": 2, "words": [1, 3] },
+      "cardIcons": { "count": 2, "mode": "icon" }
+
+    }
+  }
+}
+-->
+
+
+<section
+  class="pricing-zigrow-section_6 section-padding"
+  id="pricing"
+  data-section="pricing"
+>
+  <div class="container">
+
+
+    <!-- Top pill -->
+    <div class="pricing-zigrow-section_6__topLine text-custom-center">
+      <span class="pricing-zigrow-section_6__pill">
+        <i class="bi bi-stars pricing-zigrow-section_6__pillIcon"></i>
+        <span class="pricing-zigrow-section_6__pillText">Choose your plan today</span>
+     
+      </span>
+    </div>
+
+    <!-- Heading -->
+    <div class="pricing-zigrow-section_6__head text-custom-center mx-custom-auto">
+      <h2 class="main-heading mb-custom-2">
+        Affordable Ritual Service Plans
+      </h2>
+      <p class="para-muted font-subheading mx-custom-auto mb-custom-4">
+        Choose a plan that suits your needs and enjoy seamless booking of trusted ritual services across India.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4 justify-custom-center">
+      
+      <div class="col-12 col-lg-4 clonable-card">
+        <div class="pricing-zigrow-section_6__card angle-a">
+          <!-- Gradient top -->
+          <div class="pricing-zigrow-section_6__gradTop">
+            <div class="pricing-zigrow-section_6__miniIcon">
+       
+<i class="bi bi-star"></i>
+
+            </div>
+
+            <h3 class="pricing-zigrow-section_6__cardTitle">
+              Basic Plan
+            </h3>
+          </div>
+
+          <!-- Body -->
+          <div class="pricing-zigrow-section_6__body">
+            <p class="pricing-zigrow-section_6__review para-muted font-body-sm mb-custom-3">
+              Perfect for individuals seeking regular rituals. for your business without the hassle with clear.
+            </p>
+
+            <a href="#contact" class="white-border-btn btn w-custom-100 mb-custom-3" data-btn="pricing">
+              <span>Book Appointment</span>
+              <i class="bi bi-arrow-right-short pricing-zigrow-section_6__btnArrow"></i>
+            </a>
+
+            <ul class="pricing-zigrow-section_6__list">
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Access to verified providers for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Transparent pricing details for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Easy online booking process for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Customer support available for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Flexible scheduling options for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">User-friendly platform for you for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Detailed service descriptions for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Secure payment methods for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Cancellation policy included for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Exclusive member discounts for you</span>
+                </li>
+              
+            </ul>
+          </div>
+
+          <!-- Soft shadow plate like reference -->
+          <span class="pricing-zigrow-section_6__plate" aria-hidden="true"></span>
+        </div>
+      </div>
+      
+      <div class="col-12 col-lg-4 clonable-card">
+        <div class="pricing-zigrow-section_6__card angle-b">
+          <!-- Gradient top -->
+          <div class="pricing-zigrow-section_6__gradTop">
+            <div class="pricing-zigrow-section_6__miniIcon">
+       
+<i class="bi bi-lightning-charge"></i>
+
+            </div>
+
+            <h3 class="pricing-zigrow-section_6__cardTitle">
+              Premium Plan
+            </h3>
+          </div>
+
+          <!-- Body -->
+          <div class="pricing-zigrow-section_6__body">
+            <p class="pricing-zigrow-section_6__review para-muted font-body-sm mb-custom-3">
+              Ideal for families needing multiple rituals. for your business without the hassle with clear.
+            </p>
+
+            <a href="#contact" class="white-border-btn btn w-custom-100 mb-custom-3" data-btn="pricing">
+              <span>Schedule a Call</span>
+              <i class="bi bi-arrow-right-short pricing-zigrow-section_6__btnArrow"></i>
+            </a>
+
+            <ul class="pricing-zigrow-section_6__list">
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">All features in basic plan</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Priority customer support for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Customized ritual recommendations for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Access to premium providers for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Group booking options for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Loyalty rewards program for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Monthly ritual planning for you</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Personalized consultation for you for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Event reminders for you for</span>
+                </li>
+              
+                <li class="pricing-zigrow-section_6__item">
+                  <span class="pricing-zigrow-section_6__check">
+                    <i class="bi bi-check2"></i>
+                  </span>
+                  <span class="para-muted">Exclusive access to workshops for</span>
+                </li>
+              
+            </ul>
+          </div>
+
+          <!-- Soft shadow plate like reference -->
+          <span class="pricing-zigrow-section_6__plate" aria-hidden="true"></span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+/* =====================================
+   PRICING SECTION 6 (SERVICE TYPES)
+   BG WHITE, 2 CARDS, GRAD TOP (PRIMARY + TERRITORY)
+===================================== */
+.pricing-zigrow-section_6{
+  background: #fff;
+}
+
+.pricing-zigrow-section_6__topLine{
+  margin-bottom: 1.25rem;
+}
+
+.pricing-zigrow-section_6__pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--secondary-colors) 10%, transparent);
+  box-shadow: var(--shadow-section);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--secondary-colors) 75%, transparent);
+}
+
+.pricing-zigrow-section_6__pillIcon{
+  color: var(--primary-colors);
+  font-size: 0.95rem;
+}
+
+.pricing-zigrow-section_6__pillMuted{
+  margin-left: 0.25rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--secondary-colors) 55%, transparent);
+}
+
+.pricing-zigrow-section_6__head{
+  max-width: 760px;
+}
+
+.pricing-zigrow-section_6__title{
+  font-size: clamp(2rem, 2.2vw + 1rem, 3rem);
+}
+
+.pricing-zigrow-section_6__subtitle{
+  max-width: 62ch;
+}
+
+/* Card shell */
+.pricing-zigrow-section_6__card{
+  position: relative;
+  padding: 1rem;
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--secondary-colors) 12%, transparent);
+  box-shadow: var(--shadow-section);
+  height: 100%;
+}
+
+.pricing-zigrow-section_6__plate{
+  position: absolute;
+  inset: auto 10% -18px 10%;
+  height: 28px;
+  background: rgba(0,0,0,0.08);
+  filter: blur(16px);
+  border-radius: 999px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Gradient top */
+.pricing-zigrow-section_6__gradTop{
+  position: relative;
+  padding: 1.35rem 1.25rem 1.1rem;
+  color: #fff;
+  z-index: 1;
+  border-radius: var(--box-radius);
+  min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-zigrow-section_6__card.angle-a .pricing-zigrow-section_6__gradTop{
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--primary-colors) 96%, #ffffff) 0%,
+    color-mix(in srgb, var(--territory-colors) 92%, #ffffff) 100%
+  );
+}
+
+.pricing-zigrow-section_6__card.angle-b .pricing-zigrow-section_6__gradTop{
+  background: linear-gradient(25deg,
+    color-mix(in srgb, var(--primary-colors) 92%, #ffffff) 0%,
+    color-mix(in srgb, var(--territory-colors) 96%, #ffffff) 100%
+  );
+}
+
+/* Top icon on gradient */
+.pricing-zigrow-section_6__miniIcon{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+  margin-bottom: 0.85rem;
+}
+
+.pricing-zigrow-section_6__miniIcon i{
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+/* Title inside gradient */
+.pricing-zigrow-section_6__cardTitle{
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+  line-height: 1.05;
+  font-size: clamp(1.2rem, 1.2vw + 1rem, 1.95rem);
+  max-width: 220px;
+  word-break: break-all;
+
+}
+
+/* Body */
+.pricing-zigrow-section_6__body{
+  position: relative;
+  z-index: 1;
+  padding: 1.1rem 1.25rem 1.35rem;
+}
+
+.pricing-zigrow-section_6__review{
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.pricing-zigrow-section_6__btn{
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-section);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  margin-bottom: 1.05rem;
+}
+
+.pricing-zigrow-section_6__btn:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-section-hover);
+  color: #fff;
+}
+
+.pricing-zigrow-section_6__btnArrow{
+  font-size: 1.15rem;
+}
+
+/* Feature list */
+.pricing-zigrow-section_6__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.pricing-zigrow-section_6__item{
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.pricing-zigrow-section_6__check{
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--primary-colors) 20%, #ffffff);
+  color: var(--primary-colors);
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.pricing-zigrow-section_6__text{
+  color: color-mix(in srgb, var(--secondary-colors) 75%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991.98px){
+  .pricing-zigrow-section_6__card{
+    max-width: 620px;
+    margin-inline: auto;
+  }
+}
+</style>
+
+  
+    <!-- PROFESSIONAL -->
+
+<section class="about-zigrow-section_7 section-padding" id="about" data-section="about">
+  <div class="container">
+    <div class="row align-custom-center g-lg-5">
+      
+      <!-- ◀ Hero Image -->
+      <div class="col-12 col-lg-5 mb-custom-4 mb-lg-0">
+        <div class="hero-img-wrap rounded-4 overflow-hidden position-relative shadow img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw3fHxmcmllbmRseSUyMHRlYW0lMjB3b3JraW5nJTIwdG9nZXRoZXJ8ZW58MXwxfHx8MTc3NzE5NDIyMXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    alt="Happy mother and child"
+    class="w-custom-100 h-custom-100 object-fit-cover"
+  />
+  <div class="img-credit">
+    Photo by 
+    <a 
+        href="https://unsplash.com/@priscilladupreez?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Priscilla Du Preez 🇨🇦
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+  </div>
+</div>
+
+      </div>
+
+      <!-- ▶ Content + Features -->
+      <div class="col-12 col-lg-7">
+        <div class="content-box rounded-4 p-custom-4 p-lg-custom-5 shadow-sm">
+          <h2 class="section-title main-heading mb-custom-3 text-custom-lg-start text-custom-center">
+            About Kesha
+          </h2>
+
+          <p class="para-muted mb-custom-4 text-custom-lg-start text-custom-center font-body">
+            Kesha is revolutionizing ritual services in India by providing a trusted platform for booking. We simplify the process, ensuring users find reliable providers effortlessly. Our goal is to enhance transparency and convenience in tier 2 and tier 3 cities. With Kesha, accessing cultural and ritual services becomes a seamless experience.
+          </p>
+
+      
+
+          <div class="row g-4">
+            
+            <div class="col-12 col-md-6">
+              <div class="feature-tile p-custom-4 h-custom-100">
+                <div class="icon-circle mb-custom-3">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <h6 class="fw-custom-semibold mb-custom-2 card-title">Trusted Providers</h6>
+                <p class="para-muted mb-custom-0  font-body-sm">We connect you with verified service providers, ensuring reliability and peace of mind for your ritual needs.</p>
+              </div>
+            </div>
+            
+            <div class="col-12 col-md-6">
+              <div class="feature-tile p-custom-4 h-custom-100">
+                <div class="icon-circle mb-custom-3">
+                  <i class="bi bi-currency-dollar"></i>
+                </div>
+                <h6 class="fw-custom-semibold mb-custom-2 card-title">Transparent Pricing</h6>
+                <p class="para-muted mb-custom-0  font-body-sm">Discover clear and upfront pricing for all services, eliminating surprises and fostering trust in your bookings.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 🎨 Solace Modern UI */
+.about-zigrow-section_7 {
+  background: #ffffff;
+  color: #222;
+
+
+/* --- Hero Image --- */
+.hero-img-wrap {
+  aspect-ratio: 4/4.8;
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.hero-img-wrap:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-section);
+}
+
+/* --- Content Card --- */
+.content-box {
+  background: #f7f9fc;
+  border-radius: var(--box-radius);
+}
+
+/* --- Headline --- */
+.section-title {
+  font-size: clamp(1.9rem, 2.6vw + 1rem, 2.8rem);
+  font-weight: 700;
+}
+
+.card-title{
+  color: var(--secondary-colors);
+}
+
+.arrow-icon {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-left-color: #fff;
+  transition: transform 0.25s ease;
+}
+.cta-btn:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* --- Feature Tile --- */
+.feature-tile {
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
+   border-radius: var(--box-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-section);
+}
+.feature-tile:hover {
+  box-shadow: var(--shadow-section-hover);
+  transform: translateY(-4px);
+}
+.icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(76, 107, 255, 0.1);
+  color:var(--para-muted);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 575.98px) {
+  .hero-img-wrap {
+    aspect-ratio: 16/9;
+  }
+  .content-box {
+    padding: 2rem 1.25rem;
+  }
+}}
+
+</style>
+  
+    <section
+  class="logo-zigrow-section_2 section-padding"
+  id="logos"
+  data-section="logos"
+>
+  <div class="container text-custom-center">
+    <!-- Heading -->
+    <h2 class="mb-custom-1 main-heading">Our Esteemed Clients</h2>
+    <div class="heading-underline mx-custom-auto my-custom-3"></div>
+    <p class="para-muted font-subheading mb-custom-5">
+      Proud to be trusted by world-class brands and innovators.
+    </p>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper" id="clientsSwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="row justify-custom-center g-4">
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png"
+                    alt="logo 1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png"
+                    alt="logo 2"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png"
+                    alt="logo 3"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png"
+                    alt="logo 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="row justify-custom-center g-4">
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png"
+                    alt="logo 5"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png"
+                    alt="logo 6"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png"
+                    alt="logo 7"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="client-card">
+                <div class="logo-item">
+                  <img
+                    class="client-logo"
+                    src="https://uitbuilds.com/wp-content/uploads/2021/06/LOGOIPSUM-03.png"
+                    alt="logo 8"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls (config structure) -->
+      <div class="swiper-button-prev">
+        <span class="arrow-icon"><i class="fa-solid fa-angle-left"></i></span>
+      </div>
+      <div class="swiper-button-next">
+        <span class="arrow-icon"><i class="fa-solid fa-angle-right"></i></span>
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <!-- Pagination (agar nahi chahiye to remove) -->
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper("#clientsSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: "#clientsSwiper .swiper-button-next",
+      prevEl: "#clientsSwiper .swiper-button-prev",
+    },
+    pagination: {
+      el: "#clientsSwiper .swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style>
+  .logo-zigrow-section_2 {
+    background: linear-gradient(to bottom right, #f9f9f9, #ffffff);
+  }
+
+  .logo-zigrow-section_2 .heading-underline {
+    width: 90px;
+    height: 4px;
+    background: var(--primary-colors);
+    border-radius: 2px;
+  }
+
+  /* Client Cards */
+  .logo-zigrow-section_2 .client-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-section);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .logo-zigrow-section_2 .client-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-section);
+  }
+
+  /* Logos */
+  .logo-zigrow-section_2 .client-logo {
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease;
+  }
+  .logo-zigrow-section_2 .client-logo:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+
+  /* Swiper arrows wrapper positioning */
+  .logo-zigrow-section_2 .swiper {
+    position: relative;
+  }
+
+  /* Your Arrow UI (same) */
+  .logo-zigrow-section_2 .arrow-icon {
+    color: #333;
+    font-size: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-section);
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .logo-zigrow-section_2 .arrow-icon:hover {
+    background: var(--primary-colors);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Remove default Swiper arrow graphics */
+  .logo-zigrow-section_2 .swiper-button-prev::after,
+  .logo-zigrow-section_2 .swiper-button-next::after {
+    content: "";
+  }
+
+  /* Desktop: arrows outside center */
+  .logo-zigrow-section_2 .swiper-button-prev,
+  .logo-zigrow-section_2 .swiper-button-next {
+    width: auto;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    margin-top: 0;
+  }
+
+  .logo-zigrow-section_2 .swiper-button-prev {
+    left: -40px;
+  }
+
+  .logo-zigrow-section_2 .swiper-button-next {
+    right: -40px;
+  }
+
+  /* Mobile: arrows inside edges (same as your responsive intent) */
+  @media (max-width: 576px) {
+    /* Pagination dots */
+    .logo-zigrow-section_2 .swiper-pagination {
+      margin-top: 18px;
+      position: relative;
+    }
+
+    .logo-zigrow-section_2 .swiper-pagination-bullet {
+      background: #888;
+      opacity: 1;
+      width: 10px;
+      height: 10px;
+      margin: 0 6px !important;
+    }
+
+    .logo-zigrow-section_2 .swiper-pagination-bullet-active {
+      background: var(--primary-colors);
+    }
+    .logo-zigrow-section_2 .swiper-button-prev {
+      left: 2px;
+    }
+    .logo-zigrow-section_2 .swiper-button-next {
+      right: 2px;
+    }
+  }
+</style>
+
+  
+    <!-- 📮 Minimal Split Contact -->
+<section class="contact-zigrow-section_4 section-padding" id="contact" data-section="contact">
+  <div class="container-xl">
+    <div class="contact-grid overflow-hidden">
+      <div class="row g-0">
+        <!-- ◼︎ Info -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="info p-custom-5 h-custom-100">
+            <h2 class="main-heading mb-custom-4">Get in touch</h2>
+
+            <ul class="list-unstyled mb-custom-0 ">
+              <li>
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <h6>Mailing address</h6>
+                  <p>123 Business St, City</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <h6>Email</h6>
+                  <p>hello@kesha.co.in</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <h6>Phone</h6>
+                  <p>8054387242</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ◼︎ Image -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="hero h-custom-100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* ========== TOKENS ========== */
+  :root {
+    --stroke: rgba(0, 0, 0, .07);
+  }
+
+  /* ========== WRAPPER ========== */
+  .contact-zigrow-section_4 {
+    background: #fdfdfd;
+  
+
+  /* outer card */
+  .contact-zigrow-section_4 .contact-grid {
+    background: var(--bg, #ffffff);
+    box-shadow: var(--shadow-section);
+    border-radius: var(--box-radius);
+    overflow: hidden;
+  }
+
+  /* list layout */
+  .contact-zigrow-section_4 .info ul li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-zigrow-section_4 .info .icon {
+    color: var(--primary-colors);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-zigrow-section_4 .info h6 {
+    font-size: .8rem;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--primary-colors);
+    margin-bottom: .25rem;
+  }
+
+  .contact-zigrow-section_4 .info p {
+    margin: 0;
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+  }
+
+  /* ========== HERO IMAGE ========== */
+  .hero {
+     background: url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBpbnRlcmlvcnxlbnwxfDB8fHwxNzc3MTk0MjIyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080") center/cover no-repeat;
+    min-height: 420px;
+  }
+
+  @media (max-width: 767.98px) {
+    .contact-zigrow-section_4 .info {
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-zigrow-section_4 .hero {
+      min-height: 300px;
+    }
+
+    .contact-zigrow-section_4 .info ul li {
+      justify-content: center;
+      text-align: left;
+    }
+  }}
+</style>
+
+  
+
+
+<!-- function to show image credits only on preview hosts -->
+<script>
+  (function () {
+    const previewHosts = [
+      "dashboard.zigrow.com",
+      // "127.0.0.1",
+      // "localhost"
+    ];
+
+    const currentHost = window.location.hostname.toLowerCase();
+    const currentPath = window.location.pathname.toLowerCase();
+
+    const isPreviewHost = previewHosts.includes(currentHost);
+    const isPreviewPath =
+      currentPath.includes("/public/preview/") ||
+      currentPath.includes("/preview/");
+
+    if (isPreviewHost || isPreviewPath) {
+      document.body.classList.add("preview-credit-mode");
+    }
+  })();
+</script>
+
+
+
+
+
+  <script>
+    (function() {
+      const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
+      if (!forms.length) return;
+
+      function serializeForm(form) {
+        const fd = new FormData(form);
+        const raw = {};
+        for (const [name, value] of fd.entries()) {
+          const el = form.elements[name];
+          const isGroup = el && (el.length && el[0] && el[0].type === 'checkbox');
+          if (isGroup) {
+            if (!raw[name]) raw[name] = [];
+            raw[name].push(value === '' ? true : value);
+          } else {
+            raw[name] = value;
+          }
+        }
+        return raw;
+      }
+
+      function pickPrimaryValue(raw) {
+        if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
+        if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
+        const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
+        if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
+        if (nameCombo) return nameCombo;
+        if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
+        return '';
+      }
+
+      forms.forEach((form) => {
+        const domainInput = form.querySelector('input[name="domain"]');
+        const pageUrlInput = form.querySelector('input[name="page_url"]');
+        if (domainInput) domainInput.value = location.host;
+        if (pageUrlInput) pageUrlInput.value = location.href;
+
+        let msgContainer = form.querySelector('.form-submit-message');
+        if (!msgContainer) {
+          msgContainer = document.createElement('div');
+          msgContainer.className = 'form-submit-message mt-2 text-sm';
+          form.appendChild(msgContainer);
+        }
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector('[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.dataset._oldText = submitBtn.innerText;
+            submitBtn.innerText = 'Submitting...';
+          }
+
+          msgContainer.innerText = '';
+          msgContainer.style.color = '';
+
+          try {
+            const raw = serializeForm(form);
+            const body = new URLSearchParams();
+            body.set('domain', form.querySelector('input[name="domain"]')?.value || location.host);
+            body.set('form_key', form.querySelector('input[name="form_key"]')?.value || 'contact');
+            body.set('page_url', form.querySelector('input[name="page_url"]')?.value || location.href);
+            body.set('payload', JSON.stringify(raw));
+
+            const primary = pickPrimaryValue(raw);
+            if (primary) body.set('value', primary);
+
+            if (raw._company) body.set('_company', raw._company);
+
+            const res = await fetch(form.action, {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json'
+              },
+              body
+            });
+
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && (data.ok ?? true)) {
+              form.reset();
+              msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
+              msgContainer.style.color = '#28a745';
+            } else {
+              msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
+              msgContainer.style.color = '#dc3545';
+            }
+          } catch (err) {
+            console.error(err);
+            msgContainer.innerText = '❌ Something went wrong. Please try again.';
+            msgContainer.style.color = '#dc3545';
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
+            }
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api-uat.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+            window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    if(type === "footer" ) return; // Skip footer for animations
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    if(type === "footer") return; // Skip footer for child animations
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+<style>
+  .auto-btn-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>
+
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const processed = new WeakSet();
+
+    function isDataBtn(el) {
+      return el && el.matches && el.matches("a[data-btn], button[data-btn]");
+    }
+
+    function addWrapClasses(el) {
+      el.classList.add("auto-btn-wrap", "d-flex", "flex-row", "flex-wrap", "gap-3");
+    }
+
+    function collectAdjacentDataBtns(startEl) {
+      const group = [];
+      let current = startEl;
+
+      while (isDataBtn(current) && !processed.has(current)) {
+        group.push(current);
+        current = current.nextElementSibling;
+      }
+
+      return group;
+    }
+
+    document.querySelectorAll("a[data-btn], button[data-btn]").forEach((btn) => {
+      if (processed.has(btn)) return;
+
+      const parent = btn.parentElement;
+      if (!parent) return;
+
+      const group = collectAdjacentDataBtns(btn);
+      if (!group.length) return;
+
+      group.forEach((el) => processed.add(el));
+
+      const parentTag = parent.tagName.toLowerCase();
+      const parentChildren = Array.from(parent.children);
+
+      const parentContainsOnlyThisGroup =
+        parentTag === "div" &&
+        parentChildren.length === group.length &&
+        parentChildren[0] === group[0] &&
+        parentChildren[parentChildren.length - 1] === group[group.length - 1];
+
+      if (parentContainsOnlyThisGroup) {
+        addWrapClasses(parent);
+      } else {
+        const wrapper = document.createElement("div");
+        addWrapClasses(wrapper);
+        parent.insertBefore(wrapper, group[0]);
+        group.forEach((el) => wrapper.appendChild(el));
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+</html>

@@ -1,0 +1,3104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trijya Foods and Beverages LLP - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #6B7280;
+      --border-radius-btn: 14px;
+      --box-radius: 12px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #3A86FF;
+      --secondary-colors: #1A1A1A;
+      --territory-colors: #FFBE0B;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 14px 28px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 16px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 18px;
+      --fs-h3-base: 44px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 44px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #1A1A1A ;
+      font-family: Source Sans Pro;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Bebas Neue ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #1A1A1A;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+   <header id="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold " href="#">
+          Trijya Foods and Beverages LLP
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav">
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>
+  .navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color: var(--primary-colors);
+  }
+
+  .nav-link {
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary-colors);
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+</style>
+   <!-- Bold -->
+
+<section class="hero-zigrow-section_14 text-custom-white text-custom-center" id="hero" data-section="hero">
+  <div class="overlay pointer-custom-none"></div>
+
+  <div class="container z-2 position-relative">
+    <h1 class="hero-heading fw-custom-bold mb-custom-5 col-md-10 mx-custom-auto">
+      Elevate Your Culinary Vision
+    </h1>
+
+   
+  </div>
+   <div class="row justify-custom-center gx-4 gy-3 stat-card-group">
+     <div class="col-10 col-sm-6 col-md-4">
+  <div class="stat-card d-flex align-custom-center gap-3">
+    <div class="icon-wrap">
+      <i class="bi bi-building"></i>
+    </div>
+    <div>
+      <h2 class="stat-value mb-custom-1">100+</h2>
+      <p class="stat-label mb-custom-0 ">Successful Outlets</p>
+    </div>
+  </div>
+</div>
+     <div class="col-10 col-sm-6 col-md-4">
+  <div class="stat-card d-flex align-custom-center gap-3">
+    <div class="icon-wrap">
+      <i class="bi bi-building"></i>
+    </div>
+    <div>
+      <h2 class="stat-value mb-custom-1">10+</h2>
+      <p class="stat-label mb-custom-0 ">Years of Experience</p>
+    </div>
+  </div>
+</div>
+     <div class="col-10 col-sm-6 col-md-4">
+  <div class="stat-card d-flex align-custom-center gap-3">
+    <div class="icon-wrap">
+      <i class="bi bi-building"></i>
+    </div>
+    <div>
+      <h2 class="stat-value mb-custom-1">50+</h2>
+      <p class="stat-label mb-custom-0 ">Franchise Partners</p>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+   <span class="img-credit">
+  Photo by 
+  <a 
+    href="https://unsplash.com/@homaappliances?utm_source=zigrow&utm_medium=referral"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Homa Appliances
+  </a> on 
+  <a 
+    href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Unsplash
+  </a>
+</span>
+
+
+</section>
+
+<style>
+  .hero-zigrow-section_14{
+  background: url('https://images.unsplash.com/photo-1717386255773-1e3037c81788?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYW51ZmFjdHVyaW5nJTIwZmFjaWxpdHl8ZW58MHx8fHwxNzY4ODc0NzcyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080') no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 100px;
+
+ .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
+  z-index: 1;
+}
+
+ .container {
+  z-index: 2;
+  position: relative;
+}
+
+.hero-heading {
+  font-size: 5.8rem;
+  word-spacing: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ✅ Fixed Position at Bottom of Section */
+.stat-card-group {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1140px;
+  padding: 0 15px;
+  z-index: 3;
+}
+
+/* Card Styling */
+.stat-card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+     border-radius: var(--box-radius);
+  padding: 20px 24px;
+  color: #fff;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card .icon-wrap {
+  font-size: 2.8rem;
+  color: white;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.stat-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: #e8e8e8;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .overlay{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+  }
+  .stat-card-group {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .stat-value{
+    font-size: 2rem;
+  }
+}}
+
+</style>   <!-- BOLD -->
+
+<section class="about-zigrow-section_5 section-padding" id="about" data-section="about">
+  <div class="container">
+    <div class="row g-xl-5 align-custom-center">
+
+      <!-- ▸▸ Media Grid -->
+      <div class="col-12 col-xl-6 order-2 order-xl-1">
+        <div class="media-grid-modern">
+          
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1758304481407-fc50ac2311c8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmYWN0b3J5JTIwb3ZlcnZpZXd8ZW58MHx8fHwxNzY4ODc0NzczfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 1" />
+
+              
+                <span class="play-overlay"><i></i></span>
+                
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@asreynolds?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Alex Reynolds
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1717386255773-1e3037c81788?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYW51ZmFjdHVyaW5nJTIwZmFjaWxpdHl8ZW58MHx8fHwxNzY4ODc0NzcyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 2" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@homaappliances?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Homa Appliances
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1659707751291-3f8666211d07?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwbWFjaGluZXN8ZW58MHx8fHwxNzY4ODc0NzcyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 3" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@withmyricoh?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Holly Ward
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBmYWN0b3J5fGVufDB8fHx8MTc2ODg3NDc3Mnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 4" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@simonkadula?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Simon Kadula
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+
+        </div>
+      </div>
+
+      <!-- ▸▸ Content Block -->
+      <div class="col-12 col-xl-6 content-box order-1 order-xl-2">
+        <div class="content-block">
+          <p class="label">Our Goals</p>
+          <h2 class="section-heading mb-custom-4 main-heading">
+            About Trijya Foods
+          </h2>
+          <p class=" para-muted mb-custom-4 font-body">
+            At Trijya Foods &amp; Beverages LLP, we are redefining the Indian hospitality landscape with innovative food brands and a commitment to quality. Our expertise spans scalable systems and chef-less models, ensuring consistency across all our offerings. Driven by a visionary approach, we focus on building long-term relationships with our partners and clients. Our central kitchen capabilities guarantee the highest standards in food safety and quality, setting us apart in the industry. Our team brings years of experience in the food industry, ensuring reliable and effective solutions for your business.
+          </p>
+
+          <ul class=" feature-bullets mb-custom-5">
+              
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Our team brings years of experience in the food industry, ensuring reliable and effective solutions for your business.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  We utilize chef-less and semi-skilled models to streamline operations and enhance scalability for our brands.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Our central kitchen approach guarantees standardization and quality control across all locations and products.
+                </li>
+                
+                  </ul>
+
+         <a href="#" class="primary-btn">Learn more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .about-zigrow-section_5 {
+    --clr-primary: var(--primary-colors);
+    --clr-accent: var(--territory-colors);
+    --clr-bg: #ffffff;
+    --clr-muted: #6c757d;
+
+    background: var(--clr-bg);
+    overflow: hidden;
+    position: relative;
+
+
+    .label {
+      font-size: 0.75rem;
+      margin-bottom: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-primary);
+      font-weight: 600;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .section-heading::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary));
+      display: block;
+      margin-top: 1rem;
+    border-radius: var(--box-radius);
+    }
+
+    /* Media grid */
+    .media-grid-modern {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    .media-card {
+      position: relative;
+      aspect-ratio: 1 / 1;
+   border-radius: var(--box-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-section);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .media-card:hover {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    figure{
+      margin: 0 ;
+    }
+    /* Play icon overlay */
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-overlay i {
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 20px solid #fff;
+      transform: translateX(2px);
+    }
+
+    /* Features */
+    .feature-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+  /* Features */
+.feature-bullets li {
+  display: flex;
+  align-items: center;
+  /* font-weight: 500; */
+  color: var(--para-muted);
+  line-height: var(--lh-body);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.feature-bullets li:hover {
+  color: var(--clr-primary);
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary));
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkmark::after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: block;
+  animation: check-appear 0.4s ease;
+}
+
+.checkmark:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Animation for tick */
+@keyframes check-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+ @media (max-width: 425px) {  .media-grid-modern {
+        grid-template-columns: 1fr;
+      }}
+ @media (max-width: 1024px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }}
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }
+    
+
+      .section-heading::after {
+        margin-inline: auto;
+      }
+
+      .content-block {
+        text-align: center;
+      }
+
+      .feature-bullets li {
+        justify-content: center;
+      }
+    }
+  }
+</style>   <!-- ====================== service-zigrow-section_14 : START ====================== -->
+
+<section id="services" data-section="services" class="section-padding service-zigrow-section_14">
+  <div class="container px-custom-3 px-md-custom-4">
+
+    
+
+    <!-- Header -->
+    <div class="row align-custom-center g-4 mb-custom-3 mb-md-5">
+      <div class="col-lg-8">
+        <div class="d-inline-flex align-custom-center gap-2 badge-chip mb-custom-3">
+          <span><span>Services</span></span>
+        </div>
+
+        <h2 class="mb-custom-2 main-heading">
+          <span>Our Expert Services</span>
+        </h2>
+
+        <p class="font-subheading para-muted mb-custom-0">
+          <span>Tailored solutions for restaurant owners, cloud kitchens, and catering businesses to enhance operational efficiency and profitability.</span>
+        </p>
+      </div>
+
+      <div class="col-lg-4 text-lg-end">
+        <a href="#!" class="primary-btn">
+          <span>Explore More</span> 
+          <span class="ms-custom-2 arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- =================== Tabs Wrapper (Builder Compatible) =================== -->
+    <div data-component-tabs id="services-tabs">
+      <!-- Nav Tabs -->
+      <nav>
+        <div class="nav nav-tabs tabs-row flex-wrap align-custom-center gap-3 mb-custom-4" role="tablist">
+          
+            <button
+              class="nav-link tab-chip active"
+              id="services-tab-0"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-0"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-0"
+              aria-selected="true"
+            >
+              <span class="tab-dot">
+                <i class="bi-lightbulb"></i>
+              </span>
+              <span class="tab-text">
+                <span>Brand Development</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-1"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-1"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-1"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-menu-button-wide"></i>
+              </span>
+              <span class="tab-text">
+                <span>Menu Engineering</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-2"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-2"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-2"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-gear"></i>
+              </span>
+              <span class="tab-text">
+                <span>Operational Support</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-3"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-3"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-3"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-buildings"></i>
+              </span>
+              <span class="tab-text">
+                <span>Central Kitchen Setup</span>
+              </span>
+            </button>
+          
+            <button
+              class="nav-link tab-chip "
+              id="services-tab-4"
+              data-bs-toggle="tab"
+              data-bs-target="#services-pane-4"
+              type="button"
+              role="tab"
+              aria-controls="services-pane-4"
+              aria-selected="false"
+            >
+              <span class="tab-dot">
+                <i class="bi-check-circle"></i>
+              </span>
+              <span class="tab-text">
+                <span>Launch Consulting</span>
+              </span>
+            </button>
+          
+        </div>
+      </nav>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        
+          <div
+            class="tab-pane fade show active"
+            id="services-pane-0"
+            role="tabpanel"
+            aria-labelledby="services-tab-0"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>branding</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Brand Development</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Craft a unique brand identity that resonates with your target audience, ensuring long-term loyalty and recognition in the competitive food industry.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">branding</span>
+                      
+                        <span class="badge tag-chip">strategy</span>
+                      
+                        <span class="badge tag-chip">consulting</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1761454165168-cfdf007c6a31?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtYW51ZmFjdHVyaW5nfGVufDB8fHx8MTc2ODg3NDc3M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Brand Development"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@kennethliphotography?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Kenneth Li</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-1"
+            role="tabpanel"
+            aria-labelledby="services-tab-1"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>menu</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Menu Engineering</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Optimize your menu for profitability and customer satisfaction, balancing cost and quality to enhance your dining experience.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">menu</span>
+                      
+                        <span class="badge tag-chip">optimization</span>
+                      
+                        <span class="badge tag-chip">profitability</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1738162837438-92ff852619a1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcmVjaXNpb24lMjBlbmdpbmVlcmluZ3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Menu Engineering"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@cmrcn_?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Cemrecan Yurtman</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-2"
+            role="tabpanel"
+            aria-labelledby="services-tab-2"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>operations</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Operational Support</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Receive comprehensive support in staff structuring and standard operating procedures to streamline your restaurant operations effectively.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">operations</span>
+                      
+                        <span class="badge tag-chip">support</span>
+                      
+                        <span class="badge tag-chip">efficiency</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbnxlbnwwfHx8fDE3Njg4NzQ3NzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Operational Support"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@simonkadula?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">Simon Kadula</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-3"
+            role="tabpanel"
+            aria-labelledby="services-tab-3"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>central kitchen</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Central Kitchen Setup</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Establish a central kitchen to ensure consistency and quality across multiple outlets, enhancing scalability and reducing costs.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">central kitchen</span>
+                      
+                        <span class="badge tag-chip">scalability</span>
+                      
+                        <span class="badge tag-chip">quality</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1768550996767-da1461a0cc3d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxhc3NlbWJseSUyMGxpbmUlMjBzZXJ2aWNlc3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Central Kitchen Setup"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@evomao?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">EvoMao</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="tab-pane fade "
+            id="services-pane-4"
+            role="tabpanel"
+            aria-labelledby="services-tab-4"
+            tabindex="0"
+          >
+            <!-- Feature card inside each tab -->
+            <div class="feature-wrap rounded-4">
+              <div class="row g-0 align-custom-center">
+
+                <!-- Left content -->
+                <div class="col-lg-7">
+                  <div class="p-custom-4 p-md-custom-5">
+                    <div class="mini-badge mb-custom-3">
+                      <span class="mini-dot"></span>
+                      <span>launch</span>
+                    </div>
+
+                    <h3 class="card-title mb-custom-3">
+                      <span>Launch Consulting</span>
+                    </h3>
+
+                    <p class="mb-custom-4 card-desc">
+                      <span>Expert guidance through the launch process, ensuring a smooth transition from concept to operational success in your food business.</span>
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mb-custom-4">
+                      
+                        <span class="badge tag-chip">launch</span>
+                      
+                        <span class="badge tag-chip">consulting</span>
+                      
+                        <span class="badge tag-chip">success</span>
+                      
+                    </div>
+
+                    <a href="#!" class="white-btn">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="col-lg-5">
+                  <div class="feature-media h-custom-100 d-flex align-custom-center justify-custom-center p-custom-4">
+                    <div class="media-card img-wrapper-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxxdWFsaXR5JTIwY29udHJvbHxlbnwwfHx8fDE3Njg4NzQ2MTR8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                        alt="Launch Consulting"
+                        loading="lazy"
+                      >
+
+                      <span class="img-credit ">
+                        
+                          <span>Photo by</span>
+                          <a href="https://unsplash.com/@johnishappysometimes?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">John</a>
+                          <span>on</span>
+                          <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+                        
+                      </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+    <!-- =================== /Tabs Wrapper =================== -->
+
+  </div>
+</section>
+<!-- ====================== service-zigrow-section_14 : END ====================== -->
+
+
+<style>
+  /* =============== White Theme – Modern, crisp, interactive =============== */
+  .service-zigrow-section_14 {
+    background: #ffffff;
+  }
+
+  .service-zigrow-section_14 .title-oversized {
+    letter-spacing: -.5px;
+  }
+
+  /* badge at top */
+  .service-zigrow-section_14 .badge-chip {
+    padding: .4rem .75rem;
+    border: 1px solid #e8ebf2;
+      border-radius: var(--box-radius);
+    background: #fff;
+ box-shadow: var(--shadow-section);
+    color: #111;
+    font-weight: 600;
+    font-size: .85rem;
+  }
+
+  .service-zigrow-section_14 .badge-chip .chip-icon {
+    font-size: 1rem;
+    line-height: 1
+  }
+
+
+
+ 
+  .service-zigrow-section_14 .primary-btn:hover .arrow {
+    transform: translateX(3px);
+  }
+  .service-zigrow-section_14 .card-title {
+    color: var(--secondary-colors);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+  }
+  .service-zigrow-section_14 .card-desc {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+
+
+  /* tabs row */
+  .service-zigrow-section_14 .tabs-row {
+    border-bottom: 1px solid #eef1f6;
+  }
+
+  .service-zigrow-section_14 .tab-chip {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .75rem 1rem;
+       border-radius: var(--box-radius);
+    background: #fff;
+    border: 1px solid #e9eef4;
+    color: #111;
+    text-decoration: none;
+   box-shadow: var(--shadow-section);
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+  }
+
+  .service-zigrow-section_14 .tab-chip .tab-dot {
+ 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: .8;
+  }
+
+  .service-zigrow-section_14 .tab-chip .tab-text {
+    font-weight: 700;
+    font-size: var(--fs-body);
+    color: var(--para-muted);
+    line-height: var(--lh-body);
+  }
+
+  .service-zigrow-section_14 .tab-chip:hover {
+    transform: translateY(-2px);
+    border-color: #dfe6ef;
+  }
+
+  .service-zigrow-section_14 .tab-chip.active {
+    background: #ffffff;
+    border-color: var(--primary-colors);
+
+    color: var(--primary-colors) ;
+    .tab-text{
+
+        color: var(--primary-colors) ;
+    }
+  }
+
+  /* feature area */
+  .service-zigrow-section_14 .feature-wrap {
+    background: #ffffff;
+    border: 1px solid #e9edf4;
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section-hover);
+    overflow: hidden;
+  }
+
+  .service-zigrow-section_14 .mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    color: #111;
+    font-size: .85rem;
+    background: #fff;
+    border: 1px solid #e9edf4;
+    border-radius: var(--box-radius);
+    padding: .3rem .65rem;
+  }
+
+  .service-zigrow-section_14 .mini-badge .mini-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #111;
+    display: inline-block;
+  }
+
+  /* CTA button */
+  .service-zigrow-section_14 .cta-btn {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+    box-shadow: var(--shadow-section);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .service-zigrow-section_14 .cta-btn:hover {
+    transform: translateY(-2px);
+     box-shadow: var(--shadow-section-hover);
+  }
+
+  .service-zigrow-section_14 .cta-btn .cta-ico {
+    display: inline-block;
+    transform: translateY(1px);
+  }
+
+  /* right media card with grid overlay */
+  .service-zigrow-section_14 .feature-media {
+    background: linear-gradient(180deg, #fafbff, #ffffff);
+  }
+
+  .service-zigrow-section_14 .media-card {
+    position: relative;
+    border-radius: var(--box-radius);
+    overflow: hidden;
+    border: 1px solid #e9edf4;
+     box-shadow: var(--shadow-section);
+    background: #fff;
+  }
+
+  .service-zigrow-section_14 .media-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    filter: saturate(1.02) contrast(1.03);
+    transition: transform .6s ease;
+  }
+
+  .service-zigrow-section_14 .media-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .service-zigrow-section_14 .media-card .grid-line {
+    position: absolute;
+    background: rgba(255, 255, 255, .85);
+    mix-blend: soft-light;
+  }
+
+  .service-zigrow-section_14 .media-card .v1 {
+    top: 0;
+    bottom: 0;
+    left: 33.333%;
+    width: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .v2 {
+    top: 0;
+    bottom: 0;
+    left: 66.666%;
+    width: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .h1 {
+    left: 0;
+    right: 0;
+    top: 33.333%;
+    height: 2px;
+  }
+
+  .service-zigrow-section_14 .media-card .h2 {
+    left: 0;
+    right: 0;
+    top: 66.666%;
+    height: 2px;
+  }
+
+  /* small-custom tweaks */
+  @media (max-width: 991.98px) {
+    .service-zigrow-section_14 .feature-media {
+      padding-top: 0;
+      padding-bottom: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Server se aayi images ko global bana do
+  window.serviceImgUrls = [{"imageUrl":"https://images.unsplash.com/photo-1761454165168-cfdf007c6a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtYW51ZmFjdHVyaW5nfGVufDB8fHx8MTc2ODg3NDc3M3ww&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Kenneth Li","photographerUrl":"https://unsplash.com/@kennethliphotography","photographerUsername":"kennethliphotography"},{"imageUrl":"https://images.unsplash.com/photo-1738162837438-92ff852619a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwcmVjaXNpb24lMjBlbmdpbmVlcmluZ3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Cemrecan Yurtman","photographerUrl":"https://unsplash.com/@cmrcn_","photographerUsername":"cmrcn_"},{"imageUrl":"https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbnxlbnwwfHx8fDE3Njg4NzQ3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Simon Kadula","photographerUrl":"https://unsplash.com/@simonkadula","photographerUsername":"simonkadula"},{"imageUrl":"https://images.unsplash.com/photo-1768550996767-da1461a0cc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxhc3NlbWJseSUyMGxpbmUlMjBzZXJ2aWNlc3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"EvoMao","photographerUrl":"https://unsplash.com/@evomao","photographerUsername":"evomao"},{"imageUrl":"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxxdWFsaXR5JTIwY29udHJvbHxlbnwwfHx8fDE3Njg4NzQ2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"John","photographerUrl":"https://unsplash.com/@johnishappysometimes","photographerUsername":"johnishappysometimes"},{"imageUrl":"https://images.unsplash.com/photo-1761454165168-cfdf007c6a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtYW51ZmFjdHVyaW5nfGVufDB8fHx8MTc2ODg3NDc3M3ww&ixlib=rb-4.1.0&q=80&w=1080","photographerName":"Kenneth Li","photographerUrl":"https://unsplash.com/@kennethliphotography","photographerUsername":"kennethliphotography"}];
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const data = [{"title":"Brand Development","paragraph":"Craft a unique brand identity that resonates with your target audience, ensuring long-term loyalty and recognition in the competitive food industry.","button":"Learn More","tags":["branding","strategy","consulting"],"icon":"bi-lightbulb"},{"title":"Menu Engineering","paragraph":"Optimize your menu for profitability and customer satisfaction, balancing cost and quality to enhance your dining experience.","button":"Learn More","tags":["menu","optimization","profitability"],"icon":"bi-menu-button-wide"},{"title":"Operational Support","paragraph":"Receive comprehensive support in staff structuring and standard operating procedures to streamline your restaurant operations effectively.","button":"Learn More","tags":["operations","support","efficiency"],"icon":"bi-gear"},{"title":"Central Kitchen Setup","paragraph":"Establish a central kitchen to ensure consistency and quality across multiple outlets, enhancing scalability and reducing costs.","button":"Learn More","tags":["central kitchen","scalability","quality"],"icon":"bi-buildings"},{"title":"Launch Consulting","paragraph":"Expert guidance through the launch process, ensuring a smooth transition from concept to operational success in your food business.","button":"Learn More","tags":["launch","consulting","success"],"icon":"bi-check-circle"}];
+
+  function getImg(i) {
+    const arr = Array.isArray(window.serviceImgUrls) ? window.serviceImgUrls : [];
+    const item = arr[i];
+    return (item && item.imageUrl) ? item.imageUrl : "";
+  }
+
+  const tabs = document.querySelectorAll(".service-zigrow-section_14 .tab-chip");
+  const title = document.getElementById("f-title").querySelector("span");
+  const para = document.getElementById("f-paragraph").querySelector("span");
+  const btn = document.getElementById("f-btn").querySelector("span");
+  const img = document.getElementById("f-img");
+  const tags = document.getElementById("f-tags");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const idx = parseInt(tab.getAttribute("data-idx"));
+      const c = data[idx];
+      if (!c) return;
+
+      title.textContent = c.title || "";
+      para.textContent = c.paragraph || "";
+      btn.textContent = c.button || "Learn More";
+
+      tags.innerHTML = "";
+      if (c.tags?.length) {
+        c.tags.forEach(t => {
+          const sp = document.createElement("span");
+          sp.className = "badge tag-chip";
+          sp.textContent = t;
+          tags.appendChild(sp);
+        });
+      }
+
+      img.src = getImg(idx);
+      img.alt = c.title || "Service";
+    });
+  });
+});
+</script>
+   <!-- 🤍 Our Clients Grid -->
+<section class="logo-zigrow-section_5 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- Heading -->
+    <h2 class="fw-custom-bold display-custom-5 mb-custom-3 main-heading">Our Dear Clients</h2>
+    <p class="lead-custom para-muted font-subheading mb-custom-5 px-lg-custom-5 col-md-8 mx-custom-auto">
+     A showcase of trusted partners and brands we've collaborated with—highlighting the strength, diversity, and credibility behind our network.
+    </p>
+
+    <!-- Logo table -->
+    <div class="row gx-0 gy-0 border-grid">
+
+      <!-- Repeat for 8 logos -->
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  /* SECTION WRAP */
+.logo-zigrow-section_5{
+  background:#fff;
+}
+
+/* GRID: only inner lines, no outer border */
+.logo-zigrow-section_5 .border-grid .cell{ position: relative; }
+.logo-zigrow-section_5 .border-grid .cell::before,
+.logo-zigrow-section_5 .border-grid .cell::after{
+  content:"";
+  position:absolute;
+  background: var(--grid-line, #e8e9ee); /* subtle line */
+}
+
+/* draw TOP and LEFT separators on every cell */
+.logo-zigrow-section_5 .border-grid .cell::before{ /* top line */
+  height:1px; left:0; right:0; top:0;
+}
+.logo-zigrow-section_5 .border-grid .cell::after{  /* left line */
+  width:1px; top:0; bottom:0; left:0;
+}
+
+/* ≤ LG (mobile/tablet) => 2 columns (col-6) — hide outer edges */
+@media (max-width: 991.98px){
+  /* first row (items 1–2): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+2)::before{ display:none; }
+  /* first column in each row (1,3,5,7): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(2n+1)::after{ display:none; }
+}
+
+/* ≥ LG (desktop) => 4 columns (col-lg-3) — hide outer edges */
+@media (min-width: 992px){
+  /* first row (items 1–4): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+4)::before{ display:none; }
+  /* first column in each row (1,5): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(4n+1)::after{ display:none; }
+}
+
+/* LOGO visuals */
+.logo-zigrow-section_5 .logo{
+  max-width:170px; width:100%; object-fit:contain;
+  filter:grayscale(100%) opacity(.8);
+  transition: filter .3s ease;
+}
+.logo-zigrow-section_5 .logo:hover{ filter:grayscale(0%); }
+
+/* small-custom screens logo size */
+@media (max-width:575.98px){
+  .logo-zigrow-section_5 .logo{ max-width:140px; }
+}
+
+</style>
+   <!-- Full-page background wrapper -->
+<section class="section-padding product-zigrow-section_4" id="products" data-section="products">
+  <div class="container">
+    <!-- White rounded card -->
+    <div class="featured-products p-custom-4 p-md-custom-5">
+      <!-- Header -->
+      <div class="d-flex justify-custom-between align-custom-center mb-custom-4 flex-wrap gap-3">
+        <div>
+          <h5 class="fw-custom-bold mb-custom-1" style="color: var(--secondary-colors);">
+            Our Premium Food Offerings
+          </h5>
+          <p class="para-muted mb-custom-0 ">Delivering quality and flavor for every culinary need</p>
+        </div>
+
+        <!-- Updated button: new text + WhatsApp icon -->
+        <a href="https://wa.me/911234567890" target="_blank"
+           class="primary-btn d-inline-flex align-custom-center gap-2">
+          <i class="bi bi-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Product Grid: now 6 cards with perfect spacing -->
+      <div class="row g-4">
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1732365898600-ba8f7e5ca702?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxtYW51ZmFjdHVyZWQlMjBwcm9kdWN0c3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Savory Gravies"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@sanlad?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Tolga deniz Aran</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Savory Gravies</h6>
+                <p class="para-muted font-body-sm mb-custom-1">Rich, flavorful gravies that enhance any dish with authentic taste.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1707064892275-a3088e8240be?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwdG9vbHN8ZW58MHx8fHwxNzY4ODc0NzczfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Versatile Bases"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@riiyad?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Kabiur Rahman Riyad</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Versatile Bases</h6>
+                <p class="para-muted font-body-sm mb-custom-1">Convenient bases to simplify meal prep without compromising on flavor.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1758873263428-f4b2edb45fe1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxhc3NlbWJseSUyMHBhcnRzfGVufDB8fHx8MTc2ODg3NDc3M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Premium Spices"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@hanswestbeek?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Hans Westbeek</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Premium Spices</h6>
+                <p class="para-muted font-body-sm mb-custom-1">A selection of high-quality spices to elevate your culinary creations.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1697382609238-8ef952f76d87?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxmaW5pc2hlZCUyMGdvb2RzJTIwaW4lMjBmYWN0b3J5fGVufDB8fHx8MTc2ODg3NDc3M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Finger Food Items"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@vukburga?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >vuk burgic</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Finger Food Items</h6>
+                <p class="para-muted font-body-sm mb-custom-1">Delicious finger foods perfect for parties and quick snacks.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1761952199689-7bf870229d1e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxwYWNrYWdpbmclMjBwcm9jZXNzfGVufDB8fHx8MTc2ODg3NDc3M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Artisan Breads"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@sarguninder?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Sarguninder Singh</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Artisan Breads</h6>
+                <p class="para-muted font-body-sm mb-custom-1">Freshly baked breads that add warmth and flavor to any meal.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="product-card position-relative overflow-hidden h-custom-100">
+         <div class="position-relative img-wrapper-center">
+  <img
+    src="https://images.unsplash.com/photo-1732365898600-ba8f7e5ca702?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxtYW51ZmFjdHVyZWQlMjBwcm9kdWN0c3xlbnwwfHx8fDE3Njg4NzQ3NzN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+    class="img-fluid w-custom-100 h-custom-100 object-cover"
+    alt="Fragrant Rice Varieties"
+  >
+
+  
+    <span class="img-credit small-custom">
+      Photo by
+      <a
+        href="https://unsplash.com/@sanlad?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Tolga deniz Aran</a> on
+      <a
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank" rel="noopener noreferrer"
+      >Unsplash</a>
+    </span>
+  
+</div>
+
+
+              <div class="card-overlay p-3">
+                <h6 class="fw-custom-semibold mb-custom-1">Fragrant Rice Varieties</h6>
+                <p class="para-muted font-body-sm mb-custom-1">A range of aromatic rice options to complement your dishes perfectly.</p>
+                <p class="fw-custom-bold mb-custom-0 ">₹999</p>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-zigrow-section_4 {
+    background: #fafafa;
+  }
+
+  .product-zigrow-section_4 .featured-products {
+    background-color: #ffffff;
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section);
+  }
+
+  .product-zigrow-section_4 .product-card {
+    height: 100%;
+    border-radius: var(--box-radius);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-zigrow-section_4 .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-section-hover);
+  }
+
+  .product-zigrow-section_4 .product-card img {
+    width: 100%;
+    height: 100%;
+    height:255px;
+    object-fit: cover;
+    border-radius: var(--box-radius);
+    aspect-ratio: 1/1 ; /* square thumbs for clean grid */
+  }
+
+  ..product-zigrow-section_4 .card-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-radius: var(--box-radius);
+    margin: 1rem;
+    box-shadow: var(--shadow-section);
+  }
+
+  /* small-custom tweak so overlay doesn't overflow on tiny screens */
+  @media (max-width: 575.98px) {
+    .product-zigrow-section_4 .card-overlay { margin: .75rem; }
+  }
+
+  /* WhatsApp icon spacing inside button */
+  .primary-btn .bi { line-height: 1; }
+
+  /* Optional: make the primary button pop a bit */
+  .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+  }
+
+  /* Unsplash credit badge style (if you want it subtle) */
+  .img-credit {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    background: rgba(0,0,0,.55);
+    color: #fff;
+    font-size: .65rem;
+    padding: .2rem .4rem;
+    border-radius: .25rem;
+  }
+</style>
+   <!-- Travel-Driven Shipping Section -->
+<!-- Why Choose Us (same grid as Travel-Driven Shipping) -->
+<section class="whyChooseUs-zigrow-section_7  section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <div class="row align-custom-center gy-5">
+      
+      <!-- ▸ Left column: heading, copy, buttons -->
+      <div class="col-lg-4">
+        <div class="text-custom-start">
+          <span class="tag">Trijya Foods and Beverages LLP</span>   <!-- keep style; text is up to you -->
+          
+          <h2 class="main-heading mt-custom-3 ">Why Choose Trijya Foods</h2>
+          <p class="section-subtitle fw-custom-normal mt-custom-2 ">Delivering quality, consistency, and innovation in every bite.</p>
+          <p class="section-description mt-custom-3 ">At Trijya Foods &amp; Beverages, we prioritize quality and scalability, ensuring your culinary ventures thrive in a competitive market.</p>
+
+         
+        </div>
+      </div>
+
+      <div class="col-lg-1 d-lg-block "><span class="d-none"></span></div> <!-- spacer stays -->
+
+      <!-- ▸ Right column: feature cards -->
+      <div class="col-lg-7">
+        <div class="row g-4">
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-star"></i>
+                </div>
+                <h5 class="feature-title">Quality Assurance</h5>
+                <p class="feature-text">Our central kitchen ensures high standards of quality control, providing consistent flavors and safety across all our food products.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h5 class="feature-title">Expert Support</h5>
+                <p class="feature-text">Our experienced team offers comprehensive consulting services, guiding you through every step of establishing and growing your food business.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h5 class="feature-title">Scalable Solutions</h5>
+                <p class="feature-text">We provide scalable food models that adapt to your business needs, ensuring sustainable growth and profitability in the hospitality industry.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-lightning-charge"></i>
+                </div>
+                <h5 class="feature-title">Innovative Concepts</h5>
+                <p class="feature-text">Our unique, chef-less models and menu engineering strategies are designed for efficiency and high-volume production, setting you apart in the market.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>.whyChooseUs-zigrow-section_7 {
+  background-color: #ffffff;
+
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #444;
+  background: #f5f5f5;
+  padding: 6px 14px;
+ border-radius: var(--box-radius);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+ color: var(--lead-custom-color-mute);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin-bottom: 8px;
+
+}
+
+.section-description {
+  font-size: var(--fs-body);
+   color: var(--para-muted);
+  max-width: 90%;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+ border-radius: var(--box-radius);
+  padding: 25px 20px;
+  box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--lead-custom-color-mute);
+  margin-bottom: 6px;
+}
+
+.feature-text {
+  font-size: var(--fs-body-sm);
+   color: var(--para-muted);
+  line-height: 1.45;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 767.98px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}}
+</style>        <section class="cta-zigrow-section_3 text-custom-white" id="cta" data-section="cta">
+  <div class="container px-lg-custom-5">
+    <div class="row g-4 g-lg-5 align-custom-center text-custom-lg-start text-custom-center">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <div class="copy">
+          <span class="overline">Join us in building food brands.</span>
+          <h2 class="display mb-custom-3">Start Your Culinary Journey</h2>
+          <p class="lead-custom font-body mb-custom-4">Unlock your potential in the food industry with Trijya. Partner with us for a successful venture that thrives on quality and innovation.</p>
+
+      <div class="cta-actions d-inline-flex gap-2">
+  <a href="#" class="btn-solid primary-btn">
+    <span class="me-custom-2"><i class="bi bi-lightning-charge-fill "></i> </span>
+    Learn how we can help
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6">
+        <div class="visual img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1758873263520-1f77729ad5b8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjYWxsJTIwdG8lMjBhY3Rpb24lMjBidXR0b258ZW58MHx8fHwxNzY4ODM4NzQ4fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Recovery Help"
+            class="hero-img img-fluid"
+          />
+          <span class="img-credit">
+            Photo by
+            <a
+              href="https://unsplash.com/@hanswestbeek?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hans Westbeek</a
+            >
+            on
+            <a
+              href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Unsplash</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-zigrow-section_3 {
+    --brand: var(--theme-4);
+    --bg-custom-dark: var(--theme-3);
+
+    /* New smoother gradient */
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--bg-custom-dark) 92%, #000) 0%,
+        var(--bg-custom-dark) 100%
+      ),
+      radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.06),
+        transparent 70%
+      );
+
+    color: var(--theme-4);
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-muted);
+    border-bottom: 1px solid var(--border-muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-zigrow-section_3 .copy {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .cta-zigrow-section_3 .overline {
+    display: inline-block;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+  .cta-zigrow-section_3 .display {
+    font-size: clamp(1.9rem, 1.2rem + 2vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--theme-4);
+    margin: 0;
+  }
+  .cta-zigrow-section_3 .lead-custom {
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+
+
+  
+  .cta-zigrow-section_3 .btn-solid {
+    background: var(--theme-4);
+    color: var(--theme-3);
+  }
+  .cta-zigrow-section_3 .btn-solid i{
+   font-size: 1.1rem;
+   line-height: 1;
+  }
+  .cta-zigrow-section_3 .btn-solid:hover {
+    transform: translateY(-2px);
+  }
+ 
+
+  /* Visual wrapper */
+  .cta-zigrow-section_3 .visual {
+    position: relative;
+    width: min(420px, 100%); /* ✅ vertical card jaisa narrow */
+    margin-inline: auto;
+  }
+
+  .cta-zigrow-section_3 .hero-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 3/4; /* ✅ portrait ratio */
+    object-fit: cover; /* crop karega image ko */
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section);
+  }
+
+  .cta-zigrow-section_3 .img-credit {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-zigrow-section_3 .visual {
+      width: 100%;
+    }
+  }
+
+  /* Spacing + responsiveness */
+  @media (min-width: 992px) {
+    .cta-zigrow-section_3 .row {
+      align-items: center;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .cta-zigrow-section_3 {
+      padding: 3.2rem 0;
+    }
+    .cta-zigrow-section_3 .copy {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .cta-zigrow-section_3 .lead-custom {
+      font-size: 1rem;
+    }
+  }
+</style>
+   <section class="contact-zigrow-section_5 section-padding" id="contact" data-section="contact">
+  <div class="container">
+    
+    <!-- Top Images -->
+    <div class="row g-3 mb-custom-5 image-row">
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/g05HR1s8/2.png" class="img-fluid  " alt="Room 1">
+      </div>
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/XJCcgx1h/3.png" class="img-fluid  " alt="Room 2">
+      </div>
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/8cgdXWqC/4.png" class="img-fluid  " style="width: 600px;" alt="Room 3">
+      </div>
+    </div>
+
+    <!-- Bottom Contact Info -->
+    <div class="row align-custom-start text-section">
+      <div class="col-md-6 mb-custom-4 mb-md-0">
+        <h2 class="fw-custom-bold main-heading">Partner with us</h2>
+      </div>
+      <div class="col-md-6 contact-details">
+        <div class="mb-custom-4">
+          <h6 class="text-custom-uppercase contact-label">Mailing Address</h6>
+          <p>Narendra Industries Urawade, Pirangut, Pune</p>
+        </div>
+        <div class="mb-custom-4">
+          <h6 class="text-custom-uppercase contact-label">Email Address</h6>
+          <p>info@trijyafoods.com</p>
+        </div>
+        <div>
+          <h6 class="text-custom-uppercase contact-label">Phone Number</h6>
+          <p>8468874344</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    .contact-zigrow-section_5 {
+  background-color: #fff;
+
+
+.image-row img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+    box-shadow: var(--shadow-section);
+     border-radius: var(--box-radius);
+}
+
+.image-row img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-section-hover);
+}
+
+
+
+.contact-details .contact-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--secondary-colors);
+  letter-spacing: 0.5px;
+}
+
+.contact-details p {
+  font-size: var(--fs-body-sm);
+  color: var(--para-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .text-section {
+    text-align: center;
+  }
+
+  .contact-details {
+    margin-top: 1.5rem;
+  }
+}
+    }
+</style>  
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+          window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

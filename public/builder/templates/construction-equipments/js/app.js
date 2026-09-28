@@ -31,29 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!headerWrapper || !siteHeader || !btn) return;
 
   // ✅ hamburger toggle
-  const closeMenu = () => {
-    headerWrapper.classList.remove("nav-open");
-    btn.setAttribute("aria-expanded", "false");
-    btn.setAttribute("aria-label", "Open menu");
-  };
-
   btn.addEventListener("click", () => {
-    const isOpen = headerWrapper.classList.toggle("nav-open");
-    btn.setAttribute("aria-expanded", String(isOpen));
-    btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    headerWrapper.classList.toggle("nav-open");
   });
 
   // ✅ close menu on nav click (mobile)
   document.querySelectorAll(".nav-ul a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 992) closeMenu();
+    link.addEventListener("click", () =>
+      headerWrapper.classList.remove("nav-open")
+    );
   });
 
   // ✅ sticky nav on scroll
@@ -212,7 +198,7 @@ if (window.innerWidth > 768) {
   /* =========================
      FOOTER
      ========================= */
-  fadeUp("#footer .footer-brand-logo", "#footer", 0, 40);
+  fadeUp("#footer .footer-brand", "#footer", 0, 40);
 
   fadeUpStagger("#footer .footer-item", "#footer", 0.12, 25, 0.9);
 

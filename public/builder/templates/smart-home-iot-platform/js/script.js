@@ -12,18 +12,10 @@ navLinks.forEach((link) => {
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger-toggle");
   const menu = document.getElementById("navbarMenu");
+  const navbarSection = document.getElementById("navbarSection");
 
   const bsCollapse = new bootstrap.Collapse(menu, {
     toggle: false,
-  });
-
-  menu.addEventListener("shown.bs.collapse", () => {
-    hamburger.setAttribute("aria-expanded", "true");
-  });
-
-  menu.addEventListener("hidden.bs.collapse", () => {
-    hamburger.setAttribute("aria-expanded", "false");
-    hamburger.classList.remove("is-active");
   });
 
   // Toggle hamburger and menu

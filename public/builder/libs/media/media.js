@@ -1018,7 +1018,7 @@ class MediaModal {
         ov.innerHTML = `
   <div class="media-upload-overlay-content">
     <img 
-      src="https://api-uat.zigrow.com/media/cloud-upload_8591640.svg" 
+      src="https://api.zigrow.com/media/cloud-upload_8591640.svg" 
       class="media-upload-overlay-svg"
       alt="Upload Icon"
     />

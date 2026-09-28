@@ -28,25 +28,24 @@
   <link rel="stylesheet" href="css/customutility.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://static.zigrow.com/animations/z.animation.style.css">
+
   <link rel="icon" href="assets/images/favicon.png">
 </head>
 
 <body>
-  <header id="header" data-section="header">
-  <nav class="navbar navbar-expand-md navbar-section sticky-top py-3-style navbar-animate" id="navbarSection">
+  <nav class="navbar navbar-expand-md navbar-section sticky-top py-3-style navbar-animate" id="navbarSection" data-section="navbarSection">
     <div class="container">
-      <a class="navbar-brand-name d-flex align-items-sm-center-style" href="#home" data-logo="navbar">
-        <span class="brand-icon-parent p-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill" aria-hidden="true"></i></span>
+      <a class="navbar-brand-name d-flex align-items-sm-center-style" href="#" data-logo="navbar">
+        <span class="p-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill"></i></span>
         podcast
       </a>
 
       <div class="d-md-none d-flex align-items-center-style justify-content-md-end">
-        <button type="button" class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle" aria-label="Open navigation" aria-controls="navbarMenu" aria-expanded="false">
+        <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
           <div class="hamburger-box">
             <div class="hamburger-inner"></div>
           </div>
-        </button>
+        </div>
       </div>
 
       <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
@@ -64,26 +63,23 @@
             <a class="nav-link fw-semibold-style" href="#pricing">Rates</a>
           </li>
         </ul>
-        <div class="navbar-actions navbar-mobile-actions zg-align-center nav-item d-md-none my-3-style">
-          <a href="#pricing" class="btn btn-custom login-btn" data-btn="navbar-signin">Signin</a>
-          <a href="#pricing" class="btn btn-custom get-started-btn" data-btn="navbar-start">Start Now</a>
+        <div class="nav-item d-md-none my-3-style">
+          <a class="btn btn-custom login-btn mb-2-style">Signin</a>
+          <a class="btn btn-custom get-started-btn">Start Now</a>
         </div>
       </div>
 
-      <div class="navbar-actions navbar-desktop-actions zg-align-center d-none d-md-flex">
-        <a href="#pricing" class="btn btn-custom login-btn" data-btn="navbar-signin">Signin</a>
-        <a href="#pricing" class="btn btn-custom get-started-btn" data-btn="navbar-start">Start Now</a>
+      <div class="d-none d-md-block">
+        <a class="btn btn-custom login-btn">Signin</a>
+        <a class="btn btn-custom get-started-btn">Start Now</a>
       </div>
     </div>
   </nav>
-  </header>
-
-  <main>
 
   <section class="hero-section py-md-3-style position-relative" id="home" data-section="home">
     <div class="container my-md-5-style">
       <div class="row align-items-center-style">
-        <div class="col-lg-7 hero-section-header text-center-style text-lg-start-style mb-4-style mb-lg-0-style">
+        <div class="col-lg-7 text-center-style text-lg-start-style mb-4-style mb-lg-0-style">
           <h1 class="hero-sectin-main-heading fw-bold-style">
             The Quickest Path to<br />
             Share and <span class="highlight">amplify</span> <br />
@@ -94,13 +90,13 @@
             boundless feeds, utilize detailed statistics, generate with speed,
             and market—all via one brilliant interface.
           </p>
-          <div class="hero-actions zg-align-center mt-4-style d-flex justify-content-center-style justify-content-lg-start gap-3">
-            <a href="#pricing" class="btn get-started-btn" data-btn="hero-start">Start Now</a>
-            <a href="#pricing" class="btn try-for-free-btn" data-btn="hero-free">Use for free</a>
+          <div class="mt-4-style d-flex justify-content-center-style justify-content-lg-start gap-3">
+            <a href="#" class="btn btn-dark get-started-btn">Start Now</a>
+            <a href="#" class="btn btn-outline-dark try-for-free-btn">Use for free</a>
           </div>
         </div>
 
-        <div class="col-lg-5 hero-section-body text-center-style">
+        <div class="col-lg-5 text-center-style">
           <div class="image-wrapper position-relative">
             <div class="img-wrapper-style">
               <img src="assets/images/podcast-technology-websie-saas-toolhero.webp" alt="Podcast host" class="img-fluid main-img" />
@@ -111,19 +107,19 @@
     </div>
   </section>
 
-  <a href="#home" class="floating-btn" aria-label="Back to top">
-    <i class="bi bi-arrow-up" data-icon="bi-arrow-up" aria-hidden="true"></i>
+  <a href="#" class="floating-btn">
+    <i class="bi bi-arrow-up" data-icon="bi-arrow-up"></i>
   </a>
 
   <section class="open-your-mind-section d-flex align-items-center-style text-white-style" id="home2" data-section="home2">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 open-mind-section-header">
-          <h2 class="hero-heading text-center-style text-md-start-style">
+        <div class="col-md-8">
+          <h1 class="hero-heading d-flex text-center-style text-md-start-style flex-column">
             Free your soul <br />
-            <span class="hero-emphasis">before your sound</span> molds <br />
+            <em>before your sound</em> molds <br />
             the generation
-          </h2>
+          </h1>
 
         </div>
       </div>
@@ -133,7 +129,7 @@
   <section class="analytics-help py-5-style" id="home3" data-section="home3">
     <div class="container">
       <div class="row align-items-center-style d-flex justify-content-between">
-        <div class="col-lg-7 analytics-section-header mb-4-style mb-lg-0-style">
+        <div class="col-lg-7 mb-4-style mb-lg-0-style">
           <h2 class="section-title">
             Comprehend Your Channel Statistics with Certainty
           </h2>
@@ -149,16 +145,14 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 analytics-section-body mb-auto mt-0">
+        <div class="col-lg-4 mb-auto mt-0">
           <h3 class="section-subtitle">Insight-Driven Actions</h3>
           <p class="section-description">
             Quit assuming and begin knowing. With Platform's seamless analytics,
             you'll simply chart downloads, listener regions, streaming networks,
             and more — so you can focus on what matters: scaling your work.
           </p>
-          <div class="analytics-actions zg-align-center">
-            <a href="#features" class="learn-more-button mt-3-style" data-btn="analytics-read-more">Read More</a>
-          </div>
+          <a href="#" type="button" class="learn-more-button mt-3-style">Read More</a>
         </div>
       </div>
     </div>
@@ -166,14 +160,12 @@
 
   <section class="tools-section my-5-style py-md-5-style" id="features" data-section="features">
     <div class="container text-center-style">
-      <div class="tools-section-header">
-        <h2 class="section-heading mb-5-style">Frictionless, Dynamic Aides Made for Scale</h2>
-      </div>
-      <div class="row tools-section-body">
+      <h2 class="section-heading mb-5-style">Frictionless, Dynamic Aides Made for Scale</h2>
+      <div class="row">
         <div class="col-md-4 mb-md-4-style clonable-card">
           <div class="tool-card">
             <div class="icon-wrapper mb-3-style">
-              <i class="bi bi-database" data-icon="bi-database" aria-hidden="true"></i>
+              <i class="bi bi-database" data-icon="bi-database"></i>
             </div>
             <h5 class="tool-title my-3-style">
               Seamless Service Built for Creators
@@ -188,7 +180,7 @@
         <div class="col-md-4 mb-md-4-style clonable-card">
           <div class="tool-card">
             <div class="icon-wrapper mb-3-style">
-              <i class="bi bi-mic" data-icon="bi-mic" aria-hidden="true"></i>
+              <i class="bi bi-mic" data-icon="bi-mic"></i>
             </div>
             <h5 class="tool-title my-3-style">Fully Artistic Command</h5>
             <p class="tool-description">
@@ -201,7 +193,7 @@
         <div class="col-md-4 mb-md-4-style clonable-card">
           <div class="tool-card">
             <div class="icon-wrapper mb-3-style">
-              <i class="bi bi-megaphone" data-icon="bi-megaphone" aria-hidden="true"></i>
+              <i class="bi bi-megaphone" data-icon="bi-megaphone"></i>
             </div>
             <h5 class="tool-title my-3-style">Native Scale Aides</h5>
             <p class="tool-description">
@@ -217,7 +209,7 @@
   <section class="podcast-stats-section py-md-4-style" id="podcast-stats-section" data-section="podcast-stats-section">
     <div class="container py-md-5-style py-4-style">
       <div class="row align-items-center-style">
-        <div class="col-lg-6 podcast-stats-section-body mb-4-style mb-lg-0-style text-center-style">
+        <div class="col-lg-6 mb-4-style mb-lg-0-style text-center-style">
           <div class="image-wrapper">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/podcast-technology-websie-saas-tool-3a.webp" alt="Podcast Host" class="img-fluid custom-shape" loading="lazy" />
@@ -225,7 +217,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 podcast-stats-section-header">
+        <div class="col-lg-6">
           <h2 class="section-heading">
             Sharper Channel Statistics to Shape Your Future
           </h2>
@@ -235,9 +227,7 @@
             networks your followers utilize, and see where on the globe your sound is being played — all in
             real time.
           </p>
-          <div class="podcast-stats-actions zg-align-center">
-            <a href="#testimonials-section" class="learn-more-button mt-3-style" data-btn="stats-read-more">Read More</a>
-          </div>
+          <a href="#" type="button" class="learn-more-button mt-3-style">Read More</a>
         </div>
       </div>
     </div>
@@ -245,16 +235,12 @@
 
   <section class="testimonials-section py-sm-5-style py-2-style" id="testimonials-section" data-section="testimonials-section">
     <div class="container my-5-style">
-      <div class="testimonials-section-header">
-        <h2 class="section-heading">
-          What people are<br />
-          noting
-        </h2>
-      </div>
+      <h2 class="section-heading">
+        What people are<br />
+        noting
+      </h2>
 
-      <div class="row testimonials-grid testimonials-section-body">
-      <div class="col-12 clonable-card testimonial-clone-item">
-      <div class="row align-items-center-style mb-lg-5-style mb-4-style testimonial-card">
+      <div class="row align-items-center-style mb-lg-5-style mb-4-style">
         <div class="col-lg-6 text-center-style mb-3-style mb-md-0-style">
           <div class="testimonial-img-wrapper img-wrapper-style">
             <img src="assets/images/podcast-technology-websie-saas-tool-6-a.webp" alt="Client 1" class="img-fluid custom-shape" loading="lazy" />
@@ -269,14 +255,12 @@
             technology and offering features that creators really care
             about.
           </p>
-          <p class="testimonial-author mt-2-style mb-0-style fw-bold-style">Asha Mehta</p>
+          <p class="testimonial-author mt-2-style mb-0-style fw-bold-style">Sarah Jenkins</p>
           <p class="testimonial-role">CEO of Streamy</p>
         </div>
       </div>
-      </div>
 
-      <div class="col-12 clonable-card testimonial-clone-item">
-      <div class="row align-items-center-style flex-md-row-reverse mb-lg-5-style mb-4-style testimonial-card">
+      <div class="row align-items-center-style flex-md-row-reverse mb-lg-5-style mb-4-style">
         <div class="col-lg-6 text-center-style mb-3-style mb-md-0-style">
           <div class="testimonial-img-wrapper img-wrapper-style">
             <img src="assets/images/podcast-technology-websie-saas-tool-6-b.webp" alt="Client 2" class="img-fluid custom-shape" loading="lazy" />
@@ -291,26 +275,22 @@
             the move at all. Platform is great! Especially if you have more
             than 1 channel.
           </p>
-          <p class="testimonial-author mt-4-style mb-0-style fw-bold-style">Raj Mehta</p>
+          <p class="testimonial-author mt-4-style mb-0-style fw-bold-style">Tom Baker</p>
           <p class="testimonial-role">Head of Media, Circle of Life</p>
         </div>
       </div>
-      </div>
-      </div>
 
-      <div class="testimonials-actions zg-align-center text-center-style mt-sm-5-style mt-2-style">
-        <a href="#blogs" class="learn-more-button" data-btn="testimonials-read-more">Read More</a>
+      <div class="text-center-style mt-sm-5-style mt-2-style">
+        <a href="#" type="button" class="learn-more-button">Read More</a>
       </div>
     </div>
   </section>
 
   <section class="articles-section py-sm-5-style py-2-style" id="blogs" data-section="blogs">
     <div class="container my-5-style">
-      <div class="articles-section-header">
-        <h2 class="section-heading">Our Insights</h2>
-      </div>
+      <h2 class="section-heading">Our Insights</h2>
 
-      <div class="row g-5 articles-section-body">
+      <div class="row g-5">
         <div class="col-12 clonable-card">
           <div class="row article-card align-items-start-style">
             <div class="col-md-7">
@@ -318,7 +298,7 @@
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/podcast-technology-websie-saas-tool-5-a.webp" alt="Podcast Website Tips" class="img-fluid" loading="lazy" />
                 </div>
-                <span class="date-badge">December 2, 2024</span>
+                <div class="date-badge">December 2, 2024</div>
               </div>
             </div>
             <div class="col-md-5 mt-3-style mt-md-0-style mb-auto">
@@ -330,9 +310,7 @@
                 elevate your
                 show's accessibility, grow your audience, and create a lasting impression.
               </p>
-              <div class="article-actions zg-align-center">
-                <a href="#blogs" class="read-more-button mt-md-3-style" data-btn="article-view">View Post</a>
-              </div>
+              <a href="#" type="button" class="read-more-button mt-md-3-style">View Post</a>
             </div>
           </div>
         </div>
@@ -344,7 +322,7 @@
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/podcast-technology-websie-saas-tool-5-b.webp" alt="Phone Call Recording Tips" class="img-fluid" loading="lazy" />
                 </div>
-                <span class="date-badge">December 2, 2024</span>
+                <div class="date-badge">December 2, 2024</div>
               </div>
             </div>
             <div class="col-md-5 mt-3-style mt-md-0-style mb-auto">
@@ -357,9 +335,7 @@
                 a call using
                 dependable tools and professional techniques in just a few steps.
               </p>
-              <div class="article-actions zg-align-center">
-                <a href="#blogs" class="read-more-button mt-md-3-style" data-btn="article-view">View Post</a>
-              </div>
+              <a href="#" type="button" class="read-more-button mt-md-3-style">View Post</a>
             </div>
           </div>
         </div>
@@ -371,7 +347,7 @@
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/podcast-technology-websie-saas-tool-5-c.webp" alt="Podcast Call Recording" class="img-fluid" loading="lazy" />
                 </div>
-                <span class="date-badge">December 2, 2024</span>
+                <div class="date-badge">December 2, 2024</div>
               </div>
             </div>
             <div class="col-md-5 mt-3-style mt-md-0-style mb-auto">
@@ -383,16 +359,14 @@
                 recording calls
                 seamlessly, without compromising sound quality or flow.
               </p>
-              <div class="article-actions zg-align-center">
-                <a href="#blogs" class="read-more-button mt-md-3-style" data-btn="article-view">View Post</a>
-              </div>
+              <a href="#" type="button" class="read-more-button mt-md-3-style">View Post</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="articles-more-actions zg-align-center text-center-style mt-5-style">
-        <a href="#pricing" class="learn-more-button mt-sm-3-style" data-btn="articles-more">See More</a>
+      <div class="text-center-style mt-5-style">
+        <a href="#" type="button" class="learn-more-button mt-sm-3-style">See More</a>
       </div>
     </div>
   </section>
@@ -400,22 +374,20 @@
   <section class="promo-section py-sm-5-style py-2-style text-white-style" id="pricing" data-section="pricing">
     <div class="container my-5-style">
       <div class="row align-items-center-style">
-        <div class="col-lg-6 promo-section-header mb-4-style mb-lg-0-style text-center-style text-lg-start-style">
-          <h2 class="section-heading">
+        <div class="col-lg-6 mb-4-style mb-lg-0-style text-center-style text-lg-start-style">
+          <h1 class="section-heading">
             Begin Your Channel <br />
             Free for 7 Days
-          </h2>
+          </h1>
           <p class="section-description">
             Create your channel effortlessly with Platform's all-in-one platform. Design unlimited shows,
             customize your
             players, distribute everywhere, and access powerful analytics — all without a single commitment.
           </p>
-          <div class="promo-actions zg-align-center">
-            <a href="#footer" class="learn-more-button mt-3-style" data-btn="promo-trial">Test for Free</a>
-          </div>
+          <a href="#" type="button" class="learn-more-button mt-3-style">Test for Free</a>
         </div>
 
-        <div class="col-lg-6 promo-section-body text-center-style">
+        <div class="col-lg-6 text-center-style">
           <div class="promo-image-wrapper img-wrapper-style col-12">
             <img src="assets/images/podcast-technology-websie-saas-tool-7.webp" alt="Try Podkast Free" class="img-fluid promo-image" loading="lazy" />
           </div>
@@ -424,14 +396,12 @@
     </div>
   </section>
 
-  </main>
-
-  <footer class="footer-section py-5-style" id="footer" data-section="footer">
+  <footer class="footer-section py-5-style" id="footer-section" data-section="footer-section">
     <div class="container position-relative">
       <div class="row gy-4">
         <div class="col-lg-3">
-          <a class="navbar-brand-name d-flex align-items-sm-center-style" href="#home" data-logo="footer">
-            <span class="brand-icon-parent p-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill" aria-hidden="true"></i></span>
+          <a class="navbar-brand-name d-flex align-items-sm-center-style" href="#" data-logo="footer">
+            <span class="p-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill"></i></span>
             podcast
           </a>
         </div>
@@ -478,17 +448,17 @@
           <div class="social-media-icons-main-div mt-5-style">
             <p class="footer-text">Subscribe for audio and <br>marketing insights</p>
             <div class="footer-icons mt-3-style d-flex gap-3">
-              <a href="#" class="footer-social-icons-a" aria-label="Podcast on Facebook">
-                <i class="fa-brands fa-facebook-f" data-icon="fa-facebook-f" aria-hidden="true"></i>
+              <a href="#" class="footer-social-icons-a">
+                <i class="fa-brands fa-facebook-f" data-icon="fa-facebook-f"></i>
               </a>
-              <a href="#" class="footer-social-icons-a" aria-label="Podcast on X">
-                <i class="fa-brands fa-x-twitter" data-icon="fa-x-twitter" aria-hidden="true"></i>
+              <a href="#" class="footer-social-icons-a">
+                <i class="fa-brands fa-x-twitter" data-icon="fa-x-twitter"></i>
               </a>
-              <a href="#" class="footer-social-icons-a" aria-label="Podcast on Instagram">
-                <i class="fa-brands fa-instagram" data-icon="fa-instagram" aria-hidden="true"></i>
+              <a href="#" class="footer-social-icons-a">
+                <i class="fa-brands fa-instagram" data-icon="fa-instagram"></i>
               </a>
-              <a href="#" class="footer-social-icons-a" aria-label="Podcast on LinkedIn">
-                <i class="fa-brands fa-linkedin-in" data-icon="fa-linkedin-in" aria-hidden="true"></i>
+              <a href="#" class="footer-social-icons-a">
+                <i class="fa-brands fa-linkedin-in" data-icon="fa-linkedin-in"></i>
               </a>
             </div>
           </div>
@@ -501,21 +471,17 @@
         <div class="burst-ray burst-5"></div>
       </div>
 
-      <p class="footer-copyright text-center-style mt-5-style small-style">
+      <div class="text-center-style mt-5-style small-style text-dark-subtle">
         Copyright © 2025 Podcast
-      </p>
-      <div class="powered-by-zigrow-row">
-        <a href="https://zigrow.com/" target="_blank" rel="noopener noreferrer nofollow sponsored">Powered by Zigrow</a>
       </div>
-    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script src="js/script.js"></script>
 

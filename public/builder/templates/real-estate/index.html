@@ -14,23 +14,32 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <link rel="preload" href="assets/images/realestatedeveloperwebsitetemplate-hero.webp" as="image" />
+  <link rel="preload" href="assets/images/realestatedeveloperwebsitetemplate hero.webp" as="image" />
 
-  <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
-  <link rel="stylesheet" href="css/style.css?v=2.13.0-1" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/customutility.css" />
 </head>
 
 <body>
-  <header class="navbar navbar-expand-lg bg-white-style sticky-top navbar-color py-3-style navbar-animate" id="header" data-section="header">
-    <nav class="container" aria-label="Primary navigation">
-      <a class="navbar-brand skyline-logo" href="#home" data-logo="navbar">Skyline</a>
+  <nav class="navbar navbar-expand-lg bg-white-style sticky-top navbar-color py-3-style navbar-animate" id="navbarSection" data-section="navbarSection">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-sm-center-style fw-semibold-style fs-4-style" href="#" data-logo="navbar">
+        <span class="px-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill"></i></span>
+        Skyline
+      </a>
 
-      <button class="navbar-menu-toggle d-lg-none" id="hamburger-toggle" type="button" aria-label="Open navigation" aria-controls="navbarMenu" aria-expanded="false">
-        <i class="bi bi-list" data-icon="menu" aria-hidden="true"></i>
-      </button>
+      <div class="d-lg-none d-flex align-items-center-style justify-content-lg-end-style">
+        <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
+      </div>
 
       <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
         <ul class="navbar-nav gap-3">
@@ -50,14 +59,16 @@
             <a class="nav-link fw-semibold-style" href="#contactus">Get in Touch</a>
           </li>
         </ul>
-        <div class="header-actions zg-align-center">
-          <a class="btn btn-custom" href="tel:+919123456789" data-btn="nav">Book Consult</a>
+        <div class="nav-item d-lg-none">
+          <a class="btn btn-custom">Book Consult</a>
         </div>
       </div>
-    </nav>
-  </header>
 
-  <main>
+      <div class="d-none d-lg-block">
+        <a class="btn btn-custom">Book Consult</a>
+      </div>
+    </div>
+  </nav>
 
   <section class="section1 hero-section" id="home" data-section="home">
     <div class="container py-5-style">
@@ -65,9 +76,9 @@
         <div class="col-lg-6 text-center-style text-lg-start-style">
           <div class="d-flex align-items-center-style justify-content-center-style justify-content-lg-start-style mb-4-style">
             <div class="d-flex hero-section-people-div">
-              <img src="assets/images/testimonials-1.webp" class="avatar-img avatar-img1 me-1-style" alt="Real estate broker Aditi Rao" />
-              <img src="assets/images/testimonials-2.webp" class="avatar-img avatar-img2 me-1-style" alt="Real estate broker Rohan Mehta" />
-              <img src="assets/images/testimonials-3.webp" class="avatar-img avatar-img3" alt="Real estate broker Kabir Singh" />
+              <img src="assets/images/testimonials-1.webp" class="avatar-img avatar-img1 me-1-style" />
+              <img src="assets/images/testimonials-2.webp" class="avatar-img avatar-img2 me-1-style" />
+              <img src="assets/images/testimonials-3.webp" class="avatar-img avatar-img3" />
             </div>
             <div class="avatar-img-text-div">
               <h6 class="mb-0-style fw-semibold-style fs-4-style">20+</h6>
@@ -75,20 +86,16 @@
             </div>
           </div>
 
-          <div class="hero-section-header section-header">
-            <h1 class="mb-3-style hero-section-heading">
-              Guiding you toward <br />
-              the sanctuary of <br />
-              your future.
-            </h1>
-            <p class="hero-section-para">
-              Curating premium modern habitats, forging <br />
-              better neighborhoods
-            </p>
-          </div>
-          <div class="hero-actions zg-align-center section-body">
-            <a href="tel:+919123456789" class="btn btn-custom" data-btn="hero">Book Consult</a>
-          </div>
+          <h1 class="mb-3-style hero-section-heading">
+            Guiding you toward <br />
+            the sanctuary of <br />
+            your future.
+          </h1>
+          <p class="mb-4-style hero-section-para">
+            Curating premium modern habitats, forging <br />
+            better neighborhoods
+          </p>
+          <a href="tel:9123456789" class="btn btn-custom">Book Consult</a>
         </div>
 
         <div class="col-lg-6 mb-4-style mb-lg-0-style text-center-style px-4-style">
@@ -100,15 +107,16 @@
     </div>
   </section>
 
+  <a href="#" class="btn rounded-circle floating-btn">
+    <i class="bi bi-arrow-up" data-icon="bi-arrow-up"></i>
+  </a>
+
   <section class="about-section py-5-style my-lg-5-style" id="aboutus" data-section="aboutus">
     <div class="container">
       <div class="row align-items-center-style flex-column-reverse flex-lg-row">
         <div class="col-lg-6">
-          <div class="about-section-header section-header">
-            <h2 class="each-section-name">Who We Are</h2>
-          </div>
-          <div class="about-section-body section-body">
-            <p class="about-section-para">
+          <h2 class="mb-4-style each-section-name">Who We Are</h2>
+          <p class="about-section-para">
             Greetings from Skyline Living, your trusted partner in securing your
             real estate future. Our expert group is devoted to offering
             bespoke guidance and proven strategies, guaranteeing you
@@ -118,16 +126,15 @@
             scheduling to promise a smooth and rewarding journey. With our
             help, you can safely traverse through the complexities of
             the property world and hit your targets!
-            </p>
-            <p class="about-section-para">
+          </p>
+          <p class="about-section-para">
             Greetings from Skyline Living, your trusted partner in securing your
             real estate future. Our expert group is devoted to offering
             bespoke guidance and proven strategies, guaranteeing you
             locate the ideal investment that suits your aspirations.
             Whether you plan to buy, lease, or sell, we craft
             specific plans.
-            </p>
-          </div>
+          </p>
         </div>
 
         <div class="col-lg-6 mb-4-style mb-lg-0-style text-center-style">
@@ -141,22 +148,22 @@
 
   <section class="exploreus-section" id="ourproperties" data-section="ourproperties">
     <div class="container">
-      <div class="text-center-style section-header">
+      <div class="text-center-style mb-5-style">
         <h2 class="each-section-name">Discover Our Current Listings</h2>
         <p class="each-section-para">
           Discover homes tailored perfectly to your life.
         </p>
       </div>
-      <div class="row g-4 section-body">
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/affordablehousingrealestateproperty-type.webp" class="card-img-top" alt="Property 1" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3 class="fw-semibold-style explore-section-each-box-price">
+              <h6 class="fw-semibold-style explore-section-each-box-price">
                 ₹17,50,000
-              </h3>
+              </h6>
               <p class="other-details-of-properties">
                 3 Bedrooms • 3 Bathrooms • 120000 Sqm
               </p>
@@ -164,13 +171,13 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/formhouse-for-sale-propertytype.webp" class="card-img-top" alt="Property 2" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3 class="fw-semibold-style">₹17,50,000</h3>
+              <h6 class="fw-semibold-style">₹17,50,000</h6>
               <p class="other-details-of-properties">
                 4 Bedrooms • 5 Bathrooms • 180000 Sqm
               </p>
@@ -179,13 +186,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/independent-villa-propoerty-dealer.webp" class="card-img-top" alt="Property 3" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3 class="fw-semibold-style">₹7,50,000</h3>
+              <h6 class="fw-semibold-style">₹7,50,000</h6>
               <p class="other-details-of-properties">
                 2 Bedrooms • 2 Bathrooms • 90000 Sqm
               </p>
@@ -194,13 +201,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/luxury-apartments-property-type.webp" class="card-img-top" alt="Property 4" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3 class="fw-semibold-style">₹77,50,000</h3>
+              <h6 class="fw-semibold-style">₹77,50,000</h6>
               <p class="other-details-of-properties">
                 5 Bedrooms • 6 Bathrooms • 250000 Sqm
               </p>
@@ -209,13 +216,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/retail-shop-property-type.webp" class="card-img-top" alt="Property 5" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 class="fw-semibold-style">₹16,90,000</h3>
+              <div class="card-body">
+              </div>
+              <h6 class="fw-semibold-style">₹16,90,000</h6>
               <p class="other-details-of-properties">
                 3 Bedrooms • 3 Bathrooms • 140000 Sqm
               </p>
@@ -224,13 +231,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/studio-apartments-realestatepropertytype.webp" class="card-img-top" alt="Property 6" loading="lazy" />
             </div>
             <div class="card-body">
-              <h3 class="fw-semibold-style">₹17,00,000</h3>
+              <h6 class="fw-semibold-style">₹17,00,000</h6>
               <p class="other-details-of-properties">
                 3 Bedrooms • 2 Bathrooms • 135000 Sqm
               </p>
@@ -239,13 +246,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/commercial-spaces-property-leasesale-type.webp" class="card-img-top" alt="Property 7" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 class="fw-semibold-style">₹19,80,000</h3>
+              <div class="card-body">
+              </div>
+              <h6 class="fw-semibold-style">₹19,80,000</h6>
               <p class="other-details-of-properties">
                 4 Bedrooms • 4 Bathrooms • 160000 Sqm
               </p>
@@ -254,13 +261,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 clonable-card property-card-item">
+        <div class="col-md-6 col-lg-3 clonable-card">
           <div class="card h-100 border-0 shadow-sm">
             <div class="img-wrapper-style col-12">
               <img src="assets/images/plotslandproperty-dealer.webp" class="card-img-top" alt="Property 8" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 class="fw-semibold-style">₹10,50,000</h3>
+              <div class="card-body">
+              </div>
+              <h6 class="fw-semibold-style">₹10,50,000</h6>
               <p class="other-details-of-properties">
                 2 Bedrooms • 2 Bathrooms • 110000 Sqm
               </p>
@@ -278,14 +285,12 @@
     <div class="container">
       <div class="row align-items-center-style">
         <div class="col-lg-6 contactus-text-section-div">
-          <div class="why-choose-header section-header">
-            <h2 class="each-section-name">Why Select Us</h2>
-            <p class="each-section-para pe-lg-5-style">
-              Get bespoke service, hands-on guidance, and versatile scheduling
-              to make buying simple and more effective.
-            </p>
-          </div>
-          <div class="row feature-list section-body">
+          <h2 class="each-section-name">Why Select Us</h2>
+          <p class="mb-4-style each-section-para pe-lg-5-style">
+            Get bespoke service, hands-on guidance, and versatile scheduling
+            to make buying simple and more effective.
+          </p>
+          <div class="row feature-list">
             <div class="col-lg-6 col-6">
               <div class="feature-item">
                 <span class="tick-icon"><i class="bi bi-check2" data-icon="bi-check2"></i></span>
@@ -318,48 +323,66 @@
     </div>
   </section>
 
-  <section class="popular-areas py-5-style" id="popularareas" data-section="popularareas">
+  <section class="popular-areas py-5-style" id="popularareas" data-section="popular-areas">
     <div class="container">
-      <div class="text-center-style section-header">
+      <div class="text-center-style mb-4-style">
         <h2 class="each-section-name">View All Listings in Top Regions</h2>
         <p class="each-section-para">
           Browse homes found locally near you now.
         </p>
       </div>
 
-      <div class="row g-0 section-body">
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-bengaluru">
-            <p class="city-name">Bengaluru</p>
+      <div class="row g-0">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealerbangalore1.webp" alt="Bengaluru" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Bengaluru</div>
           </div>
         </div>
 
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-chennai">
-            <p class="city-name">Chennai</p>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealerclienttestimonial2.webp" alt="Chennai" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Chennai</div>
           </div>
         </div>
 
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-goa">
-            <p class="city-name">Goa</p>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealergoa3.webp" alt="Goa" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Goa</div>
           </div>
         </div>
 
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-delhi">
-            <p class="city-name">Delhi</p>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealerdelhi4.webp" alt="Delhi" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Delhi</div>
           </div>
         </div>
 
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-mumbai">
-            <p class="city-name">Mumbai</p>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealermumbai5.webp" alt="Mumbai" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Mumbai</div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2 clonable-card city-card-item">
-          <div class="city-card city-card-gurugram">
-            <p class="city-name">Gurugram</p>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="city-card">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/realestatepropertydealergurugram6.webp" alt="Gurugram" class="img-fluid" loading="lazy" />
+            </div>
+            <div class="city-name">Gurugram</div>
           </div>
         </div>
       </div>
@@ -368,29 +391,29 @@
 
   <section class="faq-section py-5-style" id="faq-section" data-section="faq-section">
     <div class="container">
-      <div class="text-center-style section-header">
+      <div class="text-center-style mb-4-style">
         <h2 class="each-section-name">Review Our Top Questions</h2>
         <p class="each-section-para">
           Browse homes found locally near you now.
         </p>
       </div>
 
-      <div class="accordion section-body" id="faqAccordion">
+      <div class="accordion" id="faqAccordion">
         <div class="accordion-item border-0 mb-4-style border-bottom">
           <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               How do I begin the purchasing phase?
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
             <div class="accordion-body col-lg-8">
-              <span class="accordion-answer">
+              <p>
                 The journey to owning a home generally entails several stages:
                 getting pre-qualified for a bank loan, browsing for residences,
                 placing an order, completing inspections, and sealing the sale.
                 It’s essential to partner with a real estate firm to assist you
                 across every part.
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -403,10 +426,10 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
             <div class="accordion-body col-lg-8">
-              <span class="accordion-answer">
+              <p>
                 Pre-approval helps visualize your budget and proves vendors
                 you're a genuine buyer.
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -419,10 +442,10 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
             <div class="accordion-body col-lg-8">
-              <span class="accordion-answer">
+              <p>
                 A knowledgeable broker can help you, facilitate deals, and offer
                 market value analysis.
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -435,10 +458,10 @@
           </h2>
           <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
             <div class="accordion-body col-lg-8">
-              <span class="accordion-answer">
+              <p>
                 Bids contain value, contingencies, and terms that suit your
                 goals.
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -451,8 +474,8 @@
           </h2>
           <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
             <div class="accordion-body col-lg-8">
-              <span class="accordion-answer">Legal contracts, site checks, and payments occur during signing
-                to formally exchange ownership.</span>
+              <p>Legal contracts, site checks, and payments occur during signing
+                to formally exchange ownership.</p>
             </div>
           </div>
         </div>
@@ -462,11 +485,11 @@
 
   <section class="testimonials-section py-3-style" id="testimonials-section" data-section="testimonials-section">
     <div class="container">
-      <div class="col-12 text-lg-start-style text-center-style section-header">
+      <div class="col-12 text-lg-start-style text-center-style">
         <h2 class="each-section-name mb-2-style">Read Our Client Reviews</h2>
         <p class="text-muted-style mb-0-style">Real reviews from our happy clients</p>
       </div>
-      <div class="row d-flex section-body">
+      <div class="row d-flex my-5-style">
         <div class="col-lg-4 mb-4-style mb-lg-0-style">
           <div class="img-wrapper-style">
             <img src="assets/images/realestatepropertydealerclienttestimonial2.webp" alt="Building" class="img-fluid rounded-start-image" />
@@ -474,8 +497,8 @@
         </div>
         <div class="col-lg-8 d-flex justify-content-center-style align-items-center-style flex-wrap">
           <div class="testimonial-section-cards">
-            <div class="col-md-6 clonable-card testimonial-card-item">
-              <div class="testimonial-card h-100">
+            <div class="col-md-5 testimonial-card">
+              <div class="h-100">
                 <div class="stars mb-2-style">
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
@@ -490,7 +513,7 @@
                 </p>
                 <div class="d-flex align-items-center-style mt-3-style">
                   <div class="img-wrapper-style col-2">
-                    <img src="assets/images/testimonials-1.webp" alt="Manisha" class="rounded-circle me-2-style" width="40" height="40" />
+                    <img src="assets/images/testimonials-1.webp" alt="Marc" class="rounded-circle me-2-style" width="40" height="40" />
                   </div>
 
                   <strong class="text-dark-style">Manisha</strong>
@@ -498,8 +521,8 @@
               </div>
             </div>
 
-            <div class="col-md-6 clonable-card testimonial-card-item">
-              <div class="testimonial-card h-100">
+            <div class="col-md-5 testimonial-card">
+              <div class="h-100">
                 <div class="stars mb-2-style">
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
@@ -514,15 +537,15 @@
                 </p>
                 <div class="d-flex align-items-center-style mt-3-style">
                   <div class="img-wrapper-style col-2">
-                    <img src="assets/images/testimonials-2.webp" alt="Samarth" class="rounded-circle me-2-style" width="40" height="40" />
+                    <img src="assets/images/testimonials-2.webp" alt="Shifaath" class="rounded-circle me-2-style" width="40" height="40" />
                   </div>
                   <strong class="text-dark-style">Samarth</strong>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-6 clonable-card testimonial-card-item">
-              <div class="testimonial-card h-100">
+            <div class="col-md-5 testimonial-card">
+              <div class="h-100">
                 <div class="stars mb-2-style">
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
@@ -537,15 +560,15 @@
                 </p>
                 <div class="d-flex align-items-center-style mt-3-style">
                   <div class="img-wrapper-style col-2">
-                    <img src="assets/images/testimonials-3.webp" alt="Indar Singh" class="rounded-circle me-2-style" width="40" height="40" loading="lazy" />
+                    <img src="assets/images/testimonials-3.webp" alt="Ifhaam" class="rounded-circle me-2-style" width="40" height="40" loading="lazy" />
                   </div>
                   <strong class="text-dark-style">Indar Singh</strong>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-6 clonable-card testimonial-card-item">
-              <div class="testimonial-card h-100">
+            <div class="col-md-5 testimonial-card">
+              <div class="h-100">
                 <div class="stars mb-2-style">
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
                   <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
@@ -560,7 +583,7 @@
                 </p>
                 <div class="d-flex align-items-center-style mt-3-style">
                   <div class="img-wrapper-style col-2">
-                    <img src="assets/images/testimonials-1.webp" alt="Lakshmi" class="rounded-circle me-2-style" width="40" height="40" loading="lazy" />
+                    <img src="assets/images/testimonials-1.webp" alt="Shahid" class="rounded-circle me-2-style" width="40" height="40" loading="lazy" />
                   </div>
                   <strong class="text-dark-style">Lakshmi</strong>
                 </div>
@@ -672,12 +695,8 @@
               </div>
             </div>
 
-            <button class="swiper-button-next" type="button" aria-label="Next testimonial">
-              <i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i>
-            </button>
-            <button class="swiper-button-prev" type="button" aria-label="Previous testimonial">
-              <i class="bi bi-chevron-left" data-icon="chevron-left" aria-hidden="true"></i>
-            </button>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
@@ -687,8 +706,8 @@
 
   <section class="contact-help-section py-5-style" id="contactus" data-section="contactus">
     <div class="container">
-      <div class="row align-items-center-style contact-help-layout">
-        <div class="col-lg-6 text-lg-start-style text-center-style section-header">
+      <div class="row align-items-center-style justify-content-between">
+        <div class="col-lg-6 text-lg-start-style text-center-style mb-4-style mb-lg-0-style">
           <h2 class="each-section-name mb-2-style">
             Still deciding on<br />your dream home?
           </h2>
@@ -697,52 +716,46 @@
           </p>
         </div>
 
-        <div class="col-lg-5 section-body">
-          <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="property-contact-form">
-            <input type="hidden" name="domain" value="">
-            <input type="hidden" name="form_key" value="contact">
-            <input type="hidden" name="page_url" value="">
-            <input type="hidden" name="_company" value="">
-
+        <div class="col-lg-5">
+          <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form>
             <div form-question-zigrow>
-              <label for="contact-name">Name</label>
-              <input id="contact-name" type="text" name="name" placeholder="Enter your name" autocomplete="name" required>
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Enter your name" required>
             </div>
 
             <div form-question-zigrow>
-              <label for="contact-address">Address</label>
-              <input id="contact-address" type="text" name="address" placeholder="Enter your address" autocomplete="street-address" required>
+              <label>Address</label>
+              <input type="text" name="address" placeholder="Enter your address" required>
             </div>
 
             <div form-question-zigrow>
-              <label for="contact-phone">Phone</label>
-              <input id="contact-phone" type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="Enter your phone number" name="phone" autocomplete="tel" title="Please enter a valid phone number." required>
+              <label>New Question</label>
+              <input type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="Enter your phone number here" name="new-question">
             </div>
 
-            <button type="submit">Submit request</button>
+            <button type="submit" class="btn btn-dark rounded-0 py-2-style w-100">
+              Submit request
+            </button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  </main>
-
-  <a href="#home" class="btn rounded-circle floating-btn" aria-label="Back to top">
-    <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
-  </a>
-
-  <footer class="footer-section py-5-style" id="footer" data-section="footer">
+  <footer class="footer-section py-5-style" id="footer-section" data-section="footer-section">
     <div class="container">
-      <div class="row gy-5 footer-main-layout py-3-style">
+      <div class="row gy-5 justify-content-between py-3-style">
         <div class="col-12 col-md-3 footer-logo-div">
           <div class="d-flex align-items-center-style">
-            <a class="navbar-brand footer-skyline-logo" href="#home" data-logo="footer">Skyline</a>
+            <a class="navbar-brand d-flex align-items-sm-center-style fw-semibold-style fs-4-style" href="#" data-logo="footer">
+              <span class="px-1-style"><i class="bi bi-triangle-fill" data-icon="bi-triangle-fill"></i></span>
+              Skyline
+            </a>
           </div>
         </div>
 
         <div class="col-12 col-md-3 footer-aboutus-div">
-          <h2 class="footer-heading">Who We Are</h2>
+          <h6 class="fs-4-style mb-3-style">Who We Are</h6>
           <p class="text-muted-style small-style mb-0-style">
             Our established firm helps clients find homes. Negotiating the
             structures and laws in the purchasing procedures.
@@ -750,16 +763,16 @@
         </div>
 
         <div class="col-12 col-md-3 footer-contactinfo-div">
-          <h2 class="footer-heading">Contact Info</h2>
-          <ul class="footer-contact-list">
-            <li class="mb-1-style"><span>B-202, Skyline Towers, Main Road, New Delhi - 110001</span></li>
-            <li class="mb-1-style"><a href="tel:+919876543210">+91-9876543210</a></li>
-            <li class="mb-1-style"><a href="mailto:contact@skylineliving.com">contact@skylineliving.com</a></li>
+          <h6 class="fs-4-style mb-3-style">Contact Info</h6>
+          <ul>
+            <li class="mb-1-style">B-202, Skyline Towers, Main Road, New Delhi - 110001 </li>
+            <li class="mb-1-style">+91-9876543210</li>
+            <li class="mb-1-style">contact@skylineliving.com</li>
           </ul>
         </div>
 
         <div class="col-12 col-md-2 footer-location-div">
-          <h2 class="footer-heading">Location</h2>
+          <h6 class="fs-4-style mb-3-style">Location</h6>
           <ul>
             <li class="mb-1-style">Kolkata</li>
             <li class="mb-1-style">Bengaluru</li>
@@ -774,23 +787,18 @@
         <div class="col-md-6 mb-3-style mb-md-0-style">
           <div class="d-flex align-items-center-style justify-content-center-style justify-content-md-start-style">
             <span class="fw-semibold-style me-3-style">Follow Us</span>
-            <div class="footer-social-icons">
-              <a href="#" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i></a>
-              <a href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
-              <a href="#" aria-label="YouTube"><i class="bi bi-youtube" data-icon="youtube" aria-hidden="true"></i></a>
+            <div class="footer-social-icons d-flex gap-3">
+              <a href="#"><i class="bi bi-twitter" data-icon="bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-instagram" data-icon="bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube" data-icon="bi-youtube"></i></a>
             </div>
           </div>
         </div>
         <div class="col-md-6 text-md-end-style text-center-style">
-          <ul class="footer-policy-links">
-            <li><a href="#" class="text-decoration-none text-dark-style">Privacy</a></li>
-            <li><a href="#" class="text-decoration-none text-dark-style">Terms</a></li>
-          </ul>
+          <a href="#" class="text-decoration-none me-3-style text-dark-style">Privacy</a>
+          <a href="#" class="text-decoration-none text-dark-style">Terms</a>
         </div>
       </div>
-    </div>
-    <div class="powered-by-zigrow-row">
-      <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
     </div>
   </footer>
 
@@ -798,11 +806,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="js/script.js?v=2.12.0-5"></script>
+  <script src="js/script.js"></script>
 
   <script>
     (function() {
-      const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
+      // Find ALL Zigrow forms
+      const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
       if (!forms.length) return;
 
       // Helper: turn FormData into a plain object
@@ -826,7 +835,7 @@
       function pickPrimaryValue(raw) {
         if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
         if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-        const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim();
+        const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
         if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
         if (nameCombo) return nameCombo;
         if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
@@ -840,27 +849,27 @@
         if (domainInput) domainInput.value = location.host;
         if (pageUrlInput) pageUrlInput.value = location.href;
 
+        // Create a container for messages if not already exists
         let msgContainer = form.querySelector('.form-submit-message');
         if (!msgContainer) {
           msgContainer = document.createElement('div');
-          msgContainer.className = 'form-submit-message';
-          msgContainer.setAttribute('role', 'status');
-          msgContainer.setAttribute('aria-live', 'polite');
+          msgContainer.className = 'form-submit-message mt-2 text-sm';
           form.appendChild(msgContainer);
         }
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
 
-          const submitBtn = form.querySelector(':scope > [type="submit"]');
+          const submitBtn = form.querySelector('[type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.dataset.oldText = submitBtn.textContent || '';
-            submitBtn.textContent = 'Submitting...';
+            submitBtn.dataset._oldText = submitBtn.innerText;
+            submitBtn.innerText = 'Submitting...';
           }
 
-          msgContainer.textContent = '';
-          msgContainer.removeAttribute('data-status');
+          // Clear previous message
+          msgContainer.innerText = '';
+          msgContainer.style.color = '';
 
           try {
             const raw = serializeForm(form);
@@ -886,20 +895,20 @@
             const data = await res.json().catch(() => ({}));
             if (res.ok && (data.ok ?? true)) {
               form.reset();
-              msgContainer.textContent = 'Thanks! Your request has been submitted.';
-              msgContainer.dataset.status = 'success';
+              msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
+              msgContainer.style.color = '#28a745'; // green success
             } else {
-              msgContainer.textContent = data.message || `Failed (HTTP ${res.status})`;
-              msgContainer.dataset.status = 'error';
+              msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
+              msgContainer.style.color = '#dc3545'; // red error
             }
           } catch (err) {
             console.error(err);
-            msgContainer.textContent = 'Something went wrong. Please try again.';
-            msgContainer.dataset.status = 'error';
+            msgContainer.innerText = '❌ Something went wrong. Please try again.';
+            msgContainer.style.color = '#dc3545';
           } finally {
             if (submitBtn) {
               submitBtn.disabled = false;
-              submitBtn.textContent = submitBtn.dataset.oldText || 'Send';
+              submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
             }
           }
         });

@@ -12,13 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
   });
 
-  navLinks.addEventListener("click", (event) => {
-    if (!event.target.closest("a")) return;
-    navLinks.classList.remove("active");
-    menuToggle.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  });
-
   // Sticky header
   const headerOffset = header.offsetHeight;
   document.body.style.setProperty("--header-offset", `${headerOffset}px`);
@@ -44,27 +37,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTop.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "auto"
-      : "smooth",
-  });
-});
-
 // gsap animations start here
-if (
-  window.innerWidth > 768 &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-  typeof gsap !== "undefined" &&
-  typeof ScrollTrigger !== "undefined"
-) {
+if (window.innerWidth > 768) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Hero Animation
-  gsap.from("#hero .hero__heading h1", {
+  gsap.from("#hero .hero-heading h1", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%", // when top of hero hits 80% of viewport
@@ -76,7 +54,7 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero__image img", {
+  gsap.from("#hero .hero-image img", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 75%",
@@ -90,7 +68,7 @@ if (
   });
 
   gsap.from(
-    "#hero .hero__content h2, #hero .hero__content p, #hero .hero__cta",
+    "#hero .hero-text h4, #hero .hero-text p, #hero .hero-text, #hero .hero-text .signature",
     {
       scrollTrigger: {
         trigger: "#hero",
@@ -105,6 +83,8 @@ if (
       ease: "power3.out",
     }
   );
+  gsap.registerPlugin(ScrollTrigger);
+
   // ===== Education Section =====
   gsap.from("#education h2", {
     scrollTrigger: {
@@ -118,9 +98,9 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#education .section-education__contact .contact-card", {
+  gsap.from("#education .contact-info .info-item", {
     scrollTrigger: {
-      trigger: "#education .section-education__contact",
+      trigger: "#education .contact-info",
       start: "top 75%",
       toggleActions: "play none none",
     },
@@ -133,7 +113,7 @@ if (
 
   gsap.from("#education .edu-item", {
     scrollTrigger: {
-      trigger: "#education .section-education__list-row",
+      trigger: "#education .education-grid",
       start: "top 70%",
       toggleActions: "play none none",
     },
@@ -157,9 +137,9 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#experience .section-experience__item", {
+  gsap.from("#experience .experience-item", {
     scrollTrigger: {
-      trigger: "#experience .section-experience__list",
+      trigger: "#experience .experience-list",
       start: "top 70%",
       toggleActions: "play none none",
     },
@@ -182,9 +162,9 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#services .section-services__desc", {
+  gsap.from("#services .services-desc", {
     scrollTrigger: {
-      trigger: "#services .section-services__desc",
+      trigger: "#services .services-desc",
       start: "top 85%",
       toggleActions: "play none none",
     },
@@ -232,7 +212,7 @@ if (
   });
 
   // ===== Clients Section =====
-  gsap.from("#clients h2", {
+  gsap.from("#clients h3", {
     scrollTrigger: {
       trigger: "#clients",
       start: "top 80%",
@@ -244,9 +224,9 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#clients .client-logo img", {
+  gsap.from("#clients .clients-logos img", {
     scrollTrigger: {
-      trigger: "#clients .section-clients__logos-row",
+      trigger: "#clients .clients-logos",
       start: "top 75%",
       toggleActions: "play none none",
     },
@@ -282,9 +262,9 @@ if (
     ease: "power3.out",
   });
 
-  gsap.from("#footer .section-footer__bottom-row", {
+  gsap.from("#footer .footer-bottom", {
     scrollTrigger: {
-      trigger: "#footer .section-footer__bottom-row",
+      trigger: "#footer .footer-bottom",
       start: "top 85%",
       toggleActions: "play none none",
     },

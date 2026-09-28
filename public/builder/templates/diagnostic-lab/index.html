@@ -21,17 +21,17 @@
     <div class="cursor"><span class="d-none"></span></div>
     <div class="cursor-outline"><span class="d-none"></span></div>
 
-    <a href="#header" id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+    <a href="#" id="backToTopBtn" class="back-to-top" aria-label="Back to top">
       <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
     </a>
 
     <!-- Navbar Section -->
-    <header id="header" class="site-navbar" data-section="header">
+    <header id="navbar" class="site-navbar" data-section="navbar">
       <div class="container">
         <nav class="site-navbar__wrap">
           <!-- Logo -->
           <div class="site-navbar__logo">
-            <span class="site-navbar__logo-text" data-logo="navbar">PointLab</span>
+            <span data-logo="navbar">PointLab</span>
           </div>
 
           <!-- Right -->
@@ -42,18 +42,13 @@
               <li><a href="#facilities">Services</a></li>
               <li><a href="#testimonials">Testimonial</a></li>
               <li><a href="#newsletter-section">Contact Us</a></li>
-              <li class="site-navbar__mobile-item">
-                <div class="site-navbar__mobile-actions zg-align-center">
-                  <a href="tel:+9123456789" class="site-navbar__cta" data-btn="nav">Make An Appointment</a>
-                </div>
-              </li>
             </ul>
 
-            <div class="site-navbar__btns zg-align-center">
+            <div class="site-navbar__btns">
               <a
                 href="tel:+9123456789"
                 class="site-navbar__cta"
-                data-btn="nav"
+                data-btn="navbar"
               >
                 Make An Appointment
               </a>
@@ -69,13 +64,14 @@
             aria-controls="navMenu"
             aria-expanded="false"
           >
-            <i class="bi bi-list" data-icon="menu"></i>
+            <span class="site-navbar__bar" data-icon="menu-line"></span>
+            <span class="site-navbar__bar" data-icon="menu-line"></span>
+            <span class="site-navbar__bar" data-icon="menu-line"></span>
           </button>
         </nav>
       </div>
     </header>
 
-    <main>
     <!-- hero section -->
     <section id="hero" class="hero-section" data-section="hero">
       <div class="container">
@@ -96,7 +92,7 @@
               your treatment decisions stay confident and timely.
             </p>
 
-            <div class="hero-section__buttons zg-align-center">
+            <div class="hero-section__buttons">
               <a
                 href="tel:+9123456789"
                 class="hero-section__btn hero-section__btn--primary"
@@ -105,7 +101,7 @@
                 Make An Appointment
               </a>
               <a
-                href="#facilities"
+                href="#services"
                 class="hero-section__btn hero-section__btn--outline"
                 data-btn="hero"
               >
@@ -152,37 +148,37 @@
           <!-- Logos -->
           <div class="col-lg-6 col-md-6">
             <div class="row g-4 certification-section__logos">
-              <div class="col-4 col-sm-3 clonable-card">
+              <div class="col-4 col-sm-3">
                 <div class="certification-section__logo">
                   <img
-                    src="assets/images/logo.webp"
+                    src="assets/images/logo.png"
                     alt="NABL Approved Laboratory"
                   />
                 </div>
               </div>
 
-              <div class="col-4 col-sm-3 clonable-card">
+              <div class="col-4 col-sm-3">
                 <div class="certification-section__logo">
                   <img
-                    src="assets/images/logo.webp"
+                    src="assets/images/logo.png"
                     alt="ISO 15189 Accredited"
                   />
                 </div>
               </div>
 
-              <div class="col-4 col-sm-3 clonable-card">
+              <div class="col-4 col-sm-3">
                 <div class="certification-section__logo">
                   <img
-                    src="assets/images/logo.webp"
+                    src="assets/images/logo.png"
                     alt="Clinical Pathology Certified"
                   />
                 </div>
               </div>
 
-              <div class="col-4 col-sm-3 clonable-card">
+              <div class="col-4 col-sm-3">
                 <div class="certification-section__logo">
                   <img
-                    src="assets/images/logo.webp"
+                    src="assets/images/logo.png"
                     alt="Hospital Partner Certified"
                   />
                 </div>
@@ -213,11 +209,11 @@
               <div class="facilities-left__overlay">
                 <h4>Our Main Service</h4>
                 <p>
-                  Comprehensive blood tests, thyroid &amp; diabetes screening, and
+                  Comprehensive blood tests, thyroid & diabetes screening, and
                   preventive health packages with accurate reports and quick
                   turnaround.
                 </p>
-                <a href="#expertise">
+                <a href="#">
                   Learn More
                   <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
                 </a>
@@ -229,14 +225,14 @@
           <div class="col-lg-6">
             <div class="row g-0 h-100">
               <!-- TOP WHITE (50%) -->
-              <div class="col-md-6 clonable-card">
+              <div class="col-md-6">
                 <div class="facilities-card facilities-card--white h-100">
                   <h4>Our Facilities</h4>
                   <p>
                     Automated analyzers, certified technicians, and strict
                     hygiene protocols to ensure precise diagnostics.
                   </p>
-                  <a href="#expertise">
+                  <a href="#">
                     Learn More
                     <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
                   </a>
@@ -244,14 +240,14 @@
               </div>
 
               <!-- TOP GREEN (50%) -->
-              <div class="col-md-6 clonable-card">
+              <div class="col-md-6">
                 <div class="facilities-card facilities-card--green h-100">
                   <h4>Our Location</h4>
                   <p>
                     E-123, ABC Plaza, XYZ Street,<br />
                     New Delhi – 110077
                   </p>
-                  <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+                  <a href="#">
                     Get Directions
                     <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
                   </a>
@@ -259,7 +255,7 @@
               </div>
 
               <!-- BOTTOM BLUE (100%) -->
-              <div class="col-12 clonable-card">
+              <div class="col-12">
                 <div class="facilities-card facilities-card--blue h-100">
                   <h4>Make An Appointment</h4>
                   <p>
@@ -267,11 +263,11 @@
                     Reports delivered via SMS/Email.
                   </p>
 
-                  <div class="appointment-actions zg-align-center">
+                  <div class="appointment-actions">
                     <a
                       href="tel:+919123456789"
                       class="btn-outline"
-                      data-btn="appointment"
+                      data-btn="apointment"
                     >
                       Start Now
                     </a>
@@ -358,10 +354,9 @@
         <div class="reviews-section__box">
           <div class="row g-0">
             <!-- Overall Rating -->
-            <div class="col-12 col-md-6 col-lg-3 clonable-card">
-              <div class="reviews-card-surface reviews-card-surface--overall">
+            <div class="col-12 col-md-6 col-lg-3">
               <a
-                href="#testimonials"
+                href="#"
                 class="reviews-section__card reviews-section__card--overall"
                 aria-label="Overall rating"
               >
@@ -390,21 +385,19 @@
                     data-icon="star"
                     aria-hidden="true"
                   ></i>
-                  <span class="reviews-section__star-muted"><i
-                    class="bi bi-star-fill"
+                  <i
+                    class="bi bi-star-fill reviews-section__star-muted"
                     data-icon="star"
                     aria-hidden="true"
-                  ></i></span>
+                  ></i>
                 </span>
               </a>
-              </div>
             </div>
 
             <!-- Google -->
-            <div class="col-12 col-md-6 col-lg-3 clonable-card">
-              <div class="reviews-card-surface reviews-card-surface--platform">
+            <div class="col-12 col-md-6 col-lg-3">
               <a
-                href="#testimonials"
+                href="#"
                 class="reviews-section__card reviews-section__card--platform"
                 aria-label="Google rating"
               >
@@ -417,22 +410,20 @@
                   >
                 </span>
               </a>
-              </div>
             </div>
 
             <!-- Lab Verified -->
-            <div class="col-12 col-md-6 col-lg-3 clonable-card">
-              <div class="reviews-card-surface reviews-card-surface--platform">
+            <div class="col-12 col-md-6 col-lg-3">
               <a
-                href="#testimonials"
+                href="#"
                 class="reviews-section__card reviews-section__card--platform"
                 aria-label="Verified rating"
               >
-                <span class="reviews-section__icon"><i
-                  class="bi bi-star-fill"
+                <i
+                  class="bi bi-star-fill reviews-section__icon"
                   data-icon="verified-star"
                   aria-hidden="true"
-                ></i></span>
+                ></i>
 
                 <span class="reviews-section__meta">
                   <span class="reviews-section__score">4.6/5</span>
@@ -441,22 +432,20 @@
                   >
                 </span>
               </a>
-              </div>
             </div>
 
             <!-- Facebook -->
-            <div class="col-12 col-md-6 col-lg-3 clonable-card">
-              <div class="reviews-card-surface reviews-card-surface--platform">
+            <div class="col-12 col-md-6 col-lg-3">
               <a
-                href="#testimonials"
+                href="#"
                 class="reviews-section__card reviews-section__card--platform"
                 aria-label="Facebook rating"
               >
-                <span class="reviews-section__icon"><i
-                  class="bi bi-facebook"
+                <i
+                  class="bi bi-facebook reviews-section__icon"
                   data-icon="facebook"
                   aria-hidden="true"
-                ></i></span>
+                ></i>
 
                 <span class="reviews-section__meta">
                   <span class="reviews-section__score">4.7/5</span>
@@ -465,7 +454,6 @@
                   >
                 </span>
               </a>
-              </div>
             </div>
           </div>
         </div>
@@ -492,12 +480,11 @@
 
         <div class="row g-4">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="expertise-card-surface">
-            <a href="#newsletter-section" class="expertise-section__card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="expertise-section__card">
               <div class="expertise-section__img-wrap">
                 <img
-                  src="assets/images/diagnostic-pathology-testing.webp"
+                  src="assets/images/diagnostic-Expertise-2.webp"
                   alt="Pathology Testing"
                   class="expertise-section__img"
                 />
@@ -519,17 +506,15 @@
                 </span>
               </div>
             </a>
-            </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="expertise-card-surface">
-            <a href="#newsletter-section" class="expertise-section__card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="expertise-section__card">
               <div class="expertise-section__img-wrap">
                 <img
-                  src="assets/images/diagnostic-blood-biochemistry.webp"
-                  alt="Blood Test &amp; Biochemistry"
+                  src="assets/images/diagnostic-Expertise-1.webp"
+                  alt="Blood Test & Biochemistry"
                   class="expertise-section__img"
                 />
               </div>
@@ -552,16 +537,14 @@
                 </span>
               </div>
             </a>
-            </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="expertise-card-surface">
-            <a href="#newsletter-section" class="expertise-section__card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="#" class="expertise-section__card">
               <div class="expertise-section__img-wrap">
                 <img
-                  src="assets/images/diagnostic-clinical-research.webp"
+                  src="assets/images/diagnostic-Expertise-3.webp"
                   alt="Clinical Research Support"
                   class="expertise-section__img"
                 />
@@ -585,7 +568,6 @@
                 </span>
               </div>
             </a>
-            </div>
           </div>
         </div>
       </div>
@@ -620,7 +602,7 @@
                   data-icon="play"
                   aria-hidden="true"
                 ></i>
-                <span class="trust-us-section__play-text"
+                <span class="trust-us-section__play-text" data-btn="trust-us"
                   >Play The Video</span
                 >
               </a>
@@ -639,7 +621,7 @@
 
               <div class="row g-3">
                 <!-- Feature 1 -->
-                <div class="col-12 col-md-6 clonable-card">
+                <div class="col-12 col-md-6">
                   <div class="trust-us-section__feature">
                     <span class="trust-us-section__icon">
                       <i
@@ -661,7 +643,7 @@
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="col-12 col-md-6 clonable-card">
+                <div class="col-12 col-md-6">
                   <div class="trust-us-section__feature">
                     <span class="trust-us-section__icon">
                       <i
@@ -683,7 +665,7 @@
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="col-12 col-md-6 clonable-card">
+                <div class="col-12 col-md-6">
                   <div class="trust-us-section__feature">
                     <span class="trust-us-section__icon">
                       <i
@@ -705,7 +687,7 @@
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="col-12 col-md-6 clonable-card">
+                <div class="col-12 col-md-6">
                   <div class="trust-us-section__feature">
                     <span class="trust-us-section__icon">
                       <i
@@ -756,39 +738,75 @@
 
         <!-- Image Grid (Bootstrap cols) -->
         <div class="row g-4">
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-1" role="img" aria-label="Case study: blood test screening">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-1.webp"
+                  alt="Case study: blood test screening"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-2" role="img" aria-label="Case study: lab sample processing">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-2.webp"
+                  alt="Case study: lab sample processing"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-3" role="img" aria-label="Case study: pathology analysis">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-3.webp"
+                  alt="Case study: pathology analysis"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-4" role="img" aria-label="Case study: microscope research">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-4.webp"
+                  alt="Case study: microscope research"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-5" role="img" aria-label="Case study: patient testing workflow">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-5.webp"
+                  alt="Case study: patient testing workflow"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
-            <div class="case-studies-section__item case-study-image-6" role="img" aria-label="Case study: report verification">
-              <span class="d-none"></span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="case-studies-section__item">
+              <div class="case-studies-section__img-wrap">
+                <img
+                  src="assets/images/diagnostic-case-studies-6.webp"
+                  alt="Case study: report verification"
+                  class="case-studies-section__img"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -816,7 +834,7 @@
               </p>
 
               <a
-                href="#testimonials"
+                href="#"
                 class="testimonial-section__viewall"
                 aria-label="View all testimonials"
               >
@@ -915,7 +933,7 @@
       <div class="container">
         <div class="row g-4">
           <!-- Testimonial 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="testimonials-2__card">
               <div class="testimonials-2__header">
                 <span class="testimonials-2__stars">
@@ -937,7 +955,7 @@
               <div class="testimonials-2__footer">
                 <div class="testimonials-2__avatar">
                   <img
-                    src="assets/images/testimonials-2.webp"
+                    src="assets/images/testimonials-2.png"
                     alt="Manish Singh"
                   />
                 </div>
@@ -950,7 +968,7 @@
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="testimonials-2__card">
               <div class="testimonials-2__header">
                 <span class="testimonials-2__stars">
@@ -972,7 +990,7 @@
               <div class="testimonials-2__footer">
                 <div class="testimonials-2__avatar">
                   <img
-                    src="assets/images/testimonials-3.webp"
+                    src="assets/images/testimonials-3.png"
                     alt="Navneet Singh"
                   />
                 </div>
@@ -985,7 +1003,7 @@
           </div>
 
           <!-- Testimonial 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="testimonials-2__card">
               <div class="testimonials-2__header">
                 <span class="testimonials-2__stars">
@@ -1006,7 +1024,7 @@
               <div class="testimonials-2__footer">
                 <div class="testimonials-2__avatar">
                   <img
-                    src="assets/images/testimonials-1.webp"
+                    src="assets/images/testimonials-1.png"
                     alt="Nicky Verma"
                   />
                 </div>
@@ -1040,7 +1058,7 @@
         <!-- Team Members -->
         <div class="row g-4">
           <!-- Member 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="team-section__card">
               <div class="team-section__img-wrap">
                 <img
@@ -1059,7 +1077,7 @@
           </div>
 
           <!-- Member 2 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="team-section__card">
               <div class="team-section__img-wrap">
                 <img
@@ -1076,7 +1094,7 @@
           </div>
 
           <!-- Member 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="team-section__card">
               <div class="team-section__img-wrap">
                 <img
@@ -1116,12 +1134,11 @@
                 decisions.
               </p>
 
-              <div class="appointment-section__actions zg-align-center">
               <a
                 href="tel:+9123456789"
                 class="appointment-section__cta"
                 aria-label="Make an appointment"
-                data-btn="appointment"
+                data-btn="apointment"
               >
                 Make An Appointment
                 <i
@@ -1130,7 +1147,6 @@
                   aria-hidden="true"
                 ></i>
               </a>
-              </div>
             </div>
           </div>
         </div>
@@ -1141,7 +1157,7 @@
     <section
       id="newsletter-section"
       class="newsletter-section py-6"
-      data-section="newsletter-section"
+      data-section="newsletter"
     >
       <div class="container">
         <!-- TOP ROW -->
@@ -1169,29 +1185,24 @@
             <div class="newsletter-section__right">
               <form
                 id="newsletterFormFix"
-                action="https://api.zigrow.com/api/forms/submit"
+                action="https://api-uat.zigrow.com/api/forms/submit"
                 method="post"
                 data-zigrow-form
                 class="newsletter-section__form"
               >
-                <input type="hidden" name="domain" value="" />
-                <input type="hidden" name="form_key" value="newsletter" />
-                <input type="hidden" name="page_url" value="" />
-                <input type="hidden" name="_company" value="" />
-                <div form-question-zigrow>
-                  <label for="newsletter-email">Email address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="newsletter-email"
-                    placeholder="Your email address"
-                    required
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your email address"
+                  aria-label="Email address"
+                  required
+                />
 
                 <button
                   type="submit"
                   class="newsletter-section__btn"
+                  data-btn="newsleater"
                 >
                   Subscribe
                 </button>
@@ -1202,7 +1213,7 @@
 
         <!-- BOTTOM ROW -->
         <div class="row pt-5 g-4 newsletter-section__bottom-row">
-          <div class="col-lg-4 col-md-6 clonable-card">
+          <div class="col-lg-4 col-md-6">
             <div class="newsletter-section__contact">
               <span class="newsletter-section__contact-icon">
                 <i class="bi bi-geo-alt-fill" data-icon="location"></i>
@@ -1217,7 +1228,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 clonable-card">
+          <div class="col-lg-4 col-md-6">
             <div class="newsletter-section__contact">
               <span class="newsletter-section__contact-icon">
                 <i class="bi bi-telephone-fill" data-icon="phone"></i>
@@ -1230,7 +1241,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 clonable-card">
+          <div class="col-lg-4 col-md-6">
             <div class="newsletter-section__contact">
               <span class="newsletter-section__contact-icon">
                 <i class="bi bi-envelope-fill" data-icon="mail"></i>
@@ -1246,11 +1257,9 @@
       </div>
     </section>
 
-    </main>
-
     <!-- footer section -->
-    <footer
-      id="footer"
+    <section
+      id="footer-section"
       class="footer-section py-6"
       data-section="footer"
     >
@@ -1280,25 +1289,25 @@
 
               <ul class="footer-section__list">
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#facilities">Sample Collection</a>
+                  <a class="footer-section__link" href="#">Sample Collection</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#expertise"
+                  <a class="footer-section__link" href="#"
                     >Blood &amp; Biochemistry</a
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#expertise"
+                  <a class="footer-section__link" href="#"
                     >Thyroid &amp; Diabetes Tests</a
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#expertise"
+                  <a class="footer-section__link" href="#"
                     >Pathology Screening</a
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#newsletter-section"
+                  <a class="footer-section__link" href="#"
                     >Home Sample Pickup</a
                   >
                 </li>
@@ -1313,24 +1322,24 @@
 
               <ul class="footer-section__list">
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#research">About Our Lab</a>
+                  <a class="footer-section__link" href="#">About Our Lab</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#appointment">Book a Test</a>
+                  <a class="footer-section__link" href="#">Book a Test</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#facilities">Health Packages</a>
+                  <a class="footer-section__link" href="#">Health Packages</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#case-studies"
+                  <a class="footer-section__link" href="#"
                     >Reports &amp; Support</a
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#team">Meet Our Team</a>
+                  <a class="footer-section__link" href="#">Meet Our Team</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#newsletter-section">Contact</a>
+                  <a class="footer-section__link" href="#">Contact</a>
                 </li>
               </ul>
             </div>
@@ -1356,7 +1365,7 @@
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#testimonials">Testimonials</a>
+                  <a class="footer-section__link" href="#">Testimonials</a>
                 </li>
                 <li class="footer-section__item">
                   <a class="footer-section__link" href="#">FAQs</a>
@@ -1378,16 +1387,14 @@
           </div>
 
           <div class="col-md-6">
-              <span class="footer-section__bottom-text footer-section__bottom-text--right">Built for dependable diagnostic care</span>
-          </div>
-        </div>
-        <div class="footer-attribution row">
-          <div class="col-12">
-            <p><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
+            <span
+              class="footer-section__bottom-text footer-section__bottom-text--right"
+              >Powered by Zigrow</span
+            >
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1400,8 +1407,9 @@
     <script src="js/app.js"></script>
     <script>
       (function () {
-          const forms = Array.from(
-          document.querySelectorAll("form[data-zigrow-form]")
+        // Find ALL Zigrow forms
+        const forms = Array.from(
+          document.querySelectorAll("[data-zigrow-form]")
         );
         if (!forms.length) return;
 
@@ -1410,10 +1418,15 @@
           const fd = new FormData(form);
           const raw = {};
           for (const [name, value] of fd.entries()) {
-            const existing = raw[name];
-            if (existing === undefined) raw[name] = value;
-            else if (Array.isArray(existing)) existing.push(value === "" ? true : value);
-            else raw[name] = [existing, value === "" ? true : value];
+            const el = form.elements[name];
+            const isGroup =
+              el && el.length && el[0] && el[0].type === "checkbox";
+            if (isGroup) {
+              if (!raw[name]) raw[name] = [];
+              raw[name].push(value === "" ? true : value);
+            } else {
+              raw[name] = value;
+            }
           }
           return raw;
         }
@@ -1424,7 +1437,7 @@
             return String(raw.email).trim();
           if (raw.phone && String(raw.phone).trim())
             return String(raw.phone).trim();
-          const nameCombo = [raw.first_name, raw.last_name]
+          const nameCombo = [raw.firstName, raw.lastName]
             .filter(Boolean)
             .join(" ")
             .trim();
@@ -1443,26 +1456,27 @@
           if (domainInput) domainInput.value = location.host;
           if (pageUrlInput) pageUrlInput.value = location.href;
 
-          let message = form.querySelector(".form-submit-message");
-          if (!message) {
-            message = document.createElement("div");
-            message.className = "form-submit-message";
-            message.setAttribute("role", "status");
-            message.setAttribute("aria-live", "polite");
-            form.appendChild(message);
+          // Create a container for messages if not already exists
+          let msgContainer = form.querySelector(".form-submit-message");
+          if (!msgContainer) {
+            msgContainer = document.createElement("div");
+            msgContainer.className = "form-submit-message mt-2 text-sm";
+            form.appendChild(msgContainer);
           }
 
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const submitButton = form.querySelector(':scope > [type="submit"]');
-            if (submitButton) {
-              submitButton.disabled = true;
-              submitButton.dataset.oldText = submitButton.textContent || "";
-              submitButton.textContent = "Submitting...";
+            const submitBtn = form.querySelector('[type="submit"]');
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.dataset._oldText = submitBtn.innerText;
+              submitBtn.innerText = "Submitting...";
             }
-            message.textContent = "";
-            message.removeAttribute("data-status");
+
+            // Clear previous message
+            msgContainer.innerText = "";
+            msgContainer.style.color = "";
 
             try {
               const raw = serializeForm(form);
@@ -1488,29 +1502,33 @@
 
               if (raw._company) body.set("_company", raw._company);
 
-              const response = await fetch(form.action, {
+              const res = await fetch(form.action, {
                 method: "POST",
                 headers: { Accept: "application/json" },
                 body,
               });
 
-              const result = await response.json().catch(() => ({}));
-              if (response.ok && (result.ok ?? true)) {
+              const data = await res.json().catch(() => ({}));
+              if (res.ok && (data.ok ?? true)) {
                 form.reset();
-                message.textContent = "Thanks! Your request has been submitted.";
-                message.dataset.status = "success";
+                msgContainer.innerText =
+                  "✅ Thanks! Your request has been submitted.";
+                msgContainer.style.color = "#28a745"; // green success
               } else {
-                message.textContent = result.message || `Failed (HTTP ${response.status})`;
-                message.dataset.status = "error";
+                msgContainer.innerText = `❌ ${
+                  data.message || `Failed (HTTP ${res.status})`
+                }`;
+                msgContainer.style.color = "#dc3545"; // red error
               }
-            } catch (error) {
-              console.error(error);
-              message.textContent = "Something went wrong. Please try again.";
-              message.dataset.status = "error";
+            } catch (err) {
+              console.error(err);
+              msgContainer.innerText =
+                "❌ Something went wrong. Please try again.";
+              msgContainer.style.color = "#dc3545";
             } finally {
-              if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = submitButton.dataset.oldText || "Send";
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = submitBtn.dataset._oldText || "Send";
               }
             }
           });

@@ -45,6 +45,7 @@ body {
   width: 100%;
   z-index: 1000;
   transition: background 0.3s ease, padding 0.3s ease;
+  /* ✅ Responsive Styles */
 }
 .navbar.sticky {
   position: fixed;
@@ -126,9 +127,6 @@ body {
 }
 .navbar .nav-wrapper .menu-toggle.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-}
-.navbar {
-  /* ✅ Responsive Styles */
 }
 @media (max-width: 992px) {
   .navbar .nav-wrapper .nav-links {
@@ -244,6 +242,8 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   border: 1px solid #e5e5e5;
   transition: transform 0.3s ease;
+  /* First child (left corners rounded) */
+  /* Last child (right corners rounded) */
 }
 .services .services-row .service-card:hover {
   transform: translateY(-10px);
@@ -283,15 +283,9 @@ body {
 .services .services-row .service-card a:hover {
   color: var(--primary-colors, #32cd32);
 }
-.services .services-row .service-card {
-  /* First child (left corners rounded) */
-}
 .services .services-row .service-card:first-child {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-}
-.services .services-row .service-card {
-  /* Last child (right corners rounded) */
 }
 .services .services-row .service-card:last-child {
   border-top-right-radius: 12px;
@@ -300,6 +294,7 @@ body {
 
 .about-us {
   background: #f2f1f1;
+  /* ✅ Responsive tweaks */
 }
 .about-us .about-content .section-subtitle {
   text-transform: uppercase;
@@ -354,9 +349,6 @@ body {
 .about-us .about-images .image-grid .img-2 {
   aspect-ratio: 4/3;
 }
-.about-us {
-  /* ✅ Responsive tweaks */
-}
 @media (max-width: 992px) {
   .about-us .about-content {
     text-align: center;
@@ -376,6 +368,8 @@ body {
 
 .impact .impact-wrapper {
   /* ---------- Header ---------- */
+  /* ---------- Stats ---------- */
+  /* ---------- CTA Box ---------- */
 }
 .impact .impact-wrapper .impact-header {
   margin-bottom: 2.5rem;
@@ -410,11 +404,9 @@ body {
     margin: 0 auto 0.4rem;
   }
 }
-.impact .impact-wrapper {
-  /* ---------- Stats ---------- */
-}
 .impact .impact-wrapper .impact-stats {
   margin-bottom: 3rem;
+  /* Desktop: add right border between stat boxes */
 }
 .impact .impact-wrapper .impact-stats .col {
   position: relative;
@@ -432,9 +424,6 @@ body {
   font-size: 0.95rem;
   color: var(--secondary-colors, #666);
 }
-.impact .impact-wrapper .impact-stats {
-  /* Desktop: add right border between stat boxes */
-}
 @media (min-width: 992px) {
   .impact .impact-wrapper .impact-stats .col:not(:last-child) .stat-box {
     border-right: 2px solid #e5e5e5;
@@ -451,9 +440,6 @@ body {
     border-right: none;
     border-bottom: none;
   }
-}
-.impact .impact-wrapper {
-  /* ---------- CTA Box ---------- */
 }
 .impact .impact-wrapper .impact-cta {
   background: var(--territory-colors, #a8e063);
@@ -496,6 +482,7 @@ body {
 
 .movement {
   background: #f2f1f1;
+  /* Responsive */
 }
 .movement .outline {
   width: 100%;
@@ -553,9 +540,6 @@ body {
   color: var(--leight-colors, #fff);
   border: none;
 }
-.movement {
-  /* Responsive */
-}
 @media (max-width: 992px) {
   .movement .movement-wrapper {
     text-align: center;
@@ -590,6 +574,8 @@ body {
 }
 .stories .stories-grid {
   border-radius: 12px;
+  /* Left/right styling on desktop */
+  /* Mobile tweaks */
 }
 .stories .stories-grid .story-card {
   background: var(--leight-colors, #fff);
@@ -636,16 +622,10 @@ body {
   color: var(--primary-colors, #32cd32);
   border-bottom: 1px solid var(--primary-colors, #32cd32);
 }
-.stories .stories-grid {
-  /* Left/right styling on desktop */
-}
 @media (min-width: 992px) {
   .stories .stories-grid .story-card:first-child {
     border-right: 2px solid #e5e5e5;
   }
-}
-.stories .stories-grid {
-  /* Mobile tweaks */
 }
 @media (max-width: 768px) {
   .stories .stories-grid {
@@ -765,6 +745,7 @@ body {
   font-size: 0.95rem;
   color: var(--secondary-colors, #666);
   /* ---------- TOP FOOTER ---------- */
+  /* ---------- BOTTOM FOOTER ---------- */
 }
 .site-footer .footer-top {
   margin-bottom: 2rem;
@@ -805,9 +786,6 @@ body {
 }
 .site-footer .footer-top .addreass p a:hover {
   text-decoration: underline;
-}
-.site-footer {
-  /* ---------- BOTTOM FOOTER ---------- */
 }
 .site-footer .footer-bottom {
   border-top: 1px solid #ddd;

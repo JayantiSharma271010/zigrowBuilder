@@ -1,5 +1,5 @@
 // for the navlink
-const navLinks = document.querySelectorAll("#navbarMenu .nav-link");
+const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach((link) => {
   link.addEventListener("click", function () {
     // Remove active class from all links
@@ -13,27 +13,18 @@ navLinks.forEach((link) => {
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger-toggle");
   const menu = document.getElementById("navbarMenu");
-  const hamburgerIcon = hamburger?.querySelector("[data-icon]");
 
-  if (!hamburger || !menu) return;
+  const bsCollapse = new bootstrap.Collapse(menu, {
+    toggle: false,
+  });
 
-  function syncMenuControl(isOpen) {
-    menu.classList.toggle("show", isOpen);
-    hamburger.classList.toggle("is-active", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-    hamburger.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-    if (hamburgerIcon) {
-      hamburgerIcon.classList.toggle("bi-list", !isOpen);
-      hamburgerIcon.classList.toggle("bi-x-lg", isOpen);
-      hamburgerIcon.dataset.icon = isOpen ? "close-menu" : "menu";
-    }
-  }
-
+  // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
-      syncMenuControl(false);
+      bsCollapse.hide();
     } else {
-      syncMenuControl(true);
+      bsCollapse.show();
     }
   });
 
@@ -41,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       if (menu.classList.contains("show")) {
-        syncMenuControl(false);
+        bsCollapse.hide();
+        hamburger.classList.remove("is-active");
       }
     });
   });
@@ -53,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
       !hamburger.contains(e.target) &&
       menu.classList.contains("show")
     ) {
-      syncMenuControl(false);
+      bsCollapse.hide();
+      hamburger.classList.remove("is-active");
     }
   });
 });
@@ -84,40 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
   sections.forEach((section) => observer.observe(section));
 });
 
-// Keep the course tabs functional even when the optional Bootstrap runtime is unavailable.
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof window.bootstrap !== "undefined") return;
-
-  const tabButtons = document.querySelectorAll('#nav-tab [data-bs-toggle="tab"]');
-  const tabPanes = document.querySelectorAll('#nav-tabContent .tab-pane');
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      tabButtons.forEach((item) => {
-        item.classList.remove("active");
-        item.setAttribute("aria-selected", "false");
-      });
-      tabPanes.forEach((pane) => pane.classList.remove("active", "show"));
-
-      const target = document.querySelector(button.dataset.bsTarget);
-      button.classList.add("active");
-      button.setAttribute("aria-selected", "true");
-      target?.classList.add("active", "show");
-    });
-  });
-});
-
 //////// GSAP Animation starts from here
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 768 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    if (typeof window.gsap === "undefined" || typeof window.ScrollTrigger === "undefined") return;
-
+  if (window.innerWidth >= 768) {
     // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
     /// Animation for the navbar
     // Animate navbar container
-    gsap.from(".site-header", {
+    gsap.from("#navbar", {
       y: -100,
       opacity: 0,
       duration: 1,
@@ -125,7 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animate logo and heading
-    gsap.from(".brand-logo", {
+    gsap.from(".navbar-logo-image, .footer-and-navbar-heading", {
       x: -50,
       opacity: 0,
       duration: 0.8,
@@ -278,7 +246,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animate tabs
-    gsap.from("#nav-tab .nav-link", {
+    gsap.from("#languageTabs li", {
       scrollTrigger: {
         trigger: "#ourcourses",
         start: "top 75%",
@@ -290,10 +258,23 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "back.out(1.7)",
     });
 
-    // Animate course cards container and cards when they appear
-    gsap.from("#nav-tabContent", {
+    // Animate dropdown (mobile)
+    gsap.from(".choose-your-language-dropdown", {
       scrollTrigger: {
-        trigger: "#nav-tabContent",
+        trigger: "#ourcourses",
+        start: "top 75%",
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.5,
+      ease: "back.out(1.7)",
+    });
+
+    // Animate course cards container and cards when they appear
+    gsap.from("#courseContainer", {
+      scrollTrigger: {
+        trigger: "#courseContainer",
         start: "top 85%",
       },
       opacity: 0,
@@ -302,9 +283,9 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from("#nav-tabContent .tab-pane.active .course-card-column", {
+    gsap.from("#courseContainer > div", {
       scrollTrigger: {
-        trigger: "#nav-tabContent",
+        trigger: "#courseContainer",
         start: "top 85%",
       },
       y: 30,
@@ -342,7 +323,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Animate the right text content (heading + paragraph)
     gsap.from(
-      "#why-section .why-header > *",
+      ".section4 > .container > .row > .col-lg-6.d-flex > div:first-child > *",
       {
         scrollTrigger: {
           trigger: ".section4",
@@ -399,7 +380,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Add a subtle infinite pulse/bounce animation to the play button to grab attention
-    gsap.to("#tutorial .tutorial-play-control", {
+    gsap.to("#tutorial a > div", {
       scale: 1.1,
       repeat: -1,
       yoyo: true,

@@ -1,0 +1,4036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seeds - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Tinos:wght@400;700&family=Marcellus&display=swap"
+  rel="stylesheet"
+/>
+
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #6B7280;
+      --border-radius-btn: 0px;
+      --box-radius: 0px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #A9B4C2;
+      --secondary-colors: #2C2C2C;
+      --territory-colors: #D9DBF1;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 8px 16px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: none;
+      --btn-box-shadow-hover: 0 4px 10px rgba(0,0,0,0.06);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #2C2C2C;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-section-hover: 0 6px 16px rgba(0,0,0,0.08);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 15.5px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 18px;
+      --fs-h3-base: 48px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 48px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #2C2C2C ;
+      font-family: Inter;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+.white-border-btn{
+  background-color: #fff;
+      color: var(--secondary-colors) ;
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+      text-decoration: none ;
+      
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+}
+
+ .white-border-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Playfair Display ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #2C2C2C;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+ 
+
+
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top custom-navbar">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold" href="#">
+          Seeds
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav align-lg-custom-center -center">
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#products">Products</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#portfolio">Portfolio</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#testimonials">Testimonials</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#pricing">Pricing</a>
+            </li>
+          
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" class="primary-btn">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+    .custom-navbar {
+  padding: 0.8rem 0;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 1.2rem;
+  color: var(--para-muted);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-colors);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sticky navbar small-custom shadow on scroll */
+.sticky-top.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile menu background */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+</style>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".sticky-top");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
+
+
+    <!-- Minimal -->
+<section class="hero-zigrow-section_8 d-flex align-custom-center" data-section="hero">
+  <div class="container">
+    <div class="row justify-custom-center">
+      <div class="col-lg-10 col-md-11 col-12 text-custom-center">
+
+        
+
+        <p class="intro-text">
+          Fresh Seeds from <span class="highlight">Local Farmers</span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero-zigrow-section_8 {
+  min-height: 95vh;
+  padding: 60px 20px;
+  background: radial-gradient(ellipse at top right, #f0f0ff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+
+/* Typography */
+.intro-text {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+  margin: 0 auto;
+  max-width: 820px;
+  text-custom-wrap: balance;
+  letter-spacing: -0.5px;
+}
+
+/* Gradient Highlight */
+.highlight {
+  background: linear-gradient(to right, var(--primary-colors), var(--territory-colors));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .intro-text {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 2rem;
+  }
+
+  .highlight {
+    white-space: normal;
+  }
+}}
+</style>
+
+  
+    <!-- ✅ Certified Excellence Section -->
+<section class="product-zigrow-section_3 section-padding" id="products" data-section="products">
+  <div class="container">
+    <div class="row align-custom-center mb-custom-5">
+      <div class="col-md-7">
+        <p class="sub-heading"> Products We Offer</p>
+        <h2 class=" lh-custom-sm mb-custom-3 main-heading" ">Our Premium Seeds</h2>
+      </div>
+      <div class=" col-md-5 text-custom-md-end">
+          <p class="para-muted font-body-sm mb-custom-2">
+            Quality seeds sourced directly from farmers for your needs. <br>
+              Grow your own vegetables with our organic seeds, perfect for home gardens.
+          </p>
+          <div class="link-group">
+            <a href="#" class="link-red ms-custom-4">
+              Purchase <span>&rarr;</span>
+            </a>
+          </div>
+      </div>
+    </div>
+      
+    <div class="row g-4">
+      <!-- Card -->
+      <div class="col-sm-6 col-md-4 col-lg-2-4 clonable-card">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1646980720696-5520b992c129?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyOXx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjBwcm9kdWN0JTIwY2xvc2UlMjB1cHxlbnwxfHx8fDE3NzIxMjM4NjF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+                <a href="https://unsplash.com/@inkiipow?utm_source=zigrow&utm_medium=referral"
+                  target="_blank" rel="noopener noreferrer">
+                  Inkiipow
+                </a>
+                on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                  rel="noopener noreferrer">Unsplash</a>
+              </span>
+              
+
+                <div class="service-info">
+                  <span class="service-title ">
+                    Organic Vegetable Seeds
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <!-- Repeat cards with different content -->
+      <div class="col-sm-6 col-md-4 col-lg-2-4 clonable-card">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" class="service-img" alt="">
+
+            
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Herb Seed Collection
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4 clonable-card">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" class="service-img" alt="">
+
+            
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Flower Seed Packets
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4 clonable-card">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" class="service-img" alt="">
+
+            
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Fruit Tree Seeds
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4 clonable-card">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1596296946326-16e3d3e0c869?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyM3x8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjBwcm9kdWN0JTIwZGV0YWlsJTIwc2hvdHxlbnwxfHx8fDE3NzIxMjM4NjF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+                <a href="https://unsplash.com/@jonathansancheziam" target="_blank">
+                  Jonathan Sanchez
+                </a>
+                on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+              </span>
+              
+                <div class="service-info">
+                  <span class="service-title">
+                    Exotic Plant Seeds
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  .product-zigrow-section_3 {
+    background-color: #fefefe;
+
+    .sub-heading {
+      font-size: 0.9rem;
+      color: var(--para-muted);
+      letter-spacing: .03em;
+      margin-bottom: 0.3rem;
+    }
+
+    .link-group a {
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--primary-colors);
+      transition: all 0.3s ease;
+    }
+
+    .link-group a:hover {
+      text-decoration: underline;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+       border-radius: var(--box-radius);
+      background: #000;
+      transition: transform .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.8);
+      transition: filter .3s ease, transform .3s ease;
+    }
+
+    .service-card:hover .service-img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+
+    .service-card:hover {
+      .service-title {
+        color: #fff;
+      }
+
+      .icon-circle {
+        background: var(--primary-colors);
+      }
+    }
+
+    .service-info {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-title {
+      /* font-size: 0.95rem; */
+       font-size: var(--fs-body);
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow {
+      display: inline-block;
+      transform: rotate(45deg);
+    }
+
+    /* Responsive col fix for 5 cards */
+    @media (min-width: 992px) {
+      .col-lg-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+      }
+    }
+  }
+</style>
+  
+    <section class="portfolio-zigrow-section_1 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">Our Offerings</h2>
+      <p class="section-subtitle">
+        Farm Fresh
+      </p>
+    </div>
+
+    <div class="row g-0">
+      <!-- Area Card -->
+    <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://i.postimg.cc/0NhZhZjY/language-classes-template-tuition-template-3b.jpg,https://i.postimg.cc/L8xmkg5K/language-classes-template-tuition-template-3a.jpg,https://i.postimg.cc/zXftbysR//language-classes-template-tuition-template-3c.jpg,https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png,https://i.postimg.cc/Rh4YbGpP/languageclasseswebsitetemplate-last.png"
+      alt="Organic Corn"
+    />
+    <div class="area-name">
+      <span>Organic Corn</span>
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1734152207448-5875fcde13ed?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxOXx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjBjb21wbGV0ZWQlMjBwcm9qZWN0fGVufDF8fHx8MTc3MjEyMzg2M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Heirloom Tomatoes"
+    />
+    <div class="area-name">
+      Heirloom Tomatoes
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@spandeeta?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Spandita Das
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1664260905989-fd69350f0ed8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyNnx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjByZXN1bHRzfGVufDF8fHx8MTc3MjEyMzg2M3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Basil Seeds"
+    />
+    <div class="area-name">
+      Basil Seeds
+    </div>
+    <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@craigmanners_com?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Craig Manners
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+
+   <div class="col-12 col-md-4 col-lg-3">
+  <div class="area-card position-relative img-wrapper-center">
+    <img
+      src="https://images.unsplash.com/photo-1759322868467-ec1fcc9126aa?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyN3x8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjBiZWZvcmUlMjBhZnRlcnxlbnwxfHx8fDE3NzIxMjM4NjN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+      alt="Pumpkin Seeds"
+    />
+    <div class="area-name">
+      Pumpkin Seeds
+    </div>
+   <div class="img-credit">
+      Photo by 
+     <a href="https://unsplash.com/@manualeso?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+
+        Manu Alesanco
+      </a> on 
+     <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-zigrow-section_1 {
+    background-color: #fff;
+  
+
+
+
+  .section-subtitle {
+    color: var( --lead-custom-color-mute);
+    font-size: var(--fs-sub);
+  }
+
+  .area-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .area-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+  }
+
+  .area-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .area-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+  }}
+</style>
+
+  
+    <!-- ▰ Testimonials Section -->
+<section class="testimonial-zigrow-section_8 section-padding" id="testimonials"  data-section="testimonials">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="fw-custom-bold main-heading">What Our Customers Say</h2>
+      <p class="para-muted  font-subheading">Hear from those who have experienced our quality seeds firsthand.</p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“The seeds I purchased from Seeds have transformed my crop yield. They are high quality and have exceeded my expectations.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=40" class="avatar me-custom-3" alt="Emma Johnson"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Emma Johnson</h6>
+                <small class="para-muted">Local Farmer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I&#39;ve tried many seeds, but Seeds offers the best variety and germination rates. Highly recommend to anyone looking to grow!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=41" class="avatar me-custom-3" alt="Liam Smith"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Liam Smith</h6>
+                <small class="para-muted">Gardening Enthusiast</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Seeds provides an excellent selection of organic seeds. They are reliable and have helped me maintain my sustainable practices.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=42" class="avatar me-custom-3" alt="Olivia Brown"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Olivia Brown</h6>
+                <small class="para-muted">Sustainable Grower</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“The seeds from Seeds sprouted quickly and produced a bountiful harvest. I’m thrilled with the results!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=43" class="avatar me-custom-3" alt="Noah Davis"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Noah Davis</h6>
+                <small class="para-muted">Community Gardener</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I love the quality of the seeds! They are easy to plant and thrive well in my garden. Will buy again!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=44" class="avatar me-custom-3" alt="Ava Wilson"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Ava Wilson</h6>
+                <small class="para-muted">Home Gardener</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Seeds has made a significant difference in my urban garden. The seeds are robust and produce great results.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=45" class="avatar me-custom-3" alt="Sophia Martinez"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Sophia Martinez</h6>
+                <small class="para-muted">Urban Farmer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+.testimonial-zigrow-section_8 {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+.testimonials-section {
+  background-color: #f9fafb;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow-section); /* ➕ add subtle base shadow */
+    border-radius: var(--box-radius);
+
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/*** headline tweaks ***/
+ .text-accent{
+  color:#5f6f7f;
+}
+ .badge-pill{
+  letter-spacing:.04em;
+}
+.line-tip{
+  content:"";
+  position:absolute;
+  bottom:-6px;left:50%;
+  width:34px;height:2px;
+  background:#ff5b57;
+  transform:translateX(-50%) rotate(3deg);
+  border-radius:2px;
+}
+
+/*** cards ***/
+.t-card{
+  background:#fff;
+  border:0;
+border-radius: var(--box-radius);
+   box-shadow: var(--shadow-section);
+  transition:transform .25s ease, box-shadow .25s ease;
+  position:relative;
+}
+.t-card:hover{
+  transform:translateY(-6px);
+     box-shadow: var(--shadow-section-hover);
+}
+.t-dark{
+  background:#0f0f0f;
+  color:#f0f0f0;
+}
+.t-metric{
+  font-size:3.5rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.04em;
+  display:block;
+  color:#000;
+  margin-bottom:.25rem;
+}
+
+/*** avatar + brand ***/
+.avatar{
+  width:48px;height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.brand-logo{
+  width:24px;opacity:.7;
+}
+
+/*** button hover ***/
+.btn-outline-dark:hover i{
+  transform:translateX(4px);
+  transition:transform .25s;
+}
+
+/*** dark-card text-tone ***/
+.text-custom-white-80{color:rgba(255,255,255,.8);}
+
+/*** responsiveness ***/
+@media(max-width:991.98px){
+  .t-metric{font-size:2.8rem;}
+}
+@media(max-width:575.98px){
+  .results-testimonials .btn{width:100%;}
+  .line-tip{display:none;}
+}}
+</style>
+  
+    <!-- PRICING SECTION 9 (2 CARDS / MINIMAL SPLIT) -->
+
+<!-- AI_SPEC:
+{
+  "pricing": {
+    "titleWords": [10, 14],
+    "subtitleWords": [32, 40],
+    "plansCount": 2,
+    "priceWords": [1, 3],
+    "buttonsCount": 1,
+    "buttonWords": [1, 3],
+    "featuresCount": [20, 25],
+    "featureWords": [5, 8],
+    "extra": {
+      "cardTitles": { "count": 3, "words": [1, 3] },
+        "topLinkText": [2, 4],
+        "badgeText": [2, 4]
+    }
+  }
+}
+-->
+<!-- PRICING SECTION 9 (2 CARDS / MINIMAL SPLIT) -->
+<section class="pricing-zigrow-section_9 section-padding" id="pricing" data-section="pricing">
+  <div class="container">
+   
+
+
+    <!-- Top row -->
+    <div class="pricing-zigrow-section_9__topRow">
+      <div class="pricing-zigrow-section_9__leftTop">
+        <h2 class=" main-heading mb-custom-0 ">
+          Affordable Pricing for Quality Seeds
+        </h2>
+      </div>
+
+      <div class="pricing-zigrow-section_9__rightTop">
+        <p class=" para-muted font-subheading mb-custom-2 ">
+          Discover our competitive pricing plans tailored for your farming needs. Grow your business with the best seeds available in Krueshi eleaka.
+        </p>
+        <a class="pricing-zigrow-section_9__topLink" href="#contact">
+          <span>Explore Our Plans</span>
+          <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4 align-custom-stretch mt-custom-4">
+      <!-- LEFT -->
+      <div class="col-12 col-lg-4 clonable-card">
+        <div class="pricing-zigrow-section_9__card pricing-zigrow-section_9__card--light">
+          <div class="pricing-zigrow-section_9__cardMain">
+            <div class="pricing-zigrow-section_9__cardInner">
+              <div class="pricing-zigrow-section_9__cardTitleWrap">
+                <h3 class="pricing-zigrow-section_9__cardTitle">
+                  Monthly Plan
+                </h3>
+              </div>
+
+              <ul class="pricing-zigrow-section_9__list">
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Access to premium seeds for</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Monthly delivery included for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Expert farming tips for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Customer support available for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Flexible subscription options for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item">
+                  <span class="pricing-zigrow-section_9__tick"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text">Seed variety selection for you</span>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+
+          <div class="pricing-zigrow-section_9__bottom">
+            <div class="pricing-zigrow-section_9__priceWrap">
+              <div class="pricing-zigrow-section_9__price">
+                ₹499/month
+              </div>
+            </div>
+
+            <a href="#contact" class="btn primary-btn">
+              <span>Purchase</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-12 col-lg-8 clonable-card">
+        <div class="pricing-zigrow-section_9__card pricing-zigrow-section_9__card--featured">
+          <div class="pricing-zigrow-section_9__cardMain">
+            <div class="pricing-zigrow-section_9__cardInner">
+              <div class="pricing-zigrow-section_9__cardTitleWrap--right">
+                <div class="pricing-zigrow-section_9__badgeRow">
+                  <span class="pricing-zigrow-section_9__badge">Best Value Guaranteed</span>
+                </div>
+
+                <h3 class="pricing-zigrow-section_9__cardTitle pricing-zigrow-section_9__cardTitle--featured">
+                  Quarterly Plan
+                </h3>
+              </div>
+
+              <ul class="pricing-zigrow-section_9__list pricing-zigrow-section_9__list--twoCol">
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">All benefits of monthly plan</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Quarterly seed delivery for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Larger seed quantities for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Priority customer support for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Access to exclusive seeds for</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Customized planting guides for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Free shipping on orders for</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Seasonal seed packs for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Early access to new products</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Loyalty rewards program for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Webinars with farming experts for</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Networking opportunities for you for</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Discounts on workshops for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Customized farming plans for you</span>
+                </li>
+                
+                <li class="pricing-zigrow-section_9__item pricing-zigrow-section_9__item--featured">
+                  <span class="pricing-zigrow-section_9__tick pricing-zigrow-section_9__tick--featured"><i class="bi bi-check2"></i></span>
+                  <span class="pricing-zigrow-section_9__text pricing-zigrow-section_9__text--featured">Monthly newsletters for you for</span>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+
+          <div class="pricing-zigrow-section_9__bottom pricing-zigrow-section_9__bottom--featured">
+            <div class="pricing-zigrow-section_9__priceWrap pricing-zigrow-section_9__priceWrap--featured">
+              <div class="pricing-zigrow-section_9__price pricing-zigrow-section_9__price--featured">
+                ₹999/quarter
+              </div>
+              <div class="pricing-zigrow-section_9__per pricing-zigrow-section_9__per--featured">
+                / month
+              </div>
+            </div>
+
+            <a href="#contact" class="btn white-border-btn">
+              <span>Purchase</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-zigrow-section_9 {
+    background: #fff;
+  }
+
+  /* Top row */
+  .pricing-zigrow-section_9__topRow {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .pricing-zigrow-section_9__title {
+    font-size: clamp(2rem, 2.3vw + 1rem, 3rem);
+    letter-spacing: -0.6px;
+  }
+
+  .pricing-zigrow-section_9__rightTop {
+    padding-top: 0.25rem;
+  }
+
+  .pricing-zigrow-section_9__subtitle {
+    max-width: 54ch;
+  }
+
+  .pricing-zigrow-section_9__topLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: var(--secondary-colors);
+  }
+
+  .pricing-zigrow-section_9__topLink i {
+    font-size: 1.2rem;
+    color: var(--primary-colors);
+  }
+
+  .pricing-zigrow-section_9__topLink:hover {
+    color: var(--secondary-colors);
+    opacity: 0.92;
+  }
+
+  /* Cards base */
+  .pricing-zigrow-section_9__card {
+    position: relative;
+    height: 100%;
+  border-radius:var(--box-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-section);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-zigrow-section_9__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-section-hover);
+  }
+
+  /* body takes remaining space so bottom can stick */
+  .pricing-zigrow-section_9__cardMain {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-zigrow-section_9__cardInner {
+    padding: 1.35rem 1.35rem 1.05rem;
+  }
+
+  /* Left light card */
+  .pricing-zigrow-section_9__card--light {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+  }
+
+  /* Right featured card */
+  .pricing-zigrow-section_9__card--featured {
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--primary-colors) 22%, #ffffff) 0%,
+        color-mix(in srgb, var(--primary-colors) 10%, #ffffff) 55%,
+        #ffffff 100%);
+  }
+
+  /* Badge normal flow */
+  .pricing-zigrow-section_9__badgeRow {
+    margin-bottom: 0.55rem;
+  }
+
+  .pricing-zigrow-section_9__badge {
+    display: inline-flex;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 1000;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    background: rgba(17, 17, 17, 0.08);
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    color: var(--secondary-colors);
+  }
+
+  .pricing-zigrow-section_9__cardTitleWrap {
+    min-height: 100px;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .pricing-zigrow-section_9__cardTitleWrap--right {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+  }
+
+  /* Titles with min-height till tablet */
+  .pricing-zigrow-section_9__cardTitle {
+    margin: 0 0 1rem;
+    font-weight: 1000;
+    letter-spacing: -0.25px;
+    font-size: 1.2rem;
+    color: var(--secondary-colors);
+  }
+
+  .pricing-zigrow-section_9__cardTitle--featured {
+    font-size: 1.35rem;
+  }
+
+  @media (max-width: 991.98px) {
+
+    .pricing-zigrow-section_9__cardTitle,
+    .pricing-zigrow-section_9__cardTitle--featured {
+      min-height: 2.7rem;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    .pricing-zigrow-section_9__cardTitle,
+    .pricing-zigrow-section_9__cardTitle--featured {
+      min-height: 2.5rem;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  /* Feature list */
+  .pricing-zigrow-section_9__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .pricing-zigrow-section_9__list--twoCol {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1.2rem;
+  }
+
+  .pricing-zigrow-section_9__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .pricing-zigrow-section_9__tick {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--secondary-colors) 10%, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--secondary-colors);
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+
+  .pricing-zigrow-section_9__text {
+    color: var(--para-muted);
+    font-size: var(--font-body-sm);
+    line-height: 1.5;
+  }
+
+  .pricing-zigrow-section_9__tick--featured {
+    background: color-mix(in srgb, var(--primary-colors) 14%, #ffffff);
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+    color: var(--primary-colors);
+  }
+
+  /* Bottom stuck to card bottom */
+  .pricing-zigrow-section_9__bottom {
+    margin-top: auto;
+    padding: 1.05rem 1.35rem 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .pricing-zigrow-section_9__bottom--featured {
+    border-top: 1px solid color-mix(in srgb, var(--primary-colors) 18%, transparent);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(6px);
+  }
+
+  /* Price */
+  .pricing-zigrow-section_9__priceWrap {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .pricing-zigrow-section_9__price {
+    font-weight: 1000;
+    letter-spacing: -0.6px;
+    font-size: 1.15rem;
+    color: var(--secondary-colors);
+  }
+
+  .pricing-zigrow-section_9__per {
+    font-size: var(--font-body-sm);
+  color: var(--para-muted);
+  }
+
+  /* Buttons */
+  .pricing-zigrow-section_9__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-weight: 1000;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: var(--shadow-section);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      filter 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .pricing-zigrow-section_9__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-section-hover);
+  }
+
+  .pricing-zigrow-section_9__btn--primary {
+    background: var(--primary-colors);
+    color: #fff;
+  }
+
+  .pricing-zigrow-section_9__btn--primary:hover {
+    color: #fff;
+    filter: brightness(0.98);
+  }
+
+  .pricing-zigrow-section_9__btn--white {
+    background: #fff;
+    color: var(--secondary-colors);
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+  }
+
+  .pricing-zigrow-section_9__btn--white:hover {
+    color: var(--secondary-colors);
+  }
+
+  /* Responsive */
+  @media (max-width: 991.98px) {
+    .pricing-zigrow-section_9__topRow {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-zigrow-section_9__list--twoCol {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .pricing-zigrow-section_9__cardInner {
+      padding: 1.1rem 1.05rem 0.95rem;
+    }
+
+    .pricing-zigrow-section_9__bottom {
+      padding: 0.95rem 1.05rem 1.05rem;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .pricing-zigrow-section_9__btn {
+      width: 100%;
+    }
+
+    .pricing-zigrow-section_9__priceWrap {
+      justify-content: center;
+    }
+  }
+</style>
+  
+    <!-- ==========  MINIMAL  ✨  ========== -->
+<style>
+:root {
+  /* --accent: var(--theme-bg);        for headings & stat numbers */
+  --text-base: var(--secondary-colors);
+  --section-bg: #ffffff;
+}
+
+/* ---------- Section wrapper ---------- */
+.about-zigrow-section_4 {
+  background: var(--section-bg);
+  /* padding: 0rem 0 0rem; */
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- Typography ---------- */
+.about-zigrow-section_4 .headline {
+  font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color:var(--secondary-colors);
+
+  margin-bottom: 1.2rem;
+}
+
+.about-zigrow-section_4 .lead-custom {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+/* ---------- Skewed Image Frame ---------- */
+.about-zigrow-section_4 .skew-frame {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.about-zigrow-section_4 .skew-img {
+  width: 48%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+    border-radius: var(--box-radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.45s ease;
+}
+
+.about-zigrow-section_4 .skew-img img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.skew-img:hover {
+  transform: translateY(-6px);
+}
+
+.skew-img:hover img {
+  transform: scale(1.08);
+}
+
+/* ---------- Stats Section ---------- */
+.about-zigrow-section_4 .uniform-stats {
+  margin-top: 4rem;
+}
+
+.about-zigrow-section_4 .uniform-stats .stat {
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.about-zigrow-section_4 .uniform-stats .stat:hover {
+  transform: translateY(-5px);
+}
+
+.about-zigrow-section_4 .stat .value {
+  font-size: clamp(2rem, 5vw + 1rem, 3.4rem);
+  font-weight: 700;
+  color: var(--text-base);
+}
+
+.about-zigrow-section_4 .stat .label {
+  line-height: 1.4;
+}
+
+/* ---------- Fade-Up Animation ---------- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-animate] {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.no-js [data-animate] {
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .skew-frame {
+    margin: 2.5rem 0 0;
+  }
+  .skew-img {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-zigrow-section_4 {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .about-zigrow-section_4 .headline {
+    font-size: 2rem;
+  }
+
+  .about-zigrow-section_4 .skew-frame {
+    gap: 0.8rem;
+  }
+
+  .about-zigrow-section_4 .skew-img {
+    width: 46%;
+  }
+
+  .about-zigrow-section_4 .uniform-stats .stat {
+    text-align: center;
+  }
+}
+</style>
+
+<!-- ==========  ✨ SECTION  ✨  ========== -->
+<section class=" about-zigrow-section_4 section-padding" id="about" data-section="about">
+  <div class="container">
+    <!-- Text + Images -->
+    <div class="row align-custom-center g-lg-5">
+      <div class="col-lg-6" data-animate>
+        <h2 class="headline section-heading">About Seeds</h2>
+
+        <p class="para-muted font-body">At Seeds, we connect local farmers with the community by offering fresh, high-quality seeds in Krueshi eleaka. Our mission is to support sustainable agriculture and healthy living.</p>
+        <p class="para-muted  font-body">We believe in the power of nature and the importance of local sourcing. Join us in cultivating a greener future, one seed at a time.</p>
+        <p class="para-muted  font-body">We source only the best seeds from local farmers, ensuring freshness and quality in every purchase.</p>
+      </div>
+
+      <div class="col-lg-6" data-animate>
+        <div class="skew-frame">
+         <div class="skew-img position-relative img-wrapper-center">
+  <img src="https://i.postimg.cc/Rh4YbGpP/languageclasseswebsitetemplate-last.png" alt="Image 1">
+  <div class="img-credit">
+    Photo by 
+       <a 
+        href="https://unsplash.com/@?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+  </div>
+</div>
+
+<div class="skew-img position-relative img-wrapper-center">
+  <img src="https://images.unsplash.com/photo-1658992362416-f4c56975e338?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyMHx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjB3b3JraW5nJTIwd2l0aCUyMGNsaWVudHxlbnwxfHx8fDE3NzIxMjM4NjF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Image 2">
+  <div class="img-credit">
+    Photo by 
+     <a 
+        href="https://unsplash.com/@earthtiger?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Agnishikha Choudhuri
+      </a> on 
+      <a 
+        href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Unsplash
+      </a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="row uniform-stats gy-4 gx-md-5" data-animate>
+      <div class="col-6 col-md-3">
+        <div class="stat">
+          <div class="value"><span>100+</span></div>
+          <div class="label font-body-sm para-muted"><span>We source only the best seeds from local farmers, ensuring freshness and quality in every purchase.</span></div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat">
+          <div class="value"><span>10+</span></div>
+          <div class="label font-body-sm para-muted"><span>Our commitment to sustainability means supporting eco-friendly farming methods that benefit the environment. for your.</span></div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat">
+          <div class="value"><span>98%</span></div>
+          <div class="label font-body-sm para-muted"><span>We prioritize local partnerships, fostering a strong community connection through our offerings. for your business.</span></div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat">
+          <div class="value"><span>30k+</span></div>
+          <div class="label font-body-sm para-muted"><span>Our team is here to provide you with the knowledge and support you need for successful planting.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+    <section class="py-5 position-relative overflow-hidden service-zigrow-section_3" id="services" data-section="services">
+  <div class="container text-custom-center mb-custom-5">
+    <h2 class="main-heading">Our Services</h2>
+    <p class="para-muted font-subheading col-md-6 mx-custom-auto">
+      Explore our range of high-quality seeds sourced directly from farmers, available for purchase in Krueshi eleaka.
+    </p>
+  </div>
+
+  <div class="container">
+    <!-- 1 col (xs) / 2 col (sm) / 3 col (lg) with nice gaps -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" alt="Organic Seeds icon" class="service-icon" />
+            </div>
+
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Organic Seeds</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Discover our selection of organic seeds that promote sustainable farming and healthy crops. Perfect for eco-conscious growers.</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" alt="Heritage Seeds icon" class="service-icon" />
+            </div>
+
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Heritage Seeds</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Preserve biodiversity with our heritage seeds. These time-honored varieties offer unique flavors and resilience for your garden.</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1736182146420-90da7d9fd0e2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxMXx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjB3b3JraW5nJTIwd2l0aCUyMGNsaWVudHxlbnwxfHx8fDE3NzIxMjM4NjF8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Vegetable Seeds icon" class="service-icon" />
+            </div>
+
+            
+              <span class="unsplash-credit d-block text-custom-muted " style="font-size: 0.65rem">
+                Photo by
+                <a href="https://unsplash.com/@dibakar16roy?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Dibakar Roy
+                </a> on
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+              </span>
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Vegetable Seeds</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Grow your own fresh vegetables with our premium vegetable seeds. Ideal for home gardens and small-scale farms.</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1592374897807-045ae1d0a320?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw0fHxzZWVkJTIwbWFya2V0cGxhY2UlMjBhZ3JpY3VsdHVyZSUyMHByb2Zlc3Npb25hbCUyMHNlc3Npb258ZW58MXx8fHwxNzcyMTIzODY0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Flower Seeds icon" class="service-icon" />
+            </div>
+
+            
+              <span class="unsplash-credit d-block text-custom-muted " style="font-size: 0.65rem">
+                Photo by
+                <a href="https://unsplash.com/@manjur121?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  manjur alom
+                </a> on
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+              </span>
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Flower Seeds</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Brighten your space with our vibrant flower seeds. Choose from a variety of blooms that attract pollinators and beautify your garden.</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1669065515578-44d0ba70bb69?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyMnx8c2VlZCUyMG1hcmtldHBsYWNlJTIwYWdyaWN1bHR1cmUlMjBiZWhpbmQlMjB0aGUlMjBzY2VuZXN8ZW58MXx8fHwxNzcyMTIzODY0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Herb Seeds icon" class="service-icon" />
+            </div>
+
+            
+              <span class="unsplash-credit d-block text-custom-muted " style="font-size: 0.65rem">
+                Photo by
+                <a href="https://unsplash.com/@tekniq?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Victor Birai
+                </a> on
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">Unsplash</a>
+              </span>
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Herb Seeds</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Enhance your culinary creations with our herb seeds. Grow fresh herbs right at home for flavorful dishes.</p>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="service-card h-custom-100 text-custom-center p-custom-4 p-lg-custom-5 fade-in">
+          <div class="mb-custom-2">
+            <div class="icon-wrapper mx-custom-auto mb-custom-1 img-wrapper-center">
+              <img src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png" alt="Seed Kits icon" class="service-icon" />
+            </div>
+
+            
+          </div>
+
+          <h5 class="fw-custom-semibold mb-custom-2">Seed Kits</h5>
+          <p class="para-muted font-body-sm mb-custom-0 ">Get started with our seed kits, which include everything you need to grow a thriving garden. Perfect for beginners.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- (keep your existing styles & JS as-is) -->
+</section>
+
+  <style>
+   .service-zigrow-section_3 {
+      background: #fff;
+      position: relative;
+    
+
+      .unsplash-credit {
+  font-size: 0.65rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+.unsplash-credit a {
+  color: #6c757d;
+  text-decoration: underline;
+}
+
+
+    .service-card {
+      background: #fff;
+       border-radius: var(--box-radius);
+      border: none;
+      box-shadow:var(--shadow-section);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+
+       h5 {
+        color: var(--lead-custom-color-mute);
+      }
+
+      p {
+        color: var(--para-muted);
+      }
+    }
+
+   
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .icon-wrapper {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      background: #fff;
+    }
+
+    .service-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 576px) {
+      .icon-wrapper {
+        width: 56px;
+        height: 56px;
+      }
+
+      .service-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    /* Scroll fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }}
+  </style>
+
+  <!-- ░░ JS: Scroll reveal ░░ -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      document.querySelectorAll(".fade-in").forEach(el => io.observe(el));
+    });
+  </script>
+
+  
+    <section class=" whyChooseUs-zigrow-section_5 section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+
+<h2 class="main-heading choose-title col-md-6 m-custom-auto">
+  Why Choose Us
+</h2>
+
+
+    </div>
+    <div class="row g-4 text-custom-center">
+
+      
+      <div class="col-md-4">
+        <div class="choose-card">
+          <div class="icon-box">
+            <i class="bi bi-people"></i>
+          </div>
+          <h5 class="choose-card-title">Support Local Farmers</h5>
+          <p class="choose-card-text">By choosing our seeds, you directly support local farmers, helping them thrive while ensuring you receive the freshest products available. for your business without the hassle with clear results so you can grow for your.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="choose-card">
+          <div class="icon-box">
+            <i class="bi bi-check-circle"></i>
+          </div>
+          <h5 class="choose-card-title">Quality Assurance</h5>
+          <p class="choose-card-text">We guarantee the highest quality seeds, meticulously sourced and tested for optimal growth and flavor, ensuring your culinary creations shine. for your business without the hassle with clear results so you can grow for your.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="choose-card">
+          <div class="icon-box">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h5 class="choose-card-title">Local Sourcing</h5>
+          <p class="choose-card-text">Our seeds come from nearby farms, reducing transportation impact and ensuring you enjoy the freshest ingredients in your dishes. for your business without the hassle with clear results so you can grow for your business.</p>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+    .whyChooseUs-zigrow-section_5 {
+  background: linear-gradient(135deg, #f7f9fc, #f0f2f5);
+  color: #1a1a2e;
+
+
+
+
+
+.choose-card {
+  background: transparent;
+  padding: 30px 25px;
+border-radius: var(--box-radius);
+  box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choose-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+.icon-box {
+  font-size: 2.5rem;
+  background: transparent;
+  color: var(--secondary-colors);
+  padding: 15px 30px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.choose-card:hover .icon-box {
+  background: #e9eef5;
+  transform: scale(1.1);
+}
+
+.choose-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.choose-card-text {
+       color: var(--para-muted);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+}
+
+/* Responsive Typography */
+@media (min-width: 768px) {
+  .choose-title {
+    font-size: 2.5rem;
+  }
+
+  .choose-card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .choose-title {
+    font-size: 1.6rem;
+  }
+
+  .choose-card {
+    padding: 20px;
+  }
+}
+.icon-box i {
+  font-size: 2rem;
+   color: var(--secondary-colors);
+}
+    }
+</style>
+  
+    <!-- ✦ Meet Adam – Dual Card Section -->
+<section class=" team-zigrow-section_3 section-padding" id="team" data-section="team">
+  <div class="container">
+    <div class="row justify-custom-center gx-4 gy-4">
+
+      <!-- ◀ Left White Card (Text) -->
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="adam-text-card h-custom-100 p-custom-4 p-md-custom-5">
+          <h3 class="adam-quote mb-custom-4">
+            Alice oversees our supply chain, ensuring timely delivery and quality control.
+          </h3>
+
+            <span class="adam-meta font-body para-muted mb-custom-2 ">
+
+              Our team combines expertise and passion to ensure that every seed we sell meets the highest standards of quality and sustainability.
+            </span>
+          <p class="adam-meta mb-custom-0  para-muted">
+            Alice Johnson<br />
+            Operations Manager
+          </p>
+        </div>
+      </div>
+
+      <!-- ▶ Right Image Card -->
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="adam-image-card position-relative overflow-hidden img-wrapper-center pointer-custom-none">
+          <img src="https://i.postimg.cc/Kv4g4kN0/1.png"
+               alt="Alice Johnson"
+               class="img-fluid w-custom-100 h-custom-100 object-fit-cover" />
+          <div class="adam-overlay position-absolute top-0 start-0 w-custom-100 h-custom-100 d-flex flex-column justify-custom-end p-custom-4">
+            <h4 class="adam-name mb-custom-1">
+              Meet Alice.
+            </h4>
+            <p class="adam-role mb-custom-0 ">Operations Manager</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* ◼️ Base Section Styling */
+.team-zigrow-section_3{
+  background: linear-gradient(120deg,#ebe9e9, #f8f9fa, #fbfeff,#ebe9e9);
+
+
+/* ◼️ Left Text Card */
+.adam-text-card {
+  background: #fff;
+      border-radius: var(--box-radius);
+box-shadow: var(--shadow-section);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.adam-text-card:hover {
+  transform: translateY(-5px);
+}
+.adam-quote {
+  font-size: clamp(1.4rem, 2.5vw + 0.5rem, 2rem);
+  font-weight: 600;
+  color: #111;
+  line-height: 1.4;
+}
+.adam-meta {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ◼️ Right Image Card */
+.adam-image-card {
+  height: 100%;
+      border-radius: var(--box-radius);
+  overflow: hidden;
+  position: relative;
+  background: #000;
+box-shadow: var(--shadow-section);
+}
+.adam-image-card img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: grayscale(100%);
+}
+.adam-image-card:hover img {
+  transform: scale(1.05);
+}
+.adam-overlay {
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+}
+.adam-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.adam-role {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* ◼️ Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .adam-quote {
+    font-size: 1.25rem;
+  }
+  .adam-name {
+    font-size: 1.4rem;
+  }
+}}
+</style>
+
+  
+    <!-- 🤝 Partner Logo Strip -->
+<section class="logo-zigrow-section_4 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- headline -->
+    <p class="strip-head mb-custom-4">
+      We’ve worked on over <strong>200 projects</strong> with <strong>150+ clients</strong>
+    </p>
+
+    <!-- logo row -->
+    <div class="row justify-custom-center align-custom-center g-4">
+
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+      <div class="col-12 col-sm-4 col-md-2">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="Hopin logo"/>
+      </div>
+
+
+    </div><!-- /.row -->
+  </div>
+</section>
+
+<!-- 🎨 custom styles -->
+<style>
+.logo-zigrow-section_4{
+  background:#ffffff;
+
+.strip-head{
+  color:var(--para-muted);
+  font-size:var(--fs-sub);
+  letter-spacing:.3px;
+}
+.logo{
+  width:100%;
+  filter:grayscale(100%) opacity(.55);
+  transition:filter .3s ease;
+}
+.logo:hover{
+  filter:grayscale(0%) opacity(1);
+}
+@media (max-width:576px){
+  .strip-head{font-size:.9rem;}
+  .logo{max-width:120px;margin:auto;}
+}}
+</style>
+
+  
+    <section class="faq-zigrow-section_2 section-padding" id="faq" data-section="faq">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="main-heading fw-custom-bold text-custom-uppercase">
+        <span>Commonly Asked Questions</span>
+      </h2>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion" id="faqAccordion">
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading0">
+            <button
+              class="accordion-button custom-accordion-btn "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse0"
+              aria-expanded="true"
+              aria-controls="collapse0"
+            >
+              <span>What types of seeds do you sell?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse0"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading0"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>We offer a variety of seeds sourced from local farmers, ensuring quality and freshness.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading1">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              <span>How can I place an order?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading1"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>You can easily place an order through our website or by contacting our customer service team.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              <span>What is the delivery time for orders?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading2"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Delivery typically takes 3-5 business days, depending on your location.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              <span>Do you offer bulk purchasing options?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading3"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Yes, we provide bulk purchasing options for larger orders. Please contact us for details.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading4">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+              aria-expanded="false"
+              aria-controls="collapse4"
+            >
+              <span>Can I return seeds if I&#39;m not satisfied?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse4"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading4"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Yes, we accept returns within 30 days if you are not satisfied with your purchase.</p>
+            </div>
+          </div>
+
+        </div>
+      
+        <div class="accordion-item border-0 mb-custom-3">
+
+          <!-- Header -->
+          <h2 class="accordion-header" id="heading5">
+            <button
+              class="accordion-button custom-accordion-btn collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse5"
+              aria-expanded="false"
+              aria-controls="collapse5"
+            >
+              <span>Are your seeds organic?</span>
+            </button>
+          </h2>
+
+          <!-- Collapse Body -->
+          <div
+            id="collapse5"
+            class="accordion-collapse collapse "
+            data-bs-parent="#faqAccordion"
+            aria-labelledby="heading5"
+          >
+            <div class="accordion-body para-muted col-md-10">
+              <p>Many of our seeds are organic, sourced from farmers who practice sustainable farming methods.</p>
+            </div>
+          </div>
+
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+
+<style>
+  .faq-zigrow-section_2 {
+  background-color: #fff;
+
+
+.faq-title {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Accordion button base */
+.accordion-button {
+  background-color: transparent ;
+  color: #555 ;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1rem;
+  box-shadow: none ;
+  border: 0 ;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+/* Icon replacement: "+" by default */
+.accordion-button::after {
+  content: '+'; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  background-image: none ;
+  margin-left: auto;
+  transition: all 0.3s ease;
+}
+
+/* On open: change "+" to "–" */
+.accordion-button:not(.collapsed)::after {
+  content: '–';
+  color: #555;
+}
+
+/* Remove focus ring */
+.accordion-button:focus {
+  box-shadow: none ;
+}
+
+/* Accordion item container */
+.accordion-item {
+  border: none ;
+  box-shadow: none ;
+}
+
+/* Accordion header styling */
+.accordion-header {
+  color: #000;
+}
+
+/* Accordion body content */
+.accordion-body {
+  font-size: var(--fs-body);
+  padding: 0 1rem 1rem;
+  color: var(--para-muted);
+  line-height: 1.6;
+  background-color: transparent;
+}
+
+/* Collapse border fix */
+.accordion-collapse {
+  border-top: none ;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 1.75rem;
+  }
+
+  .accordion-button {
+    font-size: 1rem;
+  }
+
+  .accordion-button::after {
+    font-size: 1.25rem;
+  }
+}
+  }
+</style>
+  
+    <!-- CTA SECTION 6 -->
+  <!-- AI_SPEC:
+{
+  "cta": {
+    "subtitleWords": [2, 4],
+    "titleWords": [16, 20],
+    "buttonsCount": 2,
+    "buttonWords": [1, 3]
+  }
+}
+-->
+
+<section
+  class="cta-zigrow-section_6 section-padding"
+  id="cta"
+  data-section="cta"
+>
+  <div class="cta6-shell">
+    <div class="container">
+      <div class="cta6-card">
+        <div class="row row-vcenter g-4">
+          <!-- LEFT -->
+          <div class="col-12 col-lg-8">
+            <div class="cta6-left">
+              <div class="cta6-mark" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="cta6-kicker font-subheading">
+                Get Started Now
+              </div>
+
+              <h2 class="cta6-title mb-custom-2  main-heading">
+                Order Fresh Seeds Today for Your Garden&#39;s Success!
+              </h2>
+
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="col-12 col-lg-4 cta6-col-right">
+            <div class="cta6-right d-flex justify-lg-custom-end justify-custom-center gap-3 flex-wrap">
+              <a href="#signup" class="btn primary-btn" aria-label="Sign Up">
+                Buy Now
+              </a>
+              <a href="#contact" class="btn white-btn" aria-label="Contact Us">
+                Shop Seeds
+              </a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /cta6-card -->
+    </div><!-- /container -->
+  </div><!-- /cta6-shell -->
+</section>
+
+<style>
+/* ===============================
+   CTA ZIGROW SECTION 6
+================================ */
+
+#cta.cta-zigrow-section_6{
+  background: transparent;
+
+  --cta6-primary: var(--primary-colors, #e11d2e);
+  --cta6-bg: color-mix(in srgb, var(--cta6-primary) 18%, white);
+  --cta6-card: color-mix(in srgb, var(--cta6-primary) 10%, white);
+  --cta6-text: #111;
+  --cta6-shadow: var(--shadow-section);
+  --cta6-border: rgba(17,17,17,0.08);
+}
+
+#cta.cta-zigrow-section_6 .cta6-shell{
+  background: var(--cta6-bg);
+  border-radius: var(--box-radius);
+  padding: 4rem;
+}
+
+#cta.cta-zigrow-section_6 .cta6-card{
+  background: var(--cta6-card);
+  border-radius:var(--box-radius);
+  border: 1px solid var(--cta6-border);
+  box-shadow: var(--cta6-shadow);
+  padding: clamp(1.6rem, 2.6vw, 2.4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+#cta.cta-zigrow-section_6 .cta6-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background: color-mix(in srgb, var(--cta6-primary) 18%, white);
+  pointer-events:none;
+  opacity: 0.9;
+}
+
+#cta.cta-zigrow-section_6 .cta6-left,
+#cta.cta-zigrow-section_6 .cta6-right{
+  position: relative;
+  z-index: 2;
+}
+
+#cta.cta-zigrow-section_6 .cta6-mark{
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-bottom: 0.9rem;
+}
+#cta.cta-zigrow-section_6 .cta6-mark span{
+  position:absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(17,17,17,0.25);
+}
+#cta.cta-zigrow-section_6 .cta6-mark span:nth-child(2){
+  inset: 6px;
+  border-color: rgba(17,17,17,0.18);
+}
+#cta.cta-zigrow-section_6 .cta6-mark span:nth-child(3){
+  inset: 12px;
+  border-color: rgba(17,17,17,0.12);
+}
+
+#cta.cta-zigrow-section_6 .cta6-kicker{
+  /* font-size: 0.7rem; */
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--para-muted);
+  font-weight: 800;
+  margin-bottom: 0.7rem;
+}
+
+#cta.cta-zigrow-section_6 .cta6-title{
+  /* font-family: Playfair Display; */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  max-width: 420px;
+  color: var(--cta6-text);
+  /* font-size: clamp(1.35rem, 1.05rem + 2.0vw, 2.2rem); */
+}
+
+#cta.cta-zigrow-section_6 .cta6-para{
+  margin-top: 0.35rem;
+  max-width: 560px;
+  color: rgba(17,17,17,0.72);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+#cta.cta-zigrow-section_6 .cta6-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.15rem;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #111;
+}
+
+#cta.cta-zigrow-section_6 .cta6-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+  color:#fff;
+}
+
+#cta.cta-zigrow-section_6 .cta6-btn-outline{
+  background: transparent;
+  color: #111;
+  border: 1px solid rgba(17,17,17,0.35);
+  box-shadow: none;
+}
+
+#cta.cta-zigrow-section_6 .cta6-btn-outline:hover{
+  color: #111;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* keep right aligned on desktop, bottom aligned feel */
+#cta.cta-zigrow-section_6 .cta6-col-right{
+  align-self: flex-end;
+}
+
+/* responsive */
+@media (max-width: 991.98px){
+  #cta.cta-zigrow-section_6 .cta6-shell{
+    padding: 2.5rem 1.25rem;
+  }
+
+  #cta.cta-zigrow-section_6 .cta6-mark{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cta.cta-zigrow-section_6 .cta6-kicker,
+  #cta.cta-zigrow-section_6 .cta6-title,
+  #cta.cta-zigrow-section_6 .cta6-para{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cta.cta-zigrow-section_6 .cta6-col-right{
+    align-self: auto;
+  }
+}
+</style>
+
+  
+    <section
+  class="contact-zigrow-section_8 section-padding"
+  id="contact"
+  data-section="contact"
+>
+  <div class="container">
+    <div class="contact-wrap mx-custom-auto">
+      <h2 class="main-heading text-custom-center mb-custom-4">Contact Us</h2>
+
+      <form
+        class="contact-form"
+        action="https://api.zigrow.com/api/forms/submit"
+        method="post"
+        data-zigrow-form
+      >
+        <input type="hidden" name="domain" value="" />
+        <input type="hidden" name="form_key" value="contact" />
+        <input type="hidden" name="page_url" value="" />
+        <input type="text" name="_company" hidden />
+
+        <div form-question-zigrow>
+          <label>First Name</label>
+          <input
+            type="text"
+            name="first_name"
+            autocomplete="given-name"
+            required
+          />
+        </div>
+
+        <div form-question-zigrow>
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="last_name"
+            autocomplete="family-name"
+            required
+          />
+        </div>
+
+        <div form-question-zigrow>
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            inputmode="tel"
+            pattern="^\+?[0-9\s\-]{7,15}$"
+            name="phone"
+            autocomplete="tel"
+            required
+          />
+        </div>
+
+        <div form-question-zigrow>
+          <label>Email Address</label>
+          <input type="email" name="email" autocomplete="email" required />
+        </div>
+
+        <div form-question-zigrow>
+          <label>Message</label>
+          <textarea name="message" rows="3" required></textarea>
+        </div>
+
+        <button type="submit">Submit Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  (function () {
+    const forms = Array.from(document.querySelectorAll("[data-zigrow-form]"));
+    if (!forms.length) return;
+
+    function serializeForm(form) {
+      const fd = new FormData(form);
+      const raw = {};
+      for (const [name, value] of fd.entries()) raw[name] = value;
+      return raw;
+    }
+
+    function pickPrimaryValue(raw) {
+      if (raw.email && String(raw.email).trim())
+        return String(raw.email).trim();
+      if (raw.phone && String(raw.phone).trim())
+        return String(raw.phone).trim();
+      const full = [raw.first_name, raw.last_name]
+        .filter(Boolean)
+        .join(" ")
+        .trim();
+      if (full) return full;
+      if (raw.message && String(raw.message).trim())
+        return String(raw.message).trim();
+      return "";
+    }
+
+    forms.forEach((form) => {
+      const domainInput = form.querySelector('input[name="domain"]');
+      const pageUrlInput = form.querySelector('input[name="page_url"]');
+      if (domainInput) domainInput.value = location.host;
+      if (pageUrlInput) pageUrlInput.value = location.href;
+
+      let msg = form.querySelector("[data-form-message]");
+      if (!msg) {
+        msg = document.createElement("div");
+        msg.setAttribute("data-form-message", "");
+        form.appendChild(msg);
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector(
+          'button[type="submit"], input[type="submit"]',
+        );
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.dataset.oldText =
+            submitBtn.value || submitBtn.innerText || "";
+          if (submitBtn.tagName === "INPUT") submitBtn.value = "Submitting...";
+          else submitBtn.innerText = "Submitting...";
+        }
+
+        msg.textContent = "";
+        msg.removeAttribute("data-state");
+
+        try {
+          const raw = serializeForm(form);
+
+          const body = new URLSearchParams();
+          body.set("domain", domainInput?.value || location.host);
+          body.set(
+            "form_key",
+            form.querySelector('input[name="form_key"]')?.value || "contact",
+          );
+          body.set("page_url", pageUrlInput?.value || location.href);
+          body.set("payload", JSON.stringify(raw));
+
+          const primary = pickPrimaryValue(raw);
+          if (primary) body.set("value", primary);
+
+          if (raw._company) body.set("_company", raw._company);
+
+          const res = await fetch(form.action, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body,
+          });
+
+          const data = await res.json().catch(() => ({}));
+
+          if (res.ok && (data.ok ?? true)) {
+            form.reset();
+            msg.textContent = "Thanks! Your request has been submitted.";
+            msg.setAttribute("data-state", "success");
+          } else {
+            msg.textContent =
+              data.message || "Failed (HTTP " + res.status + ")";
+            msg.setAttribute("data-state", "error");
+          }
+        } catch (err) {
+          console.error(err);
+          msg.textContent = "Something went wrong. Please try again.";
+          msg.setAttribute("data-state", "error");
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            const old = submitBtn.dataset.oldText || "Submit";
+            if (submitBtn.tagName === "INPUT") submitBtn.value = old;
+            else submitBtn.innerText = old;
+          }
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  /* ===============================
+   CONTACT ZIGROW SECTION 8
+================================ */
+
+  #contact.contact-zigrow-section_8 {
+    background: var(--theme-bg);
+  }
+
+  #contact.contact-zigrow-section_8 .contact-wrap {
+    max-width: 980px;
+    padding: clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  #contact.contact-zigrow-section_8 .contact-title {
+    font-size: clamp(1.6rem, 1.1rem + 2vw, 2.2rem);
+    font-weight: 700;
+    color: var(--secondary-colors);
+    letter-spacing: -0.02em;
+  }
+
+  #contact.contact-zigrow-section_8 .contact-form {
+    margin-top: 0.25rem;
+  }
+
+  /* Labels */
+  #contact.contact-zigrow-section_8 .contact-label {
+    display: inline-block;
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--para-muted);
+    margin-bottom: 0.45rem;
+  }
+
+  /* Inputs */
+  #contact.contact-zigrow-section_8 .contact-input,
+  #contact.contact-zigrow-section_8 .contact-textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid
+      color-mix(in srgb, var(--primary-colors) 35%, transparent);
+    background: transparent;
+    padding: 0.55rem 0.1rem;
+    font-size: 1rem;
+    color: var(--secondary-colors);
+    outline: none;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  #contact.contact-zigrow-section_8 .contact-textarea {
+    resize: vertical;
+    min-height: 58px;
+    max-height: 180px;
+  }
+
+  /* Focus */
+  #contact.contact-zigrow-section_8 .contact-input:focus,
+  #contact.contact-zigrow-section_8 .contact-textarea:focus {
+    border-bottom-color: var(--primary-colors);
+    box-shadow: 0 12px 26px
+      color-mix(in srgb, var(--primary-colors) 18%, transparent);
+  }
+
+  /* Placeholder invisible like screenshot */
+  #contact.contact-zigrow-section_8 .contact-input::placeholder,
+  #contact.contact-zigrow-section_8 .contact-textarea::placeholder {
+    color: transparent;
+  }
+
+  /* Button */
+  #contact.contact-zigrow-section_8 .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    border: 1.8px solid
+      color-mix(in srgb, var(--primary-colors) 55%, transparent);
+    background: transparent;
+    color: var(--secondary-colors);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  #contact.contact-zigrow-section_8 .contact-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-colors);
+    box-shadow: 0 16px 34px
+      color-mix(in srgb, var(--primary-colors) 22%, transparent);
+    background: color-mix(in srgb, var(--primary-colors) 8%, transparent);
+  }
+
+  #contact.contact-zigrow-section_8 .contact-btn:active {
+    transform: translateY(0);
+  }
+
+  /* Spacing like screenshot */
+  @media (min-width: 992px) {
+    #contact.contact-zigrow-section_8 .contact-wrap {
+      padding-top: 0.5rem;
+    }
+  }
+
+  form.contact-form {
+    margin-top: 0.25rem;
+  }
+
+  form.contact-form [form-question-zigrow] {
+    margin-bottom: 1.1rem;
+  }
+
+  form.contact-form label {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+  }
+
+  form.contact-form input,
+  form.contact-form textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    background: transparent;
+    padding: 0.55rem 0.1rem;
+    outline: none;
+  }
+
+  form.contact-form textarea {
+    resize: vertical;
+    min-height: 58px;
+    max-height: 180px;
+  }
+
+  form.contact-form input:focus,
+  form.contact-form textarea:focus {
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+  }
+
+  form.contact-form button[type="submit"] {
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  form.contact-form [data-form-message][data-state="success"] {
+    margin-top: 0.75rem;
+  }
+
+  form.contact-form [data-form-message][data-state="error"] {
+    margin-top: 0.75rem;
+  }
+</style>
+
+  
+    
+<footer class="footer-zigrow-section_5" data-section="footer"id="footer">
+  <div class="container">
+    <div class="row border-top pt-custom-3 pb-custom-4 justify-custom-between align-custom-center">
+
+      <div class="col-12 col-md-auto text-custom-center text-custom-md-start para-muted mb-custom-2 mb-md-0">
+       2026 Seeds. All rights reserved.
+      </div>
+
+      <div class="col-12 col-md-auto">
+        <div class="footer-links d-flex gap-3 justify-custom-center justify-md-custom-end">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  .footer-zigrow-section_5 {
+    background-color: #fff;
+    
+    font-size: 0.9rem;
+  
+
+  .simple-footer .border-top {
+    border-color: var(--border-muted) ;
+  }
+
+  .footer-links a {
+    color: var(--para-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  .footer-links a:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+
+  @media (max-width: 575.98px) {
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .simple-footer .d-flex {
+      text-align: center;
+    }
+  }}
+</style>
+
+  
+
+
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api-uat.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+            window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

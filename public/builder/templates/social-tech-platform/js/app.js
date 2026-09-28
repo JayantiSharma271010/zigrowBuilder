@@ -1,6 +1,6 @@
 // nav secition toggle
 const _cb = document.getElementById("nav-toggle");
-const _btn = document.querySelector(".site-nav .menu-btn");
+const _btn = document.querySelector("#site-nav .menu-btn");
 if (_cb && _btn) {
   const sync = () =>
     _btn.setAttribute("aria-expanded", _cb.checked ? "true" : "false");
@@ -81,14 +81,36 @@ if (_cb && _btn) {
     }
   });
 })();
+// FAQ accordion behavior
+(function () {
+  const group = document.querySelector("#faq .faq-list");
+  if (!group) return;
+
+  // Ensure only one <details> is open at a time
+  group.addEventListener(
+    "toggle",
+    function (ev) {
+      const current = ev.target;
+      if (!(current instanceof HTMLDetailsElement)) return;
+      if (!current.open) return; // only act when an item is being opened
+
+      group.querySelectorAll("details.faq[open]").forEach((d) => {
+        if (d !== current) d.open = false; // close the others
+      });
+    },
+    true
+  ); // use capture to catch the event reliably
+
+  // Optional: normalize on load (if multiple are marked open in HTML)
+  const opened = group.querySelectorAll("details.faq[open]");
+  if (opened.length > 1) {
+    opened.forEach((d, i) => {
+      if (i) d.open = false;
+    });
+  }
+})();
 // back to top btn
 const backToTopBtn = document.getElementById("backToTopBtn");
-
-backToTopBtn?.addEventListener("click", (event) => {
-  event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  history.replaceState(null, "", "#header");
-});
 
 window.addEventListener(
   "scroll",
@@ -119,14 +141,14 @@ if (window.innerWidth > 768) {
     });
 
     // Cards + person image stagger
-    gsap.from("#social-hero .stats, #social-hero .person, #social-hero .chart", {
+    gsap.from("#social-hero .visual-grid > *", {
       opacity: 0,
       y: 60,
       duration: 1,
       ease: "power2.out",
       stagger: 0.2,
       scrollTrigger: {
-        trigger: "#social-hero .hero-visual-row",
+        trigger: "#social-hero .visual-grid",
         start: "top 85%",
       },
     });
@@ -178,7 +200,7 @@ if (window.innerWidth > 768) {
       ease: "back.out(1.7)",
       stagger: 0.15,
       scrollTrigger: {
-        trigger: "#trusted-brands .trusted-body",
+        trigger: "#trusted-brands .brands-grid",
         start: "top 80%",
       },
     });
@@ -207,7 +229,7 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: "#services .services-body",
+      trigger: "#services .cards",
       start: "top 80%",
     },
   });
@@ -329,19 +351,19 @@ if (window.innerWidth > 768) {
   });
 
   // Person image
-  gsap.from("#reach .person-img-wrap img", {
+  gsap.from("#reach .person img", {
     opacity: 0,
     x: 80,
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: "#reach .person-frame",
+      trigger: "#reach .person",
       start: "top 85%",
     },
   });
 
   // Floating social icons
-  gsap.from("#reach .person-frame .fa-brands", {
+  gsap.from("#reach .person .fa-brands", {
     opacity: 0,
     scale: 0.5,
     rotation: 90,
@@ -349,7 +371,7 @@ if (window.innerWidth > 768) {
     stagger: 0.2,
     ease: "back.out(1.7)",
     scrollTrigger: {
-      trigger: "#reach .person-frame",
+      trigger: "#reach .person",
       start: "top 85%",
     },
   });
@@ -367,53 +389,79 @@ if (window.innerWidth > 768) {
   });
 
   /* ======================
+       FAQ SECTION
+    ====================== */
+  gsap.from("#faq .faq-head", {
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: "#faq .faq-head",
+      start: "top 85%",
+    },
+  });
+
+  gsap.from("#faq .faq", {
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#faq .faq-list",
+      start: "top 85%",
+    },
+  });
+
+  /* ======================
        FOOTER SECTION
     ====================== */
   // Left block (brand + newsletter)
-  gsap.from("#footer .footer-left-content", {
+  gsap.from("#footer .footer-left", {
     opacity: 0,
     y: -80,
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: "#footer .footer-left-content",
+      trigger: "#footer .footer-left",
       start: "top 90%",
     },
   });
 
   // Right block (heading + links)
-  gsap.from("#footer .footer-right-content", {
+  gsap.from("#footer .footer-right", {
     opacity: 0,
     y: 80,
     duration: 1,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: "#footer .footer-right-content",
+      trigger: "#footer .footer-right",
       start: "top 90%",
     },
   });
 
   // Bottom strip
-  gsap.from("#footer .footer-bottom-border", {
+  gsap.from("#footer .foot-bottom", {
     opacity: 0,
     y: 40,
     duration: 0.8,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: "#footer .footer-bottom-border",
+      trigger: "#footer .foot-bottom",
       start: "top 95%",
     },
   });
 
   // Footer socials stagger
-  gsap.from("#footer .social-list li", {
+  gsap.from("#footer .socials li", {
     opacity: 0,
     scale: 0.5,
     duration: 0.7,
     stagger: 0.15,
     ease: "back.out(1.7)",
     scrollTrigger: {
-      trigger: "#footer .social-list",
+      trigger: "#footer .socials",
       start: "top 95%",
     },
   });

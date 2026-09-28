@@ -18,14 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle: false,
   });
 
-  const syncNavigationState = (isOpen) => {
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-    hamburger.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-  };
-
-  menu.addEventListener("shown.bs.collapse", () => syncNavigationState(true));
-  menu.addEventListener("hidden.bs.collapse", () => syncNavigationState(false));
-
   // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("is-active");

@@ -1,48 +1,5 @@
-:root {
-  --primary-colors: #060535;
-  --secondary-colors: #060535;
-  --territory-colors: #8941ff;
-}
-
 body {
   font-family: "Inter", sans-serif;
-}
-
-.navbar-mobile-actions,
-.navbar-desktop-actions,
-.smart-tech-actions,
-.feature-primary-actions,
-.feature-card-actions,
-.features-section .cta-button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.navbar-mobile-actions,
-.navbar-desktop-actions {
-  justify-content: center;
-}
-
-[data-btn],
-[data-btn]:hover,
-[data-btn]:focus,
-[data-btn]:active,
-[data-btn]:visited {
-  text-decoration: none;
-}
-
-[data-btn]:focus-visible,
-form[data-zigrow-form] > button[type="submit"]:focus-visible,
-.floating-btn:focus-visible,
-.hamburger:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--territory-colors, #8941ff) 70%, white);
-  outline-offset: 3px;
 }
 
 /* Reduce the outer container size */
@@ -114,7 +71,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   left: -75%;
   width: 50%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent);
   transform: skewX(-25deg);
   transition: left 0.5s ease;
 }
@@ -148,12 +105,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   background-color: var(--primary-colors, #060535);
   color: #f8fafd; /* Replace $yellowcolor with actual color */
   border: 2px solid var(--primary-colors, #060535);
@@ -185,6 +136,9 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
+  /* Tablet view */
+  /* Mobile view */
+  /* Extra small screens */
 }
 .hero-section .container {
   display: flex;
@@ -197,6 +151,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   max-width: 100%;
   height: auto;
   z-index: 1;
+  display: block;
 }
 .hero-section .hero-image-wrapper {
   position: relative;
@@ -209,7 +164,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   left: 0;
   width: 100%;
   height: 40%;
-  background: none;
+  background: linear-gradient(to top, white, transparent);
   pointer-events: none;
 }
 .hero-section .smart-card {
@@ -231,12 +186,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   margin-bottom: 10px;
 }
 .hero-section .smart-card .title .smart-icon i {
@@ -247,13 +196,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: 20px;
 }
 .hero-section .smart-card .title .title-name .smart-title {
-  display: block;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 2px;
 }
 .hero-section .smart-card .title .title-name .smart-subtitle {
-  display: block;
   font-size: 12px;
   color: #6c757d;
   margin-bottom: 10px;
@@ -262,19 +209,13 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: 12px;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 6px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 .hero-section .smart-card .smart-consume i {
   font-size: 12px;
   color: orange;
-  flex: 0 0 auto;
+  margin-right: 6px;
 }
 .hero-section .smart-card .smart-toggle {
   display: flex;
@@ -315,23 +256,15 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   font-size: 20px;
   color: var(--primary-colors, #060535);
 }
 .hero-section .smart-card2 .smart-title {
-  display: block;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
 }
 .hero-section .smart-card2 .smart-subtitle {
-  display: block;
   font-size: 14px;
   color: #6c757d;
   margin-top: 2px;
@@ -362,9 +295,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   right: -10%;
   transform: translateY(-50%);
 }
-.hero-section {
-  /* Tablet view */
-}
 @media (max-width: 991.98px) {
   .hero-section .lamp-card {
     top: 30%;
@@ -375,9 +305,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     top: 70%;
     right: 0;
   }
-}
-.hero-section {
-  /* Mobile view */
 }
 @media (max-width: 991.98px) {
   .hero-section .floating-card {
@@ -393,9 +320,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     max-width: 60%;
   }
 }
-.hero-section {
-  /* Extra small screens */
-}
 @media (max-width: 480px) {
   .hero-section .hero-main {
     max-width: 100%;
@@ -408,11 +332,16 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .smart-hero {
   background: #fff;
   padding: 2rem 1rem;
+  /* Tablet */
+  /* Mobile */
+  /* Extra small screens */
 }
 .smart-hero .hero-content {
   margin: 0 auto;
   text-align: center;
   max-width: 800px;
+  /* Email Form */
+  /* Rating */
 }
 .smart-hero .hero-content h1 {
   font-size: clamp(26px, 4vw, 62px);
@@ -429,115 +358,28 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
-.smart-hero .hero-content {
-  /* Email Form */
-}
 .smart-hero .hero-content .email-form {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0;
   max-width: 400px;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
   margin: 0 auto 2rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
 }
-.smart-hero .hero-content .email-form [form-question-zigrow] {
-  flex: 1 1 220px;
-  min-width: 0;
-}
-.smart-hero .hero-content .email-form [form-question-zigrow] > label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-.smart-hero .hero-content .email-form [form-question-zigrow] > input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="image"]):not([type="file"]),
-.smart-hero .hero-content .email-form [form-question-zigrow] > select,
-.smart-hero .hero-content .email-form [form-question-zigrow] > textarea {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 48px;
-  box-sizing: border-box;
-  padding: 0.75rem;
-  border: none;
-  outline: none;
-  font: inherit;
-  color: #000;
-  background-color: #fff;
-}
-.smart-hero .hero-content .email-form [form-question-zigrow] > textarea {
-  min-height: 112px;
-  resize: vertical;
-}
-.smart-hero .hero-content .email-form [form-question-zigrow] > input[type="checkbox"],
-.smart-hero .hero-content .email-form [form-question-zigrow] > input[type="radio"] {
-  width: auto;
-}
-.smart-hero .hero-content .email-form [form-question-zigrow] > input:focus-visible,
-.smart-hero .hero-content .email-form [form-question-zigrow] > select:focus-visible,
-.smart-hero .hero-content .email-form [form-question-zigrow] > textarea:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--territory-colors, #8941ff) 55%, white);
-  outline-offset: -3px;
-}
-.smart-hero .hero-content .email-form > button[type="submit"] {
+.smart-hero .hero-content .email-form a {
   background: var(--secondary-colors, #060535);
   color: #fff;
   padding: 0 1.5rem;
-  border: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  max-width: 100%;
-  min-height: 48px;
-  font: inherit;
   transition: background 0.3s ease;
 }
-.smart-hero .hero-content .email-form > button[type="submit"]:hover,
-.smart-hero .hero-content .email-form > button[type="submit"]:active {
-  background: color-mix(in srgb, var(--primary-colors, #060535) 86%, white);
-  color: #fff;
-}
-.smart-hero .hero-content .email-form > button[type="submit"]:disabled {
-  cursor: wait;
-  opacity: 0.72;
-}
-.smart-hero .hero-content .email-form .form-submit-message {
-  flex: 1 0 100%;
-  min-width: 0;
-  color: var(--secondary-colors, #060535);
-}
-.smart-hero .hero-content .email-form .form-submit-message[data-status="success"] {
-  color: #1f7a3d;
-}
-.smart-hero .hero-content .email-form .form-submit-message[data-status="error"] {
-  color: #b42318;
-}
-.smart-hero .hero-content .email-form:has([form-question-zigrow] + [form-question-zigrow]) {
-  flex-direction: column;
-  gap: 12px;
-  padding: 12px;
-}
-.smart-hero .hero-content .email-form:has([form-question-zigrow] + [form-question-zigrow]) > button[type="submit"] {
-  align-self: flex-start;
-  padding-block: 0.75rem;
-}
-.smart-hero .hero-content {
-  /* Rating */
+.smart-hero .hero-content .email-form a:hover {
+  background: var(--primary-colors, #060535);
 }
 .smart-hero .hero-content .rating {
   display: flex;
@@ -547,19 +389,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: 1rem;
 }
 .smart-hero .hero-content .rating .stars {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   color: #fb923c;
   font-size: 1.25rem;
-}
-.smart-hero .hero-content .rating .stars > i {
-  flex: 0 0 auto;
 }
 .smart-hero .hero-content .rating .rating-info strong {
   font-size: 1.1rem;
@@ -570,32 +401,20 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: 0.9rem;
   color: #555;
 }
-.smart-hero {
-  /* Tablet */
-}
 @media (max-width: 992px) {
   .smart-hero .hero-content p {
     font-size: 1rem;
   }
 }
-.smart-hero {
-  /* Mobile */
-}
 @media (max-width: 768px) {
   .smart-hero .hero-content .email-form {
     flex-direction: column;
   }
-  .smart-hero .hero-content .email-form [form-question-zigrow] {
-    flex-basis: auto;
-    width: 100%;
-  }
-  .smart-hero .hero-content .email-form [form-question-zigrow] > input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
-  .smart-hero .hero-content .email-form [form-question-zigrow] > select,
-  .smart-hero .hero-content .email-form [form-question-zigrow] > textarea {
+  .smart-hero .hero-content .email-form input {
     width: 100%;
     border-bottom: 1px solid #ddd;
   }
-  .smart-hero .hero-content .email-form > button[type="submit"] {
+  .smart-hero .hero-content .email-form a {
     justify-content: center;
     width: 100%;
     padding: 0.75rem;
@@ -606,9 +425,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     text-align: center;
   }
 }
-.smart-hero {
-  /* Extra small screens */
-}
 @media (max-width: 480px) {
   .smart-hero .hero-content p {
     font-size: 0.95rem;
@@ -617,6 +433,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 
 .trusted-companies {
   background: #fff;
+  /* Swiper styles for mobile */
+  /* Show swiper on small screens, hide static grid */
 }
 .trusted-companies .trusted-text {
   text-align: center;
@@ -633,16 +451,14 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .trusted-companies .trusted-logos img {
   max-height: 40px;
   width: auto;
+  display: block;
   margin: 0 auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: transform 0.2s ease-in-out;
 }
 .trusted-companies .trusted-logos img:hover {
   transform: scale(1.05);
-}
-.trusted-companies {
-  /* Swiper styles for mobile */
 }
 .trusted-companies .trusted-swiper .swiper-slide {
   display: flex;
@@ -652,11 +468,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .trusted-companies .trusted-swiper .swiper-slide img {
   max-height: 40px;
   width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.trusted-companies {
-  /* Show swiper on small screens, hide static grid */
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 768px) {
   .trusted-companies .trusted-logos {
@@ -668,7 +481,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     font-size: 0.8rem;
   }
   .trusted-companies img {
-    max-height: 30px;
+    max-height: 30px !important;
   }
 }
 
@@ -676,6 +489,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   position: relative;
 }
 .video-section .container .main-image {
+  display: block;
   width: 100%; /* responsive */
   max-height: 600px;
   border-radius: 24px;
@@ -687,7 +501,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   left: 0;
   width: 100%;
   height: 40%; /* covers bottom 40% of the image */
-  background: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   pointer-events: none; /* click-through */
 }
 .video-section .container .play-button-main-div {
@@ -704,12 +518,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 @media (max-width: 767.98px) {
   .video-section .container .play-button-main-div {
@@ -729,12 +537,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 50%;
   transition: background 0.4s ease;
@@ -751,6 +553,10 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   transition: color 0.4s ease;
 }
 
+.smart-tech-section {
+  /* Tablets */
+  /* Mobile */
+}
 .smart-tech-section .container {
   padding: 2rem;
   border-radius: 24px;
@@ -779,9 +585,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .smart-tech-section .read-more-btn .arrow {
   margin-left: 0.5rem;
   transition: margin-left 0.3s ease;
-}
-.smart-tech-section .smart-tech-actions {
-  justify-content: flex-start;
 }
 .smart-tech-section .read-more-btn:hover {
   background-color: #0b0c1a;
@@ -816,7 +619,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 }
 .smart-tech-section .info-box1 {
   border: 2px solid var(--territory-colors, #8941ff);
-  background-color: color-mix(in srgb, var(--territory-colors, #8941ff) 12%, rgb(251, 254, 253));
+  background-color: #ede7fd;
 }
 .smart-tech-section .info-box1 .value {
   color: var(--territory-colors, #8941ff);
@@ -827,9 +630,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 }
 .smart-tech-section .info-box2 .value {
   color: var(--primary-colors, #060535);
-}
-.smart-tech-section {
-  /* Tablets */
 }
 @media (max-width: 991.98px) {
   .smart-tech-section .smart-tech-content {
@@ -845,15 +645,9 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   .smart-tech-section .read-more-btn {
     margin-top: 1rem;
   }
-  .smart-tech-section .smart-tech-actions {
-    justify-content: center;
-  }
   .smart-tech-section p {
     font-size: 16px;
   }
-}
-.smart-tech-section {
-  /* Mobile */
 }
 @media (max-width: 576px) {
   .smart-tech-section .container {
@@ -875,6 +669,9 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 
 .features-section {
   padding: 3rem 1rem;
+  /* Tablet responsiveness */
+  /* Mobile responsiveness */
+  /* Extra small devices */
 }
 .features-section .section-header {
   text-align: center;
@@ -892,11 +689,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 }
 .features-section .main-feature {
   border-radius: 24px;
-}
-.features-section .main-feature.clonable-card,
-.ecosystem-section .bottom-features > .clonable-card {
-  padding-top: 8px;
-  padding-bottom: 8px;
 }
 .features-section .background-color-only {
   border-radius: 24px;
@@ -954,6 +746,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 }
 .features-section .feature-card .read-more-btn2 {
   color: var(--secondary-colors, #060535);
+  position: absolute;
+  bottom: 10%;
 }
 .features-section .feature-card .read-more-btn2:hover {
   color: var(--primary-colors, #060535);
@@ -966,14 +760,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   margin-left: auto;
   margin-right: auto;
 }
-.features-section .feature-primary-actions {
-  justify-content: flex-start;
-}
-.features-section .feature-card-actions {
-  position: absolute;
-  bottom: 10%;
-  justify-content: flex-start;
-}
 .features-section .feature-image img {
   max-width: 100%;
   height: auto;
@@ -981,7 +767,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 }
 .features-section .cta-button {
   text-align: center;
-  justify-content: center;
   margin-top: clamp(0.5rem, 5vw, 2.5rem);
 }
 .features-section .cta-button .view-all-btn {
@@ -1004,20 +789,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .features-section .feature-card2 {
   position: relative;
 }
-.features-section {
-  /* Tablet responsiveness */
-}
 @media (max-width: 992px) {
   .features-section .background-color-only {
     flex-direction: column;
     text-align: center;
   }
-  .features-section .feature-primary-actions {
-    justify-content: center;
-  }
-}
-.features-section {
-  /* Mobile responsiveness */
 }
 @media (max-width: 768px) {
   .features-section .main-feature {
@@ -1033,10 +809,9 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   .features-section .feature-card p {
     font-size: 0.9rem;
   }
-  .features-section .feature-card-actions {
+  .features-section .feature-card .read-more-btn2 {
     position: static;
     margin-top: 0.8rem;
-    justify-content: center;
   }
   .features-section .feature-image {
     margin-top: 1rem;
@@ -1049,9 +824,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     font-size: 1.4rem;
     line-height: 1.4;
   }
-}
-.features-section {
-  /* Extra small devices */
 }
 @media (max-width: 480px) {
   .features-section {
@@ -1071,6 +843,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 
 .ecosystem-section {
   padding: 3rem 1rem;
+  /* Top Feature Container */
+  /* Bottom Features */
+  /* Tablet adjustments */
+  /* Mobile view */
+  /* Extra small screens */
 }
 .ecosystem-section .section-header {
   text-align: center;
@@ -1085,10 +862,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   }
 }
 .ecosystem-section .section-header .each-section-heading .highlight {
-  color: #fb923c;
-}
-.ecosystem-section {
-  /* Top Feature Container */
+  color: var(--territory-colors, #fb923c);
 }
 .ecosystem-section .top-feature {
   display: flex;
@@ -1153,7 +927,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   }
 }
 .ecosystem-section .top-feature-container .highlight-image img {
-  max-height: 100%;
+  max-height: auto;
   max-width: 300px;
   width: 100%;
   height: auto;
@@ -1164,13 +938,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     width: fit-content;
   }
 }
-.ecosystem-section {
-  /* Bottom Features */
-}
 .ecosystem-section .bottom-features {
   margin-top: 32px;
-  margin-right: 0;
-  margin-left: 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1202,8 +971,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   justify-content: center;
 }
 .ecosystem-section .bottom-features .feature-card .feature-image img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
   height: auto;
   max-height: 600px;
@@ -1211,16 +980,10 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .ecosystem-section .bottom-features .feature-card .right-feature-image {
   padding: 1.2rem;
 }
-.ecosystem-section {
-  /* Tablet adjustments */
-}
 @media (max-width: 992px) {
   .ecosystem-section .feature-card {
     padding: 1.2rem;
   }
-}
-.ecosystem-section {
-  /* Mobile view */
 }
 @media (max-width: 768px) {
   .ecosystem-section .top-feature {
@@ -1241,9 +1004,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     margin-bottom: 1rem;
     padding: 1rem;
   }
-}
-.ecosystem-section {
-  /* Extra small screens */
 }
 @media (max-width: 480px) {
   .ecosystem-section .each-section-heading {
@@ -1272,9 +1032,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: clamp(26px, 4vw, 62px);
   font-weight: 700;
   line-height: 1.4;
-  color: var(--territory-colors, #8941ff);
-  background: none;
-  -webkit-text-fill-color: currentColor;
+  background-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, var(--primary-colors, #fc466b) 0%, var(--territory-colors, #3f5efb) 100%);
 }
 .quote-section .quote-content .gradient-text .emoji {
   display: inline-block;
@@ -1287,6 +1049,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 
 .customer-story {
   text-align: center;
+  /* Swiper styles for mobile */
 }
 .customer-story .highlight {
   color: var(--primary-colors, #060535);
@@ -1318,9 +1081,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   border-radius: 24px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.customer-story {
-  /* Swiper styles for mobile */
 }
 .customer-story .customerStorySwiper .swiper-slide {
   display: flex;
@@ -1377,7 +1137,7 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   margin-bottom: 1rem;
   overflow: hidden;
   transition: all 0.3s ease;
-  background-color: color-mix(in srgb, var(--territory-colors, #8941ff) 12%, rgb(251, 254, 253));
+  background-color: var(--primary-colors, #ede7fd);
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 .faq-section .accordion-item:not(.collapsed) {
@@ -1390,14 +1150,14 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-weight: 500;
   color: var(--secondary-colors, #060535);
   box-shadow: none;
-  background-color: color-mix(in srgb, var(--territory-colors, #8941ff) 12%, rgb(251, 254, 253));
+  background-color: var(--primary-colors, #ede7fd);
 }
 .faq-section .accordion-button::after {
   background-size: 1rem;
 }
 .faq-section .accordion-button:not(.collapsed) {
   color: var(--territory-colors, #8941ff);
-  background-color: color-mix(in srgb, var(--territory-colors, #8941ff) 12%, rgb(251, 254, 253));
+  background-color: var(--primary-colors, #ede7fd);
   border-color: var(--territory-colors, #8941ff);
 }
 .faq-section .accordion-button:focus {
@@ -1429,9 +1189,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   font-size: clamp(26px, 5vw, 62px);
   font-weight: 700;
   line-height: 1.4;
-  color: var(--territory-colors, #8941ff);
-  background: none;
-  -webkit-text-fill-color: currentColor;
+  background-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, var(--primary-colors, #fc466b) 0%, var(--territory-colors, #3f5efb) 100%);
 }
 .quote-section2 .gradient-text .emoji {
   display: inline-block;
@@ -1462,6 +1224,8 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   padding: 40px 0;
   background-color: #fff;
   font-family: Arial, sans-serif;
+  /* Medium screens (tablet) */
+  /* Small screens (mobile) */
 }
 .footer-section .footer-top {
   display: flex;
@@ -1507,11 +1271,11 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .footer-section .footer-top .footer-column .store-badge-div {
   display: flex;
   justify-content: start;
-  text-align: center;
   width: -moz-fit-content;
   width: fit-content;
 }
 .footer-section .footer-top .footer-column .store-badge-div .store-badge {
+  display: block;
   max-width: 160px;
   margin-bottom: 10px;
   transition: transform 0.4s ease;
@@ -1536,9 +1300,6 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
   flex-wrap: wrap;
   gap: 15px;
   justify-content: end;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
 }
 .footer-section .footer-bottom .footer-links a {
   text-decoration: none;
@@ -1549,32 +1310,10 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
 .footer-section .footer-bottom .footer-links a:hover {
   color: var(--primary-colors, #060535);
 }
-.footer-section .powered-by-zigrow-row {
-  margin-top: 20px;
-  text-align: center;
-}
-.footer-section .powered-by-zigrow-row p {
-  margin: 0;
-}
-.footer-section .powered-by-zigrow-row a {
-  color: #6c757d;
-  font-size: 13px;
-  text-decoration: none;
-}
-.footer-section .powered-by-zigrow-row a:hover,
-.footer-section .powered-by-zigrow-row a:focus-visible {
-  color: var(--primary-colors, #060535);
-}
-.footer-section {
-  /* Medium screens (tablet) */
-}
 @media (max-width: 992px) {
   .footer-section .footer-top .footer-column {
     flex: 1 1 calc(33.33% - 20px);
   }
-}
-.footer-section {
-  /* Small screens (mobile) */
 }
 @media (max-width: 599.98px) {
   .footer-section .footer-top {
@@ -1601,3 +1340,12 @@ form[data-zigrow-form] > button[type="submit"]:focus-visible,
     margin-top: 10px;
   }
 }
+
+input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

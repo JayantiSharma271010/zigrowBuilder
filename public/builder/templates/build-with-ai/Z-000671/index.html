@@ -1,0 +1,3878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heaven Birds - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #6B7280;
+      --border-radius-btn: 14px;
+      --box-radius: 12px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #3A86FF;
+      --secondary-colors: #1A1A1A;
+      --territory-colors: #FFBE0B;
+      --theme-3: #ffffff;
+      --theme-4: #000000;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 14px 28px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 16px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 18px;
+      --fs-h3-base: 44px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 44px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #1A1A1A ;
+      font-family: Inter;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Oswald ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #1A1A1A;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+   <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top custom-navbar">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold" href="#">
+          Heaven Birds
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav align-lg-custom-center -center">
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#testimonials">Testimonials</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#faq">Faq</a>
+            </li>
+          
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" class="primary-btn">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+    .custom-navbar {
+  padding: 0.8rem 0;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 1.2rem;
+  color: var(--para-muted);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-colors);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sticky navbar small-custom shadow on scroll */
+.sticky-top.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile menu background */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+</style>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".sticky-top");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+   <!-- Bold -->
+<section class=" hero-zigrow-section_15" id="hero" data-section="hero">
+  <div class="container-fluid h-custom-100 px-custom-0">
+    <div class="row g-0 align-custom-stretch min-vh-100 position-relative">
+
+      <!-- LEFT SECTION -->
+      <div class="col-md-6 bg-custom-dark text-custom-white p-custom-0">
+        <div class="content-area d-flex flex-column justify-custom-center h-custom-100 ">
+          <p class="text-custom-uppercase small-custom letter-spacing mb-custom-3 text-custom-secondary-emphasis ">Innovative Water Solutions</p>
+          <h1 class="fw-custom-bold hero-heading mb-custom-4 lh-custom-sm">Pure Water for a Healthier Home</h1>
+          <a href="#" class="primary-btn   w-auto align-self-md-start align-custom-center">Explore Now</a>
+        </div>
+      </div>
+
+   <!-- RIGHT SECTION -->
+<div class="col-md-6 image-area position-relative">
+  <div class="col-12 img-wrapper-center">
+    <img src="https://images.unsplash.com/photo-1618832515490-e181c4794a45?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwcmVub3ZhdGlvbnxlbnwwfHx8fDE3NjkzMzExMTN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Main Image" class="img-fluid w-custom-100 h-custom-100 object-fit-cover" />
+    
+  </div>
+  <!-- 📸 Main Image Credit -->
+<span class="img-credit">
+  Photo by 
+  <a 
+    href="https://unsplash.com/@immorenovation?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    immo RENOVATION
+  </a> on 
+  <a 
+    href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Unsplash
+  </a>
+</span>
+
+</div>
+
+
+      <!-- 🟢 VIDEO THUMBNAIL -->
+     
+
+<div class="video-thumbnail shadow-lg ">
+
+  <div class="position-relative text-custom-center">
+
+
+  <img src="https://images.unsplash.com/photo-1758548157747-285c7012db5b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMGxpdmluZyUyMHNwYWNlfGVufDB8fHx8MTc2OTMzMTExM3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Video Thumbnail" class="img-fluid rounded-4 border border-white border-3">
+
+  <!-- 📸 Video Thumbnail Credit -->
+<span class="img-credit">
+  Photo by 
+  <a 
+    href="https://unsplash.com/@pajorstudio?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Dominik
+  </a> on 
+  <a 
+    href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Unsplash
+  </a>
+</span>
+  <!-- ▶️ Play button overlay (ADD THIS) -->
+    <a class="play-button" href="#" aria-label="Play video" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    </a>
+
+    </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-zigrow-section_15 {
+  background-color: #0f0f0f;
+  color: white;
+
+
+ .row {
+  min-height: 100vh;
+}
+
+.hero-heading{
+  font-size: 3.4rem;
+  text-transform: capitalize;
+}
+.content-area {
+  padding: 80px 60px 80px 117px;
+  background-color: #0f0f0f;
+}
+
+.content-area h1 {
+  line-height: 1.2;
+}
+
+.letter-spacing {
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #bbbbbb;
+}
+
+.btn.transition {
+  transition: all 0.3s ease;
+}
+
+.btn.transition:hover {
+  transform: translateY(-2px);
+}
+
+.image-area {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.image-area img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* 📽️ Video Thumbnail */
+/* 📽️ Square video thumbnail */
+.video-thumbnail {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  width: 280px;              /* desktop size */
+  aspect-ratio: 1 / 1;       /* 👈 perfect square */
+  z-index: 10;
+  /* border-radius: 16px;        keep rounded look (optional) */
+  overflow: hidden;           /* clip image edges */
+  transition: transform 0.3s ease;
+  /* border: 3px solid #fff;     move border to container */
+}
+
+/* ▶️ Play button */
+.video-thumbnail .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;                 /* credit text se upar rahe */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+  outline: none;
+}
+
+.video-thumbnail .play-button:hover,
+.video-thumbnail .play-button:focus {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.video-thumbnail .play-button svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  margin-left: 2px; /* triangle ko thoda center feel dene ke liye */
+}
+
+/* optional: small-custom screens */
+@media (max-width: 768px) {
+  .video-thumbnail .play-button {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* fill the square */
+.video-thumbnail .position-relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* no distortion */
+  /* display: block; */
+  /* remove border classes on <img> or override: */
+  border: 0 ;
+  border-radius: 0 ;
+}
+
+/* credit position inside square */
+.video-thumbnail .img-credit {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 10px;
+}
+
+/* hover */
+.video-thumbnail:hover {
+  transform: translateX(-50%) scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .hero-heading{
+    font-size: 2rem;
+  }
+}
+
+/* 📱 mobile size */
+@media (max-width: 768px) {
+  .hero-heading{
+    font-size: 1.8rem;
+  }
+  .video-thumbnail {
+    width: 240px;
+    aspect-ratio: 1 / 1;
+    bottom: 20px;
+  }
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    padding: 50px 25px;
+    text-align: center;
+  }
+
+  .btn.transition {
+    align-self: center ;
+  }
+
+
+}}
+
+</style>   <!-- BOLD -->
+
+<section class="about-zigrow-section_5 section-padding" id="about" data-section="about">
+  <div class="container">
+    <div class="row g-xl-5 align-custom-center">
+
+      <!-- ▸▸ Media Grid -->
+      <div class="col-12 col-xl-6 order-2 order-xl-1">
+        <div class="media-grid-modern">
+          
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1763002487829-a177254d758e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwaW1wcm92ZW1lbnQlMjBwcm9mZXNzaW9uYWxzfGVufDB8fHx8MTc2OTMzMTExNHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 1" />
+
+              
+                <span class="play-overlay"><i></i></span>
+                
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@chiputt_golf?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Chiputt Golf
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1618832515490-e181c4794a45?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwcmVub3ZhdGlvbnxlbnwwfHx8fDE3NjkzMzExMTN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 2" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@immorenovation?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      immo RENOVATION
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1758548157747-285c7012db5b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMGxpdmluZyUyMHNwYWNlfGVufDB8fHx8MTc2OTMzMTExM3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 3" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@pajorstudio?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Dominik
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+            <figure class="media-card position-relative img-wrapper-center">
+              <img src="https://images.unsplash.com/photo-1595814432314-90095f342694?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwaW1wcm92ZW1lbnR8ZW58MHx8fHwxNzY5MzMxMTEzfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Visual 4" />
+
+              
+
+
+                  <div class="img-credit">
+                    Photo by
+                    <a href="https://unsplash.com/@roselyntirado?utm_source=zigrow&utm_medium=referral"
+                      target="_blank" rel="noopener noreferrer">
+                      Roselyn Tirado
+                    </a>
+                    on
+                    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                      rel="noopener noreferrer">
+                      Unsplash
+                    </a>
+
+                  </div>
+            </figure>
+            
+
+        </div>
+      </div>
+
+      <!-- ▸▸ Content Block -->
+      <div class="col-12 col-xl-6 content-box order-1 order-xl-2">
+        <div class="content-block">
+          <p class="label">Our Goals</p>
+          <h2 class="section-heading mb-custom-4 main-heading">
+            About Heaven Birds
+          </h2>
+          <p class=" para-muted mb-custom-4 font-body">
+            At Heaven Birds, we combine nature and innovation to provide you with healthy water solutions. Our products are designed for sustainability and efficiency, ensuring a better tomorrow for your home. From water purifiers to commercial RO systems, our trusted brand delivers purity and performance. Experience the difference with our commitment to quality and customer satisfaction. Our advanced water purifiers ensure you enjoy clean and safe drinking water every day.
+          </p>
+
+          <ul class=" feature-bullets mb-custom-5">
+              
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Our advanced water purifiers ensure you enjoy clean and safe drinking water every day.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  Our water heaters and kitchen chimneys are designed to save energy while providing optimal performance.
+                </li>
+                
+                <li><span class="checkmark"></span class="para-muted font-body-sm">
+                  We offer tailored solutions for businesses, ensuring high-quality water systems that meet your needs.
+                </li>
+                
+                  </ul>
+
+         <a href="#" class="primary-btn">Learn more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .about-zigrow-section_5 {
+    --clr-primary: var(--primary-colors);
+    --clr-accent: var(--territory-colors);
+    --clr-bg: #ffffff;
+    --clr-muted: #6c757d;
+
+    background: var(--clr-bg);
+    overflow: hidden;
+    position: relative;
+
+
+    .label {
+      font-size: 0.75rem;
+      margin-bottom: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-primary);
+      font-weight: 600;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .section-heading::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary));
+      display: block;
+      margin-top: 1rem;
+    border-radius: var(--box-radius);
+    }
+
+    /* Media grid */
+    .media-grid-modern {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    .media-card {
+      position: relative;
+      aspect-ratio: 1 / 1;
+   border-radius: var(--box-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-section);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .media-card:hover {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-section-hover);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    figure{
+      margin: 0 ;
+    }
+    /* Play icon overlay */
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-overlay i {
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 20px solid #fff;
+      transform: translateX(2px);
+    }
+
+    /* Features */
+    .feature-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+  /* Features */
+.feature-bullets li {
+  display: flex;
+  align-items: center;
+  /* font-weight: 500; */
+  color: var(--para-muted);
+  line-height: var(--lh-body);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.feature-bullets li:hover {
+  color: var(--clr-primary);
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary));
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkmark::after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: block;
+  animation: check-appear 0.4s ease;
+}
+
+.checkmark:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Animation for tick */
+@keyframes check-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+ @media (max-width: 425px) {  .media-grid-modern {
+        grid-template-columns: 1fr;
+      }}
+ @media (max-width: 1024px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }}
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .content-box{
+        margin-bottom: 5rem;
+      }
+    
+
+      .section-heading::after {
+        margin-inline: auto;
+      }
+
+      .content-block {
+        text-align: center;
+      }
+
+      .feature-bullets li {
+        justify-content: center;
+      }
+    }
+  }
+</style>   <!-- ====================== service-zigrow-section_13 : START ====================== -->
+<section id="services" data-section="services" class="section-padding  service-zigrow-section_13">
+  <div class="container px-custom-3 px-md-custom-4">
+
+    
+
+    <!-- Top header row -->
+    <div class="row align-custom-end g-4">
+      <div class="col-lg-8">
+
+        <h2 class="main-heading mb-custom-2">Our Services</h2>
+        <p class="font-subheading para-muted mb-custom-0 ">Explore our range of water solutions designed for homes and businesses seeking purity and efficiency.</p>
+
+        <div class="d-flex align-custom-center gap-2 mt-custom-3 ">
+          <a href="#!" class="primary-btn ms-custom-1">Explore more</a>
+        </div>
+      </div>
+
+      <!-- KPI block -->
+      <div class="col-lg-4 text-lg-end">
+        <div class="service-zigrow-kpi text-lg-end">
+          <div class="service-zigrow-kpi-number">6</div>
+          <div class="small para-muted mt-custom-1 ">Services</div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Cards grid -->
+    <div class="row g-4 g-xl-5 mt-custom-1 mt-md-4">
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1682888813913-e13f18692019?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwcmVtb2RlbGluZ3xlbnwwfHx8fDE3NjkzMzExMTR8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Water Purifiers" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@zacgudakov?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Zac Gudakov
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Water Purifiers</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Enjoy clean, safe drinking water with our advanced purifiers. Designed to eliminate contaminants while preserving essential minerals for better health.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">health</span>
+              
+                <span class="badge service-zigrow-chip">safety</span>
+              
+                <span class="badge service-zigrow-chip">purity</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiYXRocm9vbSUyMHJlbm92YXRpb258ZW58MHx8fHwxNzY5MzMxMTE0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Water Heaters" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@lotusdnp?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Lotus Design N Print
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Water Heaters</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Experience instant hot water with our energy-efficient heaters. Perfect for your home, ensuring comfort and convenience every day.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">comfort</span>
+              
+                <span class="badge service-zigrow-chip">energy-efficient</span>
+              
+                <span class="badge service-zigrow-chip">reliable</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1609258640518-cd29d8bb733c?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxsYW5kc2NhcGluZyUyMHNlcnZpY2VzfGVufDB8fHx8MTc2OTI0MTg2Nnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Commercial RO" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@hamzaports?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Hamza Madrid
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Commercial RO</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Optimize your business with our commercial reverse osmosis systems. Ensure high-quality water for your operations and enhance productivity.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">business</span>
+              
+                <span class="badge service-zigrow-chip">efficiency</span>
+              
+                <span class="badge service-zigrow-chip">quality</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1676311396794-f14881e9daaa?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwbWFpbnRlbmFuY2V8ZW58MHx8fHwxNzY5MjQxODY1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Kitchen Chimneys" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@bermixstudio?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Bermix Studio
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Kitchen Chimneys</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Breathe easy while cooking with our stylish kitchen chimneys. They effectively remove smoke and odors, keeping your kitchen fresh and clean.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">kitchen</span>
+              
+                <span class="badge service-zigrow-chip">freshness</span>
+              
+                <span class="badge service-zigrow-chip">style</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1674376360445-2996327553e7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbnRlcmlvciUyMHBhaW50aW5nfGVufDB8fHx8MTc2OTI0MTg2Nnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Maintenance Services" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@anniespratt?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Annie Spratt
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Maintenance Services</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Keep your systems running smoothly with our professional maintenance services. Regular check-ups ensure longevity and optimal performance.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">maintenance</span>
+              
+                <span class="badge service-zigrow-chip">reliability</span>
+              
+                <span class="badge service-zigrow-chip">service</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="service-zigrow-card h-custom-100 position-relative overflow-hidden rounded-4">
+          <figure class="service-zigrow-figure m-0 position-relative img-wrapper-center">
+            
+
+            <img 
+              src="https://images.unsplash.com/photo-1682888813913-e13f18692019?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwcmVtb2RlbGluZ3xlbnwwfHx8fDE3NjkzMzExMTR8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" 
+              alt="Consultation Services" 
+              class="service-zigrow-img" 
+              loading="lazy"
+            >
+
+            <span class="service-zigrow-gradient pointer-custom-none"></span>
+            <span class="service-zigrow-shine pointer-custom-none"></span>
+
+            
+              <span class="img-credit small-custom">
+                Photo by 
+                <a href="https://unsplash.com/@zacgudakov?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Zac Gudakov
+                </a> on 
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+          </figure>
+
+          <div class="service-zigrow-body d-flex flex-column">
+            <h3 class="h5 fw-custom-semibold card-title mb-custom-2">Consultation Services</h3>
+            <p class="service-zigrow-text flex-grow-1 mb-custom-3">Not sure what you need? Our experts provide personalized consultations to help you choose the best water solutions for your space.</p>
+
+            <div class="mb-custom-3 d-flex flex-wrap gap-2">
+              
+                <span class="badge service-zigrow-chip">consultation</span>
+              
+                <span class="badge service-zigrow-chip">expertise</span>
+              
+                <span class="badge service-zigrow-chip">personalized</span>
+              
+            </div>
+          </div>
+
+          <span class="service-zigrow-ring"></span>
+        </div> <!-- ✅ yahan div close -->
+      </div>
+      
+    </div>
+
+</section>
+<!-- ====================== service-zigrow-section_13 : END ====================== -->
+
+<style>
+  /* ---------- Layout helpers ---------- */
+  .service-zigrow-section_13 {
+    background: #fff;
+  }
+
+  .service-zigrow-section_13 .tracking-wider {
+    letter-spacing: .08em;
+  }
+
+  /* ---------- KPI (right header) ---------- */
+  /* --- KPI mimic like screenshot --- */
+  .service-zigrow-section_13 .service-zigrow-kpi-number {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #111, var(--primary-colors));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-kpi .para-muted {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+
+
+  /* ---------- Card ---------- */
+  .service-zigrow-section_13 .service-zigrow-card {
+    background: #f8f9fb;
+    border: 1px solid #eceef2;
+      box-shadow: var(--shadow-section);
+ border-radius: var(--box-radius);
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    isolation: isolate;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover {
+    transform: translateY(-6px);
+    border-color: #e2e5ea;
+     box-shadow: var(--shadow-section-hover);
+
+
+  }
+
+  /* image wrapper */
+  .service-zigrow-section_13 .service-zigrow-figure {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* display: block; */
+    transform: scale(1.02);
+    transition: transform .6s ease;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-img {
+    transform: scale(1.08);
+  }
+
+  /* overlays */
+  .service-zigrow-section_13 .service-zigrow-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .18) 100%);
+    pointer-events: none;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-shine {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(120px 120px at var(--mx, 80%) var(--my, 20%), rgba(255, 255, 255, .65), rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-shine {
+    opacity: 1;
+  }
+
+  /* body */
+  .service-zigrow-section_13 .service-zigrow-body {
+    padding: 1.1rem;
+
+    .card-title{
+        color: var(--secondary-colors);
+        font-size: var(--fs-sub);
+    }
+  }
+
+  @media (min-width:1200px) {
+    .service-zigrow-section_13 .service-zigrow-body {
+      padding: 1.25rem;
+    }
+  }
+
+  .service-zigrow-section_13 .service-zigrow-text {
+    color: var(--para-muted);
+    font-size: var(--fs-body-sm);
+  }
+
+  /* chips */
+  .service-zigrow-section_13 .service-zigrow-chip {
+    background: #fff;
+    color: #111;
+    border: 1px solid #e7e9ee;
+  border-radius: var(--box-radius);
+    padding: .35rem .7rem;
+    font-weight: 500;
+  }
+
+  /* link + arrow */
+  .service-zigrow-section_13 .service-zigrow-link {
+    color: #111;
+    position: relative;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1.5px;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-link::after {
+    transform: scaleX(1);
+  }
+
+  .service-zigrow-section_13 .service-zigrow-arrow {
+    font-size: 1.25rem;
+    line-height: 1;
+    transform: translateX(0);
+    transition: transform .3s ease;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-arrow {
+    transform: translateX(4px);
+  }
+
+  /* decorative ring */
+  .service-zigrow-section_13 .service-zigrow-ring {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(17, 17, 17, .06), rgba(17, 17, 17, 0) 60%);
+    filter: blur(2px);
+    pointer-events: none;
+    transition: transform .4s ease, opacity .4s ease;
+    opacity: .7;
+  }
+
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-ring {
+    transform: translate(6px, -6px);
+    opacity: 1;
+  }
+
+  /* shine position fallback */
+  .service-zigrow-section_13 .service-zigrow-card:hover .service-zigrow-figure {
+    --mx: 70%;
+    --my: 30%;
+  }
+</style>   <!-- 🤍 Our Clients Grid -->
+<section class="logo-zigrow-section_5 section-padding" id="logos" data-section="logos">
+  <div class="container text-custom-center">
+
+    <!-- Heading -->
+    <h2 class="fw-custom-bold display-custom-5 mb-custom-3 main-heading">Our Dear Clients</h2>
+    <p class="lead-custom para-muted font-subheading mb-custom-5 px-lg-custom-5 col-md-8 mx-custom-auto">
+     A showcase of trusted partners and brands we've collaborated with—highlighting the strength, diversity, and credibility behind our network.
+    </p>
+
+    <!-- Logo table -->
+    <div class="row gx-0 gy-0 border-grid">
+
+      <!-- Repeat for 8 logos -->
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+      <div class="col-12 col-lg-3 cell p-md-custom-5 p-custom-3">
+        <img src="https://dstal.com.au/wp-content/uploads/2021/09/logoipsum.png" class="logo" alt="logo">
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  /* SECTION WRAP */
+.logo-zigrow-section_5{
+  background:#fff;
+}
+
+/* GRID: only inner lines, no outer border */
+.logo-zigrow-section_5 .border-grid .cell{ position: relative; }
+.logo-zigrow-section_5 .border-grid .cell::before,
+.logo-zigrow-section_5 .border-grid .cell::after{
+  content:"";
+  position:absolute;
+  background: var(--grid-line, #e8e9ee); /* subtle line */
+}
+
+/* draw TOP and LEFT separators on every cell */
+.logo-zigrow-section_5 .border-grid .cell::before{ /* top line */
+  height:1px; left:0; right:0; top:0;
+}
+.logo-zigrow-section_5 .border-grid .cell::after{  /* left line */
+  width:1px; top:0; bottom:0; left:0;
+}
+
+/* ≤ LG (mobile/tablet) => 2 columns (col-6) — hide outer edges */
+@media (max-width: 991.98px){
+  /* first row (items 1–2): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+2)::before{ display:none; }
+  /* first column in each row (1,3,5,7): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(2n+1)::after{ display:none; }
+}
+
+/* ≥ LG (desktop) => 4 columns (col-lg-3) — hide outer edges */
+@media (min-width: 992px){
+  /* first row (items 1–4): no top line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(-n+4)::before{ display:none; }
+  /* first column in each row (1,5): no left line */
+  .logo-zigrow-section_5 .border-grid .cell:nth-child(4n+1)::after{ display:none; }
+}
+
+/* LOGO visuals */
+.logo-zigrow-section_5 .logo{
+  max-width:170px; width:100%; object-fit:contain;
+  filter:grayscale(100%) opacity(.8);
+  transition: filter .3s ease;
+}
+.logo-zigrow-section_5 .logo:hover{ filter:grayscale(0%); }
+
+/* small-custom screens logo size */
+@media (max-width:575.98px){
+  .logo-zigrow-section_5 .logo{ max-width:140px; }
+}
+
+</style>
+   <!-- ✅ Certified Excellence Section -->
+<section class="product-zigrow-section_3 section-padding" id="products" data-section="products">
+  <div class="container">
+    <div class="row align-custom-center mb-custom-5">
+      <div class="col-md-7">
+        <p class="sub-heading"> Products We Offer</p>
+        <h2 class=" lh-custom-sm mb-custom-3 main-heading" ">Our Innovative Products</h2>
+      </div>
+      <div class=" col-md-5 text-custom-md-end">
+          <p class="para-muted font-body-sm mb-custom-2">
+            Enhancing your water experience for a healthier life. <br>
+              Enjoy clean, safe drinking water with our state-of-the-art purifiers designed for every home.
+          </p>
+          <div class="link-group">
+            <a href="#" class="link-red ms-custom-4">
+              View Details <span>&rarr;</span>
+            </a>
+          </div>
+      </div>
+    </div>
+      
+    <div class="row g-4">
+      <!-- Card -->
+      <div class="col-sm-6 col-md-4 col-lg-2-4">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1608752503578-52f35965e3d9?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwaW1wcm92ZW1lbnQlMjB0b29sc3xlbnwwfHx8fDE3NjkzMzExMTR8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+                <a href="https://unsplash.com/@bhurnal?utm_source=zigrow&utm_medium=referral"
+                  target="_blank" rel="noopener noreferrer">
+                  Bernie Almanzar
+                </a>
+                on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                  rel="noopener noreferrer">Unsplash</a>
+              </span>
+              
+
+                <div class="service-info">
+                  <span class="service-title ">
+                    Advanced Water Purifiers
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <!-- Repeat cards with different content -->
+      <div class="col-sm-6 col-md-4 col-lg-2-4">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1767188949854-b67a5f83beda?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxtYWludGVuYW5jZSUyMHByb2R1Y3RzfGVufDB8fHx8MTc2OTMzMTExNHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+               <a href="https://unsplash.com/@hdbernd?utm_source=zigrow&utm_medium=referral"
+                  target="_blank" rel="noopener noreferrer">
+                  Bernd 📷 Dittrich
+                </a>
+                on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                  rel="noopener noreferrer">Unsplash</a>
+              </span>
+              
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Efficient Water Heaters
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1626379481874-3dc5678fa8ca?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMHN1cHBsaWVzfGVufDB8fHx8MTc2OTI4MDY1MXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+               <a href="https://unsplash.com/@giorgiotrovato?utm_source=zigrow&utm_medium=referral"
+                  target="_blank" rel="noopener noreferrer">
+                  Giorgio Trovato
+                </a>
+                on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                  rel="noopener noreferrer">Unsplash</a>
+              </span>
+              
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Commercial RO Systems
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1767188949854-b67a5f83beda?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxyZXBhaXIlMjBtYXRlcmlhbHN8ZW58MHx8fHwxNzY5MzMxMTE0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+               <a href="https://unsplash.com/@hdbernd?utm_source=zigrow&utm_medium=referral"
+                  target="_blank" rel="noopener noreferrer">
+                  Bernd 📷 Dittrich
+                </a>
+                on <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank"
+                  rel="noopener noreferrer">Unsplash</a>
+              </span>
+              
+
+                <div class="service-info">
+                  <span class="service-title">
+                    Stylish Kitchen Chimneys
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-2-4">
+        <div class="service-card img-wrapper-center">
+          
+            <img src="https://images.unsplash.com/photo-1761682719763-a35758bbe4a7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbnRlcmlvciUyMGRlc2lnbiUyMHByb2R1Y3RzfGVufDB8fHx8MTc2OTMzMTExNHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" class="service-img" alt="">
+
+            
+              <span class="img-credit">
+                Photo by
+                <a href="https://unsplash.com/@ninjason" target="_blank">
+                  Jason Leung
+                </a>
+                on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+              </span>
+              
+                <div class="service-info">
+                  <span class="service-title">
+                    Smart Water Solutions
+                  </span>
+                  <div class="icon-circle bg-custom-dark text-custom-white">
+                    <span class="arrow">&uarr;</span>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+  .product-zigrow-section_3 {
+    background-color: #fefefe;
+
+    .sub-heading {
+      font-size: 0.9rem;
+      color: var(--para-muted);
+      letter-spacing: .03em;
+      margin-bottom: 0.3rem;
+    }
+
+    .link-group a {
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--primary-colors);
+      transition: all 0.3s ease;
+    }
+
+    .link-group a:hover {
+      text-decoration: underline;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+       border-radius: var(--box-radius);
+      background: #000;
+      transition: transform .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.8);
+      transition: filter .3s ease, transform .3s ease;
+    }
+
+    .service-card:hover .service-img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+
+    .service-card:hover {
+      .service-title {
+        color: #fff;
+      }
+
+      .icon-circle {
+        background: var(--primary-colors);
+      }
+    }
+
+    .service-info {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-title {
+      /* font-size: 0.95rem; */
+       font-size: var(--fs-body);
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow {
+      display: inline-block;
+      transform: rotate(45deg);
+    }
+
+    /* Responsive col fix for 5 cards */
+    @media (min-width: 992px) {
+      .col-lg-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+      }
+    }
+  }
+</style>   <!-- Travel-Driven Shipping Section -->
+<!-- Why Choose Us (same grid as Travel-Driven Shipping) -->
+<section class="whyChooseUs-zigrow-section_7  section-padding"id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container">
+    <div class="row align-custom-center gy-5">
+      
+      <!-- ▸ Left column: heading, copy, buttons -->
+      <div class="col-lg-4">
+        <div class="text-custom-start">
+          <span class="tag">Heaven Birds</span>   <!-- keep style; text is up to you -->
+          
+          <h2 class="main-heading mt-custom-3 ">Why Choose Us</h2>
+          <p class="section-subtitle fw-custom-normal mt-custom-2 ">Experience purity and efficiency with our innovative water solutions tailored for a sustainable future.</p>
+          <p class="section-description mt-custom-3 ">At Heaven Birds, we prioritize your health and the environment, providing top-notch products that ensure clean, safe water for your home and business.</p>
+
+         
+        </div>
+      </div>
+
+      <div class="col-lg-1 d-lg-block "><span class="d-none"></span></div> <!-- spacer stays -->
+
+      <!-- ▸ Right column: feature cards -->
+      <div class="col-lg-7">
+        <div class="row g-4">
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-star"></i>
+                </div>
+                <h5 class="feature-title">Trusted Quality</h5>
+                <p class="feature-text">Our products are rigorously tested to meet the highest standards, ensuring you receive reliable and effective water solutions for your home or business.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h5 class="feature-title">Customer-Centric Service</h5>
+                <p class="feature-text">We pride ourselves on exceptional customer service, providing personalized support and guidance to help you choose the best solutions for your needs.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-leaf"></i>
+                </div>
+                <h5 class="feature-title">Eco-Friendly Solutions</h5>
+                <p class="feature-text">Our commitment to sustainability means you can enjoy clean water while minimizing your environmental footprint, making a positive impact on the planet.</p>
+              </div>
+            </div>
+          
+            <div class="col-md-6">
+              <div class="feature-card h-custom-100">
+                <div class="icon-box">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <h5 class="feature-title">Expert Installation</h5>
+                <p class="feature-text">Our skilled technicians ensure seamless installation of all products, guaranteeing optimal performance and peace of mind for every customer.</p>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>.whyChooseUs-zigrow-section_7 {
+  background-color: #ffffff;
+
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #444;
+  background: #f5f5f5;
+  padding: 6px 14px;
+ border-radius: var(--box-radius);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+ color: var(--lead-custom-color-mute);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin-bottom: 8px;
+
+}
+
+.section-description {
+  font-size: var(--fs-body);
+   color: var(--para-muted);
+  max-width: 90%;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+ border-radius: var(--box-radius);
+  padding: 25px 20px;
+  box-shadow: var(--shadow-section);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+.icon-box {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-title {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--lead-custom-color-mute);
+  margin-bottom: 6px;
+}
+
+.feature-text {
+  font-size: var(--fs-body-sm);
+   color: var(--para-muted);
+  line-height: 1.45;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 767.98px) {
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}}
+</style>   <!-- ◈ Team Showcase -->
+<section class=" section-padding team-zigrow-section_6" id="team" data-section="team">
+  <div class="container-lg text-custom-center">
+
+    <!-- top label -->
+    <span class="staff-eyebrow d-inline-block mb-custom-2">OUR TEAM</span>
+
+    <!-- dynamic title -->
+    <h2 class="staff-title fw-custom-bold mb-custom-3 main-heading">
+      Meet Our Team
+    </h2>
+
+    <!-- dynamic subtitle -->
+    <p class="staff-sub para-muted font-subheading mx-custom-auto mb-custom-5 col-lg-8">
+      Our team combines expertise and passion to deliver the best water solutions for your home and business.
+      Dedicated professionals committed to your water solutions.
+    </p>
+
+    <div class="row g-4 justify-custom-center">
+      
+        <div class="col-12 col-md-6 col-lg-4">
+          <figure class="staff-card img-wrapper-center">
+            <img
+              src="https://i.postimg.cc/Kv4g4kN0/1.png"
+              alt="Alice Johnson"
+              class="w-100 h-custom-100 object-fit-cover">
+          </figure>
+          <h5 class="staff-name mt-custom-3  mb-custom-1">Alice Johnson</h5>
+          <p class="staff-role para-muted font-body-sm mb-custom-0 ">Product Manager</p>
+        </div>
+      
+        <div class="col-12 col-md-6 col-lg-4">
+          <figure class="staff-card img-wrapper-center">
+            <img
+              src="https://i.postimg.cc/fWqV4WNm/10.png"
+              alt="Mark Thompson"
+              class="w-100 h-custom-100 object-fit-cover">
+          </figure>
+          <h5 class="staff-name mt-custom-3  mb-custom-1">Mark Thompson</h5>
+          <p class="staff-role para-muted font-body-sm mb-custom-0 ">Technical Specialist</p>
+        </div>
+      
+        <div class="col-12 col-md-6 col-lg-4">
+          <figure class="staff-card img-wrapper-center">
+            <img
+              src="https://i.postimg.cc/gk5Lhztm/2.png"
+              alt="Sophie Lee"
+              class="w-100 h-custom-100 object-fit-cover">
+          </figure>
+          <h5 class="staff-name mt-custom-3  mb-custom-1">Sophie Lee</h5>
+          <p class="staff-role para-muted font-body-sm mb-custom-0 ">Customer Service Lead</p>
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+/* =====  Typography + palette  ===== */
+.team-zigrow-section_6{
+  background:#fff;
+
+.staff-eyebrow{
+  font-size:.75rem;
+  letter-spacing:.12em;
+  font-weight:600;
+  color:#61637a;
+}
+.staff-title{
+  font-size:clamp(1.8rem,3vw+1rem,2.4rem);
+  line-height:1.25;
+}
+.staff-sub{
+}
+
+/* =====  Card & image  ===== */
+.staff-card{
+  aspect-ratio: 4/3;
+   border-radius: var(--box-radius);
+  overflow:hidden;
+  margin:0;           /* reset <figure> default */
+box-shadow: var(--shadow-section);
+  transition:.4s transform,.4s box-shadow;
+}
+.staff-card:hover{
+  transform:translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+/* =====  Name & role  ===== */
+.staff-name{
+  font-size:1.05rem;
+  font-weight:600;
+ color: #474747;
+}
+.staff-role{
+}
+
+/* =====  Responsive tweaks  ===== */
+@media(max-width:767.98px){
+  .staff-card{aspect-ratio:1/1; border-radius:var(--box-radius);}
+}}
+</style>
+   <section class="portfolio-zigrow-section_1 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">Our Work Showcase</h2>
+      <p class="section-subtitle">Pure &amp; Safe</p>
+    </div>
+
+    <!-- gy-4 => vertical spacing between rows, gx-0 => no horizontal gap (same as pehle) -->
+    <div class="row  g-4">
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1694105050266-911023811297?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjb21wbGV0ZWQlMjBob21lJTIwcHJvamVjdHN8ZW58MHx8fHwxNzY5MzMxMTE1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Home Water Purifier"
+            />
+            <div class="area-name"><span>Home Water Purifier</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@rstar50?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Roger Starnes Sr
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1753977725475-41b221add2c0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiZWZvcmUlMjBhbmQlMjBhZnRlciUyMHJlbm92YXRpb25zfGVufDB8fHx8MTc2OTMzMTExNXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Energy-Efficient Heater"
+            />
+            <div class="area-name"><span>Energy-Efficient Heater</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@brett_jordan?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Brett Jordan
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1652469280598-48842f46be29?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwc2VydmljZSUyMGV4YW1wbGVzfGVufDB8fHx8MTc2OTMzMTExNXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Commercial RO System"
+            />
+            <div class="area-name"><span>Commercial RO System</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@matreding?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Mathias Reding
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://via.placeholder.com/800x400?text=Image+Unavailable"
+              alt="Smart Kitchen Chimney"
+            />
+            <div class="area-name"><span>Smart Kitchen Chimney</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@unknown?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Unknown
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1560024121-b41297cac9f0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxyZW5vdmF0aW9uJTIwc2hvd2Nhc2V8ZW58MHx8fHwxNzY5MzMxMTE1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Residential Water Filter"
+            />
+            <div class="area-name"><span>Residential Water Filter</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@srakotoarivelo7?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Sitraka
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1694105050266-911023811297?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjb21wbGV0ZWQlMjBob21lJTIwcHJvamVjdHN8ZW58MHx8fHwxNzY5MzMxMTE1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Advanced Water Softener"
+            />
+            <div class="area-name"><span>Advanced Water Softener</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@rstar50?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Roger Starnes Sr
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1753977725475-41b221add2c0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxiZWZvcmUlMjBhbmQlMjBhZnRlciUyMHJlbm92YXRpb25zfGVufDB8fHx8MTc2OTMzMTExNXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Portable Water Purifier"
+            />
+            <div class="area-name"><span>Portable Water Purifier</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@brett_jordan?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Brett Jordan
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="area-card position-relative img-wrapper-center">
+            <img
+              src="https://images.unsplash.com/photo-1652469280598-48842f46be29?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxob21lJTIwc2VydmljZSUyMGV4YW1wbGVzfGVufDB8fHx8MTc2OTMzMTExNXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+              alt="Under-Sink Filter"
+            />
+            <div class="area-name"><span>Under-Sink Filter</span></div>
+
+            <div class="img-credit">
+              Photo by
+              <a href="https://unsplash.com/@matreding?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">
+                Mathias Reding
+              </a> on
+              <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                 target="_blank" rel="noopener noreferrer">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<style>
+  .portfolio-zigrow-section_1 {
+    background-color: #fff;
+  }
+
+  .section-subtitle {
+    color: var(--lead-custom-color-mute);
+    font-size: var(--fs-sub);
+  }
+
+  .area-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .area-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+  }
+
+  .area-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .area-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+  }
+</style>
+   <!-- ▰ Testimonials Section -->
+<section class="testimonial-zigrow-section_8 section-padding" id="testimonials"  data-section="testimonials">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="fw-custom-bold main-heading">What Our Customers Say</h2>
+      <p class="para-muted  font-subheading">Hear from those who trust Green Leaf Aqua for their water needs.</p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Green Leaf Aqua transformed my kitchen with their water purifier. The taste is incredible, and I feel confident about my family&#39;s health.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=40" class="avatar me-custom-3" alt="Sarah Johnson"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Sarah Johnson</h6>
+                <small class="para-muted">Homeowner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“The commercial RO system from Green Leaf Aqua has significantly improved our water quality. It&#39;s efficient and reliable—highly recommend!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=41" class="avatar me-custom-3" alt="Michael Smith"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Michael Smith</h6>
+                <small class="para-muted">Business Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I love my new water heater! It heats up quickly and saves energy. Green Leaf Aqua really delivers on their promises.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=42" class="avatar me-custom-3" alt="Emily Davis"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Emily Davis</h6>
+                <small class="para-muted">Health Enthusiast</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“The kitchen chimney we purchased is fantastic! It keeps my kitchen smoke-free and stylish. Great service from Green Leaf Aqua!”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=43" class="avatar me-custom-3" alt="David Brown"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">David Brown</h6>
+                <small class="para-muted">Chef</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“I trust Green Leaf Aqua for all my water needs. Their products are top-notch, and the customer service is always friendly.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=44" class="avatar me-custom-3" alt="Linda Wilson"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">Linda Wilson</h6>
+                <small class="para-muted">Fitness Coach</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card p-custom-4 h-custom-100   bg-custom-white d-flex flex-column justify-custom-between">
+            <div class="mb-custom-3">
+              <p class="para-muted font-body-sm ">“Switching to Green Leaf Aqua was the best decision for my family. Clean water and peace of mind are priceless.”</p>
+            </div>
+            <div class="d-flex align-custom-center">
+              <div class="img-wrapper-center"><img src="https://i.pravatar.cc/60?img=45" class="avatar me-custom-3" alt="James Taylor"></div>
+              <div>
+                <h6 class="mb-custom-0  fw-custom-semibold para-muted">James Taylor</h6>
+                <small class="para-muted">Parent</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+.testimonial-zigrow-section_8 {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+.testimonials-section {
+  background-color: #f9fafb;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow-section); /* ➕ add subtle base shadow */
+    border-radius: var(--box-radius);
+
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+}
+
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/*** headline tweaks ***/
+ .text-accent{
+  color:#5f6f7f;
+}
+ .badge-pill{
+  letter-spacing:.04em;
+}
+.line-tip{
+  content:"";
+  position:absolute;
+  bottom:-6px;left:50%;
+  width:34px;height:2px;
+  background:#ff5b57;
+  transform:translateX(-50%) rotate(3deg);
+  border-radius:2px;
+}
+
+/*** cards ***/
+.t-card{
+  background:#fff;
+  border:0;
+border-radius: var(--box-radius);
+   box-shadow: var(--shadow-section);
+  transition:transform .25s ease, box-shadow .25s ease;
+  position:relative;
+}
+.t-card:hover{
+  transform:translateY(-6px);
+     box-shadow: var(--shadow-section-hover);
+}
+.t-dark{
+  background:#0f0f0f;
+  color:#f0f0f0;
+}
+.t-metric{
+  font-size:3.5rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.04em;
+  display:block;
+  color:#000;
+  margin-bottom:.25rem;
+}
+
+/*** avatar + brand ***/
+.avatar{
+  width:48px;height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.brand-logo{
+  width:24px;opacity:.7;
+}
+
+/*** button hover ***/
+.btn-outline-dark:hover i{
+  transform:translateX(4px);
+  transition:transform .25s;
+}
+
+/*** dark-card text-tone ***/
+.text-custom-white-80{color:rgba(255,255,255,.8);}
+
+/*** responsiveness ***/
+@media(max-width:991.98px){
+  .t-metric{font-size:2.8rem;}
+}
+@media(max-width:575.98px){
+  .results-testimonials .btn{width:100%;}
+  .line-tip{display:none;}
+}}
+</style>   <section class="pricing-zigrow-section_3 section-padding" id="pricing" data-section="pricing">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-custom-center mb-custom-5">
+      <span class="badge bg-custom-light border px-custom-3 py-custom-1 text-custom-dark fw-custom-normal mb-custom-3 text-custom-uppercase font-body">
+        Our Pricing 🪄
+      </span>
+      <h2 class="fw-custom-bold display-custom-6">Access Our Private Beta</h2>
+      <p class="para-muted font-subheading mt-custom-2 ">
+
+        Ideal for home water purification.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4 justify-custom-center">
+
+      <!-- Free Plan -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card h-custom-100">
+          <div class="icon-circle"><i class="fa-regular fa-heart"></i></div>
+          <h5 class="fw-custom-semibold">Pay-as-you-go</h5>
+          <p class="para-muted font-body-sm mb-custom-3">  Ideal for home water purification.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹0</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+    
+            <li>
+              Advanced filtration system
+            </li>
+            
+            <li>
+              Compact design
+            </li>
+            
+            <li>
+              Easy installation
+            </li>
+            
+            <li>
+              Energy efficient
+            </li>
+            
+            <li>
+              1-year warranty
+            </li>
+            
+            <li>
+              24/7 customer support
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hobby Plan (Highlighted) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card featured h-custom-100 position-relative">
+          <div class="highlight-tag text-custom-center fw-custom-semibold font-body">
+            Our Recommendation ✨
+          </div>
+          <div class="icon-circle"><i class="fa-solid fa-bolt"></i></div>
+          <h5 class="fw-custom-semibold">Hobby</h5>
+          <p class="para-muted font-body-sm mb-custom-3"> Perfect for families needing more capacity.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹19</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+            
+            <li>
+              High-capacity purification
+            </li>
+            
+            <li>
+              Smart technology
+            </li>
+            
+            <li>
+              User-friendly interface
+            </li>
+            
+            <li>
+              Long-lasting filters
+            </li>
+            
+            <li>
+              2-year warranty
+            </li>
+            
+            <li>
+              Free installation service
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="plan-card h-custom-100">
+          <div class="icon-circle"><i class="fa-regular fa-gem"></i></div>
+          <h5 class="fw-custom-semibold">Premium</h5>
+          <p class="para-muted font-body-sm mb-custom-3"> Best for commercial use and large spaces.</p>
+          <div class="price-label">
+            <span class="display-custom-6 fw-custom-bold">₹79</span>
+            <span class="para-muted font-body">/ Month</span>
+          </div>
+          <a href="#" class="btn btn-dark w-custom-100 mt-custom-3 ">Build agent now →</a>
+          <ul class="features list-unstyled mt-custom-4 ">
+           
+            <li>
+              Industrial-grade RO system
+            </li>
+            
+            <li>
+              Customizable options
+            </li>
+            
+            <li>
+              Remote monitoring
+            </li>
+            
+            <li>
+              Durable construction
+            </li>
+            
+            <li>
+              3-year warranty
+            </li>
+            
+            <li>
+              Priority customer service
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🎨 Custom Styles -->
+<style>
+.pricing-zigrow-section_3 {
+  background: #fff;
+  color: black;
+
+.btn{
+ border-radius: var(--border-radius-btn);
+}
+/* ===== Card Base ===== */
+.plan-card {
+  background: #fefefe;
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+     border-radius: var(--box-radius);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.plan-card:hover {
+  transform: translateY(-4px);
+     box-shadow: var(--shadow-section);
+}
+.plan-card h5 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.plan-card .icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+.plan-card .price-label {
+  margin-top: 1rem;
+}
+.plan-card .features {
+  text-align: left;
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+}
+.plan-card .features li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.plan-card .features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: 600;
+}
+
+/* ===== Featured Plan ===== */
+.featured {
+  border: 2px solid #000;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+     box-shadow: var(--shadow-section);
+}
+.highlight-tag {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: #000;
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-top-left-radius: var(--box-radius);
+  border-top-right-radius: var(--box-radius);
+}
+
+/* ===== Buttons ===== */
+.plan-card .btn {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+ border-radius: var(--border-radius-btn);
+  transition: all 0.25s ease;
+}
+.plan-card .btn:hover {
+  transform: translateY(-2px);
+  
+     box-shadow: var(--shadow-section-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 575.98px) {
+  .plan-card {
+    padding: 1.5rem;
+  }
+  .plan-card .features {
+    font-size: 0.8rem;
+  }
+}}
+</style>
+   <section class="faq-zigrow-section_1 section-padding bg-custom-light" id="faq" data-section="faq">
+  <div class="container">
+    <div class="row align-custom-start">
+
+      <!-- Left Heading -->
+      <div class="col-lg-5 mb-custom-4 mb-md-0">
+        <h2 class="faq-heading">
+          <span>Frequently</span><br>
+          <span>asked questions</span>
+        </h2>
+        <hr class="faq-divider mt-custom-3" />
+      </div>
+
+      <!-- Right Questions -->
+      <div class="col-lg-7">
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>What products do you offer?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              We offer water purifiers, water heaters, commercial RO systems, and kitchen chimneys to enhance your living space.
+            </p>
+
+          </div>
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>Are your products eco-friendly?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              Yes, our products are designed with sustainability in mind, promoting a healthier environment for you and your family.
+            </p>
+
+          </div>
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>How can I contact customer support?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              You can reach our customer support via phone, email, or our website&#39;s contact form for assistance.
+            </p>
+
+          </div>
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>Do you provide installation services?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              Yes, we offer professional installation services for all our products to ensure optimal performance and customer satisfaction.
+            </p>
+
+          </div>
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>What is your warranty policy?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              We provide a warranty on all our products, ensuring quality and reliability for your peace of mind.
+            </p>
+
+          </div>
+        
+          <div class="faq-item mb-custom-5">
+
+            <!-- QUESTION (safe tag h6) -->
+            <h6 class="faq-question">
+              <span>How do I maintain my products?</span>
+            </h6>
+
+            <!-- ANSWER (safe tag p) -->
+            <p class="faq-answer">
+              Regular cleaning and servicing are recommended to keep your products functioning efficiently and prolong their lifespan.
+            </p>
+
+          </div>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  .faq-zigrow-section_1 {
+    background-color: #fdfbf7;
+    color: #444;
+  
+
+  .faq-heading {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--secondary-colors);
+    line-height: 1.3;
+    
+  }
+
+  .faq-divider {
+    border: 0;
+    height: 2px ;
+    background-color: #aaa;
+    width: 90%;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444444;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .faq-answer {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--para-muted);
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .faq-heading {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .faq-divider {
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      text-align: left;
+    }
+  }}
+</style>
+   <section class="cta-zigrow-section_3 text-custom-white" id="cta" data-section="cta">
+  <div class="container px-lg-custom-5">
+    <div class="row g-4 g-lg-5 align-custom-center text-custom-lg-start text-custom-center">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <div class="copy">
+          <span class="overline">Experience purity and efficiency now.</span>
+          <h2 class="display mb-custom-3">Transform Your Water Today</h2>
+          <p class="lead-custom font-body mb-custom-4">Join us in creating a healthier home. Discover our range of water purifiers and heaters designed for your needs. Your journey to cleaner water starts here!</p>
+
+      <div class="cta-actions d-inline-flex gap-2">
+  <a href="#" class="btn-solid primary-btn">
+    <span class="me-custom-2"><i class="bi bi-lightning-charge-fill "></i> </span>
+    Learn how we can help
+  </a>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6">
+        <div class="visual img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1607000975411-8b704cff63fc?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxjYWxsJTIwdG8lMjBhY3Rpb258ZW58MHx8fHwxNzY5MjMxNDg3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Recovery Help"
+            class="hero-img img-fluid"
+          />
+          <span class="img-credit">
+            Photo by
+            <a
+              href="https://unsplash.com/@brett_jordan?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Brett Jordan</a
+            >
+            on
+            <a
+              href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Unsplash</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-zigrow-section_3 {
+    --brand: var(--theme-4);
+    --bg-custom-dark: var(--theme-3);
+
+    /* New smoother gradient */
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--bg-custom-dark) 92%, #000) 0%,
+        var(--bg-custom-dark) 100%
+      ),
+      radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.08),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.06),
+        transparent 70%
+      );
+
+    color: var(--theme-4);
+    padding: 4.5rem 0;
+    border-top: 1px solid var(--border-muted);
+    border-bottom: 1px solid var(--border-muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-zigrow-section_3 .copy {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .cta-zigrow-section_3 .overline {
+    display: inline-block;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+  .cta-zigrow-section_3 .display {
+    font-size: clamp(1.9rem, 1.2rem + 2vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--theme-4);
+    margin: 0;
+  }
+  .cta-zigrow-section_3 .lead-custom {
+    color: color-mix(in srgb, var(--theme-4) 85%, #fff);
+  }
+
+
+  
+  .cta-zigrow-section_3 .btn-solid {
+    background: var(--theme-4);
+    color: var(--theme-3);
+  }
+  .cta-zigrow-section_3 .btn-solid i{
+   font-size: 1.1rem;
+   line-height: 1;
+  }
+  .cta-zigrow-section_3 .btn-solid:hover {
+    transform: translateY(-2px);
+  }
+ 
+
+  /* Visual wrapper */
+  .cta-zigrow-section_3 .visual {
+    position: relative;
+    width: min(420px, 100%); /* ✅ vertical card jaisa narrow */
+    margin-inline: auto;
+  }
+
+  .cta-zigrow-section_3 .hero-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 3/4; /* ✅ portrait ratio */
+    object-fit: cover; /* crop karega image ko */
+    border-radius: var(--box-radius);
+    box-shadow: var(--shadow-section);
+  }
+
+  .cta-zigrow-section_3 .img-credit {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-zigrow-section_3 .visual {
+      width: 100%;
+    }
+  }
+
+  /* Spacing + responsiveness */
+  @media (min-width: 992px) {
+    .cta-zigrow-section_3 .row {
+      align-items: center;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .cta-zigrow-section_3 {
+      padding: 3.2rem 0;
+    }
+    .cta-zigrow-section_3 .copy {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .cta-zigrow-section_3 .lead-custom {
+      font-size: 1rem;
+    }
+  }
+</style>
+   <section class="contact-zigrow-section_5 section-padding" id="contact" data-section="contact">
+  <div class="container">
+    
+    <!-- Top Images -->
+    <div class="row g-3 mb-custom-5 image-row">
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/g05HR1s8/2.png" class="img-fluid  " alt="Room 1">
+      </div>
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/XJCcgx1h/3.png" class="img-fluid  " alt="Room 2">
+      </div>
+      <div class="col-md-4 img-wrapper-center">
+        <img src="https://i.postimg.cc/8cgdXWqC/4.png" class="img-fluid  " style="width: 600px;" alt="Room 3">
+      </div>
+    </div>
+
+    <!-- Bottom Contact Info -->
+    <div class="row align-custom-start text-section">
+      <div class="col-md-6 mb-custom-4 mb-md-0">
+        <h2 class="fw-custom-bold main-heading">Partner with us</h2>
+      </div>
+      <div class="col-md-6 contact-details">
+        <div class="mb-custom-4">
+          <h6 class="text-custom-uppercase contact-label">Mailing Address</h6>
+          <p>chennai</p>
+        </div>
+        <div class="mb-custom-4">
+          <h6 class="text-custom-uppercase contact-label">Email Address</h6>
+          <p>heavenbirdsstore@gmail.com</p>
+        </div>
+        <div>
+          <h6 class="text-custom-uppercase contact-label">Phone Number</h6>
+          <p>08111092894</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    .contact-zigrow-section_5 {
+  background-color: #fff;
+
+
+.image-row img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+    box-shadow: var(--shadow-section);
+     border-radius: var(--box-radius);
+}
+
+.image-row img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-section-hover);
+}
+
+
+
+.contact-details .contact-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--secondary-colors);
+  letter-spacing: 0.5px;
+}
+
+.contact-details p {
+  font-size: var(--fs-body-sm);
+  color: var(--para-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .text-section {
+    text-align: center;
+  }
+
+  .contact-details {
+    margin-top: 1.5rem;
+  }
+}
+    }
+</style>  
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+          window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

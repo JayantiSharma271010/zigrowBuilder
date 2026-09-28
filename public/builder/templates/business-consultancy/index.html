@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Consultancy</title>
+    <title>Business Counsultencys</title>
 
     <!-- Keep Bootstrap only for .container width -->
     <link
@@ -14,6 +14,10 @@
     <!-- Icons -->
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
@@ -21,15 +25,18 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a id="backToTopBtn" href="#home" aria-label="Back to top" class="back-to-top">
-      <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
+    <a id="backToTopBtn" aria-label="Back to top" class="back-to-top">
+      <i class="bi bi-arrow-up" data-icon="arrow"></i>
     </a>
-    <header id="header" data-section="header" class="main-header">
+    <header id="main-header" data-section="main-header" class="main-header">
       <div class="container">
         <div class="row header-row">
           <!-- Logo -->
-          <div class="col-6 col-md-3 logo-col">
-            <a href="#home" class="brand-logo" data-logo="navbar">BUSINEES CONSULTANCY</a>
+          <div class="col-6 col-md-3 logo-col" data-logo="navbar">
+            <a href="#" class="logo">
+              <h4>BUSI<span>N</span>EES</h4>
+              <p>CONSULTANCY</p>
+            </a>
           </div>
 
           <!-- Nav + Toggle -->
@@ -41,9 +48,10 @@
               aria-label="Toggle menu"
               aria-controls="navbar"
               aria-expanded="false"
-              type="button"
             >
-              <i class="bi bi-list" data-icon="menu" aria-hidden="true"></i>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
             </button>
 
             <!-- Nav Links -->
@@ -54,36 +62,31 @@
                 <li><a href="#service">Service</a></li>
                 <li><a href="#help-section">Contact</a></li>
               </ul>
-              <div class="header-actions zg-align-center">
-                <a href="tel:+919123456789" class="btn-nav" data-btn="nav">Book a Free Consulting Call</a>
-              </div>
+              <a href="tel:1234567891" class="btn-nav">
+                Book a Free Consulting Call
+              </a>
             </nav>
           </div>
         </div>
       </div>
     </header>
 
-    <main>
     <!-- Hero Section -->
     <section class="hero" data-section="hero" id="home">
-      <div class="hero-bg" data-zg-editable="surface"></div>
+      <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
 
       <div class="container">
         <div class="row hero-wraper">
           <div class="col-12 col-lg-10">
             <div class="hero-text">
-              <div class="hero-header">
               <p class="eyebrow">WELCOME!</p>
               <h1 class="hero-title">
                 Strong business <br />
                 strategy to grow your <br />
                 business
               </h1>
-              </div>
-              <div class="hero-actions zg-align-center">
-                <a href="#help-section" class="hero-btn" data-btn="hero">Contact Us</a>
-              </div>
+              <a href="#what-we-help-you" class="hero-btn">Contact Us</a>
             </div>
           </div>
         </div>
@@ -98,7 +101,7 @@
           <div class="col-12 col-lg-6">
             <div class="about-img">
               <img
-                src="assets/business-img/business-consulting-website-2.webp"
+                src="assets/business-img/business consulting website 2.webp"
                 alt="Business consultant"
                 class="img-fluid"
               />
@@ -108,14 +111,11 @@
           <!-- Text Column -->
           <div class="col-12 col-lg-6">
             <div class="about-text">
-              <div class="about-header">
               <span class="section-sub-title">ABOUT</span>
               <h2 class="section-title">
                 We help small business owners and professionals to grow with
                 clarity and confidence.
               </h2>
-              </div>
-              <div class="about-body">
               <p>
                 Running a business is challenging — from managing operations to
                 finding new clients and staying ahead in a competitive market.
@@ -123,10 +123,9 @@
                 professionals create clear strategies that simplify
                 decision-making and accelerate growth.
               </p>
-              <div class="about-actions zg-align-center">
-                <a href="#help-section" class="cta-btn" data-btn="about">Contact us</a>
-              </div>
-              </div>
+              <a href="#what-we-help-you" class="cta-btn" id="hero-button">
+                Contact us
+              </a>
             </div>
           </div>
         </div>
@@ -134,7 +133,7 @@
     </section>
 
     <!-- Services -->
-    <section class="services" data-section="service" id="service">
+    <section class="services py-6" data-section="service" id="service">
       <div class="container">
         <div class="section-head">
           <span class="section-tag">what we do</span>
@@ -142,8 +141,8 @@
         </div>
 
         <div class="row g-3 service-grid">
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -158,11 +157,11 @@
                 approach focuses on clarity, efficiency, and measurable
                 outcomes.
               </p>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -176,11 +175,11 @@
                 result-driven sales and marketing strategies that strengthen
                 your brand, boost conversions, and accelerate business growth.
               </p>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -194,11 +193,11 @@
                 budgeting, forecasting, cost optimization, and risk
                 analysis—ensuring your business stays stable and profitable.
               </p>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -212,11 +211,11 @@
                 and workflows that help your business operate faster, smarter,
                 and more efficiently.
               </p>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -230,11 +229,11 @@
                 with data-backed strategies designed to strengthen performance
                 and drive consistent progress.
               </p>
-            </div>
+            </article>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
-            <div class="service-card">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <article class="service-card">
               <div class="service-icon">
                 <i
                   class="bi bi-people"
@@ -248,7 +247,7 @@
                 analysis to execution steps—so you can scale confidently with a
                 strong roadmap in place.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </div>
@@ -261,13 +260,10 @@
           <!-- Text Column -->
           <div class="col-12 col-lg-6">
             <div class="case-text">
-              <div class="case-header">
               <span class="section-tag">case study</span>
               <h2 class="section-title">
                 Capital Co. jump-starts growth with return to core strategies
               </h2>
-              </div>
-              <div class="case-body">
               <p>
                 Capital Co. was facing slowing revenue, scattered priorities,
                 and rising operational costs. Their teams were busy, but not
@@ -277,19 +273,25 @@
               <h6 class="case-sub">How we helped?</h6>
               <ul class="case-points">
                 <li>
-                  <div class="case-point-row"><span class="case-point-icon"><i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></span><span>Financial consulting and cash-flow planning</span></div>
+                  <i class="bi bi-chevron-right" data-icon="arrow"></i>
+                  Financial consulting and cash-flow planning
                 </li>
                 <li>
-                  <div class="case-point-row"><span class="case-point-icon"><i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></span><span>Productivity improvement across key teams</span></div>
+                  <i class="bi bi-chevron-right" data-icon="arrow"></i>
+                  Productivity improvement across key teams
                 </li>
                 <li>
-                  <div class="case-point-row"><span class="case-point-icon"><i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></span><span>Sales and marketing strategy realignment</span></div>
+                  <i class="bi bi-chevron-right" data-icon="arrow"></i>
+                  Sales and marketing strategy realignment
                 </li>
               </ul>
-              <div class="case-actions zg-align-center">
-                <a href="#help-section" class="btn-primary" data-btn="case-study">Contact us</a>
-              </div>
-              </div>
+              <a
+                href="#what-we-help-you"
+                class="btn-primary"
+                id="hero-button-2"
+              >
+                Contact us
+              </a>
             </div>
           </div>
 
@@ -297,7 +299,7 @@
           <div class="col-12 col-lg-6">
             <div class="case-img">
               <img
-                src="assets/business-img/business-consultancy-website-template-3.webp"
+                src="assets/business-img/business consultancy website template 3.webp"
                 alt="Case study"
               />
             </div>
@@ -313,15 +315,15 @@
       id="reviews"
       aria-label="Client reviews"
     >
-      <div class="reviews-bg" data-zg-editable="surface"></div>
+      <div class="reviews-bg"></div>
       <div class="reviews-overlay"></div>
 
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 reviews-column">
+          <div class="col-12 col-lg-10 mx-auto">
             <div class="reviews-content">
               <div class="reviews-top">
-                <span class="reviews-quote-icon"><i class="bi bi-quote" data-icon="quote" aria-hidden="true"></i></span>
+                <i class="bi bi-quote" data-icon="quote"></i>
                 <p>Reviews From Our Happy Clients</p>
               </div>
 
@@ -333,11 +335,11 @@
               <div class="reviews-stars">
                 <p class="reviewer">Ankit Singh, Founder — Capital Co.</p>
                 <div class="stars" aria-label="5 out of 5">
-                  <span class="review-star-icon"><i class="bi bi-star-fill" data-icon="star" aria-hidden="true"></i></span>
-                  <span class="review-star-icon"><i class="bi bi-star-fill" data-icon="star" aria-hidden="true"></i></span>
-                  <span class="review-star-icon"><i class="bi bi-star-fill" data-icon="star" aria-hidden="true"></i></span>
-                  <span class="review-star-icon"><i class="bi bi-star-fill" data-icon="star" aria-hidden="true"></i></span>
-                  <span class="review-star-icon"><i class="bi bi-star-fill" data-icon="star" aria-hidden="true"></i></span>
+                  <i class="fa-solid fa-star" data-icon="star"></i>
+                  <i class="fa-solid fa-star" data-icon="star"></i>
+                  <i class="fa-solid fa-star" data-icon="star"></i>
+                  <i class="fa-solid fa-star" data-icon="star"></i>
+                  <i class="fa-solid fa-star" data-icon="star"></i>
                 </div>
               </div>
             </div>
@@ -350,10 +352,10 @@
     <section class="help" data-section="help-section" id="help-section">
       <div class="container">
         <div class="row g-4 help-section-box help-row">
-          <div class="col-12 col-lg-6 help-img-box" data-zg-editable="surface">
+          <div class="col-12 col-lg-6 help-img-box">
             <div class="inner-img-box">
               <img
-                src="assets/business-img/business-consultancy-website-template-5.webp"
+                src="assets/business-img/business consultancy website template 5.webp"
                 alt="Team helping client"
               />
             </div>
@@ -362,10 +364,7 @@
           <!-- Text Column -->
           <div class="col-12 col-lg-6">
             <div class="help-text">
-              <div class="help-header">
               <h2 class="section-title">What can we help you overcome?</h2>
-              </div>
-              <div class="help-body">
               <p>
                 Struggling with unclear strategy, scattered execution, or slow
                 growth? We help business owners cut through the noise,
@@ -377,19 +376,19 @@
                 team productivity work with you to remove roadblocks
                 results-driven action.
               </p>
-              <div class="help-actions zg-align-center">
-                <a href="tel:+919123456789" class="btn-primary" data-btn="contact">Contact us</a>
-              </div>
-              </div>
+              <a href="#contact-form-section" class="btn-primary">Contact us</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
 
     <!-- Footer -->
-    <footer class="site-footer" data-section="footer" id="footer">
+    <footer
+      class="site-footer py-6"
+      data-section="footer-contact"
+      id="footer-contact"
+    >
       <div class="container">
         <div class="row g-4 footer-row">
           <div class="col-12 col-lg-6">
@@ -405,53 +404,47 @@
             <div class="contact-box">
               <h6 class="footer-title">Stay Connected</h6>
 
-              <div class="socials">
+              <div class="socials social-icon">
                 <a
                   href="https://twitter.com"
                   target="_blank"
-                  rel="noopener noreferrer"
                   aria-label="Twitter"
                 >
-                  <i class="bi bi-twitter-x" data-icon="twitter" aria-hidden="true"></i>
+                  <i class="fab fa-twitter" data-icon="twitter"></i>
                 </a>
                 <a
                   href="https://facebook.com"
                   target="_blank"
-                  rel="noopener noreferrer"
                   aria-label="Facebook"
                 >
-                  <i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i>
+                  <i class="fab fa-facebook-f" data-icon="facebook"></i>
                 </a>
                 <a
                   href="https://instagram.com"
                   target="_blank"
-                  rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
-                  <i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i>
+                  <i class="fab fa-instagram" data-icon="instagram"></i>
                 </a>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
-                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <i class="bi bi-linkedin" data-icon="linkedin" aria-hidden="true"></i>
+                  <i class="fab fa-linkedin-in" data-icon="linkedin"></i>
                 </a>
               </div>
 
-              <div class="footer-actions zg-align-center">
-                <a href="tel:+919123456789" class="footer-cta" data-btn="footer">Contact us</a>
-              </div>
+              <a href="#what-we-help-you" class="footer-cta">Contact us</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="powered-by-zigrow-row">
-        <a href="https://zigrow.com" target="_blank" rel="noopener noreferrer nofollow sponsored">Powered by Zigrow</a>
-      </div>
     </footer>
 
+    <!-- Optional: your scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

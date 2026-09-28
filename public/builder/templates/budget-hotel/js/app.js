@@ -3,38 +3,12 @@ const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
 navToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("active");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute(
-    "aria-label",
-    isOpen ? "Close navigation menu" : "Open navigation menu"
-  );
-});
-
-// Accessible same-page navigation with a sticky-header offset.
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const target = document.querySelector(link.getAttribute("href"));
-    if (!target) return;
-
-    event.preventDefault();
-    history.replaceState(null, "", `#${target.id}`);
-    target.scrollIntoView({
-      block: "start",
-      behavior: "auto",
-    });
-    target.setAttribute("tabindex", "-1");
-    window.setTimeout(() => target.focus({ preventScroll: true }), 450);
-
-    navMenu.classList.remove("active");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open navigation menu");
-  });
+  navMenu.classList.toggle("active");
 });
 
 // Sticky Navbar after scroll 50px
 window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("header");
+  const navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
     navbar.classList.add("sticky");
   } else {
@@ -53,21 +27,12 @@ window.onscroll = () => {
 };
 
 backToTopBtn.onclick = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "auto"
-      : "smooth",
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 //
 // gsap animation start heare
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (reducedMotion) {
-  gsap.globalTimeline.timeScale(1000);
-}
 
 /* =========================
      Hero Section Animation
@@ -113,7 +78,7 @@ gsap.from("#about .about-content", {
   },
 });
 // Data Section Animation
-gsap.from("#data .data-card-surface", {
+gsap.from("#data .data-card", {
   y: 60,
   opacity: 0,
   duration: 1,
@@ -242,7 +207,7 @@ gsap.from("#gallery .gallery-heading", {
   },
 });
 
-gsap.from("#gallery .gallery-img-wrap", {
+gsap.from("#gallery .gallery-col img", {
   scale: 0.8,
   opacity: 0,
   duration: 1,
@@ -311,7 +276,7 @@ gsap.from("#footer .footer-col", {
   },
 });
 
-gsap.from("#footer .footer-attribution", {
+gsap.from("#footer .footer-bottom", {
   y: 30,
   opacity: 0,
   duration: 1,

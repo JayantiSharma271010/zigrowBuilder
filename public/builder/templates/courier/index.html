@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="#header" class="back-to-top" aria-label="Back to top">
+    <a href="#top" class="back-to-top" aria-label="Back to top">
       <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
     </a>
 
@@ -28,7 +28,10 @@
           <div class="nav-grid">
             <!-- Logo -->
             <div class="nav-logo">
-              <a class="logo" href="#hero" data-logo="navbar">Courier</a>
+              <div class="logo" data-logo="navbar">
+                <h3><i>Courier</i></h3>
+                <span>Deliver It</span>
+              </div>
             </div>
 
             <!-- Desktop Nav -->
@@ -43,7 +46,7 @@
                 <li class="nav-item">
                   <a href="#testimonial">Testimonials</a>
                 </li>
-                <li class="nav-item"><a href="#footer">Contact</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
               </ul>
             </div>
 
@@ -69,7 +72,7 @@
               <li class="nav-item"><a href="#about-section">About</a></li>
               <li class="nav-item"><a href="#pricing">Prices</a></li>
               <li class="nav-item"><a href="#testimonial">Testimonials</a></li>
-              <li class="nav-item"><a href="#footer">Contact</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
@@ -78,7 +81,6 @@
         </nav>
       </div>
     </header>
-    <main>
     <!-- hero section -->
     <section id="hero" data-section="hero" class="hero">
       <div class="container">
@@ -93,9 +95,7 @@
                 we move your packages safely and on time.
               </p>
 
-              <div class="hero-actions zg-align-center">
-                <a href="#services" class="hero__btn" data-btn="hero">Read More</a>
-              </div>
+              <a href="#" class="hero__btn">Read More</a>
             </div>
           </div>
         </div>
@@ -113,31 +113,24 @@
           <!-- right area -->
           <div class="col-12 col-lg-8">
             <div class="cta-main-box">
-              <div class="row g-0 cta-card-box">
-                <div class="col-12 col-md-4 clonable-card cta-card-item">
-                  <div class="inner-card">
-                    <span class="line"></span>
-                    <div class="cta-card-actions zg-align-center">
-                      <a href="#footer" data-btn="contact">Get A Quote <i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-4 clonable-card cta-card-item">
-                  <div class="inner-card">
-                    <span class="line"></span>
-                    <div class="cta-card-actions zg-align-center">
-                      <a href="#services" data-btn="services">Book Online <i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-4 clonable-card cta-card-item">
-                  <div class="inner-card">
-                    <span class="line"></span>
-                    <div class="cta-card-actions zg-align-center">
-                      <a href="#footer" data-btn="contact">Contact Us <i class="bi bi-chevron-right" data-icon="arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                  </div>
-                </div>
+              <div class="cta-card-box">
+                <a href="#contact" class="inner-card">
+                  <span class="line"></span>
+                  <h3>Get A Quote</h3>
+                  <i class="bi bi-chevron-right" data-icon="arrow-right"></i>
+                </a>
+
+                <a href="#services" class="inner-card">
+                  <span class="line"></span>
+                  <h3>Book Online</h3>
+                  <i class="bi bi-chevron-right" data-icon="arrow-right"></i>
+                </a>
+
+                <a href="#contact" class="inner-card">
+                  <span class="line"></span>
+                  <h3>Contact Us</h3>
+                  <i class="bi bi-chevron-right" data-icon="arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -181,31 +174,31 @@
 
               <ul>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Same-Day Local
+                  <i class="bi bi-plus" data-icon="plus"></i> Same-Day Local
                   Delivery
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Express Document
+                  <i class="bi bi-plus" data-icon="plus"></i> Express Document
                   Courier
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> E-commerce
+                  <i class="bi bi-plus" data-icon="plus"></i> E-commerce
                   Shipments
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Fragile &amp; Care
+                  <i class="bi bi-plus" data-icon="plus"></i> Fragile &amp; Care
                   Packages
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Business Bulk
+                  <i class="bi bi-plus" data-icon="plus"></i> Business Bulk
                   Dispatch
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Intercity Parcel
+                  <i class="bi bi-plus" data-icon="plus"></i> Intercity Parcel
                   Delivery
                 </li>
                 <li>
-                  <span class="about-list-icon"><i class="bi bi-plus" data-icon="plus"></i></span> Live Tracking
+                  <i class="bi bi-plus" data-icon="plus"></i> Live Tracking
                   &amp; Support
                 </li>
               </ul>
@@ -217,8 +210,8 @@
     <!-- service section -->
     <section id="services" data-section="services" class="services py-6">
       <div class="container">
-        <div class="row gy-5 services-grid">
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card service-item">
+        <div class="row justify-content-center gy-5">
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="service-card">
               <div class="icon-circle">
                 <i class="bi bi-box-seam" data-icon="box-seam"></i>
@@ -231,13 +224,11 @@
                 Perfect for daily shipments, gifts, and business packages.
               </p>
 
-              <div class="service-actions zg-align-center">
-                <a href="#footer" class="read-more" data-btn="services">Read More</a>
-              </div>
+              <a href="#contact" class="read-more">Read More</a>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card service-item">
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="service-card">
               <div class="icon-circle">
                 <i
@@ -253,13 +244,11 @@
                 papers, and office files with reliable tracking.
               </p>
 
-              <div class="service-actions zg-align-center">
-                <a href="#footer" class="read-more" data-btn="services">Read More</a>
-              </div>
+              <a href="#contact" class="read-more">Read More</a>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 clonable-card service-item">
+          <div class="col-12 col-sm-6 col-lg-4">
             <div class="service-card">
               <div class="icon-circle">
                 <i class="bi bi-truck" data-icon="truck"></i>
@@ -272,9 +261,7 @@
                 scheduled pickups, and fast delivery across cities.
               </p>
 
-              <div class="service-actions zg-align-center">
-                <a href="#footer" class="read-more" data-btn="services">Read More</a>
-              </div>
+              <a href="#contact" class="read-more">Read More</a>
             </div>
           </div>
         </div>
@@ -296,9 +283,7 @@
               </h2>
 
               <!-- a tag styled as button -->
-              <div class="testimonial-actions zg-align-center">
-                <a href="#testimonial" class="cta-button" data-btn="section-name">More Testimonials</a>
-              </div>
+              <a href="#testimonial" class="cta-button">More Testimonials</a>
             </div>
 
             <div class="testimonial-card">
@@ -340,7 +325,7 @@
     <!-- pricing section -->
     <section id="pricing" data-section="pricing" class="pricing-section py-6">
       <div class="container">
-        <div class="pricing-heading">
+        <div class="pricing-heading mb-5">
           <h2 class="section-title">Pricing</h2>
           <p class="section-subtitle">
             Transparent courier rates for local drops, intercity shipping, and
@@ -350,7 +335,7 @@
 
         <div class="row card-container gy-4">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card pricing-item">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="pricing-card h-100">
               <h3 class="price">₹6,250</h3>
               <p class="product-type">Single parcel delivery</p>
@@ -359,31 +344,29 @@
 
               <ul class="pricing-details">
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-box-seam" data-icon="box-seam"></i></span>
+                  <i class="bi bi-box-seam" data-icon="box-seam"></i>
                   <strong>Weight:</strong> Up to 3kg
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-globe2" data-icon="globe2"></i></span>
+                  <i class="bi bi-globe2" data-icon="globe2"></i>
                   <strong>Coverage:</strong> All major cities
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-clock" data-icon="clock"></i></span>
+                  <i class="bi bi-clock" data-icon="clock"></i>
                   <strong>ETA:</strong> 5–10 working days
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-headset" data-icon="headset"></i></span>
+                  <i class="bi bi-headset" data-icon="headset"></i>
                   <strong>Support:</strong> Yes
                 </li>
               </ul>
 
-              <div class="pricing-actions zg-align-center">
-                <a href="#footer" class="order-btn" data-btn="pricing">Order Now</a>
-              </div>
+              <a href="#contact" class="order-btn">Order Now</a>
             </div>
           </div>
 
           <!-- Card 2 (Featured) -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card pricing-item">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="pricing-card featured h-100">
               <h3 class="price">₹18,750</h3>
               <p class="product-type">Express priority shipping</p>
@@ -392,34 +375,32 @@
 
               <ul class="pricing-details">
                 <li>
-                  <span class="pricing-detail-icon"><i
+                  <i
                     class="bi bi-lightning-charge"
                     data-icon="lightning-charge"
-                  ></i></span>
+                  ></i>
                   <strong>Speed:</strong> Priority handling
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-geo-alt" data-icon="geo-alt"></i></span>
+                  <i class="bi bi-geo-alt" data-icon="geo-alt"></i>
                   <strong>Coverage:</strong> Nationwide
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-truck" data-icon="truck"></i></span>
+                  <i class="bi bi-truck" data-icon="truck"></i>
                   <strong>ETA:</strong> 2–5 working days
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-shield-check" data-icon="shield-check"></i></span>
+                  <i class="bi bi-shield-check" data-icon="shield-check"></i>
                   <strong>Tracking:</strong> Live updates
                 </li>
               </ul>
 
-              <div class="pricing-actions zg-align-center">
-                <a href="#footer" class="order-btn white-btn" data-btn="pricing">Order Now</a>
-              </div>
+              <a href="#contact" class="order-btn white-btn">Order Now</a>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4 clonable-card pricing-item">
+          <div class="col-12 col-md-6 col-lg-4">
             <div class="pricing-card h-100">
               <h3 class="price">₹12,500</h3>
               <p class="product-type">Multiple parcel bundle</p>
@@ -428,41 +409,38 @@
 
               <ul class="pricing-details">
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-boxes" data-icon="boxes"></i></span>
+                  <i class="bi bi-boxes" data-icon="boxes"></i>
                   <strong>Items:</strong> 3+ parcels
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i
+                  <i
                     class="bi bi-globe-central-south-asia"
                     data-icon="globe-central-south-asia"
-                  ></i></span>
+                  ></i>
                   <strong>Coverage:</strong> PAN India
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i
+                  <i
                     class="bi bi-calendar2-check"
                     data-icon="calendar2-check"
-                  ></i></span>
+                  ></i>
                   <strong>ETA:</strong> 4–8 working days
                 </li>
                 <li>
-                  <span class="pricing-detail-icon"><i class="bi bi-arrow-repeat" data-icon="arrow-repeat"></i></span>
+                  <i class="bi bi-arrow-repeat" data-icon="arrow-repeat"></i>
                   <strong>Pickup:</strong> Scheduled
                 </li>
               </ul>
 
-              <div class="pricing-actions zg-align-center">
-                <a href="#footer" class="order-btn" data-btn="pricing">Order Now</a>
-              </div>
+              <a href="#contact" class="order-btn">Order Now</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </main>
 
     <!-- footer -->
-    <footer id="footer" data-section="footer" class="footer-section py-6">
+    <footer id="contact" data-section="contact" class="footer-section py-6">
       <div class="container">
         <div class="row footer-row py-4 gy-4">
           <!-- Left -->
@@ -510,19 +488,19 @@
           <div class="col-12 col-md-4">
             <ul class="footer-contact list-unstyled mb-3">
               <li>
-                <span class="footer-contact-icon"><i class="bi bi-envelope" data-icon="envelope"></i></span>
+                <i class="bi bi-envelope" data-icon="envelope"></i>
                 <a href="mailto:support@courierdemo.com" class="footer-link"
                   >yourname@domainname.com</a
                 >
               </li>
               <li>
-                <span class="footer-contact-icon"><i class="bi bi-telephone" data-icon="telephone"></i></span>
+                <i class="bi bi-telephone" data-icon="telephone"></i>
                 <a href="tel:+919123456789" class="footer-link"
                   >+91-9123456789</a
                 >
               </li>
               <li>
-                <span class="footer-contact-icon"><i class="bi bi-geo-alt" data-icon="geo-alt"></i></span>
+                <i class="bi bi-geo-alt" data-icon="geo-alt"></i>
                 E-123, ABC Plaza, XYZ Street, New Delhi - 110077
               </li>
             </ul>
@@ -546,18 +524,15 @@
           </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom text-white mt-5">
           <div class="row gy-2">
             <div class="col-12 col-md-6">
               <span>Copyright © 2025 All Right Reseved</span>
             </div>
-            <div class="col-12 col-md-6 footer-bottom-end">
+            <div class="col-12 col-md-6 text-md-end">
               <span>Delivery Services</span>
             </div>
           </div>
-        </div>
-        <div class="powered-by-zigrow-row">
-          <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
         </div>
       </div>
     </footer>

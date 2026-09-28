@@ -222,7 +222,7 @@
   z-index: 1;
   background: transparent;
   cursor: default;
-} 
+}
 
 .vvv-link-modal__dialog {
   position: relative;
@@ -994,12 +994,12 @@
   border: 1px solid var(--zigrow-primary-50, #eef2ff);
   border-radius: 999px;
   font-weight: 500;
-  color: var(--zigrow-primary-500, #4338ca);
+   color: var(--zigrow-primary-500, #4338ca);
 }
 
 .iconpicker__count {
   font-size: 0.85rem;
-  color: var(--zigrow-secondary-mute-color);
+    color: var(--zigrow-secondary-mute-color);
   margin-left: 6px;
 }
 
@@ -1123,7 +1123,6 @@
   min-height: 110px;
 }
 
-
 .iconpicker__grid .icon-item i {
   font-size: 26px;
   color: #475569;
@@ -1165,7 +1164,6 @@ font-size: 0.85rem;
 .iconpicker__footer .tip{
 font-weight: 600;
 }
-
 
 
 .iconpicker__footer .btn {
@@ -1216,6 +1214,7 @@ font-weight: 600;
   animation: rf-popup-zoom 0.24s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
+
 .vvv-icon-modal {
   position: fixed;
   inset: 0;
@@ -1251,6 +1250,7 @@ font-weight: 600;
   background: transparent;
   cursor: default;
 }
+
 
 @keyframes rf-popup-zoom {
   0% {
@@ -2967,6 +2967,7 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
 
 
 
+
 /* =====================================================
    Zigrow Exit Feedback Popup
 ===================================================== */
@@ -3467,6 +3468,7 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
 
 
 
+
 /* Section editor css code */
 
 
@@ -3839,32 +3841,6 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
     background: transparent !important;
     cursor: pointer !important;
 }
-
-#section-editor.zg-section-bg-editor .zg-se-color-box {
-  position: relative !important;
-  overflow: hidden !important;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-#section-editor.zg-section-bg-editor .zg-se-color-box input[type="color"] {
-  position: absolute !important;
-  inset: 4px !important;
-  width: calc(100% - 8px) !important;
-  height: calc(100% - 8px) !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  display: block !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
-  color-scheme: light;
-}
-
-#section-editor.zg-section-bg-editor .zg-se-body {
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-}
-
 #section-editor.zg-section-bg-editor
     input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0 !important;
@@ -3928,6 +3904,13 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
 #section-editor.zg-section-bg-editor .zg-se-range-label label {
     margin-bottom: 0 !important;
 }
+
+#section-bg-reset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 #section-editor.zg-section-bg-editor .zg-se-range-label output {
     width: 54px !important;
     min-width: 54px !important;
@@ -4339,6 +4322,7 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
 }
 
 
+
 #section-editor.zg-section-bg-editor {
   right: 0 !important;
   bottom: 8px !important;
@@ -4352,9 +4336,11 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
   overflow: hidden !important;
 }
 
+
 #section-editor.zg-section-bg-editor.zg-se-open {
   display: flex !important;
 }
+
 #section-editor.zg-section-bg-editor .zg-se-header {
   flex: 0 0 auto !important;
 }
@@ -4392,11 +4378,6 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
   line-height: 1.2 !important;
   font-weight: 700 !important;
   color: var(--zg-se-text) !important;
-}
-
-#section-bg-reset:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 #section-editor.zg-section-bg-editor .zg-se-range-label output {
@@ -4547,56 +4528,30 @@ html[data-bs-theme="dark"] .vvv-icon-link-control .form-control {
   background: transparent !important;
 }
 
-/* Safari color picker fix: make real color input own the swatch click */
 #section-editor.zg-section-bg-editor .zg-se-color-box {
   position: relative !important;
   overflow: hidden !important;
-  padding: 0 !important;
-  width: 54px !important;
-  height: 34px !important;
-  display: inline-block !important;
-  cursor: pointer !important;
-  -webkit-transform: none !important;
-  transform: none !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 #section-editor.zg-section-bg-editor .zg-se-color-box input[type="color"] {
   position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 54px !important;
-  min-height: 34px !important;
+  inset: 4px !important;
+  width: calc(100% - 8px) !important;
+  height: calc(100% - 8px) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   display: block !important;
   opacity: 1 !important;
-  visibility: visible !important;
   pointer-events: auto !important;
-  z-index: 5 !important;
-
-  -webkit-appearance: none !important;
-  appearance: none !important;
-
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  background: #ffffff !important;
-  cursor: pointer !important;
-}
-
-#section-editor.zg-section-bg-editor .zg-se-color-box input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 4px !important;
-}
-
-#section-editor.zg-section-bg-editor .zg-se-color-box input[type="color"]::-webkit-color-swatch {
-  border: 0 !important;
-  border-radius: 6px !important;
+  color-scheme: light;
 }
 
 #section-editor.zg-section-bg-editor .zg-se-body {
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
 }
-zg-se-eyedropper-disabled
 
 /* Safari / unsupported browser eyedropper disabled state */
 /* Safari / unsupported browser eyedropper disabled state */
@@ -4629,16 +4584,16 @@ zg-se-eyedropper-disabled
   content: attr(data-tooltip) !important;
   position: absolute !important;
 
-left: 0 !important;
-right: auto !important;
-bottom: calc(100% + 10px) !important;
-transform: none !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: calc(100% + 10px) !important;
+  transform: none !important;
 
   width: 245px !important;
   max-width: 245px !important;
   padding: 8px 10px !important;
 
-  background: #0a111f !important;
+    background: #0a111f !important;
   color: #ffffff !important;
   border-radius: 8px !important;
 
@@ -4661,10 +4616,10 @@ transform: none !important;
   content: "" !important;
   position: absolute !important;
 
-left: 12px !important;
-right: auto !important;
-bottom: calc(100% + 4px) !important;
-transform: none !important;
+  left: 12px !important;
+  right: auto !important;
+  bottom: calc(100% + 4px) !important;
+  transform: none !important;
 
   border-width: 6px 6px 0 6px !important;
   border-style: solid !important;
@@ -4682,6 +4637,7 @@ transform: none !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
+
 
 /* Section Editor image overlay action */
 
@@ -4778,6 +4734,7 @@ transform: none !important;
   pointer-events: none !important;
 }
 
+/* Section editor codes ends here */
 
 
 /* =====================================================
@@ -5378,6 +5335,7 @@ body.zg-exit-modal-open #iframe-layer {
   border-color: var(--zigrow-primary-500, #5b3df2);
   box-shadow: 0 0 0 3px rgba(91, 61, 242, 0.12);
 }
+
 
 /* Surface image overlay controls */
 

@@ -73,6 +73,41 @@ Vvveb.Undo = {
   },
   */
   addMutation: function (mutation) {
+    if (mutation && mutation.type === "childList") {
+      const addedNodes = Array.from(mutation.addedNodes || []);
+      const removedNodes = Array.from(mutation.removedNodes || []);
+      const firstNode = addedNodes[0] || removedNodes[0];
+      const lastAdded = addedNodes[addedNodes.length - 1] || null;
+
+      if (!mutation.previousSibling && firstNode) {
+        mutation.previousSibling = firstNode.previousSibling || null;
+      }
+
+      if (mutation.nextSibling && addedNodes.includes(mutation.nextSibling)) {
+        mutation.nextSibling = lastAdded ? lastAdded.nextSibling : null;
+      }
+
+      mutation.addedNodeRecords = addedNodes.map((node) => ({
+        node,
+        parent: node.parentNode || mutation.target,
+        previousSibling: node.previousSibling || null,
+        nextSibling:
+          node.nextSibling && !addedNodes.includes(node.nextSibling)
+            ? node.nextSibling
+            : null,
+      }));
+
+      mutation.removedNodeRecords = removedNodes.map((node) => ({
+        node,
+        parent: node.parentNode || mutation.target,
+        previousSibling: mutation.previousSibling || null,
+        nextSibling:
+          mutation.nextSibling && !removedNodes.includes(mutation.nextSibling)
+            ? mutation.nextSibling
+            : null,
+      }));
+    }
+
     /*
       this.mutations.push(mutation);
       this.undoIndex++;
@@ -89,9 +124,50 @@ Vvveb.Undo = {
     Vvveb.Builder.frameBody.dispatchEvent(event);
   },
 
+  getChildListInsertPoint: function (mutation, node, nodesBeingAdded, record) {
+    let parent = null;
+    let referenceNode = null;
+    const nextSibling = record ? record.nextSibling : mutation.nextSibling;
+    const previousSibling = record
+      ? record.previousSibling
+      : mutation.previousSibling;
+
+    if (
+      nextSibling &&
+      nextSibling.parentNode &&
+      !nodesBeingAdded.includes(nextSibling)
+    ) {
+      parent = nextSibling.parentNode;
+      referenceNode = nextSibling;
+    } else if (previousSibling && previousSibling.parentNode) {
+      parent = previousSibling.parentNode;
+      referenceNode = previousSibling.nextSibling;
+    } else if (record && record.parent) {
+      parent = record.parent;
+    } else if (mutation.target) {
+      parent = mutation.target;
+    }
+
+    if (!parent) {
+      return null;
+    }
+
+    if (
+      referenceNode === node ||
+      (referenceNode && referenceNode.parentNode !== parent)
+    ) {
+      referenceNode = null;
+    }
+
+    return { parent, referenceNode };
+  },
+
   restore: function (mutation, undo) {
     switch (mutation.type) {
       case "childList":
+        let addedNodes;
+        let removedNodes;
+
         if (undo == true) {
           addedNodes = mutation.removedNodes;
           removedNodes = mutation.addedNodes;
@@ -101,28 +177,40 @@ Vvveb.Undo = {
           removedNodes = mutation.removedNodes;
         }
 
+        const nodesBeingAdded = Array.from(addedNodes || []);
+        const nodeRecords = undo
+          ? mutation.removedNodeRecords
+          : mutation.addedNodeRecords;
+
         if (addedNodes)
-          for (i in addedNodes) {
-            node = addedNodes[i];
-            if (mutation.nextSibling) {
-              mutation.nextSibling.parentNode.insertBefore(
-                node,
-                mutation.nextSibling
-              );
-            } else {
-              mutation.target.append(node);
+          for (const node of nodesBeingAdded) {
+            const record =
+              nodeRecords && nodeRecords.find((item) => item.node === node);
+            const insertPoint = this.getChildListInsertPoint(
+              mutation,
+              node,
+              nodesBeingAdded,
+              record
+            );
+
+            if (insertPoint) {
+              insertPoint.parent.insertBefore(node, insertPoint.referenceNode);
             }
           }
 
         if (removedNodes)
-          for (i in removedNodes) {
-            node = removedNodes[i];
-            node.parentNode.removeChild(node);
+          for (const node of Array.from(removedNodes)) {
+            if (node.parentNode) {
+              node.parentNode.removeChild(node);
+            }
           }
         refreshSwiperUI(mutation.target);
         break;
 
       case "move":
+        let parent;
+        let sibling;
+
         if (undo == true) {
           parent = mutation.oldParent;
           sibling = mutation.oldNextSibling;
@@ -132,10 +220,10 @@ Vvveb.Undo = {
           sibling = mutation.newNextSibling;
         }
 
-        if (sibling) {
+        if (sibling && sibling.parentNode) {
           sibling.parentNode.insertBefore(mutation.target, sibling);
-        } else {
-          parent.append(node);
+        } else if (parent) {
+          parent.append(mutation.target);
         }
         break;
 
@@ -152,7 +240,7 @@ Vvveb.Undo = {
         break;
 
       case "attributes":
-        value = undo ? mutation.oldValue : mutation.newValue;
+        let value = undo ? mutation.oldValue : mutation.newValue;
 
         if (value || value === false || value === 0)
           mutation.target.setAttribute(mutation.attributeName, value);
@@ -163,26 +251,19 @@ Vvveb.Undo = {
 
     Vvveb.LinkEditor._rebuildButtonStyles();
 
+    const iframeDoc = Vvveb.Builder.iframe.contentDocument;
+    Vvveb.GlobalCustomAnimation.initAnimations(iframeDoc);
+    Vvveb.GlobalCustomAnimation.init();
+
     console.log("- Mutation restored:", mutation, "UndoIndex:", this.undoIndex);
 
-
-    let scrollTarget = mutation.target;
-
-    if (mutation.type === "childList") {
-      const nodes = undo ? mutation.removedNodes : mutation.addedNodes;
-      if (nodes && nodes.length > 0) {
-        scrollTarget = nodes[0];
-      }
-    }
-
-    if (scrollTarget && scrollTarget.nodeType === Node.TEXT_NODE) {
-      scrollTarget = scrollTarget.parentNode;
-    }
+    let scrollTarget = this.getScrollTarget(mutation, undo);
 
     if (scrollTarget && typeof scrollTarget.scrollIntoView === "function") {
       scrollTarget.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: "auto",
+        // block: undo ? "start" : "center",
+        block: "start",
         inline: "center"
       });
     }
@@ -201,6 +282,31 @@ Vvveb.Undo = {
     if (this.undoIndex < this.mutations.length - 1) {
       this.restore(this.mutations[++this.undoIndex], false);
     }
+  },
+
+  getElementAnchor: function (node, reverse) {
+    while (node && node.nodeType !== Node.ELEMENT_NODE) {
+      node = reverse ? node.previousSibling : node.nextSibling;
+    }
+
+    return node || null;
+  },
+
+  getScrollTarget: function (mutation, undo) {
+    if (!mutation || mutation.type !== "childList") {
+      return mutation && mutation.target;
+    }
+
+    if (undo) {
+      return (
+        this.getElementAnchor(mutation.previousSibling, true) ||
+        this.getElementAnchor(mutation.nextSibling, false) ||
+        mutation.target
+      );
+    }
+
+    const addedNode = mutation.addedNodes && mutation.addedNodes[0];
+    return this.getElementAnchor(addedNode, false) || mutation.target;
   },
 
   hasChanges: function () {

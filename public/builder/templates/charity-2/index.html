@@ -17,24 +17,28 @@
       referrerpolicy="no-referrer"
     />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css?v=2.13.0-4" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="#hero" id="backToTopBtn" class="back-to-top" aria-label="Back to top">
-      <i class="fas fa-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
+    <a href="#" id="backToTopBtn" class="btn">
+      <i class="bi bi-arrow-up" data-icon="arrow"></i>
     </a>
     <!-- Navbar -->
-    <header class="zg-navbar" id="header" data-section="header">
+    <header class="zg-navbar" id="navbar" data-section="navbar">
       <div class="container">
         <div class="row nav-wraper">
           <!-- Logo -->
-          <div class="col-6 col-md-3">
-            <a href="#hero" class="zg-navbar__logo" data-logo="navbar">H.O.P.E</a>
+          <div class="col-6 col-md-3" data-logo="navbar">
+            <a href="#hero" class="zg-navbar__logo">H.O.P.E</a>
           </div>
 
           <!-- Desktop Nav -->
@@ -50,8 +54,8 @@
           <!-- Mobile Toggle -->
           <div class="col-6 d-block d-md-none">
             <div class="zg-navbar__toggle-wrap">
-              <button
-                type="button"
+              <a
+                href="#"
                 class="zg-navbar__toggle"
                 aria-label="Toggle Menu"
                 aria-expanded="false"
@@ -60,7 +64,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -76,20 +80,29 @@
         </div>
       </div>
     </header>
-    <main>
     <!-- Hero Section -->
-    <section class="zg-hero" id="hero" data-section="hero">
+    <section class="zg-hero py-6" id="hero" data-section="hero">
+      <!-- Square-mosaic blob background -->
+      <div
+        class="zg-hero__blob blob-squares"
+        aria-hidden="true"
+        style="
+          --char: url('assets/images/your-character.webp');
+          --blob-url: url('assets/images/blob-soft.svg');
+        "
+      ></div>
 
       <div class="container">
         <div class="row zg-hero__row">
           <!-- Left Text -->
           <div class="col-lg-4 zg-hero__left">
-            <h1 class="zg-hero__left-title">They Need Us</h1>
+            <h2 class="zg-hero__left-title">They Need Us</h2>
             <p class="zg-hero__left-text">
-              Help children access safe learning, nutritious meals, and caring
-              support that strengthens families and local communities today.
+              You can use a few enticing words and flaunt your capabilities that
+              will attract future donors and encourage them to donate right
+              away.
             </p>
-            <div class="zg-hero__actions zg-align-center"><a href="#join-us" class="zg-hero__btn" data-btn="hero">Donate Now</a></div>
+            <a href="#donate" class="zg-hero__btn">Donate Now</a>
           </div>
 
           <!-- Center Image -->
@@ -114,69 +127,69 @@
       </div>
     </section>
     <!-- Services Section -->
-    <section class="zg-services" id="services" data-section="services">
+    <section class="zg-services py-6" id="services" data-section="services">
       <div class="container">
         <div class="row zg-services__row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4 zg-services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-services__col">
             <div class="zg-services__card">
               <div class="zg-services__icon">
                 <i class="fas fa-tshirt" data-icon="tshirt"></i>
               </div>
 
-              <h3 class="zg-services__title">Clothing With Dignity</h3>
+              <h3 class="zg-services__title">Tristique Sceleris</h3>
 
               <p class="zg-services__text">
-                Seasonal clothing drives help children and families stay safe,
-                comfortable, and ready for school.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
 
-              <div class="zg-services__actions zg-align-center"><a href="#join-us" class="zg-services__link" data-btn="services">
+              <a href="#" class="zg-services__link">
                 Host A Drive
-                <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
-              </a></div>
+                <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
+              </a>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4 zg-services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-services__col">
             <div class="zg-services__card">
               <div class="zg-services__icon">
                 <i class="fas fa-hand-paper" data-icon="hand-paper"></i>
               </div>
 
-              <h3 class="zg-services__title">Volunteer-Led Care</h3>
+              <h3 class="zg-services__title">Molestie Turpis</h3>
 
               <p class="zg-services__text">
-                Local volunteers deliver practical support, mentoring, and
-                dependable care where families need it most.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
 
-              <div class="zg-services__actions zg-align-center"><a href="#join-us" class="zg-services__link" data-btn="services">
+              <a href="#" class="zg-services__link">
                 Host A Drive
-                <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
-              </a></div>
+                <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
+              </a>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4 zg-services__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-services__col">
             <div class="zg-services__card">
               <div class="zg-services__icon">
                 <i class="fas fa-water" data-icon="water"></i>
               </div>
 
-              <h3 class="zg-services__title">Clean Water Access</h3>
+              <h3 class="zg-services__title">Convallis Earum</h3>
 
               <p class="zg-services__text">
-                Community water initiatives improve daily health and give
-                children more time to learn and thrive.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
 
-              <div class="zg-services__actions zg-align-center"><a href="#join-us" class="zg-services__link" data-btn="services">
+              <a href="#" class="zg-services__link">
                 Host A Drive
-                <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
-              </a></div>
+                <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -184,9 +197,9 @@
     </section>
 
     <!-- Join Us Section -->
-    <section class="zg-join" id="join-us" data-section="join-us">
+    <section class="zg-join py-6" id="join-us" data-section="join-us">
       <div class="container">
-        <div class="zg-join__box" data-zg-editable="surface">
+        <div class="zg-join__box">
           <div class="row zg-join__row">
             <!-- Left: Image & Circle -->
             <div class="col-lg-6 zg-join__left">
@@ -204,14 +217,15 @@
               <h2 class="zg-join__title">You Can Be A Part Of Us</h2>
 
               <p class="zg-join__text">
-                Share your time, skills, or resources to help trusted community
-                programmes reach more children and families every month.
+                You can use a few enticing words and flaunt your capabilities
+                that will attract future donors and encourage them to donate
+                right away.
               </p>
 
-              <div class="zg-join__actions zg-align-center"><a href="#footer" class="zg-join__link" data-btn="section-name">
+              <a href="#" class="zg-join__link">
                 Volunteer Now
-                <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
-              </a></div>
+                <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -219,123 +233,123 @@
     </section>
 
     <!-- Mission Section -->
-    <section class="zg-mission" id="mission" data-section="mission">
+    <section class="zg-mission py-6" id="mission" data-section="mission">
       <div class="container">
         <!-- Header -->
         <div class="zg-mission__header">
           <h2 class="zg-mission__heading">Our Mission</h2>
           <p class="zg-mission__subtext">
-            We partner with local leaders to deliver practical, accountable
-            support that helps children learn, stay healthy, and feel secure.
+            You can use a few enticing words and flaunt your capabilities that
+            will attract future donors and encourage them to donate right away.
           </p>
         </div>
 
         <!-- Items -->
         <div class="row zg-mission__row">
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-book" data-icon="book"></i>
               </div>
               <h3 class="zg-mission__title">Charity For Education</h3>
               <p class="zg-mission__text">
-                Learning kits and mentoring help every child build skills,
-                confidence, and brighter opportunities.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-utensils" data-icon="utensils"></i>
               </div>
               <h3 class="zg-mission__title">Feed For Hungry</h3>
               <p class="zg-mission__text">
-                Regular meal programmes provide balanced food for children and
-                families facing difficult circumstances.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-tint" data-icon="water-drop"></i>
               </div>
               <h3 class="zg-mission__title">Filtered Drinking Water</h3>
               <p class="zg-mission__text">
-                Safe filtration and storage projects bring dependable drinking
-                water closer to underserved communities.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-stethoscope" data-icon="stethoscope"></i>
               </div>
               <h3 class="zg-mission__title">Medical Facilities</h3>
               <p class="zg-mission__text">
-                Health camps connect families with essential screenings,
-                trusted guidance, and timely medical support.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-apple-alt" data-icon="apple"></i>
               </div>
               <h3 class="zg-mission__title">Nutritious Food</h3>
               <p class="zg-mission__text">
-                Nutrition support helps growing children receive wholesome
-                meals that improve wellbeing and concentration.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col clonable-card">
+          <div class="col-12 col-sm-6 col-lg-4 zg-mission__col">
             <div class="zg-mission__item">
               <div class="zg-mission__icon">
                 <i class="fas fa-lightbulb" data-icon="lightbulb"></i>
               </div>
               <h3 class="zg-mission__title">Innovation For Children</h3>
               <p class="zg-mission__text">
-                Creative learning spaces encourage curiosity, problem-solving,
-                teamwork, and new possibilities for young people.
+                This is a short description elaborating the service you have
+                mentioned above.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Button -->
-        <div class="zg-mission__btnwrap zg-align-center">
-          <a href="#projects" class="zg-mission__btn" data-btn="services">
+        <div class="zg-mission__btnwrap">
+          <a href="#" class="zg-mission__btn">
             Explore What We Do
-            <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
+            <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
           </a>
         </div>
       </div>
     </section>
 
     <!-- our projects -->
-    <section class="zg-projects" id="projects" data-section="projects">
+    <section class="zg-projects py-6" id="projects" data-section="projects">
       <div class="container">
         <!-- Heading -->
         <div class="zg-projects__heading">
           <h2 class="zg-projects__title">Our Projects</h2>
           <p class="zg-projects__subtext">
-            Each project responds to a clear local need and is tracked with
-            community partners for lasting, transparent impact.
+            You can use a few enticing words and flaunt your capabilities that
+            will attract future donors and encourage them to donate right away.
           </p>
         </div>
 
         <!-- Cards -->
         <div class="row zg-projects__row">
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -343,7 +357,7 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">Community Learning Hubs</h3>
+              <h5 class="zg-projects__name">Sodales Nonummy</h5>
 
               <!-- OPTIONAL (if you ever need link) -->
               <!--
@@ -354,7 +368,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -362,11 +376,11 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">School Meal Support</h3>
+              <h5 class="zg-projects__name">Per Porta Ornare</h5>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -374,11 +388,11 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">Mobile Health Camps</h3>
+              <h5 class="zg-projects__name">Maecenas Deleniti Alias Cras</h5>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -386,11 +400,11 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">Healthy Neighbourhoods</h3>
+              <h5 class="zg-projects__name">Healthy Environment</h5>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -398,11 +412,11 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">Safe Water Stations</h3>
+              <h5 class="zg-projects__name">Vivamus Erat</h5>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4 zg-projects__col clonable-card">
+          <div class="col-12 col-md-6 col-lg-4 zg-projects__col">
             <div class="zg-projects__card">
               <div class="zg-projects__imgbox">
                 <img
@@ -410,7 +424,7 @@
                   alt="Child image"
                 />
               </div>
-              <h3 class="zg-projects__name">Youth Skills Workshops</h3>
+              <h5 class="zg-projects__name">Deleniti Alias Cras</h5>
             </div>
           </div>
         </div>
@@ -418,7 +432,7 @@
     </section>
 
     <!-- partners -->
-    <section class="zg-partners" id="partners" data-section="partners">
+    <section class="zg-partners py-6" id="partners" data-section="partners">
       <div class="container">
         <div class="row zg-partners__row">
           <!-- Left Text -->
@@ -430,32 +444,32 @@
               People!
             </h2>
 
-            <div class="zg-partners__actions zg-align-center"><a href="#footer" class="zg-partners__link" data-btn="contact">
+            <a href="#" class="zg-partners__link">
               Become Our Partner
-              <i class="fas fa-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
-            </a></div>
+              <i class="fas fa-arrow-right" data-icon="arrow-right"></i>
+            </a>
           </div>
 
           <!-- Right Logos -->
           <div class="col-lg-8 zg-partners__logos">
             <div class="row zg-partners__logos-row">
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
-              <div class="col-6 col-md-4 zg-partners__logo-col clonable-card">
-                <div class="zg-partners__logo-tile"><img src="assets/images/logo.webp" alt="Lorem Ipsum partner logo" /></div>
+              <div class="col-6 col-md-4 zg-partners__logo-col">
+                <img src="assets/images/logo.png" alt="Partner logo" />
               </div>
             </div>
           </div>
@@ -465,27 +479,31 @@
 
     <!-- testimonial -->
     <section
-      class="zg-testimonial"
+      class="zg-testimonial py-6"
       id="testimonial"
       data-section="testimonial"
     >
       <div class="container">
         <div class="row zg-testimonial__row">
+          <!-- empty left space on desktop -->
+          <div class="col-lg-7 d-none d-lg-block"></div>
+
           <!-- testimonial content -->
-          <div class="col-12 col-lg-5 offset-lg-7">
+          <div class="col-12 col-lg-5">
             <div class="zg-testimonial__content">
               <div class="zg-testimonial__img-wrap">
                 <img
-                  src="assets/images/testimonial-1.webp"
-                  alt="Ananya Sharma, community volunteer"
+                  src="assets/images/testimonial-1.png"
+                  alt="Profile image"
                   class="zg-testimonial__avatar"
                 />
               </div>
-              <h3 class="zg-testimonial__name">Ananya Sharma</h3>
+              <h4 class="zg-testimonial__name">Sara Bennett</h4>
               <p class="zg-testimonial__text">
-                Volunteering here showed me how thoughtful local partnerships
-                turn small contributions into steady meals, safer classrooms,
-                and genuine confidence for children and their families.
+                Occaecat semper laboris elit ullamcorper, eius, imperdiet
+                pariatur. Odio potenti hac ullamco repudiandae, similique
+                quisquam diam! Lacinia rerum repellat fugit euismod nascetur.
+                Adipisicing mollis.
               </p>
             </div>
           </div>
@@ -494,9 +512,7 @@
     </section>
 
     <!-- footer -->
-    </main>
-
-    <footer class="zg-footer" id="footer" data-section="footer">
+    <footer class="zg-footer py-6" id="footer" data-section="footer">
       <div class="container">
         <!-- Top -->
         <div class="row zg-footer__top">
@@ -504,8 +520,9 @@
           <div class="col-12 col-md-6 col-lg-3 zg-footer__col">
             <h3 class="zg-footer__logo" data-logo="footer">H.O.P.E</h3>
             <p class="zg-footer__text">
-              We support practical community programmes that help children
-              learn, stay healthy, and build hopeful futures.
+              You can use a few enticing words and flaunt your capabilities that
+              will attract future donors and encourage them to donate right
+              away.
             </p>
           </div>
 
@@ -513,10 +530,10 @@
           <div class="col-12 col-md-6 col-lg-3 zg-footer__col">
             <h4 class="zg-footer__heading">Quick Links</h4>
             <ul class="zg-footer__list">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#services">What We Do</a></li>
-              <li><a href="#projects">Creating Impact</a></li>
-              <li><a href="#footer">Contact Us</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">What We Do</a></li>
+              <li><a href="#">Creating Impact</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
 
@@ -534,8 +551,8 @@
           <div class="col-12 col-md-6 col-lg-3 zg-footer__col">
             <h4 class="zg-footer__heading">Keep In Touch</h4>
             <p class="zg-footer__text">
-              Follow our community work, volunteer stories, and upcoming
-              opportunities to make a difference.
+              Connect with entrepreneurs, build your network, make great
+              business.
             </p>
 
             <div class="zg-footer__social">
@@ -557,11 +574,8 @@
 
         <!-- Bottom -->
         <div class="zg-footer__bottom">
-          <p class="zg-footer__copy">Copyright &copy; 2025. All rights reserved.</p>
-          <p class="zg-footer__copy">Community support, delivered with care.</p>
-        </div>
-        <div class="zg-footer__attribution powered-by-zigrow-row">
-          <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
+          <p class="zg-footer__copy">Copyright © 2025 all right reserve</p>
+          <p class="zg-footer__copy">Powered by Charity</p>
         </div>
       </div>
     </footer>
@@ -573,6 +587,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js?v=2.13.0-2"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

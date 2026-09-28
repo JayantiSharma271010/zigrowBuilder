@@ -868,6 +868,19 @@
   color: #e0e0e0;
 }
 
+/* Upgrade-only tooltip styling */
+.zp-floating-tooltip.zp-upgrade-tooltip {
+  background: var(--zigrow-primary-600, #4a2fdc);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(91, 61, 242, 0.3);
+}
+
+[data-bs-theme="dark"] .zp-floating-tooltip.zp-upgrade-tooltip {
+  background: var(--zigrow-primary-500, #5b3df2);
+  color: #ffffff;
+}
+
+
 /* Disable old CSS pseudo-element tooltips — JS floating tooltip handles these now */
 .zp-actions .zp-act.zp-restricted[data-zp-tooltip]::after,
 .zp-actions .zp-act.zp-restricted[data-zp-tooltip]::before,

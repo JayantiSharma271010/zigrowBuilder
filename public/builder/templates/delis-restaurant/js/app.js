@@ -1,8 +1,7 @@
 (function () {
-  const header = document.getElementById("header");
+  const header = document.getElementById("main-header");
   const nav = document.getElementById("navbar");
   const toggle = document.getElementById("nav-toggle");
-  const toggleIcon = toggle?.querySelector("[data-icon]");
 
   if (!header || !nav || !toggle) return;
 
@@ -20,11 +19,6 @@
     const isOpen = nav.classList.toggle("open");
     toggle.classList.toggle("active", isOpen);
     toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    if (toggleIcon) {
-      toggleIcon.classList.toggle("bi-list", !isOpen);
-      toggleIcon.classList.toggle("bi-x-lg", isOpen);
-      toggleIcon.dataset.icon = isOpen ? "close-menu" : "menu";
-    }
   });
 
   // Close on nav click
@@ -33,11 +27,6 @@
       nav.classList.remove("open");
       toggle.classList.remove("active");
       toggle.setAttribute("aria-expanded", "false");
-      if (toggleIcon) {
-        toggleIcon.classList.remove("bi-x-lg");
-        toggleIcon.classList.add("bi-list");
-        toggleIcon.dataset.icon = "menu";
-      }
     });
   });
 })();
@@ -46,7 +35,7 @@
 const backToTop = document.getElementById("backToTopBtn");
 
 window.addEventListener("scroll", () => {
-  backToTop.classList.toggle("is-visible", window.scrollY > 300);
+  backToTop.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
 backToTop.addEventListener("click", (e) => {
@@ -54,13 +43,11 @@ backToTop.addEventListener("click", (e) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// gsap animation start here
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-if (window.gsap && window.ScrollTrigger && !reducedMotion.matches) {
+// gsap animation start heare
 gsap.registerPlugin(ScrollTrigger);
 if (window.innerWidth > 768) {
   // Hero Section animation
-  gsap.from("#hero .hero-section__tagline", {
+  gsap.from("#hero .tagline", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%", // when hero enters viewport
@@ -72,7 +59,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-section__title", {
+  gsap.from("#hero .hero-title", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 75%",
@@ -85,7 +72,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-section__subtext", {
+  gsap.from("#hero .hero-subtext", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 70%",
@@ -98,7 +85,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-section__rule", {
+  gsap.from("#hero .vertical-rule", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 65%",
@@ -112,7 +99,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-section__scroll", {
+  gsap.from("#hero .scroll-down", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 60%",
@@ -141,7 +128,7 @@ if (window.innerWidth > 768) {
       ease: "power3.out",
     })
     .from(
-      "#atmosphere .atmosphere-section__intro",
+      "#atmosphere .intro-text",
       {
         y: 40,
         opacity: 0,
@@ -153,7 +140,7 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    MENU SECTION
 --------------------------------*/
-  gsap.from("#menu-section .menu-section__subtitle", {
+  gsap.from("#menu-section .menu-header .subtitle", {
     y: 30,
     opacity: 0,
     duration: 0.6,
@@ -164,7 +151,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#menu-section .menu-section__title", {
+  gsap.from("#menu-section .menu-header h2", {
     y: 40,
     opacity: 0,
     duration: 0.8,
@@ -175,7 +162,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#menu-section .menu-section__desc", {
+  gsap.from("#menu-section .menu-header p", {
     y: 50,
     opacity: 0,
     duration: 0.9,
@@ -186,19 +173,19 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#menu-section .menu-section__item", {
+  gsap.from("#menu-section .menu-item", {
     y: 60,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: "#menu-section .menu-section__grid",
+      trigger: "#menu-section .menu-grid",
       start: "top 70%",
     },
   });
 
-  gsap.from("#menu-section .menu-section__button", {
+  gsap.from("#menu-section .menu-button", {
     scale: 0.8,
     opacity: 0,
     duration: 0.8,
@@ -212,7 +199,7 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    SIGNATURE SECTION
 --------------------------------*/
-  gsap.from("#signature-menu .signature-menu-section__subtitle", {
+  gsap.from("#signature-menu .signature-content .subtitle", {
     y: 30,
     opacity: 0,
     duration: 0.6,
@@ -223,7 +210,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#signature-menu .signature-menu-section__title", {
+  gsap.from("#signature-menu .signature-content h2", {
     y: 40,
     opacity: 0,
     duration: 0.8,
@@ -234,7 +221,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#signature-menu .signature-menu-section__desc", {
+  gsap.from("#signature-menu .signature-content p", {
     y: 50,
     opacity: 0,
     duration: 1,
@@ -248,7 +235,7 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    GALLERY SECTION
 --------------------------------*/
-  gsap.from("#gallery .gallery-section__item", {
+  gsap.from("#gallery .gallery-item", {
     scale: 0.8,
     opacity: 0,
     duration: 1,
@@ -262,7 +249,7 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    TEAM SECTION
 --------------------------------*/
-  gsap.from("#team .team-section__title", {
+  gsap.from("#team .team-left h2", {
     y: 50,
     opacity: 0,
     duration: 0.8,
@@ -273,7 +260,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#team .team-section__desc", {
+  gsap.from("#team .team-left p", {
     y: 40,
     opacity: 0,
     duration: 0.8,
@@ -284,7 +271,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#team .team-section__img--chef-1", {
+  gsap.from("#team .team-left img", {
     y: -60,
     opacity: 0,
     duration: 1,
@@ -295,7 +282,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#team .team-section__img--chef-2", {
+  gsap.from("#team .team-right .team-member-1", {
     y: 60,
     opacity: 0,
     duration: 1,
@@ -306,7 +293,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#team .team-section__img--chef-3", {
+  gsap.from("#team .team-right .team-member-2", {
     y: 80,
     opacity: 0,
     duration: 1,
@@ -320,7 +307,7 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    RESERVATION SECTION
 --------------------------------*/
-  gsap.from("#reservation .reservation-section__title", {
+  gsap.from("#reservation .reservation-content h2", {
     y: 50,
     opacity: 0,
     duration: 0.8,
@@ -331,7 +318,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#reservation .reservation-section__text", {
+  gsap.from("#reservation .reservation-content p", {
     y: 60,
     opacity: 0,
     duration: 0.9,
@@ -343,7 +330,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#reservation .reservation-section__btn", {
+  gsap.from("#reservation .reservation-btn", {
     scale: 0.8,
     opacity: 0,
     duration: 0.7,
@@ -355,7 +342,7 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from("#reservation .reservation-section__phone", {
+  gsap.from("#reservation .reservation-phone", {
     y: 40,
     opacity: 0,
     duration: 0.8,
@@ -381,29 +368,28 @@ if (window.innerWidth > 768) {
   /* ------------------------------
    FOOTER SECTION
 --------------------------------*/
-  gsap.from("#footer .footer-section__top > [class*='col-']", {
+  gsap.from("#footer .footer-column", {
     y: 60,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.3,
     scrollTrigger: {
-      trigger: "#footer .footer-section__top",
+      trigger: "#footer .footer-top",
       start: "top 80%",
     },
   });
 
-  gsap.from("#footer .footer-section__bottom-text", {
+  gsap.from("#footer .footer-bottom p", {
     y: 30,
     opacity: 0,
     duration: 0.8,
     stagger: 0.2,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: "#footer .footer-section__bottom",
+      trigger: "#footer .footer-bottom",
       start: "top 85%",
     },
   });
-}
 }
 // gsap animation end here

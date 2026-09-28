@@ -1,0 +1,3295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wealthbyprg - Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@700&family=Source+Sans+Pro:wght@400&family=Source+Sans+3:wght@400&family=Anton&family=Archivo:wght@600&family=Oswald:wght@700&family=Poppins:wght@400;700;800&family=Inter:wght@300;400;500&family=Montserrat:wght@600&family=Nunito:wght@900&family=Quicksand:wght@500&family=Open+Sans:wght@400&family=Pacifico&family=Raleway:wght@300;700&family=Lato:wght@400&family=Work+Sans:wght@300&family=DM+Sans:wght@400&family=Lora:wght@700&family=Merriweather:wght@700&family=IBM+Plex+Sans:wght@500&family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Tinos:wght@400;700&family=Marcellus&display=swap"
+  rel="stylesheet"
+/>
+
+
+
+  <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <style>
+    :root {
+      --para-muted: #242429;
+      --border-radius-btn: 8px;
+      --box-radius: 24px;
+      --lead-color-mute: #474747;
+      --border-muted: #e0e0e0;
+      --primary-colors: #5F0F40;
+      --secondary-colors: #1A1A1A;
+      --territory-colors: #E36414;
+      --theme-3: #000000;
+      --theme-4: #fff;
+      --theme-bg: #fff;
+
+      /* global btn style */
+      --btn-padding: 8px 16px;
+      --btn-padding-sm: "0.78rem 2rem";
+      --btn-font-size: 14px;
+      --btn-font-size-sm:  "0.84rem";
+      --btn-font-weight: 500;
+      --btn-box-shadow: 0 1px 1px rgba(17,24,39,0.03), 0 9px 18px -8px rgba(17,24,39,0.12);
+      --btn-box-shadow-hover: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.14);
+      --btn-transition: all 0.3s ease;
+      --btn-backdrop-filter: blur(6px) saturate(140%);
+      --btn-letter-spacing: 0.5px;
+      --btn-bg-color: #fff;
+
+      /* global box shadow */
+
+
+      --shadow-section: 0 1px 1px rgba(17,24,39,0.04), 0 12px 22px -8px rgba(17,24,39,0.18);
+      --shadow-section-hover: 0 1px 1px rgba(17,24,39,0.05), 0 16px 28px -10px rgba(17,24,39,0.20);
+      --shadow-section-primary:
+        0 14px 36px color-mix(in srgb, var(--primary-colors) 28%, transparent),
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+      /* global text scale for responsiveness */
+      --text-scale: 1;
+      /* Font size */
+      --fs-body-base: 17.5px;
+      --fs-body-base-sm: '14px';
+      --fs-sub-base: 24px;
+      --fs-h3-base: 54px;
+      --fs-h2-base: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+      --fs-h1-base: 54px;
+
+      /* computed sizes (global scale apply hota hai) */
+      --fs-body: calc(var(--fs-body-base) * var(--text-scale));
+      --fs-body-sm: calc(var(--fs-body-base-sm) * var(--text-scale));
+      --fs-sub: calc(var(--fs-sub-base) * var(--text-scale));
+      --fs-h3: calc(var(--fs-h3-base) * var(--text-scale));
+      --fs-h2: calc(var(--fs-h2-base) * var(--text-scale));
+      --fs-h1: calc(var(--fs-h1-base) * var(--text-scale));
+
+      /* line-heights */
+      --lh-body: 1.75;
+      --lh-head: 1.2;
+
+
+
+
+    }
+
+    /* breakpoints  (sab blocks auto adjust) */
+    @media (max-width: 768px) {
+      :root {
+        --text-scale: 0.97;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --text-scale: 0.95;
+      }
+    }
+
+
+
+    body {
+      background-color: #fff;
+      color: #1A1A1A ;
+      font-family: Calibri;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--secondary-colors);
+    }
+
+    /* Base font sizes for default (desktop) */
+    .font-body {
+      font-size: var(--fs-body);
+      line-height: var(--lh-body);
+      font-weight: 400;
+    }
+
+    .font-body-sm {
+      font-size: var(--fs-body-sm);
+      line-height: var(--lh-body);
+    }
+
+    .font-subheading {
+      font-size: var(--fs-sub);
+    }
+
+    .font-heading {
+      font-size: var(--fs-h2);
+    }
+
+
+
+
+    .primary-btn {
+      padding: var(--btn-padding);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      border: none;
+      text-transform: capitalize ;
+      border-radius: var(--border-radius-btn);
+      background: var(--primary-colors);
+      color: var(--btn-bg-color, #fff);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      text-decoration: none;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      background: var(--primary-colors);
+      box-shadow: var(--btn-box-shadow-hover);
+        color: var(--btn-bg-color, #fff);
+    }
+
+    .white-btn {
+      background-color: #fff;
+      color: black;
+      border: 2px solid #fff ;
+      text-decoration: none ;
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-btn:hover {
+      background-color: #f1f1f1;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Second button: outlined white */
+    .white-outline-btn {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border: 2px solid #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+    }
+
+    .white-outline-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+.white-border-btn{
+  background-color: #fff;
+      color: var(--secondary-colors) ;
+    border: 1px solid color-mix(in srgb, var(--primary-colors) 22%, transparent);
+      text-decoration: none ;
+      
+      border-radius: var(--border-radius-btn);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      box-shadow: var(--btn-box-shadow);
+      transition: var(--btn-transition);
+      backdrop-filter: var(--btn-backdrop-filter);
+      letter-spacing: var(--btn-letter-spacing);
+      padding: var(--btn-padding);
+}
+
+ .white-border-btn:hover {
+      background-color: #fff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    .img-layer {
+      position: absolute;
+      width: 100%;
+      border-radius: var(--box-radius);
+      box-shadow: var(--shadow-section);
+      overflow: hidden;
+    }
+
+    .img-credit {
+      position: absolute;
+      bottom: 6px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 0.6rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .img-credit a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+
+    .py-6 {
+      padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: Merriweather ;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .btn-hover {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px) ;
+      }
+    }
+
+
+
+    /* Added new */
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+    
+    .img-wrapper-center{
+      text-align: center;
+    }
+
+    .pointer-custom-none{
+      pointer-events: none;
+    }
+    .section-padding{
+        padding-block: 4.8rem;
+
+      @media (width <=768px) {
+        padding-block: 2.5rem;
+      }
+    }
+
+
+    .row-vcenter { align-items:center; }
+
+.text-custom-start  { text-align: left; }
+.text-custom-center { text-align: center; }
+.text-custom-end    { text-align: right; }
+
+
+@media (min-width: 992px) {
+  .text-custom-lg-left   { text-align: left; }
+  .text-custom-lg-center { text-align: center; }
+  .text-custom-lg-end  { text-align: right; }
+  .text-custom-lg-start  { text-align: start; }
+}
+
+@media (min-width: 768px) {
+  .text-custom-md-left   { text-align: left; }
+  .text-custom-md-center { text-align: center; }
+  .text-custom-md-end    { text-align: right; }
+  .text-custom-md-start  { text-align: start; }
+}
+
+.text-decoration-custom-none {
+  text-decoration: none;
+}
+
+.text-custom-secondary-emphasis {
+  color: #495057; /* same as Bootstrap's secondary emphasis color */
+}
+
+
+/* Custom Font Weight Utilities */
+.fw-custom-light   { font-weight: 300; }
+.fw-custom-lighter { font-weight: lighter; }
+.fw-custom-normal  { font-weight: 400; }
+.fw-custom-semibold  { font-weight: 600; } 
+.fw-custom-bold    { font-weight: 700; }
+.fw-custom-bolder  { font-weight: bolder; }
+
+
+.fst-custom-italic{
+  font-style: italic;
+}
+
+.text-custom-wrap    { white-space: normal; }
+.text-custom-nowrap  { white-space: nowrap; }
+.text-custom-break   { word-break: break-word; }
+
+
+.text-custom-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.lead-custom {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.text-opacity-custom-25  { opacity: 0.25; }
+.text-opacity-custom-50  { opacity: 0.50; }
+.text-opacity-custom-75  { opacity: 0.75; }
+.text-opacity-custom-100 { opacity: 1; }
+
+
+.lh-custom-1   { line-height: 1; }
+.lh-custom-sm  { line-height: 1.25; }
+.lh-custom-base{ line-height: 1.5; }
+.lh-custom-lg  { line-height: 2; }
+
+
+
+    .full-w   { width: 100%; }
+.full-h   { height: 100%; }
+.full-wh  { width: 100%; height: 100%; }
+
+.auto-w   { width: auto; }
+.auto-h   { height: auto; }
+
+
+
+
+
+.text-custom-white     { color: #ffffff; }
+.text-custom-light     { color: #f8f9fa; }
+.text-custom-dark      { color: #222222; }
+.text-custom-primary   { color: #007bff; }
+.text-custom-secondary { color: #6c757d; }
+.text-custom-success   { color: #28a745; }
+.text-custom-danger    { color: #dc3545; }
+.text-custom-warning   { color: #ffc107; }
+.text-custom-info      { color: #17a2b8; }
+.text-custom-muted     { color: #6c757d; }
+
+
+.bg-custom-white      { background-color: #ffffff; }
+.bg-custom-light      { background-color: #f8f9fa; }
+.bg-custom-dark       { background-color: #222222; }
+.bg-custom-primary    { background-color: #007bff; }
+.bg-custom-secondary  { background-color: #6c757d; }
+.bg-custom-success    { background-color: #28a745; }
+.bg-custom-danger     { background-color: #dc3545; }
+.bg-custom-warning    { background-color: #ffc107; }
+.bg-custom-info       { background-color: #17a2b8; }
+.bg-custom-muted      { background-color: #e9ecef; }
+
+
+
+
+/* JUSTIFY CONTENT */
+/* Horizontal Alignment */
+.justify-custom-start   { justify-content: flex-start; }
+.justify-custom-end     { justify-content: flex-end; }
+.justify-custom-center  { justify-content: center; }
+.justify-custom-between { justify-content: space-between; }
+
+
+@media (min-width: 768px) {
+  .justify-md-custom-start   { justify-content: flex-start; }
+  .justify-md-custom-end     { justify-content: flex-end; }
+  .justify-md-custom-center  { justify-content: center; }
+  .justify-md-custom-between { justify-content: space-between; }
+  .justify-md-custom-around  { justify-content: space-around; }
+  .justify-md-custom-evenly  { justify-content: space-evenly; }
+}
+
+@media (min-width: 992px) {
+  .justify-lg-custom-start   { justify-content: flex-start; }
+  .justify-lg-custom-end     { justify-content: flex-end; }
+  .justify-lg-custom-center  { justify-content: center; }
+  .justify-lg-custom-between { justify-content: space-between; }
+  .justify-lg-custom-around  { justify-content: space-around; }
+  .justify-lg-custom-evenly  { justify-content: space-evenly; }
+}
+
+
+
+/* Vertical Alignment */
+.align-custom-start    { align-items: flex-start; }
+.align-custom-end      { align-items: flex-end; }
+.align-custom-center   { align-items: center; }
+.align-custom-baseline { align-items: baseline; }
+.align-custom-stretch  { align-items: stretch; }
+
+
+@media (min-width: 768px) {
+  .align-md-custom-start    { align-items: flex-start; }
+  .align-md-custom-end      { align-items: flex-end; }
+  .align-md-custom-center   { align-items: center; }
+  .align-md-custom-baseline { align-items: baseline; }
+  .align-md-custom-stretch  { align-items: stretch; }
+}
+
+@media (min-width: 992px) {
+  .align-lg-custom-start    { align-items: flex-start; }
+  .align-lg-custom-end      { align-items: flex-end; }
+  .align-lg-custom-center   { align-items: center; }
+  .align-lg-custom-baseline { align-items: baseline; }
+  .align-lg-custom-stretch  { align-items: stretch; }
+}
+
+
+/* RESPONSIVE SUPPORT */
+@media (min-width: 992px) {
+  .items-lg-center { align-items: center; }
+  .justify-lg-center { justify-content: center; }
+}
+
+.text-custom-uppercase{ text-transform: uppercase;}
+
+
+.small-custom{font-size: 0.875rem;}
+
+.display-custom-1 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+
+.display-custom-3 { font-size: 2.5rem; font-weight: 300; line-height: 1.2; }
+.display-custom-4 { font-size: 2rem;   font-weight: 300; line-height: 1.2; }
+.display-custom-5 { font-size: 1.75rem; font-weight: 300; line-height: 1.2; }
+.display-custom-6 { font-size: 1.5rem;  font-weight: 300; line-height: 1.2; }
+
+
+@media (min-width: 576px) {
+  .display-custom-1 { font-size: 4rem; }
+  .display-custom-2 { font-size: 3.5rem; }
+  .display-custom-3 { font-size: 3rem; }
+  .display-custom-4 { font-size: 2.25rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .display-custom-1 { font-size: 4.5rem; }
+  .display-custom-2 { font-size: 4rem; }
+  .display-custom-3 { font-size: 3.25rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .display-custom-1 { font-size: 5rem; }
+  .display-custom-2 { font-size: 4.25rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.75rem; }
+  .display-custom-5 { font-size: 2.25rem; }
+  .display-custom-6 { font-size: 1.75rem; }
+}
+
+@media (min-width: 1200px) {
+  .display-custom-1 { font-size: 5.5rem; }
+  .display-custom-2 { font-size: 4.5rem; }
+  .display-custom-3 { font-size: 3.5rem; }
+  .display-custom-4 { font-size: 2.5rem; }
+  .display-custom-5 { font-size: 2rem; }
+  .display-custom-6 { font-size: 1.5rem; }
+}
+
+/* margin */
+.m-custom-0 { margin: 0; }
+.m-custom-1 { margin: 0.25rem; }
+.m-custom-2 { margin: 0.5rem; }
+.m-custom-3 { margin: 1rem; }
+.m-custom-4 { margin: 1.5rem; }
+.m-custom-5 { margin: 3rem; }
+
+
+.mt-custom-0 { margin-top: 0; }
+.mt-custom-1 { margin-top: 0.25rem; }
+.mt-custom-2 { margin-top: 0.5rem; }
+.mt-custom-3 { margin-top: 1rem; }
+.mt-custom-4 { margin-top: 1.5rem; }
+.mt-custom-5 { margin-top: 3rem; }
+
+.mb-custom-0 { margin-bottom: 0; }
+.mb-custom-1 { margin-bottom: 0.25rem; }
+.mb-custom-2 { margin-bottom: 0.5rem; }
+.mb-custom-3 { margin-bottom: 1rem; }
+.mb-custom-4 { margin-bottom: 1.5rem; }
+.mb-custom-5 { margin-bottom: 3rem; }
+
+.ms-custom-0 { margin-left: 0; }
+.ms-custom-1 { margin-left: 0.25rem; }
+.ms-custom-2 { margin-left: 0.5rem; }
+.ms-custom-3 { margin-left: 1rem; }
+.ms-custom-4 { margin-left: 1.5rem; }
+.ms-custom-5 { margin-left: 3rem; }
+
+.me-custom-0 { margin-right: 0; }
+.me-custom-1 { margin-right: 0.25rem; }
+.me-custom-2 { margin-right: 0.5rem; }
+.me-custom-3 { margin-right: 1rem; }
+.me-custom-4 { margin-right: 1.5rem; }
+.me-custom-5 { margin-right: 3rem; }
+
+.mx-custom-0 { margin-left: 0; margin-right: 0; }
+.mx-custom-1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx-custom-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx-custom-3 { margin-left: 1rem; margin-right: 1rem; }
+.mx-custom-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mx-custom-5 { margin-left: 3rem; margin-right: 3rem; }
+
+.my-custom-0 { margin-top: 0; margin-bottom: 0; }
+.my-custom-1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my-custom-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my-custom-3 { margin-top: 1rem; margin-bottom: 1rem; }
+.my-custom-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-custom-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.m-custom-auto  { margin: auto; }
+.mt-custom-auto { margin-top: auto; }
+.mb-custom-auto { margin-bottom: auto; }
+.ms-custom-auto { margin-left: auto; }
+.me-custom-auto { margin-right: auto; }
+.mx-custom-auto { margin-left: auto; margin-right: auto; }
+.my-custom-auto { margin-top: auto;  margin-bottom: auto; }
+
+
+@media (min-width: 768px) {
+  .m-md-custom-auto  { margin: auto; }
+  .mt-md-custom-auto { margin-top: auto; }
+  .mb-md-custom-auto { margin-bottom: auto; }
+  .ms-md-custom-auto { margin-left: auto; }
+  .me-md-custom-auto { margin-right: auto; }
+  .mx-md-custom-auto { margin-left: auto; margin-right: auto; }
+  .my-md-custom-auto { margin-top: auto;  margin-bottom: auto; }
+}
+
+
+@media (min-width: 992px) {
+  .ms-lg-custom-auto { margin-left: auto; }
+
+}
+
+/* padding */
+
+.p-custom-0 { padding: 0; }
+.p-custom-1 { padding: 0.25rem; }
+.p-custom-2 { padding: 0.5rem; }
+.p-custom-3 { padding: 1rem; }
+.p-custom-4 { padding: 1.5rem; }
+.p-custom-5 { padding: 3rem; }
+
+.pt-custom-0 { padding-top: 0; }
+.pt-custom-1 { padding-top: 0.25rem; }
+.pt-custom-2 { padding-top: 0.5rem; }
+.pt-custom-3 { padding-top: 1rem; }
+.pt-custom-4 { padding-top: 1.5rem; }
+.pt-custom-5 { padding-top: 3rem; }
+
+
+.pb-custom-0 { padding-bottom: 0; }
+.pb-custom-1 { padding-bottom: 0.25rem; }
+.pb-custom-2 { padding-bottom: 0.5rem; }
+.pb-custom-3 { padding-bottom: 1rem; }
+.pb-custom-4 { padding-bottom: 1.5rem; }
+.pb-custom-5 { padding-bottom: 3rem; }
+
+.ps-custom-0 { padding-left: 0; }
+.ps-custom-1 { padding-left: 0.25rem; }
+.ps-custom-2 { padding-left: 0.5rem; }
+.ps-custom-3 { padding-left: 1rem; }
+.ps-custom-4 { padding-left: 1.5rem; }
+.ps-custom-5 { padding-left: 3rem; }
+
+
+.pe-custom-0 { padding-right: 0; }
+.pe-custom-1 { padding-right: 0.25rem; }
+.pe-custom-2 { padding-right: 0.5rem; }
+.pe-custom-3 { padding-right: 1rem; }
+.pe-custom-4 { padding-right: 1.5rem; }
+.pe-custom-5 { padding-right: 3rem; }
+
+.px-custom-0 { padding-left: 0; padding-right: 0; }
+.px-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.px-custom-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-custom-3 { padding-left: 1rem; padding-right: 1rem; }
+.px-custom-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-custom-5 { padding-left: 3rem; padding-right: 3rem; }
+
+
+.py-custom-0 { padding-top: 0; padding-bottom: 0; }
+.py-custom-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-custom-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-custom-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-custom-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-custom-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+
+@media (min-width: 768px) {
+ 
+  .p-md-custom-5 { padding: 3rem; }
+}
+
+
+@media (min-width: 992px) {
+  
+  .p-lg-custom-5 { padding: 3rem; }
+}
+
+@media (min-width: 992px) {
+ 
+  .ps-lg-custom-4 { padding-left: 1.5rem; }
+}
+
+
+@media (min-width: 768px) {
+  .px-md-custom-0 { padding-left: 0;       padding-right: 0; }
+  .px-md-custom-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+  .px-md-custom-2 { padding-left: 0.5rem;  padding-right: 0.5rem; }
+  .px-md-custom-3 { padding-left: 1rem;    padding-right: 1rem; }
+  .px-md-custom-4 { padding-left: 1.5rem;  padding-right: 1.5rem; }
+  .px-md-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+@media (min-width: 992px) {
+  
+  .px-lg-custom-5 { padding-left: 3rem;    padding-right: 3rem; }
+}
+
+
+.w-custom-100 { width: 100%; }
+.w-custom-auto { width: auto; }
+.h-custom-100 { height: 100%; }
+.h-custom-auto { height: auto; }
+
+
+
+    /* Added new ends*/
+    .main-heading {
+      font-weight: 700;
+      color: #1A1A1A;
+      font-size: var(--fs-h1);
+
+      @media (width <=768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .muted-bg {
+      background: #fafafa;
+    }
+
+    .para-muted {
+      color: var(--para-muted);
+    }
+
+    /* Back to top styling */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      color: var(--secondary-colors);
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    #backToTopBtn:hover {
+      color: var(--primary-colors);
+      transform: translateY(-6px);
+    }
+
+    /* Whatsapp Icon */
+    #whatsappBtn {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      z-index: 999;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    #whatsappBtn:hover {
+      background-color: #1ebe5d;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        font-size: 1.6rem;
+        padding: 6px 10px;
+        bottom: 90px;
+        right: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/911234567890" target="_blank" id="whatsappBtn" title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <!-- Back to top btn -->
+  <button id="backToTopBtn" title="Go to top">
+    <i class="bi bi-arrow-up-circle-fill"></i>
+  </button>
+
+  <!-- Main content -->
+
+ 
+
+
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-custom-white shadow-sm sticky-top custom-navbar">
+    <div class="container">
+      <div data-logo="navbar">
+        <a class="navbar-brand fw-custom-bold" href="#">
+          Wealthbyprg
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-custom-end" id="navbarNav">
+        <ul class="navbar-nav align-lg-custom-center -center">
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#about">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#services">Services</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#products">Products</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#portfolio">Portfolio</a>
+            </li>
+          
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" class="primary-btn">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+    .custom-navbar {
+  padding: 0.8rem 0;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  margin-left: 1.2rem;
+  color: var(--para-muted);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-colors);
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-colors);
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sticky navbar small-custom shadow on scroll */
+.sticky-top.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Mobile menu background */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+</style>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".sticky-top");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+
+
+
+    <section class="hero-zigrow-section_5" id="hero" data-section="hero">
+  <div class="overlay pointer-custom-none"></div>
+
+  <div class="container">
+    <div class="row justify-custom-start">
+      <div class="col-lg-6 col-md-8 col-12">
+
+        <div class="hero-content text-custom-white">
+          <h1>Empowering Your Investment Journey</h1>
+          <p>At Wealthbyprg, we specialize in tailored investment strategies to help you achieve your financial goals with confidence and clarity.</p>
+
+          <a href="#" class="white-btn btn-hover">
+            Call Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p class="img-credit text-custom-white small-custom position-absolute">
+    Photo by
+    <a 
+      href="https://unsplash.com/@markusspiske?utm_source=zigrow&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Markus Spiske
+    </a> 
+    on 
+    <a 
+      href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Unsplash</a>
+  </p>
+</section>
+
+<style>
+  .hero-zigrow-section_5 {
+    background: url(https://images.unsplash.com/photo-1575473970760-b50a70461e1a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxOXx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjB3b3JraW5nJTIwd2l0aCUyMGNsaWVudHxlbnwxfHx8fDE3NzEwOTgwNDB8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080) center center/cover no-repeat;
+    height: 90vh;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: var(--box-radius);
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }}
+</style>
+
+  
+    <!-- ABOUT SECTION 9 -->
+<section
+  class="about-zigrow-section_9 section-padding"
+  id="about"
+  data-section="about"
+>
+  <div class="container">
+    
+
+    <!-- TOP -->
+    <div class="about9-top text-custom-center mx-custom-auto ">
+      <div class="about9-kicker">About us</div>
+
+      <h2 class="about9-title main-heading mb-custom-0  ">
+        At Wealthbyprg, we are dedicated to helping you
+       <span class="heading-inline">
+
+           achieve your financial goals through tailored investment strategies and expert guidance. for.
+        </span>
+      </h2>
+
+    </div>
+
+    <!-- ICON PILLS -->
+    <div class="about9-pills d-flex justify-custom-center flex-wrap">
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-flag"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Our Mission</div>
+        </div>
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Our Approach</div>
+        </div>
+      
+        <div class="about9-pill">
+          <div class="about9-pill-icon">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <div class="about9-pill-label para-muted font-body">Our Expertise</div>
+        </div>
+      
+    </div>
+
+    <!-- IMAGES -->
+    <div class="row justify-custom-center g-4 mt-custom-4  img-container">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="about9-imgCard img-wrapper-center">
+          <img src="https://images.unsplash.com/photo-1765248150655-cbae9562237a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyNnx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjB0ZWFtfGVufDF8fHx8MTc3MTA5ODA0MXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="About image" loading="lazy" />
+          <div class="img-credit">
+            Photo by
+            <a href="https://unsplash.com/@hoianphotographer" target="_blank" rel="noopener noreferrer">
+              Hoi An and Da Nang Photographer
+            </a>
+            on
+            <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+              Unsplash
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="about9-imgCard img-wrapper-center">
+          <img src="https://images.unsplash.com/photo-1619433400972-3c953b838502?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyNHx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjBtb2Rlcm58ZW58MXx8fHwxNzcxMDk4MDQwfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" alt="Secondary about image" loading="lazy" />
+          <div class="img-credit">
+            Photo by
+            <a href="https://unsplash.com/@iamlukesanderson1867" target="_blank" rel="noopener noreferrer">
+              Luke Sanderson
+            </a>
+            on
+            <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+              Unsplash
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTIONAL BUTTON (hidden in ref, but available) -->
+    <!-- <div class="text-custom-center mt-custom-4 ">
+      <a class="about9-btn" href="#contact">CONTACT</a>
+    </div> -->
+  </div>
+</section>
+
+<style>
+#about.about-zigrow-section_9{
+  background: #ffffff;
+  color: #121212;
+}
+
+#about.about-zigrow-section_9 .about9-top{
+  max-width: 920px;
+}
+
+#about.about-zigrow-section_9 .about9-kicker{
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(18,18,18,0.55);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+#about.about-zigrow-section_9 .about9-title{
+  /* font-family: Merriweather; */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  /* font-size: clamp(1.45rem, 1.05rem + 2.2vw, 2.6rem); */
+  color: rgba(18,18,18,0.92);
+}
+
+#about.about-zigrow-section_9 .about9-title .heading-inline{
+    color: var(--primary-colors, #e11d2e);
+}
+
+#about.about-zigrow-section_9 .about9-inline-img{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 10px;
+  box-shadow: var(--shadow-section);
+  transform: translateY(-2px);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+#about.about-zigrow-section_9 .about9-inline-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about.about-zigrow-section_9 .img-container{
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+#about.about-zigrow-section_9 .about9-sub{
+  margin-top: 1rem;
+  max-width: 740px;
+  color: rgba(18,18,18,0.62);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+#about.about-zigrow-section_9 .about9-pills{
+  gap: 26px;
+  margin-top: 1.6rem;
+}
+
+#about.about-zigrow-section_9 .about9-pill{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 92px;
+}
+
+#about.about-zigrow-section_9 .about9-pill-icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+  color: rgba(18,18,18,0.75);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+#about.about-zigrow-section_9 .about9-pill-icon i{
+  font-size: 1.05rem;
+}
+
+#about.about-zigrow-section_9 .about9-pill.is-active .about9-pill-icon{
+  background: rgba(18,18,18,0.92);
+  color: #fff;
+  border-color: rgba(18,18,18,0.20);
+}
+
+#about.about-zigrow-section_9 .about9-pill:hover .about9-pill-icon{
+  background: #111;
+  color: #fff;
+  border-color: rgba(17,17,17,0.35);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+
+#about.about-zigrow-section_9 .about9-pill:hover .about9-pill-label{
+  color: #111;
+}
+
+#about.about-zigrow-section_9 .about9-pill-label{
+  /* font-size: 0.78rem; */
+  /* color: rgba(18,18,18,0.55); */
+  font-weight: 600;
+}
+
+#about.about-zigrow-section_9 .about9-imgCard{
+  position: relative;
+   border-radius: var(--box-radius);
+  overflow: hidden;
+  background: #f7f7f8;
+  box-shadow: var(--shadow-section);
+  aspect-ratio: 1 / 1;
+}
+
+#about.about-zigrow-section_9 .about9-imgCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about.about-zigrow-section_9 .about9-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.4rem;
+  border-radius: var(--border-radius-btn, 999px);
+  background: var(--primary-colors, #e11d2e);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-section, 0 10px 24px rgba(0,0,0,0.18));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#about.about-zigrow-section_9 .about9-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-section-hover, 0 12px 28px rgba(0,0,0,0.22));
+  color: #fff;
+}
+
+/* mobile spacing */
+@media (max-width: 575.98px){
+  #about.about-zigrow-section_9 .about9-pills{
+    gap: 18px;
+  }
+  #about.about-zigrow-section_9 .about9-inline-img{
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+  }
+}
+</style>
+
+  
+    <!-- ========== Services Switcher (service-zigrow-section_10) ========== -->
+<!-- ========== Services Switcher (service-zigrow-section_10) ========== -->
+<section class="service-zigrow-section_10 section-padding" id="services" data-section="services">
+  <div class="container">
+
+    <!-- data-component-tabs wrapper -->
+    <div class="row g-4 g-lg-5 align-custom-start" data-component-tabs id="tabs-services">
+
+      <!-- LEFT: Tabs -->
+      <div class="col-lg-4">
+        <p class="svc-eyebrow mb-custom-2">(Our Service)</p>
+        <h2 class="main-heading mb-custom-3">
+          <span>Our Investment Services</span>
+        </h2>
+
+        <p class="svc-subtext mb-custom-4">
+          <span>Our team of experienced advisors focuses on your unique needs, ensuring your portfolio aligns with your aspirations and risk tolerance.</span>
+        </p>
+
+        <!-- Builder-friendly nav-tabs -->
+        <nav>
+          <div class="nav nav-tabs svc-tablist" role="tablist" aria-label="Services">
+            
+              <button
+                class="nav-link svc-tab active is-active"
+                id="nav-tab-services-0"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-0"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-0"
+                aria-selected="true"
+              >
+                <span>Investment Planning</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-1"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-1"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-1"
+                aria-selected="false"
+              >
+                <span>Portfolio Review</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-2"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-2"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-2"
+                aria-selected="false"
+              >
+                <span>Asset Allocation</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-3"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-3"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-3"
+                aria-selected="false"
+              >
+                <span>Ongoing Guidance</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-4"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-4"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-4"
+                aria-selected="false"
+              >
+                <span>Retirement Planning</span>
+              </button>
+            
+              <button
+                class="nav-link svc-tab "
+                id="nav-tab-services-5"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-services-5"
+                type="button"
+                role="tab"
+                aria-controls="nav-services-5"
+                aria-selected="false"
+              >
+                <span>Tax Optimization</span>
+              </button>
+            
+          </div>
+        </nav>
+      </div>
+
+      <!-- RIGHT: Panels -->
+      <div class="col-lg-8">
+        <div class="tab-content svc-panels">
+          
+
+          <div
+            class="tab-pane p-0 show active"
+            id="nav-services-0"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-0"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1714974528757-f63c72154a1b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyNnx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjBjb25zdWx0YXRpb258ZW58MXx8fHwxNzcxMDk4MDQyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Investment Planning"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@silverkblack?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Vitaly Gariev</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Investment Planning</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>We create personalized investment plans that align with your financial objectives and risk tolerance for optimal growth.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-1"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-1"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1559067096-49ebca3406aa?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwzfHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMHNlcnZpY2UlMjBpbiUyMHByb2dyZXNzfGVufDF8fHx8MTc3MTA5ODA0Mnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Portfolio Review"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@precondo?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Precondo CA</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Portfolio Review</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Regular assessments of your investment portfolio ensure it remains aligned with your goals and adapts to market changes.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-2"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-2"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1557052902-2a12b72cd1e0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxfHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMHdvcmtpbmclMjB3aXRoJTIwY2xpZW50fGVufDF8fHx8MTc3MTA5ODA0MHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Asset Allocation"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@brann?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Brandon Style</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Asset Allocation</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>We help you diversify your investments across various asset classes to manage risk and maximize returns effectively.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-3"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-3"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png"
+                alt="Ongoing Guidance"
+              />
+
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Ongoing Guidance</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Receive continuous support and expert advice to navigate market fluctuations and stay on track with your investment strategy.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-4"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-4"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1624953336495-0b5af4d962f2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxMHx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjBiZWhpbmQlMjB0aGUlMjBzY2VuZXN8ZW58MXx8fHwxNzcxMDk4MDQyfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Retirement Planning"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@brett_jordan?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Brett Jordan</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Retirement Planning</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>We assist you in building a robust retirement plan that secures your financial future and meets your lifestyle needs.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="tab-pane p-0 "
+            id="nav-services-5"
+            role="tabpanel"
+            aria-labelledby="nav-tab-services-5"
+            tabindex="0"
+          >
+            <!-- FIGURE (no raw text) -->
+            <figure class="svc-figure position-relative img-wrapper-center">
+              <img
+                class="svc-image"
+                src="https://images.unsplash.com/photo-1526351790682-1000ae194ec5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw5fHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMHdvcmtmbG93fGVufDF8fHx8MTc3MTA5ODA0Mnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+                alt="Tax Optimization"
+              />
+
+              
+              <small class="img-credit">
+                <span>Photo by</span>
+                <a href="https://unsplash.com/@ernest_brillo?utm_source=zigrow&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Ernest Brillo</span>
+                </a>
+                <span>on</span>
+                <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank" rel="noopener noreferrer">
+                  <span>Unsplash</span>
+                </a>
+              </small>
+              
+            </figure>
+
+            <div class="svc-body">
+              <h3 class="svc-panel-title">
+                <span>Tax Optimization</span>
+              </h3>
+
+              <p class="svc-panel-text">
+                <span>Our strategies focus on minimizing your tax liabilities while maximizing your investment returns for greater wealth accumulation.</span>
+              </p>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="#" class="primary-btn">
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  /* ===== service-zigrow-section_10 (scoped) ===== */
+  .service-zigrow-section_10 {
+    --svc-text: #0f0f0f;
+  
+    color: var(--svc-text);
+    background: #fff;
+  }
+
+  .py-lg-6 {
+    padding-top: 4.5rem ;
+    padding-bottom: 4.5rem ;
+  }
+
+  /* Headings */
+  .service-zigrow-section_10 .svc-eyebrow {
+    color: var(--svc-muted);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.25px;
+  }
+  .service-zigrow-section_10 .svc-heading {
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.05;
+    font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3rem);
+    margin: 0 0 0.4rem;
+  }
+  .service-zigrow-section_10 .svc-subtext {
+    color: var(--para-muted);
+    max-width: 42ch;
+      line-height: var(--lh-body);
+    font-size: var(--fs-body);
+    margin: 0;
+  }
+
+  /* ================= LEFT — Tablist ================= */
+  .service-zigrow-section_10 .svc-tablist {
+    --rowH: 56px;
+    position: relative;
+    margin-top: 1.25rem;
+    padding: 0.35rem;
+  border-radius: var(--box-radius);
+    background: #fff;
+    border: 1px solid #eef0f3;
+    box-shadow: var(--shadow-section);
+    overflow: hidden;
+  }
+
+  /* sliding highlight */
+  .service-zigrow-section_10 .svc-tablist::before {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.35rem;
+    width: calc(100% - 0.7rem);
+    height: var(--rowH);
+    border-radius: var(--box-radius);
+    /* fallback + preferred */
+    background: #f1f5f9;
+    background: color-mix(in srgb, var(--primary-colors) 8%, #f4f6f9);
+    box-shadow: inset 0 0 0 1px
+      color-mix(in srgb, var(--primary-colors) 12%, transparent);
+    transform: translateY(calc(var(--active, 0) * var(--rowH)));
+    transition: transform 0.25s ease, background 0.25s ease,
+      box-shadow 0.25s ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .service-zigrow-section_10 .svc-tab {
+    position: relative;
+    z-index: 1; /* above slider */
+    display: flex;
+    align-items: center;
+    height: var(--rowH);
+    padding: 0 14px 0 22px;
+    border-radius: var(--box-radius);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #8a919c;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease, transform 0.15s ease;
+    background: transparent;
+  }
+  .service-zigrow-section_10 .svc-tab:hover {
+    color: #1b1f23;
+    transform: translateX(2px);
+  }
+  .service-zigrow-section_10 .svc-tab.is-active {
+    color: #0f0f0f;
+  }
+
+
+  /* Bootstrap nav-tabs override inside this section */
+.service-zigrow-section_10 .svc-tablist.nav-tabs {
+  display: block;        /* vertical stack */
+  border-bottom: 0;      /* remove BS bottom border */
+  padding: 0.35rem;      /* tumhaara padding retain */
+}
+
+/* Nav-link defaults clean up */
+.service-zigrow-section_10 .svc-tablist .nav-link {
+  border: 0;             /* BS border hatao */
+  margin-bottom: 0;      /* extra gaps avoid */
+  border-radius: var(--box-radius);
+}
+
+/* Make tabs full width inside left tablist */
+.service-zigrow-section_10 .svc-tablist .nav-link {
+  display: block;
+  width: 100%;
+  text-align: left; /* optional: left align text like your design */
+}
+
+/* Remove Bootstrap's default white background on active nav-link */
+.service-zigrow-section_10 .svc-tablist .nav-link.active {
+  background-color: transparent ;
+  color: #0f0f0f; /* tumhaare active text color ke saath match */
+  border-color: transparent ; /* BS border bhi hata do */
+}
+
+  /* Left indicator bar on all; primary on active */
+  .service-zigrow-section_10 .svc-tab::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 4px;
+    height: 22px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    background: #e2e8f0;
+    transition: background 0.25s ease;
+  }
+  .service-zigrow-section_10 .svc-tab.is-active::after {
+    background: var(--primary-colors);
+  }
+
+  /* Sync active state via :has() (progressive enhancement) */
+  @supports (selector(:has(*))) {
+    .service-zigrow-section_10:has(#svc-tab-0:checked) .svc-tablist::before {
+      transform: translateY(calc(0 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-1:checked) .svc-tablist::before {
+      transform: translateY(calc(1 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-2:checked) .svc-tablist::before {
+      transform: translateY(calc(2 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-3:checked) .svc-tablist::before {
+      transform: translateY(calc(3 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-4:checked) .svc-tablist::before {
+      transform: translateY(calc(4 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-5:checked) .svc-tablist::before {
+      transform: translateY(calc(5 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-6:checked) .svc-tablist::before {
+      transform: translateY(calc(6 * var(--rowH)));
+    }
+    .service-zigrow-section_10:has(#svc-tab-7:checked) .svc-tablist::before {
+      transform: translateY(calc(7 * var(--rowH)));
+    }
+
+    /* text + left bar primary on active */
+    .service-zigrow-section_10:has(#svc-tab-0:checked)
+      .svc-tablist
+      label:nth-child(1),
+    .service-zigrow-section_10:has(#svc-tab-1:checked)
+      .svc-tablist
+      label:nth-child(2),
+    .service-zigrow-section_10:has(#svc-tab-2:checked)
+      .svc-tablist
+      label:nth-child(3),
+    .service-zigrow-section_10:has(#svc-tab-3:checked)
+      .svc-tablist
+      label:nth-child(4),
+    .service-zigrow-section_10:has(#svc-tab-4:checked)
+      .svc-tablist
+      label:nth-child(5),
+    .service-zigrow-section_10:has(#svc-tab-5:checked)
+      .svc-tablist
+      label:nth-child(6),
+    .service-zigrow-section_10:has(#svc-tab-6:checked)
+      .svc-tablist
+      label:nth-child(7),
+    .service-zigrow-section_10:has(#svc-tab-7:checked)
+      .svc-tablist
+      label:nth-child(8) {
+      color: #0f0f0f;
+    }
+    .service-zigrow-section_10:has(#svc-tab-0:checked)
+      .svc-tablist
+      label:nth-child(1)::after,
+    .service-zigrow-section_10:has(#svc-tab-1:checked)
+      .svc-tablist
+      label:nth-child(2)::after,
+    .service-zigrow-section_10:has(#svc-tab-2:checked)
+      .svc-tablist
+      label:nth-child(3)::after,
+    .service-zigrow-section_10:has(#svc-tab-3:checked)
+      .svc-tablist
+      label:nth-child(4)::after,
+    .service-zigrow-section_10:has(#svc-tab-4:checked)
+      .svc-tablist
+      label:nth-child(5)::after,
+    .service-zigrow-section_10:has(#svc-tab-5:checked)
+      .svc-tablist
+      label:nth-child(6)::after,
+    .service-zigrow-section_10:has(#svc-tab-6:checked)
+      .svc-tablist
+      label:nth-child(7)::after,
+    .service-zigrow-section_10:has(#svc-tab-7:checked)
+      .svc-tablist
+      label:nth-child(8)::after {
+      background: var(--primary-colors);
+    }
+  }
+
+  /* ================= RIGHT — Panels ================= */
+  .service-zigrow-section_10 .svc-panels {
+    position: relative;
+    padding: 1.6rem;
+   border-radius: var(--box-radius);
+    background: #fff;
+    box-shadow: var(--shadow-section);
+    overflow: hidden;
+  }
+
+  /* take radios off-screen so label click won't scroll */
+  .service-zigrow-section_10 .svc-radio {
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .service-zigrow-section_10 .svc-radio + .svc-panel {
+    display: none;
+  }
+  .service-zigrow-section_10 .svc-radio:checked + .svc-panel {
+    display: block;
+    animation: svcFade 0.45s ease both;
+  }
+  @keyframes svcFade {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .service-zigrow-section_10 .svc-figure {
+    margin: 0 0 1.25rem;
+ border-radius: var(--box-radius);
+    overflow: hidden;
+    background: #f6f7f9;
+    box-shadow: var(--shadow-section-hover);
+  }
+  .service-zigrow-section_10 .svc-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .service-zigrow-section_10 .svc-figure:hover .svc-image {
+    transform: scale(1.035);
+  }
+
+  .service-zigrow-section_10 .svc-panel-title {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    margin: 0.25rem 0 0.6rem;
+    font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.9rem);
+  }
+  .service-zigrow-section_10 .svc-panel-text {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    max-width: 92%;
+    margin-bottom: 1.2rem;
+  }
+
+
+
+
+  /* ================= Responsive ================= */
+  @media (max-width: 991.98px) {
+    .service-zigrow-section_10 .svc-tablist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35rem;
+      --rowH: 52px;
+    }
+    .service-zigrow-section_10 .svc-tablist::before {
+      display: none;
+    } /* slider off on grid */
+    .service-zigrow-section_10 .svc-tab {
+      justify-content: center;
+      border: 1px solid #eef0f3;
+      color: #50555c;
+      background: #fff;
+    }
+    .service-zigrow-section_10 .svc-tab.is-active {
+      background: color-mix(in srgb, var(--primary-colors) 10%, #fff);
+      color: #0f0f0f;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+    .service-zigrow-section_10 .svc-tab.is-active::after {
+      background: var(--primary-colors);
+    }
+    .service-zigrow-section_10 .svc-panel-text {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<script>
+(function(){
+  const sec = document.querySelector('.service-zigrow-section_10');
+  if (!sec) return;
+
+  const tablist = sec.querySelector('.svc-tablist');
+  if (!tablist) return;
+
+  const tabs = Array.from(tablist.querySelectorAll('.svc-tab'));
+
+  function syncActive(idx) {
+    tabs.forEach((btn, i) => btn.classList.toggle('is-active', i === idx));
+    tablist.style.setProperty('--active', idx);
+  }
+
+  // Initial active from .active class (jo builder/Bootstrap set karega)
+  let initial = tabs.findIndex(btn => btn.classList.contains('active'));
+  if (initial < 0) initial = 0;
+  syncActive(initial);
+
+  tabs.forEach((btn, i) => {
+    // Bootstrap tab event (agar use ho raha hai)
+    btn.addEventListener('shown.bs.tab', function () {
+      syncActive(i);
+    });
+
+    // Backup – agar Bootstrap nahi ho toh click se bhi chale
+    btn.addEventListener('click', function () {
+      syncActive(i);
+    });
+  });
+})();
+</script>
+
+
+  
+    <section id="products" class="section-padding product-zigrow-section_5" data-section="products">
+  <div class="container text-custom-center">
+
+    <!-- Dynamic heading + subtitle -->
+    <h2 class="mb-custom-2 main-heading">
+      Our Investment Services
+      <br class="d-none d-md-block">
+      <p class="lead-custom para-muted font-subheading mb-custom-4 mt-custom-2 ">Tailored solutions for your financial growth and security.</p>
+    </h2>
+
+    <!-- CTA -->
+    <a href="#!" class="primary-btn">
+      See more
+    </a>
+
+    <!-- Cards -->
+    <div class="row g-4 mt-custom-5 ">
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png')"></div>
+
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Investment Planning</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Create a personalized investment strategy aligned with your financial goals.</p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png')"></div>
+
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Portfolio Review</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Assess your current portfolio to ensure it meets your objectives and risk tolerance.</p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png')"></div>
+
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Asset Allocation</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Optimize your asset mix to balance risk and return effectively.</p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png')"></div>
+
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Ongoing Guidance</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Receive continuous support and adjustments to your investment strategy as needed.</p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://i.postimg.cc/sXp8cbmQ/language-classes-templatecoaching-centre-2.png')"></div>
+
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Risk Assessment</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Evaluate your risk profile to make informed investment decisions.</p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="col-12 col-md-4 clonable-card">
+          <div class="program-card">
+            <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1761062176514-c5892b4f58a0?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyfHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMHByb2R1Y3QlMjBwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoeXxlbnwxfHx8fDE3NzEwOTgwNDN8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080')"></div>
+
+            
+              <span class="img-credit bg-custom-dark bg-opacity-50 text-custom-white position-absolute small-custom">
+                Photo by 
+                <a 
+                  href="https://unsplash.com/@rajurajkumar28?utm_source=zigrow&utm_medium=referral"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Raju Kumar
+                </a> 
+                on 
+                <a 
+                  href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Unsplash
+                </a>
+              </span>
+            
+
+            <div class="card-overlay">
+              <h3 class="card-title">Market Insights</h3>
+              <p class="card-desc font-body-sm mb-custom-0 ">Stay updated with the latest market trends and investment opportunities.</p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+    :root{
+  --brand: var(--primary-colors);
+  --brand-tint: color-mix(in srgb, var(--brand) 15%, #fff);
+}
+
+.product-zigrow-section_5{
+  background: radial-gradient(
+              ellipse at 1% 5%,
+              var(--brand-tint) 0%,
+              #ffffff 35%);
+
+
+.program-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--box-radius);
+  min-height: 420px;
+  box-shadow: var(--shadow-section);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.program-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: var(--shadow-section-hover);
+}
+.program-card .card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .45s ease;
+}
+.program-card:hover .card-img {
+  transform: scale(1.08) rotate(.5deg);
+}
+.program-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1.5rem 1.75rem;
+  background: linear-gradient(180deg,
+              rgba(0,0,0,0) 10%,
+              rgba(0,0,0,.55) 70%);
+  color: #fff;
+  transition: background .35s ease;
+}
+.program-card:hover .card-overlay {
+  background: linear-gradient(180deg,
+              rgba(0,0,0,0) 0%,
+              rgba(0,0,0,.65) 75%);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  line-height: 1.35;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+.card-desc {
+  line-height: 1.4;
+  opacity: .85;
+}
+@media (min-width: 1400px) {
+  .program-card { min-height: 500px; }
+}
+@media (max-width: 575.98px) {
+  .card-title { font-size: 1.15rem; }
+  .card-desc  { font-size: .85rem; }
+}
+}
+</style>
+  
+    <section class="portfolio-zigrow-section_2 section-padding" id="portfolio" data-section="portfolio">
+  <div class="container">
+    <div class="text-custom-center mb-custom-5">
+      <h2 class="section-title main-heading">
+        Our Investment Success
+      </h2>
+    </div>
+
+    <div class="row justify-custom-center g-3">
+      <!-- Card 1 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-top-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1769028871759-8099b7474ac4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwyMHx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjB3b3JrJTIwc2hvd2Nhc2V8ZW58MXx8fHwxNzcxMDk4MDQ1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Storage & Seating"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            <span>
+              Retirement Planning <br />
+              Secure Future
+            </span>
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+          <a
+            href="https://unsplash.com/@sasun1990?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Sasun Bughdaryan
+          </a>
+          on
+          <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-bottom-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1621831337143-e0bfb1123325?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw2fHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMGNvbXBsZXRlZCUyMHByb2plY3R8ZW58MXx8fHwxNzcxMDk4MDQ0fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Tables & Desks"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Wealth Growth <br />
+            Long-Term Strategy
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+          <a
+            href="https://unsplash.com/@kenrick?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Kenrick Baksh
+          </a>
+          on
+      <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a>
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-top-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1591522810896-cb5f45acb9a1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxMnx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjByZXN1bHRzfGVufDF8fHx8MTc3MTA5ODA0NXww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Lighting & Decor"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Risk Assessment <br />
+            Tailored Solutions
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+           <a
+            href="https://unsplash.com/@markuswinkler?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Markus Winkler
+          </a>
+          on
+         <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-6 col-md-3">
+        <div class="offer-card rounded-bottom-only img-wrapper-center">
+          <img
+            src="https://images.unsplash.com/photo-1593510987459-9a1489817a3b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHwxMHx8aW52ZXN0bWVudCUyMGFkdmlzb3J5JTIwc2VydmljZXMlMjBiZWZvcmUlMjBhZnRlcnxlbnwxfHx8fDE3NzEwOTgwNDV8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
+            alt="Office Accessories"
+            class="img-fluid"
+          />
+
+          <div class="offer-label">
+            Diversified Portfolio <br />
+            Balanced Approach
+          </div>
+        </div>
+        <p
+          class="unsplash-credit small-custom text-custom-muted  mb-custom-0 "
+          style="font-size: 0.65rem"
+        >
+          Photo by
+            <a
+            href="https://unsplash.com/@markuswinkler?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+          >
+            Markus Winkler
+          </a>
+          on
+         <a
+            href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-custom-muted  text-decoration-underline"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-zigrow-section_2 {
+    background-color: #fff;
+
+    .offer-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .offer-card img {
+      width: 100%;
+      height: auto;
+      /* display: block; */
+      transition: transform 0.3s ease;
+      aspect-ratio: 3/4;
+    }
+
+    /* On hover, zoom the image */
+    .offer-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Rounded shapes */
+    .rounded-top-only img {
+      border-top-left-radius: 50% 30%;
+      border-top-right-radius: 50% 30%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .rounded-bottom-only img {
+      border-bottom-left-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .offer-label {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 1.5rem 1.95rem;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 1.9);
+    }
+
+    /* Overlay background for bottom label */
+    .rounded-top-only .offer-label {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    }
+
+    /* Overlay background for top label */
+    .rounded-bottom-only .offer-label {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+    }
+  }
+</style>
+
+  
+    <section class=" whyChooseUs-zigrow-section_1 section-padding px-custom-3" id="whyChooseUs" data-section="whyChooseUs">
+  <div class="container text-custom-center">
+    <h2 class=" mb-custom-3 main-heading">Why Choose Us</h2>
+
+    <div class="row gy-4 mt-custom-4 ">
+      
+      <div class="col-md-6 col-lg-6">
+        <div class="info-card">
+          <div class="icon-box"><i class="bi bi-person-check"></i></div>
+          <h5>Personalized Service</h5>
+          <p>We prioritize your unique financial situation, offering tailored advice that reflects your individual goals and risk tolerance. for your business without the hassle with clear results so you can grow for your business without the.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-6">
+        <div class="info-card">
+          <div class="icon-box"><i class="bi bi-bar-chart-line"></i></div>
+          <h5>Proven Strategies</h5>
+          <p>Our investment strategies are backed by extensive research and market analysis, designed to optimize your portfolio&#39;s performance over time. for your business without the hassle with clear results so you can grow for your business.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-6">
+        <div class="info-card">
+          <div class="icon-box"><i class="bi bi-shield-lock"></i></div>
+          <h5>Risk Management</h5>
+          <p>We focus on effective risk management to safeguard your investments while maximizing growth potential, ensuring peace of mind in your financial journey. for your business without the hassle with clear results so you can grow.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-6">
+        <div class="info-card">
+          <div class="icon-box"><i class="bi bi-clock"></i></div>
+          <h5>Ongoing Support</h5>
+          <p>Our commitment to you doesn&#39;t end with planning. We provide continuous support and regular portfolio reviews to adapt to changing market conditions. for your business without the hassle with clear results so you can grow.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  /* === Why Choose Section - Light Theme === */
+.whyChooseUs-zigrow-section_1 {
+  background-color: #f9fafb;
+  color: #1f2937;
+
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Info Card */
+.info-card {
+  background: #ffffff;
+border-radius: var(--box-radius);
+  padding: 25px 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-section);
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-section-hover);
+  border-color: var(--theme-3);
+}
+
+/* Icon Styling */
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-colors);
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.info-card:hover .icon-box {
+  background: #fff;
+  color: var(--secondary-colors);
+  border: 1px solid var(--secondary-colors);
+}
+
+/* Typography */
+.info-card h5 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--lead-custom-para-muted);
+}
+
+.info-card p {
+  font-size: var(--fs-body-sm);
+  color: var(--para-muted);
+  line-height: 1.6;
+}
+}
+</style>
+  
+    <section class="faq-zigrow-section_3 section-padding" id="faq" data-section="faq">
+  <div class="container">
+
+    <div class="text-custom-start mb-custom-5">
+      <h2 class="main-heading">
+        <span>Explore Common Questions</span>
+      </h2>
+      <p class="font-subheading para-muted">
+        <span>Get instant answers to your common questions</span>
+      </p>
+    </div>
+
+    <div class="accordion" id="faqAccordion2">
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern0">
+          <button 
+            class="accordion-button "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern0"
+            aria-expanded="true"
+            aria-controls="collapseModern0"
+          >
+            <span>What services do you offer?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern0"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingModern0"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We provide investment planning, portfolio review, asset allocation, and ongoing investment guidance tailored to your goals.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern1">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern1"
+            aria-expanded="false"
+            aria-controls="collapseModern1"
+          >
+            <span>How do you determine my risk profile?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern1"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern1"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We assess your financial situation, investment goals, and comfort level with market fluctuations to define your risk profile.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern2">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern2"
+            aria-expanded="false"
+            aria-controls="collapseModern2"
+          >
+            <span>What is asset allocation?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern2"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern2"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Asset allocation is the process of dividing your investments among different asset categories to balance risk and reward.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern3">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern3"
+            aria-expanded="false"
+            aria-controls="collapseModern3"
+          >
+            <span>How often will I receive portfolio reviews?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern3"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern3"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>We conduct regular portfolio reviews to ensure your investments align with your goals and market conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern4">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern4"
+            aria-expanded="false"
+            aria-controls="collapseModern4"
+          >
+            <span>Can you help with retirement planning?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern4"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern4"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Yes, we specialize in retirement planning to help you build a secure financial future based on your needs.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModern5">
+          <button 
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseModern5"
+            aria-expanded="false"
+            aria-controls="collapseModern5"
+          >
+            <span>How can I get started?</span>
+          </button>
+        </h2>
+
+        <div
+          id="collapseModern5"
+          class="accordion-collapse collapse "
+          aria-labelledby="headingModern5"
+          data-bs-parent="#faqAccordion2"
+        >
+          <div class="accordion-body col-md-10">
+            <p>Contact us to schedule a consultation, and we&#39;ll guide you through the investment process tailored to your objectives.</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-zigrow-section_3 {
+    background-color: #fff;
+  
+
+  .faq-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .faq-subtext {
+    color: var(--para-muted);
+    font-size: var(--fs-body);
+    margin-top: 0.3rem;
+  }
+
+  /* Accordion Clean Style */
+  .accordion-button {
+    font-size: 1.2rem ;
+    color: #45505e ;
+    font-weight: 400 ;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #45505e ;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0 ;
+  }
+
+  .accordion-button {
+    background-color: transparent ;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: none ;
+    padding: 1.25rem 0;
+  }
+
+  .accordion-body {
+    font-size: var(--fs-body);
+    color: var(--para-muted);
+    padding: 0 0 1rem;
+  }
+
+  .accordion-button::after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    padding: 15px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #666;
+    font-size: 1rem;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    margin-left: auto;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /%3E%3C/svg%3E"); /* same gray icon */
+    border: 1px solid #666;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .faq-heading {
+      font-size: 1.5rem ;
+    }
+
+    .accordion-button {
+      font-size: 0.95rem ;
+      }}
+  }
+</style>
+
+  
+    <section class="cta-zigrow-section_1 position-relative text-custom-white" id="cta" data-section="cta">
+  <div class="container h-custom-100" style="z-index: 999;">
+    <div class="row h-custom-100 justify-custom-center align-custom-center text-custom-center">
+      <div class="col-12 col-lg-6">
+        <div class="hero-content">
+          <h1 class="display-custom-4 fw-custom-bold mb-custom-3">Connect with Us Today</h1>
+          <p class="lead-custom mb-custom-3">Your wealth journey starts here. for</p>
+          <p class="mb-custom-4 text-custom-light font-body">Ready to take control of your financial future? Reach out to us for personalized investment guidance tailored to your goals and needs.</p>
+
+          <div class="row justify-custom-center">
+            <div class="col-auto">
+              <a href="#" class="primary-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="img-credit text-custom-white small-custom position-absolute" style="bottom: 10px; right: 10px; z-index: 3;">
+    Photo by 
+    <a href="https://unsplash.com/@brett_jordan?utm_source=zigrow&utm_medium=referral" target="_blank"> Brett Jordan </a>
+    on 
+    <a href="https://unsplash.com/?utm_source=zigrow&utm_medium=referral" target="_blank">Unsplash</a>
+  </p>
+</section>
+
+
+<style>
+  .cta-zigrow-section_1 {
+  background: url('https://images.unsplash.com/photo-1614610741015-55914090378e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3ODMzOTV8MHwxfHNlYXJjaHw5fHxpbnZlc3RtZW50JTIwYWR2aXNvcnklMjBzZXJ2aWNlcyUyMGNsaWVudHxlbnwxfHx8fDE3NzEwOTgwNDZ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080') center/cover no-repeat;
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+
+
+&::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-content p.lead-custom {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-content p.small {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.btn-primary {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-rescue {
+    height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p.lead-custom {
+    font-size: 1.2rem;
+  }
+
+  .hero-content p.small {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+  }
+</style>
+  
+    <!-- 📮 Minimal Split Contact -->
+<section class="contact-zigrow-section_4 section-padding" id="contact" data-section="contact">
+  <div class="container-xl">
+    <div class="contact-grid overflow-hidden">
+      <div class="row g-0">
+        <!-- ◼︎ Info -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="info p-custom-5 h-custom-100">
+            <h2 class="main-heading mb-custom-4">Get in touch</h2>
+
+            <ul class="list-unstyled mb-custom-0 ">
+              <li>
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <h6>Mailing address</h6>
+                  <p>Chennai</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <h6>Email</h6>
+                  <p>wealthbyprg@gmail.com</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <h6>Phone</h6>
+                  <p>8667517955</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ◼︎ Image -->
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="hero h-custom-100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* ========== TOKENS ========== */
+  :root {
+    --stroke: rgba(0, 0, 0, .07);
+  }
+
+  /* ========== WRAPPER ========== */
+  .contact-zigrow-section_4 {
+    background: #fdfdfd;
+  
+
+  /* outer card */
+  .contact-zigrow-section_4 .contact-grid {
+    background: var(--bg, #ffffff);
+    box-shadow: var(--shadow-section);
+    border-radius: var(--box-radius);
+    overflow: hidden;
+  }
+
+  /* list layout */
+  .contact-zigrow-section_4 .info ul li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-zigrow-section_4 .info .icon {
+    color: var(--primary-colors);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-zigrow-section_4 .info h6 {
+    font-size: .8rem;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--primary-colors);
+    margin-bottom: .25rem;
+  }
+
+  .contact-zigrow-section_4 .info p {
+    margin: 0;
+    font-size: var(--fs-body-sm);
+    color: var(--para-muted);
+  }
+
+  /* ========== HERO IMAGE ========== */
+  .hero {
+    background: url('https://i.postimg.cc/XJCcgx1h/3.png') center/cover no-repeat;
+    min-height: 420px;
+  }
+
+  @media (max-width: 767.98px) {
+    .contact-zigrow-section_4 .info {
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-zigrow-section_4 .hero {
+      min-height: 300px;
+    }
+
+    .contact-zigrow-section_4 .info ul li {
+      justify-content: center;
+      text-align: left;
+    }
+  }}
+</style>
+
+  
+
+
+</body>
+
+<script>
+  function importAndOpenBuilder(userId) {
+    fetch("https://api-uat.zigrow.com/api/import-template", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+        }),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          // window.location.href = `https://api-uat.zigrow.com/builder/editor.html?template=templates/build-with-ai/${userId}/index.html&mode=new`;
+            window.location.href = `https://api.zigrow.com/builder/editor.html?template=ai:${userId}&mode=new`;
+        } else {
+          alert(
+            "Failed to import template to builder: " +
+            (data.error || "Unknown error")
+          );
+        }
+      })
+      .catch(() => {
+        alert("Failed to communicate with builder server.");
+      });
+  }
+</script>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- <script>
+  // Check if the page is accessed from 'dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+<!-- <script>
+  // Check if the page is accessed from 'https://dashboard.zigrow.com'
+  const isFromDashboard = document.referrer.includes("https://dashboard.zigrow.com");
+
+  if (!isFromDashboard) {
+    // Disable right-click on the page if not from https://dashboard.zigrow.com
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Disable right-click context menu
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function(event) {
+      event.preventDefault(); // Disable text selection
+    });
+
+    // Disable inspect element using keyboard shortcuts (F12, Ctrl + Shift + I)
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault(); // Block F12 or Ctrl+Shift+I
+      }
+    });
+  }
+</script> -->
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // REMOVE all pre-existing AOS classes
+  document.querySelectorAll(".aos-init, .aos-animate").forEach(el => {
+    el.classList.remove("aos-init", "aos-animate");
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+  /* ---------------------------------------------------
+    1) Define animation rules per section type
+  --------------------------------------------------- */
+  const sectionAnimations = {
+    hero: "fade-up-big",
+    about: ["fade-left", "fade-right"],
+    services: "fade-up",
+    service: "fade-up",
+    portfolio: "zoom-in",
+    team: "fade-up-small",
+    pricing: "zoom-in",
+    contact: "fade-up",
+    faq: "fade-right",
+    reviews: "fade-up",
+    testimonial: "fade-up",
+    product: "fade-up",
+    logos: "fade-in-slow",
+    cta: "zoom-in-big",
+    default: ["fade-up", "fade-down"]
+  };
+
+  /* ---------------------------------------------------
+    2) Utility: pick animation type
+  --------------------------------------------------- */
+  const pickAnimation = (type, index) => {
+    const anim = sectionAnimations[type] || sectionAnimations.default;
+    return Array.isArray(anim) ? anim[index % anim.length] : anim;
+  };
+
+  /* ---------------------------------------------------
+    3) Utility: stagger delays
+  --------------------------------------------------- */
+  const stagger = (elList, base = 80) => {
+    elList.forEach((el, i) => {
+      el.setAttribute("data-aos-delay", i * base);
+    });
+  };
+
+  /* ---------------------------------------------------
+    4) Apply to ALL sections automatically
+  --------------------------------------------------- */
+  document.querySelectorAll("[data-section]").forEach((section, secIndex) => {
+    const type = (section.dataset.section || "default").toLowerCase();
+    const anim = pickAnimation(type, secIndex);
+
+    // SECTION LEVEL ANIMATION
+    section.setAttribute("data-aos", anim);
+
+    // CHILDREN: Cards / Columns / Items
+    const children = section.querySelectorAll(`
+      .col,
+      .col-md-6,
+      .col-lg-6,
+      .col-lg-4,
+      .row > div,
+      .card,
+      .item,
+      .service-card,
+      .feature-box,
+      .team-card,
+      .pricing-card,
+      .faq-item,
+      .testimonial-card,
+      .portfolio-card
+    `);
+
+    children.forEach((child, i) => {
+      child.setAttribute("data-aos", anim);
+      child.setAttribute("data-aos-delay", i * 70);
+    });
+
+    // ELEMENT LEVEL: Headings, paragraphs, buttons
+    const elements = section.querySelectorAll("h1, h2, h3, p, img, button, a, li");
+
+    elements.forEach((el, i) => {
+      el.setAttribute("data-aos", anim);
+      el.setAttribute("data-aos-delay", i * 25);
+    });
+
+  });
+
+  /* ---------------------------------------------------
+     5) MOBILE OPTIMIZED — Disable heavy animations
+  --------------------------------------------------- */
+  if (window.innerWidth < 576) {
+    document.querySelectorAll("[data-aos]").forEach(el => {
+      if (["zoom-in-big", "fade-up-big"].includes(el.dataset.aos)) {
+        el.setAttribute("data-aos", "fade-up");
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     6) INIT AOS
+  --------------------------------------------------- */
+  AOS.init({
+    duration: 900,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 90,
+
+      // 🚫 Disable animation on mobile
+  disable: function () {
+    return window.innerWidth < 768; // 768px se chhota = Mobile
+  }
+  });
+
+});
+</script>
+
+</html>

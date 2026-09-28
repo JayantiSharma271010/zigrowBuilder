@@ -1,137 +1,239 @@
-const header = document.getElementById("header");
+const navbar = document.getElementById("navbar");
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
-const backToTopBtn = document.getElementById("backToTopBtn");
-const sections = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll(".site-header .nav-menu a");
 
-function setMenuState(open) {
-  navMenu.classList.toggle("active", open);
-  menuToggle.setAttribute("aria-expanded", String(open));
-  const icon = menuToggle.querySelector("[data-icon]");
-  if (icon) {
-    icon.classList.toggle("bi-list", !open);
-    icon.classList.toggle("bi-x-lg", open);
-    icon.dataset.icon = open ? "close" : "menu";
+// Toggle mobile menu
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Sticky navbar after scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    // adjust scroll distance
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
   }
-}
+});
+// navigation animation of booder
+// Grab all sections and nav links
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("#navbar .nav-menu ul li a");
 
-menuToggle.addEventListener("click", () => setMenuState(!navMenu.classList.contains("active")));
-navLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
-
-function updateScrollState() {
-  header.classList.toggle("sticky", window.scrollY > 100);
-  backToTopBtn.classList.toggle("show", window.scrollY > 300);
+function setActiveLink() {
+  let scrollY = window.scrollY;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const active = window.scrollY >= sectionTop && window.scrollY < sectionTop + section.offsetHeight;
-    if (active) {
-      navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${section.id}`));
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 120; // offset for navbar height
+    const sectionId = section.getAttribute("id");
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("active");
+        }
+      });
     }
   });
 }
 
-window.addEventListener("scroll", updateScrollState, { passive: true });
-backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-updateScrollState();
+window.addEventListener("scroll", setActiveLink);
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (!reducedMotion && window.innerWidth > 768 && window.gsap && window.ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.from(".hero-content", { y: 60, opacity: 0, duration: 1, ease: "power3.out" });
-  gsap.from(".about-text", { scrollTrigger: { trigger: ".about-section", start: "top 80%", toggleActions: "play none none none" }, x: -80, opacity: 0, duration: 0.9, ease: "power3.out" });
-  gsap.from(".about-image", { scrollTrigger: { trigger: ".about-section", start: "top 80%", toggleActions: "play none none none" }, y: 80, opacity: 0, duration: 0.9, ease: "power3.out" });
-  gsap.from(".how-it-works-section .section-header", { scrollTrigger: { trigger: ".how-it-works-section", start: "top 80%", toggleActions: "play none none none" }, y: -40, opacity: 0, duration: 0.9, ease: "power3.out" });
-  gsap.from(".appointment-content", { scrollTrigger: { trigger: ".appointment-section", start: "top 80%", toggleActions: "play none none none" }, x: -80, opacity: 0, duration: 0.9, ease: "power3.out" });
-  gsap.from(".appointment-form-panel", { scrollTrigger: { trigger: ".appointment-section", start: "top 80%", toggleActions: "play none none none" }, y: 80, opacity: 0, duration: 0.9, ease: "power3.out" });
-  gsap.from(".testimonial-img", { scrollTrigger: { trigger: ".testimonial-section", start: "top 80%", toggleActions: "play none none none" }, scale: 0.85, opacity: 0, duration: 0.9, ease: "back.out(1.7)" });
-  gsap.from(".footer-brand-logo", { scrollTrigger: { trigger: ".site-footer", start: "top 85%", toggleActions: "play none none none" }, scale: 0.85, opacity: 0, duration: 0.9, ease: "back.out(1.7)" });
-}
+// back to top btn
+const backToTopBtn = document.getElementById("backToTopBtn");
 
-(function configureZigrowForms() {
-  const forms = Array.from(document.querySelectorAll("form[data-zigrow-form]"));
-  if (!forms.length) return;
-
-  function serializeForm(form) {
-    const formData = new FormData(form);
-    const raw = {};
-    for (const [name, value] of formData.entries()) {
-      const existing = raw[name];
-      if (existing === undefined) raw[name] = value;
-      else if (Array.isArray(existing)) existing.push(value === "" ? true : value);
-      else raw[name] = [existing, value === "" ? true : value];
-    }
-    return raw;
+window.onscroll = () => {
+  if (document.documentElement.scrollTop > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
   }
+};
 
-  function pickPrimaryValue(raw) {
-    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
-    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-    const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(" ").trim();
-    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
-    if (nameCombo) return nameCombo;
-    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
-    return "";
-  }
-
-  forms.forEach((form) => {
-    const domainInput = form.querySelector('input[name="domain"]');
-    const pageUrlInput = form.querySelector('input[name="page_url"]');
-    if (domainInput) domainInput.value = location.host;
-    if (pageUrlInput) pageUrlInput.value = location.href;
-
-    let message = form.querySelector(".form-submit-message");
-    if (!message) {
-      message = document.createElement("div");
-      message.className = "form-submit-message";
-      message.setAttribute("role", "status");
-      message.setAttribute("aria-live", "polite");
-      form.appendChild(message);
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const submitButton = form.querySelector(':scope > [type="submit"]');
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.dataset.oldText = submitButton.textContent || "";
-        submitButton.textContent = "Submitting...";
-      }
-      message.textContent = "";
-      message.removeAttribute("data-status");
-
-      try {
-        const raw = serializeForm(form);
-        const body = new URLSearchParams();
-        body.set("domain", form.querySelector('input[name="domain"]')?.value || location.host);
-        body.set("form_key", form.querySelector('input[name="form_key"]')?.value || "contact");
-        body.set("page_url", form.querySelector('input[name="page_url"]')?.value || location.href);
-        body.set("payload", JSON.stringify(raw));
-        const primary = pickPrimaryValue(raw);
-        if (primary) body.set("value", primary);
-        if (raw._company) body.set("_company", raw._company);
-
-        const response = await fetch(form.action, { method: "POST", headers: { Accept: "application/json" }, body });
-        const result = await response.json().catch(() => ({}));
-        if (response.ok && (result.ok ?? true)) {
-          form.reset();
-          message.textContent = "Thanks! Your request has been submitted.";
-          message.dataset.status = "success";
-        } else {
-          message.textContent = result.message || `Failed (HTTP ${response.status})`;
-          message.dataset.status = "error";
-        }
-      } catch (error) {
-        console.error(error);
-        message.textContent = "Something went wrong. Please try again.";
-        message.dataset.status = "error";
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = submitButton.dataset.oldText || "Send";
-        }
-      }
-    });
+backToTopBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+// gsap animation start heare
+// Register plugin
+gsap.registerPlugin(ScrollTrigger);
+if (window.innerWidth > 768) {
+  // Hero content animation on page load
+  gsap.from(".hero-content", {
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
   });
-})();
+
+  // Animate elements individually with stagger
+  gsap.from(".hero-content h1, .hero-content p", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out",
+  });
+
+  //  ABOUT SECTION ANIMATION
+
+  gsap.from(".about-text", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from(".about-image", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+  //  HOW IT WORKS SECTION ANIMATION
+
+  gsap.from("#how-it-works .section-header", {
+    scrollTrigger: {
+      trigger: "#how-it-works",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+  //  APPOINTMENT SECTION
+  gsap.from(".appointment-content", {
+    scrollTrigger: {
+      trigger: "#appointment",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  // Right content (form)
+  gsap.from(".appointment-form", {
+    scrollTrigger: {
+      trigger: "#appointment",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+  //  TESTIMONIAL SECTION
+
+  gsap.from(".testimonial-img", {
+    scrollTrigger: {
+      trigger: "#testimonial",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1,
+    ease: "back.out(1.7)", // nice pop effect
+  });
+
+  // Testimonial text
+  gsap.from(".testimonial-text", {
+    scrollTrigger: {
+      trigger: "#testimonial",
+      start: "top 75%",
+      toggleActions: "play none none",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  // Testimonial name
+  gsap.from(".testimonial-name", {
+    scrollTrigger: {
+      trigger: "#testimonial",
+      start: "top 70%",
+      toggleActions: "play none none",
+    },
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    delay: 0.6,
+    ease: "power3.out",
+  });
+
+  //  FEATURED SECTION
+
+  gsap.from(".featured-title", {
+    scrollTrigger: {
+      trigger: "#featured",
+      start: "top 85%",
+      toggleActions: "play none none",
+    },
+    y: -30,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  //  FOOTER SECTION
+
+  gsap.from("#footer .logo", {
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 85%",
+      toggleActions: "play none none",
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from("#footer .tagline", {
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 80%",
+      toggleActions: "play none none",
+    },
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    delay: 0.2,
+    ease: "power3.out",
+  });
+
+  gsap.from("#footer .footer-nav a", {
+    scrollTrigger: {
+      trigger: "#footer",
+      start: "top 75%",
+      toggleActions: "play none none",
+    },
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    stagger: 0.1,
+    delay: 0.4,
+    ease: "power3.out",
+  });
+}
