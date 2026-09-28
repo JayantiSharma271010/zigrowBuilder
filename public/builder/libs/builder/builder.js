@@ -10700,6 +10700,16 @@ document
 
   // Section editor code and function start from here. 
 
+function _sectionHasGradient(bgImage) {
+  if (!bgImage || typeof bgImage !== "string") {
+    return false;
+  }
+
+  return /(?:repeating-)?(?:linear|radial|conic)-gradient\(/i.test(
+    bgImage,
+  );
+}
+
   function _sectionGetLinearGradientContent(bgImage) {
   if (!bgImage || typeof bgImage !== "string") return null;
 
@@ -10770,6 +10780,1142 @@ function _sectionSplitTopLevelCommas(str) {
   return parts;
 }
 
+function _sectionFindGradientFunctions(bgImage) {
+  const source = String(bgImage || "");
+  const gradients = [];
+
+  const regex =
+    /(?:repeating-)?(?:linear|radial|conic)-gradient\(/gi;
+
+  let match;
+
+  while ((match = regex.exec(source))) {
+    const start = match.index;
+    const openIndex = regex.lastIndex - 1;
+
+    let depth = 1;
+    let index = openIndex + 1;
+
+    for (; index < source.length; index++) {
+      const char = source[index];
+
+      if (char === "(") {
+        depth++;
+      } else if (char === ")") {
+        depth--;
+
+        if (depth === 0) {
+          break;
+        }
+      }
+    }
+
+    if (depth !== 0) {
+      break;
+    }
+
+    gradients.push({
+      type: match[0].slice(0, -1).toLowerCase(),
+
+      start: start,
+      end: index + 1,
+
+      contentStart: openIndex + 1,
+      contentEnd: index,
+
+      content: source.slice(
+        openIndex + 1,
+        index,
+      ),
+    });
+
+    regex.lastIndex = index + 1;
+  }
+
+  return gradients;
+}
+
+
+function _sectionSplitTopLevelCommaRanges(str) {
+  const source = String(str || "");
+
+  const parts = [];
+
+  let depth = 0;
+  let start = 0;
+
+  function addPart(end) {
+    const raw = source.slice(start, end);
+
+    let left = 0;
+    let right = raw.length;
+
+    while (
+      left < right &&
+      /\s/.test(raw[left])
+    ) {
+      left++;
+    }
+
+    while (
+      right > left &&
+      /\s/.test(raw[right - 1])
+    ) {
+      right--;
+    }
+
+    if (left < right) {
+      parts.push({
+        text: raw.slice(left, right),
+
+        start: start + left,
+        end: start + right,
+      });
+    }
+  }
+
+  for (
+    let index = 0;
+    index < source.length;
+    index++
+  ) {
+    const char = source[index];
+
+    if (char === "(") {
+      depth++;
+      continue;
+    }
+
+    if (char === ")") {
+      depth = Math.max(
+        0,
+        depth - 1,
+      );
+
+      continue;
+    }
+
+    if (
+      char === "," &&
+      depth === 0
+    ) {
+      addPart(index);
+
+      start = index + 1;
+    }
+  }
+
+  addPart(source.length);
+
+  return parts;
+}
+
+
+function _sectionExtractGradientStopColor(part) {
+  const source = String(part || "");
+
+  let start = 0;
+
+  while (
+    start < source.length &&
+    /\s/.test(source[start])
+  ) {
+    start++;
+  }
+
+  if (start >= source.length) {
+    return null;
+  }
+
+  const remaining = source.slice(start);
+
+  /*
+   * CSS color functions.
+   *
+   * color-mix() is deliberately included because
+   * Zigrow generated blocks already use it.
+   */
+  const functionMatch = remaining.match(
+    /^(?:color-mix|rgba?|hsla?|hwb|lab|lch|oklab|oklch|color|var)\s*\(/i,
+  );
+
+  if (functionMatch) {
+    const openOffset =
+      functionMatch[0].lastIndexOf("(");
+
+    const openIndex =
+      start + openOffset;
+
+    let depth = 1;
+    let index = openIndex + 1;
+
+    for (
+      ;
+      index < source.length;
+      index++
+    ) {
+      const char = source[index];
+
+      if (char === "(") {
+        depth++;
+      } else if (char === ")") {
+        depth--;
+
+        if (depth === 0) {
+          index++;
+          break;
+        }
+      }
+    }
+
+    if (depth === 0) {
+      return {
+        text: source.slice(
+          start,
+          index,
+        ),
+
+        start: start,
+        end: index,
+      };
+    }
+  }
+
+  const hexMatch = remaining.match(
+    /^#[0-9a-fA-F]{3,8}\b/,
+  );
+
+  if (hexMatch) {
+    return {
+      text: hexMatch[0],
+
+      start: start,
+
+      end:
+        start +
+        hexMatch[0].length,
+    };
+  }
+
+  if (
+    /^transparent\b/i.test(
+      remaining,
+    )
+  ) {
+    return {
+      text: "transparent",
+
+      start: start,
+
+      end:
+        start +
+        "transparent".length,
+    };
+  }
+
+  return null;
+}
+
+function _sectionGetOriginalGradientCss(
+  element,
+  computedBackground,
+) {
+  if (!element) {
+    return computedBackground || "";
+  }
+
+  /*
+   * If the user has already edited this section,
+   * prefer the inline gradient.
+   */
+  const inlineBackground =
+    element.style.backgroundImage || "";
+
+  if (
+    _sectionHasGradient(
+      inlineBackground,
+    )
+  ) {
+    return inlineBackground;
+  }
+
+  const doc =
+    element.ownerDocument;
+
+  if (!doc) {
+    return computedBackground || "";
+  }
+
+  const frameWindow =
+    doc.defaultView || window;
+
+  let matchedBackground = "";
+
+  function scanRules(rules) {
+    if (!rules) return;
+
+    Array.from(rules).forEach(
+      function (rule) {
+        try {
+          /*
+           * Normal CSS rule.
+           */
+          if (
+            rule.type === 1 &&
+            rule.selectorText &&
+            element.matches(
+              rule.selectorText,
+            )
+          ) {
+            const background =
+              rule.style
+                ?.backgroundImage ||
+              "";
+
+            if (
+              _sectionHasGradient(
+                background,
+              )
+            ) {
+              matchedBackground =
+                background;
+            }
+          }
+
+          /*
+           * Support gradients inside
+           * media/support rules too.
+           */
+          if (rule.cssRules) {
+            let allowed = true;
+
+            const typeName =
+              rule.constructor
+                ?.name || "";
+
+            if (
+              typeName ===
+                "CSSMediaRule" &&
+              rule.conditionText &&
+              typeof frameWindow
+                .matchMedia ===
+                "function"
+            ) {
+              allowed =
+                frameWindow
+                  .matchMedia(
+                    rule.conditionText,
+                  )
+                  .matches;
+            }
+
+            if (allowed) {
+              scanRules(
+                rule.cssRules,
+              );
+            }
+          }
+        } catch (_) {}
+      },
+    );
+  }
+
+  Array.from(
+    doc.styleSheets || [],
+  ).forEach(function (sheet) {
+    try {
+      scanRules(sheet.cssRules);
+    } catch (_) {
+      /*
+       * Cross-origin stylesheets may
+       * block cssRules access.
+       */
+    }
+  });
+
+  return (
+    matchedBackground ||
+    computedBackground ||
+    ""
+  );
+}
+
+function _sectionResolveGradientColor(
+  value,
+  element,
+) {
+  const color =
+    String(value || "").trim();
+
+  if (!color) {
+    return {
+      hex: "#000000",
+      alpha: 100,
+    };
+  }
+
+  /*
+   * If it is a CSS variable, read the
+   * actual variable value first.
+   */
+  const variableMatch = color.match(
+    /^var\(\s*(--[a-zA-Z0-9_-]+)/,
+  );
+
+  if (
+    variableMatch &&
+    element
+  ) {
+    const resolvedVariable =
+      (
+        element.ownerDocument
+          ?.defaultView ||
+        window
+      )
+        .getComputedStyle(
+          element,
+        )
+        .getPropertyValue(
+          variableMatch[1],
+        )
+        .trim();
+
+    if (resolvedVariable) {
+      return _sectionCssColorToHexAlpha(
+        resolvedVariable,
+      );
+    }
+  }
+
+  /*
+   * Normal hex / rgb / rgba.
+   */
+  if (
+    /^#[0-9a-fA-F]{3,8}$/.test(
+      color,
+    ) ||
+    /^rgba?\(/i.test(color)
+  ) {
+    return _sectionCssColorToHexAlpha(
+      color,
+    );
+  }
+
+  /*
+   * Let the browser resolve things like:
+   *
+   * color-mix()
+   * hsl()
+   * modern CSS color functions
+   */
+  const doc =
+    element?.ownerDocument ||
+    document;
+
+  const parent =
+    element ||
+    doc.body ||
+    doc.documentElement;
+
+  const probe =
+    doc.createElement("span");
+
+  probe.style.position =
+    "absolute";
+
+  probe.style.visibility =
+    "hidden";
+
+  probe.style.pointerEvents =
+    "none";
+
+  probe.style.color = color;
+
+  try {
+    parent.appendChild(probe);
+
+    const computed =
+      (
+        doc.defaultView ||
+        window
+      ).getComputedStyle(
+        probe,
+      ).color;
+
+    probe.remove();
+
+    return _sectionCssColorToHexAlpha(
+      computed,
+    );
+  } catch (_) {
+    try {
+      probe.remove();
+    } catch (_) {}
+
+    return {
+      hex: "#000000",
+      alpha: 100,
+    };
+  }
+}
+
+
+function _sectionGradientDirectionToAngle(
+  value,
+) {
+  const direction =
+    String(value || "")
+      .trim()
+      .toLowerCase();
+
+  let match =
+    direction.match(
+      /^(-?[\d.]+)deg$/,
+    );
+
+  if (match) {
+    return parseFloat(match[1]);
+  }
+
+  const map = {
+    "to top": 0,
+    "to top right": 45,
+    "to right top": 45,
+
+    "to right": 90,
+
+    "to bottom right": 135,
+    "to right bottom": 135,
+
+    "to bottom": 180,
+
+    "to bottom left": 225,
+    "to left bottom": 225,
+
+    "to left": 270,
+
+    "to top left": 315,
+    "to left top": 315,
+  };
+
+  if (
+    Object.prototype.hasOwnProperty.call(
+      map,
+      direction,
+    )
+  ) {
+    return map[direction];
+  }
+
+  return null;
+}
+
+
+function _sectionParseGradientPattern(
+  background,
+  element,
+) {
+  const source =
+    String(background || "");
+
+  if (
+    !_sectionHasGradient(source)
+  ) {
+    return null;
+  }
+
+  const gradients =
+    _sectionFindGradientFunctions(
+      source,
+    );
+
+  if (!gradients.length) {
+    return null;
+  }
+
+  const stops = [];
+
+  const variableNames = [];
+
+  gradients.forEach(
+    function (gradient) {
+      const parts =
+        _sectionSplitTopLevelCommaRanges(
+          gradient.content,
+        );
+
+      parts.forEach(
+        function (part) {
+          const color =
+            _sectionExtractGradientStopColor(
+              part.text,
+            );
+
+          if (!color) {
+            return;
+          }
+
+          const expression =
+            color.text;
+
+          const vars =
+            _sectionFindGradientVars(
+              expression,
+            );
+
+          vars.forEach(
+            function (variable) {
+              if (
+                !variableNames.includes(
+                  variable.name,
+                )
+              ) {
+                variableNames.push(
+                  variable.name,
+                );
+              }
+            },
+          );
+
+          stops.push({
+            gradient: gradient,
+
+            expression:
+              expression,
+
+            start:
+              gradient.contentStart +
+              part.start +
+              color.start,
+
+            end:
+              gradient.contentStart +
+              part.start +
+              color.end,
+
+            variables: vars,
+          });
+        },
+      );
+    },
+  );
+
+  const editableStops =
+    stops.filter(
+      function (stop) {
+        return (
+          stop.expression
+            .toLowerCase() !==
+          "transparent"
+        );
+      },
+    );
+
+  if (!editableStops.length) {
+    return null;
+  }
+
+  let color1;
+  let color2;
+
+  /*
+   * Best case:
+   *
+   * Gradient uses Zigrow/theme variables.
+   *
+   * Example:
+   * --primary-colors
+   * --territory-colors
+   *
+   * This is your Hero 9 case.
+   */
+  if (variableNames.length) {
+    color1 =
+      _sectionResolveGradientColor(
+        "var(" +
+          variableNames[0] +
+          ")",
+        element,
+      );
+
+    color2 =
+      _sectionResolveGradientColor(
+        "var(" +
+          variableNames[
+            variableNames.length - 1
+          ] +
+          ")",
+        element,
+      );
+  } else {
+    /*
+     * Normal gradients using actual colors.
+     *
+     * First color becomes editor Color 1.
+     * Last color becomes editor Color 2.
+     */
+    color1 =
+      _sectionResolveGradientColor(
+        editableStops[0]
+          .expression,
+        element,
+      );
+
+    color2 =
+      _sectionResolveGradientColor(
+        editableStops[
+          editableStops.length - 1
+        ].expression,
+        element,
+      );
+  }
+
+  let angle = 180;
+
+  let angleEditable = false;
+
+  let directionRange = null;
+
+ /*
+ * Find the main linear gradient layer.
+ *
+ * A section may contain:
+ *
+ * radial-gradient(...),
+ * radial-gradient(...),
+ * linear-gradient(...)
+ *
+ * The angle slider should control only
+ * the linear layer while preserving all
+ * radial layers exactly as they are.
+ */
+const linearGradient =
+  gradients.find(function (gradient) {
+    return /(?:repeating-)?linear-gradient/.test(
+      gradient.type,
+    );
+  });
+
+if (linearGradient) {
+  angleEditable = true;
+
+  const parts =
+    _sectionSplitTopLevelCommaRanges(
+      linearGradient.content,
+    );
+
+  const firstPart = parts[0];
+
+  const parsedAngle =
+    firstPart
+      ? _sectionGradientDirectionToAngle(
+          firstPart.text,
+        )
+      : null;
+
+  if (parsedAngle !== null) {
+    /*
+     * Existing angle/direction:
+     *
+     * 108deg
+     * to right
+     * to bottom left
+     */
+    angle = parsedAngle;
+
+    directionRange = {
+      start:
+        linearGradient.contentStart +
+        firstPart.start,
+
+      end:
+        linearGradient.contentStart +
+        firstPart.end,
+
+      insert: false,
+    };
+  } else {
+    /*
+     * No explicit direction.
+     *
+     * Example:
+     *
+     * linear-gradient(
+     *   red 0%,
+     *   blue 100%
+     * )
+     *
+     * CSS default is 180deg.
+     * If user changes the slider,
+     * insert the angle before Color 1.
+     */
+    angle = 180;
+
+    directionRange = {
+      start:
+        linearGradient.contentStart,
+
+      end:
+        linearGradient.contentStart,
+
+      insert: true,
+    };
+  }
+}
+
+  return {
+    originalCss: source,
+
+    gradients:
+      gradients,
+
+    stops:
+      stops,
+
+    variableNames:
+      variableNames,
+
+    c1:
+      color1,
+
+    c2:
+      color2,
+
+    angle:
+      angle,
+
+    angleEditable:
+      angleEditable,
+
+    directionRange:
+      directionRange,
+  };
+}
+
+
+function _sectionReplaceGradientRanges(
+  source,
+  replacements,
+) {
+  let result =
+    String(source || "");
+
+  replacements
+    .slice()
+    .sort(function (a, b) {
+      return b.start - a.start;
+    })
+    .forEach(
+      function (replacement) {
+        result =
+          result.slice(
+            0,
+            replacement.start,
+          ) +
+          replacement.value +
+          result.slice(
+            replacement.end,
+          );
+      },
+    );
+
+  return result;
+}
+
+
+function _sectionGradientColorForRatio(
+  ratio,
+) {
+  const safeRatio =
+    Math.max(
+      0,
+      Math.min(
+        1,
+        Number(ratio) || 0,
+      ),
+    );
+
+  if (safeRatio === 0) {
+    return "var(--zg-section-gradient-c1)";
+  }
+
+  if (safeRatio === 1) {
+    return "var(--zg-section-gradient-c2)";
+  }
+
+  const first =
+    Math.round(
+      (1 - safeRatio) * 1000,
+    ) / 10;
+
+  const second =
+    Math.round(
+      safeRatio * 1000,
+    ) / 10;
+
+  return (
+    "color-mix(in srgb, " +
+    "var(--zg-section-gradient-c1) " +
+    first +
+    "%, " +
+    "var(--zg-section-gradient-c2) " +
+    second +
+    "%)"
+  );
+}
+
+
+function _sectionBuildGradientPattern(
+  pattern,
+  angle,
+) {
+  if (
+    !pattern ||
+    !pattern.originalCss
+  ) {
+    return "";
+  }
+
+  const replacements = [];
+
+  const variables =
+    pattern.variableNames || [];
+
+  /*
+   * If gradient already uses theme variables,
+   * preserve every color-mix() and simply
+   * redirect those variables to the two
+   * Section Editor colors.
+   */
+  if (variables.length) {
+    pattern.stops.forEach(
+      function (stop) {
+        if (
+          !stop.variables ||
+          !stop.variables.length
+        ) {
+          return;
+        }
+
+        let expression =
+          stop.expression;
+
+        const localReplacements =
+          [];
+
+        stop.variables.forEach(
+          function (variable) {
+            const index =
+              variables.indexOf(
+                variable.name,
+              );
+
+            if (index < 0) {
+              return;
+            }
+
+            const ratio =
+              variables.length <= 1
+                ? 0
+                : index /
+                  (
+                    variables.length -
+                    1
+                  );
+
+            localReplacements.push({
+              start:
+                variable.start,
+
+              end:
+                variable.end,
+
+              value:
+                _sectionGradientColorForRatio(
+                  ratio,
+                ),
+            });
+          },
+        );
+
+        expression =
+          _sectionReplaceGradientRanges(
+            expression,
+            localReplacements,
+          );
+
+        replacements.push({
+          start:
+            stop.start,
+
+          end:
+            stop.end,
+
+          value:
+            expression,
+        });
+      },
+    );
+  } else {
+    /*
+     * No CSS variables.
+     *
+     * Preserve every stop location, but map
+     * all original stop colors between the
+     * two editor colors.
+     */
+    pattern.gradients.forEach(
+      function (gradient) {
+        const gradientStops =
+          pattern.stops.filter(
+            function (stop) {
+              return (
+                stop.gradient ===
+                  gradient &&
+                stop.expression
+                  .toLowerCase() !==
+                  "transparent"
+              );
+            },
+          );
+
+        gradientStops.forEach(
+          function (
+            stop,
+            index,
+          ) {
+            const ratio =
+              gradientStops.length <= 1
+                ? 0
+                : index /
+                  (
+                    gradientStops.length -
+                    1
+                  );
+
+            replacements.push({
+              start:
+                stop.start,
+
+              end:
+                stop.end,
+
+              value:
+                _sectionGradientColorForRatio(
+                  ratio,
+                ),
+            });
+          },
+        );
+      },
+    );
+  }
+
+  /*
+   * Only a pure single linear gradient
+   * may change its angle.
+   */
+if (
+  pattern.angleEditable &&
+  pattern.directionRange
+) {
+  const angleValue =
+    parseInt(
+      angle || 180,
+      10,
+    ) + "deg";
+
+  replacements.push({
+    start:
+      pattern.directionRange.start,
+
+    end:
+      pattern.directionRange.end,
+
+    value:
+      pattern.directionRange.insert
+        ? angleValue + ", "
+        : angleValue,
+  });
+}
+
+  return _sectionReplaceGradientRanges(
+    pattern.originalCss,
+    replacements,
+  );
+}
+
+
+function _sectionFindGradientVars(expression) {
+  const source =
+    String(expression || "");
+
+  const variables = [];
+
+  const regex = /var\(/gi;
+
+  let match;
+
+  while ((match = regex.exec(source))) {
+    const start = match.index;
+
+    const openIndex =
+      regex.lastIndex - 1;
+
+    let depth = 1;
+    let index = openIndex + 1;
+
+    for (
+      ;
+      index < source.length;
+      index++
+    ) {
+      const char = source[index];
+
+      if (char === "(") {
+        depth++;
+      } else if (char === ")") {
+        depth--;
+
+        if (depth === 0) {
+          index++;
+          break;
+        }
+      }
+    }
+
+    if (depth !== 0) {
+      break;
+    }
+
+    const value = source.slice(
+      start,
+      index,
+    );
+
+    const nameMatch = value.match(
+      /var\(\s*(--[a-zA-Z0-9_-]+)/,
+    );
+
+    if (nameMatch) {
+      variables.push({
+        name: nameMatch[1],
+
+        start: start,
+        end: index,
+
+        text: value,
+      });
+    }
+
+    regex.lastIndex = index;
+  }
+
+  return variables;
+}
+
+
+
 function _sectionCssColorToHexAlpha(colorValue) {
   if (!colorValue) {
     return { hex: "#000000", alpha: 100 };
@@ -10791,14 +11937,92 @@ function _sectionCssColorToHexAlpha(colorValue) {
     };
   }
 
-  if (/^#[0-9a-fA-F]{6}$/.test(value)) {
+ if (/^#[0-9a-fA-F]{6}$/.test(value)) {
     return {
-      hex: value.toLowerCase(),
-      alpha: 100,
+        hex: value.toLowerCase(),
+        alpha: 100,
     };
-  }
+}
 
-  return _rgbaToHexAlpha(value);
+const srgbMatch =
+    value.match(
+        /^color\(\s*srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?\s*\)$/i,
+    );
+
+if (srgbMatch) {
+    const r =
+        Math.round(
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    parseFloat(
+                        srgbMatch[1],
+                    ),
+                ),
+            ) * 255,
+        );
+
+    const g =
+        Math.round(
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    parseFloat(
+                        srgbMatch[2],
+                    ),
+                ),
+            ) * 255,
+        );
+
+    const b =
+        Math.round(
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    parseFloat(
+                        srgbMatch[3],
+                    ),
+                ),
+            ) * 255,
+        );
+
+    const alpha =
+        srgbMatch[4] !== undefined
+            ? Math.round(
+                  parseFloat(
+                      srgbMatch[4],
+                  ) * 100,
+              )
+            : 100;
+
+    const toHex = function (num) {
+        return num
+            .toString(16)
+            .padStart(2, "0");
+    };
+
+    return {
+        hex:
+            "#" +
+            toHex(r) +
+            toHex(g) +
+            toHex(b),
+
+        alpha:
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    alpha,
+                ),
+            ),
+    };
+}
+
+return _rgbaToHexAlpha(value);
 }
 
 function _sectionParseLinearGradient(bgImage) {
@@ -12761,6 +13985,7 @@ Vvveb.SectionEditor = {
 // false means the overlay does not exist.
 _imageOverlayEnabled: true,
     _gradientPreviewOriginalStyle: null,
+    _gradientPattern: null,
 
     _previewCommitted: false,
     _allowDestroyWithoutRestore: false,
@@ -12967,6 +14192,7 @@ _imageOverlayEnabled: true,
         }
 
         this._gradientPreviewOriginalStyle = null;
+        this._gradientPattern = null;
         this._lastImageUrl = "";
 
         // Default for a newly selected background image.
@@ -13046,6 +14272,7 @@ this._imageOverlayEnabled = true;
         const gradC2AlphaVal = document.getElementById("section-grad-c2a-val");
 
         const gradAngle = document.getElementById("section-grad-angle");
+        if (gradAngle) gradAngle.disabled = false;
         const gradAngleVal = document.getElementById("section-grad-angle-val");
 
         if (modeLabel) modeLabel.textContent = "None";
@@ -13058,10 +14285,25 @@ this._imageOverlayEnabled = true;
 
         const hasBgImage = bgImage && bgImage !== "none";
         const hasGradient =
-            hasBgImage && bgImage.indexOf("linear-gradient(") !== -1;
-        const hasUrl = hasBgImage && bgImage.indexOf("url(") !== -1;
+    hasBgImage &&
+    _sectionHasGradient(bgImage);
 
-        if (hasGradient && hasUrl) {
+/*
+ * Keep the existing image-overlay
+ * workflow specifically on its current
+ * linear-gradient implementation.
+ */
+const hasLinearGradient =
+    hasBgImage &&
+    bgImage.indexOf(
+        "linear-gradient("
+    ) !== -1;
+
+const hasUrl =
+    hasBgImage &&
+    bgImage.indexOf("url(") !== -1;
+
+        if (hasLinearGradient && hasUrl) {
             if (modeLabel) modeLabel.textContent = "Image";
             if (imgInfo) imgInfo.textContent = "Image selected";
 
@@ -13115,12 +14357,26 @@ this._imageOverlayEnabled = true;
                     if (imgInfo) imgInfo.textContent = "Image selected";
                 }
             }
-        } else if (hasGradient) {
-            if (modeLabel) modeLabel.textContent = "Gradient";
+      } else if (hasGradient) {
+    if (modeLabel) {
+        modeLabel.textContent = "Gradient";
+    }
 
-            const parsedGradient = _sectionParseLinearGradient(bgImage);
+    const gradientSource =
+        _sectionGetOriginalGradientCss(
+            element,
+            bgImage,
+        );
 
-            if (parsedGradient) {
+    const parsedGradient =
+        _sectionParseGradientPattern(
+            gradientSource,
+            element,
+        );
+
+    if (parsedGradient) {
+        this._gradientPattern =
+            parsedGradient;
                 const angleVal = parsedGradient.angle;
                 const c1 = parsedGradient.c1;
                 const c2 = parsedGradient.c2;
@@ -13135,7 +14391,21 @@ this._imageOverlayEnabled = true;
                 if (gradC2Alpha) gradC2Alpha.value = c2.alpha;
                 if (gradC2AlphaVal) gradC2AlphaVal.textContent = c2.alpha + "%";
 
-                if (gradAngle) gradAngle.value = angleVal;
+                if (gradAngle) {
+    gradAngle.value =
+        angleVal;
+
+    /*
+     * Angle makes sense only for one
+     * pure linear gradient.
+     *
+     * Do not let it destroy radial or
+     * multi-layer geometry.
+     */
+    gradAngle.disabled =
+        !parsedGradient
+            .angleEditable;
+}
                 if (gradAngleVal) gradAngleVal.textContent = angleVal + "°";
 
                 const gradPreview = document.getElementById(
@@ -13438,52 +14708,157 @@ if (!overlayEnabled || overlayOpacity <= 0) {
         this.updateSmartTextContrast();
     },
 
-    applyGradient: function (opts) {
-        if (!this.element) return;
+  applyGradient: function (opts) {
+    if (!this.element) return;
 
-        opts = opts || {};
-        const recordUndo = opts.recordUndo === true;
+    opts = opts || {};
 
-        const el = this.element;
+    const recordUndo =
+        opts.recordUndo === true;
 
-        if (!recordUndo && this._gradientPreviewOriginalStyle == null) {
-            this._gradientPreviewOriginalStyle = el.getAttribute("style") || "";
-        }
+    const el = this.element;
 
-        let oldStyle = el.getAttribute("style") || "";
-        if (recordUndo && this._gradientPreviewOriginalStyle != null) {
-            oldStyle = this._gradientPreviewOriginalStyle;
-        }
+    if (
+        !recordUndo &&
+        this
+            ._gradientPreviewOriginalStyle ==
+            null
+    ) {
+        this
+            ._gradientPreviewOriginalStyle =
+            el.getAttribute(
+                "style",
+            ) || "";
+    }
 
-        el.style.backgroundImage = "";
-        el.style.background = "";
-        el.style.backgroundColor = "";
+    let oldStyle =
+        el.getAttribute(
+            "style",
+        ) || "";
 
-        const c1 =
-            document.getElementById("section-grad-c1")?.value || "#000000";
-        const a1 =
-            parseInt(
-                document.getElementById("section-grad-c1a")?.value || "100",
-                10,
-            ) / 100;
+    if (
+        recordUndo &&
+        this
+            ._gradientPreviewOriginalStyle !=
+            null
+    ) {
+        oldStyle =
+            this
+                ._gradientPreviewOriginalStyle;
+    }
 
-        const c2 =
-            document.getElementById("section-grad-c2")?.value || "#000000";
-        const a2 =
-            parseInt(
-                document.getElementById("section-grad-c2a")?.value || "100",
-                10,
-            ) / 100;
+    const c1 =
+        document.getElementById(
+            "section-grad-c1",
+        )?.value ||
+        "#000000";
 
-        const angle = parseInt(
-            document.getElementById("section-grad-angle")?.value || "180",
+    const a1 =
+        parseInt(
+            document.getElementById(
+                "section-grad-c1a",
+            )?.value ||
+                "100",
+            10,
+        ) / 100;
+
+    const c2 =
+        document.getElementById(
+            "section-grad-c2",
+        )?.value ||
+        "#000000";
+
+    const a2 =
+        parseInt(
+            document.getElementById(
+                "section-grad-c2a",
+            )?.value ||
+                "100",
+            10,
+        ) / 100;
+
+    const angle =
+        parseInt(
+            document.getElementById(
+                "section-grad-angle",
+            )?.value ||
+                "180",
             10,
         );
 
-        const rgba1 = _hexToRgba(c1, a1);
-        const rgba2 = _hexToRgba(c2, a2);
+    /*
+     * Existing designed gradient.
+     *
+     * Preserve its complete geometry
+     * and change only its colors.
+     */
+    if (this._gradientPattern) {
+        el.style.setProperty(
+            "--zg-section-gradient-c1",
+            _hexToRgba(
+                c1,
+                a1,
+            ),
+        );
 
-        const grad =
+        el.style.setProperty(
+            "--zg-section-gradient-c2",
+            _hexToRgba(
+                c2,
+                a2,
+            ),
+        );
+
+        const preservedGradient =
+            _sectionBuildGradientPattern(
+                this
+                    ._gradientPattern,
+                angle,
+            );
+
+        if (
+            preservedGradient
+        ) {
+            el.style.backgroundImage =
+                preservedGradient;
+        }
+    } else {
+        /*
+         * No existing pattern.
+         *
+         * Keep your existing simple
+         * two-color gradient behavior.
+         */
+        el.style.removeProperty(
+            "--zg-section-gradient-c1",
+        );
+
+        el.style.removeProperty(
+            "--zg-section-gradient-c2",
+        );
+
+        el.style.backgroundImage =
+            "";
+
+        el.style.background =
+            "";
+
+        el.style.backgroundColor =
+            "";
+
+        const rgba1 =
+            _hexToRgba(
+                c1,
+                a1,
+            );
+
+        const rgba2 =
+            _hexToRgba(
+                c2,
+                a2,
+            );
+
+        const gradient =
             "linear-gradient(" +
             angle +
             "deg, " +
@@ -13492,28 +14867,61 @@ if (!overlayEnabled || overlayOpacity <= 0) {
             rgba2 +
             " 100%)";
 
-        el.style.backgroundImage = grad;
-        el.style.backgroundSize = "cover";
-        el.style.backgroundPosition = "center";
+        el.style.backgroundImage =
+            gradient;
 
-        if (recordUndo && Vvveb.Undo && Vvveb.Undo.addMutation) {
-            if (oldStyle !== (el.getAttribute("style") || "")) {
-                Vvveb.Undo.addMutation({
-                    type: "attributes",
-                    target: el,
-                    attributeName: "style",
-                    oldValue: oldStyle,
-                    newValue: el.getAttribute("style") || "",
-                });
-            }
+        el.style.backgroundSize =
+            "cover";
 
-            this._gradientPreviewOriginalStyle = null;
+        el.style.backgroundPosition =
+            "center";
+    }
+
+    /*
+     * Keep your existing Undo system.
+     */
+    if (
+        recordUndo &&
+        Vvveb.Undo &&
+        Vvveb.Undo.addMutation
+    ) {
+        if (
+            oldStyle !==
+            (
+                el.getAttribute(
+                    "style",
+                ) || ""
+            )
+        ) {
+            Vvveb.Undo.addMutation({
+                type:
+                    "attributes",
+
+                target:
+                    el,
+
+                attributeName:
+                    "style",
+
+                oldValue:
+                    oldStyle,
+
+                newValue:
+                    el.getAttribute(
+                        "style",
+                    ) || "",
+            });
         }
 
-        this.updatePreview();
-        this.updateSmartTextContrast();
-    },
+        this
+            ._gradientPreviewOriginalStyle =
+            null;
+    }
 
+    this.updatePreview();
+
+    this.updateSmartTextContrast();
+},
     clearGradient: function () {
         if (!this.element) return;
 
@@ -13554,7 +14962,8 @@ if (!overlayEnabled || overlayOpacity <= 0) {
 
         const hasBgImage = bgImage && bgImage !== "none";
         const hasGradient =
-            hasBgImage && bgImage.indexOf("linear-gradient(") !== -1;
+            hasBgImage && _sectionHasGradient(bgImage);
+            const hasLinearGradient = hasBgImage && bgImage.indexOf("linear-gradient(") !== -1;
         const hasUrl = hasBgImage && bgImage.indexOf("url(") !== -1;
 
         if (modeLabel) modeLabel.textContent = "None";
@@ -13566,7 +14975,7 @@ if (!overlayEnabled || overlayOpacity <= 0) {
 
         if (details) details.textContent = "None";
 
-        if (hasGradient && hasUrl) {
+        if (hasLinearGradient && hasUrl) {
             if (modeLabel) modeLabel.textContent = "Image";
 
             const urlMatch = bgImage.match(/url\(["']?(.*?)["']?\)/);
@@ -13756,13 +15165,49 @@ toggleImageOverlay: function () {
         const bgColor = computed.backgroundColor || "";
 
         const hasBgImage = bgImage && bgImage !== "none";
-        const hasGradient =
-            hasBgImage && bgImage.indexOf("linear-gradient(") !== -1;
-        const hasUrl = hasBgImage && bgImage.indexOf("url(") !== -1;
+      const hasGradient =
+    hasBgImage &&
+    _sectionHasGradient(
+        bgImage,
+    );
 
-        if (hasGradient && hasUrl) return "imageWithOverlay";
-        if (hasGradient) return "gradient";
-        if (hasUrl || hasBgImage) return "image";
+const hasLinearGradient =
+    hasBgImage &&
+    bgImage.indexOf(
+        "linear-gradient("
+    ) !== -1;
+
+const hasUrl =
+    hasBgImage &&
+    bgImage.indexOf(
+        "url("
+    ) !== -1;
+
+/*
+ * Preserve current image overlay
+ * handling.
+ */
+if (
+    hasLinearGradient &&
+    hasUrl
+) {
+    return "imageWithOverlay";
+}
+
+if (
+    hasGradient &&
+    !hasUrl
+) {
+    return "gradient";
+}
+
+if (
+    hasUrl ||
+    hasBgImage
+) {
+    return "image";
+}
+        
 
         if (
             bgColor &&
@@ -14543,23 +15988,66 @@ function renderSectionRecentColors() {
 
         const angle = parseInt(gradAngle?.value || "180", 10);
 
-        const css =
-            "linear-gradient(" +
-            angle +
-            "deg, " +
-            _hexToRgba(c1, a1) +
-            " 0%, " +
-            _hexToRgba(c2, a2) +
-            " 100%)";
+      let css = "";
 
-        if (big) {
-            big.style.backgroundImage = css;
-            big.setAttribute("data-label", angle + "°");
-        }
+if (
+    Vvveb.SectionEditor
+        ?._gradientPattern
+) {
+    css =
+        _sectionBuildGradientPattern(
+            Vvveb.SectionEditor
+                ._gradientPattern,
+            angle,
+        );
+} else {
+    css =
+        "linear-gradient(" +
+        angle +
+        "deg, " +
+        _hexToRgba(c1, a1) +
+        " 0%, " +
+        _hexToRgba(c2, a2) +
+        " 100%)";
+}
 
-        if (mini) {
-            mini.style.backgroundImage = css;
-        }
+const editorColor1 = _hexToRgba(c1, a1);
+const editorColor2 = _hexToRgba(c2, a2);
+
+       if (big) {
+    big.style.setProperty(
+        "--zg-section-gradient-c1",
+        editorColor1,
+    );
+
+    big.style.setProperty(
+        "--zg-section-gradient-c2",
+        editorColor2,
+    );
+
+    big.style.backgroundImage =
+        css;
+
+    big.setAttribute(
+        "data-label",
+        angle + "°",
+    );
+}
+
+     if (mini) {
+    mini.style.setProperty(
+        "--zg-section-gradient-c1",
+        editorColor1,
+    );
+
+    mini.style.setProperty(
+        "--zg-section-gradient-c2",
+        editorColor2,
+    );
+
+    mini.style.backgroundImage =
+        css;
+}
 
         if (gradAngleVal) gradAngleVal.textContent = angle + "°";
         if (gradC1OpacityVal) {
@@ -14574,76 +16062,126 @@ function renderSectionRecentColors() {
         repaintAllSectionRanges();
     }
 
-    function refreshSectionEditorUIAfterRead() {
-        const el = Vvveb.SectionEditor?.element;
+function refreshSectionEditorUIAfterRead() {
+    const el = Vvveb.SectionEditor?.element;
 
-        if (el) {
-            const computed = window.getComputedStyle(el);
-            const bgImage = computed.backgroundImage || "";
+    if (el) {
+        const computed =
+            window.getComputedStyle(el);
 
-            if (
-                bgImage &&
-                bgImage !== "none" &&
-                bgImage.indexOf("linear-gradient(") !== -1
-            ) {
-                const parsedGradient = _sectionParseLinearGradient(bgImage);
+        const bgImage =
+            computed.backgroundImage || "";
 
-                if (parsedGradient) {
-                    if (gradC1 && parsedGradient.c1.hex) {
-                        gradC1.value = parsedGradient.c1.hex;
-                    }
+        if (
+            bgImage &&
+            bgImage !== "none" &&
+            _sectionHasGradient(bgImage)
+        ) {
+            const gradientSource =
+                _sectionGetOriginalGradientCss(
+                    el,
+                    bgImage,
+                );
 
-                    if (gradC1Hex && parsedGradient.c1.hex) {
-                        gradC1Hex.value = parsedGradient.c1.hex.toUpperCase();
-                    }
+            const parsedGradient =
+                _sectionParseGradientPattern(
+                    gradientSource,
+                    el,
+                );
 
-                    if (gradC1Opacity) {
-                        gradC1Opacity.value = parsedGradient.c1.alpha;
-                    }
+            if (parsedGradient) {
+                Vvveb.SectionEditor._gradientPattern =
+                    parsedGradient;
 
-                    if (gradC2 && parsedGradient.c2.hex) {
-                        gradC2.value = parsedGradient.c2.hex;
-                    }
+                if (
+                    gradC1 &&
+                    parsedGradient.c1.hex
+                ) {
+                    gradC1.value =
+                        parsedGradient.c1.hex;
+                }
 
-                    if (gradC2Hex && parsedGradient.c2.hex) {
-                        gradC2Hex.value = parsedGradient.c2.hex.toUpperCase();
-                    }
+                if (
+                    gradC1Hex &&
+                    parsedGradient.c1.hex
+                ) {
+                    gradC1Hex.value =
+                        parsedGradient.c1.hex.toUpperCase();
+                }
 
-                    if (gradC2Opacity) {
-                        gradC2Opacity.value = parsedGradient.c2.alpha;
-                    }
+                if (gradC1Opacity) {
+                    gradC1Opacity.value =
+                        parsedGradient.c1.alpha;
+                }
 
-                    if (gradAngle) {
-                        gradAngle.value = parsedGradient.angle;
-                    }
+                if (
+                    gradC2 &&
+                    parsedGradient.c2.hex
+                ) {
+                    gradC2.value =
+                        parsedGradient.c2.hex;
+                }
 
-                    const big = document.getElementById("section-grad-preview");
-                    const mini = document.getElementById(
+                if (
+                    gradC2Hex &&
+                    parsedGradient.c2.hex
+                ) {
+                    gradC2Hex.value =
+                        parsedGradient.c2.hex.toUpperCase();
+                }
+
+                if (gradC2Opacity) {
+                    gradC2Opacity.value =
+                        parsedGradient.c2.alpha;
+                }
+
+                if (gradAngle) {
+                    gradAngle.value =
+                        parsedGradient.angle;
+
+                    gradAngle.disabled =
+                        !parsedGradient.angleEditable;
+                }
+
+                const big =
+                    document.getElementById(
+                        "section-grad-preview",
+                    );
+
+                const mini =
+                    document.getElementById(
                         "section-grad-preview-mini",
                     );
 
-                    if (big) {
-                        big.style.backgroundImage = bgImage;
-                        big.setAttribute(
-                            "data-label",
-                            parsedGradient.angle + "°",
-                        );
-                    }
+                if (big) {
+                    big.style.backgroundImage =
+                        bgImage;
 
-                    if (mini) {
-                        mini.style.backgroundImage = bgImage;
-                    }
+                    big.setAttribute(
+                        "data-label",
+                        parsedGradient.angle +
+                            "°",
+                    );
+                }
+
+                if (mini) {
+                    mini.style.backgroundImage =
+                        bgImage;
                 }
             }
         }
-
-        repaintGradientPreviewBox();
-        repaintAllSectionRanges();
-
-        if (typeof renderSectionRecentColors === "function") {
-            renderSectionRecentColors();
-        }
     }
+
+    repaintGradientPreviewBox();
+    repaintAllSectionRanges();
+
+    if (
+        typeof renderSectionRecentColors ===
+        "function"
+    ) {
+        renderSectionRecentColors();
+    }
+}
 
     colorPicker?.addEventListener("input", function () {
         updateColorPreview(this.value);
@@ -14967,6 +16505,20 @@ overlayColor?.addEventListener("change", function () {
 
             const preset = gradientPresets[presetKey];
             if (!preset) return;
+
+            /*
+ * Selecting a preset means the user
+ * intentionally wants a new gradient.
+ */
+if (Vvveb.SectionEditor) {
+    Vvveb.SectionEditor._gradientPattern =
+        null;
+}
+
+if (gradAngle) {
+    gradAngle.disabled = false;
+}
+
 
             document.querySelectorAll(".zg-se-preset").forEach(function (item) {
                 item.classList.remove("active");
