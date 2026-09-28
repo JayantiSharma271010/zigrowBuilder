@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>business-consulting</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <button
+      id="backToTopBtn"
+      class="btn back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
+    </button>
+    <!-- Navbar Section -->
+    <header id="header" class="nav-section" data-section="header">
+      <div class="container">
+        <nav class="nav-wrapper">
+          <!-- Logo -->
+          <div class="nav-brand">
+            <a href="#hero" class="nav-brand-logo" data-logo="navbar"
+              >ANIKA<br />SINGH</a
+            >
+            <ul class="nav-links" id="primary-navigation">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#cta">Contact</a></li>
+              <li class="nav-links__mobile-action">
+                <div class="nav-section__mobile-actions zg-align-center">
+                  <a href="#cta" class="nav-btn" data-btn="nav"
+                    >WORK WITH ME</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Section -->
+          <div class="nav-right">
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f" data-icon="facebook"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter" data-icon="twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram" data-icon="instagram"></i
+              ></a>
+            </div>
+            <div class="nav-section__actions zg-align-center">
+              <a href="#cta" class="nav-btn" data-btn="nav">WORK WITH ME</a>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <i class="fa-solid fa-bars" data-icon="menu" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+    <!-- Hero Section -->
+    <section class="hero-section" data-section="hero" id="hero">
+      <div class="container">
+        <div class="row">
+          <!-- Left empty space (keeps text on right like your layout) -->
+          <div class="col-12 col-lg-6"><span class="d-none"></span></div>
+
+          <!-- Content column -->
+          <div class="col-12 col-lg-6">
+            <div class="hero-section__content">
+              <div class="hero-section__header">
+                <h1 class="hero-section__title">
+                  Helping You Build Inner Resilience
+                </h1>
+
+                <p class="hero-section__text">
+                  Business growth can feel heavy when priorities compete and
+                  pressure keeps building. Together we will create calm systems,
+                  stronger decisions, and a resilient plan that keeps your team
+                  moving through demanding seasons with clarity, confidence,
+                  and practical momentum each day.
+                </p>
+              </div>
+
+              <div class="hero-section__actions zg-align-center">
+                <a href="#cta" class="hero-section__btn" data-btn="hero">
+                  Let&rsquo;s Work Together
+                  <i
+                    class="bi bi-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Section -->
+    <section
+      class="featured-section"
+      data-section="featured"
+      id="featured"
+    >
+      <div class="container">
+        <div class="featured-section__heading">
+          <h2 class="featured-section__title">AS FEATURED IN</h2>
+        </div>
+
+        <div class="row g-4 featured-section__logos">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 1"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 2"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 3"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 4"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 5"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 6"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 7"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
+            <div class="featured-section__logo-item">
+              <img
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 8"
+                class="featured-section__logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics-section" data-section="topics" id="topics">
+      <div class="container">
+        <div class="topics-section__heading">
+          <h2 class="topics-section__title">Topics I Discuss</h2>
+        </div>
+
+        <div class="row g-4 topics-section__row">
+          <!-- 1 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">01.</p>
+              <h3 class="topics-section__item-title">Motivation</h3>
+              <p class="topics-section__text">
+                Practical ways to stay consistent, even when discipline feels
+                hard.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">02.</p>
+              <h3 class="topics-section__item-title">Vision</h3>
+              <p class="topics-section__text">
+                Build clarity on what you want and create a simple direction
+                plan.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">03.</p>
+              <h3 class="topics-section__item-title">Strategy</h3>
+              <p class="topics-section__text">
+                Break big goals into small weekly actions that actually move
+                you.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">04.</p>
+              <h3 class="topics-section__item-title">Leadership</h3>
+              <p class="topics-section__text">
+                Lead with calm confidence—at work, at home, and in your own
+                life.
+              </p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">05.</p>
+              <h3 class="topics-section__item-title">Self Improvement</h3>
+              <p class="topics-section__text">
+                Simple habits to improve focus, energy, and daily productivity.
+              </p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">06.</p>
+              <h3 class="topics-section__item-title">Self Awareness</h3>
+              <p class="topics-section__text">
+                Understand your patterns, triggers, and strengths to grow
+                faster.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">07.</p>
+              <h3 class="topics-section__item-title">Confidence</h3>
+              <p class="topics-section__text">
+                Speak up, show up, and build confidence through real-life
+                practice.
+              </p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+            <div class="topics-section__item">
+              <p class="topics-section__number">08.</p>
+              <h3 class="topics-section__item-title">Life Skills</h3>
+              <p class="topics-section__text">
+                Communication, decision-making, and resilience for everyday
+                success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      class="services-section"
+      data-section="services"
+      id="services"
+    >
+      <div class="container">
+        <div class="row services-section__row">
+          <!-- LEFT -->
+          <div class="col-12 col-md-6">
+            <div class="services-section__left">
+              <div class="services-section__header">
+                <h2 class="services-section__title">
+                  We All Need Help To Realize<br />What We Want Most.
+                </h2>
+              </div>
+
+              <div class="services-section__cta-wrap zg-align-center">
+                <a href="#cta" class="services-section__btn" data-btn="services">
+                  View All Services
+                  <i
+                    class="bi bi-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="col-12 col-md-6">
+            <div class="services-section__right">
+              <ul class="services-section__list">
+                <li class="services-section__list-item">
+                  <a href="#" class="services-section__link"
+                    >One-on-one / CEO Coaching</a
+                  >
+                </li>
+                <li class="services-section__list-item">
+                  <a href="#" class="services-section__link"
+                    >Business Coaching</a
+                  >
+                </li>
+                <li class="services-section__list-item">
+                  <a href="#" class="services-section__link"
+                    >Management Coaching</a
+                  >
+                </li>
+                <li class="services-section__list-item">
+                  <a href="#" class="services-section__link"
+                    >Workshops &amp; Seminars</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about" data-section="about" class="about-section">
+      <div class="container">
+        <div class="row g-4 abou-container">
+          <!-- Left -->
+          <div class="col-12 col-lg-6">
+            <div class="about-section__left">
+              <div class="about-section__header">
+                <p class="about-section__subtitle">About Me</p>
+
+                <h2 class="about-section__heading">
+                  I'm Anika Singh. I Help Entrepreneurs Build Their Dreams.
+                </h2>
+              </div>
+
+              <div class="about-section__image-wrap">
+                <img
+                  src="assets/images/consulting-about.webp"
+                  alt="Anika Singh consulting with a business owner"
+                  class="about-section__image"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="col-12 col-lg-6">
+            <div class="about-section__right">
+              <p class="about-section__text">
+                I help founders turn ambitious ideas into clear priorities,
+                practical operating plans, and confident leadership habits.
+                Each engagement combines honest analysis, focused coaching,
+                and simple systems your team can continue using long after our
+                work together, so ideas become action and teams stay aligned.
+              </p>
+
+              <div class="about-section__actions zg-align-center">
+                <a href="#services" class="about-section__btn" data-btn="about"
+                  >Read more</a
+                >
+              </div>
+
+              <p class="about-section__description">
+                My approach balances commercial insight with calm,
+                people-first guidance, helping leaders make sound decisions,
+                communicate clearly, and build sustainable momentum through
+                every stage of growth with care.
+              </p>
+
+              <div class="about-section__signature-wrap">
+                <img
+                  src="assets/images/signature-img.webp"
+                  alt="signature"
+                  class="about-section__signature"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section -->
+    <section
+      id="client-review"
+      data-section="client-review"
+      class="client-review-section"
+    >
+      <div class="container">
+        <div class="client-review-section__wrap">
+          <div class="client-review-section__header">
+            <h2 class="client-review-section__heading">
+              What Clients Are Saying
+            </h2>
+          </div>
+
+          <div class="row g-3 client-review-section__body">
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 clonable-card">
+              <div class="client-review-section__card">
+                <div class="client-review-section__img-wrap">
+                  <img
+                    src="assets/images/testimonials-1.webp"
+                    alt="Ankit Kumar"
+                    class="client-review-section__img"
+                  />
+                </div>
+                <p class="client-review-section__text">
+                  I have been working with these guys for years now! With lots
+                  of hard work and timely communication, they made sure they
+                  delivered the best to me. Highly recommended!
+                </p>
+                <h3 class="client-review-section__name">Ankit Kumar</h3>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 clonable-card">
+              <div class="client-review-section__card">
+                <div class="client-review-section__img-wrap">
+                  <img
+                    src="assets/images/testimonials-2.webp"
+                    alt="Sonu Kumar"
+                    class="client-review-section__img"
+                  />
+                </div>
+                <p class="client-review-section__text">
+                  I have been working with these guys since years now! With lots
+                  of hard work and timely communication they made sure they
+                  delivered the best to me. Highly recommended!
+                </p>
+                <h3 class="client-review-section__name">Sonu Kumar</h3>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-sm-6 clonable-card">
+              <div class="client-review-section__card">
+                <div class="client-review-section__img-wrap">
+                  <img
+                    src="assets/images/testimonials-3.webp"
+                    alt="Amit Kumar"
+                    class="client-review-section__img"
+                  />
+                </div>
+                <p class="client-review-section__text">
+                  I have been working with these guys for years now! With lots
+                  of hard work and timely communication, they made sure they
+                  delivered the best to me. Highly recommended!
+                </p>
+                <h3 class="client-review-section__name">Amit Kumar</h3>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 clonable-card">
+              <div class="client-review-section__card">
+                <div class="client-review-section__img-wrap">
+                  <img
+                    src="assets/images/testimonials-4.webp"
+                    alt="Rupesh Kumar"
+                    class="client-review-section__img"
+                  />
+                </div>
+                <p class="client-review-section__text">
+                  I have been working with these guys for years now! With lots
+                  of hard work and timely communication, they made sure they
+                  delivered the best to me. Highly recommended!
+                </p>
+                <h3 class="client-review-section__name">Rupesh Kumar</h3>
+              </div>
+            </div>
+          </div>
+          <!-- /row -->
+        </div>
+      </div>
+    </section>
+
+    <!-- cta section -->
+    <section id="cta" data-section="cta" class="cta-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-10 col-xl-8 cta-section__column">
+            <div class="cta-section__wrap">
+              <div class="cta-section__header">
+                <h2 class="cta-section__heading">
+                  If You Have Any Question, <br />
+                  Feel Free to Call +91-9123456789
+                </h2>
+
+                <p class="cta-section__text">
+                  Share your toughest challenge; together we will map a clear
+                  next step toward sustainable growth.
+                </p>
+              </div>
+
+              <div class="cta-section__actions zg-align-center">
+                <a href="tel:+919123456789" class="cta-section__btn" data-btn="contact">
+                  LET&rsquo;S WORK TOGETHER
+                  <i
+                    class="fa-solid fa-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" data-section="footer" class="footer-section">
+      <div class="container">
+        <div class="row g-4 footer-section__wrap">
+          <!-- Logo + About -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-section__col">
+              <p class="footer-brand-logo" data-logo="footer">
+                ANIKA<br />SINGH
+              </p>
+
+              <p class="footer-section__text">
+                Clear plans, practical coaching, and steady guidance help
+                founders build strong businesses with focus and confidence.
+              </p>
+
+              <div class="footer-section__social">
+                <a
+                  href="#"
+                  class="footer-section__social-link"
+                  aria-label="Facebook"
+                >
+                  <i
+                    class="fa-brands fa-facebook-f"
+                    data-icon="facebook"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="footer-section__social-link"
+                  aria-label="Twitter"
+                >
+                  <i
+                    class="fa-brands fa-twitter"
+                    data-icon="twitter"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="footer-section__social-link"
+                  aria-label="Instagram"
+                >
+                  <i
+                    class="fa-brands fa-instagram"
+                    data-icon="instagram"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-section__col">
+              <h2 class="footer-section__title">Services</h2>
+              <ul class="footer-section__list">
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#"
+                    >One-on-one Coaching</a
+                  >
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#">Group Coaching</a>
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#"
+                    >Workshop Facilitation</a
+                  >
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#"
+                    >Keynotes & Seminars</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-section__col">
+              <h2 class="footer-section__title">Quick Links</h2>
+              <ul class="footer-section__list">
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#hero">Home</a>
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#about">About</a>
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#services">Services</a>
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="#cta">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-section__col">
+              <h2 class="footer-section__title">Contact Info</h2>
+              <ul class="footer-section__list">
+                <li class="footer-section__item footer-section__item--plain">
+                  E-123, ABC Plaza, XYZ Street, New Delhi - 110077.
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="mailto:yourname@domainname.com"
+                    >yourname@domainname.com</a
+                  >
+                </li>
+                <li class="footer-section__item">
+                  <a class="footer-section__link" href="tel:+919123456789"
+                    >+91-9123456789</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="row footer-section__bottom">
+          <div class="col-12">
+            <p class="footer-section__bottom-text">
+              &copy; 2026 Business Coaching &amp; Consulting
+            </p>
+          </div>
+        </div>
+        <div class="row footer-section__attribution-row">
+          <div class="col-12">
+            <p class="footer-section__attribution">
+              <a
+                href="https://zigrow.com"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                >Powered by Zigrow</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js?v=2.13.0"></script>
+  </body>
+</html>

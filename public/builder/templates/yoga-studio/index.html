@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoga Studio</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/customutility.css" />
+</head>
+
+<body>
+  <div class="main-section p-md-5-style p-2-style">
+    <div class="inner-main-section">
+      <header class="site-header" id="header" data-section="header">
+      <nav class="navbar navbar-expand-md sticky-top py-3-style navbar-animate" id="navbarSection" data-section="navbarSection">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-sm-center-style fw-semibold-style" href="#" data-logo="navbar">
+            <img src="assets/images/yogvidya-logo.webp" class="img-fluid" alt="YogVidya Studio logo">
+          </a>
+
+          <div class="d-md-none d-flex align-items-center justify-content-md-end">
+            <button class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle" type="button" aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
+            <ul class="navbar-nav gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item d-md-none navbar-mobile-actions zg-align-center">
+                <a class="custom-btn" href="#footer" data-btn="navbar-contact-mobile">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-none d-md-flex ms-md-4-style navbar-actions zg-align-center">
+            <a class="custom-btn" href="#footer" data-btn="navbar-contact">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+      </header>
+
+      <main>
+
+      <section class="hero-section py-sm-5-style" id="home" data-section="home">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-6 col-md-12 mb-4-style mb-lg-0-style">
+              <h1 class="hero-title">Harmonize Your Spirit with Mindful Breath</h1>
+              <p class="hero-text">
+                Nestled within the peaceful corner of Georgetown, our space provides a refuge for
+                seekers
+                in
+                search of a balance from the high-stress rigors of modern-day life.
+              </p>
+              <p class="hero-text">
+                Here, we believe in the restorative grace of yoga to awaken not only the frame but
+                also
+                the
+                soul and center.
+              </p>
+              <div class="d-flex button-div hero-actions zg-align-center align-items-center-style mt-4-style">
+                <a class="btn custom-btn" href="#classes-section" data-btn="hero-start">Start Your Journey</a>
+                <div class="play-div">
+                  <i class="bi bi-play-fill play-icon" data-icon="play" aria-hidden="true"></i>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-lg-6 col-md-12 text-center-style">
+              <div class="img-wrapper-style">
+                <img src="assets/images/1.webp" alt="Yoga Pose" class="img-fluid hero-image">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="logo-div">
+            <p class="as-seen-on mt-4-style">As seen on</p>
+
+            <div class="row logo-list">
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-1.webp" loading="lazy" alt="Partner logo 1">
+                </div>
+              </div>
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-2.webp" loading="lazy" alt="Partner logo 2">
+                </div>
+              </div>
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-3.webp" loading="lazy" alt="Partner logo 3">
+                </div>
+              </div>
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-4.webp" loading="lazy" alt="Partner logo 4">
+                </div>
+              </div>
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-5.webp" loading="lazy" alt="Partner logo 5">
+                </div>
+              </div>
+              <div class="col-lg-1 clonable-card">
+                <div class="img-wrapper-style">
+                  <img src="assets/images/bw-lorem-6.webp" loading="lazy" alt="Partner logo 6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <a href="#home" class="rounded-circle floating-btn" aria-label="Back to top">
+        <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
+      </a>
+
+      <section class="classes-section py-5-style" id="classes-section" data-section="classes-section">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-12 col-xl-6 clonable-card">
+              <div class="class-card class-card1 p-sm-5-style p-3-style pe-sm-0-style h-100">
+                <div class="text-div">
+                  <h3>Studio-Based Flow</h3>
+                  <p>
+                    Join our serene physical studio and reconnect with the vibration of
+                    group-based
+                    sessions.
+                  </p>
+                  <div class="a-with-arrow">
+                    <a href="#services" class="cta-link">Explore Studio Classes <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+                <div class="class-image">
+                  <div class="img-wrapper-style col-12">
+                    <img src="assets/images/2.webp" alt="Lotus Icon" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-xl-6 clonable-card">
+              <div class="class-card class-card2 p-sm-5-style p-3-style pe-sm-0-style h-100">
+                <div class="text-div">
+                  <h3>Digital Sanctuary</h3>
+                  <p>
+                    Access live wellness from the privacy of your room, preserving consistency in
+                    your
+                    daily
+                    routine and growth.
+                  </p>
+                  <div class="a-with-arrow">
+                    <a href="#services" class="cta-link">Explore Digital Classes <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+                <div class="class-image">
+                  <div class="img-wrapper-style col-12">
+                    <img src="assets/images/3.webp" alt="Yoga Mat Icon" class="img-fluid" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-choose-us text-center-style mt-5-style">
+            <h2 class="each-section-heading">Why Practice Here?</h2>
+            <p class="each-section-description">
+              We’re providing the neighbor a refuge to soothe daily noise, building vigor, calm, and
+              presence for lifelong well-being.
+            </p>
+          </div>
+
+          <div class="row g-4 mt-4-style">
+            <div class="col-md-4 clonable-card">
+              <div class="feature-box">
+                <div class="img-wrapper-style col-2">
+                  <img src="assets/images/4.webp" alt="Expert Guidance" class="img-fluid mb-3-style" loading="lazy">
+                </div>
+                <h4>Skilled Mentors</h4>
+                <p>
+                  Our teachers are more than just staff—they are lifelong practitioners
+                  devoted
+                  to
+                  watching you blossom on your unique path. Our priority is to help you grow on
+                  the
+                  mat.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4 clonable-card">
+              <div class="feature-box">
+                <div class="img-wrapper-style col-2">
+                  <img src="assets/images/5.webp" alt="Diverse Classes" class="img-fluid mb-3-style" loading="lazy">
+                </div>
+                <h4>Varied Sessions</h4>
+                <p>
+                  Discover a beautiful mix of classical and modern flow techniques in our studio.
+                  Your
+                  inner journey is entirely yours, and we’re here to help you every step of the way.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4 clonable-card">
+              <div class="feature-box">
+                <div class="img-wrapper-style col-2">
+                  <img src="assets/images/6.webp" alt="Community-Centric" class="img-fluid mb-3-style" loading="lazy">
+                </div>
+                <h4>Growth-Oriented</h4>
+                <p>
+                  We recognize the importance of connection in building health and happiness.
+                  Join
+                  us
+                  not just for poses, but for the profound sense of belonging to a healthy community.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wellness-section py-sm-5-style py-3-style" id="aboutus" data-section="aboutus">
+        <div class="container">
+          <div class="row g-4 align-items-center-style">
+
+            <div class="col-lg-6 col-md-12">
+              <div class="image-wrapper img-wrapper-style">
+                <img src="assets/images/7.webp" alt="Yoga Wellness" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div class="content-wrapper">
+                <h2 class="each-section-heading">Experience Spreadh, a Haven for Serenity</h2>
+                <p class="each-section-description">
+                  In the middle of our retreat, we are more than a fitness club—we are a family
+                  striving
+                  to nurture lasting transformations.
+                </p>
+                <p class="each-section-description">
+                  Our goal is to provide a calming space where students can begin on a
+                  natural
+                  voyage toward vitality. We believe in the power of flow to find harmony, vigor,
+                  and
+                  quietude in every part of life.
+                </p>
+                <p class="each-section-description">
+                  Your soul awaits, and your journey to a stillness.
+                </p>
+                <div class="a-with-arrow">
+                  <a href="#services" class="cta-link">Learn More About Us <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section py-5-style" id="cta-section" data-section="cta-section">
+        <div class="container">
+          <div class="cta-card p-sm-5-style p-3-style" data-zg-editable="surface">
+            <h2 class="each-section-heading">Reserve Your Mat for a Gentle Adventure</h2>
+            <p class="each-section-description">
+              Lose yourself in the stillness of our haven. Secure your place in our studio-based flow
+              and
+              experience the bliss of breathing with like-minded individuals.
+            </p>
+            <div class="cta-buttons zg-align-center">
+              <a href="tel:8888888888" class="btn custom-btn" data-btn="cta-call">Call (888) 888 8888</a>
+              <div class="a-with-arrow">
+                <a href="#home" class="cta-link">Visit Our Haven <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experts-section py-sm-5-style py-3-style" id="experts-section" data-section="experts-section">
+        <div class="container">
+          <div class="row g-4">
+
+            <div class="col-lg-3 col-md-12">
+              <div class="experts-content">
+                <h2 class="each-section-heading">Meet Your Zen Guides</h2>
+                <p class="each-section-description">
+                  Explore the wisdom of our teachers beyond the mat as they share their
+                  vibrations on
+                  various paths of yoga.
+                </p>
+                <div class="a-with-arrow">
+                  <a href="#experts-section" class="cta-link">View All Mentors <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper expertSwiper px-4-style col-lg-9">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="expert-card">
+                    <div class="expert-image img-wrapper-style">
+                      <img src="assets/images/10.webp" alt="Karin Garcia" class="img-fluid" loading="lazy">
+                      <span class="play-icon"><i class="bi bi-play-fill" data-icon="play" aria-hidden="true"></i></span>
+                    </div>
+                    <h4>Karishma</h4>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="expert-card">
+                    <div class="expert-image img-wrapper-style">
+                      <img src="assets/images/11.webp" alt="Joseph Coon" class="img-fluid" loading="lazy">
+                      <span class="play-icon"><i class="bi bi-play-fill" data-icon="play" aria-hidden="true"></i></span>
+                    </div>
+                    <h4>Jhanvi</h4>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="expert-card">
+                    <div class="expert-image img-wrapper-style">
+                      <img src="assets/images/12.webp" alt="Shawna Lucas" class="img-fluid" loading="lazy">
+                      <span class="play-icon"><i class="bi bi-play-fill" data-icon="play" aria-hidden="true"></i></span>
+                    </div>
+                    <h4>Shruti Deshmukh</h4>
+                  </div>
+                </div>
+
+              </div>
+
+              <button class="swiper-button-prev custom-prev" type="button" aria-label="Previous mentor"><i class="fas fa-chevron-left" data-icon="chevron-left" aria-hidden="true"></i></button>
+              <button class="swiper-button-next custom-next" type="button" aria-label="Next mentor"><i class="fas fa-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-section py-5-style" id="testimonials" data-section="testimonials">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="each-section-heading">What Our Calm Clients Say About Us</h2>
+            </div>
+          </div>
+
+          <div class="row review-row g-4">
+            <div class="inner-row"></div>
+
+            <div class="swiper reviewSwiper px-4-style pb-2-style col-lg-9">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="review-card">
+                    <div class="stars">
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i>
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i>
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star-half-stroke" data-icon="fa-star-half-stroke"></i>
+                      <i class="fa-regular fa-star" data-icon="fa-star"></i>
+                    </div>
+                    <p>
+                      I love this space! The vibe is glowing, it's so calm, and the
+                      instructors
+                      are
+                      highly
+                      skilled and kind.
+                    </p>
+                    <div class="reviewer">
+                      <div class="img-wrapper-style">
+                        <img src="assets/images/testimonials-1.webp" alt="Charlie Andrews" class="img-fluid" loading="lazy">
+                      </div>
+                      <div>
+                        <h5>Chandu</h5>
+                        <small class="small-style">8 August 2024</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="review-card">
+                    <div class="stars"> <i class="fa-solid fa-star" data-icon="fa-star"></i>
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-regular fa-star" data-icon="fa-star"></i>
+                    </div>
+                    <p>
+                      Great flow and healing – hard to describe, but I always leave feeling
+                      stronger
+                      and
+                      balanced!
+                      Also, it is quite tidy every time I stop by which I appreciate.
+                    </p>
+                    <div class="reviewer">
+                      <div class="img-wrapper-style">
+                        <img src="assets/images/testimonials-2.webp" alt="Maisie Rogers" class="img-fluid" loading="lazy">
+                      </div>
+                      <div>
+                        <h5>Mahima</h5>
+                        <small class="small-style">12 July 2025</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="review-card">
+                    <div class="stars">
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i>
+                    </div>
+                    <p>
+                      This is where breath started for me. Spreadh yoga helped me through the
+                      most
+                      stressful
+                      and
+                      weary year of my life :)
+                    </p>
+                    <div class="reviewer">
+                      <div class="img-wrapper-style">
+                        <img src="assets/images/testimonials-3.webp" alt="Keira Baxter" class="img-fluid" loading="lazy">
+                      </div>
+                      <div>
+                        <h5>Kira</h5>
+                        <small class="small-style">2 November 2025</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="review-card">
+                    <div class="stars">
+                      <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i> <i class="fa-solid fa-star" data-icon="fa-star"></i>
+                    </div>
+                    <p>
+                      This is where breath started for me. Spreadh yoga helped me through the
+                      most
+                      stressful
+                      and
+                      weary year of my life :)
+                    </p>
+                    <div class="reviewer">
+                      <div class="img-wrapper-style">
+                        <img src="assets/images/testimonials-3.webp" alt="Keira Baxter" class="img-fluid" loading="lazy">
+                      </div>
+                      <div>
+                        <h5>Kira</h5>
+                        <small class="small-style">2 November 2025</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+
+
+          </div>
+
+          <div class="row mt-2-style">
+            <div class="col-12 d-flex justify-content-center-style">
+              <div class="a-with-arrow">
+                <a href="#testimonials" class="cta-link">View All Stories <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="yoga-section py-sm-5-style py-3-style" id="services" data-section="services">
+        <div class="container">
+          <div class="row g-4 align-items-center-style">
+
+            <div class="col-lg-6">
+              <h2 class="each-section-heading">Get Your Heart &amp; Mind Pulsing Together</h2>
+              <p class="each-section-description">
+                Witness the life-changing depth of yoga — a ritual that bonds the frame and soul,
+                building
+                a peaceful existence that reaches far beyond the mat.
+              </p>
+              <ul class="each-section-description">
+                <li>Build stillness in your authentic self.</li>
+                <li>Root health-conscious habits.</li>
+                <li>Release from over-thinking and hesitation.</li>
+                <li>Witness internal change with yoga.</li>
+              </ul>
+              <p class="each-section-description">
+                Your soul awaits, and your journey to a stillness. Have a question not answered here?
+                Feel
+                free to
+                reach out.
+              </p>
+              <div class="services-actions zg-align-center">
+                <a href="#classes-section" class="btn custom-btn" data-btn="services-explore">Explore Our Services</a>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="img-wrapper-style">
+                <img src="assets/images/9.webp" alt="Yoga Class" class="img-fluid rounded" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section pt-5-style" id="faq-section" data-section="faq-section">
+        <div class="container">
+          <div class="faq-header">
+            <h2 class="each-section-heading">FAQs</h2>
+            <p class="each-section-description">
+              Here’s a list of the most common client questions. If you can’t find an
+              answer to your question, please don’t hesitate to
+              <a href="#footer">contact us</a>.
+            </p>
+          </div>
+
+          <div class="row mt-4-style">
+            <div class="col-md-6">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading1">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading2">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading3">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading4">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="accordion" id="faqAccordionSecondary">
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading5">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordionSecondary">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading6">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordionSecondary">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading7">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordionSecondary">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item border-0 border-bottom">
+                  <h2 class="accordion-header" id="faqHeading8">
+                    <button class="faq-question collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                      <span class="faq-icon-parent me-2-style"><i class="bi bi-chevron-down" data-icon="chevron-down" aria-hidden="true"></i></span>What kind of
+                      sessions do you provide?
+                    </button>
+                  </h2>
+                  <div id="faq8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordionSecondary">
+                    <div class="accordion-body p-0-style"><span class="faq-answer">We provide a range of yoga flows...</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-illustration mt-5-style">
+            <div class="img-wrapper-style col-12">
+              <img src="assets/images/faq.webp" alt="Yoga illustration" class="img-fluid" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </main>
+
+      <footer class="site-footer py-5-style" id="footer" data-section="footer">
+        <div class="container-fluid">
+          <div class="row gy-4">
+            <div class="logo-div col-12">
+              <h3 class="footer-logo">
+                <a href="#home" data-logo="footer" aria-label="YogVidya Studio home">
+                  <img src="assets/images/yogvidya-logo.webp" alt="YogVidya Studio logo" class="img-fluid" loading="lazy">
+                </a>
+              </h3>
+
+              <div class="horizontal-line"></div>
+
+              <div class="footer-buttons zg-align-center">
+                <a href="tel:8888888888" class="custom-btn" data-btn="footer-call">Call Us</a>
+                <a href="#cta-section" class="custom-btn" data-btn="footer-message">Send Message</a>
+                <a href="#cta-section" class="custom-btn" data-btn="footer-book">Book Appointment</a>
+              </div>
+            </div>
+
+            <div class="lower-div">
+              <div class="col-12 col-md-6">
+                <ul class="footer-nav d-flex">
+                  <li class="ms-sm-0-style"><a href="#home">Home</a></li>
+                  <li><a href="#aboutus">About Us</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+                <div class="footer-social">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="X"><i class="bi bi-twitter-x" data-icon="x" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" data-icon="linkedin" aria-hidden="true"></i></a>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="newsletter">
+                  <h4>Join Our Yoga Sanctuary Community Mailing!</h4>
+                  <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="newsletter-form">
+                    <input type="hidden" name="domain" value="">
+                    <input type="hidden" name="form_key" value="newsletter">
+                    <input type="hidden" name="page_url" value="">
+                    <input type="hidden" name="_company" value="">
+                    <div form-question-zigrow>
+                      <label for="newsletterEmail">Email Address</label>
+                      <input id="newsletterEmail" type="email" name="email" placeholder="Enter your email" required maxlength="254" title="Please enter a valid email address.">
+                    </div>
+                    <button type="submit">Subscribe</button>
+                  </form>
+                  <p class="terms">
+                    By signing up, you agree to our <a href="#">Terms</a> &
+                    <a href="#">Privacy Policy</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom container-fluid">
+          <a class="powered-by-zigrow" href="https://www.zigrow.com" target="_blank" rel="noopener noreferrer nofollow sponsored">Powered by Zigrow</a>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="js/script.js"></script>
+
+  <script>
+(function () {
+  const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
+  if (!forms.length) return;
+
+  function serializeForm(form) {
+    const fd = new FormData(form);
+    const raw = {};
+    for (const [name, value] of fd.entries()) {
+      const existing = raw[name];
+      if (existing === undefined) raw[name] = value;
+      else if (Array.isArray(existing)) existing.push(value === '' ? true : value);
+      else raw[name] = [existing, value === '' ? true : value];
+    }
+    return raw;
+  }
+
+  function pickPrimaryValue(raw) {
+    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
+    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
+    const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim();
+    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
+    if (nameCombo) return nameCombo;
+    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
+    return '';
+  }
+
+  forms.forEach((form) => {
+    const domainInput = form.querySelector('input[name="domain"]');
+    const pageUrlInput = form.querySelector('input[name="page_url"]');
+    if (domainInput) domainInput.value = location.host;
+    if (pageUrlInput) pageUrlInput.value = location.href;
+
+    let message = form.querySelector('.form-submit-message');
+    if (!message) {
+      message = document.createElement('div');
+      message.className = 'form-submit-message';
+      message.setAttribute('role', 'status');
+      message.setAttribute('aria-live', 'polite');
+      form.appendChild(message);
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitButton = form.querySelector(':scope > [type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.dataset.oldText = submitButton.textContent || '';
+        submitButton.textContent = 'Submitting...';
+      }
+      message.textContent = '';
+      message.removeAttribute('data-status');
+
+      try {
+        const raw = serializeForm(form);
+        const body = new URLSearchParams();
+        body.set('domain', form.querySelector('input[name="domain"]')?.value || location.host);
+        body.set('form_key', form.querySelector('input[name="form_key"]')?.value || 'contact');
+        body.set('page_url', form.querySelector('input[name="page_url"]')?.value || location.href);
+        body.set('payload', JSON.stringify(raw));
+        const primary = pickPrimaryValue(raw);
+        if (primary) body.set('value', primary);
+        if (raw._company) body.set('_company', raw._company);
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && (result.ok ?? true)) {
+          form.reset();
+          message.textContent = 'Thanks! Your request has been submitted.';
+          message.dataset.status = 'success';
+        } else {
+          message.textContent = result.message || `Failed (HTTP ${response.status})`;
+          message.dataset.status = 'error';
+        }
+      } catch (error) {
+        console.error(error);
+        message.textContent = 'Something went wrong. Please try again.';
+        message.dataset.status = 'error';
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButton.dataset.oldText || 'Send';
+        }
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+
+</html>

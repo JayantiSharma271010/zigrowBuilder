@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Tour Guide</title>
+  <link rel="icon" href="assets/favicon.webp" type="image/webp" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
+    integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short" data-icon="arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <header id="header" data-section="header">
+    <div class="container">
+      <nav id="mainNavbar" class="navbar navbar-expand-lg transition-navbar" aria-label="Primary navigation">
+        <a class="navbar-logo" href="#hero" data-logo="navbar">Logo</a>
+        <button class="navbar-toggler hamburger hamburger--elastic" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav nav-links">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#popular-destinations">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#top-categories">Tours</a></li>
+            <li class="nav-item"><a class="nav-link" href="#review-highlight">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#travel-stories">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#plan-your-journey">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="bg-design-wrapper">
+      <section id="hero" data-section="hero">
+        <div class="container">
+          <div class="row hero-layout">
+            <div class="col-12 col-lg-9 hero-left">
+              <img src="assets/img/hero-bg.webp" alt="Hot air balloons over a valley" class="hero-main-img" />
+              <div class="hero-text">
+                <div class="hero-section-header">
+                  <h1 class="main-heading">Unforgettable<br />Journeys Await You</h1>
+                  <p>Discover breathtaking destinations with personalized guided tours</p>
+                </div>
+                <div class="hero-actions zg-align-center">
+                  <a href="#plan-your-journey" class="primary-btn" data-btn="hero">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 hero-right">
+              <img src="assets/img/hero-a.webp" class="rounded-shape first-img" alt="Historic city street" />
+              <img src="assets/img/hero-b.webp" class="rounded-shape second-img" alt="Desert landscape" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <section id="popular-destinations" data-section="popular-destinations">
+    <div class="container">
+      <div class="row destinations-layout">
+        <div class="col-md-7 destination-media">
+          <div class="destination-card">
+            <img src="assets/img/destination.webp" alt="Traveler exploring with a local guide" />
+            <a href="#top-categories" class="arrow-btn hover-translate-x" aria-label="Explore tour categories">
+              <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-5 destinations-copy">
+          <div class="destinations-section-header"><h2 class="main-heading">Your Journey, My Passion</h2></div>
+          <div class="destinations-section-content">
+            <div class="destinations-text">
+              <p>Every journey I plan starts with one question: “What would make this unforgettable?” I’m here to bring that magic to your travel story.</p>
+              <p>I’ve spent years exploring destinations, understanding cultures, and perfecting the art of planning seamless trips. Today, I bring that experience to every journey I craft — because your travel deserves more than a package. It deserves purpose.</p>
+            </div>
+            <div class="destinations-actions zg-align-center">
+              <a href="#plan-your-journey" class="primary-btn" data-btn="about">Let's Plan Your Trip</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <section id="top-categories" data-section="top-categories">
+        <div class="container">
+          <div class="categories-section-header"><h2 class="main-heading section-title-left">Tailored Tours for Every <br />Traveler</h2></div>
+          <div class="row tour-card-grid">
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-heritage hover-scale"><span class="card-top-label">Royal Heritage Walk</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a royal heritage walk"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-mountain hover-scale"><span class="card-top-label">Mountain Escape</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a mountain escape"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-city hover-scale"><span class="card-top-label">Hidden City Gems</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Explore hidden city gems"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-coastal hover-scale"><span class="card-top-label">Coastal Serenity</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a coastal tour"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-wildlife hover-scale"><span class="card-top-label">Wildlife Safari</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a wildlife safari"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+            <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card category-culinary hover-scale"><span class="card-top-label">Culinary &amp; Wine Tour</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a culinary and wine tour"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+          </div>
+        </div>
+      </section>
+      <div class="background-lines background-lines-first"><img src="assets/img/design-a.webp" alt="" class="background-lines-image" /></div>
+    </div>
+    <div class="bg-design-wrapper bg-design-wrapper-secondary">
+  <section id="featured-locals" data-section="featured-locals">
+    <div class="container">
+      <div class="locals-section-header"><h2 class="main-heading section-title-right">Why Travel With a Local<br />Guide?</h2></div>
+      <div class="row tour-card-grid">
+        <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card local-small-groups hover-scale"><span class="card-top-label">Small Groups</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Learn about small group tours"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+        <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card local-personalized hover-scale"><span class="card-top-label">Personalized Experience</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan a personalized experience"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+        <div class="clonable-card card-clone-item col-12 col-sm-6 col-md-4"><div class="local-card local-certified hover-scale"><span class="card-top-label">Certified &amp; Trusted</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Contact a certified local guide"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="review-highlight" data-section="review-highlight">
+    <div class="container">
+      <div class="row review-layout">
+        <div class="col-md-4">
+          <div class="review-media">
+            <img src="assets/img/review-b.webp" alt="Traveler sharing a tour review" />
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="review-box" data-zg-editable="surface">
+            <div class="review-section-header"><span class="eyebrow-tag">Testimonial</span><h3>An Unforgettable<br />Journey!</h3></div>
+            <div class="review-section-content"><p>
+              Exploring India with Manish was the highlight of our trip! His
+              deep knowledge, hidden gems, and engaging storytelling made the
+              city come alive. Every detail was thoughtfully planned, making
+              our experience seamless and magical. Highly recommended for
+              anyone seeking an authentic, stress-free adventure!
+            </p><p class="review-author">Shalini Bhatia, India</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="travel-stories" data-section="travel-stories">
+    <div class="container">
+      <div class="stories-section-header"><h2 class="main-heading section-title-center">See the Magic Before You<br />Travel</h2></div>
+      <div class="row story-grid">
+        <div class="col-lg-7">
+          <div class="story-media">
+            <img src="assets/img/travel-a.webp" alt="Historic architecture on a guided journey" />
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="story-panel story-card-yellow" data-zg-editable="surface">
+            <span class="story-tags">#Heritage #Architecture #History</span>
+            <h3>Journey Through <br />Time</h3>
+            <p>
+              Step into history with our curated collection of stunning
+              heritage sites. From towering castles to ancient ruins, immerse
+              yourself in the beauty and grandeur of civilizations past.
+            </p>
+            <p>
+              Let our expert guides bring these stories to life with
+              captivating insights and fascinating legends that make every
+              visit unforgettable.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row story-grid story-grid-second">
+        <div class="col-lg-5">
+          <div class="story-panel story-card-blue" data-zg-editable="surface">
+            <span class="story-tags">#Adventure #Nature #BreathtakingViews</span>
+            <h3>Nature’s Wonders Unveiled</h3>
+            <p>
+              Escape into nature’s beauty with our breathtaking outdoor tours.
+              Whether it's hiking through misty mountains, exploring lush
+              forests, or admiring cascading waterfalls, our gallery showcases
+              the magic of the natural world.
+            </p>
+            <p>
+              Get ready to embrace adventure and witness landscapes that will
+              leave you in awe.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="story-media">
+            <img src="assets/img/travel-b.webp" alt="Mountain waterfall on a nature tour" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="background-lines background-lines-second"><img src="assets/img/design-b.webp" alt="" class="background-lines-image" /></div>
+    </div>
+  <section id="faq" data-section="faq">
+    <div class="container faq-panel" data-zg-editable="surface">
+      <div class="container faq-inner">
+        <div class="row faq-layout">
+          <div class="col-12 faq-heading-row faq-section-header">
+            <h2>Frequently Asked Questions</h2>
+            <a href="#plan-your-journey" class="arrow-btn faq-arrow hover-translate-x" aria-label="Plan your journey">
+              <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-12 faq-section-content">
+            <div class="row faq-content-layout">
+          <div class="col-lg-7">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header" id="faq1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                    aria-expanded="true" aria-controls="collapse1">
+                    What’s included in the tour package?
+                  </button>
+                </h3>
+                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body"><span>Our tours include a professional guide, entry tickets (if specified), and customized itineraries.</span></div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header" id="faq2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    Can I customize my itinerary?
+                  </button>
+                </h3>
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body"><span>Yes, we offer tailored options based on your preferences and travel dates.</span></div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header" id="faq3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    How do I book a tour?
+                  </button>
+                </h3>
+                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body"><span>Simply use our website’s booking tool or reach out to our support team.</span></div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header" id="faq4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    What payment methods do you accept?
+                  </button>
+                </h3>
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body"><span>We accept credit/debit cards, PayPal, and bank transfers.</span></div>
+                </div>
+              </div>
+
+              <div class="accordion-item faq-item">
+                <h3 class="accordion-header" id="faq5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    What happens if I need to cancel my tour?
+                  </button>
+                </h3>
+                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body"><span>Cancellations are accepted with applicable refund policies, based on notice period.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 faq-illustration">
+            <img src="assets/img/faq.webp" alt="Traveler reviewing tour questions" />
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app-promo" data-section="app-promo">
+    <div class="container">
+      <div class="row promo-layout">
+        <div class="col-12 col-lg-4 promo-section-header">
+          <h2 class="main-heading">Travel Tips &amp; <br />Insights</h2>
+        </div>
+        <div class="col-12 col-lg-8 promo-section-content">
+          <div class="row promo-grid">
+        <div class="clonable-card card-clone-item col-12 col-sm-6">
+          <div class="local-card promo-india hover-scale"><span class="card-top-label">India Travel</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Discover hidden gems in India"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div>
+          <h3 class="promo-title">10 Hidden Gems in <br />India</h3>
+          <p>
+            India is more than just the Taj Mahal and Jaipur! Discover secret gardens, lesser-known art spots, and
+            historic passageways that locals adore.
+            These hidden gems offer a glimpse into the country’s authentic charm, perfect for travelers who want to
+            explore beyond the typical tourist trail.
+          </p>
+        </div>
+        <div class="clonable-card card-clone-item col-12 col-sm-6">
+          <div class="local-card promo-adventure hover-scale"><span class="card-top-label">Beyond Borders</span><a href="#plan-your-journey" class="arrow-btn hover-translate-x" aria-label="Plan an adventure trip"><i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i></a></div>
+          <h3 class="promo-title">How to Plan an Adventure Trip</h3>
+          <p>Adventure trips require careful planning to maximize fun and minimize stress. From choosing the right gear
+            to mapping out breathtaking destinations, our expert tips will help you craft the ultimate journey.
+            Whether it's trekking in the Himalayas or scuba diving in Bali, get ready for an unforgettable experience!</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan-your-journey" data-section="plan-your-journey">
+    <div class="container journey-panel" data-zg-editable="surface">
+      <div class="container plan-your-journey_inner">
+        <div class="row journey-layout">
+          <div class="col-12 journey-heading-row journey-section-header">
+            <h2>Let's Plan Your Journey</h2>
+            <a href="#journey-form" class="arrow-btn journey-arrow hover-translate-x" aria-label="Go to journey request form">
+              <i class="bi bi-arrow-right" data-icon="arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-12 journey-section-content">
+            <div class="row journey-content-layout">
+          <div class="col-lg-7">
+            <form id="journey-form" class="journey-form" action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form>
+              <input type="hidden" name="domain" value="" />
+              <input type="hidden" name="form_key" value="booking" />
+              <input type="hidden" name="page_url" value="" />
+              <input type="hidden" name="_company" value="" />
+              <div form-question-zigrow>
+                <label for="journey-name">Name</label>
+                <input id="journey-name" type="text" name="name" placeholder="Name" required autocomplete="name" />
+              </div>
+              <div form-question-zigrow>
+                <label for="journey-email">Email</label>
+                <input id="journey-email" type="email" name="email" placeholder="Email" required autocomplete="email" />
+              </div>
+              <div form-question-zigrow>
+                <label for="journey-phone">Phone</label>
+                <input id="journey-phone" type="tel" name="phone" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Please enter a valid phone number." placeholder="Phone" required autocomplete="tel" />
+              </div>
+              <div form-question-zigrow>
+                <label for="journey-message">Message</label>
+                <textarea id="journey-message" name="message" rows="2" placeholder="Message"></textarea>
+              </div>
+              <div form-question-zigrow>
+                <label for="preferred-tour">Preferred Tour</label>
+                <input id="preferred-tour" type="text" name="preferred_tour" placeholder="Preferred Tour" />
+              </div>
+              <button type="submit">Send Request</button>
+            </form>
+          </div>
+          <div class="col-lg-5 journey-illustration">
+            <img src="assets/img/pyj-c.webp" alt="Traveler planning an itinerary" />
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer id="footer" data-section="footer">
+    <div class="footer-top">
+      <div class="footer-logo-circle">
+        <a class="footer-logo-text" href="#hero" data-logo="footer">LOGO</a>
+      </div>
+    </div>
+    <div class="footer-content container">
+      <div class="row footer-grid">
+        <div class="col-12 col-sm-6 col-md-4 footer-column">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#popular-destinations">About</a></li>
+            <li><a href="#top-categories">Tours</a></li>
+            <li><a href="#plan-your-journey">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 footer-column">
+          <h2>Contact Us</h2>
+          <ul class="contact-list">
+            <li><span class="contact-icon"><i class="bi bi-telephone" data-icon="telephone" aria-hidden="true"></i></span><a href="tel:+919123456789">+91-9123456789</a></li>
+            <li><span class="contact-icon"><i class="bi bi-envelope" data-icon="envelope" aria-hidden="true"></i></span><a href="mailto:yourname@domainname.com">yourname@domainname.com</a></li>
+            <li><span class="contact-icon"><i class="bi bi-geo-alt" data-icon="geo-alt" aria-hidden="true"></i></span><span>E-123, ABC Plaza, XYZ Street, New Delhi - 110077</span></li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 footer-column">
+          <h2>Follow Us</h2>
+          <div class="social-icons">
+            <a href="#" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon-link" aria-label="YouTube"><i class="bi bi-youtube" data-icon="youtube" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon-link" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2025 Manish Tours. All Rights Reserved.</small>
+    </div>
+    <div class="powered-by-row">
+      <a href="https://zigrow.com" target="_blank" rel="noopener noreferrer nofollow sponsored">Powered by Zigrow</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
