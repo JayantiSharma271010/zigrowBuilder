@@ -9534,9 +9534,9 @@ window.addEventListener(
         document.getElementById("ai-quick-panel"),
         document.getElementById("wysiwyg-editor"),
         document.getElementById("section-edit-options"),
-        document.getElementById("mask-popup"),
+        // document.getElementById("mask-popup"),
         document.getElementById("form-edit-options"),
-        document.getElementById("emoji-picker-container"),
+        // document.getElementById("emoji-picker-container"),
       ].filter(Boolean);
 
       const win = () => iframe.contentWindow;
@@ -9582,7 +9582,7 @@ window.addEventListener(
 }
 
       function isAiArea (target){
-        return !!target.closest("#ai-writer-menu, #ai-prompt-panel, #ai-quick-panel");
+        return !!target.closest("#ai-writer-menu, #ai-prompt-panel, #ai-quick-panel , #emoji-picker-container");
       }
 
       scrollTargets.forEach((panel) => {
