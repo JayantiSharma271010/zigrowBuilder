@@ -4729,23 +4729,60 @@ target = hoverTarget;
           }
 
           if (self.resizeMode == "css") {
-            self.selectedEl.style.width = width + "px";
+            const requestedWidth = width;
+            self.selectedEl.style.width = requestedWidth + "px";
             self.selectedEl.style.height = height + "px";
             // Amit's code starts here
             // self.selectedEl.style.height = "auto";
             // Amit's code ends here
+          const renderedWidth = self.selectedEl.offsetWidth;
+
+            if (requestedWidth > renderedWidth) {
+              const frameWindow =
+                self.selectedEl.ownerDocument?.defaultView ||
+                self.iframe?.contentWindow ||
+                window;
+
+              const usedWidth = parseFloat(
+                frameWindow.getComputedStyle(self.selectedEl).width
+              );
+
+                 if (Number.isFinite(usedWidth)) {
+                self.selectedEl.style.width = usedWidth + "px";
+              }
+            }
           } else {
             self.selectedEl.setAttribute("width", width);
             self.selectedEl.setAttribute("height", height);
           }
 
+   /*
+           * Resize can change the real position of an image,
+           * especially inside centered/flex containers.
+           * Re-read the position after applying the size.
+           */
+          pos = offset(self.selectedEl);
+
           let SelectBox = document.getElementById("select-box");
-          SelectBox.style.top = pos.top - (self.frameDoc.scrollTop ?? 0) + "px";
+
+          SelectBox.style.top =
+            pos.top - (self.frameDoc.scrollTop ?? 0) + "px";
+
           SelectBox.style.left =
             pos.left - (self.frameDoc.scrollLeft ?? 0) + "px";
-          SelectBox.style.width = width + "px";
-          SelectBox.style.height = self.selectedEl.offsetHeight + "px";
+
+         /*
+           * Keep the resize box attached to the actual rendered image,
+           * not to the unrestricted mouse-requested width.
+           */
+          SelectBox.style.width =
+            self.selectedEl.offsetWidth + "px";
+
+          SelectBox.style.height =
+            self.selectedEl.offsetHeight + "px";
+
           SelectBox.style.display = "block";
+
         } else if (self.isDragging) {
           let noChildren = {
             input: true,
