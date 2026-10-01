@@ -1,12 +1,10 @@
 :root {
   --primary-colors: #ff6b35;
-  --secondary-colors: #000;
+  --secondary-colors: #666;
   --territory-colors: #60acb8;
-  --territory-soft-colors: #f7f3fb;
-  --dark-colors: var(--secondary-colors);
-  --muted-colors: #666;
+  --dark-colors: #000;
   --light-colors: #fff;
-  --section-tint: var(--territory-soft-colors);
+  --primary-bg: #f7f3fb;
 }
 
 .primary-color {
@@ -162,27 +160,21 @@ html {
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   /* icon */
+  /* hover */
+  /* visible state */
+  /* responsive tweak */
 }
 .back-to-top i {
   font-size: 1.75rem;
   line-height: 1;
 }
-.back-to-top {
-  /* hover */
-}
 .back-to-top:hover {
   transform: translateY(-3px);
   color: var(--light-colors);
 }
-.back-to-top {
-  /* visible state */
-}
 .back-to-top.show {
   opacity: 1;
   visibility: visible;
-}
-.back-to-top {
-  /* responsive tweak */
 }
 @media (max-width: 575px) {
   .back-to-top {
@@ -233,13 +225,18 @@ html {
 /* -------------------------------------------------------------------------- */
 .site-header {
   background-color: var(--light-colors);
+  /* main row: logo + toggler on first line, menu drops below on mobile */
+  /* Brand */
+  /* Toggle */
+  /* Desktop only */
+  /* Collapse */
+  /* Nav */
+  /* CTA */
+  /* Optional: if you use .custom-nav somewhere */
 }
 .site-header .site-navbar {
   padding: 1rem 0;
   background-color: var(--light-colors);
-}
-.site-header {
-  /* main row: logo + toggler on first line, menu drops below on mobile */
 }
 .site-header .navbar-row {
   display: flex;
@@ -252,17 +249,11 @@ html {
     flex-wrap: nowrap;
   }
 }
-.site-header {
-  /* Brand */
-}
 .site-header .navbar-brand {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--dark-colors);
-}
-.site-header {
-  /* Toggle */
 }
 .site-header .only-mobile {
   display: flex;
@@ -274,9 +265,6 @@ html {
     display: none;
   }
 }
-.site-header {
-  /* Desktop only */
-}
 .site-header .only-desktop {
   display: none;
 }
@@ -284,9 +272,6 @@ html {
   .site-header .only-desktop {
     display: block;
   }
-}
-.site-header {
-  /* Collapse */
 }
 .site-header .navbar-collapse {
   width: 100%;
@@ -311,9 +296,6 @@ html {
     margin-left: 1.5rem;
     padding-top: 0;
   }
-}
-.site-header {
-  /* Nav */
 }
 .site-header .navbar-nav {
   list-style: none;
@@ -365,9 +347,6 @@ html {
 .site-header .nav-link:hover {
   color: var(--primary-colors);
 }
-.site-header {
-  /* CTA */
-}
 @media (max-width: 991px) {
   .site-header .navbar-cta {
     display: none;
@@ -381,9 +360,6 @@ html {
 }
 .site-header .resume-link:hover {
   color: var(--territory-colors);
-}
-.site-header {
-  /* Optional: if you use .custom-nav somewhere */
 }
 .site-header .custom-nav {
   width: 40px;
@@ -430,6 +406,12 @@ html {
 .hero-section {
   padding: 4rem 0;
   background-color: var(--light-colors);
+  /* LEFT VERTICAL (hidden on mobile like original d-none d-md-flex) */
+  /* CENTER CONTENT */
+  /* SOCIAL (always center horizontally) */
+  /* RIGHT IMAGE */
+  /* SCROLL DOWN (always center horizontally) */
+  /* LOGOS ROW */
 }
 @media (max-width: 575px) {
   .hero-section {
@@ -438,9 +420,6 @@ html {
 }
 .hero-section .hero-row {
   align-items: stretch;
-}
-.hero-section {
-  /* LEFT VERTICAL (hidden on mobile like original d-none d-md-flex) */
 }
 .hero-section .hero-side {
   display: none;
@@ -471,9 +450,6 @@ html {
   background-color: rgba(0, 0, 0, 0.2);
   margin: 1rem 0.6rem;
 }
-.hero-section {
-  /* CENTER CONTENT */
-}
 .hero-section .hero-content {
   display: flex;
   flex-direction: column;
@@ -495,9 +471,6 @@ html {
 .hero-section .hero-highlight {
   color: var(--primary-colors);
 }
-.hero-section {
-  /* SOCIAL (always center horizontally) */
-}
 .hero-section .social {
   display: flex;
   justify-content: center; /* center horizontally */
@@ -518,9 +491,6 @@ html {
 .hero-section .social-link:hover {
   color: var(--secondary-colors);
   transform: scale(1.05);
-}
-.hero-section {
-  /* RIGHT IMAGE */
 }
 .hero-section .hero-image-col {
   display: flex;
@@ -555,9 +525,6 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.hero-section {
-  /* SCROLL DOWN (always center horizontally) */
-}
 .hero-section .scroll-down {
   display: block;
   margin: 1.5rem auto 0;
@@ -567,9 +534,6 @@ html {
 }
 .hero-section .scroll-down:hover {
   color: var(--primary-colors);
-}
-.hero-section {
-  /* LOGOS ROW */
 }
 .hero-section .hero-logos {
   margin-top: 5rem;
@@ -627,14 +591,19 @@ html {
 .about-section {
   padding: 3rem 0;
   background-color: var(--light-colors);
+  /* top pill button */
+  /* heading */
+  /* paragraph */
+  /* row alignment like align-items-center justify-content-between */
+  /* media card (replaces position-relative rounded overflow-hidden shadow-sm) */
+  /* image in separate div */
+  /* play button centered */
+  /* stats column spacing like mt-4 mt-md-0 ps-md-5 ps-3 */
 }
 @media (min-width: 768px) {
   .about-section {
     padding: 3.5rem 0;
   }
-}
-.about-section {
-  /* top pill button */
 }
 .about-section .about-pill-btn {
   display: inline-block;
@@ -647,18 +616,12 @@ html {
   box-shadow: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
   margin-bottom: 1rem;
 }
-.about-section {
-  /* heading */
-}
 .about-section .about-title {
   font-weight: 600;
   font-size: clamp(1.6rem, 2.6vw, 2rem);
   line-height: 1.4;
   color: var(--dark-colors);
   margin: 0 0 1rem;
-}
-.about-section {
-  /* paragraph */
 }
 .about-section .about-desc {
   color: var(--secondary-colors);
@@ -670,15 +633,9 @@ html {
     margin-bottom: 2.25rem;
   }
 }
-.about-section {
-  /* row alignment like align-items-center justify-content-between */
-}
 .about-section .about-row {
   align-items: center;
   justify-content: space-between;
-}
-.about-section {
-  /* media card (replaces position-relative rounded overflow-hidden shadow-sm) */
 }
 .about-section .about-media-card {
   position: relative;
@@ -686,9 +643,6 @@ html {
   overflow: hidden;
   box-shadow: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
   width: 100%;
-}
-.about-section {
-  /* image in separate div */
 }
 .about-section .about-media-img {
   text-align: center;
@@ -701,9 +655,6 @@ html {
      object-fit: cover;
   max-width: 100%;
   max-height: 100%;
-}
-.about-section {
-  /* play button centered */
 }
 .about-section .about-play-btn {
   position: absolute;
@@ -720,9 +671,6 @@ html {
 }
 .about-section .about-play-btn:hover {
   color: var(--primary-colors);
-}
-.about-section {
-  /* stats column spacing like mt-4 mt-md-0 ps-md-5 ps-3 */
 }
 .about-section .about-stats {
   margin-top: 1.5rem;
@@ -763,6 +711,15 @@ html {
 .experience-section {
   padding: 4rem 0;
   background-color: var(--primary-bg);
+  /* replaces section-top-btn mb-3 shadow-sm fw-medium d-inline-block */
+  /* replaces fw-semibold display-6 mb-3 */
+  /* replaces gy-4 */
+  /* each item replaces border-bottom + pb-3 */
+  /* replaces d-flex flex-column flex-md-row justify-content-between */
+  /* replaces col-md-9 */
+  /* replaces h5 mb-1 fw-normal */
+  /* replaces muted small mb-0 */
+  /* replaces col-md-3 text-md-end fw-medium mt-2 mt-md-0 display-6 */
 }
 @media (max-width: 575px) {
   .experience-section {
@@ -771,9 +728,6 @@ html {
 }
 .experience-section .experience-head {
   margin-bottom: 1.5rem;
-}
-.experience-section {
-  /* replaces section-top-btn mb-3 shadow-sm fw-medium d-inline-block */
 }
 .experience-section .section-pill-btn {
   display: inline-block;
@@ -786,9 +740,6 @@ html {
   box-shadow: 0 0.125rem 0.4rem rgba(0, 0, 0, 0.08);
   margin-bottom: 1rem;
 }
-.experience-section {
-  /* replaces fw-semibold display-6 mb-3 */
-}
 .experience-section .experience-title {
   font-weight: 600;
   font-size: clamp(1.6rem, 2.6vw, 2rem);
@@ -796,14 +747,8 @@ html {
   margin: 0;
   line-height: 1.35;
 }
-.experience-section {
-  /* replaces gy-4 */
-}
 .experience-section .experience-list {
   row-gap: 1.5rem;
-}
-.experience-section {
-  /* each item replaces border-bottom + pb-3 */
 }
 .experience-section .experience-item {
   padding-bottom: 1rem;
@@ -812,9 +757,6 @@ html {
 .experience-section .experience-item-last {
   border-bottom: 0;
   padding-bottom: 0;
-}
-.experience-section {
-  /* replaces d-flex flex-column flex-md-row justify-content-between */
 }
 .experience-section .experience-item-row {
   display: flex;
@@ -829,15 +771,9 @@ html {
     gap: 1.25rem;
   }
 }
-.experience-section {
-  /* replaces col-md-9 */
-}
 .experience-section .experience-left {
   flex: 1;
   min-width: 0;
-}
-.experience-section {
-  /* replaces h5 mb-1 fw-normal */
 }
 .experience-section .experience-role {
   margin: 0 0 0.25rem;
@@ -845,17 +781,11 @@ html {
   color: var(--dark-colors);
   font-size: 1.1rem;
 }
-.experience-section {
-  /* replaces muted small mb-0 */
-}
 .experience-section .experience-desc {
   margin: 0;
   color: var(--secondary-colors);
   font-size: 0.95rem;
   line-height: 1.6;
-}
-.experience-section {
-  /* replaces col-md-3 text-md-end fw-medium mt-2 mt-md-0 display-6 */
 }
 .experience-section .experience-right {
   font-weight: 500;
@@ -874,6 +804,11 @@ html {
 .portfolio-section {
   padding: 4rem 0;
   background-color: var(--light-colors);
+  /* spacing like g-4 */
+  /* IMPORTANT: override old styles that are making background/padding */
+  /* image wrapper */
+  /* make image fill the card properly */
+  /* keep the same bottom-right position */
 }
 @media (max-width: 575px) {
   .portfolio-section {
@@ -901,14 +836,8 @@ html {
   color: var(--dark-colors);
   margin: 0;
 }
-.portfolio-section {
-  /* spacing like g-4 */
-}
 .portfolio-section .portfolio-grid {
   row-gap: 1.5rem;
-}
-.portfolio-section {
-  /* IMPORTANT: override old styles that are making background/padding */
 }
 .portfolio-section .portfolio-item {
   position: relative;
@@ -919,17 +848,11 @@ html {
   background: transparent;
   display: block;
 }
-.portfolio-section {
-  /* image wrapper */
-}
 .portfolio-section .portfolio-img {
   text-align: center;
   width: 100%;
   border-radius: 0.8rem;
   overflow: hidden;
-}
-.portfolio-section {
-  /* make image fill the card properly */
 }
 .portfolio-section .portfolio-img img {
   width: 100%;
@@ -939,9 +862,6 @@ html {
   border-radius: 0.8rem;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.portfolio-section {
-  /* keep the same bottom-right position */
 }
 .portfolio-section .portfolio-overlay {
   position: absolute;
@@ -976,6 +896,14 @@ html {
 .testimonials-section {
   padding: 4rem 0;
   background-color: var(--light-colors);
+  /* only slide 3 had shadow-sm */
+  /* quote position same as position-absolute z-3 + inline style */
+  /* mb-4 */
+  /* d-flex align-items-center justify-content-center */
+  /* rounded-circle me-3 */
+  /* text-start */
+  /* text-muted */
+  /* keep your previous custom-nav design (same as your earlier css) */
 }
 @media (max-width: 575px) {
   .testimonials-section {
@@ -987,14 +915,8 @@ html {
   text-align: center;
   padding: 1.5rem;
 }
-.testimonials-section {
-  /* only slide 3 had shadow-sm */
-}
 .testimonials-section .testimonial-card-shadow {
   box-shadow: 0 0.125rem 0.45rem rgba(0, 0, 0, 0.08);
-}
-.testimonials-section {
-  /* quote position same as position-absolute z-3 + inline style */
 }
 .testimonials-section .quote-mark {
   position: absolute;
@@ -1013,24 +935,15 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.testimonials-section {
-  /* mb-4 */
-}
 .testimonials-section .testimonial-text {
   margin: 0 0 1.5rem;
   color: var(--dark-colors);
   line-height: 1.7;
 }
-.testimonials-section {
-  /* d-flex align-items-center justify-content-center */
-}
 .testimonials-section .testimonial-user {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.testimonials-section {
-  /* rounded-circle me-3 */
 }
 .testimonials-section .user-img {
   text-align: center;
@@ -1049,9 +962,6 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.testimonials-section {
-  /* text-start */
-}
 .testimonials-section .user-meta {
   text-align: left;
 }
@@ -1061,15 +971,9 @@ html {
   color: var(--dark-colors);
   font-weight: 600;
 }
-.testimonials-section {
-  /* text-muted */
-}
 .testimonials-section .user-role {
   color: var(--secondary-colors);
   font-size: 0.85rem;
-}
-.testimonials-section {
-  /* keep your previous custom-nav design (same as your earlier css) */
 }
 .testimonials-section .custom-nav {
   width: 40px;
@@ -1103,26 +1007,28 @@ html {
   background: #111111;
   color: var(--light-colors);
   padding: 4rem 0;
+  /* top spacing like mb-5 */
+  /* replaces align-items-center */
+  /* replaces text-center text-md-start mb-4 mb-md-0 */
+  /* replaces display-6 mb-4 */
+  /* replaces mb-0 */
+  /* replaces text-center text-md-end */
+  /* CTA matches existing button feel (anchor, not button) */
+  /* bottom section replaces border-top pt-4 mt-5 */
+  /* replaces text-center text-md-start mb-3 mb-md-0 */
+  /* replaces text-center footer-links + mx-2 */
+  /* replaces text-md-end text-center */
 }
 @media (max-width: 575px) {
   .footer-section {
     padding: 3rem 0;
   }
 }
-.footer-section {
-  /* top spacing like mb-5 */
-}
 .footer-section .footer-top {
   margin-bottom: 3rem;
 }
-.footer-section {
-  /* replaces align-items-center */
-}
 .footer-section .footer-top-row {
   align-items: center;
-}
-.footer-section {
-  /* replaces text-center text-md-start mb-4 mb-md-0 */
 }
 .footer-section .footer-top-left {
   text-align: center;
@@ -1134,9 +1040,6 @@ html {
     margin-bottom: 0;
   }
 }
-.footer-section {
-  /* replaces display-6 mb-4 */
-}
 .footer-section .footer-title {
   margin: 0 0 1.5rem;
   font-weight: 600;
@@ -1144,16 +1047,10 @@ html {
   line-height: 1.2;
   color: var(--light-colors);
 }
-.footer-section {
-  /* replaces mb-0 */
-}
 .footer-section .footer-desc {
   margin: 0;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
-}
-.footer-section {
-  /* replaces text-center text-md-end */
 }
 .footer-section .footer-top-right {
   text-align: center;
@@ -1162,9 +1059,6 @@ html {
   .footer-section .footer-top-right {
     text-align: right;
   }
-}
-.footer-section {
-  /* CTA matches existing button feel (anchor, not button) */
 }
 .footer-section .footer-cta {
   display: inline-block;
@@ -1181,9 +1075,6 @@ html {
   opacity: 0.92;
   transform: scale(1.03);
 }
-.footer-section {
-  /* bottom section replaces border-top pt-4 mt-5 */
-}
 .footer-section .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 1.25rem;
@@ -1191,9 +1082,6 @@ html {
 }
 .footer-section .footer-bottom-row {
   align-items: center;
-}
-.footer-section {
-  /* replaces text-center text-md-start mb-3 mb-md-0 */
 }
 .footer-section .footer-brand {
   text-align: center;
@@ -1204,9 +1092,6 @@ html {
     text-align: left;
     margin-bottom: 0;
   }
-}
-.footer-section {
-  /* replaces text-center footer-links + mx-2 */
 }
 .footer-section .footer-links {
   text-align: center;
@@ -1229,9 +1114,6 @@ html {
 .footer-section .footer-link:hover {
   color: #858484;
 }
-.footer-section {
-  /* replaces text-md-end text-center */
-}
 .footer-section .footer-copy {
   text-align: center;
 }
@@ -1239,267 +1121,4 @@ html {
   .footer-section .footer-copy {
     text-align: right;
   }
-}
-
-/* Zigrow configuration: Builder-safe structure and mutation surfaces. */
-.muted,
-.hero-section .rotate-text-small,
-.hero-section .social-link:hover,
-.hero-section .scroll-down,
-.about-section .about-desc,
-.about-section .stat-label,
-.experience-section .experience-desc,
-.testimonials-section .user-role {
-  color: var(--muted-colors);
-}
-
-.secondary-btn,
-.site-header .custom-nav,
-.experience-section {
-  background-color: var(--section-tint);
-}
-
-.zg-align-center { align-items: center; }
-
-.zg-icon-parent {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.zg-icon-parent > [data-icon] { flex: 0 0 auto; }
-
-:where(a, button, [role=button]):focus-visible {
-  outline: 3px solid var(--primary-colors);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-
-.site-header .navbar-brand {
-  justify-content: center;
-  text-align: center;
-}
-
-.site-header .navbar-actions {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.site-header .resume-link:hover { color: #60acb8; }
-.site-header .custom-nav:hover { background-color: #60acb8; }
-
-.sticky-navbar { background-color: var(--light-colors); }
-
-.hero-section .social { gap: 0.15rem; }
-.hero-section .social-link {
-  width: 44px;
-  height: auto;
-  min-height: 44px;
-  max-width: 100%;
-  min-width: 44px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-}
-.hero-section .social-link > i {
-  flex: 0 0 100%;
-  text-align: center;
-}
-.hero-section .scroll-down {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.hero-section .hero-logos { gap: 0; }
-.hero-section .hero-logo-card { padding: 0.75rem; }
-.hero-section .logo-link {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (max-width: 575px) {
-  .hero-section .hero-logos { gap: 0; }
-  .hero-section .hero-logo-card { padding: 0.5rem; }
-}
-
-.about-section .about-head { margin-bottom: 3rem; }
-.about-section .about-desc { margin: 0; }
-.about-section .about-play-btn {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-@media (max-width: 575px) {
-  .about-section .about-head { margin-bottom: 2.25rem; }
-  .about-section .about-desc { margin-bottom: 0; }
-}
-
-.experience-section .experience-list {
-  row-gap: 0;
-  margin-block: -0.75rem;
-}
-.experience-section .experience-item {
-  padding: 0.75rem;
-  border-bottom: 0;
-}
-.experience-section .experience-item-row {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-.experience-section .experience-item-last .experience-item-row {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.portfolio-section .portfolio-grid {
-  row-gap: 0;
-  margin-block: -0.75rem;
-}
-.portfolio-section .portfolio-card-col { padding: 0.75rem; }
-.portfolio-section .portfolio-item {
-  aspect-ratio: 5/4;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.portfolio-section .portfolio-item-1 { background-image: url("../assets/img/portfolio-1.webp"); }
-.portfolio-section .portfolio-item-2 { background-image: url("../assets/img/portfolio-2.webp"); }
-.portfolio-section .portfolio-item-3 { background-image: url("../assets/img/portfolio-3.webp"); }
-.portfolio-section .portfolio-item-4 { background-image: url("../assets/img/portfolio-4.webp"); }
-.portfolio-section .portfolio-item-5 { background-image: url("../assets/img/portfolio-5.webp"); }
-.portfolio-section .portfolio-item-6 { background-image: url("../assets/img/portfolio-6.webp"); }
-.portfolio-section .portfolio-link { display: inline-flex; }
-.portfolio-section .portfolio-arrow {
-  width: 80px;
-  height: 80px;
-  max-width: 80px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid var(--light-colors);
-  border-radius: 50%;
-  color: var(--light-colors);
-  font-size: 1.75rem;
-}
-.portfolio-section .portfolio-arrow > i { flex: 0 0 auto; }
-@media (max-width: 575px) {
-  .portfolio-section .portfolio-arrow {
-    width: 64px;
-    height: 64px;
-    max-width: 64px;
-  }
-}
-
-.testimonials-section .custom-nav {
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
-  box-shadow: none;
-}
-.testimonials-section .custom-nav:hover { background-color: transparent; }
-.testimonials-section .nav-img {
-  width: 40px;
-  height: 40px;
-  background-color: #f8f9fa;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.testimonials-section .custom-nav:hover .nav-img { background-color: #e9ecef; }
-
-.footer-section {
-  background: color-mix(in srgb, var(--secondary-colors) 93.3%, white);
-}
-.footer-section .footer-top-right {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-@media (min-width: 768px) {
-  .footer-section .footer-top-right { justify-content: flex-end; }
-}
-.footer-section .footer-cta:visited,
-.footer-section .footer-cta:focus,
-.footer-section .footer-cta:active {
-  color: var(--light-colors);
-  text-decoration: none;
-}
-.footer-section .footer-links {
-  list-style: none;
-  padding-left: 0;
-}
-.footer-section .powered-by-zigrow-row {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  text-align: center;
-}
-.footer-section .powered-by-zigrow-row a {
-  color: var(--light-colors);
-  text-decoration: none;
-}
-
-@media (max-width: 991px) {
-  .site-header .navbar-toggler.hamburger {
-    width: 44px;
-    height: 44px;
-    padding: 0;
-  }
-  .site-header .navbar-toggler.hamburger .hamburger-box {
-    transform: scale(0.7);
-    transform-origin: center;
-  }
-  .site-header .navbar-collapse.is-open .navbar-actions {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

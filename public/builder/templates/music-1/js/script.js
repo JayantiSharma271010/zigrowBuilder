@@ -6,10 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
     spaceBetween: 30,
     slidesPerView: 1,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -86,11 +82,7 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     const navbarToggler = document.querySelector(".navbar-toggler");
     const navbarCollapse = document.querySelector("#navbarContent");
 
-    if (
-      navbarToggler &&
-      navbarCollapse &&
-      navbarCollapse.classList.contains("is-open")
-    ) {
+    if (navbarToggler && navbarCollapse.classList.contains("show")) {
       navbarToggler.click();
     }
   });
@@ -102,13 +94,11 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 const toggler = document.querySelector(".navbar-toggler");
 const menu = document.getElementById("navbarContent");
 
-if (toggler && menu) {
-  toggler.addEventListener("click", (e) => {
-    e.preventDefault();
-    const isOpen = menu.classList.toggle("is-open");
-    toggler.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-}
+toggler.addEventListener("click", (e) => {
+  e.preventDefault();
+  const isOpen = menu.classList.toggle("is-open");
+  toggler.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
 
 /* -------------------------------------------------------------------------- */
 /*                     // Close navbar if clicking outside                    */
@@ -118,11 +108,9 @@ document.addEventListener("click", function (event) {
   const navbarCollapse = document.getElementById("navbarContent");
   const toggler = document.querySelector(".navbar-toggler");
 
-  if (!navbar || !navbarCollapse || !toggler) return;
-
   const isClickInside = navbar.contains(event.target);
 
-  if (!isClickInside && navbarCollapse.classList.contains("is-open")) {
+  if (!isClickInside && navbarCollapse.classList.contains("show")) {
     toggler.click();
   }
 });
@@ -133,11 +121,9 @@ document.addEventListener("click", function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   const toggler = document.querySelector(".navbar-toggler");
 
-  if (toggler) {
-    toggler.addEventListener("click", function () {
-      toggler.classList.toggle("is-active");
-    });
-  }
+  toggler.addEventListener("click", function () {
+    toggler.classList.toggle("is-active");
+  });
 });
 
 /* -------------------------------------------------------------------------- */
@@ -190,39 +176,27 @@ document.querySelectorAll(".zoom-container").forEach((container) => {
 /* -------------------------------------------------------------------------- */
 const backToTopBtn = document.getElementById("backToTop");
 
-if (backToTopBtn) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
 
-  backToTopBtn.addEventListener("click", () => {
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    window.scrollTo({
-      top: 0,
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
-}
+});
 
 /* -------------------------------------------------------------------------- */
 /*                               Gsap Animation                               */
 /* -------------------------------------------------------------------------- */
 
-const reduceMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-
-if (window.gsap && window.ScrollTrigger && !reduceMotion) {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-if (window.gsap && window.ScrollTrigger && !reduceMotion && window.innerWidth >= 768) {
+gsap.registerPlugin(ScrollTrigger);
+if (window.innerWidth >= 768) {
   // Animate vertical text
   gsap.from(".rotate-text-small", {
     y: 100,
@@ -260,19 +234,17 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion && window.innerWidth >=
   //   },
   // });
 
-  // Keep optional animation hooks silent when a template variant omits them.
-  if (document.querySelector(".position-relative img")) {
-    gsap.from(".position-relative img", {
-      scale: 0.9,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".position-relative img",
-        start: "top 85%",
-      },
-    });
-  }
+  // Animate image
+  gsap.from(".position-relative img", {
+    scale: 0.9,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".position-relative img",
+      start: "top 85%",
+    },
+  });
 
   // Animate logo pills
   // gsap.from(".logo-pill", {
@@ -298,20 +270,18 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion && window.innerWidth >=
     },
   });
 
-  // Animate paragraph only when the optional utility class is present.
-  if (document.querySelector("#about p.text-muted")) {
-    gsap.from("#about p.text-muted", {
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      delay: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#about p.text-muted",
-        start: "top 85%",
-      },
-    });
-  }
+  // Animate paragraph
+  gsap.from("#about p.text-muted", {
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    delay: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#about p.text-muted",
+      start: "top 85%",
+    },
+  });
 
   // Animate play icon
   gsap.from("#about a i", {
@@ -364,19 +334,17 @@ if (window.gsap && window.ScrollTrigger && !reduceMotion && window.innerWidth >=
       },
     });
   });
-  if (document.querySelector("#experience .section-heading")) {
-    gsap.from("#experience .section-heading", {
-      opacity: 0,
-      y: -10,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: "#experience",
-        start: "top 90%",
-      },
-    });
-  }
+  gsap.from("#experience .section-heading", {
+    opacity: 0,
+    y: -10,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: "#experience",
+      start: "top 90%",
+    },
+  });
 
   gsap.from("#portfolio h2", {
     y: 50,
