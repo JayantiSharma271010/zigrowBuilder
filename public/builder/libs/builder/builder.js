@@ -5717,15 +5717,9 @@ self.loadNodeComponent(selectionTarget);
 
         // Find highest removable node
         let current = node;
-        while (
-          current.parentNode &&
-          current.parentNode !== document.body &&
-          current.parentNode.children.length === 1
-        ) {
-          current = current.parentNode;
-        }
-
+      
         const parent = current.parentNode;
+        if (!parent) return false;
         const nextSibling = current.nextSibling;
 
         // Record undo
