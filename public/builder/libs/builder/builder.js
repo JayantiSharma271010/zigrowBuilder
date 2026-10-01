@@ -5766,7 +5766,18 @@ self.loadNodeComponent(selectionTarget);
         let nodeCard = hoveredCard;
         if (!nodeCard) return;
 
-        // Find highest removable node
+         // Do not create an undo mutation for an already removed card.
+        if (!nodeCard || !nodeCard.isConnected || !nodeCard.parentNode) {
+          hoveredCard = null;
+          document.getElementById("hovering-options").style.display = "none";
+          return false;
+        }
+
+              const hoverSelector = nodeCard.matches(".clonable-card")
+          ? ".clonable-card"
+          : ".swiper-slide";
+
+            // Find highest removable node
         let current = nodeCard;
         while (
           current.parentNode &&
@@ -5776,7 +5787,15 @@ self.loadNodeComponent(selectionTarget);
           current = current.parentNode;
         }
 
+
+
+
         const parent = current.parentNode;
+        if (!parent)  return false;
+
+        const cardIndex = Array.from(parent.querySelectorAll(hoverSelector)).indexOf(nodeCard);
+
+
         const nextSibling = current.nextSibling;
 
         // Record undo
@@ -5787,9 +5806,46 @@ self.loadNodeComponent(selectionTarget);
           nextSibling: nextSibling,
         });
 
-        nodeCard.remove();
+        current.remove();
 
-        // 🔄 Swiper handling
+            // The next card/slide now occupies the deleted item's position.
+        // Keep the hover state updated even when the mouse has not moved.
+        const remainingCards = Array.from(
+          parent.querySelectorAll(hoverSelector)
+        );
+
+          hoveredCard =
+          cardIndex >= 0
+            ? remainingCards[cardIndex] || null
+            : null;
+
+               const hoveringOptions =
+          document.getElementById("hovering-options");
+
+        const hoveredDeleteButton =
+          document.getElementById("hovered-delete-btn");
+
+               if (hoveredCard) {
+          const hoveredCardRect =
+            hoveredCard.getBoundingClientRect();
+
+   hoveringOptions.setAttribute(
+            "style",
+            `top:${hoveredCardRect.top - (self.frameDoc.scrollTop ?? 0)}px;
+             left:${hoveredCardRect.left - (self.frameDoc.scrollLeft ?? 0)}px;
+             width:${hoveredCardRect.width}px;
+             height:${hoveredCardRect.height}px;`
+          );
+
+            hoveredDeleteButton.innerHTML =
+            hoverSelector === ".swiper-slide"
+              ? "Delete Slide"
+              : "Delete Card";
+        } else {
+          hoveringOptions.style.display = "none";
+        }
+
+          // 🔄 Swiper handling
         const swiperWrapper = parent.closest(".swiper-wrapper");
         const swiperContainer = parent.closest(".swiper");
 
@@ -5800,6 +5856,7 @@ self.loadNodeComponent(selectionTarget);
           swiperContainer.swiper.pagination?.render();
           swiperContainer.swiper.pagination?.update();
         }
+
 
         // Refresh UI
         Vvveb.TreeList.loadComponents();
