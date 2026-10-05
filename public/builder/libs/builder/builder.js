@@ -641,10 +641,30 @@ function applyIframeEditModeState(frameDoc, isEditMode = true) {
         !!swiper.autoplay?.running;
     }
 
+    if (swiper.__zigrowOriginalLoop === undefined) {
+  swiper.__zigrowOriginalLoop =
+    !!swiper.params?.loop;
+}
+
     if (isEditMode) {
       // In Builder Edit Mode:
       // prevent dragging/swiping while user edits content.
       swiper.allowTouchMove = false;
+
+      // Disable Swiper loop temporarily while editing, if it was originally enabled.
+      if (
+  swiper.__zigrowOriginalLoop &&
+  !swiper.__zigrowLoopDisabledForEdit
+) {
+  if (typeof swiper.loopDestroy === "function") {
+    swiper.loopDestroy();
+  }
+
+  swiper.params.loop = false;
+  swiper.__zigrowLoopDisabledForEdit = true;
+
+  swiper.update();
+}
 
       // Stop automatic slide movement while editing.
       if (
@@ -659,6 +679,24 @@ function applyIframeEditModeState(frameDoc, isEditMode = true) {
       // restore the original template behaviour.
       swiper.allowTouchMove =
         swiper.__zigrowOriginalAllowTouchMove;
+
+        // Restore Swiper loop if it was originally enabled and temporarily disabled for editing.
+        if (
+  swiper.__zigrowOriginalLoop &&
+  swiper.__zigrowLoopDisabledForEdit
+) {
+  swiper.params.loop = true;
+
+  swiper.update();
+
+  if (typeof swiper.loopCreate === "function") {
+    swiper.loopCreate();
+  }
+
+  swiper.update();
+
+  swiper.__zigrowLoopDisabledForEdit = false;
+}
 
       if (
         swiper.__zigrowOriginalAutoplayRunning &&
@@ -3105,6 +3143,9 @@ if (self.frameBody && !self.frameBody.__zigrowClosePanelsOnIframeClick) {
       setSaveButtonState
     );
 
+    // Jayanti added this to fix the issue for swiper not working after undo/redo
+    // Keep Swiper fully synchronized after Undo / Redo DOM restoration.
+
         if (
     Vvveb.Builder.frameBody &&
     !Vvveb.Builder.frameBody.__zigrowLogoUrlSyncBound
@@ -3464,36 +3505,40 @@ if (!wrapper) return;
             wrapper.appendChild(clone);
 
             if (Vvveb.Undo) {
-              Vvveb.Undo.addMutation({
-                type: "childList",
-                target: wrapper,
-                addedNodes: [clone],
-              });
+            Vvveb.Undo.addMutation({
+  type: "childList",
+  target: wrapper,
+  addedNodes: [clone],
+
+  // Swiper-specific Undo information.
+  isSwiperSlideMutation: true,
+  swiperSlideIndex: slides.length,
+});
             }
 
             // 🔹 FORCE PAGINATION UPDATE
-            if (swiperContainer.swiper) {
-              // update() recalculates slides and pagination dots automatically
-              swiperContainer.swiper.update();
+           refreshSwiperIfRequired(swiperContainer);
 
-              const newSlideIndex = swiperContainer.swiper.slides.length - 1;
-              swiperContainer.swiper.slideTo(newSlideIndex);
+const swiper = swiperContainer.swiper;
 
-              // If dots still don't appear, explicitly tell pagination to render
-              if (swiperContainer.swiper.pagination) {
-                swiperContainer.swiper.pagination.render();
-                swiperContainer.swiper.pagination.update();
-              }
-            } else {
-              // Fallback for iframe window context
-              const win = Vvveb.Builder.iframe.contentWindow;
-              win.document.querySelectorAll(".swiper").forEach((s) => {
-                if (s.swiper) {
-                  s.swiper.update();
-                  if (s.swiper.pagination) s.swiper.pagination.render();
-                }
-              });
-            }
+if (
+  swiper &&
+  !swiper.destroyed &&
+  typeof swiper.slideTo === "function"
+) {
+  const newSlideIndex =
+    Array.from(wrapper.children).filter(
+      (el) =>
+        el.classList.contains("swiper-slide") &&
+        !el.hasAttribute("data-vvveb-helpers")
+    ).length - 1;
+
+  swiper.slideTo(
+    Math.max(newSlideIndex, 0),
+    0,
+    false
+  );
+}
 
             Vvveb.Builder.selectNode(clone);
           }
@@ -5827,6 +5872,19 @@ self.loadNodeComponent(selectionTarget);
       
         const parent = current.parentNode;
         if (!parent) return false;
+
+        const deletingSwiperSlide = current.classList.contains("swiper-slide");
+
+        const swiperSlideIndex = deletingSwiperSlide
+  ? Array.from(parent.children)
+      .filter(
+        (el) =>
+          el.classList.contains("swiper-slide") &&
+          !el.classList.contains("swiper-slide-duplicate") &&
+          !el.hasAttribute("data-vvveb-helpers")
+      )
+      .indexOf(current)
+  : -1;
         const nextSibling = current.nextSibling;
 
         // Record undo
@@ -5835,22 +5893,19 @@ self.loadNodeComponent(selectionTarget);
           target: parent,
           removedNodes: [current],
           nextSibling: nextSibling,
+          isSwiperSlideMutation: deletingSwiperSlide,
+          swiperSlideIndex: swiperSlideIndex,
         });
 
         // 🔥 REMOVE ONCE
         current.remove();
 
-        // 🔄 Swiper handling
-        const swiperWrapper = parent.closest(".swiper-wrapper");
-        const swiperContainer = parent.closest(".swiper");
 
-        if (swiperWrapper && swiperContainer?.swiper) {
-          reindexSwiper(swiperContainer);
-          updateAddSlideBtnState(swiperContainer);
-          swiperContainer.swiper.update();
-          swiperContainer.swiper.pagination?.render();
-          swiperContainer.swiper.pagination?.update();
-        }
+
+        // 🔄 Swiper handling
+       if (deletingSwiperSlide) {
+  refreshSwiperIfRequired(parent);
+}
 
         // Refresh UI
         Vvveb.TreeList.loadComponents();
@@ -5902,12 +5957,25 @@ self.loadNodeComponent(selectionTarget);
 
         const nextSibling = current.nextSibling;
 
+        const swiperSlideIndex = isSwiperSlide
+  ? Array.from(parent.children)
+      .filter(
+        (el) =>
+          el.classList.contains("swiper-slide") &&
+          !el.classList.contains("swiper-slide-duplicate") &&
+          !el.hasAttribute("data-vvveb-helpers")
+      )
+      .indexOf(current)
+  : -1;
+
         // Record undo
         Vvveb.Undo.addMutation({
           type: "childList",
           target: parent,
           removedNodes: [current],
           nextSibling: nextSibling,
+          isSwiperSlideMutation : isSwiperSlide,
+          swiperSlideIndex: swiperSlideIndex,
         });
 
         current.remove();
@@ -5950,16 +6018,9 @@ self.loadNodeComponent(selectionTarget);
         }
 
           // 🔄 Swiper handling
-        const swiperWrapper = parent.closest(".swiper-wrapper");
-        const swiperContainer = parent.closest(".swiper");
-
-        if (swiperWrapper && swiperContainer?.swiper) {
-          reindexSwiper(swiperContainer);
-          updateAddSlideBtnState(swiperContainer);
-          swiperContainer.swiper.update();
-          swiperContainer.swiper.pagination?.render();
-          swiperContainer.swiper.pagination?.update();
-        }
+      if (isSwiperSlide) {
+  refreshSwiperIfRequired(parent);
+}
 
 
         // Refresh UI
@@ -18330,121 +18391,21 @@ function refreshSwiperIfRequired(element) {
 
   if (!swiperContainer) return;
 
-  const wrapper =
-    swiperContainer.querySelector(".swiper-wrapper");
-
-  if (!wrapper) return;
-
   const swiper = swiperContainer.swiper;
 
-  /*
-   * Remember the currently visible real slide
-   * before rebuilding Swiper.
-   */
-  let currentRealIndex = 0;
-
-  if (swiper && !swiper.destroyed) {
-    currentRealIndex =
-      Number.isFinite(swiper.realIndex)
-        ? swiper.realIndex
-        : Number.isFinite(swiper.activeIndex)
-          ? swiper.activeIndex
-          : 0;
-
-    /*
-     * loop:true Swipers maintain extra runtime state.
-     * Clear that state before rebuilding after DOM changes.
-     */
-    if (
-      swiper.params?.loop &&
-      typeof swiper.loopDestroy === "function"
-    ) {
-      try {
-        swiper.loopDestroy();
-      } catch (error) {
-        console.warn(
-          "[zigrow] Could not reset Swiper loop:",
-          error
-        );
-      }
-    }
-  }
-
-  // Re-number the real slides after Add/Delete/Undo/Redo.
   reindexSwiper(swiperContainer);
-
-  // Keep the Zigrow Add Slide button state correct.
   updateAddSlideBtnState(swiperContainer);
 
   if (!swiper || swiper.destroyed) return;
 
-  // Re-read the changed slide DOM.
+  // Swiper reads the final DOM once.
   swiper.update();
 
-  const realSlides = Array.from(
-    wrapper.children
-  ).filter(
-    (slide) =>
-      slide.classList.contains("swiper-slide") &&
-      !slide.classList.contains("swiper-slide-duplicate") &&
-      !slide.hasAttribute("data-vvveb-helpers")
-  );
-
-  /*
-   * Rebuild loop:true after the real DOM has changed.
-   */
-  if (
-    swiper.params?.loop &&
-    realSlides.length > 0 &&
-    typeof swiper.loopCreate === "function"
-  ) {
-    try {
-      swiper.loopCreate();
-      swiper.update();
-    } catch (error) {
-      console.warn(
-        "[zigrow] Could not rebuild Swiper loop:",
-        error
-      );
-    }
-  }
-
-  /*
-   * Restore a valid visible slide.
-   */
-  if (realSlides.length > 0) {
-    const safeIndex = Math.min(
-      currentRealIndex,
-      realSlides.length - 1
-    );
-
-    if (
-      swiper.params?.loop &&
-      typeof swiper.slideToLoop === "function"
-    ) {
-      swiper.slideToLoop(safeIndex, 0, false);
-    } else if (
-      typeof swiper.slideTo === "function"
-    ) {
-      swiper.slideTo(safeIndex, 0, false);
-    }
-  }
-
-  // Refresh controls.
+  // Keep controls synchronized with current slides.
   swiper.pagination?.render?.();
   swiper.pagination?.update?.();
   swiper.navigation?.update?.();
-
-  /*
-   * Undo/Redo must not accidentally restart autoplay
-   * or dragging while we are still editing.
-   */
-  if (!Vvveb.Builder?.isPreview) {
-    applyIframeEditModeState(
-      swiperContainer.ownerDocument,
-      true
-    );
-  }
+  swiper.checkOverflow?.();
 }
 
 function reindexSwiper(swiperContainer) {

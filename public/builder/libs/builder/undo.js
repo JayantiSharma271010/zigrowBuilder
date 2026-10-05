@@ -209,21 +209,65 @@ Vvveb.Undo = {
           ? mutation.removedNodeRecords
           : mutation.addedNodeRecords;
 
-        if (addedNodes)
-          for (const node of nodesBeingAdded) {
-            const record =
-              nodeRecords && nodeRecords.find((item) => item.node === node);
-            const insertPoint = this.getChildListInsertPoint(
-              mutation,
-              node,
-              nodesBeingAdded,
-              record
-            );
+      if (addedNodes)
+  for (const node of nodesBeingAdded) {
 
-            if (insertPoint) {
-              insertPoint.parent.insertBefore(node, insertPoint.referenceNode);
-            }
-          }
+    /*
+     * Swiper slides use their saved logical slide index.
+     *
+     * This avoids relying on previousSibling / nextSibling,
+     * because Swiper can change slide DOM/runtime order.
+     */
+    if (
+      mutation.isSwiperSlideMutation &&
+      Number.isInteger(mutation.swiperSlideIndex) &&
+      mutation.target &&
+      mutation.target.classList?.contains("swiper-wrapper") &&
+      node.classList?.contains("swiper-slide")
+    ) {
+      const currentSlides = Array.from(
+        mutation.target.children
+      ).filter(
+        (el) =>
+          el.classList.contains("swiper-slide") &&
+          !el.classList.contains("swiper-slide-duplicate") &&
+          !el.hasAttribute("data-vvveb-helpers")
+      );
+
+      const referenceSlide =
+        currentSlides[mutation.swiperSlideIndex] || null;
+
+      mutation.target.insertBefore(
+        node,
+        referenceSlide
+      );
+
+      continue;
+    }
+
+    /*
+     * All non-Swiper builder elements keep using
+     * the existing generic Undo system.
+     */
+    const record =
+      nodeRecords &&
+      nodeRecords.find((item) => item.node === node);
+
+    const insertPoint =
+      this.getChildListInsertPoint(
+        mutation,
+        node,
+        nodesBeingAdded,
+        record
+      );
+
+    if (insertPoint) {
+      insertPoint.parent.insertBefore(
+        node,
+        insertPoint.referenceNode
+      );
+    }
+  }
 
         if (removedNodes)
           for (const node of Array.from(removedNodes)) {
