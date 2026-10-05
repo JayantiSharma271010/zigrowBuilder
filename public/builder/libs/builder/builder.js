@@ -621,7 +621,57 @@ function applyIframeEditModeState(frameDoc, isEditMode = true) {
         display: none !important;
       }
     `;
-}
+
+
+// Jayanti edit this code for swiper in builder to prevent dragging/swiping in edit mode and restore original behaviour in preview mode
+      // Builder-only Swiper behaviour
+  frameDoc.querySelectorAll(".swiper").forEach((swiperContainer) => {
+    const swiper = swiperContainer.swiper;
+
+    if (!swiper || swiper.destroyed) return;
+
+    // Save the original Swiper behaviour only once.
+    if (swiper.__zigrowOriginalAllowTouchMove === undefined) {
+      swiper.__zigrowOriginalAllowTouchMove =
+        swiper.allowTouchMove;
+    }
+
+    if (swiper.__zigrowOriginalAutoplayRunning === undefined) {
+      swiper.__zigrowOriginalAutoplayRunning =
+        !!swiper.autoplay?.running;
+    }
+
+    if (isEditMode) {
+      // In Builder Edit Mode:
+      // prevent dragging/swiping while user edits content.
+      swiper.allowTouchMove = false;
+
+      // Stop automatic slide movement while editing.
+      if (
+        swiper.autoplay &&
+        typeof swiper.autoplay.stop === "function" &&
+        swiper.autoplay.running
+      ) {
+        swiper.autoplay.stop();
+      }
+    } else {
+      // Preview Mode:
+      // restore the original template behaviour.
+      swiper.allowTouchMove =
+        swiper.__zigrowOriginalAllowTouchMove;
+
+      if (
+        swiper.__zigrowOriginalAutoplayRunning &&
+        swiper.autoplay &&
+        typeof swiper.autoplay.start === "function" &&
+        !swiper.autoplay.running
+      ) {
+        swiper.autoplay.start();
+      }
+    }
+  });
+  }
+
 
 
 function observeMediaIframeOverlays(frameDoc) {
@@ -3360,9 +3410,29 @@ if (self.frameBody && !self.frameBody.__zigrowClosePanelsOnIframeClick) {
         if (addSlideBtn) {
           if (addSlideBtn.disabled) return;
           e.preventDefault();
-          const swiperContainer = addSlideBtn.closest(".swiper");
+        const helper =
+  addSlideBtn.closest(
+    ".vvveb-add-slide-helper"
+  );
 
-          const wrapper = swiperContainer.querySelector(".swiper-wrapper");
+const swiperContainer =
+  addSlideBtn.closest(".swiper") ||
+  (
+    helper?.previousElementSibling?.classList.contains(
+      "swiper"
+    )
+      ? helper.previousElementSibling
+      : null
+  );
+
+if (!swiperContainer) return;
+
+const wrapper =
+  swiperContainer.querySelector(
+    ".swiper-wrapper"
+  );
+
+if (!wrapper) return;
 
           const slides = Array.from(wrapper.children).filter(
             (el) =>
@@ -5810,6 +5880,9 @@ self.loadNodeComponent(selectionTarget);
 
             // Find highest removable node
         let current = nodeCard;
+        const isSwiperSlide = nodeCard.classList.contains("swiper-slide");
+
+        if(!isSwiperSlide) {
         while (
           current.parentNode &&
           current.parentNode !== document.body &&
@@ -5818,7 +5891,7 @@ self.loadNodeComponent(selectionTarget);
           current = current.parentNode;
         }
 
-
+      }
 
 
         const parent = current.parentNode;
@@ -7140,43 +7213,90 @@ function isLinkList(ul) {
 function addSliderHelpers(frameDoc) {
   if (!frameDoc) return;
 
-  // Find all Swiper wrappers
-  const swiperWrappers = frameDoc.querySelectorAll(".swiper-wrapper");
+  const swiperWrappers =
+    frameDoc.querySelectorAll(".swiper-wrapper");
 
   swiperWrappers.forEach((wrapper) => {
-    // Avoid adding multiple helpers
-    if (wrapper.querySelector(".vvveb-add-slide-helper")) return;
+    const swiperContainer =
+      wrapper.closest(".swiper");
 
-    // Create the helper slide
-    // We wrap it in a div that won't be treated as a slide by Swiper if possible,
-    // or we place it after the wrapper if the structure allows.
-    const helperBtn = frameDoc.createElement("div");
-    helperBtn.className = "vvveb-add-slide-helper";
-    helperBtn.setAttribute("data-vvveb-helpers", "true");
-    helperBtn.setAttribute("contenteditable", "false");
-    helperBtn.setAttribute("draggable", "false");
-    helperBtn.style.textAlign = "left";
+    if (
+      !swiperContainer ||
+      !swiperContainer.parentElement
+    ) {
+      return;
+    }
 
-    helperBtn.innerHTML = `
-      <button type="button" class="vvveb-add-slide-btn vvv-enhanced-btn" data-vvveb-helpers="true">
-        <span class="vvveb-add-btn-plus">+</span>
-        <span class="vvveb-add-btn-text">Add Slide</span>
-      </button>
-    `;
+    /*
+     * Add Slide is Zigrow Builder UI.
+     * Keep it outside the real Swiper so Swiper.js cannot
+     * move, clip or resize the helper.
+     */
+    let helperBtn =
+      swiperContainer.nextElementSibling;
 
-    // Append it to the swiper container (parent of wrapper) so it doesn't break the slide flow
-    const swiperContainer = wrapper.closest(".swiper");
-    if (swiperContainer) {
-      swiperContainer.appendChild(helperBtn);
+    // Add the helper only when it does not already exist.
+    if (
+      !helperBtn ||
+      !helperBtn.classList.contains(
+        "vvveb-add-slide-helper"
+      )
+    ) {
+      helperBtn = frameDoc.createElement("div");
 
-      // Set initial disable state (same pattern as add-btn / watchAddBtnContainer)
-      updateAddSlideBtnState(swiperContainer);
+      helperBtn.className =
+        "vvveb-add-slide-helper";
 
-      // Watch for slide additions/removals and keep button state in sync
+      helperBtn.setAttribute(
+        "data-vvveb-helpers",
+        "true"
+      );
+
+      helperBtn.setAttribute(
+        "contenteditable",
+        "false"
+      );
+
+      helperBtn.setAttribute(
+        "draggable",
+        "false"
+      );
+
+      helperBtn.style.textAlign = "left";
+
+      helperBtn.innerHTML = `
+        <button
+          type="button"
+          class="vvveb-add-slide-btn vvv-enhanced-btn"
+          data-vvveb-helpers="true"
+        >
+          <span class="vvveb-add-btn-plus">+</span>
+          <span class="vvveb-add-btn-text">Add Slide</span>
+        </button>
+      `;
+
+      swiperContainer.insertAdjacentElement(
+        "afterend",
+        helperBtn
+      );
+    }
+
+    updateAddSlideBtnState(swiperContainer);
+
+    /*
+     * Do not attach multiple MutationObservers
+     * if helper hydration runs again.
+     */
+    if (!wrapper.__zigrowAddSlideObserverBound) {
+      wrapper.__zigrowAddSlideObserverBound = true;
+
       const slideObs = new MutationObserver(() => {
         updateAddSlideBtnState(swiperContainer);
       });
-      slideObs.observe(wrapper, { childList: true });
+
+      slideObs.observe(wrapper, {
+        childList: true,
+      });
     }
   });
 }
@@ -7205,10 +7325,29 @@ function setHelperButtonState(btn, enabled, enabledTitle, disabledTitle) {
 function updateAddSlideBtnState(swiperContainer) {
   if (!swiperContainer) return;
 
-  const addBtn = swiperContainer.querySelector(".vvveb-add-slide-btn");
+  const helper =
+    swiperContainer.nextElementSibling &&
+    swiperContainer.nextElementSibling.classList.contains(
+      "vvveb-add-slide-helper"
+    )
+      ? swiperContainer.nextElementSibling
+      : swiperContainer.querySelector(
+          ".vvveb-add-slide-helper"
+        );
+
+  const addBtn =
+    helper?.querySelector(
+      ".vvveb-add-slide-btn"
+    );
+
   if (!addBtn) return;
 
-  const wrapper = swiperContainer.querySelector(".swiper-wrapper");
+  const wrapper =
+    swiperContainer.querySelector(
+      ".swiper-wrapper"
+    );
+
+  if (!wrapper) return;
   const slides = Array.from(wrapper.children).filter(
     (el) =>
       el.classList.contains("swiper-slide") &&
@@ -18174,17 +18313,137 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Jayanti - Swiper refresh after DOM changes (Add/Delete/Undo/Redo)
+// to keep the currently visible slide in view and maintain loop:true state.
 function refreshSwiperIfRequired(element) {
-  if (!element) return;
-  const swiperContainer = element.closest(".swiper");
-  if (swiperContainer && swiperContainer.swiper) {
-    reindexSwiper(swiperContainer);
-    updateAddSlideBtnState(swiperContainer);
-    swiperContainer.swiper.update();
-    if (swiperContainer.swiper.pagination) {
-      swiperContainer.swiper.pagination.render();
-      swiperContainer.swiper.pagination.update();
+  if (
+    !element ||
+    typeof element.closest !== "function"
+  ) {
+    return;
+  }
+
+  const swiperContainer =
+    element.classList?.contains("swiper")
+      ? element
+      : element.closest(".swiper");
+
+  if (!swiperContainer) return;
+
+  const wrapper =
+    swiperContainer.querySelector(".swiper-wrapper");
+
+  if (!wrapper) return;
+
+  const swiper = swiperContainer.swiper;
+
+  /*
+   * Remember the currently visible real slide
+   * before rebuilding Swiper.
+   */
+  let currentRealIndex = 0;
+
+  if (swiper && !swiper.destroyed) {
+    currentRealIndex =
+      Number.isFinite(swiper.realIndex)
+        ? swiper.realIndex
+        : Number.isFinite(swiper.activeIndex)
+          ? swiper.activeIndex
+          : 0;
+
+    /*
+     * loop:true Swipers maintain extra runtime state.
+     * Clear that state before rebuilding after DOM changes.
+     */
+    if (
+      swiper.params?.loop &&
+      typeof swiper.loopDestroy === "function"
+    ) {
+      try {
+        swiper.loopDestroy();
+      } catch (error) {
+        console.warn(
+          "[zigrow] Could not reset Swiper loop:",
+          error
+        );
+      }
     }
+  }
+
+  // Re-number the real slides after Add/Delete/Undo/Redo.
+  reindexSwiper(swiperContainer);
+
+  // Keep the Zigrow Add Slide button state correct.
+  updateAddSlideBtnState(swiperContainer);
+
+  if (!swiper || swiper.destroyed) return;
+
+  // Re-read the changed slide DOM.
+  swiper.update();
+
+  const realSlides = Array.from(
+    wrapper.children
+  ).filter(
+    (slide) =>
+      slide.classList.contains("swiper-slide") &&
+      !slide.classList.contains("swiper-slide-duplicate") &&
+      !slide.hasAttribute("data-vvveb-helpers")
+  );
+
+  /*
+   * Rebuild loop:true after the real DOM has changed.
+   */
+  if (
+    swiper.params?.loop &&
+    realSlides.length > 0 &&
+    typeof swiper.loopCreate === "function"
+  ) {
+    try {
+      swiper.loopCreate();
+      swiper.update();
+    } catch (error) {
+      console.warn(
+        "[zigrow] Could not rebuild Swiper loop:",
+        error
+      );
+    }
+  }
+
+  /*
+   * Restore a valid visible slide.
+   */
+  if (realSlides.length > 0) {
+    const safeIndex = Math.min(
+      currentRealIndex,
+      realSlides.length - 1
+    );
+
+    if (
+      swiper.params?.loop &&
+      typeof swiper.slideToLoop === "function"
+    ) {
+      swiper.slideToLoop(safeIndex, 0, false);
+    } else if (
+      typeof swiper.slideTo === "function"
+    ) {
+      swiper.slideTo(safeIndex, 0, false);
+    }
+  }
+
+  // Refresh controls.
+  swiper.pagination?.render?.();
+  swiper.pagination?.update?.();
+  swiper.navigation?.update?.();
+
+  /*
+   * Undo/Redo must not accidentally restart autoplay
+   * or dragging while we are still editing.
+   */
+  if (!Vvveb.Builder?.isPreview) {
+    applyIframeEditModeState(
+      swiperContainer.ownerDocument,
+      true
+    );
   }
 }
 
@@ -18212,10 +18471,7 @@ function reindexSwiper(swiperContainer) {
     });
   }
 
-  // Refresh the Swiper JS instance
-  if (swiperContainer.swiper) {
-    swiperContainer.swiper.update();
-  }
+  
 }
 
 // === Properties modal helper (open for any node) ===

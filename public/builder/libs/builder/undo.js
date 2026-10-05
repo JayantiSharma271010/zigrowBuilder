@@ -51,16 +51,43 @@ MutationRecord.oldValue 			String 		The return value depends on the MutationReco
 */
 
 function refreshSwiperUI(element) {
-  const swiperContainer = element.closest(".swiper");
-  if (swiperContainer && swiperContainer.swiper) {
-    reindexSwiper(swiperContainer);
-    updateAddSlideBtnState(swiperContainer);
-    // Explicitly refresh Swiper state and pagination
+  if (
+    !element ||
+    typeof element.closest !== "function"
+  ) {
+    return;
+  }
+
+  /*
+   * Add/Delete/Undo/Redo must all use the same
+   * Swiper refresh process.
+   */
+  if (
+    typeof refreshSwiperIfRequired === "function"
+  ) {
+    refreshSwiperIfRequired(element);
+    return;
+  }
+
+  /*
+   * Safe fallback only if the builder refresh
+   * function is unavailable.
+   */
+  const swiperContainer =
+    element.classList?.contains("swiper")
+      ? element
+      : element.closest(".swiper");
+
+  if (
+    swiperContainer &&
+    swiperContainer.swiper &&
+    !swiperContainer.swiper.destroyed
+  ) {
     swiperContainer.swiper.update();
-    if (swiperContainer.swiper.pagination) {
-      swiperContainer.swiper.pagination.render();
-      swiperContainer.swiper.pagination.update();
-    }
+
+    swiperContainer.swiper.pagination?.render?.();
+    swiperContainer.swiper.pagination?.update?.();
+    swiperContainer.swiper.navigation?.update?.();
   }
 }
 
