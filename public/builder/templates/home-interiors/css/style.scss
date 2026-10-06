@@ -10,7 +10,7 @@ html {
 
 .fonts-for-heading {
   font-family: "Inter", sans-serif;
-  font-weight: 0;
+  font-weight: 400;
   letter-spacing: 3px;
   color: var(--secondary-colors, #212529);
 }
@@ -18,7 +18,7 @@ html {
 // Navbar
 .navbar {
   font-family: sans-serif;
-  background: var(--territory-colors, #fff);
+  background: #fff;
   .navbar-brand {
     color: var(--secondary-colors, #212529);
   }
@@ -29,10 +29,10 @@ html {
   .nav-link {
     color: var(--secondary-colors, #212529);
     &:hover {
-      color: var(--primary-colors, #212529);
+      color: #212529;
     }
     &.active {
-      color: var(--primary-colors, #212529);
+      color: #212529;
     }
   }
 
@@ -95,11 +95,57 @@ html {
   }
 
   .social_media_icon {
-    border: 1px solid var(--secondary-colors, #7b7a7a); /* or any color you like */
+    border: 1px solid #7b7a7a; /* or any color you like */
     border-radius: 50%; /* makes it circular */
     padding: 5px; /* optional: space between image and border */
     background-color: white; /* optional: background inside the border */
     // box-shadow: 0 0 0px rgba(0, 0, 0, 0.1); /* optional: adds a subtle shadow */
+  }
+}
+
+.navbar-brand-logo {
+  display: inline-block;
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--secondary-colors, #212529);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--secondary-colors, #212529);
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--primary-colors, #ce940e);
+    text-decoration: none;
+  }
+}
+
+.navbar-social-link {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border: 1px solid #7b7a7a;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--secondary-colors, #212529);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--secondary-colors, #212529);
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--primary-colors, #ce940e);
+    color: var(--primary-colors, #ce940e);
+    text-decoration: none;
   }
 }
 
@@ -131,8 +177,8 @@ html {
 // Section 1
 .section1 {
   // margin-top: 50px;
-  background: var(--territory-colors, #fff);
-  font-weight: 0;
+  background: #fff;
+  font-weight: 400;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -147,12 +193,12 @@ html {
   .book-appointment-button {
     background-color: var(--primary-colors, #ce940e);
     border: 1px solid var(--primary-colors, #ce940e);
-    color: var(--secondary-colors, #fff);
+    color: #fff;
     padding: 12px;
-    font-weight: 600px;
+    font-weight: 600;
     &:hover {
-      border-color: var(--primary-colors, #111);
-      background-color: #111;
+      border-color: var(--secondary-colors, #212529);
+      background-color: var(--secondary-colors, #212529);
       transition: background-color 0.3s ease;
       color: var(--primary-colors, #ce940e);
     }
@@ -205,18 +251,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-colors, #111);
-  color: var(
-    --territory-colors,
-    #ce940e
-  ); /* Replace $yellowcolor with actual color */
-  border: 2px solid var(--primary-colors, #111);
+  background-color: var(--secondary-colors, #212529);
+  color: var(--primary-colors, #ce940e);
+  border: 2px solid var(--secondary-colors, #212529);
   transition: all 0.3s ease;
   opacity: 0; /* Start hidden for GSAP animation */
   transform: translateY(50px); /* Initial offset for slide-in */
   &:hover {
     background-color: var(--primary-colors, #ce940e);
-    color: #111;
+    color: var(--secondary-colors, #212529);
     border-color: var(--primary-colors, #ce940e);
   }
   .bi-arrow-up {
@@ -228,7 +271,8 @@ html {
 .section2 {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: var(--territory-colors, #fff);
+  background-color: #fff;
+  overflow-x: clip;
   .director-name {
     color: var(--secondary-colors, #212529);
   }
@@ -266,7 +310,7 @@ html {
 
 // Section 3
 .section3 {
-  background-color: var(--territory-colors, #fafafa);
+  background-color: #fafafa;
   .text-over-image {
     bottom: 15px;
   }
@@ -283,7 +327,7 @@ html {
 
 // Section 4
 .section4 {
-  background-color: var(--territory-colors, #fff);
+  background-color: #fff;
   .our-projects-small-text {
     color: var(--primary-colors, #ce940e);
     font-family: "Montserrat", sans-serif;
@@ -303,7 +347,7 @@ html {
     max-width: 600px;
     margin: auto;
     font-size: 15px;
-    font-family: "YourFontName", sans-serif;
+    font-family: "Inter", sans-serif;
     letter-spacing: 1px;
   }
   .image-room1 {
@@ -352,10 +396,7 @@ html {
 
 // Section 5
 .section5 {
-  background-color: var(
-    --territory-colors,
-    #fafafa
-  ); /* Replace $lightbrowncolor with actual hex */
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,7 +419,7 @@ html {
         right: 0;
         width: 2px;
         height: 35%; // Only 25% of the box height
-        background-color: var(--secondary-colors, #ececec);
+        background-color: #ececec;
       }
       .section5-number {
         width: 150px;
@@ -389,7 +430,7 @@ html {
         font-size: 140px;
         position: relative;
         padding-right: 10px;
-        color: var(--secondary-colors, #ececec); /* Replace $browncolor */
+        color: #ececec; /* Replace $browncolor */
         font-weight: 400;
         &::before {
           content: "";
@@ -398,10 +439,7 @@ html {
           right: 0;
           width: 2px;
           height: 30%;
-          background-color: var(
-            --territory-colors,
-            #fafafa
-          ); /* Replace $browncolor */
+          background-color: color-mix(in srgb, var(--primary-colors, #ce940e) 6%, white);
         }
       }
       .section5-projects {
@@ -410,7 +448,7 @@ html {
         left: 55%;
         transform: translate(-50%, -50%);
         font-size: 18px;
-        color: var(--primary-colors, #333);
+        color: #333;
       }
     }
   }
@@ -452,14 +490,14 @@ html {
 // Section 6
 .section6 {
   overflow-x: hidden;
-  background-color: var(--territory-colors, #fff);
+  background-color: #fff;
 
   .boxes-text {
     width: 100%;
     max-width: 380px;
     height: auto;
-    border: 1px solid var(--secondary-colors, #fafafa);
-    background-color: var(--territory-colors, #fafafa);
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -471,7 +509,7 @@ html {
       font-size: 20px;
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: center;
       margin-bottom: 20px;
     }
     .p-below-star,
@@ -482,13 +520,13 @@ html {
       text-align: center;
     }
     .p-below-star {
-      color: var(--secondary-colors, #535252);
+      color: #535252;
       font-style: italic;
       line-height: 2;
     }
     .name-below-pstar {
       margin-top: 30px;
-      color: var(--primary-colors, #212529);
+      color: #212529;
     }
     .testimonial-speaker-address {
       color: var(--primary-colors, #ce940e);
@@ -498,29 +536,19 @@ html {
     }
   }
 
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-image: none; /* Remove default icon */
-    color: black; /* Optional if you use text */
+  .testimonial-carousel .carousel-control-prev > i,
+  .testimonial-carousel .carousel-control-next > i {
+    color: #000;
     font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .carousel-control-prev-icon::after {
-    content: "‹"; /* Left arrow */
-    color: #000;
-  }
-
-  .carousel-control-next-icon::after {
-    content: "›"; /* Right arrow */
-    color: #000;
+    flex: 0 0 auto;
   }
 
   /* Move prev and next arrows outside */
-  #testimonialCarousel .carousel-control-prev,
-  #testimonialCarousel .carousel-control-next {
+  .testimonial-carousel .carousel-control-prev,
+  .testimonial-carousel .carousel-control-next {
     width: auto;
     top: 50%;
     transform: translateY(-50%);
@@ -531,20 +559,19 @@ html {
   }
 
   /* Move them further left/right */
-  #testimonialCarousel .carousel-control-prev {
-    left: -40px; /* You can adjust this value */
+  .testimonial-carousel .carousel-control-prev {
+    left: 8px;
   }
 
-  #testimonialCarousel .carousel-control-next {
-    right: -40px; /* You can adjust this value */
+  .testimonial-carousel .carousel-control-next {
+    right: 8px;
   }
 
   /* Optional: Make the icons larger or custom */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
+  .testimonial-carousel .carousel-control-prev > i,
+  .testimonial-carousel .carousel-control-next > i {
     width: 2rem;
     height: 2rem;
-    background-size: 100% 100%;
   }
 }
 
@@ -563,7 +590,7 @@ html {
 
 // Section 7
 .section7 {
-  background-color: var(--territory-colors, #fafafa);
+  background-color: #fafafa;
   .form-of-section7 {
     margin-top: 30px;
     max-width: 700px;
@@ -573,8 +600,8 @@ html {
       width: 100%;
       padding-top: 15px;
       padding-bottom: 15px;
-      background-color: var(--territory-colors, #fff);
-      border: 1px solid var(--primary-colors, #212529);
+      background-color: #fff;
+      border: 1px solid #212529;
       color: var(--secondary-colors, #212529);
       &:focus {
         border: 1px solid var(--secondary-colors, #212529);
@@ -582,7 +609,7 @@ html {
         box-shadow: none; /* optional glow */
       }
       &::placeholder {
-        color: var(--primary-colors, #999);
+        color: #999;
       }
     }
     .form-check {
@@ -599,22 +626,22 @@ html {
       .form-check-input {
         border: 1px solid var(--secondary-colors, #212529);
         border-radius: 0;
-        background-color: var(--territory-colors, #fff);
+        background-color: #fff;
         color: var(--secondary-colors, #212529);
         &:checked {
           outline: none;
           border: 1px solid black;
           box-shadow: none;
-          background-color: var(--primary-colors, #111);
+          background-color: var(--secondary-colors, #212529);
           color: var(--primary-colors, #ce940e);
           transition: background-color 0.3s ease;
         }
       }
       .form-check-label {
-        color: var(--secondary-colors, #7b7a7a);
+        color: #7b7a7a;
         padding-left: 20px;
         u {
-          color: var(--primary-colors, #212529);
+          color: #212529;
         }
       }
     }
@@ -625,7 +652,7 @@ html {
       color: white;
       border-radius: 0;
       &:hover {
-        background-color: #111;
+        background-color: var(--secondary-colors, #212529);
         color: var(--primary-colors, #ce940e);
         transition: background-color 0.4s ease;
       }
@@ -645,7 +672,7 @@ input[type="number"] {
 
 // Footer section
 .footer-my-css {
-  padding: 90px;
+  padding: 90px 90px 40px;
   background-color: #111;
   .lets-talk {
     color: var(--primary-colors, #ce940e);
@@ -656,7 +683,7 @@ input[type="number"] {
   }
   .headline {
     font-size: 28px;
-    font-weight: 00;
+    font-weight: 400;
     color: white;
     span {
       color: var(--primary-colors, #ce940e);
@@ -668,7 +695,7 @@ input[type="number"] {
       margin: 0 10px;
       font-size: 14px;
       text-decoration: none;
-      font-weight: 0;
+      font-weight: 400;
       &:hover {
         color: var(--primary-colors, #ce940e);
         text-decoration: none;
@@ -684,7 +711,7 @@ input[type="number"] {
     a {
       color: white;
       // background-color: #222;
-      border: 1px solid var(--secondary-colors, #7b7a7a);
+      border: 1px solid #7b7a7a;
       padding: 8px 10px;
       margin: 5px;
       margin-left: 8px;
@@ -722,7 +749,7 @@ input[type="number"] {
 }
 
 .hr-color-style {
-  border: 1px solid var(--secondary-colors, #928b8b);
+  border: 1px solid var(--territory-colors, #928b8b);
 }
 
 .p-0-style {
@@ -1334,7 +1361,7 @@ img {
   text-align: center;
 }
 .text-muted-style {
-  color: var(--secondary-colors, #6c757d);
+  color: #6c757d;
 }
 
 .align-items-center-style {
@@ -2039,6 +2066,13 @@ img {
   text-align: center;
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .section1-image-content > .img-wrapper-style {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
 img {
   object-fit: cover;
   max-width: 100%;
@@ -2052,7 +2086,7 @@ img {
   border-radius: 50%;
   color: var(--secondary-colors, #212529);
   &:hover {
-    color: var(--primary-colors, #535252);
+    color: #535252;
   }
 }
 
@@ -2067,4 +2101,252 @@ div[form-question-zigrow] {
 
 .swiper-slide {
   height: auto;
+}
+
+/* Zigrow Builder compatibility layer (compiled equivalent is in style.css). */
+:root {
+  --primary-colors: #ce940e;
+  --secondary-colors: #212529;
+  --territory-colors: #928b8b;
+}
+
+.zg-align-center,
+.hero-actions,
+.navbar-socials,
+.social-icons,
+.star-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+[data-btn] {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+[data-btn],
+[data-btn]:hover,
+[data-btn]:focus,
+[data-btn]:active,
+[data-btn]:visited { text-decoration: none; }
+
+[data-btn]:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-colors, #ce940e);
+  outline-offset: 3px;
+}
+
+.clonable-card { min-width: 0; padding: .5rem; box-sizing: border-box; }
+.clonable-card > div:first-child { min-width: 0; width: 100%; box-sizing: border-box; }
+.service-card-surface { min-height: 390px; position: relative; overflow: hidden; border-radius: 999px; background-repeat: no-repeat; background-position: center; background-size: cover; max-width: 290px; margin-inline: auto; }
+.service-card-surface::before { position: absolute; inset: 0; content: ""; background-color: transparent; pointer-events: none; transition: background-color .3s ease; }
+.service-card-surface:hover::before { background-color: rgba(250, 250, 250, .6); }
+.service-card-storage { background-image: url("../assets/images/homeinteriorswebsitetemplate-3a.webp"); }
+.service-card-tables { background-image: url("../assets/images/homeinteriorswebsitetemplate-3b.webp"); }
+.service-card-lighting { background-image: url("../assets/images/homeinteriorswebsitetemplate-3c.webp"); }
+.service-card-office { background-image: url("../assets/images/homeinteriorswebsitetemplate-3d.webp"); }
+
+form[data-zigrow-form] { display: grid; gap: 1rem; width: 100%; min-width: 0; }
+form[data-zigrow-form] [form-question-zigrow] { min-width: 0; margin: 0; }
+form[data-zigrow-form] [form-question-zigrow] > input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+form[data-zigrow-form] [form-question-zigrow] > select,
+form[data-zigrow-form] [form-question-zigrow] > textarea { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+form[data-zigrow-form] > button[type="submit"] { width: 100%; max-width: 100%; min-height: 44px; }
+
+/* Home Interiors visual refinements */
+.navbar {
+  min-height: 80px;
+  padding-inline: clamp(1rem, 3vw, 3rem);
+  column-gap: clamp(.75rem, 2vw, 2rem);
+
+  > .container {
+    margin-inline: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+  .navbar {
+    padding-inline: 8px;
+    column-gap: .5rem;
+  }
+}
+
+.service-card-surface {
+  aspect-ratio: 2 / 3;
+  min-height: 0;
+  border-radius: 50% / 34%;
+}
+.section3 .service-card-surface .text-over-image { position: absolute; right: 0; bottom: 15px; left: 0; margin: 0; color: #fff; font-size: 1rem; line-height: 1.2; text-align: center; z-index: 1; }
+.justify-content-around-style { justify-content: space-around; }
+.section4 .project-thumbnails > .clonable-card { margin: 0; }
+.section5 .section5-box-container .section5-each-box { margin: 0; }
+.footer-my-css .nav-links { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0; margin: 0; padding: 0; list-style: none; }
+.footer-my-css .zigrow-attribution-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  margin-top: .75rem;
+  text-align: center;
+}
+.footer-my-css .zigrow-attribution-row p { margin: 0; }
+.footer-my-css .zigrow-attribution-row a,
+.footer-my-css .zigrow-attribution-row a:visited {
+  color: var(--primary-colors, #ce940e);
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.footer-my-css .zigrow-attribution-row a:hover,
+.footer-my-css .zigrow-attribution-row a:focus-visible {
+  color: #fff;
+  text-decoration: none;
+}
+
+.section6 .testimonials-swiper {
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+    padding: .75rem;
+  }
+
+  .boxes-text {
+    width: 100%;
+    max-width: none;
+    min-height: 420px;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .name-below-pstar {
+    margin-top: auto;
+  }
+}
+
+.section7 .form-of-section7 {
+  width: min(100%, 700px);
+  max-width: 700px;
+  margin-inline: auto;
+  justify-content: stretch;
+  justify-items: stretch;
+
+  [form-question-zigrow] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [form-question-zigrow] > label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  > .submit-button-contactus {
+    display: inline-block;
+    border: 1px solid transparent;
+    font: inherit;
+    line-height: 1.5;
+  }
+
+  [form-question-zigrow] > select,
+  [form-question-zigrow] > textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 15px 12px;
+    background-color: #fff;
+    border: 1px solid var(--primary-colors, #ce940e);
+    border-radius: 0;
+    color: var(--secondary-colors, #212529);
+    box-sizing: border-box;
+  }
+
+  [form-question-zigrow] > textarea { min-height: 120px; resize: vertical; }
+
+  [form-question-zigrow] > input[type="checkbox"],
+  [form-question-zigrow] > input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    accent-color: var(--primary-colors, #ce940e);
+  }
+}
+
+.navbar-social-link,
+.footer-my-css .social-icons .aboutus-image,
+.floating-btn,
+.section6 .testimonial-carousel .carousel-control-prev,
+.section6 .testimonial-carousel .carousel-control-next {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .25rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-socials > *,
+.social-icons > *,
+.star-rating > *,
+.navbar-social-link > *,
+.footer-my-css .social-icons .aboutus-image > *,
+.floating-btn > *,
+.section6 .testimonial-carousel .carousel-control-prev > *,
+.section6 .testimonial-carousel .carousel-control-next > * { flex: 0 0 auto; }
+
+.section1 .book-appointment-button,
+.section1 .book-appointment-button:visited {
+  background: var(--primary-colors, #ce940e);
+  border-color: var(--primary-colors, #ce940e);
+  color: #fff;
+}
+
+.section1 .book-appointment-button:hover,
+.section1 .book-appointment-button:active {
+  background: var(--secondary-colors, #212529);
+  border-color: var(--secondary-colors, #212529);
+  color: var(--primary-colors, #ce940e);
+}
+
+@media (max-width: 991.98px) {
+  .section6 .testimonials-swiper {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-actions { justify-content: center; }
+}
+
+@media (max-width: 376px) {
+  .section5 .clonable-card { width: 100%; }
 }

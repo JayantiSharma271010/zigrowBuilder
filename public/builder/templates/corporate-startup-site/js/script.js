@@ -23,8 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
+      hamburger.setAttribute("aria-expanded", "false");
     } else {
       bsCollapse.show();
+      hamburger.setAttribute("aria-expanded", "true");
     }
   });
 
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (menu.classList.contains("show")) {
         bsCollapse.hide();
         hamburger.classList.remove("is-active");
+        hamburger.setAttribute("aria-expanded", "false");
       }
     });
   });
@@ -46,13 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       bsCollapse.hide();
       hamburger.classList.remove("is-active");
+      hamburger.setAttribute("aria-expanded", "false");
     }
   });
 });
 
 // our products swiper js
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.innerWidth < 768) {
+  if (window.Swiper && window.innerWidth < 768) {
     new Swiper(".our-products-swiper", {
       slidesPerView: 1,
       spaceBetween: 16,
@@ -70,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // For Swiper JS
-var swiper = new Swiper(".mySwiper", {
+var swiper = window.Swiper ? new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
@@ -82,7 +86,7 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-});
+}) : null;
 
 // Floating button js
 const btn = document.querySelector(".floating-btn");
@@ -90,21 +94,20 @@ const btn = document.querySelector(".floating-btn");
 // Show/hide button on scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY > 10) {
-    // Show button
-    btn.style.opacity = 1;
-    btn.style.transform = "translateY(0)";
-    btn.style.pointerEvents = "auto";
+    btn.classList.add("is-visible");
   } else {
-    // Hide button
-    btn.style.opacity = 0;
-    btn.style.transform = "translateY(50px)";
-    btn.style.pointerEvents = "none";
+    btn.classList.remove("is-visible");
   }
 });
 
 // Animation starts here
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 767.98) {
+  if (
+    window.innerWidth >= 767.98 &&
+    window.gsap &&
+    window.ScrollTrigger &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
     // For the intersection overflow
     // For to active the menu links
     const sections = document.querySelectorAll("section");
@@ -199,13 +202,12 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    // Hero buttons (staggered)
-    gsap.from("#home .hero-buttons a", {
+    // Animate the action parent so Builder-added buttons remain visible and clone-safe.
+    gsap.from("#home .hero-buttons", {
       opacity: 0,
       y: 20,
       duration: 0.8,
       delay: 0.6,
-      stagger: 0.2,
       ease: "power2.out",
     });
 
@@ -433,7 +435,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     gsap.from(
-      ".download-section .card-title, .download-section .card-text, .download-section .download-button",
+      ".download-section .overlay-of-card-div, .download-section .catalogue-actions",
       {
         opacity: 0,
         y: 30,
@@ -482,7 +484,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Section 8(Footer Section)
     // Logo + Info Animation
     gsap.from(
-      ".footer-section .navbar-brand-name, .footer-section .footer-para, .footer-section .footer-get-a-quote",
+      ".footer-section .navbar-brand-name, .footer-section .footer-para, .footer-section .footer-actions",
       {
         opacity: 0,
         x: -60,

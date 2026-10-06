@@ -4,6 +4,9 @@ const navLinks = document.getElementById("navLinks");
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");
+  const isOpen = navLinks.classList.contains("active");
+  hamburger.setAttribute("aria-expanded", String(isOpen));
+  hamburger.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
 });
 
 // Close nav when any link inside navLinks is clicked
@@ -11,6 +14,8 @@ document.querySelectorAll("#navLinks a").forEach((link) => {
   link.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navLinks.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Open navigation menu");
   });
 });
 
@@ -19,6 +24,8 @@ document.addEventListener("click", (event) => {
   if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
     hamburger.classList.remove("active");
     navLinks.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Open navigation menu");
   }
 });
 
@@ -50,6 +57,11 @@ donationButtons.forEach((button) => {
 // For the floating button
 // Floating button js
 const btn = document.querySelector(".floating-btn");
+btn.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 // Show/hide button on scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 10) {
@@ -130,7 +142,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Contact button (desktop)
     tl.fromTo(
-      ".navbar-section .social-icons .btn-custom",
+      ".navbar-section .navbar-actions .btn-custom",
       {
         scale: 0.7,
         opacity: 0,
@@ -586,23 +598,9 @@ window.addEventListener("DOMContentLoaded", () => {
       "-=0.45"
     );
 
-    // Button parts (shoot-mess + yellow-box-age)
-    tlGetStarted.fromTo(
-      ".get-started-section .message-btn .shoot-mess",
-      { y: 6, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.35 },
-      "-=0.25"
-    );
-    tlGetStarted.fromTo(
-      ".get-started-section .message-btn .yellow-box-age",
-      { scale: 0.6, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.35 },
-      "-=0.32"
-    );
-
     // Footer brand name
     tlGetStarted.fromTo(
-      ".get-started-section .brand-name",
+      ".get-started-section .footer-brand-logo",
       { y: 20, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5 },
       "-=0.3"

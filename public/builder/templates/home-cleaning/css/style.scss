@@ -1,18 +1,19 @@
+:root {
+  --primary-colors: #2f5247;
+  --secondary-colors: #1a174f;
+  --territory-colors: #fede27;
+  --primary-soft: color-mix(in srgb, var(--primary-colors) 8%, white);
+  --surface-white: #fefefe;
+  --surface-muted: #f5f5f5;
+  --text-muted: rgba(33, 37, 41, 0.75);
+}
+
 /* ==========================
    THEME VARIABLES & SETUP
    ========================== */
-// :root {
-//   /* Defining defaults for local development.
-//        The builder will override these variables.
-//     */
-//   --primary-colors: #1020ac; /* Replaces $darkGreen */
-//   --secondary-colors: #212529bf; /* Replaces $textMutedColor */
-//   --territory-colors: #ceb215; /* Replaces $yellowColor */
-// }
-
 body {
   overflow-x: hidden;
-  background-color: var(--primary-colors, #fefefe);
+  background-color: var(--surface-white, #fefefe);
   color: var(--secondary-colors, #333);
   font-family: sans-serif; /* Define a base font */
 }
@@ -23,7 +24,7 @@ body {
 }
 
 .text-secondary-theme {
-  color: var(--secondary-colors, #212529bf);
+  color: var(--text-muted, rgba(33, 37, 41, 0.75));
 }
 
 .text-territory-theme {
@@ -43,7 +44,6 @@ section {
 /* ==========================
      COMPONENTS
      ========================== */
-
 /* Hamburger */
 .hamburger {
   z-index: 1051;
@@ -75,21 +75,20 @@ section {
   border-radius: 0px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  &:hover {
-    opacity: 0.9;
-    // box-shadow: 0 0 15px var(--primary-colors, #2f5247);
-    transform: scale(1.03);
-    border: 1px solid var(--primary-colors, #2f5247);
-    color: var(--primary-colors, #2f5247);
-  }
+}
+.btn-darkgreen:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+  border: 1px solid var(--primary-colors, #2f5247);
+  color: var(--primary-colors, #2f5247);
 }
 
 .navbar-color {
-  background-color: var(--secondary-colors, #fefefe);
+  background-color: var(--surface-white, #fefefe);
 }
 
-.navbar-menu-div a {
-  @media (max-width: 991.98px) {
+@media (max-width: 991.98px) {
+  .navbar-menu-div a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,12 +120,12 @@ section {
 }
 
 .nav-link:hover {
-  color: #1a174f; /* Fixed color kept as requested or should be var? Keeping fixed for contrast */
+  color: var(--secondary-colors, #1a174f);
 }
 
 @media (min-width: 991.98px) {
   .nav-link.active {
-    color: #1a174f;
+    color: var(--secondary-colors, #1a174f);
     font-weight: 700;
   }
   .nav-link.active::after {
@@ -134,24 +133,26 @@ section {
     background-color: currentColor;
   }
 }
-
 /* ==========================
      SECTIONS
      ========================== */
-
 /* Hero Section */
 .hero-section {
   /* Ensure alignment without using bootstrap align-items on section directly if possible, 
        but constraints usually apply to padding/margin. */
-  @media (max-width: 991.98px) {
+}
+@media (max-width: 991.98px) {
+  .hero-section {
     text-align: center;
   }
 }
 
 .hero-section-heading {
   font-size: clamp(2.5rem, 5vw, 5rem);
-  color: #1a174f;
-  @media (max-width: 991.98px) {
+  color: var(--secondary-colors, #1a174f);
+}
+@media (max-width: 991.98px) {
+  .hero-section-heading {
     text-align: center;
   }
 }
@@ -160,7 +161,9 @@ section {
   letter-spacing: 2px;
   font-weight: 700;
   color: var(--primary-colors, #2f5247);
-  @media (max-width: 991.98px) {
+}
+@media (max-width: 991.98px) {
+  .each-section-name {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,8 +173,10 @@ section {
 
 .each-section-para {
   font-size: clamp(1rem, 5vw, 1.3rem);
-  color: var(--secondary-colors, #212529bf);
-  @media (max-width: 991.98px) {
+  color: var(--secondary-colors, rgba(33, 37, 41, 0.7490196078));
+}
+@media (max-width: 991.98px) {
+  .each-section-para {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -234,17 +239,17 @@ section {
 
 /* Stats Section */
 .stats-section {
-  background-color: var(--secondary-colors, #f5f5f5);
+  background-color: var(--surface-muted, #f5f5f5);
 }
 
 .text-navy {
-  color: #1b1742;
+  color: var(--secondary-colors, #1a174f);
   font-weight: 500;
 }
 
 /* About Section */
-.about-section {
-  @media (max-width: 991.98px) {
+@media (max-width: 991.98px) {
+  .about-section {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -252,7 +257,7 @@ section {
 }
 
 .each-section-heading {
-  color: #1a174f;
+  color: var(--secondary-colors, #1a174f);
   font-size: clamp(2em, 5vw, 3em);
 }
 
@@ -266,13 +271,13 @@ section {
 .process-section {
   background-color: var(--primary-colors, #2f5247);
   color: #fff;
-  .each-section-name {
-    color: #fff;
-    font-weight: 500;
-  }
-  .each-section-heading {
-    color: #fff;
-  }
+}
+.process-section .each-section-name {
+  color: #fff;
+  font-weight: 500;
+}
+.process-section .each-section-heading {
+  color: #fff;
 }
 
 .step {
@@ -285,13 +290,14 @@ section {
 
 .step-icon {
   width: 80px;
-  height: 80px;
+  min-height: 80px;
+  height: auto;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a174f;
+  color: var(--secondary-colors, #1a174f);
   font-size: 32px;
 }
 
@@ -311,25 +317,22 @@ section {
     margin: 1rem 0;
   }
 }
-
 @media (max-width: 483.98px) {
   .divider-line {
     display: none;
   }
 }
-
 /* Services Section */
 .our-services-section {
-  background-color: var(--primary-colors, #fefefe);
-  .our-services-learnmore-btn {
-    text-decoration: none;
-    color: #2f5247;
-  }
-
-  @media (max-width: 991.98px) {
-    .each-section-heading {
-      text-align: center;
-    }
+  background-color: var(--surface-white, #fefefe);
+}
+.our-services-section .our-services-learnmore-btn {
+  text-decoration: none;
+  color: var(--primary-colors, #2f5247);
+}
+@media (max-width: 991.98px) {
+  .our-services-section .each-section-heading {
+    text-align: center;
   }
 }
 
@@ -348,13 +351,13 @@ section {
   position: absolute;
   top: 0%;
   right: 0;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 /* Why Choose Us */
 .why-choose-us-image-div img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 3/4;
 }
 
@@ -371,7 +374,7 @@ section {
 
 /* Pricing */
 .section7 {
-  background-color: var(--secondary-colors, #f5f5f5);
+  background-color: var(--surface-muted, #f5f5f5);
 }
 
 .plans-card {
@@ -379,20 +382,18 @@ section {
 }
 
 .basic-plan-card {
-  background-color: var(--primary-colors, #fefefe);
+  background-color: transparent;
 }
 
 .basic-plan-card .card-content-divider {
-  border: 1px solid var(--secondary-colors, #212529bf);
+  border: 1px solid var(--secondary-colors, rgba(33, 37, 41, 0.7490196078));
 }
 
 .pro-plan-card {
   background-color: var(--primary-colors, #2f5247);
-  .each-section-name {
-    p {
-      color: #fff;
-    }
-  }
+}
+.pro-plan-card .each-section-name p {
+  color: #fff;
 }
 
 .pro-plan-card .card-body {
@@ -412,37 +413,36 @@ section {
   background-color: var(--territory-colors, #fede27);
   color: var(--primary-colors, #2f5247);
   font-weight: 500;
-  border: 1px solid #fede27;
-  &:hover {
-    border: 1px solid var(--territory-colors, #fede27);
-    color: var(--territory-colors, #fede27);
-  }
+  border: 1px solid var(--territory-colors, #fede27);
+}
+.pro-plan-card-button:hover {
+  border: 1px solid var(--territory-colors, #fede27);
+  color: var(--territory-colors, #fede27);
 }
 
-.deluxe-plan-card,
-.basic-plan-card {
-  .pro-plan-card-button {
-    background-color: var(--territory-colors, #fede27);
-    color: var(--primary-colors, #2f5247);
-    font-weight: 500;
-    border: none;
-    &:hover {
-      border: 1px solid var(--primary-colors, #2f5247);
-      background-color: var(--primary-colors, #2f5247);
-      color: var(--territory-colors, #fede27);
-    }
-  }
+.deluxe-plan-card .pro-plan-card-button,
+.basic-plan-card .pro-plan-card-button {
+  background-color: var(--territory-colors, #fede27);
+  color: var(--primary-colors, #2f5247);
+  font-weight: 500;
+  border: none;
+}
+.deluxe-plan-card .pro-plan-card-button:hover,
+.basic-plan-card .pro-plan-card-button:hover {
+  border: 1px solid var(--primary-colors, #2f5247);
+  background-color: var(--primary-colors, #2f5247);
+  color: var(--territory-colors, #fede27);
 }
 
 /* FAQ */
 .section8 {
-  background-color: var(--primary-colors, #fefefe);
+  background-color: var(--surface-white, #fefefe);
   padding-top: 60px;
   padding-bottom: 0;
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--primary-colors, #fefefe);
+  background-color: var(--surface-white, #fefefe);
   color: var(--primary-colors, #2f5247);
   border-bottom: none;
   box-shadow: none;
@@ -464,17 +464,17 @@ section {
 
 /* Contact Us */
 .contact-section {
-  background-color: var(--secondary-colors, #f5f5f5);
+  background-color: var(--surface-muted, #f5f5f5);
 }
 
 .contact-info li {
   margin-bottom: 15px;
   list-style: none;
-  color: var(--secondary-colors, #212529bf);
+  color: var(--text-muted, rgba(33, 37, 41, 0.75));
   display: block;
-  i {
-    margin-right: 0.5rem;
-  }
+}
+.contact-info li i {
+  margin-right: 0.5rem;
 }
 
 .contact-form input,
@@ -513,8 +513,9 @@ section {
 }
 
 .footer .bottom-bar {
-  border-top: 1px solid #ffffff33;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 @media (max-width: 575.98px) {
   .footer-logo-div {
     justify-content: center;
@@ -526,7 +527,6 @@ section {
     justify-content: center;
   }
 }
-
 .footer-outer .list-unstyled a {
   display: block;
   padding-top: 4px;
@@ -536,74 +536,94 @@ section {
 .p-0-style {
   padding: 0;
 }
+
 .p-1-style {
   padding: 0.25rem;
 }
+
 .p-2-style {
   padding: 0.5rem;
 }
+
 .p-3-style {
   padding: 1rem;
 }
+
 .p-4-style {
   padding: 1.5rem;
 }
+
 .p-5-style {
   padding: 3rem;
 }
+
 .py-1-style {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
+
 .py-2-style {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
 .py-3-style {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .py-4-style {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
 .py-5-style {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
 .px-auto-style {
   padding-left: auto;
   padding-right: auto;
 }
+
 .px-1-style {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+
 .px-2-style {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
 .px-3-style {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .px-4-style {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+
 .px-5-style {
   padding-left: 3rem;
   padding-right: 3rem;
 }
+
 .pb-5-style {
   padding-bottom: 3rem;
 }
+
 .pt-1-style {
   padding-top: 0.25rem;
 }
+
 .pt-2-style {
   padding-top: 0.5rem;
 }
+
 .pt-3-style {
   padding-top: 1rem;
 }
@@ -629,7 +649,6 @@ section {
   .p-sm-5-style {
     padding: 3rem;
   }
-
   /* Vertical padding (Top and Bottom) */
   .py-sm-1-style {
     padding-top: 0.25rem;
@@ -651,7 +670,6 @@ section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
   /* Horizontal padding (Left and Right/Start and End) */
   .px-sm-1-style {
     padding-left: 0.25rem;
@@ -738,14 +756,12 @@ section {
   }
 }
 @media (min-width: 992px) {
-  // Display flex properties
   .justify-content-lg-end-style {
     justify-content: end;
   }
   .justify-content-lg-start-style {
     justify-content: start;
   }
-
   /* All-sides padding */
   .p-lg-1-style {
     padding: 0.25rem;
@@ -762,7 +778,6 @@ section {
   .p-lg-5-style {
     padding: 3rem;
   }
-
   /* Vertical padding (Top and Bottom) */
   .py-lg-1-style {
     padding-top: 0.25rem;
@@ -784,7 +799,6 @@ section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
   /* Horizontal padding (Left and Right/Start and End) */
   .px-lg-1-style {
     padding-left: 0.25rem;
@@ -827,7 +841,6 @@ section {
   .p-xl-5-style {
     padding: 3rem;
   }
-
   /* Vertical padding (Top and Bottom) */
   .py-xl-1-style {
     padding-top: 0.25rem;
@@ -849,7 +862,6 @@ section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
   /* Horizontal padding (Left and Right/Start and End) */
   .px-xl-1-style {
     padding-left: 0.25rem;
@@ -889,7 +901,6 @@ section {
   .p-xxl-5-style {
     padding: 3rem;
   }
-
   /* Vertical padding (Top and Bottom) */
   .py-xxl-1-style {
     padding-top: 0.25rem;
@@ -911,7 +922,6 @@ section {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
   /* Horizontal padding (Left and Right/Start and End) */
   .px-xxl-1-style {
     padding-left: 0.25rem;
@@ -934,7 +944,6 @@ section {
     padding-right: 3rem;
   }
 }
-
 .display-6-style {
   font-size: calc(1.375rem + 1.5vw);
   font-weight: 300;
@@ -944,24 +953,31 @@ section {
 .fw-semibold-style {
   font-weight: 600;
 }
+
 .small-style {
   font-size: 0.875em;
 }
+
 .fs-1-style {
   font-size: calc(1.375rem + 1.5vw);
 }
+
 .fs-2-style {
   font-size: calc(1.325rem + 0.9vw);
 }
+
 .fs-3-style {
   font-size: calc(1.3rem + 0.6vw);
 }
+
 .fs-4-style {
   font-size: calc(1.275rem + 0.3vw);
 }
+
 .fs-5-style {
   font-size: 1.25rem;
 }
+
 .fs-6-style {
   font-size: 1rem;
 }
@@ -969,15 +985,18 @@ section {
 .bg-dark-style {
   background: #212529;
 }
+
 .text-dark-style {
   color: #212529;
 }
+
 .text-white-style {
   color: #fff;
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .mx-auto-style {
@@ -990,43 +1009,50 @@ img {
   opacity: 0.5;
 }
 
-// All-sides margin
 .m-0-style {
   margin: 0;
 }
+
 .m-1-style {
   margin: 0.25rem;
 }
+
 .m-2-style {
   margin: 0.5rem;
 }
+
 .m-3-style {
   margin: 1rem;
 }
+
 .m-4-style {
   margin: 1.5rem;
 }
+
 .m-5-style {
   margin: 3rem;
 }
 
-// Vertical margin (Top and Bottom)
 .my-1-style {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+
 .my-2-style {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .my-3-style {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
 .my-4-style {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+
 .my-5-style {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -1037,113 +1063,135 @@ img {
   padding-bottom: auto;
 }
 
-// Horizontal margin (Left and Right)
 .mx-1-style {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+
 .mx-2-style {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+
 .mx-3-style {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
 .mx-4-style {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
 .mx-5-style {
   margin-left: 3rem;
   margin-right: 3rem;
 }
 
-// Single-side margin (Top)
 .mt-1-style {
   margin-top: 0.25rem;
 }
+
 .mt-2-style {
   margin-top: 0.5rem;
 }
+
 .mt-3-style {
   margin-top: 1rem;
 }
+
 .mt-4-style {
   margin-top: 1.5rem;
 }
+
 .mt-5-style {
   margin-top: 3rem;
 }
+
 .mt-auto-style {
   margin-top: auto;
 }
 
-// Single-side margin (Bottom)
 .mb-0-style {
   margin-bottom: 0;
 }
+
 .mb-1-style {
   margin-bottom: 0.25rem;
 }
+
 .mb-2-style {
   margin-bottom: 0.5rem;
 }
+
 .mb-3-style {
   margin-bottom: 1rem;
 }
+
 .mb-4-style {
   margin-bottom: 1.5rem;
 }
+
 .mb-5-style {
   margin-bottom: 3rem;
 }
 
-// Single-side margin (Left/Start)
 .ms-1-style {
   margin-left: 0.25rem;
 }
+
 .ms-2-style {
   margin-left: 0.5rem;
 }
+
 .ms-3-style {
   margin-left: 1rem;
 }
+
 .ms-4-style {
   margin-left: 1.5rem;
 }
+
 .ms-5-style {
   margin-left: 3rem;
 }
 
-// Single-side margin (Right/End)
 .me-1-style {
   margin-right: 0.25rem;
 }
+
 .me-2-style {
   margin-right: 0.5rem;
 }
+
 .me-3-style {
   margin-right: 1rem;
 }
+
 .me-4-style {
   margin-right: 1.5rem;
 }
+
 .me-5-style {
   margin-right: 3rem;
 }
+
 .fw-bold-style {
   font-weight: 700;
 }
+
 .text-start-style {
   text-align: start;
 }
+
 .text-center-style {
   text-align: center;
 }
+
 .bg-white-style {
   background: #fff;
 }
+
 .align-items-center-style {
   align-items: center;
 }
@@ -1161,7 +1209,6 @@ img {
 }
 
 @media (min-width: 576px) {
-  // All-sides margin
   .m-sm-1-style {
     margin: 0.25rem;
   }
@@ -1177,8 +1224,6 @@ img {
   .m-sm-5-style {
     margin: 3rem;
   }
-
-  // Vertical margin (Top and Bottom)
   .my-sm-1-style {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1199,8 +1244,6 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-
-  // Horizontal margin (Left and Right)
   .mx-sm-1-style {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1221,8 +1264,6 @@ img {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  // Single-side margin (Top)
   .mt-sm-1-style {
     margin-top: 0.25rem;
   }
@@ -1238,8 +1279,6 @@ img {
   .mt-sm-5-style {
     margin-top: 3rem;
   }
-
-  // Single-side margin (Bottom)
   .mb-sm-1-style {
     margin-bottom: 0.25rem;
   }
@@ -1255,8 +1294,6 @@ img {
   .mb-sm-5-style {
     margin-bottom: 3rem;
   }
-
-  // Single-side margin (Left/Start)
   .ms-sm-1-style {
     margin-left: 0.25rem;
   }
@@ -1272,8 +1309,6 @@ img {
   .ms-sm-5-style {
     margin-left: 3rem;
   }
-
-  // Single-side margin (Right/End)
   .me-sm-1-style {
     margin-right: 0.25rem;
   }
@@ -1294,7 +1329,6 @@ img {
   .text-md-end-style {
     text-align: end;
   }
-  // All-sides margin
   .m-md-1-style {
     margin: 0.25rem;
   }
@@ -1310,8 +1344,6 @@ img {
   .m-md-5-style {
     margin: 3rem;
   }
-
-  // Vertical margin (Top and Bottom)
   .my-md-1-style {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1332,8 +1364,6 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-
-  // Horizontal margin (Left and Right)
   .mx-md-1-style {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1354,8 +1384,6 @@ img {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  // Single-side margin (Top)
   .mt-md-0-style {
     margin-top: 0;
   }
@@ -1374,11 +1402,9 @@ img {
   .mt-md-5-style {
     margin-top: 3rem;
   }
-
   .mb-md-0-style {
     margin-bottom: 0;
   }
-  // Single-side margin (Bottom)
   .mb-md-1-style {
     margin-bottom: 0.25rem;
   }
@@ -1394,8 +1420,6 @@ img {
   .mb-md-5-style {
     margin-bottom: 3rem;
   }
-
-  // Single-side margin (Left/Start)
   .ms-md-1-style {
     margin-left: 0.25rem;
   }
@@ -1411,8 +1435,6 @@ img {
   .ms-md-5-style {
     margin-left: 3rem;
   }
-
-  // Single-side margin (Right/End)
   .me-md-1-style {
     margin-right: 0.25rem;
   }
@@ -1433,7 +1455,6 @@ img {
   .text-lg-start-style {
     text-align: start;
   }
-  // All-sides margin
   .m-lg-1-style {
     margin: 0.25rem;
   }
@@ -1449,8 +1470,6 @@ img {
   .m-lg-5-style {
     margin: 3rem;
   }
-
-  // Vertical margin (Top and Bottom)
   .my-lg-1-style {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1471,8 +1490,6 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-
-  // Horizontal margin (Left and Right)
   .mx-lg-1-style {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1493,8 +1510,6 @@ img {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  // Single-side margin (Top)
   .mt-lg-1-style {
     margin-top: 0.25rem;
   }
@@ -1510,8 +1525,6 @@ img {
   .mt-lg-5-style {
     margin-top: 3rem;
   }
-
-  // Single-side margin (Bottom)
   .mb-lg-0-style {
     margin-bottom: 0;
   }
@@ -1530,12 +1543,9 @@ img {
   .mb-lg-5-style {
     margin-bottom: 3rem;
   }
-
-  // Single-side margin (Left/Start)
   .ms-lg-0-style {
     margin-left: 0;
   }
-
   .ms-lg-1-style {
     margin-left: 0.25rem;
   }
@@ -1551,8 +1561,6 @@ img {
   .ms-lg-5-style {
     margin-left: 3rem;
   }
-
-  // Single-side margin (Right/End)
   .me-lg-1-style {
     margin-right: 0.25rem;
   }
@@ -1570,7 +1578,6 @@ img {
   }
 }
 @media (min-width: 1200px) {
-  // All-sides margin
   .m-xl-1-style {
     margin: 0.25rem;
   }
@@ -1586,8 +1593,6 @@ img {
   .m-xl-5-style {
     margin: 3rem;
   }
-
-  // Vertical margin (Top and Bottom)
   .my-xl-1-style {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1608,8 +1613,6 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-
-  // Horizontal margin (Left and Right)
   .mx-xl-1-style {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1630,8 +1633,6 @@ img {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  // Single-side margin (Top)
   .mt-xl-1-style {
     margin-top: 0.25rem;
   }
@@ -1647,8 +1648,6 @@ img {
   .mt-xl-5-style {
     margin-top: 3rem;
   }
-
-  // Single-side margin (Bottom)
   .mb-xl-1-style {
     margin-bottom: 0.25rem;
   }
@@ -1664,8 +1663,6 @@ img {
   .mb-xl-5-style {
     margin-bottom: 3rem;
   }
-
-  // Single-side margin (Left/Start)
   .ms-xl-1-style {
     margin-left: 0.25rem;
   }
@@ -1681,8 +1678,6 @@ img {
   .ms-xl-5-style {
     margin-left: 3rem;
   }
-
-  // Single-side margin (Right/End)
   .me-xl-1-style {
     margin-right: 0.25rem;
   }
@@ -1700,7 +1695,6 @@ img {
   }
 }
 @media (min-width: 1400px) {
-  // All-sides margin
   .m-xxl-1-style {
     margin: 0.25rem;
   }
@@ -1716,8 +1710,6 @@ img {
   .m-xxl-5-style {
     margin: 3rem;
   }
-
-  // Vertical margin (Top and Bottom)
   .my-xxl-1-style {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
@@ -1738,8 +1730,6 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-
-  // Horizontal margin (Left and Right)
   .mx-xxl-1-style {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -1760,8 +1750,6 @@ img {
     margin-left: 3rem;
     margin-right: 3rem;
   }
-
-  // Single-side margin (Top)
   .mt-xxl-1-style {
     margin-top: 0.25rem;
   }
@@ -1777,8 +1765,6 @@ img {
   .mt-xxl-5-style {
     margin-top: 3rem;
   }
-
-  // Single-side margin (Bottom)
   .mb-xxl-1-style {
     margin-bottom: 0.25rem;
   }
@@ -1794,8 +1780,6 @@ img {
   .mb-xxl-5-style {
     margin-bottom: 3rem;
   }
-
-  // Single-side margin (Left/Start)
   .ms-xxl-1-style {
     margin-left: 0.25rem;
   }
@@ -1811,8 +1795,6 @@ img {
   .ms-xxl-5-style {
     margin-left: 3rem;
   }
-
-  // Single-side margin (Right/End)
   .me-xxl-1-style {
     margin-right: 0.25rem;
   }
@@ -1844,7 +1826,8 @@ img {
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
   max-height: 100%;
 }
@@ -1855,11 +1838,11 @@ section {
 }
 
 .navbar-animate {
-  background-color: var(--secondary-colors, #fff);
+  background-color:  #fff;
 }
 
 .navbar-nav {
-  background-color: var(--secondary-colors, #fff);
+  background-color: #fff;
 }
 
 @media (max-width: 575.98px) {
@@ -1867,77 +1850,77 @@ section {
     margin-top: 24px;
   }
 }
-
-.section7 {
-  @media (max-width: 991.98px) {
-    .each-section-heading {
-      text-align: center;
-    }
-  }
-}
-
-.contact-section {
-  @media (max-width: 991.98px) {
-    .contactus-section-heading {
-      text-align: center;
-    }
+@media (max-width: 991.98px) {
+  .section7 .each-section-heading {
+    text-align: center;
   }
 }
 
 @media (max-width: 991.98px) {
-  .div-150,
-  .div-300 {
-    h3,
-    p {
-      text-align: center;
-    }
+  .contact-section .contactus-section-heading {
+    text-align: center;
   }
 }
 
-.why-choose-us-section {
-  .each-section-heading {
+@media (max-width: 991.98px) {
+  .div-150 h3,
+  .div-150 p,
+  .div-300 h3,
+  .div-300 p {
     text-align: center;
   }
-  @media (min-width: 991.98px) {
-    .each-section-heading {
-      text-align: start;
-      justify-content: start;
-    }
+}
+.why-choose-us-section .each-section-heading {
+  text-align: center;
+}
+@media (min-width: 991.98px) {
+  .why-choose-us-section .each-section-heading {
+    text-align: start;
+    justify-content: start;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .about-section-stats-section {
+    margin-inline: 0;
   }
 }
 
 @media (max-width: 575.98px) {
+  .about-section > .container > .row {
+    --bs-gutter-x: 1.5rem;
+  }
+
   .feature-card {
     display: flex;
     flex-direction: column;
-    .icon-container,
-    .feature-card-sub-div {
-      margin-left: auto;
-      margin-right: auto;
-      h6,
-      p {
-        text-align: center;
-      }
-    }
+  }
+  .feature-card .icon-container,
+  .feature-card .feature-card-sub-div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feature-card .icon-container h6,
+  .feature-card .icon-container p,
+  .feature-card .feature-card-sub-div h6,
+  .feature-card .feature-card-sub-div p {
+    text-align: center;
   }
 }
-
-.our-services-section {
-  .each-section-heading {
-    text-align: center;
-    justify-content: center;
+.our-services-section .each-section-heading {
+  text-align: center;
+  justify-content: center;
+}
+.our-services-section .each-section-para {
+  text-align: center;
+}
+@media (min-width: 991.98px) {
+  .our-services-section .each-section-heading {
+    text-align: start;
+    justify-content: start;
   }
-  .each-section-para {
-    text-align: center;
-  }
-  @media (min-width: 991.98px) {
-    .each-section-heading {
-      text-align: start;
-      justify-content: start;
-    }
-    .each-section-para {
-      text-align: start;
-    }
+  .our-services-section .each-section-para {
+    text-align: start;
   }
 }
 
@@ -1952,4 +1935,393 @@ textarea {
 
 div[form-question-zigrow] {
   margin-bottom: 1rem;
+}
+
+/* Zigrow Builder compatibility layer */
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.section-header {
+  margin-block-end: 2rem;
+}
+
+.four-point-star,
+.plan-feature-icon {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.four-point-star > i,
+.plan-feature-icon > i {
+  flex: 0 0 auto;
+}
+
+.justify-content-between-style { justify-content: space-between; }
+.justify-content-around-style { justify-content: space-around; }
+.pb-2-style { padding-bottom: 0.5rem; }
+.ps-0-style { padding-left: 0; }
+.px-0-style { padding-left: 0; padding-right: 0; }
+
+@media (min-width: 768px) {
+  .text-md-start-style { text-align: left; }
+}
+
+@media (min-width: 992px) {
+  .ps-lg-5-style { padding-left: 3rem; }
+}
+
+.zg-align-center,
+.navbar-actions,
+.hero-actions,
+.about-actions,
+.services-actions,
+.pricing-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.brand-logo,
+.footer-brand-logo {
+  color: var(--secondary-colors, #1a174f);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.navbar .brand-logo,
+.navbar .brand-logo:hover,
+.navbar .brand-logo:focus-visible {
+  color: #111010;
+}
+
+.navbar .hamburger-inner,
+.navbar .hamburger-inner::before,
+.navbar .hamburger-inner::after {
+  background-color: #181717;
+}
+
+.navbar .hamburger.is-active .hamburger-inner,
+.navbar .hamburger.is-active .hamburger-inner::before,
+.navbar .hamburger.is-active .hamburger-inner::after {
+  background-color: #171616;
+}
+
+.footer-brand-logo,
+.footer-brand-logo:hover,
+.footer-brand-logo:focus-visible {
+  color: #fff;
+}
+
+.navbar-menu-div {
+  gap: 1.5rem;
+}
+
+.navbar-actions {
+  margin-inline-start: auto;
+}
+
+@media (min-width: 1600px) {
+  .navbar > .container {
+    max-width: 1645px;
+  }
+}
+
+[data-btn],
+[data-btn]:hover,
+[data-btn]:focus-visible,
+[data-btn]:active,
+[data-btn]:visited {
+  text-decoration: none;
+}
+
+.btn-darkgreen:hover,
+.btn-darkgreen:focus-visible,
+.btn-darkgreen:active {
+  background-color: #fff;
+  color: var(--primary-colors, #2f5247);
+  border-color: var(--primary-colors, #2f5247);
+}
+
+.btn-darkgreen:focus-visible {
+  outline: 3px solid var(--secondary-colors, #1a174f);
+  outline-offset: 3px;
+}
+
+.hero-actions,
+.about-actions {
+  margin-block-start: 1.5rem;
+}
+
+.services-actions {
+  justify-content: flex-start;
+  margin-block-start: 1rem;
+}
+
+.pricing-actions {
+  margin-block-start: 1.5rem;
+}
+
+.pricing-actions > [data-btn]:only-child {
+  width: 100%;
+}
+
+.floating-btn,
+.social-icons,
+.step-icon,
+.service-icon-symbol,
+.star-overlay,
+.feature-icon-symbol,
+.plan-name-icon,
+.contact-info-icon,
+.footer-contact-icon,
+.section-label-icon,
+.bi-stars-of-hero-section,
+.star-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.floating-btn,
+.step-icon,
+.service-icon-symbol,
+.feature-icon-symbol,
+.plan-name-icon,
+.contact-info-icon,
+.footer-contact-icon,
+.section-label-icon,
+.bi-stars-of-hero-section {
+  justify-content: center;
+}
+
+.floating-btn > i,
+.social-icons > i,
+.social-icons > a,
+.step-icon > i,
+.service-icon-symbol > i,
+.star-overlay > i,
+.feature-icon-symbol > i,
+.plan-name-icon > i,
+.contact-info-icon > i,
+.footer-contact-icon > i,
+.section-label-icon > i,
+.bi-stars-of-hero-section > i,
+.star-div > i {
+  flex: 0 0 auto;
+}
+
+.bi-stars-of-hero-section {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  width: fit-content;
+}
+
+.plan-name-icon,
+.section-label-icon {
+  display: inline-flex;
+}
+
+.clonable-card {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.services-grid > .service-card-column {
+  padding: 16px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.plans-card {
+  max-width: none;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.plans-card > .card-body {
+  height: 100%;
+  border-radius: 1rem;
+  background-color: var(--surface-white, #fefefe);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.06);
+}
+
+.pro-plan-card > .card-body {
+  background-color: var(--primary-colors, #2f5247);
+  color: #fff;
+}
+
+.pro-plan-card > .card-body .each-section-name,
+.pro-plan-card > .card-body .each-card-para,
+.pro-plan-card > .card-body li,
+.pro-plan-card > .card-body h3 {
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--surface-white, #fefefe);
+}
+
+.contact-section {
+  background-color: var(--surface-muted, #f5f5f5);
+}
+
+.contact-info {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  color: var(--text-muted, rgba(33, 37, 41, 0.75));
+}
+
+.contact-info a {
+  color: inherit;
+}
+
+form[data-zigrow-form] {
+  display: grid;
+  gap: 1rem;
+}
+
+form[data-zigrow-form] [form-question-zigrow] {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+}
+
+form[data-zigrow-form] input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="submit"]),
+form[data-zigrow-form] select,
+form[data-zigrow-form] textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 15px;
+  background-color: #fff;
+  color: var(--secondary-colors, #1a174f);
+}
+
+form[data-zigrow-form] textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+form[data-zigrow-form] input:focus-visible,
+form[data-zigrow-form] select:focus-visible,
+form[data-zigrow-form] textarea:focus-visible {
+  outline: 3px solid var(--primary-colors, #2f5247);
+  outline-offset: 2px;
+}
+
+form[data-zigrow-form] > button[type="submit"] {
+  width: 100%;
+  margin-block-start: 1rem;
+}
+
+form[data-zigrow-form] input[type="checkbox"],
+form[data-zigrow-form] input[type="radio"] {
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.form-submit-message {
+  min-height: 1.5rem;
+  color: var(--secondary-colors, #1a174f);
+}
+
+.form-submit-message[data-status="success"] { color: #176b32; }
+.form-submit-message[data-status="error"] { color: #a52020; }
+
+.footer-contact-icon {
+  display: inline-flex;
+  margin-inline-end: 0.5rem;
+}
+
+.footer-policy-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.powered-by-zigrow-row {
+  margin-block-start: 1rem;
+  padding-block-start: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+}
+
+.powered-by-zigrow-row a {
+  color: #fff;
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .hero-actions,
+  .about-actions {
+    justify-content: center;
+  }
+
+  .navbar-actions {
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0 0;
+  }
+
+  .navbar-actions > [data-btn] {
+    width: 100%;
+  }
+
+  .services-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer-policy-links { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
 }

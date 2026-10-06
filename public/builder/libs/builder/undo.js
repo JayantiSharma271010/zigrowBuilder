@@ -84,10 +84,6 @@ function refreshSwiperUI(element) {
     !swiperContainer.swiper.destroyed
   ) {
     swiperContainer.swiper.update();
-
-    swiperContainer.swiper.pagination?.render?.();
-    swiperContainer.swiper.pagination?.update?.();
-    swiperContainer.swiper.navigation?.update?.();
   }
 }
 

@@ -9,6 +9,7 @@ const words = [
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function type() {
   const current = words[wordIndex];
@@ -29,4 +30,12 @@ function type() {
   setTimeout(type, isDeleting ? 50 : 80);
 }
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("DOMContentLoaded", () => {
+  if (prefersReducedMotion) {
+    el.textContent = words[0];
+    cursor.hidden = true;
+    return;
+  }
+
+  type();
+});

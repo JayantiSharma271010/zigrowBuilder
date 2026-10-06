@@ -87,7 +87,7 @@ window.addEventListener("scroll", () => {
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
   });
 });
 
@@ -110,7 +110,7 @@ backToTopBtn.addEventListener("click", () => {
     if (isSticky) return;
     nav.classList.add("sticky-navbar"); // your CSS controls fixed styles
     spacer = document.createElement("div");
-    spacer.style.height = nav.offsetHeight + "px";
+    spacer.className = "navbar-spacer";
     nav.after(spacer);
     isSticky = true;
   };
@@ -128,12 +128,7 @@ backToTopBtn.addEventListener("click", () => {
     else if (isSticky && y < STICKY_OFF) removeSticky();
   };
 
-  const onResize = () => {
-    if (isSticky && spacer) spacer.style.height = nav.offsetHeight + "px";
-  };
-
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onResize);
 
   // run once on load in case page opens mid-scroll
   onScroll();
@@ -194,6 +189,7 @@ document.addEventListener('click', function (event) {
 /* -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
   const toggler = document.querySelector(".navbar-toggler");
+  if (!toggler) return;
 
   toggler.addEventListener("click", function () {
     toggler.classList.toggle("is-active");
@@ -275,7 +271,7 @@ window.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out"
       });
 
-      gsap.from("#hero .display-2", {
+      gsap.from("#hero .section-heading", {
         duration: 1,
         opacity: 0,
         y: -30,
@@ -303,7 +299,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //? About section (triggered on scroll)
     const about = document.querySelector("#about-1");
     if (about) {
-      gsap.from("#about-1 .display-2", {
+      gsap.from("#about-1 .section-heading", {
         scrollTrigger: {
           trigger: "#about-1",
           start: "top 80%", // Trigger when top of section hits 80% of viewport
@@ -370,7 +366,7 @@ const service = document.querySelector("#service-1");
 
 if (service) {
   // Animate heading
-  gsap.from("#service-1 .display-2", {
+  gsap.from("#service-1 .section-heading", {
     scrollTrigger: {
       trigger: "#service-1",
       start: "top 80%",
@@ -402,7 +398,7 @@ const about2 = document.querySelector("#about-2");
 
 if (about2) {
   // Heading
-  gsap.from("#about-2 .display-2", {
+  gsap.from("#about-2 .section-heading", {
     scrollTrigger: {
       trigger: "#about-2",
       start: "top 80%",
@@ -461,7 +457,7 @@ const testimonials = document.querySelector("#testimonials");
 
 if (testimonials) {
   // Animate heading
-  gsap.from("#testimonials .display-2", {
+  gsap.from("#testimonials .section-heading", {
     scrollTrigger: {
       trigger: "#testimonials",
       start: "top 80%",
@@ -493,7 +489,7 @@ const service2 = document.querySelector("#service-2");
 
 if (service2) {
   // Animate heading
-  gsap.from("#service-2 .display-2", {
+  gsap.from("#service-2 .section-heading", {
     scrollTrigger: {
       trigger: "#service-2",
       start: "top 80%",
@@ -525,7 +521,7 @@ const contactForm = document.querySelector("#contact-form");
 
 if (contactForm) {
   // Animate heading
-  gsap.from("#contact-form .display-2", {
+  gsap.from("#contact-form .section-heading", {
     scrollTrigger: {
       trigger: "#contact-form",
       start: "top 80%",
@@ -583,7 +579,7 @@ const faq = document.querySelector("#faq");
 
 if (faq) {
   // Animate heading
-  gsap.from("#faq .display-2", {
+  gsap.from("#faq .section-heading", {
     scrollTrigger: {
       trigger: "#faq",
       start: "top 80%",
@@ -613,3 +609,97 @@ if (faq) {
 
   }
 });
+
+/* -------------------------------------------------------------------------- */
+/*                       Zigrow multi-form submission                        */
+/* -------------------------------------------------------------------------- */
+(function () {
+  const forms = Array.from(document.querySelectorAll("form[data-zigrow-form]"));
+  if (!forms.length) return;
+
+  function serializeForm(form) {
+    const formData = new FormData(form);
+    const raw = {};
+    for (const [name, value] of formData.entries()) {
+      const existing = raw[name];
+      if (existing === undefined) raw[name] = value;
+      else if (Array.isArray(existing)) existing.push(value === "" ? true : value);
+      else raw[name] = [existing, value === "" ? true : value];
+    }
+    return raw;
+  }
+
+  function pickPrimaryValue(raw) {
+    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
+    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
+    const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(" ").trim();
+    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
+    if (nameCombo) return nameCombo;
+    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
+    return "";
+  }
+
+  forms.forEach((form) => {
+    const domainInput = form.querySelector('input[name="domain"]');
+    const pageUrlInput = form.querySelector('input[name="page_url"]');
+    if (domainInput) domainInput.value = location.host;
+    if (pageUrlInput) pageUrlInput.value = location.href;
+
+    let message = form.querySelector(".form-submit-message");
+    if (!message) {
+      message = document.createElement("div");
+      message.className = "form-submit-message";
+      message.setAttribute("role", "status");
+      message.setAttribute("aria-live", "polite");
+      form.appendChild(message);
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = form.querySelector(':scope > [type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.dataset.oldText = submitButton.textContent || "";
+        submitButton.textContent = "Submitting...";
+      }
+      message.textContent = "";
+      message.removeAttribute("data-status");
+
+      try {
+        const raw = serializeForm(form);
+        const body = new URLSearchParams();
+        body.set("domain", form.querySelector('input[name="domain"]')?.value || location.host);
+        body.set("form_key", form.querySelector('input[name="form_key"]')?.value || "contact");
+        body.set("page_url", form.querySelector('input[name="page_url"]')?.value || location.href);
+        body.set("payload", JSON.stringify(raw));
+        const primary = pickPrimaryValue(raw);
+        if (primary) body.set("value", primary);
+        if (raw._company) body.set("_company", raw._company);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && (result.ok ?? true)) {
+          form.reset();
+          message.textContent = "Thanks! Your request has been submitted.";
+          message.dataset.status = "success";
+        } else {
+          message.textContent = result.message || `Failed (HTTP ${response.status})`;
+          message.dataset.status = "error";
+        }
+      } catch (error) {
+        console.error(error);
+        message.textContent = "Something went wrong. Please try again.";
+        message.dataset.status = "error";
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButton.dataset.oldText || "Send";
+        }
+      }
+    });
+  });
+})();

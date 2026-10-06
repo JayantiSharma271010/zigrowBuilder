@@ -21,43 +21,42 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2.13.0-accountant-3" />
   </head>
   <body>
-    <button id="backToTopBtn" class="btn">
+    <button id="backToTopBtn" class="btn back-to-top" type="button" aria-label="Back to top">
       <i class="bi bi-arrow-up" data-icon="arrow"></i>
     </button>
     <!-- Navbar Section -->
-    <header id="navbar" data-section="navbar" class="navbar-wrapper">
+    <header id="header" data-section="header" class="navbar-wrapper">
       <div class="container">
         <nav class="nav-wrapper">
           <!-- Logo -->
-          <div class="logo" data-logo="navbar">
-            <!-- <img src="logo.png" alt="Joyce Roberts Logo" /> -->
-            <span>JOYCE ROBERT</span>
-          </div>
+          <a class="brand-logo" data-logo="navbar" href="#hero">JOYCE ROBERT</a>
 
           <!-- Right side (links + button) -->
           <div class="nav-right">
             <ul class="nav-links">
-              <li><a href="/#hero">Home</a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why-choose-me">Why Choose Me</a></li>
-              <li><a href="/#testimonials">Testimonials</a></li>
-              <li><a href="/#quote">Contact</a></li>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#why-choose-me">Why Choose Me</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#quote">Contact</a></li>
             </ul>
 
-            <div class="nav-btn">
-              <a href="tel:91123456789" class="btnn">Get A Quote</a>
+            <div class="nav-btn zg-align-center">
+              <a href="#quote" class="btnn" data-btn="nav">Get A Quote</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <div class="menu-toggle"></div>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+              <i class="bi bi-list" data-icon="menu"></i>
+            </button>
           </div>
         </nav>
       </div>
     </header>
+    <main>
     <!-- Hero Section -->
     <section id="hero" data-section="hero" class="hero">
       <div class="container">
@@ -72,35 +71,35 @@
               Leave the accounting to me.
             </p>
 
-            <div class="hero-btns">
-              <a href="tel:91" class="btnn">Get A Free Quote</a>
-              <a href="#" class="btn btn-outline-light">Learn More</a>
+            <div class="hero-btns zg-align-center">
+              <a href="#quote" class="btnn" data-btn="hero">Get A Free Quote</a>
+              <a href="#services" class="btn btn-outline-light" data-btn="hero">Learn More</a>
             </div>
 
             <div class="hero-tags">
-              <span>
-                <div class="check">
+              <div class="hero-tag">
+                <span class="check">
                   <i class="bi bi-check2" data-icon="check"></i>
-                </div>
-                Trusted
-              </span>
-              <span>
-                <div class="check">
+                </span>
+                <span>Trusted</span>
+              </div>
+              <div class="hero-tag">
+                <span class="check">
                   <i class="bi bi-check2" data-icon="check"></i>
-                </div>
-                Experienced
-              </span>
-              <span>
-                <div class="check">
+                </span>
+                <span>Experienced</span>
+              </div>
+              <div class="hero-tag">
+                <span class="check">
                   <i class="bi bi-check2" data-icon="check"></i>
-                </div>
-                Professional
-              </span>
+                </span>
+                <span>Professional</span>
+              </div>
             </div>
           </div>
 
           <!-- Image Column -->
-          <div class="col-lg-5 hero-img order-1 order-lg-2">
+          <div class="col-lg-5 hero-img order-1 order-lg-2" data-zg-editable="surface">
             <img
               src="assets/images/accountant-cta.webp"
               alt="Joyce Roberts"
@@ -112,19 +111,19 @@
     </section>
 
     <!-- service section -->
-    <section id="services" data-section="services" class="services py-6">
+    <section id="services" data-section="services" class="services section-padding">
       <div class="container">
         <div class="section-title">
           <h6 class="section-subtitle">Services</h6>
           <h2 class="section-heading">What I Do</h2>
           <p class="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Reliable accounting support that keeps your records organised,
+            compliant, and ready for confident business decisions.
           </p>
         </div>
 
         <!-- Service Item 1 -->
-        <div class="service-item py-4 row g-4">
+        <div class="service-item service-item-spacing row g-4">
           <div class="service-image col-lg-6">
             <img
               src="assets/images/accountant-service-1.webp"
@@ -135,32 +134,34 @@
             <span class="service-number">01.</span>
             <h3 class="service-title">Accounting Services</h3>
             <p class="service-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Aspernatur dicta voluptatum labore non,
-              laboriosam assumenda numquam consequuntur autem consectetur
-              sapiente.
+              Keep day-to-day books accurate with organised ledgers,
+              reconciliations, expense tracking, and practical monthly
+              reporting. Clear records make cash flow easier to understand,
+              reduce year-end stress, and give business owners dependable
+              numbers for planning, budgeting, and timely decisions throughout
+              the financial year.
             </p>
-            <a href="#" class="btn-readmore">Read More</a>
+            <div class="service-actions zg-align-center">
+              <a href="#quote" class="btn-readmore" data-btn="services">Read More</a>
+            </div>
           </div>
         </div>
 
         <!-- Service Item 2 (image on right on desktop) -->
-        <div class="service-item py-4 row g-4">
+        <div class="service-item service-item-spacing row g-4">
           <div class="service-content col-lg-6">
             <span class="service-number">02.</span>
             <h3 class="service-title">Tax Services</h3>
             <p class="service-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur dicta voluptatum labore non, laboriosam assumenda
-              numquam consequuntur autem consectetur sapiente.
+              Stay prepared for GST, income-tax, and statutory deadlines with
+              careful documentation and practical filing support. Each return
+              is reviewed against your records, liabilities are explained in
+              plain language, and important dates are tracked so your business
+              can remain compliant without last-minute confusion.
             </p>
-            <a href="#" class="btn-readmore">Read More</a>
+            <div class="service-actions zg-align-center">
+              <a href="#quote" class="btn-readmore" data-btn="services">Read More</a>
+            </div>
           </div>
           <div class="service-image col-lg-6">
             <img
@@ -171,7 +172,7 @@
         </div>
 
         <!-- Service Item 3 -->
-        <div class="service-item pt-4 row g-4">
+        <div class="service-item service-item-spacing row g-4">
           <div class="service-image col-lg-6">
             <img
               src="assets/images/accountant-service-2.webp"
@@ -182,14 +183,15 @@
             <span class="service-number">03.</span>
             <h3 class="service-title">Financial Advisory</h3>
             <p class="service-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur dicta voluptatum labore non, laboriosam assumenda
-              numquam consequuntur autem consectetur sapiente.
+              Turn financial reports into focused plans for sustainable
+              growth. Receive clear guidance on budgets, working capital,
+              pricing, and business performance, supported by careful analysis
+              of the figures that matter most to your goals and the next stage
+              of your organisation.
             </p>
-            <a href="#" class="btn-readmore">Read More</a>
+            <div class="service-actions zg-align-center">
+              <a href="#quote" class="btn-readmore" data-btn="services">Read More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -199,7 +201,7 @@
     <section
       id="why-choose-me"
       data-section="why-choose-me"
-      class="py-6 why-choose-me"
+      class="section-padding why-choose-me"
     >
       <div class="container">
         <!-- Section Title -->
@@ -207,48 +209,48 @@
           <h6 class="section-subtitle">Why Choose Me</h6>
           <h2 class="section-heading">Accurate Record Keeping</h2>
           <p class="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Accurate work, clear communication, and dependable support for
+            every important financial deadline your business faces.
           </p>
         </div>
 
         <!-- Features Grid (Bootstrap) -->
         <div class="features-grid row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
+          <div class="col clonable-card">
             <div class="feature-card card-1">
               <div class="feature-icon">
                 <i class="bi bi-calendar-check-fill" data-icon="check"></i>
               </div>
               <h3 class="feature-title">Always On Time</h3>
               <p class="feature-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet
+                Reports and filings are prepared on schedule, with every
+                important deadline tracked carefully.
               </p>
             </div>
           </div>
 
-          <div class="col">
+          <div class="col clonable-card">
             <div class="feature-card card-2">
               <div class="feature-icon">
                 <i class="bi bi-pc" data-icon="pc"></i>
               </div>
               <h3 class="feature-title">Hard Working</h3>
               <p class="feature-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet
+                Every account is reviewed carefully, with practical answers
+                tailored to your business needs.
               </p>
             </div>
           </div>
 
-          <div class="col">
+          <div class="col clonable-card">
             <div class="feature-card card-3">
               <div class="feature-icon">
                 <i class="bi bi-stopwatch-fill" data-icon="watch"></i>
               </div>
               <h3 class="feature-title">24/7 Availability</h3>
               <p class="feature-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet
+                Get timely guidance when urgent questions or unexpected
+                financial decisions arise.
               </p>
             </div>
           </div>
@@ -260,7 +262,7 @@
     <section
       id="testimonials"
       data-section="testimonials"
-      class="py-6 testimonials"
+      class="section-padding testimonials"
     >
       <div class="container">
         <!-- Section Title -->
@@ -271,47 +273,47 @@
 
         <!-- Testimonials Grid -->
         <div
-          class="testimonials-grid row row-cols-1 row-cols-md-3 g-4 py-5 mb-4"
+          class="testimonials-grid row row-cols-1 row-cols-md-3 g-4"
         >
-          <div class="col">
+          <div class="col clonable-card">
             <div class="testimonial-card">
               <div class="testimonial-icon">
                 <i class="bi bi-quote" data-icon="quote"></i>
               </div>
               <p class="testimonial-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                ullamcorper mattis, pulvinar dapibus leo.
+                Joyce brought order to our monthly records and explained every
+                report clearly. We now close our books on time and make
+                decisions with far more confidence.
               </p>
               <h4 class="testimonial-name">Aanand kumar</h4>
               <span class="testimonial-role">CEO &amp; Founder Crix</span>
             </div>
           </div>
 
-          <div class="col">
+          <div class="col clonable-card">
             <div class="testimonial-card">
               <div class="testimonial-icon">
                 <i class="bi bi-quote" data-icon="quote"></i>
               </div>
               <p class="testimonial-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                ullamcorper mattis, pulvinar dapibus leo.
+                Tax deadlines used to feel overwhelming. The process is now
+                organised, transparent, and easy to follow, with practical
+                guidance whenever our team needs it.
               </p>
               <h4 class="testimonial-name">Ankit singh</h4>
               <span class="testimonial-role">Director at Dynamic</span>
             </div>
           </div>
 
-          <div class="col">
+          <div class="col clonable-card">
             <div class="testimonial-card">
               <div class="testimonial-icon">
                 <i class="bi bi-quote" data-icon="quote"></i>
               </div>
               <p class="testimonial-text">
-                Click edit button to change this text. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                ullamcorper mattis, pulvinar dapibus leo.
+                The financial reviews are thorough and genuinely useful. We
+                understand our cash flow better and have a clearer plan for
+                steady growth over the coming year.
               </p>
               <h4 class="testimonial-name">Manish kumar</h4>
               <span class="testimonial-role">Director at Initech</span>
@@ -320,30 +322,30 @@
         </div>
 
         <!-- Logos Row -->
-        <div class="testimonials-logos row row-cols-2 row-cols-md-5 g-4 mb-5">
-          <div class="col">
+        <div class="testimonials-logos row row-cols-2 row-cols-md-5 g-4">
+          <div class="col clonable-card">
             <div class="logo-img-box">
-              <img src="assets/images/logo.png" alt="Logo 1" />
+              <img src="assets/images/logo.webp" alt="Trusted financial services partner logo 1" />
             </div>
           </div>
-          <div class="col">
+          <div class="col clonable-card">
             <div class="logo-img-box">
-              <img src="assets/images/logo.png" alt="Logo 2" />
+              <img src="assets/images/logo.webp" alt="Trusted financial services partner logo 2" />
             </div>
           </div>
-          <div class="col">
+          <div class="col clonable-card">
             <div class="logo-img-box">
-              <img src="assets/images/logo.png" alt="Logo 3" />
+              <img src="assets/images/logo.webp" alt="Trusted financial services partner logo 3" />
             </div>
           </div>
-          <div class="col">
+          <div class="col clonable-card">
             <div class="logo-img-box">
-              <img src="assets/images/logo.png" alt="Logo 4" />
+              <img src="assets/images/logo.webp" alt="Trusted financial services partner logo 4" />
             </div>
           </div>
-          <div class="col">
+          <div class="col clonable-card">
             <div class="logo-img-box">
-              <img src="assets/images/logo.png" alt="Logo 5" />
+              <img src="assets/images/logo.webp" alt="Trusted financial services partner logo 5" />
             </div>
           </div>
         </div>
@@ -351,11 +353,11 @@
     </section>
 
     <!-- quote section -->
-    <section id="quote" data-section="quote" class="py-6 quote">
+    <section id="quote" data-section="quote" class="section-padding quote">
       <div class="container">
         <div class="quote-wrapper row g-4">
           <!-- Left Side: Image -->
-          <div class="quote-image col-lg-6">
+          <div class="quote-image col-lg-6" data-zg-editable="surface">
             <div class="box-img-bg"></div>
             <div class="img-container">
               <img
@@ -366,86 +368,64 @@
           </div>
 
           <!-- Right Side: Form -->
-          <div class="quote-form col-lg-6">
+          <div class="quote-form col-lg-6" data-zg-editable="surface">
             <h6 class="form-subtitle">Free Estimation</h6>
             <h2 class="form-title">Request A Quote</h2>
 
             <form
-              action="https://api-uat.zigrow.com/api/forms/submit"
+              action="https://api.zigrow.com/api/forms/submit"
               method="post"
               data-zigrow-form
             >
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="form-control"
-                placeholder="Name*"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="form-control"
-                placeholder="Email*"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                class="form-control"
-                placeholder="Phone Number*"
-                required
-              />
-              <input
-                type="number"
-                name="number"
-                id="number"
-                class="form-control"
-                placeholder="Number of Employees*"
-                required
-              />
-              <input
-                type="number"
-                name="number2"
-                id="number2"
-                class="form-control"
-                placeholder="Number of Incoming Invoices*"
-                required
-              />
-              <input
-                type="number"
-                name="number3"
-                id="number3"
-                class="form-control"
-                placeholder="Number of Outgoing Invoices*"
-                required
-              />
+              <input type="hidden" name="domain" value="" />
+              <input type="hidden" name="form_key" value="quote" />
+              <input type="hidden" name="page_url" value="" />
+              <input type="hidden" name="_company" value="" />
+              <div form-question-zigrow>
+                <label for="quote-name">Name</label>
+                <input type="text" name="name" id="quote-name" placeholder="Name*" required />
+              </div>
+              <div form-question-zigrow>
+                <label for="quote-email">Email</label>
+                <input type="email" name="email" id="quote-email" placeholder="Email*" required maxlength="254" />
+              </div>
+              <div form-question-zigrow>
+                <label for="quote-phone">Phone Number</label>
+                <input type="tel" name="phone" id="quote-phone" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a valid phone number using 7 to 15 digits." placeholder="Phone Number*" required />
+              </div>
+              <div form-question-zigrow>
+                <label for="employee-count">Number of Employees</label>
+                <input type="number" name="employee_count" id="employee-count" placeholder="Number of Employees*" required min="0" />
+              </div>
+              <div form-question-zigrow>
+                <label for="incoming-invoice-count">Number of Incoming Invoices</label>
+                <input type="number" name="incoming_invoice_count" id="incoming-invoice-count" placeholder="Number of Incoming Invoices*" required min="0" />
+              </div>
+              <div form-question-zigrow>
+                <label for="outgoing-invoice-count">Number of Outgoing Invoices</label>
+                <input type="number" name="outgoing_invoice_count" id="outgoing-invoice-count" placeholder="Number of Outgoing Invoices*" required min="0" />
+              </div>
               <button type="submit" class="btn-quote">Get a Free Quote</button>
             </form>
           </div>
         </div>
       </div>
     </section>
+    </main>
 
     <!-- footer section -->
-    <footer id="footer" data-section="footer" class="py-6 footer">
+    <footer id="footer" data-section="footer" class="section-padding footer">
       <div class="container">
         <div
-          class="footer-wrapper row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-4"
+          class="footer-wrapper row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4"
         >
           <!-- Logo + About -->
           <div class="footer-box col">
-            <div class="footer-logo" data-logo="footer">
-              <!-- <img src="logo.png" alt="Logo" /> -->
-              <h4>Joyce Robert</h4>
-              <p>Leave the accounting to me</p>
-            </div>
+            <a class="footer-brand-logo" data-logo="footer" href="#hero">Joyce Robert</a>
+            <p>Leave the accounting to me</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Practical accounting guidance for growing businesses that value
+              accurate records, clear advice, and dependable support.
             </p>
           </div>
 
@@ -453,10 +433,9 @@
           <div class="footer-box col">
             <h5>Contact Info</h5>
             <ul>
-              <p>E-123, ABC Plaza, XYZ Street, New Delhi - 110077</p>
-              <li><a href="#">+91-9123456789</a></li>
-              <li><a href="#">+91-9123456789</a></li>
-              <li><a href="#">yourname@domainname.com</a></li>
+              <li><span>E-123, ABC Plaza, XYZ Street, New Delhi - 110077</span></li>
+              <li><a href="tel:+919123456789">+91-9123456789</a></li>
+              <li><a href="mailto:yourname@domainname.com">yourname@domainname.com</a></li>
             </ul>
           </div>
 
@@ -464,9 +443,9 @@
           <div class="footer-box col">
             <h5>Services</h5>
             <ul>
-              <li><a href="#">Accounting Service</a></li>
-              <li><a href="#">Tax Service</a></li>
-              <li><a href="#">Financial Service</a></li>
+              <li><a href="#services">Accounting Service</a></li>
+              <li><a href="#services">Tax Service</a></li>
+              <li><a href="#services">Financial Service</a></li>
             </ul>
           </div>
 
@@ -474,18 +453,18 @@
           <div class="footer-box col">
             <h5>Get In Touch</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis.
+              Ask a question or request a quote for accounting, tax, or
+              financial advisory support.
             </p>
             <div class="social-icons">
-              <a href="#"
+              <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"
                 ><i class="fab fa-facebook-f" data-icon="facebook"></i
               ></a>
-              <a href="#"><i class="fab fa-twitter" data-icon="twitter"></i></a>
-              <a href="#"
+              <a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter" data-icon="twitter"></i></a>
+              <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"
                 ><i class="fab fa-linkedin-in" data-icon="linkedin"></i
               ></a>
-              <a href="#"
+              <a href="mailto:yourname@domainname.com" aria-label="Email"
                 ><i class="fas fa-envelope" data-icon="envelop"></i
               ></a>
             </div>
@@ -493,12 +472,14 @@
         </div>
 
         <!-- Bottom Bar -->
-        <div class="footer-bottom row align-items-center">
-          <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+        <div class="footer-bottom row footer-bottom-align">
+          <div class="col-12 footer-copyright">
             <p>Copyright © 2025 Chartered Accountant</p>
           </div>
-          <div class="col-md-6 text-md-end text-center">
-            <p>Powered by Chartered Accountant</p>
+        </div>
+        <div class="footer-attribution row">
+          <div class="col-12">
+            <p><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
           </div>
         </div>
       </div>
@@ -512,13 +493,11 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=2.13.0-accountant-3"></script>
     <script>
       (function () {
         // Find ALL Zigrow forms
-        const forms = Array.from(
-          document.querySelectorAll("[data-zigrow-form]")
-        );
+        const forms = Array.from(document.querySelectorAll("form[data-zigrow-form]"));
         if (!forms.length) return;
 
         // Helper: turn FormData into a plain object
@@ -526,15 +505,10 @@
           const fd = new FormData(form);
           const raw = {};
           for (const [name, value] of fd.entries()) {
-            const el = form.elements[name];
-            const isGroup =
-              el && el.length && el[0] && el[0].type === "checkbox";
-            if (isGroup) {
-              if (!raw[name]) raw[name] = [];
-              raw[name].push(value === "" ? true : value);
-            } else {
-              raw[name] = value;
-            }
+            const existing = raw[name];
+            if (existing === undefined) raw[name] = value;
+            else if (Array.isArray(existing)) existing.push(value === "" ? true : value);
+            else raw[name] = [existing, value === "" ? true : value];
           }
           return raw;
         }
@@ -545,7 +519,7 @@
             return String(raw.email).trim();
           if (raw.phone && String(raw.phone).trim())
             return String(raw.phone).trim();
-          const nameCombo = [raw.firstName, raw.lastName]
+          const nameCombo = [raw.first_name, raw.last_name]
             .filter(Boolean)
             .join(" ")
             .trim();
@@ -568,14 +542,16 @@
           let msgContainer = form.querySelector(".form-submit-message");
           if (!msgContainer) {
             msgContainer = document.createElement("div");
-            msgContainer.className = "form-submit-message mt-2 text-sm";
+            msgContainer.className = "form-submit-message";
+            msgContainer.setAttribute("role", "status");
+            msgContainer.setAttribute("aria-live", "polite");
             form.appendChild(msgContainer);
           }
 
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const submitBtn = form.querySelector('[type="submit"]');
+            const submitBtn = form.querySelector(':scope > [type="submit"]');
             if (submitBtn) {
               submitBtn.disabled = true;
               submitBtn.dataset._oldText = submitBtn.innerText;
@@ -583,8 +559,8 @@
             }
 
             // Clear previous message
-            msgContainer.innerText = "";
-            msgContainer.style.color = "";
+            msgContainer.textContent = "";
+            msgContainer.removeAttribute("data-status");
 
             try {
               const raw = serializeForm(form);
@@ -619,20 +595,18 @@
               const data = await res.json().catch(() => ({}));
               if (res.ok && (data.ok ?? true)) {
                 form.reset();
-                msgContainer.innerText =
-                  "✅ Thanks! Your request has been submitted.";
-                msgContainer.style.color = "#28a745"; // green success
+                msgContainer.textContent = "Thanks! Your request has been submitted.";
+                msgContainer.dataset.status = "success";
               } else {
-                msgContainer.innerText = `❌ ${
+                msgContainer.textContent = `${
                   data.message || `Failed (HTTP ${res.status})`
                 }`;
-                msgContainer.style.color = "#dc3545"; // red error
+                msgContainer.dataset.status = "error";
               }
             } catch (err) {
               console.error(err);
-              msgContainer.innerText =
-                "❌ Something went wrong. Please try again.";
-              msgContainer.style.color = "#dc3545";
+              msgContainer.textContent = "Something went wrong. Please try again.";
+              msgContainer.dataset.status = "error";
             } finally {
               if (submitBtn) {
                 submitBtn.disabled = false;

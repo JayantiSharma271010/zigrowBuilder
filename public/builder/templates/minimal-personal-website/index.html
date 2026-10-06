@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimal Personal Website</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
@@ -25,43 +18,27 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=20260928-2" />
   </head>
-  <body>
-    <a
-      href="#top"
-      id="backToTopBtn"
-      class="back-to-top"
-      aria-label="Back to top"
-    >
-      <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
-    </a>
+  <body id="top">
     <!-- ===== Header (absolute) ===== -->
     <header
-      id="site-header"
+      id="header"
       class="site-header"
-      data-section="site-header"
+      data-section="header"
       aria-label="Primary"
     >
       <div class="container">
         <div class="nav-bar">
-          <!-- Toggle (CSS-only) -->
-          <input
-            id="nav-toggle"
-            class="nav-toggle"
-            type="checkbox"
-            aria-hidden="true"
-          />
-
-          <label
-            for="nav-toggle"
+          <button
+            type="button"
             class="menu-btn"
             aria-label="Toggle navigation"
             aria-controls="primary-menu"
             aria-expanded="false"
           >
             <span></span><span></span><span></span>
-          </label>
+          </button>
 
           <!-- Left: Nav links -->
           <nav class="nav-link" id="primary-menu" aria-label="Main navigation">
@@ -70,17 +47,17 @@
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#projects">Works</a></li>
-              <li><a href="#cta-footer">Contact</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
 
           <!-- Center: Brand -->
           <a
             class="brand"
-            href="#"
-            aria-label="Mack Hobbs Home"
+            href="#hero"
+            aria-label="Arjun Mehta Home"
             data-logo="navbar"
-            >Mack Studio</a
+            >Arjun Mehta</a
           >
 
           <!-- Right: Socials (Bootstrap Icons) -->
@@ -101,51 +78,58 @@
       </div>
     </header>
 
+    <main>
+
     <!-- Hero (separate section) -->
     <section
       id="hero"
-      class="hero-section py-6"
+      class="hero-section section-spacing"
       data-section="hero"
       aria-label="Hero"
+      tabindex="-1"
     >
       <div class="container">
         <!-- TOP COPY ROW -->
-        <div class="row align-items-center gy-4">
+        <div class="row hero-section__top-row gy-4">
           <!-- LEFT COPY -->
           <div class="col-lg-7">
             <div class="hero-section__left">
               <span class="hero-section__eyebrow">Hello There…</span>
 
-              <span class="hero-section__headline">
-                I’m Mack. Your Design<br />
+              <h1 class="hero-section__headline">
+                I’m Arjun. Your Design<br />
                 Partner For Growing<br />
                 Your Business
                 <span class="hero-section__emoji" aria-hidden="true">🏀</span>
-              </span>
+              </h1>
             </div>
           </div>
 
           <!-- RIGHT COPY -->
           <div class="col-lg-5">
             <div class="hero-section__right">
-              <span class="hero-section__intro">
+              <p class="hero-section__intro">
                 <span class="hero-section__ping" aria-hidden="true"></span>
                 <em>Freelance UI/UX Designer</em> building personal brands and
                 modern websites that look premium, load fast, and convert
                 visitors into real leads.
-              </span>
+              </p>
 
-              <a
-                href="#contact"
-                class="hero-section__cta"
-                aria-label="Contact Me"
-                data-btn="hero"
-              >
-                Contact Me
-                <span class="hero-section__cta-icon" aria-hidden="true">
-                  <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
-                </span>
-              </a>
+              <div class="hero-section__actions zg-align-center">
+                <a
+                  href="#contact"
+                  class="hero-section__cta"
+                  aria-label="Contact Me"
+                  data-btn="hero"
+                >
+                  Contact Me
+                  <i
+                    class="bi bi-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -153,7 +137,7 @@
         <!-- SCROLL INDICATOR -->
         <div class="row">
           <div class="col-12">
-            <div class="hero-section__scroll text-center" aria-hidden="true">
+            <div class="hero-section__scroll" aria-hidden="true">
               <span class="hero-section__scroll-text">Scroll Down</span>
               <a
                 href="#about"
@@ -168,49 +152,37 @@
         </div>
 
         <!-- GALLERY ROW -->
-        <div class="row g-3 align-items-end hero-section__gallery">
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="hero-section__img-wrap">
-              <div class="hero-section__card hero-section__card--notch-left">
-                <img
-                  src="assets/images/Minimal-hero-1.webp"
-                  alt="Project preview 1"
-                />
-              </div>
-            </div>
+        <div class="row g-3 hero-section__gallery">
+          <div class="col-lg-3 col-md-6 col-12 clonable-card">
+            <div
+              class="hero-section__img-wrap hero-section__card hero-section__card--notch-left"
+              role="img"
+              aria-label="Project preview 1"
+            ></div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="hero-section__img-wrap">
-              <div class="hero-section__card hero-section__card--notch-2">
-                <img
-                  src="assets/images/Minimal-hero-2.webp"
-                  alt="Project preview 2"
-                />
-              </div>
-            </div>
+          <div class="col-lg-3 col-md-6 col-12 clonable-card">
+            <div
+              class="hero-section__img-wrap hero-section__card hero-section__card--notch-2"
+              role="img"
+              aria-label="Project preview 2"
+            ></div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="hero-section__img-wrap">
-              <div class="hero-section__card hero-section__card--notch-3">
-                <img
-                  src="assets/images/Minimal-hero-3.webp"
-                  alt="Project preview 3"
-                />
-              </div>
-            </div>
+          <div class="col-lg-3 col-md-6 col-12 clonable-card">
+            <div
+              class="hero-section__img-wrap hero-section__card hero-section__card--notch-3"
+              role="img"
+              aria-label="Project preview 3"
+            ></div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="hero-section__img-wrap">
-              <div class="hero-section__card hero-section__card--notch-right">
-                <img
-                  src="assets/images/Minimal-hero-4.webp"
-                  alt="Project preview 4"
-                />
-              </div>
-            </div>
+          <div class="col-lg-3 col-md-6 col-12 clonable-card">
+            <div
+              class="hero-section__img-wrap hero-section__card hero-section__card--notch-right"
+              role="img"
+              aria-label="Project preview 4"
+            ></div>
           </div>
         </div>
       </div>
@@ -226,59 +198,71 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <span class="trusted-section__eyebrow">
+            <h2 class="trusted-section__eyebrow">
               Trusted by 400+ growing brands worldwide
-            </span>
+            </h2>
           </div>
         </div>
 
         <div class="row trusted-section__logos">
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand One" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand One" />
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand Two" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand Two" />
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand Three" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand Three" />
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand Four" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand Four" />
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand Five" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand Five" />
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-            <a href="#" class="trusted-section__logo">
-              <div class="trusted-section__logo-img">
-                <img src="assets/images/logo.png" alt="Brand Six" />
-              </div>
-            </a>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2 clonable-card">
+            <div class="trusted-section__logo-surface">
+              <a href="#" class="trusted-section__logo">
+                <div class="trusted-section__logo-img">
+                  <img src="assets/images/logo.webp" alt="Brand Six" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -305,29 +289,36 @@
           <!-- right title + tabs -->
           <div class="col-lg-9">
             <div class="about-section__head">
-              <div class="about-section__title">
-                <p>I Specialize In Turning Vision</p>
+              <h2 class="about-section__title">
+                I Specialize In Turning Vision
                 <span>Into Reality With My Experience</span>
-              </div>
+              </h2>
 
               <div
                 class="about-section__tabs"
+                data-component-tabs
                 role="tablist"
                 aria-label="Experience tabs"
               >
                 <a
-                  href="#"
+                  id="work-tab"
+                  href="#experience-panel"
                   class="about-section__tab tab is-active"
                   role="tab"
+                  aria-controls="experience-panel"
                   aria-selected="true"
+                  tabindex="0"
                 >
                   Work Experience
                 </a>
                 <a
-                  href="#"
+                  id="education-tab"
+                  href="#education-panel"
                   class="about-section__tab tab"
                   role="tab"
+                  aria-controls="education-panel"
                   aria-selected="false"
+                  tabindex="-1"
                 >
                   My Education
                 </a>
@@ -337,35 +328,41 @@
         </div>
 
         <!-- BODY ROW -->
-        <div class="row about-section__body">
+        <div
+          id="experience-panel"
+          class="row about-section__body about-section__tab-panel"
+          data-tab-panel
+          role="tabpanel"
+          aria-labelledby="work-tab"
+        >
           <!-- left companies -->
           <div class="col-lg-3">
             <div class="about-section__companies">
               <div class="row">
-                <!-- Apple -->
+                <!-- Independent practice -->
                 <div class="col-lg-12 col-md-4 col-sm-4 col-12">
                   <div class="about-section__company">
-                    <p class="about-section__company-name">Apple.com</p>
+                    <p class="about-section__company-name">Independent Practice</p>
                     <p class="about-section__company-date">
                       Sep 2022 – Present
                     </p>
                   </div>
                 </div>
 
-                <!-- Microsoft -->
+                <!-- Design studio -->
                 <div class="col-lg-12 col-md-4 col-sm-4 col-12">
                   <div class="about-section__company">
-                    <p class="about-section__company-name">Microsoft.com</p>
+                    <p class="about-section__company-name">Design Studio</p>
                     <p class="about-section__company-date">
                       Jan 2019 – Jul 2022
                     </p>
                   </div>
                 </div>
 
-                <!-- Google -->
+                <!-- Creative agency -->
                 <div class="col-lg-12 col-md-4 col-sm-4 col-12">
                   <div class="about-section__company">
-                    <p class="about-section__company-name">Google.com</p>
+                    <p class="about-section__company-name">Creative Agency</p>
                     <p class="about-section__company-date">
                       Feb 2016 – Nov 2018
                     </p>
@@ -377,40 +374,94 @@
 
           <!-- right timeline -->
           <div class="col-lg-9">
-            <div class="about-section__timeline" aria-label="Work timeline">
+              <div class="about-section__timeline">
               <div class="about-section__t-item">
                 <div class="about-section__t-dot" aria-hidden="true">
                   <span class="d-non"></span>
                 </div>
-                <div class="about-section__t-role">Sr. Product Designer</div>
-                <div class="about-section__t-desc">
+                <h3 class="about-section__t-role">Sr. Product Designer</h3>
+                <p class="about-section__t-desc">
                   Led product UI systems, designed high-converting landing
                   pages, and built scalable component libraries for modern web
                   products.
-                </div>
+                </p>
               </div>
 
               <div class="about-section__t-item">
                 <div class="about-section__t-dot" aria-hidden="true">
                   <span class="d-non"></span>
                 </div>
-                <div class="about-section__t-role">UI/UX Designer</div>
-                <div class="about-section__t-desc">
+                <h3 class="about-section__t-role">UI/UX Designer</h3>
+                <p class="about-section__t-desc">
                   Crafted user journeys, wireframes, and clean interface design
                   for mobile & web — focused on clarity, usability, and brand
                   identity.
-                </div>
+                </p>
               </div>
 
               <div class="about-section__t-item">
                 <div class="about-section__t-dot" aria-hidden="true">
                   <span class="d-non"></span>
                 </div>
-                <div class="about-section__t-role">Visual Designer</div>
-                <div class="about-section__t-desc">
+                <h3 class="about-section__t-role">Visual Designer</h3>
+                <p class="about-section__t-desc">
                   Designed marketing visuals, hero sections, and modern layouts
                   for personal brands and portfolio websites.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="education-panel"
+          class="row about-section__body about-section__tab-panel"
+          data-tab-panel
+          role="tabpanel"
+          aria-labelledby="education-tab"
+          hidden
+        >
+          <div class="col-lg-3">
+            <div class="about-section__companies">
+              <div class="row">
+                <div class="col-lg-12 col-md-4 col-sm-4 col-12">
+                  <div class="about-section__company">
+                    <p class="about-section__company-name">National Institute of Design</p>
+                    <p class="about-section__company-date">2014 – 2016</p>
+                  </div>
                 </div>
+                <div class="col-lg-12 col-md-4 col-sm-4 col-12">
+                  <div class="about-section__company">
+                    <p class="about-section__company-name">Delhi University</p>
+                    <p class="about-section__company-date">2011 – 2014</p>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-4 col-sm-4 col-12">
+                  <div class="about-section__company">
+                    <p class="about-section__company-name">Interaction Design Foundation</p>
+                    <p class="about-section__company-date">2018 – 2020</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="about-section__timeline">
+              <div class="about-section__t-item">
+                <div class="about-section__t-dot" aria-hidden="true"><span class="d-non"></span></div>
+                <h3 class="about-section__t-role">M.Des Interaction Design</h3>
+                <p class="about-section__t-desc">Studied human-centred product strategy, interaction patterns, prototyping, and usability research.</p>
+              </div>
+              <div class="about-section__t-item">
+                <div class="about-section__t-dot" aria-hidden="true"><span class="d-non"></span></div>
+                <h3 class="about-section__t-role">BFA Visual Communication</h3>
+                <p class="about-section__t-desc">Built a strong foundation in typography, identity design, composition, and digital communication.</p>
+              </div>
+              <div class="about-section__t-item">
+                <div class="about-section__t-dot" aria-hidden="true"><span class="d-non"></span></div>
+                <h3 class="about-section__t-role">UX Certification Programme</h3>
+                <p class="about-section__t-desc">Completed advanced coursework in user research, information architecture, and accessible interface design.</p>
               </div>
             </div>
           </div>
@@ -422,8 +473,8 @@
             <div class="about-section__intro-card">
               <div class="about-section__intro-img">
                 <img
-                  src="assets/images/Minimal-about.webp"
-                  alt="Self introduction cover"
+                  src="assets/images/arjun-mehta-about.webp"
+                  alt="Fictional portfolio designer working in a creative studio"
                 />
               </div>
 
@@ -433,20 +484,22 @@
               ></div>
 
               <div class="about-section__intro-content">
-                <div class="about-section__intro-eyebrow">
+                <p class="about-section__intro-eyebrow">
                   Self Introduction
-                </div>
-                <div class="about-section__intro-title">
-                  Meet A Value-Driven<br />Creative Individual
-                </div>
+                </p>
+                <h3 class="about-section__intro-title">
+                  Meet Arjun, A Creative<br />Problem Solver
+                </h3>
 
-                <a href="#" class="about-section__play" aria-label="Play now">
-                  Play Now
-                  <span
-                    class="about-section__play-dot"
-                    aria-hidden="true"
-                  ></span>
-                </a>
+                <div class="about-section__play-actions zg-align-center">
+                  <a href="#" class="about-section__play" aria-label="Play now" data-btn="play-video">
+                    Play Now
+                    <span
+                      class="about-section__play-dot"
+                      aria-hidden="true"
+                    ></span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -456,7 +509,7 @@
 
     <!-- Services -->
     <section
-      class="services-section py-6"
+      class="services-section section-spacing"
       id="services"
       data-section="services"
       aria-label="My Services"
@@ -488,7 +541,7 @@
           <div class="accordion-item services-section__item">
             <a
               class="services-section__row"
-              href="#"
+              href="#service1"
               role="button"
               data-bs-toggle="collapse"
               data-bs-target="#service1"
@@ -520,7 +573,7 @@
                       >
                       <span class="services-section__pill-close">Collapse</span>
                       <i
-                        class="services-section__pill-icon"
+                        class="bi bi-dash-lg services-section__pill-icon"
                         data-icon="service-plus"
                         aria-hidden="true"
                       ></i>
@@ -536,11 +589,11 @@
               data-bs-parent="#servicesAccordion"
             >
               <div class="services-section__panel">
-                <p class="services-section__desc">
+                <span class="services-section__desc">
                   I build a premium personal brand identity with strong visual
                   direction—logo, typography, and guidelines that look
                   consistent everywhere.
-                </p>
+                </span>
 
                 <div class="services-section__media">
                   <div class="services-section__media-inner">
@@ -558,7 +611,7 @@
           <div class="accordion-item services-section__item">
             <a
               class="services-section__row collapsed"
-              href="#"
+              href="#service2"
               role="button"
               data-bs-toggle="collapse"
               data-bs-target="#service2"
@@ -588,7 +641,7 @@
                       >
                       <span class="services-section__pill-close">Collapse</span>
                       <i
-                        class="services-section__pill-icon"
+                        class="bi bi-plus-lg services-section__pill-icon"
                         data-icon="service-plus"
                         aria-hidden="true"
                       ></i>
@@ -604,11 +657,11 @@
               data-bs-parent="#servicesAccordion"
             >
               <div class="services-section__panel">
-                <p class="services-section__desc">
+                <span class="services-section__desc">
                   I map user journeys and flows to reduce confusion—clear
                   sections, better structure, and a smooth experience across
                   devices.
-                </p>
+                </span>
 
                 <div class="services-section__media">
                   <div class="services-section__media-inner">
@@ -626,7 +679,7 @@
           <div class="accordion-item services-section__item">
             <a
               class="services-section__row collapsed"
-              href="#"
+              href="#service3"
               role="button"
               data-bs-toggle="collapse"
               data-bs-target="#service3"
@@ -656,7 +709,7 @@
                       >
                       <span class="services-section__pill-close">Collapse</span>
                       <i
-                        class="services-section__pill-icon"
+                        class="bi bi-plus-lg services-section__pill-icon"
                         data-icon="service-plus"
                         aria-hidden="true"
                       ></i>
@@ -672,10 +725,10 @@
               data-bs-parent="#servicesAccordion"
             >
               <div class="services-section__panel">
-                <p class="services-section__desc">
+                <span class="services-section__desc">
                   I craft clean UI with strong spacing and hierarchy—so your
                   website feels modern, premium, and easy to trust.
-                </p>
+                </span>
 
                 <div class="services-section__media">
                   <div class="services-section__media-inner">
@@ -693,7 +746,7 @@
           <div class="accordion-item services-section__item">
             <a
               class="services-section__row collapsed"
-              href="#"
+              href="#service4"
               role="button"
               data-bs-toggle="collapse"
               data-bs-target="#service4"
@@ -723,7 +776,7 @@
                       >
                       <span class="services-section__pill-close">Collapse</span>
                       <i
-                        class="services-section__pill-icon"
+                        class="bi bi-plus-lg services-section__pill-icon"
                         data-icon="service-plus"
                         aria-hidden="true"
                       ></i>
@@ -739,10 +792,10 @@
               data-bs-parent="#servicesAccordion"
             >
               <div class="services-section__panel">
-                <p class="services-section__desc">
+                <span class="services-section__desc">
                   I create reusable components and a style system that keeps
                   your website consistent as you add more pages and sections.
-                </p>
+                </span>
 
                 <div class="services-section__media">
                   <div class="services-section__media-inner">
@@ -760,7 +813,7 @@
           <div class="accordion-item services-section__item">
             <a
               class="services-section__row collapsed"
-              href="#"
+              href="#service5"
               role="button"
               data-bs-toggle="collapse"
               data-bs-target="#service5"
@@ -790,7 +843,7 @@
                       >
                       <span class="services-section__pill-close">Collapse</span>
                       <i
-                        class="services-section__pill-icon"
+                        class="bi bi-plus-lg services-section__pill-icon"
                         data-icon="service-plus"
                         aria-hidden="true"
                       ></i>
@@ -806,11 +859,11 @@
               data-bs-parent="#servicesAccordion"
             >
               <div class="services-section__panel">
-                <p class="services-section__desc">
+                <span class="services-section__desc">
                   I convert designs into responsive front-end builds—fast
                   loading, clean code, and pixel-perfect sections for all screen
                   sizes.
-                </p>
+                </span>
 
                 <div class="services-section__media">
                   <div class="services-section__media-inner">
@@ -831,7 +884,7 @@
 
     <!-- Recent Projects -->
     <section
-      class="projects-section py-6"
+      class="projects-section section-spacing"
       id="projects"
       data-section="projects"
       aria-label="Recent Projects"
@@ -865,9 +918,9 @@
 
         <!-- Project 1 -->
         <div class="projects-section__row-wrap">
-          <div class="row g-4 align-items-stretch">
+          <div class="row g-4 projects-section__case-row">
             <div class="col-12 col-lg-6">
-              <div class="projects-section__card projects-section__card--mint">
+              <div class="projects-section__card projects-section__card--mint" data-zg-editable="surface">
                 <div class="projects-section__badges">
                   <p class="projects-section__badge">Brand Guideline</p>
                   <p class="projects-section__badge">UX Audit</p>
@@ -895,16 +948,20 @@
                   <span>“Want a similar upgrade for your product?”</span>
                 </p>
 
-                <a href="#" class="projects-section__cta">
-                  <span class="projects-section__cta-text">Let’s Chat</span>
-                  <span class="projects-section__cta-icon" data-btn="projects">
+                <div class="projects-section__actions zg-align-center">
+                  <a
+                    href="#contact"
+                    class="projects-section__cta"
+                    data-btn="projects"
+                  >
+                    Let’s Chat
                     <i
                       class="bi bi-arrow-right"
                       data-icon="arrow-right"
                       aria-hidden="true"
                     ></i>
-                  </span>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -923,9 +980,9 @@
 
         <!-- Project 2 -->
         <div class="projects-section__row-wrap">
-          <div class="row g-4 align-items-stretch">
+          <div class="row g-4 projects-section__case-row">
             <div class="col-12 col-lg-6">
-              <div class="projects-section__card projects-section__card--blue">
+              <div class="projects-section__card projects-section__card--blue" data-zg-editable="surface">
                 <div class="projects-section__badges">
                   <p class="projects-section__badge">Landing Page</p>
                   <p class="projects-section__badge">UI System</p>
@@ -953,16 +1010,20 @@
                   <span>“Need a premium personal website?”</span>
                 </p>
 
-                <a href="#" class="projects-section__cta">
-                  <span class="projects-section__cta-text">Let’s Chat</span>
-                  <span class="projects-section__cta-icon" data-btn="projects">
+                <div class="projects-section__actions zg-align-center">
+                  <a
+                    href="#contact"
+                    class="projects-section__cta"
+                    data-btn="projects"
+                  >
+                    Let’s Chat
                     <i
                       class="bi bi-arrow-right"
                       data-icon="arrow-right"
                       aria-hidden="true"
                     ></i>
-                  </span>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -981,9 +1042,9 @@
 
         <!-- Project 3 -->
         <div class="projects-section__row-wrap">
-          <div class="row g-4 align-items-stretch">
+          <div class="row g-4 projects-section__case-row">
             <div class="col-12 col-lg-6">
-              <div class="projects-section__card projects-section__card--pink">
+              <div class="projects-section__card projects-section__card--pink" data-zg-editable="surface">
                 <div class="projects-section__badges">
                   <p class="projects-section__badge">Design System</p>
                   <p class="projects-section__badge">Component Kit</p>
@@ -1011,16 +1072,20 @@
                   <span>“Want your UI to look consistent everywhere?”</span>
                 </p>
 
-                <a href="#" class="projects-section__cta">
-                  <span class="projects-section__cta-text">Let’s Chat</span>
-                  <span class="projects-section__cta-icon" data-btn="projects">
+                <div class="projects-section__actions zg-align-center">
+                  <a
+                    href="#contact"
+                    class="projects-section__cta"
+                    data-btn="projects"
+                  >
+                    Let’s Chat
                     <i
                       class="bi bi-arrow-right"
                       data-icon="arrow-right"
                       aria-hidden="true"
                     ></i>
-                  </span>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1041,21 +1106,21 @@
 
     <!-- testimonial -->
     <section
-      class="testimonials-section py-6"
+      class="testimonials-section section-spacing"
       id="testimonials"
       data-section="testimonials"
       aria-label="Clients Testimonial"
     >
       <div class="container">
         <div class="testimonials-section__head">
-          <span class="testimonials-section__chip">
+          <h2 class="testimonials-section__chip">
             <span class="testimonials-section__chip-dot"></span>
             Clients Testimonial
-          </span>
+          </h2>
         </div>
 
         <div class="testimonials-section__body">
-          <div class="row align-items-end">
+          <div class="row testimonials-section__layout">
             <!-- Controls -->
             <div class="col-12 col-sm-4 col-md-3 col-lg-2">
               <div class="testimonials-section__controls">
@@ -1064,11 +1129,12 @@
                   class="testimonials-section__ctrl testimonials-prev"
                   aria-label="Previous testimonial"
                 >
-                  <span
-                    class="testimonials-section__ctrl-icon"
-                    data-icon="arrow-left"
-                  >
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                  <span class="testimonials-section__ctrl-icon">
+                    <i
+                      class="bi bi-arrow-left"
+                      data-icon="arrow-left"
+                      aria-hidden="true"
+                    ></i>
                   </span>
                 </a>
 
@@ -1077,11 +1143,12 @@
                   class="testimonials-section__ctrl testimonials-next"
                   aria-label="Next testimonial"
                 >
-                  <span
-                    class="testimonials-section__ctrl-icon"
-                    data-icon="arrow-right"
-                  >
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                  <span class="testimonials-section__ctrl-icon">
+                    <i
+                      class="bi bi-arrow-right"
+                      data-icon="arrow-right"
+                      aria-hidden="true"
+                    ></i>
                   </span>
                 </a>
               </div>
@@ -1105,7 +1172,7 @@
 
                       <div class="testimonials-section__author">
                         <div class="testimonials-section__avatar">
-                          <img src="assets/images/testimonial-1.png" alt="" />
+                          <img src="assets/images/testimonial-1.webp" alt="" />
                         </div>
 
                         <div class="testimonials-section__author-meta">
@@ -1130,7 +1197,7 @@
 
                       <div class="testimonials-section__author">
                         <div class="testimonials-section__avatar">
-                          <img src="assets/images/testimonial-2.png" alt="" />
+                          <img src="assets/images/testimonial-2.webp" alt="" />
                         </div>
 
                         <div class="testimonials-section__author-meta">
@@ -1157,7 +1224,7 @@
 
                       <div class="testimonials-section__author">
                         <div class="testimonials-section__avatar">
-                          <img src="assets/images/testimonial-3.png" alt="" />
+                          <img src="assets/images/testimonial-3.webp" alt="" />
                         </div>
 
                         <div class="testimonials-section__author-meta">
@@ -1190,7 +1257,7 @@
       <div class="container">
         <div class="row">
           <!-- LEFT CONTENT -->
-          <div class="col-lg-4 col-md-12">
+          <div class="col-lg-4 col-md-12 faq-section__intro">
             <span class="faq-section__chip">
               <span class="faq-section__chip-dot"></span>
               FAQs
@@ -1225,11 +1292,14 @@
                         Is there a free consultation available?
                       </h3>
                     </div>
-                    <div class="col-2 text-end">
-                      <span
-                        class="faq-section__icon"
-                        data-icon="plus-minus"
-                      ></span>
+                    <div class="col-2 faq-section__icon-column">
+                      <span class="faq-section__icon-wrap">
+                        <i
+                          class="bi bi-dash-lg faq-section__icon"
+                          data-icon="plus-minus"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -1240,10 +1310,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="faq-section__panel">
-                    <p class="faq-section__a">
+                    <span class="faq-section__a">
                       Yes, we offer a free discussion call to understand your
                       goals and suggest the right website structure.
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1264,11 +1334,14 @@
                         Can I change content after the website is live?
                       </h3>
                     </div>
-                    <div class="col-2 text-end">
-                      <span
-                        class="faq-section__icon"
-                        data-icon="plus-minus"
-                      ></span>
+                    <div class="col-2 faq-section__icon-column">
+                      <span class="faq-section__icon-wrap">
+                        <i
+                          class="bi bi-plus-lg faq-section__icon"
+                          data-icon="plus-minus"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -1279,10 +1352,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="faq-section__panel">
-                    <p class="faq-section__a">
+                    <span class="faq-section__a">
                       Yes, you can update text, images, and sections anytime
                       without technical knowledge.
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1303,11 +1376,14 @@
                         Will my website work on mobile devices?
                       </h3>
                     </div>
-                    <div class="col-2 text-end">
-                      <span
-                        class="faq-section__icon"
-                        data-icon="plus-minus"
-                      ></span>
+                    <div class="col-2 faq-section__icon-column">
+                      <span class="faq-section__icon-wrap">
+                        <i
+                          class="bi bi-plus-lg faq-section__icon"
+                          data-icon="plus-minus"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -1318,10 +1394,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="faq-section__panel">
-                    <p class="faq-section__a">
+                    <span class="faq-section__a">
                       Absolutely. Every website is optimized for mobile, tablet,
                       and desktop screens.
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1342,11 +1418,14 @@
                         How long does it take to complete a website?
                       </h3>
                     </div>
-                    <div class="col-2 text-end">
-                      <span
-                        class="faq-section__icon"
-                        data-icon="plus-minus"
-                      ></span>
+                    <div class="col-2 faq-section__icon-column">
+                      <span class="faq-section__icon-wrap">
+                        <i
+                          class="bi bi-plus-lg faq-section__icon"
+                          data-icon="plus-minus"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -1357,10 +1436,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="faq-section__panel">
-                    <p class="faq-section__a">
+                    <span class="faq-section__a">
                       Most personal websites are completed within 7–10 working
                       days depending on content readiness.
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1381,11 +1460,14 @@
                         Do you provide ongoing support after delivery?
                       </h3>
                     </div>
-                    <div class="col-2 text-end">
-                      <span
-                        class="faq-section__icon"
-                        data-icon="plus-minus"
-                      ></span>
+                    <div class="col-2 faq-section__icon-column">
+                      <span class="faq-section__icon-wrap">
+                        <i
+                          class="bi bi-plus-lg faq-section__icon"
+                          data-icon="plus-minus"
+                          aria-hidden="true"
+                        ></i>
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -1396,10 +1478,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="faq-section__panel">
-                    <p class="faq-section__a">
+                    <span class="faq-section__a">
                       Yes, we provide post-launch support and maintenance
                       options to keep your site running smoothly.
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1410,11 +1492,13 @@
       </div>
     </section>
 
+    </main>
+
     <!-- CTA + Footer -->
-    <section
-      id="cta-footer"
-      class="cta-footer-section py-6"
-      data-section="cta-footer"
+    <footer
+      id="footer"
+      class="cta-footer-section section-spacing"
+      data-section="footer"
       aria-label="Book a call and site footer"
     >
       <div class="container">
@@ -1423,7 +1507,7 @@
           Let’s see if we’re a good fit with a 15 min call
           <span class="cta-footer-section__eyebrow-icon" aria-hidden="true">
             <i
-              class="fa-solid fa-turn-down"
+              class="bi bi-arrow-return-right"
               data-icon="turn-down"
               aria-hidden="true"
             ></i>
@@ -1431,21 +1515,15 @@
         </p>
 
         <!-- Big pill marquee CTA -->
-        <a
-          href="#contact"
-          class="cta-footer-section__marquee"
-          aria-label="Book a call"
-        >
-          <div class="cta-footer-section__track" aria-hidden="true">
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-            <span>Book a Call ✦</span>
-          </div>
-        </a>
+        <div class="cta-footer-section__actions zg-align-center">
+          <a
+            href="#contact"
+            class="cta-footer-section__marquee"
+            aria-label="Book a call"
+          >
+            Book a Call ✦
+          </a>
+        </div>
 
         <hr class="cta-footer-section__divider" />
 
@@ -1453,70 +1531,50 @@
         <div class="row cta-footer-section__links" aria-label="Footer">
           <div class="col-12 col-sm-6 col-lg-3 col-xl-2">
             <p class="cta-footer-section__col-title">Home</p>
-            <p class="cta-footer-section__link">
-              <a href="#">About Me</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">My Services</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">Projects</a>
-            </p>
+            <ul class="cta-footer-section__link-list">
+              <li class="cta-footer-section__link"><a href="#about">About Me</a></li>
+              <li class="cta-footer-section__link"><a href="#services">My Services</a></li>
+              <li class="cta-footer-section__link"><a href="#projects">Projects</a></li>
+            </ul>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 col-xl-2">
             <p class="cta-footer-section__col-title">Resources</p>
-            <p class="cta-footer-section__link">
-              <a href="#">FAQs</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">Blog</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">Contact</a>
-            </p>
+            <ul class="cta-footer-section__link-list">
+              <li class="cta-footer-section__link"><a href="#faq">FAQs</a></li>
+              <li class="cta-footer-section__link"><a href="#projects">Blog</a></li>
+              <li class="cta-footer-section__link"><a href="#contact">Contact</a></li>
+            </ul>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 col-xl-2">
             <p class="cta-footer-section__col-title">Pages</p>
-            <p class="cta-footer-section__link">
-              <a href="#">Style Guide</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">Changelog</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">License</a>
-            </p>
+            <ul class="cta-footer-section__link-list">
+              <li class="cta-footer-section__link"><a href="#hero">Style Guide</a></li>
+              <li class="cta-footer-section__link"><a href="#about">Changelog</a></li>
+              <li class="cta-footer-section__link"><a href="LICENSE.md">License</a></li>
+            </ul>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 col-xl-2">
             <p class="cta-footer-section__col-title">Social</p>
-            <p class="cta-footer-section__link">
-              <a href="#">Behance</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">Dribbble</a>
-            </p>
-            <p class="cta-footer-section__link">
-              <a href="#">LinkedIn</a>
-            </p>
+            <ul class="cta-footer-section__link-list">
+              <li class="cta-footer-section__link"><a href="#hero">Behance</a></li>
+              <li class="cta-footer-section__link"><a href="#hero">Dribbble</a></li>
+              <li class="cta-footer-section__link"><a href="#hero">LinkedIn</a></li>
+            </ul>
           </div>
 
-          <div class="col-12 col-lg-12 col-xl-4">
+          <div id="contact" class="col-12 col-lg-12 col-xl-4">
             <p class="cta-footer-section__col-title">Contact</p>
-            <p
-              class="cta-footer-section__link cta-footer-section__contact-link"
-            >
-              <a href="mailto:hello@yourportfolio.com">
-                yourname@domainname.com</a
-              >
-            </p>
-            <p
-              class="cta-footer-section__link cta-footer-section__contact-link"
-            >
-              <a href="tel:+919123456789">+91-91234-56789</a>
-            </p>
+            <ul class="cta-footer-section__link-list">
+              <li class="cta-footer-section__link cta-footer-section__contact-link">
+                <a href="mailto:arjun@portfolio.example">arjun@portfolio.example</a>
+              </li>
+              <li class="cta-footer-section__link cta-footer-section__contact-link">
+                <a href="tel:+919123456789">+91-91234-56789</a>
+              </li>
+            </ul>
             <p class="cta-footer-section__helper">
               Want to discuss a project? Send a quick message and I’ll reply
               within 24 hours.
@@ -1525,29 +1583,41 @@
         </div>
 
         <!-- Legal row (Bootstrap Row/Col only) -->
-        <div class="row cta-footer-section__legal">
-          <div class="col-12 col-md-6 col-lg-4">
+        <div class="row cta-footer-section__legal t-center">
+          <div class="col-12">
             <p class="cta-footer-section__legal-text">
-              Copyrights © <a href="#">All Right Reserved</a>
+              Copyrights © All Right Reserved
             </p>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-4">
-            <p class="cta-footer-section__legal-text">
-              Designed with care by <a href="#">Zigrow</a>
-            </p>
-          </div>
+    
 
-          <div class="col-12 col-lg-4">
-            <p
-              class="cta-footer-section__legal-text cta-footer-section__legal-right"
-            >
-              Powered by <a href="#">Zigrow</a>
+          <div class="col-12 col-lg-4"></div>
+        </div>
+
+        <div class="row cta-footer-section__powered-row">
+          <div class="col-12">
+            <p class="cta-footer-section__powered-by">
+              <a
+                href="https://zigrow.com"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                >Powered by Zigrow</a
+              >
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
+
+    <a
+      href="#hero"
+      class="back-to-top"
+      id="backToTopBtn"
+      aria-label="Back to top"
+    >
+      <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
+    </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1557,8 +1627,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="js/app.js"></script>
   </body>

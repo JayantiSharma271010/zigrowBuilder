@@ -14,25 +14,20 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.13.0-4">
 
   <link rel="icon" href="assets/images/logo.webp">
 
 </head>
 
 <body>
-  <header class="sticky-top top-0">
-    <nav class="navbar-section" id="header" data-id="header">
+  <header class="sticky-top" id="header" data-section="header">
+    <nav class="navbar-section" aria-label="Primary navigation">
       <div class="container">
         <div class="row">
-          <div class="logo" data-logo="navbar">
-            <div class="img-wrapper-style col-lg-2">
-              <img src="assets/images/logo.webp" alt="Logo">
-            </div>
-            <h1 class="logo-name">coffeeshop</pc>
-          </div>
+          <a class="brand-logo" data-logo="navbar" href="#home">coffeeshop</a>
           <div class="nav-links" id="navLinks">
-            <ul class="navbar-nav d-flex flex-md-row gap-4">
+            <ul class="navbar-nav">
               <li><a class="menu-link" href="#home">Home</a></li>
               <li><a class="menu-link" href="#about">About</a></li>
               <li><a class="menu-link" href="#ourmenu">Our Menu</a></li>
@@ -40,20 +35,18 @@
               <li><a class="menu-link" href="#contact">Contact</a></li>
             </ul>
 
-            <div class="social-icons d-flex d-lg-none flex-center">
-              <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-              <a href="https://instagram.com" target="_blank" class="opacity-100"><i class="fab fa-instagram"></i></a>
+            <div class="social-icons mobile-social-icons">
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter" data-icon="x"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" data-icon="instagram"></i></a>
             </div>
           </div>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+            <i class="fas fa-bars" data-icon="menu"></i>
+          </button>
 
-          <div class="social-icons d-none d-lg-flex">
-            <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" class="opacity-100"><i class="fab fa-instagram"></i></a>
+          <div class="social-icons desktop-social-icons">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter" data-icon="x"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" data-icon="instagram"></i></a>
           </div>
         </div>
       </div>
@@ -61,7 +54,7 @@
   </header>
 
   <main>
-    <section class="coffee-hero" id="home" data-id="home">
+    <section class="coffee-hero" id="home" data-section="home">
       <div class="container">
         <div class="row hero-content">
           <div class="col-12 col-md-8 hero-text">
@@ -79,7 +72,9 @@
               CoffeeShop is a modern coffee shop dedicated to providing high-quality coffee and
               creating a welcoming atmosphere for passionate coffee lovers.
             </p>
-            <a class="btn custom-btn">Our Menu</a>
+            <div class="hero-actions zg-align-center">
+              <a href="#ourmenu" class="custom-btn" data-btn="hero">Our Menu</a>
+            </div>
           </div>
         </div>
 
@@ -103,13 +98,13 @@
       </div>
     </section>
 
-    <a href="#" class="scroll-top floating-btn">
-      <i class="fas fa-angle-up"></i>
+    <a href="#home" class="scroll-top floating-btn" aria-label="Back to top">
+      <i class="fas fa-angle-up" data-icon="arrow-up"></i>
     </a>
 
-    <section class="coffee-story" id="about" data-id="about">
+    <section class="coffee-story" id="about" data-section="about">
       <div class="container">
-        <div class="row align-items-start justify-content-between">
+        <div class="row story-layout">
           <div class="col-lg-6">
             <div class="coffee-text">
               <span class="each-section-name">Crafting Community with Coffee</span>
@@ -157,7 +152,7 @@
       </div>
     </section>
 
-    <section class="menu-section" id="ourmenu" data-id="ourmenu">
+    <section class="menu-section" id="ourmenu" data-section="ourmenu">
       <div class="scroll-container">
         <div class="scroll-content">
           <span>OUR MENU</span>
@@ -179,7 +174,7 @@
                   </div>
                   <div class="item-info">
                     <h5>Macchiato
-                      <span class="price">₹5</span>
+                      <span class="price">₹125</span>
                     </h5>
                     <p>Expertly brewed with ethical beans</p>
                   </div>
@@ -193,7 +188,7 @@
                   </div>
                   <div class="item-info">
                     <h5>Mocha
-                      <span class="price">₹29</span>
+                      <span class="price">₹190</span>
                     </h5>
                     <p>Freshly brewed coffee and pastries.</p>
                   </div>
@@ -207,7 +202,7 @@
                   </div>
                   <div class="item-info">
                     <h5>Cold Brew
-                      <span class="price">₹19</span>
+                      <span class="price">₹175</span>
                     </h5>
                     <p>Discover our exquisite coffee offerings</p>
                   </div>
@@ -218,47 +213,54 @@
 
           <div class="col-lg-6 col-md-12 right-column">
             <div class="row">
-              <div class="col-lg-12 menu-item clonable-card d-flex">
-                <div class="img-wrapper-style col-lg-2">
-                  <img src="assets/images/11.webp" class="img-fluid" alt="Affogato">
-                </div>
-                <div class="item-info">
-                  <h5>Affogato <span class="price">₹24</span></h5>
-                  <p>Discover our exquisite coffee offerings.</p>
-                </div>
-
-              </div>
-
-              <div class="col-lg-12 menu-item clonable-card d-flex">
-                <div class="img-wrapper-style col-lg-2">
-                  <img src="assets/images/12.webp" class="img-fluid" alt="Pour Over">
-                </div>
-                <div class="item-info">
-                  <h5>Pour Over
-                    <span class="price">₹32</span>
-                  </h5>
-                  <p>Expertly brewed with unique flavors.</p>
+              <div class="col-lg-12 clonable-card">
+                <div class="menu-item">
+                  <div class="img-wrapper-style col-lg-2">
+                    <img src="assets/images/11.webp" class="img-fluid" alt="Affogato">
+                  </div>
+                  <div class="item-info">
+                    <h5>Affogato <span class="price">₹210</span></h5>
+                    <p>Discover our exquisite coffee offerings.</p>
+                  </div>
                 </div>
               </div>
 
-              <div class="col-lg-12 menu-item clonable-card d-flex">
-                <div class="img-wrapper-style col-lg-2">
-                  <img src="assets/images/13.webp" class="img-fluid" alt="French Press">
+              <div class="col-lg-12 clonable-card">
+                <div class="menu-item">
+                  <div class="img-wrapper-style col-lg-2">
+                    <img src="assets/images/12.webp" class="img-fluid" alt="Pour Over">
+                  </div>
+                  <div class="item-info">
+                    <h5>Pour Over
+                      <span class="price">₹230</span>
+                    </h5>
+                    <p>Expertly brewed with unique flavors.</p>
+                  </div>
                 </div>
-                <div class="item-info">
-                  <h5>French Press
-                    <span class="price">₹5</span>
-                  </h5>
-                  <p>Expertly brewed with ethically sourced beans</p>
+              </div>
+
+              <div class="col-lg-12 clonable-card">
+                <div class="menu-item">
+                  <div class="img-wrapper-style col-lg-2">
+                    <img src="assets/images/13.webp" class="img-fluid" alt="French Press">
+                  </div>
+                  <div class="item-info">
+                    <h5>French Press
+                      <span class="price">₹200</span>
+                    </h5>
+                    <p>Expertly brewed with ethically sourced beans</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row menu-footer-row">
           <div class="col-12 text-align-center">
-            <a href="#" class="custom-btn">View Our Menu</a>
+            <div class="menu-actions zg-align-center">
+              <a href="#contact" class="custom-btn" data-btn="ourmenu">View Our Menu</a>
+            </div>
           </div>
         </div>
       </div>
@@ -306,7 +308,7 @@
       </svg>
     </section>
 
-    <section class="offer-section container-fluid" id="blog" data-id="blog">
+    <section class="offer-section container-fluid" id="blog" data-section="blog">
       <div class="top-cup-of-coffee">
         <div class="img-wrapper-style">
           <img src="assets/images/14.webp" class="img-fluid" alt="Cup shadow">
@@ -320,12 +322,14 @@
           <p class="each-section-description">
             We believe in crafting exceptional coffee experiences that bring people together.
           </p>
-          <a href="#" class="custom-btn">More Services</a>
+          <div class="offer-actions zg-align-center">
+            <a href="#contact" class="custom-btn" data-btn="services">More Services</a>
+          </div>
         </div>
 
         <div class="col-lg-9 right-column-cards col-md-12">
           <div class="row g-0">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 clonable-card">
               <div class="offer-card only-for-border">
                 <div class="img-wrapper-style">
                   <img src="assets/images/15.webp" alt="Coffee Expertise">
@@ -334,7 +338,7 @@
                 <p>At CoffeeShop, we offer specialty coffee crafted with care and love.</p>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 clonable-card">
               <div class="offer-card only-for-border">
                 <div class="img-wrapper-style">
                   <img src="assets/images/16.webp" alt="Specialty Coffee">
@@ -343,7 +347,7 @@
                 <p>At CoffeeShop, we offer specialty coffee crafted with care and love.</p>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 clonable-card">
               <div class="offer-card only-for-border">
                 <div class="img-wrapper-style">
                   <img src="assets/images/17.webp" alt="Pastry Selection">
@@ -357,9 +361,9 @@
       </div>
     </section>
 
-    <section class="team-section" id="team" data-id="team">
+    <section class="team-section" id="team" data-section="team">
       <div class="container">
-        <div class="row g-4 align-items-center">
+        <div class="row g-4 team-layout">
           <div class="team-intro">
             <p class="each-section-name">Discover CoffeeShop</p>
             <h2 class="each-section-heading">The artists behind<br>every <span>cup</span></h2>
@@ -409,32 +413,32 @@
       </div>
     </section>
 
-    <section class="partners-testimonial" id="testimonial" data-id="testimonial">
+    <section class="partners-testimonial" id="testimonial" data-section="testimonial">
       <div class="container">
-        <div class="row logos-row align-items-center">
+        <div class="row logos-row">
           <div class="col-6 col-md-2 logo-item clonable-card">
             <div class="img-wrapper-style">
-              <img src="assets/images/bw-lorem-1.png" alt="Lorem ipsum">
+              <img src="assets/images/bw-lorem-1.webp" alt="Coffee partner emblem one">
             </div>
           </div>
           <div class="col-6 col-md-2 logo-item clonable-card">
             <div class="img-wrapper-style">
-              <img src="assets/images/bw-lorem-2.png" alt="Lorem ipsum">
+              <img src="assets/images/bw-lorem-2.webp" alt="Coffee partner emblem two">
             </div>
           </div>
           <div class="col-6 col-md-2 logo-item clonable-card">
             <div class="img-wrapper-style">
-              <img src="assets/images/bw-lorem-3.png" alt="Lorem ipsum">
+              <img src="assets/images/bw-lorem-3.webp" alt="Coffee partner emblem three">
             </div>
           </div>
           <div class="col-6 col-md-2 logo-item clonable-card">
             <div class="img-wrapper-style">
-              <img src="assets/images/bw-lorem-4.png" alt="Lorem ipsum">
+              <img src="assets/images/bw-lorem-4.webp" alt="Coffee partner emblem four">
             </div>
           </div>
           <div class="col-6 col-md-2 logo-item clonable-card">
             <div class="img-wrapper-style">
-              <img src="assets/images/bw-lorem-5.png" alt="Lorem ipsum">
+              <img src="assets/images/bw-lorem-5.webp" alt="Coffee partner emblem five">
             </div>
           </div>
           <div class="col-12 col-md-2 partners-title text-align-right">
@@ -442,7 +446,7 @@
           </div>
         </div>
 
-        <div class="row g-5 testimonial-row align-items-center">
+        <div class="row g-5 testimonial-row">
           <div class="col-lg-5 col-md-12 testimonial-text">
             <div class="stars">
               <i class="fa-solid fa-star" data-icon="star"></i>
@@ -468,7 +472,7 @@
       </div>
     </section>
 
-    <section class="office-locations" id="contact" data-id="contact">
+    <section class="office-locations" id="contact" data-section="contact">
       <div class="container">
         <div class="row">
           <div class="col-12 section-title">
@@ -477,48 +481,48 @@
         </div>
 
         <div>
-          <div class="row location-row clonable-card align-items-center">
+          <div class="row location-row">
             <div class="col-12 col-md-3 office-city">
               <h5>New Delhi</h5>
             </div>
             <div class="col-12 col-md-3 office-address">
-              <p>45 Dummy Location<br>New Delhi W1X 5YZ</p>
+              <p>45 Nehru Place<br>New Delhi 110019</p>
             </div>
             <div class="col-12 col-md-3 office-contact">
               <p>+91-9123456789<br>newdelhi@coffeeshop.com</p>
             </div>
             <div class="col-12 col-md-3 office-link">
-              <a href="#">Get Directions →</a>
+              <a href="https://maps.google.com/?q=Nehru+Place+New+Delhi" target="_blank" rel="noopener noreferrer">Get Directions →</a>
             </div>
           </div>
 
-          <div class="row location-row clonable-card align-items-center">
+          <div class="row location-row">
             <div class="col-12 col-md-3 office-city">
               <h5>Mumbai</h5>
             </div>
             <div class="col-12 col-md-3 office-address">
-              <p>23 Dummy Location<br>Mumbai A1 5HZ</p>
+              <p>23 Bandra Kurla Complex<br>Mumbai 400051</p>
             </div>
             <div class="col-12 col-md-3 office-contact">
               <p>+91-9123456789<br>mumbai@coffeeshop.com</p>
             </div>
             <div class="col-12 col-md-3 office-link">
-              <a href="#">Get Directions →</a>
+              <a href="https://maps.google.com/?q=Bandra+Kurla+Complex+Mumbai" target="_blank" rel="noopener noreferrer">Get Directions →</a>
             </div>
           </div>
 
-          <div class="row location-row clonable-card align-items-center">
+          <div class="row location-row">
             <div class="col-12 col-md-3 office-city">
               <h5>Gurgaon</h5>
             </div>
             <div class="col-12 col-md-3 office-address">
-              <p>10 Dummy Location<br>Gurgaon XTC YNM</p>
+              <p>10 Golf Course Road<br>Gurugram 122002</p>
             </div>
             <div class="col-12 col-md-3 office-contact">
               <p>+91-9123456789<br>gurgaon@coffeeshop.com</p>
             </div>
             <div class="col-12 col-md-3 office-link">
-              <a href="#">Get Directions →</a>
+              <a href="https://maps.google.com/?q=Golf+Course+Road+Gurugram" target="_blank" rel="noopener noreferrer">Get Directions →</a>
             </div>
           </div>
         </div>
@@ -540,13 +544,10 @@
     </section>
   </main>
 
-  <footer class="site-footer container-fluid" id="footer" data-id="footer">
+  <footer class="site-footer container-fluid" id="footer" data-section="footer">
     <div class="row footer-top">
       <div class="col-12 col-md-4 footer-about">
-        <div class="footer-logo" data-logo="footer">
-          <img src="assets/images/logo.webp" alt="CoffeeShop Logo">
-          <h3>coffeeshop</h3>
-        </div>
+        <a class="footer-brand-logo" data-logo="footer" href="#home">coffeeshop</a>
         <p>
           CoffeeShop is a forward-thinking creative digital agency dedicated to transforming
           brands through innovative design and strategic marketing solutions.
@@ -563,30 +564,35 @@
       <div class="col-12 col-md-3 footer-links">
         <h5>Links</h5>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blog">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-12 col-md-2 footer-social">
         <h5>Get in Touch</h5>
         <div class="social-icons">
-          <a href="#" data-icon="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" data-icon="instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" data-icon="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" data-icon="facebook"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" data-icon="instagram"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter" data-icon="x"></i></a>
         </div>
       </div>
     </div>
 
     <div class="row footer-bottom">
       <div class="col-12 col-md-6 footer-copy">
-        <p>© 2025, All Rights Reserved.</p>
+        <p>© 2026, All Rights Reserved.</p>
       </div>
       <div class="col-12 col-md-6 footer-credit">
-        <p>Site by <a href="#">XYZ</a></p>
+        <p>Site by CoffeeShop</p>
+      </div>
+    </div>
+    <div class="row footer-attribution">
+      <div class="col-12">
+        <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
       </div>
     </div>
   </footer>
@@ -594,8 +600,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=2.13.0-3"></script>
 
+  <!-- Legacy non-applicable form handler retained inert because this template has no form.
   <script>
     (function() {
       // Find ALL Zigrow forms
@@ -703,6 +710,7 @@
       });
     })();
   </script>
+  -->
 
 </body>
 

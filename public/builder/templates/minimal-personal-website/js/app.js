@@ -1,67 +1,116 @@
 // navbar functionality
-const cb = document.getElementById("nav-toggle");
-const btn = document.querySelector("#site-header .menu-btn");
-if (cb && btn) {
-  const sync = () =>
-    btn.setAttribute("aria-expanded", cb.checked ? "true" : "false");
-  cb.addEventListener("change", sync);
-  sync();
-}
-const header = document.getElementById("site-header");
+const header = document.getElementById("header");
+const navBar = header?.querySelector(".nav-bar");
+const menuButton = header?.querySelector(".menu-btn");
+const navLinks = header?.querySelectorAll(".nav-list a") ?? [];
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+const setMenuOpen = (open) => {
+  navBar?.classList.toggle("is-open", open);
+  menuButton?.setAttribute("aria-expanded", String(open));
+};
+
+menuButton?.addEventListener("click", () => {
+  setMenuOpen(!navBar.classList.contains("is-open"));
+});
+
+navLinks.forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenuOpen(false);
+    menuButton?.focus();
   }
 });
+
+document.addEventListener("click", (event) => {
+  if (navBar && !navBar.contains(event.target)) setMenuOpen(false);
+});
+
 // back to top button functionality
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-window.addEventListener("scroll", () => {
-  if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
-  }
-});
+const syncScrollState = () => {
+  header?.classList.toggle("scrolled", window.scrollY > 50);
+  backToTopBtn?.classList.toggle("show", window.scrollY > 300);
+};
 
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+window.addEventListener("scroll", syncScrollState, { passive: true });
+syncScrollState();
+
+backToTopBtn?.addEventListener("click", (event) => {
+  event.preventDefault();
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  document.getElementById("hero")?.focus({ preventScroll: true });
 });
 
 // about tab functionality
 const tabs = document.querySelectorAll(".tab");
+const tabPanels = document.querySelectorAll("[data-tab-panel]");
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", (e) => {
-    e.preventDefault();
+const activateTab = (tab) => {
+  tabs.forEach((item) => {
+    const active = item === tab;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-selected", String(active));
+    item.setAttribute("tabindex", active ? "0" : "-1");
+  });
 
-    tabs.forEach((t) => {
-      t.classList.remove("is-active");
-      t.setAttribute("aria-selected", "false");
-    });
+  tabPanels.forEach((panel) => {
+    panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+  });
+};
 
-    tab.classList.add("is-active");
-    tab.setAttribute("aria-selected", "true");
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", (event) => {
+    event.preventDefault();
+    activateTab(tab);
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const direction = event.key === 'ArrowRight' ? 1 : -1;
+    const next = tabs[(index + direction + tabs.length) % tabs.length];
+    activateTab(next);
+    next.focus();
   });
 });
 
+// Keep Bootstrap accordion icons synchronized with the expanded state.
+document.querySelectorAll(".accordion-collapse").forEach((panel) => {
+  const syncIcon = () => {
+    const toggle = document.querySelector(`[aria-controls="${panel.id}"]`);
+    const icon = toggle?.querySelector("[data-icon]");
+    const open = panel.classList.contains("show");
+    icon?.classList.toggle("bi-plus-lg", !open);
+    icon?.classList.toggle("bi-dash-lg", open);
+  };
+  panel.addEventListener("shown.bs.collapse", syncIcon);
+  panel.addEventListener("hidden.bs.collapse", syncIcon);
+  syncIcon();
+});
+
 // testimonial slider functionality
-const testimonialSwiper = new Swiper(".testimonials-swiper", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  speed: 500,
-  loop: true,
-  autoHeight: true,
-  navigation: {
-    nextEl: ".testimonials-next",
-    prevEl: ".testimonials-prev",
-  },
+if (typeof Swiper !== "undefined") {
+  new Swiper(".testimonials-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    speed: 500,
+    loop: true,
+    autoHeight: true,
+    navigation: {
+      nextEl: ".testimonials-next",
+      prevEl: ".testimonials-prev",
+    },
+  });
+}
+
+document.querySelectorAll(".testimonials-section__ctrl").forEach((control) => {
+  control.addEventListener("click", (event) => event.preventDefault());
 });
 // gsap animation
-if (window.innerWidth > 768) {
+if (window.innerWidth > 768 && typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -69,51 +118,51 @@ if (window.innerWidth > 768) {
        HERO SECTION
     ====================== */
     // Left Copy
-    gsap.from("#hero .copy-left", {
+    gsap.from("#hero .hero-section__left", {
       opacity: 0,
       x: -80,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#hero .copy-left",
+        trigger: "#hero .hero-section__left",
         start: "top 80%",
       },
     });
 
     // Right Copy
-    gsap.from("#hero .copy-right", {
+    gsap.from("#hero .hero-section__right", {
       opacity: 0,
       x: 80,
       duration: 1,
       delay: 0.2,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#hero .copy-right",
+        trigger: "#hero .hero-section__right",
         start: "top 80%",
       },
     });
 
     // Gallery Cards (stagger)
-    gsap.from("#hero .gallery .card", {
+    gsap.from("#hero .hero-section__gallery .hero-section__card", {
       opacity: 0,
       y: 60,
       duration: 1,
       stagger: 0.2,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#hero .gallery",
+        trigger: "#hero .hero-section__gallery",
         start: "top 80%",
       },
     });
 
     // Scroll Indicator bounce-in
-    gsap.from("#hero .scroll-indicator", {
+    gsap.from("#hero .hero-section__scroll", {
       opacity: 0,
       y: 40,
       duration: 0.8,
       ease: "back.out(1.7)",
       scrollTrigger: {
-        trigger: "#hero .scroll-indicator",
+        trigger: "#hero .hero-section__scroll",
         start: "top 90%",
       },
     });
@@ -122,38 +171,38 @@ if (window.innerWidth > 768) {
        ABOUT SECTION
     ====================== */
     // About Head
-    gsap.from("#about .about-head", {
+    gsap.from("#about .about-section__head", {
       opacity: 0,
       y: 60,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#about .about-head",
+        trigger: "#about .about-section__head",
         start: "top 85%",
       },
     });
 
     // Timeline rows
-    gsap.from("#about .t-row", {
+    gsap.from("#about .about-section__t-item", {
       opacity: 0,
       y: 40,
       duration: 0.8,
       stagger: 0.25,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#about .timeline",
+        trigger: "#about .about-section__timeline",
         start: "top 80%",
       },
     });
 
     // Intro Card (image + text)
-    gsap.from("#about .intro-card", {
+    gsap.from("#about .about-section__intro-card", {
       opacity: 0,
       x: 80,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#about .intro-card",
+        trigger: "#about .about-section__intro-card",
         start: "top 85%",
       },
     });
@@ -161,38 +210,38 @@ if (window.innerWidth > 768) {
        SERVICES SECTION
     ====================== */
     // Header animation
-    gsap.from("#services .services-head", {
+    gsap.from("#services .services-section__head", {
       opacity: 0,
       y: 60,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#services .services-head",
+        trigger: "#services .services-section__head",
         start: "top 85%",
       },
     });
 
     // Each service card (accordion details)
-    gsap.from("#services .service", {
+    gsap.from("#services .services-section__item", {
       opacity: 0,
       y: 40,
       duration: 0.8,
       stagger: 0.2,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#services .service-list",
+        trigger: "#services .services-section__list",
         start: "top 80%",
       },
     });
 
     // Images inside service panels
-    gsap.from("#services .service .media img", {
+    gsap.from("#services .services-section__media img", {
       opacity: 0,
       scale: 0.85,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#services .service .media",
+        trigger: "#services .services-section__media",
         start: "top 85%",
       },
     });
@@ -201,19 +250,19 @@ if (window.innerWidth > 768) {
        PROJECTS SECTION
     ====================== */
     // Projects header
-    gsap.from("#projects .projects-head", {
+    gsap.from("#projects .projects-section__head", {
       opacity: 0,
       y: 50,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#projects .projects-head",
+        trigger: "#projects .projects-section__head",
         start: "top 85%",
       },
     });
 
     // Each case grid (staggered fade-in)
-    gsap.from("#projects .case-grid", {
+    gsap.from("#projects .projects-section__row-wrap", {
       opacity: 0,
       y: 60,
       duration: 1,
@@ -226,27 +275,27 @@ if (window.innerWidth > 768) {
     });
 
     // Case card text slides from left
-    gsap.from("#projects .case-card", {
+    gsap.from("#projects .projects-section__card", {
       opacity: 0,
       x: -80,
       duration: 1,
       stagger: 0.3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#projects .case-grid",
+        trigger: "#projects .projects-section__row-wrap",
         start: "top 80%",
       },
     });
 
     // Case visuals (images) slide from right
-    gsap.from("#projects .case-visual img", {
+    gsap.from("#projects .projects-section__visual img", {
       opacity: 0,
       x: 80,
       duration: 1,
       stagger: 0.3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#projects .case-grid",
+        trigger: "#projects .projects-section__row-wrap",
         start: "top 80%",
       },
     });
@@ -254,38 +303,38 @@ if (window.innerWidth > 768) {
        TESTIMONIALS SECTION
     ====================== */
     // Header
-    gsap.from("#testimonials .t-head", {
+    gsap.from("#testimonials .testimonials-section__head", {
       opacity: 0,
       y: 50,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#testimonials .t-head",
+        trigger: "#testimonials .testimonials-section__head",
         start: "top 85%",
       },
     });
 
     // Quote block
-    gsap.from("#testimonials .quote", {
+    gsap.from("#testimonials .testimonials-section__quote", {
       opacity: 0,
       y: 60,
       duration: 1.2,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#testimonials .quote",
+        trigger: "#testimonials .testimonials-section__quote",
         start: "top 80%",
       },
     });
 
     // Controls fade in
-    gsap.from("#testimonials .controls button", {
+    gsap.from("#testimonials .testimonials-section__controls a", {
       opacity: 0,
       scale: 0.8,
       stagger: 0.2,
       duration: 0.8,
       ease: "back.out(1.7)",
       scrollTrigger: {
-        trigger: "#testimonials .controls",
+        trigger: "#testimonials .testimonials-section__controls",
         start: "top 85%",
       },
     });
@@ -294,26 +343,26 @@ if (window.innerWidth > 768) {
        FAQ SECTION
     ====================== */
     // FAQ intro
-    gsap.from("#faq .intro", {
+    gsap.from("#faq .faq-section__intro", {
       opacity: 0,
       x: -80,
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: "#faq .intro",
+        trigger: "#faq .faq-section__intro",
         start: "top 85%",
       },
     });
 
     // FAQ accordion items
-    gsap.from("#faq .accordion .item", {
+    gsap.from("#faq .faq-section__item", {
       opacity: 0,
       y: 40,
       stagger: 0.2,
       duration: 0.8,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#faq .accordion",
+        trigger: "#faq #faqAccordion",
         start: "top 80%",
       },
     });
@@ -322,38 +371,26 @@ if (window.innerWidth > 768) {
        CTA + FOOTER SECTION
     ====================== */
     // CTA eyebrow
-    gsap.from("#cta-footer .cta-eyebrow", {
+    gsap.from("#footer .cta-footer-section__eyebrow", {
       opacity: 0,
       y: 40,
       duration: 0.8,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#cta-footer .cta-eyebrow",
-        start: "top 85%",
-      },
-    });
-
-    // Marquee CTA
-    gsap.from("#cta-footer .marquee-cta", {
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      ease: "elastic.out(1, 0.6)",
-      scrollTrigger: {
-        trigger: "#cta-footer .marquee-cta",
+        trigger: "#footer .cta-footer-section__eyebrow",
         start: "top 85%",
       },
     });
 
     // Footer links (staggered columns)
-    gsap.from("#cta-footer .footer-grid .col", {
+    gsap.from("#footer .cta-footer-section__links > div", {
       opacity: 0,
       y: 50,
       stagger: 0.2,
       duration: 0.8,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: "#cta-footer .footer-grid",
+        trigger: "#footer .cta-footer-section__links",
         start: "top 80%",
       },
     });

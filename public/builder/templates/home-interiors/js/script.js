@@ -38,22 +38,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
 ////////////////////// Our projects images change
 const previewImage = document.getElementById("mainPreviewImage");
-const imageBlocks = document.querySelectorAll(".image-room1");
+const projectThumbnails = document.querySelector(".project-thumbnails");
 
 // Save the default image URL
 const defaultImage = previewImage.src;
 
-imageBlocks.forEach((block) => {
-  const hoverImage = block.getAttribute("data-large");
+projectThumbnails.addEventListener("pointerenter", (event) => {
+  const block = event.target.closest(".image-room1");
+  if (!block || !projectThumbnails.contains(block)) return;
+  previewImage.src = block.getAttribute("data-large");
+}, true);
 
-  block.addEventListener("mouseenter", () => {
-    previewImage.src = hoverImage;
-  });
-
-  block.addEventListener("mouseleave", () => {
-    previewImage.src = defaultImage;
-  });
-});
+projectThumbnails.addEventListener("pointerleave", (event) => {
+  const block = event.target.closest(".image-room1");
+  if (!block || !projectThumbnails.contains(block)) return;
+  previewImage.src = defaultImage;
+}, true);
 
 gsap.registerPlugin(ScrollTrigger);
 ///////////// Animate floating button in when user scrolls down
@@ -265,47 +265,24 @@ window.addEventListener("DOMContentLoaded", () => {
       stagger: 0.2,
       ease: "power2.out",
     });
-    // Optional: Number counter animation
-    const counters = document.querySelectorAll(".section5-number");
-    counters.forEach((counter) => {
-      const endValue = parseInt(counter.textContent.trim());
-      gsap.fromTo(
-        counter,
-        { textContent: 0 },
-        {
-          textContent: endValue,
-          duration: 2,
-          ease: "power1.inOut",
-          scrollTrigger: {
-            trigger: counter,
-            start: "top 90%",
-          },
-          snap: { textContent: 1 },
-          onUpdate: function () {
-            counter.textContent = Math.floor(counter.textContent);
-          },
-        }
-      );
-    });
+    // Keep the original statistics visible while the boxes retain their entrance animation.
 
     /////////////// Section 6(Testimonials section)
-    // Animate testimonials on large screens (non-carousel)
-    gsap.from(".section6 .boxes-text", {
+    // Animate the desktop testimonial rail as one stable unit so card geometry stays equal.
+    gsap.from(".testimonials-swiper", {
       scrollTrigger: {
         trigger: ".section6",
         start: "top 80%",
       },
       opacity: 0,
-      scale: 0.8,
-      y: 50,
+      y: 30,
       duration: 1,
       ease: "power2.out",
-      stagger: 0.3,
     });
     // Optional: Fade in heading smoothly
-    gsap.from(".section6 h1", {
+    gsap.from(".section6 h2", {
       scrollTrigger: {
-        trigger: ".section6 h1",
+        trigger: ".section6 h2",
         start: "top 90%",
       },
       opacity: 0,
@@ -326,9 +303,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ////////////////////////Section 7(Contact us )
     // Animate heading and underline
-    gsap.from(".section7 h1, .section7 hr", {
+    gsap.from(".section7 h2, .section7 hr", {
       scrollTrigger: {
-        trigger: ".section7 h1",
+        trigger: ".section7 h2",
         start: "top 90%",
       },
       opacity: 0,
@@ -338,7 +315,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
     // Animate form inputs
-    gsap.from(".section7 .form-control", {
+    gsap.from(".section7 [form-question-zigrow] > input:not([type='hidden'])", {
       scrollTrigger: {
         trigger: ".form-of-section7",
         start: "top 85%",
@@ -349,20 +326,8 @@ window.addEventListener("DOMContentLoaded", () => {
       stagger: 0.2,
       ease: "power2.out",
     });
-    // Animate checkbox and label
-    gsap.from(".section7 .form-check", {
-      scrollTrigger: {
-        trigger: ".form-of-section7",
-        start: "top 85%",
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      delay: 0.6,
-      ease: "power2.out",
-    });
     // Animate submit button
-    gsap.from(".section7 .submit-button-contactus", {
+    gsap.from(".section7 form[data-zigrow-form] > button[type='submit']", {
       scrollTrigger: {
         trigger: ".form-of-section7",
         start: "top 85%",

@@ -24,71 +24,101 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <button id="backToTopBtn" class="btn">
-      <i class="bi bi-arrow-up" data-icon="arrow"></i>
-    </button>
     <!-- Navbar -->
-    <header id="navbar" data-section="navbar" class="navbar-section">
+    <header id="header" data-section="header" class="navbar-section">
       <div class="container">
-        <div class="nav-wrapper">
-          <!-- Logo + Nav -->
-          <div class="logo-wraper" data-logo="navbar">
-            <div class="logo">
-              <p>Sea Scape <span>HOTEL</span></p>
-            </div>
-            <nav class="nav-menu" id="navMenu">
-              <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#gallery">Rooms</a></li>
-                <li><a href="#best-of-sf">Things To Do</a></li>
-                <li><a href="#facilities">Facilities</a></li>
-                <li><a href="#footer">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="nav-wrapper">
+              <!-- Logo + Nav -->
+              <div class="logo-wraper">
+                <a
+                  href="#hero"
+                  class="navbar-brand-logo"
+                  data-logo="navbar"
+                  >Sea Scape<br />Hotel</a
+                >
+                <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                  <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#gallery">Rooms</a></li>
+                    <li><a href="#best-of-sf">Things To Do</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
 
-          <!-- Social + Button -->
-          <div class="nav-actions">
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter" data-icon="twitter"></i></a>
-              <a href="#"
-                ><i class="fab fa-facebook-f" data-icon="facebook"></i
-              ></a>
-              <a href="#"
-                ><i class="fab fa-instagram" data-icon="instagram"></i
-              ></a>
+              <!-- Social + Button -->
+              <div class="nav-actions">
+                <div class="social-icons">
+                  <a href="#footer" aria-label="Twitter"
+                    ><i class="fab fa-twitter" data-icon="twitter"></i
+                  ></a>
+                  <a href="#footer" aria-label="Facebook"
+                    ><i class="fab fa-facebook-f" data-icon="facebook"></i
+                  ></a>
+                  <a href="#footer" aria-label="Instagram"
+                    ><i class="fab fa-instagram" data-icon="instagram"></i
+                    ></a>
+                </div>
+                <div class="nav-cta-actions zg-align-center">
+                  <a
+                    href="#reservation"
+                    class="reservation-btn"
+                    data-btn="nav"
+                    >Reservation</a
+                  >
+                </div>
+                <!-- Toggle button -->
+                <button
+                  class="nav-toggle"
+                  id="navToggle"
+                  type="button"
+                  aria-label="Open navigation menu"
+                  aria-controls="navMenu"
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-list" data-icon="menu"></i>
+                </button>
+              </div>
             </div>
-            <a href="#reservation" class="reservation-btn">Reservation</a>
-            <!-- Toggle button -->
-            <button class="nav-toggle" id="navToggle">&#9776;</button>
           </div>
         </div>
       </div>
     </header>
+    <main>
     <!-- Hero Section -->
-    <section id="hero" data-section="hero" class="hero-section py-6">
+    <section id="hero" data-section="hero" class="hero-section section-spacing">
       <div class="container">
-        <div class="row min-vh-100 hero-wraper">
+        <div class="row hero-wraper">
           <div class="col-12 col-md-10 col-lg-8">
             <div class="hero-content">
               <p class="welcome-text">WELCOME TO</p>
               <h1>
                 Sea Scape Hotel <br />
-                San Fransisco
+                San Francisco
               </h1>
               <p class="description">
-                Gravida maecenas mi iaculis non, posuere mattis urna, ac risus
-                sit porta nunc nibh dictum proin leo dolor sed bibendum mi vitae
-                mattis ipsum, in odio vitae purus pellentesque integer at ac.
+                Stay close to San Francisco's shoreline with welcoming rooms,
+                thoughtful essentials, and easy access to the city's most
+                memorable waterfront destinations.
               </p>
-              <a href="#" class="check-btn">Check Availability</a>
+              <div class="hero-actions zg-align-center">
+                <a
+                  href="#reservation"
+                  class="check-btn"
+                  data-btn="hero"
+                  >Check Availability</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- about section -->
-    <section id="about" data-section="about" class="about-section py-6">
+    <section id="about" data-section="about" class="about-section section-spacing">
       <div class="container">
         <div class="row g-4 about-wrapper">
           <!-- Left Image -->
@@ -101,57 +131,68 @@
 
           <!-- Right Content -->
           <div class="col-12 col-lg-6 about-content">
-            <h2>Get Comfy in The Near of San Fransisco shoreline</h2>
+            <h2>Get Comfortable Near the San Francisco Shoreline</h2>
             <p>
-              Purus mattis massa, ut nulla eu facilisi nascetur eu risus sed
-              dolor auctor arcu turpis elementum, nam venenatis nibh fusce
-              pellentesque habitant donec consequat.
+              Relax beside the water in a comfortable hotel designed for
+              practical stays, friendly service, and unhurried mornings near
+              San Francisco's scenic shoreline.
             </p>
             <p>
-              Cursus tempus, tincidunt quis sem sapien id non eget sed in
-              consequat tellus phasellus orci in semper elit porttitor eget
-              metus, aliquet egestas aliquet erat congue eget urna diam, tellus
-              at leo, enim eu enim, in nisl, facilisi volutpat lacus.
+              Each room balances useful amenities with a calm atmosphere, while
+              our location keeps neighbourhood cafés, waterfront walks, and
+              popular city sights within easy reach throughout your visit.
             </p>
-            <a href="#" class="discover-btn">Discover More</a>
+            <div class="about-actions zg-align-center">
+              <a href="#facilities" class="discover-btn" data-btn="about"
+                >Discover More</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- data section -->
-    <section id="data" data-section="data" class="data py-6">
+    <section id="data" data-section="data" class="data section-spacing">
       <div class="container">
         <div class="row g-4 data-wraper">
-          <div class="col-12 col-md-6 data-card">
-            <h2>8</h2>
-            <p>YEARS OF SERVICE</p>
+          <div class="col-12 col-md-6 data-card clonable-card">
+            <div class="data-card-surface">
+              <h2>8</h2>
+              <p>YEARS OF SERVICE</p>
+            </div>
           </div>
-          <div class="col-12 col-md-6 data-card">
-            <h2>320</h2>
-            <p>SQ. METER AREA</p>
+          <div class="col-12 col-md-6 data-card clonable-card">
+            <div class="data-card-surface">
+              <h2>320</h2>
+              <p>SQ. METER AREA</p>
+            </div>
           </div>
-          <div class="col-12 col-md-6 data-card">
-            <h2>40</h2>
-            <p>NICE ROOMS</p>
+          <div class="col-12 col-md-6 data-card clonable-card">
+            <div class="data-card-surface">
+              <h2>40</h2>
+              <p>COMFORTABLE ROOMS</p>
+            </div>
           </div>
-          <div class="col-12 col-md-6 data-card">
-            <h2>4567</h2>
-            <p>HAPPY VISITORS</p>
+          <div class="col-12 col-md-6 data-card clonable-card">
+            <div class="data-card-surface">
+              <h2>4567</h2>
+              <p>HAPPY VISITORS</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- reach section-->
-    <section id="reach" data-section="reach" class="reach py-6">
+    <section id="reach" data-section="reach" class="reach section-spacing">
       <div class="container">
         <div class="reach-wrapar">
           <!-- Heading + Button -->
-          <div class="row reach-heading py-3">
+          <div class="row reach-heading">
             <div class="col-12 col-md-8 heading-left">
               <h3>How to Reach</h3>
-              <p>Nibh tempor euismod nulla risus, elementum sed volutpat</p>
+              <p>Plan a simple route to the hotel before your arrival.</p>
             </div>
-            <div class="col-12 col-md-4 direction-btn mt-3 mt-md-0">
+            <div class="col-12 col-md-4 direction-btn zg-align-center">
               <a
                 href="https://www.google.com/maps/search/?api=1&query=12.894370090902344%2C77.6343217148211"
               >
@@ -165,25 +206,12 @@
           <div class="row">
             <div class="col-12">
               <div class="map-container">
-                <!-- <a
-                  href="https://www.google.com/maps/search/?api=1&query=12.894370090902344%2C77.6343217148211"
-                  target="_blank"
-                  class="btn btn-directions mb-3"
-                >
-                  GET DIRECTIONS <i class="bi bi-arrow-right-short"></i>
-                </a> -->
-
-                <div
-                  data-component-maps
-                  style="width: 100%; height: 350px"
-                  class="map-box"
-                >
+                <div data-component-maps class="map-box">
                   <iframe
                     frameborder="0"
                     src="https://maps.google.com/maps?q=12.894370090902344%2C77.6343217148211&z=14&t=q&output=embed"
                     width="100%"
                     height="100%"
-                    style="width: 100%; height: 100%; left: 0"
                     loading="lazy"
                     allowfullscreen
                   ></iframe>
@@ -196,75 +224,95 @@
     </section>
 
     <!-- facilities-->
-    <section id="facilities" data-section="facilities" class="facilities py-6">
+    <section
+      id="facilities"
+      data-section="facilities"
+      class="facilities section-spacing"
+    >
       <div class="container">
         <div class="row facilities-wrapper">
           <div class="col-12 facilities-heading">
             <h2>Facilities</h2>
             <p>
-              Interdum curabitur platea turpis orci auctor in scelerisque ac ut
-              eleifend at at leo laoreet at ut semper eget laoreet vestibulum a
-              elementum nec
+              Enjoy practical amenities that make every stay easier, from
+              reliable connectivity and helpful reception service to convenient
+              transport options around the city.
             </p>
           </div>
           <div class="col-12">
             <div class="row facilities-grid g-4">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-square-parking" data-icon="parking"></i>
-                  <h5>Free Parking</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-square-parking" data-icon="parking"></i>
+                  </span>
+                  <h3>Free Parking</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-wifi" data-icon="wifi"></i>
-                  <h5>Free Wi-fi</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-wifi" data-icon="wifi"></i>
+                  </span>
+                  <h3>Free Wi-Fi</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-cat" data-icon="cat"></i>
-                  <h5>Pet Friendly</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-cat" data-icon="cat"></i>
+                  </span>
+                  <h3>Pet Friendly</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
+                  <span class="facility-icon">
                   <i
                     class="fa-solid fa-martini-glass-citrus"
                     data-icon="glass"
                   ></i>
-                  <h5>Minibar</h5>
+                  </span>
+                  <h3>Minibar</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-clock" data-icon="clock"></i>
-                  <h5>24-Hours Front Desk</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-clock" data-icon="clock"></i>
+                  </span>
+                  <h3>24-Hours Front Desk</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-bus" data-icon="bus"></i>
-                  <h5>Shuttle Bus Service</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-bus" data-icon="bus"></i>
+                  </span>
+                  <h3>Shuttle Bus Service</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-bicycle" data-icon="bicycle"></i>
-                  <h5>Bicycle Rental</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-bicycle" data-icon="bicycle"></i>
+                  </span>
+                  <h3>Bicycle Rental</h3>
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 clonable-card">
                 <div class="facility-item">
-                  <i class="fa-solid fa-location-dot" data-icon="location"></i>
-                  <h5>Downtown Location</h5>
+                  <span class="facility-icon">
+                    <i class="fa-solid fa-location-dot" data-icon="location"></i>
+                  </span>
+                  <h3>Downtown Location</h3>
                 </div>
               </div>
             </div>
@@ -273,147 +321,159 @@
       </div>
     </section>
     <!-- best of sf -->
-    <section id="best-of-sf" data-section="best-of-sf" class="best-of-sf py-6">
+    <section
+      id="best-of-sf"
+      data-section="best-of-sf"
+      class="best-of-sf section-spacing"
+    >
       <div class="container">
         <!-- Header -->
-        <div class="section-header row g-3 mb-4">
+        <div class="section-header row g-3">
           <div class="col-12 col-md">
-            <h2 class="section-title mb-0">Best of San Francisco</h2>
+            <h2 class="section-title">Best of San Francisco</h2>
           </div>
-          <div class="col-12 col-md-auto btn-container">
-            <a href="#" class="see-all-btn">See All</a>
+          <div class="col-12 col-md-auto btn-container best-of-actions zg-align-center">
+            <a href="#gallery" class="see-all-btn" data-btn="best-of-sf"
+              >See All</a
+            >
           </div>
         </div>
 
         <!-- Cards -->
         <div class="row g-4">
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-1.webp"
+                  src="assets/images/budget-hotel-francisco-1.webp"
                   alt="Alcatraz Island"
                 />
               </div>
               <div class="place-content">
-                <h4>Alcatraz Island</h4>
+                <h3>Alcatraz Island</h3>
                 <p>
-                  Ornare accumsan congue nunc id facilisis tincidunt ridiculus
-                  congue consequat ultrices in mollis netus pellentesque lectus.
+                  Explore the historic island prison, dramatic bay views, and
+                  fascinating stories preserved across this landmark site.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-2.webp"
+                  src="assets/images/budget-hotel-francisco-2.webp"
                   alt="Fisherman’s Wharf"
                 />
               </div>
               <div class="place-content">
-                <h4>Fisherman’s Wharf</h4>
+                <h3>Fisherman’s Wharf</h3>
                 <p>
-                  Augue donec sit vestibulum amet luctus cras sagittis, ac
-                  rutrum tincidunt accumsan at posuere urna.
+                  Sample waterfront seafood, watch sea lions, and enjoy lively
+                  shops along one of the city's best-known piers.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-3.webp"
+                  src="assets/images/budget-hotel-francisco-3.webp"
                   alt="Golden Gate Park"
                 />
               </div>
               <div class="place-content">
-                <h4>Golden Gate Park</h4>
+                <h3>Golden Gate Park</h3>
                 <p>
-                  Suspendisse at sodales morbi urna, ut diam dignissim ante
-                  tellus vitae venenatis maecenas nullam pretium mattis.
+                  Spend an easy afternoon among gardens, museums, trails, and
+                  quiet green spaces near the Pacific coast.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-4.webp"
+                  src="assets/images/budget-hotel-francisco-4.webp"
                   alt="Queen Wilhelmina Tulip Garden"
                 />
               </div>
               <div class="place-content">
-                <h4>Queen Wilhelmina Tulip Garden</h4>
+                <h3>Queen Wilhelmina Tulip Garden</h3>
                 <p>
-                  Placerat vel laoreet purus, mattis id neque convallis nunc,
-                  tincidunt massa at.
+                  Wander past seasonal tulips and colourful flower beds beside
+                  the park's historic windmill.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-5.webp"
+                  src="assets/images/budget-hotel-francisco-5.webp"
                   alt="Ocean Beach"
                 />
               </div>
               <div class="place-content">
-                <h4>Ocean Beach</h4>
+                <h3>Ocean Beach</h3>
                 <p>
-                  Risus facilisis porttitor lacus venenatis felis scelerisque
-                  lorem ut cras mi venenatis viverra diam sed dui.
+                  Take in broad Pacific views, cool sea air, and a long sandy
+                  shoreline ideal for relaxed walks.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="place-card">
               <div class="place-img-box">
                 <img
-                  src="assets/images/budget-hotel-Francisco-6.webp"
+                  src="assets/images/budget-hotel-francisco-6.webp"
                   alt="Dutch Windmill"
                 />
               </div>
               <div class="place-content">
-                <h4>Dutch Windmill</h4>
+                <h3>Dutch Windmill</h3>
                 <p>
-                  Neque ut et velit dictum molestie at pellentesque aliquet
-                  magna ut tincidunt ullamcorper mauris mi et.
+                  Visit the restored windmill and nearby gardens for a peaceful
+                  glimpse of the park's local history.
                 </p>
-                <div class="learn-more-btn">
-                  <a href="#" class="learn-more">Learn More</a
-                  ><i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="learn-more-btn zg-align-center">
+                  <a href="#reservation" class="learn-more"
+                    >Learn More <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
@@ -425,22 +485,24 @@
     <section
       id="special-offers"
       data-section="special-offers"
-      class="special-offers py-6"
+      class="special-offers section-spacing"
     >
       <div class="container">
         <!-- Header -->
-        <div class="section-header row g-3 mb-4">
+        <div class="section-header row g-3">
           <div class="col-12 col-md">
-            <h2 class="section-title mb-0">Special Offers</h2>
+            <h2 class="section-title">Special Offers</h2>
           </div>
-          <div class="col-12 col-md-auto offer-btn">
-            <a href="#" class="view-all-btn">View All Offers</a>
+          <div class="col-12 col-md-auto offer-btn special-offer-actions zg-align-center">
+            <a href="#reservation" class="view-all-btn" data-btn="special-offers"
+              >View All Offers</a
+            >
           </div>
         </div>
 
         <!-- Offers -->
         <div class="row g-4">
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="offer-card">
               <div class="offer-img">
                 <img
@@ -449,21 +511,21 @@
                 />
               </div>
               <div class="offer-content">
-                <h4>Stay 3 Nights & Save!</h4>
+                <h3>Stay 3 Nights & Save!</h3>
                 <p>
-                  Amet elementum vitae ultrices accumsan est nunc, ut mattis
-                  enim leo sed dolor ultrices habitant lacus auctor lectus
-                  sagittis.
+                  Extend your city break and enjoy a better room value when you
+                  reserve three comfortable nights directly with our team.
                 </p>
-                <div class="details-btn">
-                  <a href="#" class="view-detail">View Detail</a>
-                  <i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="details-btn zg-align-center">
+                  <a href="#reservation" class="view-detail"
+                    >View Detail <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="offer-card">
               <div class="offer-img">
                 <img
@@ -472,15 +534,15 @@
                 />
               </div>
               <div class="offer-content">
-                <h4>Mobile Only Discount</h4>
+                <h3>Mobile Only Discount</h3>
                 <p>
-                  Dolor rhoncus malesuada amet, purus mollis adipiscing sit
-                  bibendum in odio a, iaculis eget dui odio mi, dictumst sem
-                  viverra.
+                  Book from your phone to unlock a simple direct-rate saving
+                  designed for flexible travellers planning on the go.
                 </p>
-                <div class="details-btn">
-                  <a href="#" class="view-detail">View Detail</a>
-                  <i class="bi bi-arrow-right" data-icon="arrow"></i>
+                <div class="details-btn zg-align-center">
+                  <a href="#reservation" class="view-detail"
+                    >View Detail <i class="bi bi-arrow-right" data-icon="arrow"></i
+                  ></a>
                 </div>
               </div>
             </div>
@@ -492,17 +554,17 @@
     <section
       id="guest-reviews"
       data-section="guest-reviews"
-      class="guest-reviews py-6"
+      class="guest-reviews section-spacing"
     >
       <div class="container">
         <!-- Header -->
-        <div class="reviews-header row mb-4">
+        <div class="reviews-header row">
           <!-- Left: heading + text -->
           <div class="header-left col-12 col-lg-7">
             <h2>What Our Guests Say</h2>
             <p>
-              Neque ut et velit dictum molestie at pellentesque aliquet magna ut
-              tincidunt ullamcorper mauris mi et.
+              Read what recent guests appreciated about our friendly service,
+              useful amenities, and easy waterfront location.
             </p>
           </div>
 
@@ -524,15 +586,9 @@
               </div>
               <div class="col-12 col-sm-7">
                 <ul class="rating-stats">
-                  <li>
-                    <i class="bi bi-check-lg" data-icon="check"></i>1920 Ratings
-                  </li>
-                  <li>
-                    <i class="bi bi-check-lg" data-icon="check"></i>960 Ratings
-                  </li>
-                  <li>
-                    <i class="bi bi-check-lg" data-icon="check"></i>1024 Likes
-                  </li>
+                  <li><span class="rating-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>1920 Ratings</li>
+                  <li><span class="rating-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>960 Ratings</li>
+                  <li><span class="rating-icon"><i class="bi bi-check-lg" data-icon="check"></i></span>1024 Likes</li>
                 </ul>
               </div>
             </div>
@@ -541,7 +597,7 @@
 
         <!-- Reviews grid -->
         <div class="reviews-grid row g-4">
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="review-card h-100">
               <div class="stars">
                 <i class="bi bi-star-fill" data-icon="star"></i>
@@ -551,13 +607,13 @@
                 <i class="bi bi-star-fill" data-icon="star"></i>
               </div>
               <p>
-                “Pharetra ut commodo dui at consequat, vitae imperdiet id
-                quisque faucibus erat erat nulla a amet.”
+                “The room was tidy, peaceful, and well prepared, while the team
+                made our late arrival feel completely effortless.”
               </p>
               <div class="author">
                 <div class="author-img">
                   <img
-                    src="assets/images/testimonial-2.png"
+                    src="assets/images/testimonial-2.webp"
                     alt="Manish kumar"
                   />
                 </div>
@@ -566,7 +622,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="review-card h-100">
               <div class="stars">
                 <i class="bi bi-star-fill" data-icon="star"></i>
@@ -576,14 +632,13 @@
                 <i class="bi bi-star-fill" data-icon="star"></i>
               </div>
               <p>
-                “Proin nulla mauris et volutpat adipiscing suspendisse vehicula
-                blandit sagittis orci etiam morbi elit etiam semper eu lacus
-                pretium hac nisl leo amet ullamcorper.”
+                “We loved the convenient location, helpful reception staff, and
+                relaxed atmosphere after long days exploring San Francisco.”
               </p>
               <div class="author">
                 <div class="author-img">
                   <img
-                    src="assets/images/testimonial-1.png"
+                    src="assets/images/testimonial-1.webp"
                     alt="Eakta kumari"
                   />
                 </div>
@@ -592,7 +647,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="review-card h-100">
               <div class="stars">
                 <i class="bi bi-star-fill" data-icon="star"></i>
@@ -602,13 +657,13 @@
                 <i class="bi bi-star-fill" data-icon="star"></i>
               </div>
               <p>
-                “Proin vestibulum ultrices semper arcu facilisis vitae
-                ultrices!”
+                “Comfortable beds, useful facilities, and warm service made the
+                stay excellent.”
               </p>
               <div class="author">
                 <div class="author-img">
                   <img
-                    src="assets/images/Testimonial-4.png"
+                    src="assets/images/testimonial-4.webp"
                     alt="Juhi kumari"
                   />
                 </div>
@@ -617,7 +672,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 clonable-card">
             <div class="review-card h-100">
               <div class="stars">
                 <i class="bi bi-star-fill" data-icon="star"></i>
@@ -627,13 +682,13 @@
                 <i class="bi bi-star-fill" data-icon="star"></i>
               </div>
               <p>
-                “Pharetra ut commodo dui at consequat, vitae imperdiet id
-                quisque faucibus erat erat nulla a amet.”
+                “A practical, welcoming hotel with smooth check-in and easy
+                access to the neighbourhood's best waterfront walks.”
               </p>
               <div class="author">
                 <div class="author-img">
                   <img
-                    src="assets/images/Testimonial-3.png"
+                    src="assets/images/testimonial-3.webp"
                     alt="Ramesh kumar"
                   />
                 </div>
@@ -645,7 +700,11 @@
       </div>
     </section>
     <!-- hotel information -->
-    <section id="hotel-info" data-section="hotel-info" class="hotel-info py-6">
+    <section
+      id="hotel-info"
+      data-section="hotel-info"
+      class="hotel-info section-spacing"
+    >
       <div class="container">
         <div class="hotel-info-wrapper">
           <div class="row">
@@ -664,10 +723,10 @@
                   <i class="fa-solid fa-circle-info" data-icon="infor"></i>
                 </div>
                 <div class="hotel-info-content">
-                  <h5>Hotel Alert</h5>
+                  <h3>Hotel Alert</h3>
                   <p>
-                    Some hotel features, including vitae, varius ipsum ultrices
-                    adipiscing senectus turpis non due to COVID-19.
+                    Selected facilities may operate on adjusted hours during
+                    maintenance or local public-service disruptions.
                   </p>
                 </div>
               </div>
@@ -683,7 +742,7 @@
                       <i class="fa-solid fa-clock" data-icon="clock"></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>Check-In</h5>
+                      <h3>Check-In</h3>
                       <p>04:00 PM</p>
                     </div>
                   </div>
@@ -696,7 +755,7 @@
                       <i class="fa-solid fa-phone" data-icon="phone"></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>Phone Number</h5>
+                      <h3>Phone Number</h3>
                       <p>+91-9123456789</p>
                     </div>
                   </div>
@@ -709,7 +768,7 @@
                       <i class="fa-solid fa-ban-smoking" data-icon="smoke"></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>No Smoking</h5>
+                      <h3>No Smoking</h3>
                       <p>100% Smoke Free</p>
                     </div>
                   </div>
@@ -725,7 +784,7 @@
                       ></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>Check-Out</h5>
+                      <h3>Check-Out</h3>
                       <p>11:00 AM</p>
                     </div>
                   </div>
@@ -738,7 +797,7 @@
                       <i class="fa-solid fa-fax" data-icon="fax"></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>Fax Number</h5>
+                      <h3>Fax Number</h3>
                       <p>+91-9123456789</p>
                     </div>
                   </div>
@@ -751,7 +810,7 @@
                       <i class="fa-solid fa-dog" data-icon="dog"></i>
                     </div>
                     <div class="hotel-info-content">
-                      <h5>Pet Policy</h5>
+                      <h3>Pet Policy</h3>
                       <p>Pet Allowed: Yes</p>
                     </div>
                   </div>
@@ -765,7 +824,7 @@
     </section>
 
     <!-- gallery section -->
-    <section id="gallery" data-section="gallery" class="gallery py-6">
+    <section id="gallery" data-section="gallery" class="gallery section-spacing">
       <div class="container">
         <div class="gallery-heading">
           <h2>Gallery</h2>
@@ -774,61 +833,47 @@
         <div class="gallery-wrapper">
           <!-- Row 1 -->
           <div class="row g-3 gallery-row">
-            <div class="col-12 col-lg-4">
-              <div class="gallery-small">
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-1.webp"
-                    alt="gallery"
-                  />
+            <div class="col-12 col-lg-4 gallery-column">
+              <div class="row g-3 gallery-small">
+                <div class="col-12 gallery-tile clonable-card">
+                  <div class="gallery-img-wrap gallery-image-one">
+                    <span class="visually-hidden">Hotel poolside seating</span>
+                  </div>
                 </div>
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-2.webp"
-                    alt="gallery"
-                  />
+                <div class="col-12 gallery-tile clonable-card">
+                  <div class="gallery-img-wrap gallery-image-two">
+                    <span class="visually-hidden">Hotel guest room</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-12 col-lg-8">
-              <div class="gallery-big">
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-3.webp"
-                    alt="gallery"
-                  />
-                </div>
+            <div class="col-12 col-lg-8 gallery-tile clonable-card">
+              <div class="gallery-big gallery-img-wrap gallery-image-three">
+                <span class="visually-hidden">Hotel dining room</span>
               </div>
             </div>
           </div>
 
           <!-- Row 2 -->
           <div class="row g-3 gallery-row">
-            <div class="col-12 col-lg-8">
-              <div class="gallery-big">
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-4.webp"
-                    alt="gallery"
-                  />
-                </div>
+            <div class="col-12 col-lg-8 gallery-tile clonable-card">
+              <div class="gallery-big gallery-img-wrap gallery-image-four">
+                <span class="visually-hidden">Hotel lounge interior</span>
               </div>
             </div>
 
-            <div class="col-12 col-lg-4">
-              <div class="gallery-small">
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-5.webp"
-                    alt="gallery"
-                  />
+            <div class="col-12 col-lg-4 gallery-column">
+              <div class="row g-3 gallery-small">
+                <div class="col-12 gallery-tile clonable-card">
+                  <div class="gallery-img-wrap gallery-image-five">
+                    <span class="visually-hidden">Hotel garden terrace</span>
+                  </div>
                 </div>
-                <div class="gallery-img-wrap">
-                  <img
-                    src="assets/images/budget-hotel-gallery-6.webp"
-                    alt="gallery"
-                  />
+                <div class="col-12 gallery-tile clonable-card">
+                  <div class="gallery-img-wrap gallery-image-six">
+                    <span class="visually-hidden">San Francisco street view</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -841,7 +886,7 @@
     <section
       id="reservation"
       data-section="reservation"
-      class="reservation py-6"
+      class="reservation section-spacing"
     >
       <div class="container">
         <div class="row">
@@ -850,80 +895,111 @@
               <span class="sub-title">Hotel Reservation</span>
               <h2>Extra Perks When You Book Directly With Us</h2>
               <p class="call-text">Call Us Now:</p>
-              <div class="phone-box">
-                <i class="fa-solid fa-phone" data-icon="phone"></i>
-                <span class="phone-number">+91-9123456789</span>
+              <div class="phone-box reservation-actions zg-align-center">
+                <a
+                  href="tel:+919123456789"
+                  class="reservation-phone"
+                  data-btn="reservation"
+                  ><i class="fa-solid fa-phone" data-icon="phone"></i>
+                  +91-9123456789</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </main>
 
     <!-- footer section -->
-    <footer id="footer" data-section="footer" class="footer py-6">
+    <footer id="footer" data-section="footer" class="footer section-spacing">
       <div class="container">
         <div class="row footer-wrapper">
           <!-- Brand & About -->
           <div class="col-12 col-md-6 col-lg-3 footer-col">
-            <div class="logo-box" data-logo="footer">
-              <h3 class="logo">Sea Scape <span>Hotel</span></h3>
-            </div>
+            <a href="#hero" class="footer-brand-logo" data-logo="footer"
+              >Sea Scape<br />Hotel</a
+            >
             <p>
-              Rhoncus blandit mollis vulputate tellus, quam enim urna neque, eu
-              varius aliquam id quisque eget at lorem tellus ac tincidunt.
+              A comfortable waterfront base for practical city stays, friendly
+              service, and memorable days exploring San Francisco.
             </p>
             <div class="footer-socials">
-              <a href="#"><i class="fa-brands fa-instagram" data-icon="facebook"></i></a>
-              <a href="#"><i class="fa-brands fa-whatsapp" data-icon="whatsapp"></i></a>
-              <a href="#"><i class="fa-brands fa-facebook" data-icon="facebook"></i></a>
-              <a href="#"><i class="fa-brands fa-twitter" data-icon="twitter"></i></a>
+              <a href="#footer" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram" data-icon="instagram"></i
+              ></a>
+              <a href="#footer" aria-label="WhatsApp"
+                ><i class="fa-brands fa-whatsapp" data-icon="whatsapp"></i
+              ></a>
+              <a href="#footer" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook" data-icon="facebook"></i
+              ></a>
+              <a href="#footer" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter" data-icon="twitter"></i
+              ></a>
             </div>
           </div>
 
           <!-- Hotel Links -->
           <div class="col-12 col-md-6 col-lg-3 footer-col">
-            <h4>Hotel</h4>
+            <h3>Hotel</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="#">Directions</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#guest-reviews">Reviews</a></li>
+              <li><a href="#reach">Directions</a></li>
+              <li><a href="#special-offers">Offers</a></li>
+              <li><a href="#reservation">Contact Us</a></li>
             </ul>
           </div>
 
           <!-- Customer Help -->
           <div class="col-12 col-md-6 col-lg-3 footer-col">
-            <h4>Customer Help</h4>
+            <h3>Customer Help</h3>
             <ul>
-              <li><a href="#">Customer Support</a></li>
-              <li><a href="#">Guest Feedback</a></li>
-              <li><a href="#">Sitemap</a></li>
-              <li><a href="#">Responsible Disclosure</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><a href="#hotel-info">Guest Information</a></li>
+              <li><a href="#guest-reviews">Guest Feedback</a></li>
+              <li><a href="#gallery">Hotel Gallery</a></li>
+              <li><a href="#facilities">Facilities</a></li>
+              <li><a href="#reservation">Reservations</a></li>
             </ul>
           </div>
 
           <!-- Contact Info -->
           <div class="col-12 col-md-6 col-lg-3 footer-col">
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <ul>
-              <li>E-123, ABC Plaza,</li>
-              <li>XYZ Street,</li>
-              <li>New Delhi - 110077</li>
-              <li>+91-9123456789</li>
-              <li>yourname@domainname.com</li>
+              <li><a href="#reach">E-123, ABC Plaza</a></li>
+              <li><a href="#reach">XYZ Street</a></li>
+              <li><a href="#reach">New Delhi - 110077</a></li>
+              <li><a href="tel:+919123456789">+91-9123456789</a></li>
+              <li><a href="mailto:yourname@domainname.com">yourname@domainname.com</a></li>
             </ul>
           </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="footer-bottom">
-          <p>Copyright © 2025 Budget Hotel | Powered by Budget Hotel</p>
+        <div class="row footer-attribution">
+          <div class="col-12">
+            <p>
+              <a
+                href="https://zigrow.com"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                >Powered by Zigrow</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </footer>
+
+    <button
+      id="backToTopBtn"
+      class="btn back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <i class="bi bi-arrow-up" data-icon="arrow"></i>
+    </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

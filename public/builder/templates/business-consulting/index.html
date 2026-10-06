@@ -24,75 +24,104 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <button id="backToTopBtn" class="btn">
-      <i class="bi bi-arrow-up" data-icon="arrow"></i>
+    <button
+      id="backToTopBtn"
+      class="btn back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
     </button>
     <!-- Navbar Section -->
-    <header id="navbar" class="nav-section" data-section="navbar">
+    <header id="header" class="nav-section" data-section="header">
       <div class="container">
         <nav class="nav-wrapper">
           <!-- Logo -->
-          <div class="logo" data-logo="navbar">
-            <a href="#" class="anchor">LISA <span>MARTIN</span></a>
-            <ul class="nav-links">
-              <li><a href="#">Home</a></li>
+          <div class="nav-brand">
+            <a href="#hero" class="nav-brand-logo" data-logo="navbar"
+              >ANIKA<br />SINGH</a
+            >
+            <ul class="nav-links" id="primary-navigation">
+              <li><a href="#hero">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#cta">Contact</a></li>
+              <li class="nav-links__mobile-action">
+                <div class="nav-section__mobile-actions zg-align-center">
+                  <a href="#cta" class="nav-btn" data-btn="nav"
+                    >WORK WITH ME</a
+                  >
+                </div>
+              </li>
             </ul>
           </div>
 
           <!-- Right Section -->
           <div class="nav-right">
             <div class="social-icons">
-              <a href="#"
+              <a href="#" aria-label="Facebook"
                 ><i class="fa-brands fa-facebook-f" data-icon="facebook"></i
               ></a>
-              <a href="#"
+              <a href="#" aria-label="Twitter"
                 ><i class="fa-brands fa-twitter" data-icon="twitter"></i
               ></a>
-              <a href="#"
+              <a href="#" aria-label="Instagram"
                 ><i class="fa-brands fa-instagram" data-icon="instagram"></i
               ></a>
             </div>
-            <a href="#" class="nav-btn">WORK WITH ME</a>
+            <div class="nav-section__actions zg-align-center">
+              <a href="#cta" class="nav-btn" data-btn="nav">WORK WITH ME</a>
+            </div>
           </div>
 
           <!-- Mobile Menu Toggle -->
-          <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <i class="fa-solid fa-bars" data-icon="menu" aria-hidden="true"></i>
+          </button>
         </nav>
       </div>
     </header>
+    <main>
     <!-- Hero Section -->
     <section class="hero-section" data-section="hero" id="hero">
       <div class="container">
         <div class="row">
           <!-- Left empty space (keeps text on right like your layout) -->
-          <div class="col-12 col-lg-6"></div>
+          <div class="col-12 col-lg-6"><span class="d-none"></span></div>
 
           <!-- Content column -->
           <div class="col-12 col-lg-6">
             <div class="hero-section__content">
-              <h1 class="hero-section__title">
-                Helping You Build Inner Resilience
-              </h1>
+              <div class="hero-section__header">
+                <h1 class="hero-section__title">
+                  Helping You Build Inner Resilience
+                </h1>
 
-              <p class="hero-section__text">
-                Life gets heavy sometimes—stress,ogether we’ll build calm overthinking, burnout, and
-                constant pressure. Together we’ll build calm routines, stronger
-                boundaries, and a mindset that can handle tough days without
-                breaking,Together we’ll build calm routines, stronger boundaries.              </p>
+                <p class="hero-section__text">
+                  Business growth can feel heavy when priorities compete and
+                  pressure keeps building. Together we will create calm systems,
+                  stronger decisions, and a resilient plan that keeps your team
+                  moving through demanding seasons with clarity, confidence,
+                  and practical momentum each day.
+                </p>
+              </div>
 
-              <a href="#" class="hero-section__btn">
-                Let’s Work Together
-                <i
-                  class="bi bi-arrow-right"
-                  data-icon="arrow-right"
-                  aria-hidden="true"
-                ></i>
-              </a>
+              <div class="hero-section__actions zg-align-center">
+                <a href="#cta" class="hero-section__btn" data-btn="hero">
+                  Let&rsquo;s Work Together
+                  <i
+                    class="bi bi-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -100,91 +129,91 @@
     </section>
     <!-- Featured Section -->
     <section
-      class="featured-section py-6"
+      class="featured-section"
       data-section="featured"
       id="featured"
     >
       <div class="container">
         <div class="featured-section__heading">
-          <h5 class="featured-section__title">AS FEATURED IN</h5>
+          <h2 class="featured-section__title">AS FEATURED IN</h2>
         </div>
 
         <div class="row g-4 featured-section__logos">
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 1"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 1"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 2"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 2"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 3"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 3"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 4"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 4"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 5"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 5"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 6"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 6"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 7"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 7"
                 class="featured-section__logo"
               />
             </div>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3 clonable-card">
             <div class="featured-section__logo-item">
               <img
-                src="assets/images/logo.png"
-                alt="Logo 8"
+                src="assets/images/logo.webp"
+                alt="Lorem Ipsum partner logo 8"
                 class="featured-section__logo"
               />
             </div>
@@ -194,7 +223,7 @@
     </section>
 
     <!-- Topics Section -->
-    <section class="topics-section py-6" data-section="topics" id="topics">
+    <section class="topics-section" data-section="topics" id="topics">
       <div class="container">
         <div class="topics-section__heading">
           <h2 class="topics-section__title">Topics I Discuss</h2>
@@ -202,10 +231,10 @@
 
         <div class="row g-4 topics-section__row">
           <!-- 1 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">01.</p>
-              <h4 class="topics-section__item-title">Motivation</h4>
+              <h3 class="topics-section__item-title">Motivation</h3>
               <p class="topics-section__text">
                 Practical ways to stay consistent, even when discipline feels
                 hard.
@@ -214,10 +243,10 @@
           </div>
 
           <!-- 2 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">02.</p>
-              <h4 class="topics-section__item-title">Vision</h4>
+              <h3 class="topics-section__item-title">Vision</h3>
               <p class="topics-section__text">
                 Build clarity on what you want and create a simple direction
                 plan.
@@ -226,10 +255,10 @@
           </div>
 
           <!-- 3 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">03.</p>
-              <h4 class="topics-section__item-title">Strategy</h4>
+              <h3 class="topics-section__item-title">Strategy</h3>
               <p class="topics-section__text">
                 Break big goals into small weekly actions that actually move
                 you.
@@ -238,10 +267,10 @@
           </div>
 
           <!-- 4 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">04.</p>
-              <h4 class="topics-section__item-title">Leadership</h4>
+              <h3 class="topics-section__item-title">Leadership</h3>
               <p class="topics-section__text">
                 Lead with calm confidence—at work, at home, and in your own
                 life.
@@ -250,10 +279,10 @@
           </div>
 
           <!-- 5 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">05.</p>
-              <h4 class="topics-section__item-title">Self Improvement</h4>
+              <h3 class="topics-section__item-title">Self Improvement</h3>
               <p class="topics-section__text">
                 Simple habits to improve focus, energy, and daily productivity.
               </p>
@@ -261,10 +290,10 @@
           </div>
 
           <!-- 6 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">06.</p>
-              <h4 class="topics-section__item-title">Self Awareness</h4>
+              <h3 class="topics-section__item-title">Self Awareness</h3>
               <p class="topics-section__text">
                 Understand your patterns, triggers, and strengths to grow
                 faster.
@@ -273,10 +302,10 @@
           </div>
 
           <!-- 7 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">07.</p>
-              <h4 class="topics-section__item-title">Confidence</h4>
+              <h3 class="topics-section__item-title">Confidence</h3>
               <p class="topics-section__text">
                 Speak up, show up, and build confidence through real-life
                 practice.
@@ -285,10 +314,10 @@
           </div>
 
           <!-- 8 -->
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div class="col-12 col-sm-6 col-lg-3 clonable-card">
             <div class="topics-section__item">
               <p class="topics-section__number">08.</p>
-              <h4 class="topics-section__item-title">Life Skills</h4>
+              <h3 class="topics-section__item-title">Life Skills</h3>
               <p class="topics-section__text">
                 Communication, decision-making, and resilience for everyday
                 success.
@@ -301,7 +330,7 @@
 
     <!-- Services Section -->
     <section
-      class="services-section py-6"
+      class="services-section"
       data-section="services"
       id="services"
     >
@@ -310,12 +339,14 @@
           <!-- LEFT -->
           <div class="col-12 col-md-6">
             <div class="services-section__left">
-              <h2 class="services-section__title">
-                We All Need Help To Realize<br />What We Want Most.
-              </h2>
+              <div class="services-section__header">
+                <h2 class="services-section__title">
+                  We All Need Help To Realize<br />What We Want Most.
+                </h2>
+              </div>
 
-              <p class="services-section__cta-wrap">
-                <a href="#" class="services-section__btn">
+              <div class="services-section__cta-wrap zg-align-center">
+                <a href="#cta" class="services-section__btn" data-btn="services">
                   View All Services
                   <i
                     class="bi bi-arrow-right"
@@ -323,7 +354,7 @@
                     aria-hidden="true"
                   ></i>
                 </a>
-              </p>
+              </div>
             </div>
           </div>
 
@@ -359,22 +390,24 @@
     </section>
 
     <!-- about section -->
-    <section id="about" data-section="about" class="about-section py-6">
+    <section id="about" data-section="about" class="about-section">
       <div class="container">
         <div class="row g-4 abou-container">
           <!-- Left -->
           <div class="col-12 col-lg-6">
             <div class="about-section__left">
-              <p class="about-section__subtitle">About Me</p>
+              <div class="about-section__header">
+                <p class="about-section__subtitle">About Me</p>
 
-              <h2 class="about-section__heading">
-                I'm Anika Singh. I Help Entrepreneurs Build Their Dreams.
-              </h2>
+                <h2 class="about-section__heading">
+                  I'm Anika Singh. I Help Entrepreneurs Build Their Dreams.
+                </h2>
+              </div>
 
               <div class="about-section__image-wrap">
                 <img
                   src="assets/images/consulting-about.webp"
-                  alt="my-image"
+                  alt="Anika Singh consulting with a business owner"
                   class="about-section__image"
                 />
               </div>
@@ -385,21 +418,25 @@
           <div class="col-12 col-lg-6">
             <div class="about-section__right">
               <p class="about-section__text">
-                Diam lorem nulla suspendisse id ullamcorper lobortis id sit nisi
-                purus tellus curabitur leo volutpat vitae quisque eros, gravida
-                magna diam id elit facilisi gravida at non consectetur nulla leo
-                congue in netus ut et habitant gravida at non consectetur nulla
-                leo congue in netus ut et habitant
+                I help founders turn ambitious ideas into clear priorities,
+                practical operating plans, and confident leadership habits.
+                Each engagement combines honest analysis, focused coaching,
+                and simple systems your team can continue using long after our
+                work together, so ideas become action and teams stay aligned.
               </p>
 
-              <a href="#" class="about-section__btn">Read more</a>
+              <div class="about-section__actions zg-align-center">
+                <a href="#services" class="about-section__btn" data-btn="about"
+                  >Read more</a
+                >
+              </div>
 
-              <h5 class="about-section__description">
-                Enim accumsan cras semper metus ante vitae massa aliquam nec,
-                diam pulvinar nisl, egestas cras semper metus ante vitae massa
-                aliquam quam pharetra nunc magna consequat orci viverra quis
-                aliquam tortor
-              </h5>
+              <p class="about-section__description">
+                My approach balances commercial insight with calm,
+                people-first guidance, helping leaders make sound decisions,
+                communicate clearly, and build sustainable momentum through
+                every stage of growth with care.
+              </p>
 
               <div class="about-section__signature-wrap">
                 <img
@@ -418,22 +455,24 @@
     <section
       id="client-review"
       data-section="client-review"
-      class="client-review-section py-6"
+      class="client-review-section"
     >
       <div class="container">
         <div class="client-review-section__wrap">
-          <h2 class="client-review-section__heading">
-            What Clients Are Saying
-          </h2>
+          <div class="client-review-section__header">
+            <h2 class="client-review-section__heading">
+              What Clients Are Saying
+            </h2>
+          </div>
 
-          <div class="row g-3">
+          <div class="row g-3 client-review-section__body">
             <!-- Card 1 -->
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 clonable-card">
               <div class="client-review-section__card">
                 <div class="client-review-section__img-wrap">
                   <img
-                    src="assets/images/testimonials-1.png"
-                    alt="Ankit kumar"
+                    src="assets/images/testimonials-1.webp"
+                    alt="Ankit Kumar"
                     class="client-review-section__img"
                   />
                 </div>
@@ -442,17 +481,17 @@
                   of hard work and timely communication, they made sure they
                   delivered the best to me. Highly recommended!
                 </p>
-                <h6 class="client-review-section__name">Ankit kumar</h6>
+                <h3 class="client-review-section__name">Ankit Kumar</h3>
               </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 clonable-card">
               <div class="client-review-section__card">
                 <div class="client-review-section__img-wrap">
                   <img
-                    src="assets/images/testimonials-2.png"
-                    alt="Sonu kumar"
+                    src="assets/images/testimonials-2.webp"
+                    alt="Sonu Kumar"
                     class="client-review-section__img"
                   />
                 </div>
@@ -461,17 +500,17 @@
                   of hard work and timely communication they made sure they
                   delivered the best to me. Highly recommended!
                 </p>
-                <h6 class="client-review-section__name">Sonu kumar</h6>
+                <h3 class="client-review-section__name">Sonu Kumar</h3>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 clonable-card">
               <div class="client-review-section__card">
                 <div class="client-review-section__img-wrap">
                   <img
-                    src="assets/images/testimonials-3.png"
-                    alt="Amit kumar"
+                    src="assets/images/testimonials-3.webp"
+                    alt="Amit Kumar"
                     class="client-review-section__img"
                   />
                 </div>
@@ -480,17 +519,17 @@
                   of hard work and timely communication, they made sure they
                   delivered the best to me. Highly recommended!
                 </p>
-                <h6 class="client-review-section__name">Amit kumar</h6>
+                <h3 class="client-review-section__name">Amit Kumar</h3>
               </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-6 clonable-card">
               <div class="client-review-section__card">
                 <div class="client-review-section__img-wrap">
                   <img
-                    src="assets/images/testimonials-4.png"
-                    alt="Rupesh kumar"
+                    src="assets/images/testimonials-4.webp"
+                    alt="Rupesh Kumar"
                     class="client-review-section__img"
                   />
                 </div>
@@ -499,7 +538,7 @@
                   of hard work and timely communication, they made sure they
                   delivered the best to me. Highly recommended!
                 </p>
-                <h6 class="client-review-section__name">Rupesh kumar</h6>
+                <h3 class="client-review-section__name">Rupesh Kumar</h3>
               </div>
             </div>
           </div>
@@ -509,45 +548,55 @@
     </section>
 
     <!-- cta section -->
-    <section id="cta" data-section="cta" class="cta-section py-6">
+    <section id="cta" data-section="cta" class="cta-section">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+          <div class="col-12 col-lg-10 col-xl-8 cta-section__column">
             <div class="cta-section__wrap">
-              <h2 class="cta-section__heading">
-                If You Have Any Question, <br />
-                Feel Free to Call +91-9123456789
-              </h2>
+              <div class="cta-section__header">
+                <h2 class="cta-section__heading">
+                  If You Have Any Question, <br />
+                  Feel Free to Call +91-9123456789
+                </h2>
 
-              <p class="cta-section__text">
-                Click here to change this text. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit.
-              </p>
+                <p class="cta-section__text">
+                  Share your toughest challenge; together we will map a clear
+                  next step toward sustainable growth.
+                </p>
+              </div>
 
-              <a href="#" class="cta-section__btn">
-                LET’S WORK TOGETHER
-                <i class="fa-solid fa-arrow-right" data-icon="arrow"></i>
-              </a>
+              <div class="cta-section__actions zg-align-center">
+                <a href="tel:+919123456789" class="cta-section__btn" data-btn="contact">
+                  LET&rsquo;S WORK TOGETHER
+                  <i
+                    class="fa-solid fa-arrow-right"
+                    data-icon="arrow-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    </main>
+
     <!-- footer -->
-    <footer id="footer" data-section="footer" class="footer-section py-6">
+    <footer id="footer" data-section="footer" class="footer-section">
       <div class="container">
         <div class="row g-4 footer-section__wrap">
           <!-- Logo + About -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-section__col">
-              <h3 class="footer-section__logo" data-logo="footer">
-                LISA <span>MARTIN</span>
-              </h3>
+              <p class="footer-brand-logo" data-logo="footer">
+                ANIKA<br />SINGH
+              </p>
 
               <p class="footer-section__text">
-                Amet suscipit urna turpis in malesuada et sapien semper
-                porttitor netus turpis molestie sit molestie quis vitae.
+                Clear plans, practical coaching, and steady guidance help
+                founders build strong businesses with focus and confidence.
               </p>
 
               <div class="footer-section__social">
@@ -593,7 +642,7 @@
           <!-- Services -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-section__col">
-              <h4 class="footer-section__title">Services</h4>
+              <h2 class="footer-section__title">Services</h2>
               <ul class="footer-section__list">
                 <li class="footer-section__item">
                   <a class="footer-section__link" href="#"
@@ -620,19 +669,19 @@
           <!-- Quick Links -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-section__col">
-              <h4 class="footer-section__title">Quick Links</h4>
+              <h2 class="footer-section__title">Quick Links</h2>
               <ul class="footer-section__list">
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#">Home</a>
+                  <a class="footer-section__link" href="#hero">Home</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#">About</a>
+                  <a class="footer-section__link" href="#about">About</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#">Services</a>
+                  <a class="footer-section__link" href="#services">Services</a>
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="#">Contact</a>
+                  <a class="footer-section__link" href="#cta">Contact</a>
                 </li>
               </ul>
             </div>
@@ -641,18 +690,18 @@
           <!-- Contact Info -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-section__col">
-              <h4 class="footer-section__title">Contact Info</h4>
+              <h2 class="footer-section__title">Contact Info</h2>
               <ul class="footer-section__list">
                 <li class="footer-section__item footer-section__item--plain">
                   E-123, ABC Plaza, XYZ Street, New Delhi - 110077.
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="mailto:mail@example.com"
+                  <a class="footer-section__link" href="mailto:yourname@domainname.com"
                     >yourname@domainname.com</a
                   >
                 </li>
                 <li class="footer-section__item">
-                  <a class="footer-section__link" href="tel:+011234567890"
+                  <a class="footer-section__link" href="tel:+919123456789"
                     >+91-9123456789</a
                   >
                 </li>
@@ -663,15 +712,21 @@
 
         <!-- Bottom Bar -->
         <div class="row footer-section__bottom">
-          <div class="col-12 col-md-6">
+          <div class="col-12">
             <p class="footer-section__bottom-text">
-              © 2025 Business Coaching & Consulting
+              &copy; 2026 Business Coaching &amp; Consulting
             </p>
           </div>
-
-          <div class="col-12 col-md-6 footer-section__bottom-right">
-            <p class="footer-section__bottom-text">
-              Powered by Business Coaching & Consulting
+        </div>
+        <div class="row footer-section__attribution-row">
+          <div class="col-12">
+            <p class="footer-section__attribution">
+              <a
+                href="https://zigrow.com"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                >Powered by Zigrow</a
+              >
             </p>
           </div>
         </div>
@@ -685,6 +740,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=2.13.0"></script>
   </body>
 </html>

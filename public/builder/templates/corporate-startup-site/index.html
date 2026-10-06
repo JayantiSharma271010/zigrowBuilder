@@ -26,11 +26,12 @@
                 </a>
 
                 <div class="d-lg-none d-flex align-items-center-style justify-content-lg-end-style">
-                    <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
+                    <button type="button" class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle"
+                        aria-label="Open navigation menu" aria-expanded="false" aria-controls="navbarMenu">
                         <div class="hamburger-box">
                             <div class="hamburger-inner"></div>
                         </div>
-                    </div>
+                    </button>
                 </div>
 
                 <div class="collapse navbar-collapse justify-content-center-style navbar-menu-div" id="navbarMenu">
@@ -72,7 +73,7 @@
                 <div class="d-none d-lg-flex navbar-right-div">
 
                     <div class="right-nav-icons dropdown p-3-style fs-2-style ">
-                        <a href="#"><i class="bi bi-search" data-icon="search"></i></a>
+                        <a href="#growequipments" aria-label="Search products"><i class="bi bi-search" data-icon="search"></i></a>
                         <!-- <ul class="dropdown-menu-custom">
                             <li>
                                 <p>Search</p>
@@ -81,7 +82,7 @@
                     </div>
 
                     <div class="right-nav-icons dropdown p-3-style fs-2-style">
-                        <a href="#"><i class="bi bi-person" data-icon="person"></i></a>
+                        <a href="#help" aria-label="Customer account"><i class="bi bi-person" data-icon="person"></i></a>
                         <!-- <ul class="dropdown-menu-custom">
                             <li>
                                 <p>Profile</p>
@@ -90,7 +91,7 @@
                     </div>
 
                     <div class="right-nav-icons dropdown p-3-style fs-2-style">
-                        <a href="#"><i class="bi bi-bag" data-icon="bag"></i></a>
+                        <a href="#growequipments" aria-label="Shopping bag"><i class="bi bi-bag" data-icon="bag"></i></a>
                         <!-- <ul class="dropdown-menu-custom">
                             <li>
                                 <p>Cart</p>
@@ -103,7 +104,7 @@
     </header>
 
     <main>
-        <div class="blob1">
+        <div class="blob1" data-zg-editable="surface">
             <section class="hero-section py-lg-5-style" id="home" data-section="home">
                 <div class="container my-lg-3">
                     <div class="row align-items-center-style">
@@ -114,9 +115,9 @@
                             </h1>
                             <p class="hero-subheading">India’s leading one-stop horticultural store</p>
                             <div
-                                class="hero-buttons d-flex flex-column flex-sm-row justify-content-center-style justify-content-lg-start-style gap-3 mt-4-style">
-                                <a href="#" class="btn btn-shop">Shop Now</a>
-                                <a href="#" class="btn btn-outline-contact">Contact Us</a>
+                                class="hero-buttons zg-align-center d-flex flex-column flex-sm-row justify-content-center-style justify-content-lg-start-style gap-3 mt-4-style">
+                                <a href="#growequipments" class="btn btn-shop" data-btn="hero">Shop Now</a>
+                                <a href="#help" class="btn btn-outline-contact" data-btn="hero">Contact Us</a>
                             </div>
                         </div>
 
@@ -129,7 +130,7 @@
             </section>
         </div>
 
-        <a href="#" class="floating-btn">
+        <a href="#home" class="floating-btn" aria-label="Back to top">
             <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
         </a>
 
@@ -173,100 +174,82 @@
             </div>
         </section>
 
-        <div class="blob2">
+        <div class="blob2" data-zg-editable="surface">
             <section class="our-products-section py-5-style" id="growequipments" data-section="growequipments">
                 <img class="img-fluid product-section-graphic" src="assets/images/Gaphics/7.webp" alt="Grass graphics">
                 <div class="container">
                     <h2 class="section-heading text-align-center-style mb-5-style">Our Products</h2>
 
                     <div class="row g-4 g-lg-5 d-flex">
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3a.webp"
                                         alt="Led Lights" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Led Lights</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Grow lights help plants thrive from early seedlings through bloom, fruit, and final indoor harvest.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3b.webp"
                                         alt="Grow Tent" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Grow Tent</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Grow tents form a stable climate for plants through each season, stage, bloom, and indoor harvest.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3c.webp"
                                         alt="Fans & Filters" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Fans & Filters</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Quiet fans and filters keep air fresh, cool, clean, and moving through every indoor grow space.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3d.webp"
                                         alt="Nutrients" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Nutrients</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Plant food aids firm roots, green leaves, steady growth, strong blooms, and richer indoor harvests.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3e.png"
                                         alt="Essentials" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Essentials</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Daily tools make plant watering, checks, cuts, feeding, trims, and routine care simple and exact.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 clonable-card product-item">
                             <div class="product-card text-align-center-style p-md-5-style p-2-style pb-5-style">
                                 <div class="img-wrapper-style col-lg-12">
                                     <img src="assets/images/sustainabityagrowebsite-templatesection-3f.webp"
                                         alt="Growing Media" class="product-icon img-fluid mb-3-style" />
                                 </div>
                                 <h5 class="product-title">Growing Media</h5>
-                                <p class="product-desc">Lorem Ipsum has been the industry's standard dummy text ever
-                                    since
-                                    the
-                                    1500s, when an unknown.</p>
-                                <a href="#" class="btn btn-outline-product">Shop Now</a>
+                                <p class="product-desc">Grow media balances air, flow, and water to support firm roots through each plant growth stage.</p>
+                                <div class="product-actions zg-align-center"><a href="#help" class="btn btn-outline-product" data-btn="services">Shop Now</a></div>
                             </div>
                         </div>
                     </div>
@@ -284,9 +267,9 @@
 
                                 <div class="swiper-slide">
                                     <div class="collaborator d-flex">
-                                        <img src="assets/images/smart-home-app-logo.webp" class="img-fluid col-6"
-                                            alt="collaborator">
-                                        <img src="assets/images/lorem2.webp" class="img-fluid col-6" alt="collaborator">
+                                        <img src="assets/images/lorem3.webp" class="img-fluid col-6"
+                                            alt="Lorem Ipsum partner mark">
+                                        <img src="assets/images/lorem2.webp" class="img-fluid col-6" alt="Lorem Ipsum partner mark">
                                     </div>
                                 </div>
 
@@ -331,14 +314,14 @@
             </section>
         </div>
 
-        <div class="blob3">
+        <div class="blob3" data-zg-editable="surface">
             <section class="carbon-footprint-section py-md-5-style" id="vapourizers" data-section="vapourizers">
                 <img class="img-fluid carbon-section-graphics" src="assets/images/Gaphics/6.webp" alt="Grass graphics">
                 <div class="container">
                     <div class="row align-items-center-style">
                         <div class="col-lg-6 mb-4-style mb-lg-0-style">
                             <h2 class="section-heading mb-5-style">
-                                Reducing Our <span class="text-success">Carbon</span> Footprint
+                                Reducing Our <span class="carbon-accent">Carbon</span> Footprint
                             </h2>
                             <p class="section-para mt-1-style">
                                 We'll donate to have a tree planted with every purchase you make at Tree Co store, this
@@ -363,9 +346,8 @@
                 <div class="container">
                     <div class="row g-md-5 g-2">
 
-                        <div class="col-md-6 col-xl-4 card-div">
-                            <div class="card text-white-style border-0 "
-                                style="background-image: url('assets/images/15.webp'); background-size: cover; background-position: center; border-radius: 15px;">
+                        <div class="col-md-6 col-xl-4 card-div clonable-card catalogue-item">
+                            <div class="card text-white-style border-0 catalogue-card-2022">
 
                                 <div class="green-overlay"></div>
 
@@ -373,14 +355,13 @@
                                     <div class="overlay-of-card-div overlay-of-card-div1">
                                         <h5 class="card-title fw-bold-style">2022 Catalogue</h5>
                                     </div>
-                                    <a href="#" class="btn align-self-center download-button">Download Now</a>
+                                    <div class="catalogue-actions zg-align-center"><a href="#help" class="btn download-button" data-btn="download">Download Now</a></div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-xl-4 card-div">
-                            <div class="card text-white-style border-0"
-                                style="background-image: url('assets/images/16.webp'); background-size: cover; background-position: center; border-radius: 15px;">
+                        <div class="col-md-6 col-xl-4 card-div clonable-card catalogue-item">
+                            <div class="card text-white-style border-0 catalogue-card-newsletter">
 
                                 <div class="green-overlay"></div>
 
@@ -389,14 +370,13 @@
                                         <h5 class="card-title fw-bold-style">Newsletter</h5>
                                         <p class="card-text">Take advantage of Our exclusive monthly offer</p>
                                     </div>
-                                    <a href="#" class="btn align-self-center download-button">Download Now</a>
+                                    <div class="catalogue-actions zg-align-center"><a href="#help" class="btn download-button" data-btn="download">Download Now</a></div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-xl-4 card-div">
-                            <div class="card text-white-style border-0"
-                                style="background-image: url('assets/images/17.webp'); background-position: center; border-radius: 15px;">
+                        <div class="col-md-6 col-xl-4 card-div clonable-card catalogue-item">
+                            <div class="card text-white-style border-0 catalogue-card-application">
 
                                 <div class="green-overlay"></div>
 
@@ -405,7 +385,7 @@
                                         <h5 class="card-title fw-bold-style">Application form</h5>
                                         <p class="card-text">Become a stockist today</p>
                                     </div>
-                                    <a href="#" class="btn align-self-center download-button">Download Now</a>
+                                    <div class="catalogue-actions zg-align-center"><a href="#help" class="btn download-button" data-btn="download">Download Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -422,7 +402,7 @@
 
                     <div class="row g-4">
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3 clonable-card help-item">
                             <div
                                 class="card h-100 text-align-center-style p-4-style bg-dark-style text-white-style rounded-4">
                                 <div class="img-wrapper-style col-lg-12">
@@ -432,12 +412,12 @@
                                 </div>
                                 <h5 class="fw-bold-style">SUPPORT</h5>
                                 <p>Contact our friendly India customer support</p>
-                                <a href="#" class="text-white-style-50 text-decoration-none mt-auto-style">View More <i
-                                        class="fa-solid fa-angle-down" data-icon="angle-down"></i></a>
+                                <div class="help-actions zg-align-center"><a href="#footer" class="text-white-style-50 text-decoration-none" data-btn="contact">View More <i
+                                        class="fa-solid fa-angle-down" data-icon="angle-down" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3 clonable-card help-item">
                             <div
                                 class="card h-100 text-align-center-style p-4-style bg-dark-style text-white-style rounded-4">
                                 <div class="img-wrapper-style col-lg-12">
@@ -447,12 +427,12 @@
                                 </div>
                                 <h5 class="fw-bold-style">PAYMENT SECURE</h5>
                                 <p>We ensure secure payment with all payment methods</p>
-                                <a href="#" class="text-white-style-50 text-decoration-none mt-auto-style">View More <i
-                                        class="fa-solid fa-angle-down" data-icon="angle-down"></i></a>
+                                <div class="help-actions zg-align-center"><a href="#footer" class="text-white-style-50 text-decoration-none" data-btn="contact">View More <i
+                                        class="fa-solid fa-angle-down" data-icon="angle-down" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-3 clonable-card help-item">
                             <div
                                 class="card h-100 text-align-center-style p-4-style text-white-style bg-dark-style rounded-4">
                                 <div class="img-wrapper-style col-lg-12">
@@ -464,12 +444,12 @@
                                 <p>Your privacy is important to us, that’s why we offer discreet shipping on our
                                     products.
                                 </p>
-                                <a href="#" class="text-white-style-50 text-decoration-none mt-auto-style">View More <i
-                                        class="fa-solid fa-angle-down" data-icon="angle-down"></i></a>
+                                <div class="help-actions zg-align-center"><a href="#footer" class="text-white-style-50 text-decoration-none" data-btn="contact">View More <i
+                                        class="fa-solid fa-angle-down" data-icon="angle-down" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-lg-3 z-3">
+                        <div class="col-sm-6 col-lg-3 z-3 clonable-card help-item">
                             <div
                                 class="card h-100 text-align-center-style p-4-style bg-dark-style text-white-style rounded-4">
                                 <div class="img-wrapper-style col-lg-12">
@@ -479,8 +459,8 @@
                                 </div>
                                 <h5 class="fw-bold-style">RETURNS</h5>
                                 <p>Simply return it within 14 days for a quick exchange or fast refund</p>
-                                <a href="#" class="text-white-style-50 text-decoration-none mt-auto-style">View More <i
-                                        class="fa-solid fa-angle-down" data-icon="angle-down"></i></a>
+                                <div class="help-actions zg-align-center"><a href="#footer" class="text-white-style-50 text-decoration-none" data-btn="contact">View More <i
+                                        class="fa-solid fa-angle-down" data-icon="angle-down" aria-hidden="true"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -495,44 +475,42 @@
             <div class="row gy-4">
 
                 <div class="col-lg-3 col-md-6">
-                    <a class="navbar-brand-name d-flex flex-column" href="#" data-logo="footer">
-                        <div class="img-wrapper-style col-lg-12">
-                            <img src="assets/images/sustainabityagrowebsite-templatelogo.webp" alt="Logo"
+                    <a class="navbar-brand-name d-flex flex-column" href="#home" data-logo="footer">
+                            <img src="assets/images/sustainabityagrowebsite-templatelogo.webp" alt="Tree Co logo"
                                 class="img-fluid">
-                        </div>
                     </a>
-                    <p class="mt-3-style footer-para">Lorem Ipsum dolar lorem ipsum for innovation leaders</p>
-                    <a href="#" class="btn footer-get-a-quote rounded-pill px-4-style mt-2-style">Get a quote <i
-                            class="bi bi-chevron-right" data-icon="chevron-right"></i></a>
+                    <p class="mt-3-style footer-para">Practical growing equipment and guidance for confident indoor gardeners</p>
+                    <div class="footer-actions zg-align-center"><a href="#help" class="btn footer-get-a-quote rounded-pill" data-btn="footer">Get a quote <i
+                            class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></a></div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <h6 class="fw-semibold-style footer-links-heading mb-3-style">Account</h6>
                     <ul class="list-unstyled footer-div-links">
-                        <li>Lorem Ipsum dolar</li>
-                        <li>Dedicated Team</li>
-                        <li>Project-Based Team</li>
-                        <li>Product Concepting / Discovery Phase</li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#growlights">Grow Lights</a></li>
+                        <li><a href="#growequipments">Grow Equipment</a></li>
+                        <li><a href="#extractionpress">Catalogues</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <h6 class="fw-semibold-style footer-links-heading mb-3-style">Help</h6>
                     <ul class="list-unstyled footer-div-links">
-                        <li>E-123, ABC Plaza, XYZ Street, New Delhi-110077</li>
-                        <li>+91-9123456789</li>
-                        <li>yourname@domainname.com</li>
-                        <li>Policy & Terms</li>
+                        <li><a href="https://maps.google.com/?q=E-123%2C%20ABC%20Plaza%2C%20New%20Delhi%20110077" target="_blank" rel="noopener noreferrer">E-123, ABC Plaza, XYZ Street, New Delhi-110077</a></li>
+                        <li><a href="tel:+919123456789">+91-9123456789</a></li>
+                        <li><a href="mailto:yourname@domainname.com">yourname@domainname.com</a></li>
+                        <li><a href="#footer">Policy &amp; Terms</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <h6 class="fw-semibold-style footer-links-heading mb-3-style">Our Policies</h6>
                     <ul class="list-unstyled footer-div-links">
-                        <li>Web Development</li>
-                        <li>Mobile Development</li>
-                        <li>Dedicated Team</li>
-                        <li>Product Concepting</li>
+                        <li><a href="#footer">Privacy Policy</a></li>
+                        <li><a href="#footer">Shipping Policy</a></li>
+                        <li><a href="#footer">Returns Policy</a></li>
+                        <li><a href="#footer">Terms of Service</a></li>
                     </ul>
                 </div>
 
@@ -543,10 +521,13 @@
                 <p class="mb-2-style mb-md-0-style small text-white-style-50">© 2022 Tree.co all right reserved</p>
 
                 <div class="d-flex align-items-center-style gap-3 footer-social-div">
-                    <a href="#" class="fs-5"><i class="bi bi-twitter" data-icon="twitter"></i></a>
-                    <a href="#" class="fs-5"><i class="bi bi-facebook" data-icon="facebook"></i></a>
-                    <a href="#" class="fs-5"><i class="bi bi-instagram" data-icon="instagram"></i></a>
+                    <a href="#footer" class="footer-social-link" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a>
+                    <a href="#footer" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook"></i></a>
+                    <a href="#footer" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a>
                 </div>
+            </div>
+            <div class="powered-by-zigrow-row">
+                <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
             </div>
         </div>
     </footer>

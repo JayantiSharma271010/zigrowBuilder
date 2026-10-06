@@ -1,8 +1,11 @@
-// :root {
-//   --primary-colors: #625cfb;
-//   --secondary-colors: #8d8888;
-//   --territory-colors: #44465c;
-// }
+:root {
+  --primary-colors: #e66510;
+  --secondary-colors: #1c2a4d;
+  --territory-colors: #d4abf1;
+  --primary-soft: #fce9df;
+  --primary-soft: color-mix(in srgb, var(--primary-colors, #e66510) 13%, #fff);
+  --muted-text: #959091;
+}
 
 // Variables
 $textColor: #1c2a4d; // Main Dark Text (Headings)
@@ -29,13 +32,16 @@ $lightBlueColor: #cee8ef;
       height: 25px;
     }
   }
-  .logo-name {
+  .brand-logo {
     margin-left: 5px;
     font-size: 26px;
     margin-top: auto;
     margin-bottom: auto;
     font-weight: 700;
     color: $textColor;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-decoration: none;
     @media (max-width: 499.98px) {
       font-size: 26px;
     }
@@ -43,10 +49,10 @@ $lightBlueColor: #cee8ef;
 }
 
 // Navbar section
-nav {
+.navbar-section {
   width: 100%;
   // Territory Color applied to section background [cite: 71]
-  background: var(--territory-colors, #fce9df);
+  background: var(--primary-soft, #fce9df);
   padding: 1rem 1.2rem;
   display: flex;
   justify-content: space-between;
@@ -133,7 +139,7 @@ nav {
     }
   }
 
-  .social-icons {
+  .navbar-actions {
     display: flex;
     width: fit-content;
     justify-content: center;
@@ -226,7 +232,7 @@ nav {
 
 .each-section-description {
   // Secondary Color applied to paragraph/description text
-  color: var(--secondary-colors, #959091);
+  color: var(--muted-text, #959091);
   margin-bottom: 1rem;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -235,7 +241,7 @@ nav {
 // Home Section
 .hero {
   // Territory Color applied to Hero Background [cite: 71]
-  background: var(--territory-colors, #fce9df);
+  background: var(--primary-soft, #fce9df);
 
   .hero-content {
     display: flex;
@@ -264,7 +270,7 @@ nav {
     p {
       font-size: 18px;
       // Secondary Color applied to paragraph text [cite: 67]
-      color: var(--secondary-colors, #959091);
+      color: var(--muted-text, #959091);
       margin-bottom: 60px;
       margin-top: 30px;
     }
@@ -330,8 +336,8 @@ nav {
       bottom: 100px;
       width: 30px;
       height: 30px;
-      background: radial-gradient(transparent 55%, #00bcd4 55%);
-      background-color: #00bcd4;
+      background: radial-gradient(transparent 55%, var(--territory-colors, #00bcd4) 55%);
+      background-color: var(--territory-colors, #00bcd4);
       clip-path: polygon(
         50% 0%,
         61% 35%,
@@ -423,7 +429,7 @@ nav {
           margin: 0;
           font-size: clamp(10px, 2vw, 0.9rem);
           // Secondary Color applied to text [cite: 67]
-          color: var(--secondary-colors, #959091);
+          color: var(--muted-text, #959091);
           text-align: start;
         }
       }
@@ -444,11 +450,7 @@ nav {
           height: 100px;
           border-radius: 50%;
           padding: 15px;
-          background: linear-gradient(
-            to bottom,
-            $lightOrangeColor,
-            $lightVioletColor
-          );
+          background: var(--primary-soft, #fce9df);
           @media (max-width: 767.98px) {
             width: 60px;
             height: 60px;
@@ -499,12 +501,7 @@ nav {
   }
 
   .container2 {
-    background: linear-gradient(
-      to right,
-      var(--secondary-colors, $whiteColor) 0%,
-      var(--primary-colors, $lightOrangeColor) 70%,
-      var(--territory-colors, $lightVioletColor) 100%
-    );
+    background: var(--primary-soft, #fce9df);
     padding: 2rem 0px;
 
     .brands {
@@ -518,7 +515,7 @@ nav {
 
       .brand-logos {
         display: flex;
-        gap: 20px;
+        gap: 4px;
         flex-wrap: wrap;
         align-items: center;
         .img-wrapper-style {
@@ -528,7 +525,7 @@ nav {
             border-radius: 50%;
             background-color: $whiteColor;
             // Secondary color for shadow [cite: 66]
-            box-shadow: 2px 2px 10px 1px var(--secondary-colors, #959091);
+            box-shadow: 2px 2px 10px 1px var(--muted-text, #959091);
           }
           .image1 {
             width: 30px;
@@ -586,7 +583,7 @@ nav {
   .left-side-cards {
     padding: 1rem;
     border-radius: 12px;
-    background: var(--territory-colors, #fce9df);
+    background: var(--primary-soft, #fce9df);
     position: relative;
 
     .circle {
@@ -610,8 +607,12 @@ nav {
       }
     }
 
+    .service-card-item {
+      padding: 8px;
+    }
+
     .service-card-border {
-      padding: 20px;
+      padding: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -619,11 +620,7 @@ nav {
       transition: background 0.5s ease;
 
       &:hover {
-        background: linear-gradient(
-          to right,
-          var(--primary-colors, $lightOrangeColor),
-          var(--secondary-colors, $lightVioletColor)
-        );
+        background: var(--primary-colors, #e66510);
       }
 
       .service-card {
@@ -677,7 +674,7 @@ nav {
             font-size: 0.9rem;
             line-height: 1.5;
             // Secondary Color applied to text [cite: 67]
-            color: var(--secondary-colors, #959091);
+            color: var(--muted-text, #959091);
           }
         }
       }
@@ -797,7 +794,7 @@ nav {
             color: $textColor;
             span {
               // Secondary Color applied to span/muted text [cite: 67]
-              color: var(--secondary-colors, #959091);
+              color: var(--muted-text, #959091);
             }
           }
           p {
@@ -815,11 +812,7 @@ nav {
         position: absolute;
         top: 10%;
         right: 30%;
-        background: linear-gradient(
-          to bottom,
-          $lightOrangeColor,
-          $lightVioletColor
-        );
+        background: var(--territory-colors, #d4abf1);
         @media (max-width: 767.98px) {
           top: 0%;
           right: 0%;
@@ -848,12 +841,7 @@ nav {
   }
 
   .container-fluid {
-    // Territory Color applied to section gradient/background [cite: 71]
-    background: linear-gradient(
-      to right,
-      var(--territory-colors, #fce9df),
-      $lightVioletColor
-    );
+    background: var(--primary-soft, #fce9df);
     .bottom-div {
       ol {
         padding-left: 1.2rem;
@@ -1027,21 +1015,21 @@ nav {
 
         .bar1 {
           height: 220px;
-          background: linear-gradient(to top, #6a11cb, #2575fc);
+          background: var(--primary-colors, #e66510);
           @media (max-width: 767.98px) {
             height: 150px;
           }
         }
         .bar2 {
           height: 260px;
-          background: linear-gradient(to top, #11998e, #38ef7d);
+          background: var(--territory-colors, #d4abf1);
           @media (max-width: 767.98px) {
             height: 190px;
           }
         }
         .bar3 {
           height: 200px;
-          background: linear-gradient(to top, #dbf804, #d9860a);
+          background: var(--secondary-colors, #1c2a4d);
           @media (max-width: 767.98px) {
             height: 130px;
           }
@@ -1146,7 +1134,7 @@ nav {
       // Primary Color applied to accent block [cite: 64]
       background-color: var(--primary-colors, #e66510);
       // Territory Color applied to text on primary bg (fallback logic) [cite: 71]
-      color: var(--territory-colors, #fce9df);
+      color: var(--primary-soft, #fce9df);
       padding-top: 16px;
       padding-bottom: 16px;
       padding-right: 26px;
@@ -2440,4 +2428,262 @@ img {
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
+}
+
+// Zigrow Builder configuration
+.zg-align-center {
+  align-items: center;
+}
+
+.navbar-section {
+  .nav-list { gap: 3rem; }
+  .nav-links {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hamburger {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+}
+
+.navbar-section .navbar-actions,
+.hero .hero-actions,
+.services .services-actions,
+.business-section .business-actions,
+.get-started-section .footer-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+[data-btn],
+[data-btn]:hover,
+[data-btn]:focus,
+[data-btn]:active,
+[data-btn]:visited {
+  text-decoration: none;
+}
+
+[data-btn]:focus-visible,
+.navbar-section .hamburger:focus-visible,
+.scroll-top:focus-visible {
+  outline: 3px solid $textColor;
+  outline-offset: 3px;
+}
+
+.hero .hero-content {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero .hero-content > .hero-text,
+.hero .hero-content > .hero-image {
+  flex: 0 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 993px) {
+  .hero .hero-content > .hero-text { width: calc(48.75% - 20px); }
+  .hero .hero-content > .hero-image { width: calc(51.25% - 20px); }
+}
+
+@media (max-width: 992px) {
+  .hero .hero-content > .hero-text,
+  .hero .hero-content > .hero-image { width: 100%; }
+}
+
+.hero .container2 .brands,
+.hero .container2 .brand-logos,
+.works-section .bottom-div {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero .brand-logo-item { padding: 8px; }
+.recent-project-section .clonable-card { padding: 12px; }
+.works-section .upper-div { display: flex; }
+
+.scroll-top,
+.hero .badge-icon-wrap,
+.services .service-card .icon,
+.works-section .floating-icon-wrap,
+.works-section .shield-icon-wrap,
+.business-section .startup-icon-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.scroll-top > i,
+.hero .badge-icon-wrap > i,
+.services .service-card .icon > i,
+.works-section .floating-icon-wrap > i,
+.works-section .shield-icon-wrap > i,
+.business-section .startup-icon-wrap > i { flex: 0 0 auto; }
+
+.works-section .upper-div .right-image .floating-card1 .floating-icon-wrap {
+  flex: 0 0 50px;
+  width: 80px;
+  height: 80px;
+  color: $buttonColor;
+  font-size: 42px;
+  @media (max-width: 767.98px) {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+.works-section .upper-div .right-image .floating-card2 .shield-icon-wrap {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: $whiteColor;
+  color: $buttonColor;
+  font-size: 22px;
+}
+
+.business-section .startup-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.business-section .startup-icon-wrap {
+  display: inline-flex;
+  color: #e63946;
+}
+
+.hero .badge-icon-wrap {
+  width: auto !important;
+  height: auto !important;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.services .left-side-cards .service-card-border .service-card .icon {
+  flex: 0 0 auto;
+  width: fit-content;
+  height: auto;
+  min-width: 60px;
+  min-height: 60px;
+}
+
+.works-section .floating-icon-wrap {
+  flex: 0 1 auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.works-section .shield-icon-wrap {
+  width: auto !important;
+  height: auto !important;
+  min-width: 40px;
+  min-height: 40px;
+  gap: 16px;
+}
+
+.recent-project-section .project-card {
+  aspect-ratio: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.recent-project-section .project-card-one { background-image: url("../assets/images/project11.webp"); }
+.recent-project-section .project-card-two { background-image: url("../assets/images/project22.webp"); }
+.recent-project-section .project-card-three { background-image: url("../assets/images/project33.webp"); }
+
+.get-started-section {
+  .footer-brand-logo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0a0a23;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-decoration: none;
+  }
+  .message-btn {
+    display: inline-flex;
+    position: relative;
+    isolation: isolate;
+    align-items: center;
+    min-height: 48px;
+    padding-right: 6px;
+    color: $textColor;
+    white-space: nowrap;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 48px;
+      height: 48px;
+      background-color: var(--primary-colors, #e66510);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited { color: $textColor; }
+  }
+  .footer-nav-alignment { justify-content: flex-end; }
+  .powered-by-zigrow-row {
+    padding-top: 24px;
+    text-align: center;
+    a {
+      color: #0a0a23;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      &:hover,
+      &:focus { color: #ff7a00; }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .hero-actions,
+  .services .services-actions,
+  .business-section .business-actions,
+  .get-started-section .footer-actions { justify-content: center; }
+  .get-started-section .footer-nav-alignment { justify-content: center; }
+}
+
+@media (max-width: 992px) {
+  .hero .hero-actions,
+  .services .services-actions,
+  .business-section .business-actions { justify-content: center; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .navbar-section .navbar-actions { flex-direction: column; }
+}
+
+@media (max-width: 767px) {
+  .hero .badge-icon-wrap {
+    min-width: 20px;
+    min-height: 20px;
+  }
+  .works-section .floating-icon-wrap {
+    min-width: 40px;
+    min-height: 40px;
+  }
 }

@@ -54,20 +54,21 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.style.display = "block";
+    backToTopBtn.style.display = "flex";
   } else {
     backToTopBtn.style.display = "none";
   }
 };
 backToTopBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
 };
 // gsap animation start heare
-if (window.innerWidth > 768) {
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.innerWidth > 768 && window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Animate Left Text
-  gsap.from(".hero-left", {
+  gsap.from(".zg-hero__left", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -81,7 +82,7 @@ if (window.innerWidth > 768) {
   });
 
   // Animate Right Text
-  gsap.from(".hero-right", {
+  gsap.from(".zg-hero__right", {
     x: 100,
     opacity: 0,
     duration: 1.2,
@@ -95,7 +96,7 @@ if (window.innerWidth > 768) {
   });
 
   // Animate Join Us Right (text)
-  gsap.from(".join-right", {
+  gsap.from(".zg-join__right", {
     y: 100,
     opacity: 0,
     duration: 1.2,
@@ -108,7 +109,7 @@ if (window.innerWidth > 768) {
     },
   });
   // Mission Header Animation
-  gsap.from(".mission-header", {
+  gsap.from(".zg-mission__header", {
     y: -50,
     opacity: 0,
     duration: 1,
@@ -121,34 +122,34 @@ if (window.innerWidth > 768) {
   });
 
   // Mission Items Animation (staggered)
-  gsap.from(".mission-item", {
+  gsap.from(".zg-mission__item", {
     y: 100,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: ".mission-wrapper",
+      trigger: ".zg-mission__row",
       start: "top 80%",
       toggleActions: "play none none",
     },
   });
 
   // Mission Button Animation
-  gsap.from(".mission-btn", {
+  gsap.from(".zg-mission__btn", {
     scale: 0.8,
     opacity: 0,
     duration: 1,
     ease: "back.out(1.7)",
     scrollTrigger: {
-      trigger: ".mission-btn",
+      trigger: ".zg-mission__btn",
       start: "top 90%",
       toggleActions: "play none none",
     },
   });
 
   // Project Heading Animation
-  gsap.from(".project-heading", {
+  gsap.from(".zg-projects__heading", {
     y: -50,
     opacity: 0,
     duration: 1,
@@ -161,21 +162,21 @@ if (window.innerWidth > 768) {
   });
 
   // Project Cards Animation (staggered)
-  gsap.from(".project-card", {
+  gsap.from(".zg-projects__card", {
     y: 120,
     opacity: 0,
     duration: 1.2,
     ease: "power3.out",
     stagger: 0.25,
     scrollTrigger: {
-      trigger: ".card-wraper",
+      trigger: ".zg-projects__row",
       start: "top 80%",
       toggleActions: "play none none",
     },
   });
 
   // Partners Section
-  gsap.from(".partners-text", {
+  gsap.from(".zg-partners__text", {
     x: -100,
     opacity: 0,
     duration: 1.2,
@@ -187,21 +188,21 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".partners-logos img", {
+  gsap.from(".zg-partners__logo-col", {
     y: 80,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     stagger: 0.2,
     scrollTrigger: {
-      trigger: ".partners-logos",
+      trigger: ".zg-partners__logos",
       start: "top 85%",
       toggleActions: "play none none",
     },
   });
 
   // Testimonial Section
-  gsap.from(".testimonial-content", {
+  gsap.from(".zg-testimonial__content", {
     scale: 0.8,
     opacity: 0,
     duration: 1.2,
@@ -214,7 +215,7 @@ if (window.innerWidth > 768) {
   });
 
   // Footer Section
-  gsap.from(".footer-col", {
+  gsap.from(".zg-footer__col", {
     y: 100,
     opacity: 0,
     duration: 1,
@@ -227,14 +228,14 @@ if (window.innerWidth > 768) {
     },
   });
 
-  gsap.from(".footer-bottom", {
+  gsap.from(".zg-footer__bottom", {
     y: 50,
     opacity: 0,
     duration: 1,
     ease: "power3.out",
     delay: 0.3,
     scrollTrigger: {
-      trigger: ".footer-bottom",
+      trigger: ".zg-footer__bottom",
       start: "top 95%",
       toggleActions: "play none none",
     },

@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link rel="icon" href="criminal-lawyer.webp" type="image/webp" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -23,7 +24,7 @@
       class="back-to-top"
       aria-label="Back to top"
     >
-      <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
+      <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
     </a>
 
     <header id="header" class="header-section" data-section="header">
@@ -31,10 +32,10 @@
         <div class="container">
           <div class="nav-top">
             <div class="social-icons">
-              <i class="bi bi-facebook" data-icon="facebook"></i>
-              <i class="bi bi-twitter" data-icon="twitter"></i>
-              <i class="bi bi-instagram" data-icon="instagram"></i>
-              <i class="bi bi-linkedin" data-icon="linkedin"></i>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin" data-icon="linkedin" aria-hidden="true"></i></a>
             </div>
 
             <a href="tel:+91-9123456789" class="call-link">
@@ -46,8 +47,8 @@
 
           <div class="nav-bottom">
             <div class="nav-brand">
-              <h4>Ram Jethmalani</h4>
-              <h6>CRIMINAL LAWYER</h6>
+              <a href="#home" class="brand-logo" data-logo="navbar">Ram Jethmalani</a>
+              <p class="nav-brand-tagline">CRIMINAL LAWYER</p>
             </div>
 
             <div class="list-item-box" id="navMenu">
@@ -57,17 +58,12 @@
                 <li><a href="#practice-areas">Practice Areas</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#media-section">FAQ</a></li>
-                <li><a href="#site-footer">Contact</a></li>
+                <li><a href="#footer">Contact</a></li>
               </ul>
 
-              <a
-                href="#site-footer"
-                class="consult-btn"
-                role="button"
-                data-btn="navbar"
-              >
-                Free Consultation
-              </a>
+              <div class="navbar-actions zg-align-center">
+                <a href="#footer" class="consult-btn" data-btn="navbar">Free Consultation</a>
+              </div>
             </div>
 
             <!-- Hamburger (span-based, no icon) -->
@@ -92,27 +88,24 @@
               <li><a href="#practice-areas">Practice Areas</a></li>
               <li><a href="#reviews">Reviews</a></li>
               <li><a href="#media-section">FAQ</a></li>
-              <li><a href="#site-footer">Contact</a></li>
+              <li><a href="#footer">Contact</a></li>
             </ul>
 
-            <a
-              href="#site-footer"
-              class="consult-btn consult-btn--mobile"
-              role="button"
-              data-btn="navbar"
-            >
-              Free Consultation
-            </a>
+            <div class="mobile-nav-actions zg-align-center">
+              <a href="#footer" class="consult-btn consult-btn--mobile" data-btn="navbar">Free Consultation</a>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
+    <main>
+
     <!-- hero section -->
     <section id="home" class="section-hero" data-section="home">
       <div class="section-hero__bg">
         <!-- keep image in separate wrapper (as requested) -->
-        <div class="section-hero__bg-img"><span class="d-none"></span></div>
+        <div class="section-hero__bg-img" data-zg-editable="surface"><span class="d-none"></span></div>
       </div>
 
       <div class="section-hero__overlay">
@@ -136,9 +129,9 @@
                   legal matters.
                 </p>
 
-                <a href="#site-footer" class="section-hero__btn" data-btn="hero"
-                  >Contact Us Today</a
-                >
+                <div class="section-hero__actions zg-align-center">
+                  <a href="#footer" class="section-hero__btn" data-btn="hero">Contact Us Today</a>
+                </div>
               </div>
             </div>
           </div>
@@ -158,7 +151,7 @@
             <div class="lawyer-media">
               <div class="lawyer-media__lady">
                 <img
-                  src="assets/criminal-lawyer/Justice Lady.webp"
+                  src="assets/criminal-lawyer/justice-lady.webp"
                   alt="Lady Justice statue"
                   loading="lazy"
                 />
@@ -166,7 +159,7 @@
 
               <div class="lawyer-media__badge">
                 <img
-                  src="assets/criminal-lawyer/Badge.webp"
+                  src="assets/criminal-lawyer/badge.webp"
                   alt="Top Rated Badge"
                   loading="lazy"
                 />
@@ -177,9 +170,9 @@
           <!-- RIGHT: CONTENT -->
           <div class="col-12 col-lg-7">
             <div class="lawyer-content">
-              <h1 class="lawyer-content__title">
+              <h2 class="lawyer-content__title">
                 Trusted Lawyers In <br />Canada
-              </h1>
+              </h2>
 
               <div class="lawyer-content__underline"></div>
 
@@ -197,12 +190,12 @@
 
               <div class="lawyer-stats">
                 <div class="lawyer-stats__item">
-                  <h2>2,850+</h2>
+                  <h3>2,850+</h3>
                   <p>Criminal Charges <br />Handled</p>
                 </div>
 
                 <div class="lawyer-stats__item">
-                  <h2>450+</h2>
+                  <h3>450+</h3>
                   <p>Criminal Appeals <br />Argued</p>
                 </div>
               </div>
@@ -221,7 +214,7 @@
       data-section="experience"
     >
       <!-- Background image in separate div -->
-      <div class="experience-section__bg" aria-hidden="true">
+      <div class="experience-section__bg" data-zg-editable="surface" aria-hidden="true">
         <span class="d-none"></span>
       </div>
 
@@ -249,7 +242,6 @@
                 class="experience-section__play"
                 aria-label="Play video"
                 role="button"
-                data-btn="experience-section"
               >
                 <i class="bi bi-play-fill" data-icon="play"></i>
               </a>
@@ -276,23 +268,23 @@
                 cases we handle most often. You’ll always know the next step.
               </p>
 
-              <a href="#contact" class="practice-areas-section__btn" data-btn="practice-areas">
-                View All Practice Areas
-              </a>
+              <div class="practice-areas-section__actions zg-align-center">
+                <a href="#contact-lawyer" class="practice-areas-section__btn" data-btn="practice-areas">View All Practice Areas</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="row g-0">
+        <div class="row g-0 practice-areas-section__grid">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div
               class="practice-areas-section__card border-lg-end border-lg-bottom"
             >
               <span class="practice-areas-section__num">01</span>
-              <h5 class="practice-areas-section__card-title">
+              <h3 class="practice-areas-section__card-title">
                 Domestic Assault
-              </h5>
+              </h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -304,14 +296,14 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div
               class="practice-areas-section__card border-lg-end border-lg-bottom"
             >
               <span class="practice-areas-section__num">02</span>
-              <h5 class="practice-areas-section__card-title">
+              <h3 class="practice-areas-section__card-title">
                 Weapons Offences
-              </h5>
+              </h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -323,10 +315,10 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="practice-areas-section__card border-lg-bottom">
               <span class="practice-areas-section__num">03</span>
-              <h5 class="practice-areas-section__card-title">Drug Offences</h5>
+              <h3 class="practice-areas-section__card-title">Drug Offences</h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -338,10 +330,10 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="practice-areas-section__card border-lg-end">
               <span class="practice-areas-section__num">04</span>
-              <h5 class="practice-areas-section__card-title">Bail Hearings</h5>
+              <h3 class="practice-areas-section__card-title">Bail Hearings</h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -353,10 +345,10 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="practice-areas-section__card border-lg-end">
               <span class="practice-areas-section__num">05</span>
-              <h5 class="practice-areas-section__card-title">Property Crime</h5>
+              <h3 class="practice-areas-section__card-title">Property Crime</h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -368,12 +360,12 @@
           </div>
 
           <!-- Card 6 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="practice-areas-section__card">
               <span class="practice-areas-section__num">06</span>
-              <h5 class="practice-areas-section__card-title">
+              <h3 class="practice-areas-section__card-title">
                 Criminal Harassment
-              </h5>
+              </h3>
               <div class="practice-areas-section__underline">
                 <span class="d-none"></span>
               </div>
@@ -401,14 +393,14 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row media-section__grid">
           <!-- Item 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media 3 (1).webp"
+                    src="assets/criminal-lawyer/media-3-1.webp"
                     alt="Interview clip thumbnail"
                     loading="lazy"
                   />
@@ -418,16 +410,15 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
-                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h5 class="media-section__card-title">
+                <h3 class="media-section__card-title">
                   Case Strategy: What To Do In The First 24 Hours
-                </h5>
+                </h3>
                 <p class="media-section__text">
                   Quick guidance on the early steps that protect your rights and
                   set your case up correctly.
@@ -440,12 +431,12 @@
           </div>
 
           <!-- Item 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media 3 (2).webp"
+                    src="assets/criminal-lawyer/media-3-2.webp"
                     alt="News segment thumbnail"
                     loading="lazy"
                   />
@@ -455,16 +446,15 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
-                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h5 class="media-section__card-title">
+                <h3 class="media-section__card-title">
                   Bail Hearings: How Release Conditions Work
-                </h5>
+                </h3>
                 <p class="media-section__text">
                   Learn what the court looks for and how a strong release plan
                   is prepared in practice.
@@ -477,12 +467,12 @@
           </div>
 
           <!-- Item 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card">
             <div class="media-section__card">
               <div class="media-section__thumb">
                 <div class="media-section__img">
                   <img
-                    src="assets/criminal-lawyer/media 3 (3).webp"
+                    src="assets/criminal-lawyer/media-3-3.webp"
                     alt="Panel discussion thumbnail"
                     loading="lazy"
                   />
@@ -492,16 +482,15 @@
                   class="media-section__play"
                   href="https://www.youtube.com/"
                   aria-label="Play media"
-                  data-btn="media-section"
                 >
                   <i class="bi bi-play-fill" data-icon="play"></i>
                 </a>
               </div>
 
               <div class="media-section__content">
-                <h5 class="media-section__card-title">
+                <h3 class="media-section__card-title">
                   Search &amp; Seizure: When Evidence Can Be Challenged
-                </h5>
+                </h3>
                 <p class="media-section__text">
                   A simple breakdown of lawful searches, rights violations, and
                   how they impact outcomes.
@@ -523,40 +512,40 @@
           <!-- Title -->
           <div class="col-12 col-lg-2">
             <div class="logo-section__title-wrap">
-              <h5 class="logo-section__title">Featured On Trusted Platforms</h5>
+              <h2 class="logo-section__title">Featured On Trusted Platforms</h2>
             </div>
           </div>
 
           <!-- Logos -->
           <div class="col-12 col-lg-10">
             <div class="row logo-section__logos">
-              <div class="col-4 col-md-3 col-lg">
+              <div class="col-4 col-md-3 col-lg clonable-card">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.png" alt="Media logo 1" />
+                  <img src="assets/logo/1.webp" alt="Media logo 1" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg">
+              <div class="col-4 col-md-3 col-lg clonable-card">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/2.png" alt="Media logo 2" />
+                  <img src="assets/logo/2.webp" alt="Media logo 2" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg">
+              <div class="col-4 col-md-3 col-lg clonable-card">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.png" alt="Media logo 3" />
+                  <img src="assets/logo/1.webp" alt="Media logo 3" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg">
+              <div class="col-4 col-md-3 col-lg clonable-card">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/2.png" alt="Media logo 4" />
+                  <img src="assets/logo/2.webp" alt="Media logo 4" />
                 </div>
               </div>
 
-              <div class="col-4 col-md-3 col-lg">
+              <div class="col-4 col-md-3 col-lg clonable-card">
                 <div class="logo-section__img-wrap">
-                  <img src="assets/logo/1.png" alt="Media logo 5" />
+                  <img src="assets/logo/1.webp" alt="Media logo 5" />
                 </div>
               </div>
             </div>
@@ -568,7 +557,7 @@
     <!-- reviews sections -->
     <section id="reviews" class="reviews-section py-6" data-section="reviews">
       <!-- background image -->
-      <div class="reviews-section__bg" aria-hidden="true"></div>
+      <div class="reviews-section__bg" data-zg-editable="surface" aria-hidden="true"></div>
 
       <!-- dark overlay -->
       <div class="reviews-section__overlay" aria-hidden="true"></div>
@@ -589,7 +578,7 @@
 
         <!-- Reviews -->
         <div class="row reviews-section__grid">
-          <div class="col-12 col-sm-6 col-md-4">
+          <div class="col-12 col-sm-6 col-md-4 clonable-card">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 The team handled my case with clarity and confidence. Every step
@@ -599,7 +588,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4">
+          <div class="col-12 col-sm-6 col-md-4 clonable-card">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 Professional, responsive, and honest. I never felt rushed, and
@@ -609,7 +598,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4">
+          <div class="col-12 col-sm-6 col-md-4 clonable-card">
             <div class="reviews-section__box">
               <p class="reviews-section__text">
                 Strong representation from start to finish. The attention to
@@ -620,10 +609,8 @@
           </div>
 
           <!-- BUTTON ROW -->
-          <div class="col-12">
-            <a href="#" class="reviews-section__btn" data-btn="review">
-              View All Reviews
-            </a>
+          <div class="col-12 reviews-section__actions zg-align-center">
+            <a href="#reviews" class="reviews-section__btn" data-btn="review">View All Reviews</a>
           </div>
         </div>
       </div>
@@ -666,45 +653,27 @@
               <div class="col-12 col-sm-6">
                 <ul class="serving-areas-section__list">
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Mumbai
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Delhi
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Bengaluru
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Hyderabad
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Ahmedabad
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Chennai
                   </li>
                 </ul>
@@ -713,45 +682,27 @@
               <div class="col-12 col-sm-6">
                 <ul class="serving-areas-section__list">
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Kolkata
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Pune
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Jaipur
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Lucknow
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Surat
                   </li>
                   <li>
-                    <i
-                      class="bi bi-chevron-right"
-                      data-icon="chevron-right"
-                    ></i>
+                    <span class="serving-area-icon"><i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i></span>
                     Chandigarh
                   </li>
                 </ul>
@@ -766,55 +717,55 @@
         <div class="row">
           <div class="col-12">
             <div class="serving-areas-section__associations">
-              <h4 class="serving-areas-section__subheading">
+              <h3 class="serving-areas-section__subheading">
                 Associations &amp; Memberships
-              </h4>
+              </h3>
 
               <div class="row serving-areas-section__logos">
-                <div class="col-6 col-sm-4 col-md-3 col-lg">
+                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.png"
+                      src="assets/logo/1.webp"
                       alt="Association logo 1"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg">
+                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/2.png"
+                      src="assets/logo/2.webp"
                       alt="Association logo 2"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg">
+                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.png"
+                      src="assets/logo/1.webp"
                       alt="Association logo 3"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg">
+                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/2.png"
+                      src="assets/logo/2.webp"
                       alt="Association logo 4"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div class="col-6 col-sm-4 col-md-3 col-lg">
+                <div class="col-6 col-sm-4 col-md-3 col-lg clonable-card">
                   <div class="serving-areas-section__logo">
                     <img
-                      src="assets/logo/1.png"
+                      src="assets/logo/1.webp"
                       alt="Association logo 5"
                       loading="lazy"
                     />
@@ -834,7 +785,7 @@
       data-section="contact-lawyer"
     >
       <!-- background image in separate div -->
-      <div class="contact-lawyer-section__bg" aria-hidden="true">
+      <div class="contact-lawyer-section__bg" data-zg-editable="surface" aria-hidden="true">
         <span class="d-none"></span>
       </div>
       <!-- overlay in separate div -->
@@ -862,40 +813,36 @@
                 representation—starting with a confidential call.
               </p>
 
-              <a
-                href="tel:+91-9123456789"
-                class="contact-lawyer-section__btn"
-                data-btn="contact-lawyer"
-              >
-                <i class="bi bi-telephone-fill" data-icon="phone"></i>
-                <span>+91-9123456789</span>
-              </a>
+              <div class="contact-lawyer-section__actions zg-align-center">
+                <a href="tel:+91-9123456789" class="contact-lawyer-section__btn" data-btn="contact-lawyer"><i class="bi bi-telephone-fill" data-icon="phone" aria-hidden="true"></i> +91-9123456789</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </main>
 
     <!-- footer section -->
-    <footer id="site-footer" class="site-footer" data-section="site-footer">
+    <footer id="footer" class="site-footer" data-section="footer">
       <div class="container">
         <!-- Top Footer -->
         <div class="row site-footer__top">
           <!-- Company Info -->
           <div class="col-12 col-md-4">
             <div class="site-footer__block">
-              <h6 class="site-footer__text">
+              <p class="site-footer__text">
                 We’re a full-service criminal defence firm supporting clients
                 across major cities with clear advice, strong advocacy, and fast
                 action.
-              </h6>
+              </p>
             </div>
           </div>
 
           <!-- Contact Info -->
           <div class="col-12 col-md-4">
             <div class="site-footer__block">
-              <h6 class="site-footer__title">Contact Us</h6>
+              <h2 class="site-footer__title">Contact Us</h2>
 
               <address class="site-footer__address">
                 <strong>E-123, ABC Plaza, XYZ Street</strong><br />
@@ -911,14 +858,14 @@
           <!-- Quick Links -->
           <div class="col-12 col-md-3">
             <div class="site-footer__block">
-              <h6 class="site-footer__title">Quick Links</h6>
+              <h2 class="site-footer__title">Quick Links</h2>
 
               <ul class="site-footer__links">
-                <li><a href="#">Practice Areas</a></li>
-                <li><a href="#">Our Lawyers</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Book a Free Consultation</a></li>
+                <li><a href="#practice-areas">Practice Areas</a></li>
+                <li><a href="#lawyer-section">Our Lawyers</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#media-section">FAQ</a></li>
+                <li><a href="#contact-lawyer">Book a Free Consultation</a></li>
               </ul>
             </div>
           </div>
@@ -930,27 +877,31 @@
         <div class="row site-footer__bottom">
           <div class="col-12 col-md-6">
             <div class="site-footer__copyright">
-              <small
-                >&copy; 2025 All Right Reserved| Powered by Zigrow</small
-              >
+              <small>&copy; 2025 All Rights Reserved</small>
             </div>
           </div>
 
           <div class="col-12 col-md-6">
             <div class="site-footer__social">
               <a href="#" aria-label="LinkedIn">
-                <i class="bi bi-linkedin" data-icon="linkedin"></i>
+                <i class="bi bi-linkedin" data-icon="linkedin" aria-hidden="true"></i>
               </a>
               <a href="#" aria-label="YouTube">
-                <i class="bi bi-youtube" data-icon="youtube"></i>
+                <i class="bi bi-youtube" data-icon="youtube" aria-hidden="true"></i>
               </a>
               <a href="#" aria-label="Twitter">
-                <i class="bi bi-twitter" data-icon="twitter"></i>
+                <i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i>
               </a>
               <a href="#" aria-label="Facebook">
-                <i class="bi bi-facebook" data-icon="facebook"></i>
+                <i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i>
               </a>
             </div>
+          </div>
+        </div>
+
+        <div class="row footer-attribution-row">
+          <div class="col-12">
+            <p><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
           </div>
         </div>
       </div>

@@ -8,6 +8,12 @@
     menu.classList.toggle("active", open);
     toggle.classList.toggle("active", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    const icon = toggle.querySelector("i");
+    if (icon) {
+      icon.classList.toggle("bi-list", !open);
+      icon.classList.toggle("bi-x-lg", open);
+      icon.setAttribute("data-icon", open ? "close-menu" : "menu");
+    }
   };
 
   toggle.addEventListener("click", () => {
@@ -37,15 +43,21 @@ window.addEventListener("scroll", () => {
   }
 });
 
-backToTopBtn.addEventListener("click", () => {
+backToTopBtn.addEventListener("click", (event) => {
+  event.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 // GSAP Animations
 
-gsap.registerPlugin(ScrollTrigger);
-if (window.innerWidth > 768) {
+if (
+  window.gsap &&
+  window.ScrollTrigger &&
+  window.innerWidth > 768 &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  gsap.registerPlugin(ScrollTrigger);
   // Header Animation
-  gsap.from("#header", {
+  gsap.from(".site-header", {
     y: -100,
     opacity: 0,
     duration: 1,
@@ -53,46 +65,46 @@ if (window.innerWidth > 768) {
   });
 
   // Hero Section
-  gsap.from("#hero .text-content", {
-    scrollTrigger: "#hero",
+  gsap.from(".hero-section__content", {
+    scrollTrigger: ".hero-section",
     y: -100,
     opacity: 0,
     duration: 1,
   });
 
-  gsap.from("#hero .hero-img", {
-    scrollTrigger: "#hero",
+  gsap.from(".hero-section__image-wrap", {
+    scrollTrigger: ".hero-section",
     y: 100,
     opacity: 0,
     duration: 1,
   });
 
   // About Section
-  gsap.from("#about img", {
-    scrollTrigger: "#about",
+  gsap.from(".about-section__image-wrap", {
+    scrollTrigger: ".about-section",
     y: -100,
     opacity: 0,
     duration: 1,
   });
 
-  gsap.from("#about .ps-lg-5", {
-    scrollTrigger: "#about",
+  gsap.from(".about-section__content", {
+    scrollTrigger: ".about-section",
     y: 100,
     opacity: 0,
     duration: 1,
   });
 
   // CTA Section
-  gsap.from("#cta", {
-    scrollTrigger: "#cta",
+  gsap.from(".cta-section__wrap", {
+    scrollTrigger: ".cta-section",
     scale: 0.8,
     opacity: 0,
     duration: 1,
   });
 
   // Gallery Items
-  gsap.from(".gallery-box", {
-    scrollTrigger: "#gallery",
+  gsap.from(".gallery-section__box", {
+    scrollTrigger: ".gallery-section",
     opacity: 0,
     y: 50,
     duration: 0.5,
@@ -100,17 +112,16 @@ if (window.innerWidth > 768) {
   });
 
   // Testimonials
-  gsap.from("#testimonial .p-3", {
-    scrollTrigger: "#testimonial",
-    opacity: 0,
+  gsap.from(".testimonial-section__card", {
+    scrollTrigger: ".testimonial-section",
     y: 50,
     duration: 0.6,
     stagger: 0.2,
   });
 
   // Footer
-  gsap.from("#footer", {
-    scrollTrigger: "#footer",
+  gsap.from(".site-footer__wrap", {
+    scrollTrigger: ".site-footer",
     opacity: 0,
     y: 50,
     duration: 1,

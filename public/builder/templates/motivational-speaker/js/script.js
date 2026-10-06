@@ -1,23 +1,3 @@
-let statsSwiper;
-
-function initStatsSwiper() {
-  if (window.innerWidth < 768 && !statsSwiper) {
-    statsSwiper = new Swiper(".statsSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    });
-  } else if (window.innerWidth >= 768 && statsSwiper) {
-    statsSwiper.destroy(true, true);
-    statsSwiper = undefined;
-  }
-}
-
-// Initialize on load
-initStatsSwiper();
-
-// Re-init on resize
-window.addEventListener("resize", initStatsSwiper);
-
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -192,26 +172,96 @@ window.addEventListener("scroll", () => {
 });
 
 
-// Small ebook form
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("ebookForm");
-  const msg = document.getElementById("ebookMessage");
+// Zigrow multi-form integration
+(function () {
+  const forms = Array.from(document.querySelectorAll("form[data-zigrow-form]"));
+  if (!forms.length) return;
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+  function serializeForm(form) {
+    const formData = new FormData(form);
+    const raw = {};
+    for (const [name, value] of formData.entries()) {
+      const existing = raw[name];
+      if (existing === undefined) raw[name] = value;
+      else if (Array.isArray(existing)) existing.push(value === "" ? true : value);
+      else raw[name] = [existing, value === "" ? true : value];
+    }
+    return raw;
+  }
 
-      if (!form.checkValidity()) {
-        msg.innerHTML = '<span class="text-danger">Please fill in all fields.</span>';
-        return;
+  function pickPrimaryValue(raw) {
+    if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
+    if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
+    const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(" ").trim();
+    if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
+    if (nameCombo) return nameCombo;
+    if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
+    return "";
+  }
+
+  forms.forEach((form) => {
+    const domainInput = form.querySelector('input[name="domain"]');
+    const pageUrlInput = form.querySelector('input[name="page_url"]');
+    if (domainInput) domainInput.value = location.host;
+    if (pageUrlInput) pageUrlInput.value = location.href;
+
+    const message = form.parentElement.querySelector(".form-submit-message");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const submitButton = form.querySelector(':scope > [type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.dataset.oldText = submitButton.textContent || "";
+        submitButton.textContent = "Submitting...";
+      }
+      if (message) {
+        message.textContent = "";
+        message.removeAttribute("data-status");
       }
 
-      // fake success message (replace with API later)
-      msg.innerHTML = '<span class="text-success">Thanks! Check your inbox for the eBook link.</span>';
-      form.reset();
+      try {
+        const raw = serializeForm(form);
+        const body = new URLSearchParams();
+        body.set("domain", domainInput?.value || location.host);
+        body.set("form_key", form.querySelector('input[name="form_key"]')?.value || "contact");
+        body.set("page_url", pageUrlInput?.value || location.href);
+        body.set("payload", JSON.stringify(raw));
+        const primary = pickPrimaryValue(raw);
+        if (primary) body.set("value", primary);
+        if (raw._company) body.set("_company", raw._company);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body,
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && (result.ok ?? true)) {
+          form.reset();
+          if (message) {
+            message.textContent = "Thanks! Your request has been submitted.";
+            message.dataset.status = "success";
+          }
+        } else if (message) {
+          message.textContent = result.message || `Failed (HTTP ${response.status})`;
+          message.dataset.status = "error";
+        }
+      } catch (error) {
+        console.error(error);
+        if (message) {
+          message.textContent = "Something went wrong. Please try again.";
+          message.dataset.status = "error";
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButton.dataset.oldText || "Download";
+        }
+      }
     });
-  }
-});
+  });
+})();
 
 /* -------------------------------------------------------------------------- */
 /*                              // GSAP Animation                             */

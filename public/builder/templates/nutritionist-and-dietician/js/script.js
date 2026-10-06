@@ -69,9 +69,10 @@ window.addEventListener("scroll", () => {
 });
 
 backToTopBtn.addEventListener("click", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    behavior: reduceMotion ? "auto" : "smooth",
   });
 });
 
@@ -222,7 +223,7 @@ window.addEventListener("scroll", () => {
 /* -------------------------------------------------------------------------- */
 
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 768 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     gsap.registerPlugin(ScrollTrigger);
 
     // sections
@@ -612,7 +613,7 @@ const footer = document.querySelector("#footer");
 
 if (footer) {
   // Animate intro heading and paragraph
-  gsap.from("#footer .col-md-6 h5, #footer .col-md-6 p", {
+  gsap.from(".site-footer .footer-intro h2, .site-footer .footer-intro p", {
     scrollTrigger: {
       trigger: footer,
       start: "top 85%",
@@ -625,7 +626,7 @@ if (footer) {
   });
 
   // Animate footer links
-  gsap.from("#footer .col-md-2", {
+  gsap.from(".site-footer .footer-column", {
     scrollTrigger: {
       trigger: footer,
       start: "top 85%",

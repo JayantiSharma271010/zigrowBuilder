@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     menuToggle.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
   });
 
   // Optional: close menu when a link is clicked (mobile UX)
@@ -15,12 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (window.innerWidth <= 992) {
         navLinks.classList.remove("active");
         menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
       }
     });
   });
 });
 
 // Sticky navbar on scroll
+const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", function () {
   if (window.scrollY > 50) {
     navbar.classList.add("sticky");
@@ -34,14 +40,15 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.style.display = "block";
+    backToTopBtn.style.display = "inline-flex";
   } else {
     backToTopBtn.style.display = "none";
   }
 };
 
 backToTopBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
 };
 // gsap animation start heare
 
@@ -398,9 +405,9 @@ gsap.from("#donation-cta .cta-btn", {
   ease: "back.out(1.7)",
 });
 
-gsap.from("#site-footer .footer-col", {
+gsap.from("#footer .footer-col", {
   scrollTrigger: {
-    trigger: "#site-footer",
+    trigger: "#footer",
     start: "top 80%",
     toggleActions: "play none none none",
   },
@@ -411,9 +418,9 @@ gsap.from("#site-footer .footer-col", {
   ease: "power3.out",
 });
 
-gsap.from("#site-footer .footer-bottom p", {
+gsap.from("#footer .footer-bottom p", {
   scrollTrigger: {
-    trigger: "#site-footer",
+    trigger: "#footer",
     start: "top 75%",
     toggleActions: "play none none none",
   },
@@ -423,9 +430,9 @@ gsap.from("#site-footer .footer-bottom p", {
   ease: "power2.out",
 });
 
-gsap.from("#site-footer .social-links a", {
+gsap.from("#footer .social-links a", {
   scrollTrigger: {
-    trigger: "#site-footer",
+    trigger: "#footer",
     start: "top 70%",
     toggleActions: "play none none none",
   },

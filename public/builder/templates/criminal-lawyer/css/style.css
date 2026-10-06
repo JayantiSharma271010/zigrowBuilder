@@ -28,7 +28,7 @@ body {
   height: 48px;
   display: none;
   z-index: 1000;
-  background-color: #000036;
+  background-color: var(--territory-colors, #000036);
   color: #fff;
   border-radius: 50%;
   text-decoration: none;
@@ -440,7 +440,7 @@ body {
 .lawyer-section .lawyer-stats__item {
   margin-bottom: 20px;
 }
-.lawyer-section .lawyer-stats__item h2 {
+.lawyer-section .lawyer-stats__item h3 {
   font-size: 2rem;
   color: var(--primary-colors);
   margin: 0;
@@ -496,7 +496,7 @@ body {
   .lawyer-section .lawyer-content__title {
     font-size: 2rem;
   }
-  .lawyer-section .lawyer-stats__item h2 {
+  .lawyer-section .lawyer-stats__item h3 {
     font-size: 1.8rem;
   }
 }
@@ -515,7 +515,7 @@ body {
 .experience-section__bg {
   position: absolute;
   inset: 0;
-  background: url(../assets/criminal-lawyer/LawyerwebsitetemplateExperience.webp) no-repeat center center/cover;
+  background: url(../assets/criminal-lawyer/lawyer-website-template-experience.webp) no-repeat center center/cover;
   z-index: 0;
 }
 .experience-section__overlay {
@@ -861,7 +861,7 @@ body {
 .reviews-section__bg {
   position: absolute;
   inset: 0;
-  background: url(../assets/criminal-lawyer/LawyerwebsitetemplateReviews.webp) center center/cover no-repeat;
+  background: url(../assets/criminal-lawyer/lawyer-website-template-reviews.webp) center center/cover no-repeat;
   z-index: 0;
   pointer-events: none;
 }
@@ -1066,7 +1066,7 @@ body {
 .contact-lawyer-section__bg {
   position: absolute;
   inset: 0;
-  background: url(../assets/criminal-lawyer/Lawyerwebsitetemplatefooter.webp) center center/cover no-repeat;
+  background: url(../assets/criminal-lawyer/lawyer-website-template-footer.webp) center center/cover no-repeat;
   z-index: 0;
   pointer-events: none;
 }
@@ -1257,4 +1257,196 @@ body {
 .site-footer__social a:hover i {
   color: var(--primary-colors);
   transform: scale(1.25);
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Zigrow Builder compatibility: scoped structural rules preserve the original theme. */
+#backToTopBtn {
+  display: none;
+  background-color: var(--territory-colors, #000036);
+}
+#backToTopBtn.show {
+  display: flex;
+}
+.main-nav .brand-logo {
+  display: block;
+  margin: 0;
+  color: var(--light-colors, #fff);
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+.main-nav .nav-brand-tagline {
+  margin: 0;
+  color: var(--light-colors, #fff);
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.main-nav .nav-top .social-icons a,
+.site-footer__social a,
+.experience-section__play,
+.media-section__play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-nav .nav-top .social-icons a {
+  color: currentColor;
+  text-decoration: none;
+}
+.main-nav .nav-top .social-icons a:hover i {
+  color: var(--primary-colors, #c89e4e);
+  transform: scale(1.2);
+}
+.main-nav .list-item-box .consult-btn {
+  margin-left: 0;
+}
+.zg-align-center {
+  align-items: center;
+}
+.navbar-actions,
+.mobile-nav-actions,
+.section-hero__actions,
+.practice-areas-section__actions,
+.reviews-section__actions,
+.contact-lawyer-section__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.navbar-actions {
+  margin-left: 1.5rem;
+  justify-content: flex-start;
+}
+.mobile-nav-actions {
+  margin-top: 0.75rem;
+  justify-content: center;
+}
+.section-hero__actions {
+  margin-top: 14px;
+  justify-content: flex-start;
+}
+.practice-areas-section__actions {
+  margin-top: 14px;
+  justify-content: center;
+}
+.reviews-section__actions {
+  justify-content: center;
+  padding-top: 40px;
+}
+.contact-lawyer-section__actions {
+  justify-content: center;
+}
+[data-btn] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  text-decoration: none;
+}
+[data-btn],
+[data-btn]:hover,
+[data-btn]:focus,
+[data-btn]:active,
+[data-btn]:visited {
+  text-decoration: none;
+}
+[data-btn]:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-colors, #c89e4e);
+  outline-offset: 3px;
+}
+.section-hero__actions .section-hero__btn,
+.practice-areas-section__actions .practice-areas-section__btn,
+.reviews-section__actions .reviews-section__btn {
+  margin: 0;
+}
+.contact-lawyer-section__btn {
+  gap: 10px;
+}
+.contact-lawyer-section__btn i {
+  padding-right: 0;
+}
+.clonable-card {
+  min-width: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.practice-areas-section__grid {
+  margin-inline: -8px;
+}
+.practice-areas-section__grid > .clonable-card {
+  padding: 8px;
+}
+.logo-section__logos > .clonable-card,
+.serving-areas-section__logos > .clonable-card {
+  padding: 8px 12px;
+}
+.serving-areas-section__list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.serving-area-icon {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+.serving-area-icon > i {
+  padding-right: 0;
+  flex: 0 0 auto;
+}
+.footer-attribution-row {
+  margin-top: 1rem;
+  text-align: center;
+}
+.site-footer__title {
+  font-size: 1rem;
+}
+.footer-attribution-row p {
+  margin: 0;
+}
+.footer-attribution-row a {
+  color: var(--territory-colors, #000036);
+  text-decoration: none;
+}
+.footer-attribution-row a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 991.98px) {
+  .main-nav .mobile-nav .mobile-nav-actions .consult-btn {
+    display: inline-flex;
+    margin-top: 0;
+  }
+  .mobile-nav-actions .consult-btn:only-child {
+    width: 100%;
+  }
+  .mobile-nav-actions .consult-btn:not(:only-child) {
+    width: auto;
+  }
+}
+@media (max-width: 575.98px) {
+  .lawyer-section .lawyer-row {
+    --bs-gutter-x: 1.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

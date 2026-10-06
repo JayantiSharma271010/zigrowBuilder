@@ -23,12 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
+      hamburger.setAttribute("aria-expanded", "false");
       // Remove nav-dark2 after 300 milliseconds
       setTimeout(() => {
         navbarSection.classList.remove("nav-dark2");
       }, 300);
     } else {
       bsCollapse.show();
+      hamburger.setAttribute("aria-expanded", "true");
       navbarSection.classList.add("nav-dark2");
     }
   });
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (menu.classList.contains("show")) {
         bsCollapse.hide();
         hamburger.classList.remove("is-active");
+        hamburger.setAttribute("aria-expanded", "false");
         navbarSection.classList.remove("nav-dark2");
       }
     });
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       bsCollapse.hide();
       hamburger.classList.remove("is-active");
+      hamburger.setAttribute("aria-expanded", "false");
       navbarSection.classList.remove("nav-dark2");
     }
   });
@@ -67,7 +71,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-var swiper = new Swiper(".latestNewsSwiper", {
+const latestNewsSwiper = new Swiper(".latestNewsSwiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   grabCursor: true,
@@ -75,7 +79,7 @@ var swiper = new Swiper(".latestNewsSwiper", {
   touchRatio: 1,
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".latestNewsSwiper .swiper-pagination",
     clickable: true,
     dynamicBullets: true,
     dynamicMainBullets: 5, // ✅ Maximum of 5 bullets
@@ -92,7 +96,7 @@ var swiper = new Swiper(".latestNewsSwiper", {
     },
   },
 });
-var swiper = new Swiper(".mySwiper", {
+const directorsSwiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 20,
   grabCursor: true,
@@ -100,7 +104,7 @@ var swiper = new Swiper(".mySwiper", {
   touchRatio: 1,
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".mySwiper .swiper-pagination",
     clickable: true,
     dynamicBullets: true,
     dynamicMainBullets: 5, // ✅ Maximum of 5 bullets
@@ -124,21 +128,16 @@ const btn = document.querySelector(".floating-btn");
 // Show/hide button on scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY > 10) {
-    // Show button
-    btn.style.opacity = 1;
-    btn.style.transform = "translateY(0)";
-    btn.style.pointerEvents = "auto";
+    btn.classList.add("is-visible");
   } else {
-    // Hide button
-    btn.style.opacity = 0;
-    btn.style.transform = "translateY(50px)";
-    btn.style.pointerEvents = "none";
+    btn.classList.remove("is-visible");
   }
 });
 
 // Animation starts here
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 767.98) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (window.innerWidth >= 767.98 && !reduceMotion.matches) {
     // For the intersection overflow
     // For to active the menu links
     const sections = document.querySelectorAll("section");
@@ -176,7 +175,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ////////////////////////// GSAP animation for the navbar
     const navbar = document.querySelector("#navbarSection");
     const navLinks2 = navbar.querySelectorAll(".nav-link");
-    const logo = navbar.querySelector(".navbar-brand-name");
+    const logo = navbar.querySelector(".brand-logo");
     const buttons = navbar.querySelectorAll(".btn-custom");
 
     gsap.set(navbar, { y: -100, opacity: 0 });
@@ -379,6 +378,7 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           opacity: 1,
           y: 0,
+          clearProps: "transform",
           duration: 0.6,
           ease: "power2.out",
           stagger: 0.2,
@@ -470,6 +470,7 @@ window.addEventListener("DOMContentLoaded", () => {
         {
           opacity: 1,
           y: 0,
+          clearProps: "transform",
           duration: 0.5,
           ease: "power2.out",
           stagger: 0.2,
@@ -507,7 +508,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     ///////////////// GSAP animation for the Footer section
     gsap.set(
-      ".footer-section .navbar-brand-name, .footer-section .footer-links-div, .footer-section .contact-div, .footer-section .social-icons, .footer-section .footer-bottom-section",
+      ".footer-section .footer-brand-logo, .footer-section .footer-links-div, .footer-section .contact-div, .footer-section .social-icons, .footer-section .footer-bottom-section, .footer-section .powered-by-zigrow-row",
       {
         opacity: 0,
         y: 50,
@@ -521,7 +522,7 @@ window.addEventListener("DOMContentLoaded", () => {
           start: "top 85%",
         },
       })
-      .to(".footer-section .navbar-brand-name", {
+      .to(".footer-section .footer-brand-logo", {
         opacity: 1,
         y: 0,
         duration: 0.8,
@@ -566,6 +567,16 @@ window.addEventListener("DOMContentLoaded", () => {
           ease: "power3.out",
         },
         "-=0.4"
+      )
+      .to(
+        ".footer-section .powered-by-zigrow-row",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.6"
       );
   }
 });

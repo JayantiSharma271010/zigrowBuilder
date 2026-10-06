@@ -1,21 +1,25 @@
 // Back to Top Button
 const backToTopBtn = document.getElementById("backToTopBtn");
+const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 window.onscroll = () => {
   if (document.documentElement.scrollTop > 300) {
-    backToTopBtn.style.display = "block";
+    backToTopBtn.classList.add("is-visible");
   } else {
-    backToTopBtn.style.display = "none";
+    backToTopBtn.classList.remove("is-visible");
   }
 };
 
 backToTopBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: motionQuery.matches ? "auto" : "smooth",
+  });
 };
 
 // Sticky Navbar + ScrollSpy
 window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
+  const navbar = document.getElementById("header");
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-links li a");
 
@@ -46,33 +50,42 @@ window.addEventListener("scroll", () => {
 // Toggle Menu
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const menuIcon = menuToggle.querySelector("i");
+
+function setMenuState(isOpen) {
+  navLinks.classList.toggle("active", isOpen);
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+  menuIcon.classList.toggle("fa-bars", !isOpen);
+  menuIcon.classList.toggle("fa-xmark", isOpen);
+  menuIcon.setAttribute("data-icon", isOpen ? "close" : "menu");
+}
 
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  menuToggle.classList.toggle("active");
-
-  // Change toggle button to "X"
-  if (menuToggle.classList.contains("active")) {
-    menuToggle.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-  } else {
-    menuToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-  }
+  setMenuState(!navLinks.classList.contains("active"));
 });
 
 // Close menu when a link is clicked (on mobile)
 document.querySelectorAll(".nav-links li a").forEach((link) => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    menuToggle.classList.remove("active");
-    menuToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+    setMenuState(false);
   });
 });
 // gsap animations start here
-if (window.innerWidth > 768) {
+if (
+  window.innerWidth > 768 &&
+  !motionQuery.matches &&
+  window.gsap &&
+  window.ScrollTrigger
+) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Hero section animation
-  gsap.from("#hero .hero-content h1", {
+  gsap.from("#hero .hero-section__title", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%", // when top of hero is 80% from top of viewport
@@ -84,7 +97,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-content p", {
+  gsap.from("#hero .hero-section__text", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 70%",
@@ -97,7 +110,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-btn", {
+  gsap.from("#hero .hero-section__btn", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 65%",
@@ -111,7 +124,7 @@ if (window.innerWidth > 768) {
   });
 
   // === Featured Section ===
-  gsap.from("#featured .featured-heading h5", {
+  gsap.from("#featured .featured-section__title", {
     scrollTrigger: {
       trigger: "#featured",
       start: "top 80%",
@@ -123,7 +136,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#featured .logo-item", {
+  gsap.from("#featured .featured-section__logo-item", {
     scrollTrigger: {
       trigger: "#featured",
       start: "top 75%",
@@ -137,7 +150,7 @@ if (window.innerWidth > 768) {
   });
 
   // === Topics Section ===
-  gsap.from("#topics .topics-heading h2", {
+  gsap.from("#topics .topics-section__title", {
     scrollTrigger: {
       trigger: "#topics",
       start: "top 80%",
@@ -149,7 +162,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#topics .topic-item", {
+  gsap.from("#topics .topics-section__item", {
     scrollTrigger: {
       trigger: "#topics",
       start: "top 70%",
@@ -162,7 +175,7 @@ if (window.innerWidth > 768) {
     stagger: 0.2, // each card fades in with delay
   });
   // === Services Section ===
-  gsap.from("#services .services-left h2", {
+  gsap.from("#services .services-section__title", {
     scrollTrigger: {
       trigger: "#services",
       start: "top 80%",
@@ -174,7 +187,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#services .btn-services", {
+  gsap.from("#services .services-section__btn", {
     scrollTrigger: {
       trigger: "#services",
       start: "top 75%",
@@ -187,7 +200,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#services .services-list li", {
+  gsap.from("#services .services-section__list-item", {
     scrollTrigger: {
       trigger: "#services",
       start: "top 70%",
@@ -201,7 +214,7 @@ if (window.innerWidth > 768) {
   });
 
   // === About Section ===
-  gsap.from("#about .about-left .subtitle", {
+  gsap.from("#about .about-section__subtitle", {
     scrollTrigger: {
       trigger: "#about",
       start: "top 80%",
@@ -213,7 +226,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#about .about-left .left-heading", {
+  gsap.from("#about .about-section__heading", {
     scrollTrigger: {
       trigger: "#about",
       start: "top 75%",
@@ -226,7 +239,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#about .about-left img", {
+  gsap.from("#about .about-section__image", {
     scrollTrigger: {
       trigger: "#about",
       start: "top 70%",
@@ -240,7 +253,7 @@ if (window.innerWidth > 768) {
   });
 
   gsap.from(
-    "#about .about-right p, #about .about-right, #about .about-right h5",
+    "#about .about-section__text, #about .about-section__btn, #about .about-section__description",
     {
       scrollTrigger: {
         trigger: "#about",
@@ -256,7 +269,7 @@ if (window.innerWidth > 768) {
   );
 
   // === Client Review Section ===
-  gsap.from("#client-review .review-heading", {
+  gsap.from("#client-review .client-review-section__heading", {
     scrollTrigger: {
       trigger: "#client-review",
       start: "top 80%",
@@ -269,7 +282,7 @@ if (window.innerWidth > 768) {
   });
 
   // === CTA Section ===
-  gsap.from("#cta h2", {
+  gsap.from("#cta .cta-section__heading", {
     scrollTrigger: {
       trigger: "#cta",
       start: "top 80%",
@@ -281,7 +294,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#cta p", {
+  gsap.from("#cta .cta-section__text", {
     scrollTrigger: {
       trigger: "#cta",
       start: "top 75%",
@@ -294,7 +307,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#cta .cta-btn", {
+  gsap.from("#cta .cta-section__btn", {
     scrollTrigger: {
       trigger: "#cta",
       start: "top 70%",
@@ -308,7 +321,7 @@ if (window.innerWidth > 768) {
   });
 
   // === Footer Section ===
-  gsap.from("#footer .footer-col", {
+  gsap.from("#footer .footer-section__col", {
     scrollTrigger: {
       trigger: "#footer",
       start: "top 85%",
@@ -321,9 +334,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#footer .footer-bottom p", {
+  gsap.from("#footer .footer-section__bottom-text", {
     scrollTrigger: {
-      trigger: "#footer .footer-bottom",
+      trigger: "#footer .footer-section__bottom",
       start: "top 90%",
       toggleActions: "play none none",
     },

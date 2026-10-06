@@ -50,18 +50,6 @@
   const header = document.querySelector(".header");
   if (!header) return;
 
-  // Create spacer to avoid content jump when header turns fixed
-  const spacer = document.createElement("div");
-  spacer.className = "header-spacer";
-  header.parentNode.insertBefore(spacer, header.nextSibling);
-
-  function setSpacerHeight() {
-    const h = header.offsetHeight || 0;
-    spacer.style.height = header.classList.contains("is-sticky")
-      ? h + "px"
-      : "0px";
-  }
-
   function onScroll() {
     if (window.scrollY > 80) {
       if (!header.classList.contains("is-sticky"))
@@ -69,11 +57,9 @@
     } else {
       header.classList.remove("is-sticky");
     }
-    setSpacerHeight();
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", setSpacerHeight);
 
   // initial
   onScroll();
@@ -94,15 +80,21 @@
 
   btn.addEventListener("click", function (e) {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
   });
 })();
 
 // gsap animation
 
-gsap.registerPlugin(ScrollTrigger);
-if (window.innerWidth > 768) {
-  gsap.from("#hero .hero-text h1", {
+if (
+  window.gsap &&
+  window.ScrollTrigger &&
+  window.innerWidth > 768 &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".hero .hero__text h1", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%",
@@ -114,7 +106,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-text p", {
+  gsap.from(".hero .hero__text p", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 75%",
@@ -127,7 +119,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-text a", {
+  gsap.from(".hero .hero__text a", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 70%",
@@ -141,7 +133,7 @@ if (window.innerWidth > 768) {
   });
 
   // About Text Animation
-  gsap.from(".about-text", {
+  gsap.from(".about-section__text", {
     scrollTrigger: {
       trigger: "#about-section",
       start: "top 80%",
@@ -154,7 +146,7 @@ if (window.innerWidth > 768) {
   });
 
   // Industry Sectors Animation
-  gsap.from(".industry-sectors", {
+  gsap.from(".about-section__sectors", {
     scrollTrigger: {
       trigger: "#about-section",
       start: "top 70%",

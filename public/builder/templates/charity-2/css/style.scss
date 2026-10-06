@@ -243,8 +243,6 @@
 .zg-hero {
   position: relative;
   margin-top: 40px; /* avoid navbar overlap */
-  background: url("assets/images/c9513631-5a81-4302-820b-1bdb7b3e88ea.png")
-    no-repeat center center / cover;
   background-color: var(--light-colors);
   overflow: hidden;
 
@@ -1125,14 +1123,6 @@
 }
 
 // footer
-:root {
-  --primary-colors: #ff3366;
-  --secondary-colors: #555;
-  --territory-colors: #f5faff;
-  --dark-colors: #111;
-  --light-colors: #fdfdfd;
-}
-
 .zg-footer {
   background: #222;
   color: #ddd;
@@ -1199,6 +1189,7 @@
       margin-right: 12px;
       font-size: 1.1rem;
       color: #ddd;
+      text-decoration: none;
       transition: color 0.25s ease;
 
       &:hover {
@@ -1252,3 +1243,28 @@
     }
   }
 }
+
+/* Zigrow Builder configuration */
+html, body { max-width:100%; overflow-x:hidden; }
+.zg-hero, .zg-services, .zg-join, .zg-mission, .zg-projects, .zg-partners, .zg-testimonial, .zg-footer { padding:3rem 0; }
+.zg-join__box, .zg-projects { background-color:color-mix(in srgb, var(--territory-colors, #468cd3) 8%, white); }
+.zg-navbar__mobile-links a:hover { background-color:color-mix(in srgb, var(--territory-colors, #468cd3) 8%, white); }
+.zg-services__col, .zg-mission__col, .zg-projects__col, .zg-partners__logo-col { padding:12px; box-sizing:border-box; }
+.zg-services__card, .zg-mission__item, .zg-projects__card, .zg-partners__logo-tile { min-width:0; box-sizing:border-box; }
+.zg-partners__logo-tile { text-align:center; }
+.zg-align-center { align-items:center; }
+.zg-hero__actions, .zg-services__actions, .zg-join__actions, .zg-mission__btnwrap, .zg-partners__actions { display:flex; flex-direction:row; flex-wrap:wrap; gap:12px; min-width:0; max-width:100%; box-sizing:border-box; justify-content:flex-start; }
+.zg-mission__btnwrap { justify-content:center; }
+.zg-services__link, .zg-join__link, .zg-mission__btn, .zg-partners__link, .zg-footer__social, #backToTopBtn, .zg-services__icon, .zg-mission__icon { display:flex; flex-direction:row; align-items:center; flex-wrap:wrap; gap:8px; min-width:0; max-width:100%; box-sizing:border-box; }
+.zg-services__link, .zg-join__link, .zg-mission__btn, .zg-partners__link { width:max-content; }
+.zg-services__icon, .zg-mission__icon, #backToTopBtn { justify-content:center; }
+.zg-services__icon i, .zg-mission__icon i, [data-btn] > i, .zg-footer__social > a > i, #backToTopBtn > i { flex:0 0 auto; }
+[data-btn], [data-btn]:hover, [data-btn]:focus, [data-btn]:focus-visible, [data-btn]:active, [data-btn]:visited { text-decoration:none; }
+[data-btn]:focus-visible, .zg-navbar__toggle:focus-visible, .zg-navbar a:focus-visible, #backToTopBtn:focus-visible { outline:3px solid color-mix(in srgb, var(--primary-colors) 60%, white); outline-offset:3px; }
+#backToTopBtn { width:48px; height:48px; text-decoration:none; }
+.zg-navbar__toggle { padding:0; }
+.zg-footer__social { gap:16px; margin-top:1rem; }
+.zg-footer__social a { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; margin:0; }
+.powered-by-zigrow-row { clear:both; border-top:1px solid #444; margin-top:12px; padding-top:16px; text-align:center; }
+.powered-by-zigrow-row a { color:#ddd; white-space:nowrap; }
+@media (max-width:991.98px) { .zg-hero__actions, .zg-join__actions, .zg-partners__actions { justify-content:center; } }

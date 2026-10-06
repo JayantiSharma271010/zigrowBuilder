@@ -7,17 +7,29 @@ document.addEventListener("DOMContentLoaded", function () {
   hamburger.addEventListener("click", function (e) {
     e.stopPropagation();
     drawer.classList.add("active");
+    drawer.setAttribute("aria-hidden", "false");
+    hamburger.setAttribute("aria-expanded", "true");
   });
 
-  // Close drawer by clicking on X
-  closeBtn.addEventListener("click", function () {
+  function closeDrawer() {
     drawer.classList.remove("active");
-  });
+    drawer.setAttribute("aria-hidden", "true");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  closeBtn.addEventListener("click", closeDrawer);
 
   // Close drawer on outside click
   document.addEventListener("click", function (e) {
     if (!drawer.contains(e.target) && !hamburger.contains(e.target)) {
-      drawer.classList.remove("active");
+      closeDrawer();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && drawer.classList.contains("active")) {
+      closeDrawer();
+      hamburger.focus();
     }
   });
 });
@@ -25,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Swiper for the review section
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
@@ -50,12 +62,10 @@ function handleNavbarScroll() {
   }
 
   if (scrollTop > lastScrollTop) {
-    // Scrolling down
-    navbar.style.top = "-100px";
+    navbar.classList.add("navbar-hidden");
     navbarSection.classList.remove("scrolled-up");
   } else {
-    // Scrolling up
-    navbar.style.top = "0";
+    navbar.classList.remove("navbar-hidden");
     navbarSection.classList.add("scrolled-up");
   }
 
@@ -69,26 +79,26 @@ window.addEventListener("scroll", handleNavbarScroll);
 window.addEventListener("load", handleNavbarScroll);
 
 // For mouse drag
-const scrollContainer = document.querySelector(".scroll-container");
+const scrollContainer = document.querySelector(".drag-scroll");
 let isDown = false;
 let startX;
 let scrollLeft;
 
-scrollContainer.addEventListener("mousedown", (e) => {
+scrollContainer?.addEventListener("mousedown", (e) => {
   isDown = true;
   scrollContainer.classList.add("active");
   startX = e.pageX - scrollContainer.offsetLeft;
   scrollLeft = scrollContainer.scrollLeft;
 });
-scrollContainer.addEventListener("mouseleave", () => {
+scrollContainer?.addEventListener("mouseleave", () => {
   isDown = false;
   scrollContainer.classList.remove("active");
 });
-scrollContainer.addEventListener("mouseup", () => {
+scrollContainer?.addEventListener("mouseup", () => {
   isDown = false;
   scrollContainer.classList.remove("active");
 });
-scrollContainer.addEventListener("mousemove", (e) => {
+scrollContainer?.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - scrollContainer.offsetLeft;
@@ -102,20 +112,20 @@ const btn = document.querySelector(".floating-btn");
 // Show/hide button on scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY > 10) {
-    // Show button
-    btn.style.opacity = 1;
-    btn.style.transform = "translateY(0)";
-    btn.style.pointerEvents = "auto";
+    btn.classList.add("is-visible");
   } else {
-    // Hide button
-    btn.style.opacity = 0;
-    btn.style.transform = "translateY(50px)";
-    btn.style.pointerEvents = "none";
+    btn.classList.remove("is-visible");
   }
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth >= 767.98) {
+  const isBuilderRuntime =
+    window.self !== window.top ||
+    document.documentElement.classList.contains("zigrow-builder") ||
+    document.body.classList.contains("zigrow-builder") ||
+    document.documentElement.hasAttribute("data-zigrow-builder");
+
+  if (window.innerWidth >= 767.98 && !isBuilderRuntime && window.gsap) {
     // Bounce animation on hover
     btn.addEventListener("mouseenter", () => {
       gsap.to(btn, { scale: 1.1, duration: 0.2, ease: "power1.out" });
@@ -458,49 +468,39 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Footer Section
-    // Animate the entire footer section once it comes into view
-    gsap.from(".footer-section .footer-logo, .footer-section img[alt='Map']", {
-      scrollTrigger: {
-        trigger: ".footer-section",
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-      y: 40,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.3,
-    });
-
-    // Animate each footer column with stagger
-    gsap.from(
-      ".footer-section .col-sm-6, .footer-section .col-md-3, .footer-section .col-md-2",
-      {
-        scrollTrigger: {
-          trigger: ".footer-section",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0.2,
+    const footerSection = document.querySelector(".footer-section");
+    if (footerSection) {
+      const footerLead = footerSection.querySelectorAll(".footer-logo, img[alt='Map']");
+      if (footerLead.length) {
+        gsap.from(footerLead, {
+          scrollTrigger: {
+            trigger: footerSection,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          stagger: 0.3,
+        });
       }
-    );
 
-    // Animate bottom copyright and policy links
-    gsap.from(".footer-section .bottom-text > div", {
-      scrollTrigger: {
-        trigger: ".footer-section .bottom-text",
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-      y: 20,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power2.out",
-      stagger: 0.2,
-    });
+      const footerColumns = footerSection.querySelectorAll(":scope > .container > .row > [class*='col-']");
+      if (footerColumns.length) {
+        gsap.from(footerColumns, {
+          scrollTrigger: {
+            trigger: footerSection,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.2,
+        });
+      }
+    }
   }
 });

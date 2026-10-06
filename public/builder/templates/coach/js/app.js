@@ -5,6 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggle.addEventListener("click", () => {
     header.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", header.classList.contains("is-open") ? "true" : "false");
+  });
+
+  header.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      header.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      header.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.focus();
+    }
   });
 });
 // sticky header
@@ -19,8 +35,9 @@ window.addEventListener("scroll", () => {
 });
 // GSAP Animations
 // Initialize GSAP ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
-if (window.innerWidth > 768) {
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!reduceMotion && window.innerWidth > 768 && window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
   gsap.from("nav", {
     y: -50,
     opacity: 0,
@@ -36,9 +53,9 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
   });
 
-  gsap.from("#Advice-section .col-md-4", {
+  gsap.from("#advice .col-md-4", {
     scrollTrigger: {
-      trigger: "#Advice-section",
+      trigger: "#advice",
       start: "top 80%",
     },
     opacity: 0,
@@ -47,9 +64,9 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
   });
 
-  gsap.from("#Advice-section .col-md-8", {
+  gsap.from("#advice .col-md-8", {
     scrollTrigger: {
-      trigger: "#Advice-section",
+      trigger: "#advice",
       start: "top 80%",
     },
     opacity: 0,
@@ -59,7 +76,7 @@ if (window.innerWidth > 768) {
     delay: 0.3,
   });
 
-  gsap.from("#testimonial .col-md-6:nth-child(1)", {
+  gsap.from("#testimonial .col-lg-6:nth-child(1)", {
     scrollTrigger: {
       trigger: "#testimonial",
       start: "top 80%",
@@ -70,7 +87,7 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
   });
 
-  gsap.from("#testimonial .testimonial-text", {
+  gsap.from("#testimonial .testimonial-content", {
     scrollTrigger: {
       trigger: "#testimonial",
       start: "top 80%",
@@ -82,7 +99,7 @@ if (window.innerWidth > 768) {
     delay: 0.3,
   });
 
-  gsap.from("#my-story .col-md-6:nth-child(1)", {
+  gsap.from("#my-story .col-lg-6:nth-child(1)", {
     scrollTrigger: {
       trigger: "#my-story",
       start: "top 80%",
@@ -93,7 +110,7 @@ if (window.innerWidth > 768) {
     ease: "power2.out",
   });
 
-  gsap.from("#my-story .col-md-6:nth-child(2)", {
+  gsap.from("#my-story .col-lg-6:nth-child(2)", {
     scrollTrigger: {
       trigger: "#my-story",
       start: "top 80%",

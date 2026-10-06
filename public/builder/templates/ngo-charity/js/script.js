@@ -1,24 +1,34 @@
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
+function setNavigationOpen(open) {
+  hamburger.classList.toggle("active", open);
+  navLinks.classList.toggle("active", open);
+  hamburger.setAttribute("aria-expanded", String(open));
+  hamburger.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+  const icon = hamburger.querySelector("i");
+  if (icon) {
+    icon.classList.toggle("fa-bars", !open);
+    icon.classList.toggle("fa-xmark", open);
+    icon.setAttribute("data-icon", open ? "xmark" : "menu");
+  }
+}
+
 hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
+  setNavigationOpen(!navLinks.classList.contains("active"));
 });
 
 // Close nav when any link inside navLinks is clicked
 document.querySelectorAll("#navLinks a").forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("active");
+    setNavigationOpen(false);
   });
 });
 
 // Close nav when clicking outside of it
 document.addEventListener("click", (event) => {
   if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("active");
+    setNavigationOpen(false);
   }
 });
 
@@ -102,7 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Animate logo
-    gsap.from("nav .logo", {
+    gsap.from("nav .brand-logo", {
       x: -100,
       opacity: 0,
       duration: 1,
@@ -205,7 +215,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Image gallery section
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".image-gallery .gallery-item img", {
+    gsap.from(".image-gallery .gallery-item", {
       scrollTrigger: {
         trigger: ".image-gallery",
         start: "top 80%", // when section enters viewport
@@ -302,14 +312,6 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out",
     });
 
-    // Together forward
-    gsap.to(".scroll-container .scroll-content", {
-      xPercent: -50, // move left
-      repeat: -1, // infinite
-      duration: 15, // speed of the loop
-      ease: "linear", // smooth, no easing
-    });
-
     // Initiative section
     // Section header
     gsap.fromTo(
@@ -340,7 +342,7 @@ window.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: ".initiatives-section .row.mt-5",
+          trigger: ".initiatives-section .row.mt-5-style",
           start: "top 80%",
           once: true,
         },

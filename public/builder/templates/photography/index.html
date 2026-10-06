@@ -1,824 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photographer Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Bootstrap link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-
-  <!-- jonsuh hamburger icon  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-    integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- Font awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to Top">
-    <i class="bi bi-arrow-up-short fs-3"></i>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+    <i class="bi bi-arrow-up-short" data-icon="arrow-up" aria-hidden="true"></i>
   </button>
 
-  <div class="bg-design-wrapper">
-
-
-  <!-- Header -->
-  <header>
-    <nav id="mainNavbar" class="navbar navbar-expand-lg py-3 transition-navbar">
+  <header id="header" data-section="header">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg transition-navbar site-navbar">
       <div class="container">
-
-        <!-- Logo -->
-        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
-          <span>Logo</span>
-        </a>
-
-        <!-- Toggle button -->
-        <!-- Toggle button with Elastic Hamburger -->
+        <a class="navbar-brand brand-logo" href="#hero" data-logo="navbar">Logo</a>
         <button class="navbar-toggler hamburger hamburger--elastic d-lg-none" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarContent" aria-label="Toggle navigation">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
+          data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger-box"><span class="hamburger-inner" data-icon="menu"></span></span>
         </button>
-
-
-        <!-- Menu Items -->
-        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
-          <ul class="navbar-nav mx-auto gap-lg-5 text-center font-montserrat">
-            <li class="nav-item py-lg-2 py-3 font-montserrat"><a class="nav-link p-0 " href="#hero">Home</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#about-2">Portfolio</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#about-1">About</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#faq">Pricing</a></li>
-
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#contact-form">Contact</a></li>
-
+        <div class="collapse navbar-collapse navbar-content" id="navbarContent">
+          <ul class="navbar-nav navbar-links font-montserrat">
+            <li class="nav-item navbar-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item navbar-item"><a class="nav-link" href="#about-2">Portfolio</a></li>
+            <li class="nav-item navbar-item"><a class="nav-link" href="#about-1">About</a></li>
+            <li class="nav-item navbar-item"><a class="nav-link" href="#faq">Pricing</a></li>
+            <li class="nav-item navbar-item"><a class="nav-link" href="#contact-form">Contact</a></li>
           </ul>
-          <div class="d-none d-lg-block">
-            <a href="#about-2" class="secondary-btn text-decoration-none">View Portfolio</a>
-          </div>
+          <div class="nav-actions zg-align-center"><a href="#about-2" class="secondary-btn" data-btn="nav">View Portfolio</a></div>
         </div>
-
       </div>
     </nav>
-
-
   </header>
-  <!-- Header Ends Here -->
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section py-6">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <!-- Left Image Section -->
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <div class="position-relative">
-            <!-- Use image for rectangle -->
-            <img src="assets/img/hero rect.png" alt="Background" class="bg-image img-fluid bg-rect-tall " />
-            <img src="assets/img/hero Section Photography.webp" class="img-fluid foreground-image" alt="Main" style="aspect-ratio: 98/109;" />
-          </div>
-        </div>
-
-        <div class="col-lg-1"></div>
-        <!-- Right Content Section -->
-        <div class="col-lg-5 text-white text-center text-lg-start">
-          <h1 class="display-2 fw-semibold mb-4">
-            Every Picture Tells a Story Let’s Create Yours!
-          </h1>
-
-          <div
-            class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-start gap-4">
-            <span class="divider d-md-block d-none"></span>
-            <div class="hero-text-box text-md-start text-center">
-              <p class="text-description mb-4">
-                Capturing emotions, moments, and memories<br />
-                that last a lifetime.
-              </p>
-              <a href="#contact-form" class="primary-btn">Book a Photoshoot</a>
+  <main>
+    <div class="bg-design-wrapper">
+      <section id="hero" data-section="hero" class="hero-section section-space">
+        <div class="container">
+          <div class="row hero-layout">
+            <div class="col-lg-6 hero-media-column">
+              <div class="position-relative media-frame">
+                <img src="assets/img/hero-rect.webp" alt="" class="bg-image bg-rect-tall" aria-hidden="true">
+                <img src="assets/img/hero-section-photography.webp" class="foreground-image hero-main-image" alt="Photographer capturing an evening city scene">
+              </div>
             </div>
-
-            <div class="hero-experience-box text-center">
-              <div class="experience-number display-5">9+</div>
-              <div class="experience-label">Experience</div>
+            <div class="col-lg-1"><span class="d-none"></span></div>
+            <div class="col-lg-5 hero-content-column">
+              <div class="section-header hero-section-header"><h1 class="section-heading hero-heading">Every Picture Tells a Story Let’s Create Yours!</h1></div>
+              <div class="section-body hero-section-body">
+                <span class="divider d-none d-md-block" aria-hidden="true"></span>
+                <div class="hero-text-box">
+                  <p class="text-description hero-description">Capturing emotions, moments, and memories<br>that last a lifetime.</p>
+                  <div class="hero-actions zg-align-center"><a href="#contact-form" class="primary-btn" data-btn="hero">Book a Photoshoot</a></div>
+                </div>
+                <div class="hero-experience-box" data-zg-editable="surface"><div class="experience-number"><span>9+</span></div><div class="experience-label"><span>Experience</span></div></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <div class="background-line-wrap" aria-hidden="true"><img src="assets/img/design-line-a.svg" alt="" class="background-lines background-lines-hero"></div>
     </div>
-  </section>
-  <!-- Hero Section Ends Here -->
 
-    <img src="assets/img/design line-a.svg" alt="background design" class="background-lines"
-            style="width: 100%; max-width:100vw; max-height: 1290px;">
-  </div>
-
-  <div class="bg-design-wrapper">
-
-
-  <!-- About 1 Section -->
-  <section id="about-1" class="py-6">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <h1 class="display-2 mb-5 text-white text-md-start text-center fw-semibold">
-            Turning Moments <br />
-            into Art
-          </h1>
-
-          <!-- Stats Row 1 -->
-          <div class="row align-items-start mb-5">
-            <div class="col-sm-4">
-              <div class="highlight-number display-3">97%</div>
-              <div class="text-description">Client Satisfaction</div>
-            </div>
-            <div class="col-sm-8">
-              <p class="text-description mb-2">
-                We take pride in delivering stunning visuals that not only
-                capture moments but also tell a story. Our clients love the
-                personal touch we bring to every shoot, ensuring a seamless
-                and enjoyable experience.
-              </p>
-              <a href="#" class="text-link">View More</a>
-            </div>
-          </div>
-
-          <!-- Stats Row 2 -->
-          <div class="row align-items-start">
-            <div class="col-sm-4">
-              <div class="highlight-number display-3">86+</div>
-              <div class="text-description">Projects Completed</div>
-            </div>
-            <div class="col-sm-8">
-              <p class="text-description mb-2">
-                From weddings and portraits to fashion and travel photography,
-                we have successfully completed over a thousand projects. Each
-                shoot is a new opportunity to create something unique and
-                visually captivating.
-              </p>
-              <a href="#" class="text-link">View More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Column -->
-        <div class="col-lg-6 text-center mt-4 mt-lg-0">
-         <div class="position-relative">
-            <!-- Use image for rectangle -->
-            <img src="assets/img/about-rect.png" alt="Background" class="bg-image img-fluid bg-rect-tall " />
-            <img src="assets/img/about b.webp" class="img-fluid foreground-image" alt="Main"  />
-          </div>
-        </div>  
-      </div>
-    </div>
-  </section>
-  <!-- About 1 Section Ends Here -->
-
-  <!-- Service 1 Section -->
-  <section id="service-1" class="py-6">
-    <div class="container">
-      <h2 class="text-white mb-5 text-center display-2 text-md-start fw-semibold">
-        Professional Photography <br />Services
-      </h2>
-
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- one card -->
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-                      <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 corporate-alt 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Corporate Shoots</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Professional branding and business portraits for teams and
-                  entrepreneurs.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-              <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 earth-americas 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Travel Photography</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Explore the world through our lens. Stunning landscapes and
-                  travel stories captured in high definition.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-              <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 theater-masks 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Portrait Sessions</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Personalized portraits that highlight your personality and
-                  essence in every shot.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-              <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 rings-wedding 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Wedding Shoots</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Capture your special day with timeless and elegant wedding
-                  photography. Every moment beautifully preserved.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-              <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 bags-shopping 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Product Photography</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Eye-catching product images that boost your brand’s
-                  visibility.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-               <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 dress 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Fashion Shoots</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Showcase your style with high-end fashion photography.
-                  Perfect for brands, models, and influencers.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-              <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 bags-shopping 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Product Photography</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Eye-catching product images that boost your brand’s
-                  visibility.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="service-card p-4 rounded-4 text-white h-100 d-flex flex-column justify-content-between position-relative">
-               <span class="left-border" ></span>
-              <div class="d-flex gap-3">
-                <div class="card-icon">
-                  <img src="assets/img/service-1 dress 1.svg" alt="icon" width="30" />
-                </div>
-                <h5 class="fw-semibold">Fashion Shoots</h5>
-              </div>
-              <div>
-                <p class="text-muted small">
-                  Showcase your style with high-end fashion photography.
-                  Perfect for brands, models, and influencers.
-                </p>
-              </div>
-              <a href="#" class="text-orange small text-decoration-none mt-2">Learn More</a>
-            </div>
-          </div>
-
-          <!-- Duplicate 7 more with variations -->
-          <!-- ... -->
-        </div>
-        <div class="swiper-pagination mt-4"></div>
-      </div>
-    </div>
-  </section>
-  <!-- Service 1 Section Ends Here -->
-
-  <!-- About 2 Section -->
-  <section id="about-2" class="py-6">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Left Side: Text + Tall Image -->
-        <h2 class="text-white mb-5 text-center display-2 text-md-start fw-semibold">
-          See the World <br />
-          Through My Lens
-        </h2>
-
-        <div class="col-lg-6 mb-4 mb-lg-0 d-flex flex-column align-items-center gap-4">
-          <!-- Tall Left Image Block -->
-          <div class="position-relative">
-            <!-- Use image for rectangle -->
-            <img src="assets/img/about-2 rect-c.png" alt="Background" class="bg-image bg-rect-tall" />
-            <img src="assets/img/about-2 a.webp" class="img-fluid foreground-image" alt="Main" />
-          </div>
-        </div>
-
-        <!-- Divider Line (center) -->
-        <div class="divider-line d-none d-lg-block"></div>
-
-        <!-- Right Side: 2 stacked square images -->
-        <div class="col-lg-5 d-flex flex-column right-side" style="gap: 5rem;">
-          <!-- Square Right Image Blocks -->
-          <div class="position-relative">
-            <img src="assets/img/about-2 rect-b.png" alt="Background" class="bg-image bg-rect-square" />
-            <img src="assets/img/about-2 b.webp" class="img-fluid foreground-image" alt="Arch" style="width: 70%;   aspect-ratio: 437 / 586;"  />
-          </div>
-          <div class="position-relative">
-            <img src="assets/img/about-2 rect-a.png" alt="Background" class="bg-image bg-rect-square"
-              style="height: 100%" />
-            <img src="assets/img/about-2 c.webp" class="img-fluid foreground-image" alt="Model" style=" width: 70%;
-"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About 2 Section Ends Here -->
-
-      <img src="assets/img/design line-b.svg" alt="background design" class="background-lines"
-            style="width: 100%; max-width:100vw; max-height: 1590px;">
-  </div>
-
-  <div class="bg-design-wrapper">
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-6">
-    <div class="container">
-      <h2 class="text-white mb-5 text-center display-2 text-md-start fw-semibold">
-        Loved by Clients, Trusted <br />by Professionals
-      </h2>
-
-      <div class="swiper testimonial-swiper">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="testimonial-card text-white position-relative">
-              <span class="left-border" style="top: 20%"></span>
-              <p>
-                An incredible experience from start to finish. The attention
-                to detail and quality exceeded expectations through the lens
-                of a true professional.
-              </p>
-              <div class="d-flex align-items-center">
-                <img src="assets/img/testimonial-a.webp" class="rounded-circle me-3" alt="Luca" />
-                <span>Kunal Gupta, Rajasthan, India</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="testimonial-card flex-column-reverse text-white position-relative">
-              <span class="left-border" style="top: 50%"></span>
-              <p>
-                I was amazed by the level of professionalism and creativity.
-                Every shot was perfectly captured and their images were beyond
-                expectations.
-              </p>
-              <div class="d-flex align-items-center">
-                <img src="assets/img/testimonial-b.webp" class="rounded-circle me-3" alt="Anjali" />
-                <span>Anjali Singh, Kerala, India</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-pagination mt-4"></div>
-      </div>
-    </div>
-  </section>
-  <!-- Testimonials Section Ends Here -->
-
-  <!-- Logo Section -->
-  <section id="logo" class="py-6">
-    <div class="ribbon-container">
-      <div class="ribbon ribbon-top">
-        <span><img src="assets/img/logo-1.webp" alt="" class="logo-img" /></span><span><img src="assets/img/logo-1.webp" alt="" class="logo-img" /></span><span><img src="assets/img/logo-2.webp"
-            alt="logo-img" /></span><span><img src="assets/img/logo-3.webp" alt="logo-img" /></span><span><img
-            src="assets/img/logo-4.webp" alt="logo-img" /></span><span><img src="assets/img/logo-1.webp"
-            alt="logo-img" /></span>
-      </div>
-      <div class="ribbon ribbon-bottom">
-        <span><img src="assets/img/logo-2.webp" alt="logo-img" /></span><span><img src="assets/img/logo-3.webp"
-            alt="logo-img" /></span><span><img src="assets/img/logo-4.webp" alt="logo-img" /></span><span><img
-            src="assets/img/logo-1.webp" alt="logo-img" /></span><span><img src="assets/img/logo-2.webp"
-            alt="logo-img" /></span>
-      </div>
-    </div>
-  </section>
-        <img src="assets/img/design line-c.svg" alt="background design" class="background-lines"
-            style="width: 100%; max-width:100vw; max-height: 1590px;">
-  </div>
-  <!-- Logo Section Ends Here -->
-
-  <!-- Service 2 Section -->
-  <section id="service-2" class="py-6">
-    <div class="container">
-      <h2 class="text-white mb-5 text-center display-2 text-md-start fw-semibold">
-        Behind the Lens: Insights <br />& Inspirations
-      </h2>
-
-      <div class="swiper service-swiper">
-        <div class="swiper-wrapper">
-          <!-- Card 1 -->
-          <div class="swiper-slide">
-            <div class="service-card text-white position-relative">
-              <span class="left-border"></span>
-              <div class="service-card_container">
-                <img src="assets/img/service-2 i.webp" alt="Corporate Visuals" class="img-fluid mb-3 rounded" style="aspect-ratio: 397/328;"/>
-                <div class="card-content">
-                  <h5>Corporate Visuals</h5>
-                  <p>
-                    Create professional corporate photos that enhance your
-                    business brand.
-                  </p>
-                  <a href="#" class="text-white text-decoration-none small">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="swiper-slide">
-            <div class="service-card text-white position-relative">
-              <span class="left-border" style="top: 10%"></span>
-              <div class="service-card_container flex-column-reverse">
-                <img src="assets/img/service-2 k.webp" alt="Corporate Visuals" class="img-fluid rounded mt-3" style="aspect-ratio: 397/330;" />
-                <div class="card-content">
-                  <h5>Wedding Trends</h5>
-                  <p>
-                    Discover the latest wedding photography styles to make
-                    your big day unforgettable.
-                  </p>
-                  <a href="#" class="text-white text-decoration-none small">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="swiper-slide">
-            <div class="service-card text-white position-relative">
-              <span class="left-border"></span>
-              <div class="service-card_container">
-                <img src="assets/img/service-2 j.webp" alt="Corporate Visuals" class="img-fluid mb-3 rounded" style="aspect-ratio: 397/330;"/>
-                <div class="card-content">
-                  <h5>Fashion Poses</h5>
-                  <p>
-                    Master the art of posing for stunning and confident
-                    fashion photography.
-                  </p>
-                  <a href="#" class="text-white text-decoration-none small">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add more slides as needed -->
-        </div>
-
-        <!-- Pagination -->
-        <div class="swiper-pagination mt-4"></div>
-      </div>
-    </div>
-  </section>
-  <!-- Service 2 Section Ends Here -->
-
-  <div class="bg-design-wrapper">
-
-
-  <!-- Contact Form Section -->
-  <section id="contact-form" class="contact-section py-6">
-    <div class="container">
-      <h2 class="text-white mb-5 text-center display-2 text-md-end fw-semibold">
-        Block Your Shoot <br />
-        Today!
-      </h2>
-      <div class="row align-items-center">
-        <!-- Left Image Section -->
-        <div class="col-md-5 mb-4 mb-md-0">
-          <div class="position-relative">
-            <!-- Use image for rectangle -->
-            <img src="assets/img/contact-form rect.png" alt="Background" class="bg-image bg-rect-tall" />
-            <img src="assets/img/contact-form.webp" class="img-fluid foreground-image" alt="Main" style="aspect-ratio: 388/620;"/>
-          </div>
-        </div>
-        <!-- Orange Divider -->
-        <div class="col-md-1 d-none d-md-flex justify-content-center">
-          <div class="orange-divider"></div>
-        </div>
-
-        <!-- Right Form Section -->
-        <div class="col-md-6" style="z-index: 2;">
-          <div class="form-wrapper">
-            <form>
-              <div class="row mb-3">
-                <div class="col">
-                  <label for="firstName" class="form-label text-white">First Name</label>
-                  <input type="text" id="firstName" class="form-control" placeholder="Kunal" />
-                </div>
-                <div class="col">
-                  <label for="lastName" class="form-label text-white">Last Name</label>
-                  <input type="text" id="lastName" class="form-control" placeholder="Gupta" />
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label text-white">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="kunal@example.com" />
-              </div>
-
-              <div class="mb-3">
-                <label for="phone" class="form-label text-white">Phone Number</label>
-                <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXXXXXXX" />
-              </div>
-
-              <div class="mb-3">
-                <label for="message" class="form-label text-white">Message</label>
-                <textarea id="message" class="form-control" rows="3"
-                  placeholder="Hi Kunal, I'm interested in booking a..."></textarea>
-              </div>
-
-              <button type="submit" class="primary-btn w-100">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form Section Ends Here -->
-
-  <!-- Faq Section -->
-  <section id="faq" class="py-6" >
-    <div class="container">
-      <h2 class="text-white mb-5 text-center display-2 text-md-start fw-semibold" >
-        Frequently Asked <br />Questions
-      </h2>
-
-      <div class="row g-lg-4 g-0">
-        <div class="col-lg-6" style="z-index: 2;">
-          <div class="accordion accordion-flush" id="faqLeft" ">
-            <!-- FAQ 1 -->
-            <div class="accordion-item faq-card" >
-              <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#faq1">
-                  How do I book a photoshoot?
-                </button>
-              </h2>
-              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
-                <div class="accordion-body">
-                  Booking a photoshoot is simple! Click the “Book a
-                  Photoshoot” button on the contact page, or reach out via
-                  WhatsApp, call, or email.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 2 -->
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-                  What photography do you specialize in?
-                </button>
-              </h2>
-              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
-                <div class="accordion-body">
-                  I specialize in weddings, corporate, lifestyle, and
-                  editorial photography.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 3 -->
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-                  Do you offer destination shoots?
-                </button>
-              </h2>
-              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
-                <div class="accordion-body">
-                  Yes, I travel for destination shoots — get in touch to
-                  discuss your vision.
-                </div>
-              </div>
-            </div>
-
-            <!-- FAQ 4 -->
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
-                  When will I get my photos?
-                </button>
-              </h2>
-              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqLeft">
-                <div class="accordion-body">
-                  Typically, within 7–10 business days depending on the shoot.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column FAQs -->
-        <div class="col-lg-6" style="z-index: 2;">
-          <div class="accordion accordion-flush" id="faqRight">
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
-                  Do you provide raw images?
-                </button>
-              </h2>
-              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqRight">
-                <div class="accordion-body">
-                  I usually deliver only the final edited images unless raw
-                  files are specifically requested.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">
-                  What are your prices and packages?
-                </button>
-              </h2>
-              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqRight">
-                <div class="accordion-body">
-                  I offer various packages based on shoot type. Please check
-                  the Pricing & Services section or contact me for a custom
-                  quote.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq7">
-                  Is a deposit required?
-                </button>
-              </h2>
-              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqRight">
-                <div class="accordion-body">
-                  Yes, a small deposit is required to confirm your booking.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item faq-card">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq8">
-                  How can I contact you quickly?
-                </button>
-              </h2>
-              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqRight">
-                <div class="accordion-body">
-                  You can WhatsApp me, email, or use the contact form for a
-                  quick reply.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Faq Section Ends Here -->
-    <img src="assets/img/design line-d.svg" alt="background design" class="background-lines"
-            style="width: 100%; max-width:100vw; max-height: 1590px;">
-  </div>
-  <!-- Footer -->
-  <footer id="footer" class="py-6">
-    <div class="container">
-      <div class="row gy-4">
-        <!-- Left CTA -->
-        <div class="col-lg-7">
-          <h4 class="text-orange fw-semibold">Stay Connected & Inspired</h4>
-          <p class="text-white small col-lg-10">
-            Follow my journey on social media and subscribe for the latest
-            updates in visual storytelling.
-          </p>
-        </div>
-
-        <!-- Contact + Social -->
-        <div class="col-lg-5">
+    <div class="bg-design-wrapper">
+      <section id="about-1" data-section="about-1" class="about-primary-section section-space">
+        <div class="container">
           <div class="row">
-            <!-- Contact Info -->
-            <div class="col-md-6 mb-3">
-              <p class="mb-2">
-                <i class="fas fa-map-marker-alt text-orange me-2"></i> Delhi,
-                India
-              </p>
-              <p class="mb-2">
-                <i class="fas fa-phone text-orange me-2"></i>+91 123456789
-              </p>
+            <div class="col-lg-6 about-copy-column">
+              <div class="section-header"><h2 class="section-heading section-heading-left">Turning Moments <br>into Art</h2></div>
+              <div class="section-body about-stats">
+                <div class="row about-stat-row">
+                  <div class="col-sm-4"><div class="highlight-number"><span>97%</span></div><div class="text-description"><span>Client Satisfaction</span></div></div>
+                  <div class="col-sm-8"><p class="text-description stat-description">We take pride in delivering stunning visuals that not only capture moments but also tell a story. Our clients love the personal touch we bring to every shoot, ensuring a seamless and enjoyable experience.</p><a href="#about-2" class="text-link">View More</a></div>
+                </div>
+                <div class="row about-stat-row">
+                  <div class="col-sm-4"><div class="highlight-number"><span>86+</span></div><div class="text-description"><span>Projects Completed</span></div></div>
+                  <div class="col-sm-8"><p class="text-description stat-description">From weddings and portraits to fashion and travel photography, we have successfully completed over a thousand projects. Each shoot is a new opportunity to create something unique and visually captivating.</p><a href="#about-2" class="text-link">View More</a></div>
+                </div>
+              </div>
             </div>
-
-            <!-- Fax Only (Right aligned) -->
-            <div class="col-md-6 mb-3 d-flex justify-content-md-end align-items-start">
-              <p class="mb-0">
-                <i class="fas fa-fax text-orange me-2"></i> +91 1234567890
-              </p>
-            </div>
-
-            <!-- Social Icons (Full Width, Centered) -->
-            <div class="col-12 d-flex justify-content-start gap-3 mt-3">
-              <a href="#" class="text-orange"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-orange"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-orange"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="text-orange"><i class="fab fa-youtube"></i></a>
-              <a href="#" class="text-orange"><i class="fab fa-instagram"></i></a>
+            <div class="col-lg-6 about-media-column">
+              <div class="position-relative media-frame">
+                <img src="assets/img/about-rect.webp" alt="" class="bg-image bg-rect-tall" aria-hidden="true">
+                <img src="assets/img/about-b.webp" class="foreground-image" alt="Photographer working outdoors">
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Divider -->
-      <hr class="my-4 border-secondary" />
+      <section id="service-1" data-section="service-1" class="service-primary-section section-space">
+        <div class="container">
+          <div class="section-header"><h2 class="section-heading section-heading-left">Professional Photography <br>Services</h2></div>
+          <div class="section-body">
+            <div class="swiper mySwiper"><div class="swiper-wrapper">
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-briefcase" data-icon="corporate" aria-hidden="true"></i></span><h3 class="card-title">Corporate Shoots</h3></div><div><p class="service-description">Professional branding and business portraits for teams and entrepreneurs.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-globe-americas" data-icon="travel" aria-hidden="true"></i></span><h3 class="card-title">Travel Photography</h3></div><div><p class="service-description">Explore the world through our lens. Stunning landscapes and travel stories captured in high definition.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-person-bounding-box" data-icon="portrait" aria-hidden="true"></i></span><h3 class="card-title">Portrait Sessions</h3></div><div><p class="service-description">Personalized portraits that highlight your personality and essence in every shot.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-gem" data-icon="wedding" aria-hidden="true"></i></span><h3 class="card-title">Wedding Shoots</h3></div><div><p class="service-description">Capture your special day with timeless and elegant wedding photography. Every moment beautifully preserved.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-bag" data-icon="product" aria-hidden="true"></i></span><h3 class="card-title">Product Photography</h3></div><div><p class="service-description">Eye-catching product images that boost your brand’s visibility.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-person-standing-dress" data-icon="fashion" aria-hidden="true"></i></span><h3 class="card-title">Fashion Shoots</h3></div><div><p class="service-description">Showcase your style with high-end fashion photography. Perfect for brands, models, and influencers.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-bag" data-icon="product" aria-hidden="true"></i></span><h3 class="card-title">Product Photography</h3></div><div><p class="service-description">Eye-catching product images that boost your brand’s visibility.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+              <div class="swiper-slide"><div class="service-card service-card-padded"><span class="left-border" aria-hidden="true"></span><div class="service-card-heading"><span class="card-icon"><i class="bi bi-person-standing-dress" data-icon="fashion" aria-hidden="true"></i></span><h3 class="card-title">Fashion Shoots</h3></div><div><p class="service-description">Showcase your style with high-end fashion photography. Perfect for brands, models, and influencers.</p></div><a href="#contact-form" class="service-link">Learn More</a></div></div>
+            </div><div class="swiper-pagination"></div></div>
+          </div>
+        </div>
+      </section>
 
-      <!-- Bottom Footer -->
-      <div class="row align-items-center">
-        <div class="col-md-8 d-flex flex-wrap gap-4 small tab-links">
-          <a href="#hero" class="text-decoration-none">Home</a>
-          <a href="#about-2" class="text-decoration-none">Portfolio</a>
-          <a href="#about-1" class="text-decoration-none">About</a>
-          <a href="#service-1" class="text-decoration-none">Services & Pricing</a>
-          <a href="#service-2" class="text-decoration-none">Blog</a>
-          <a href="#faq" class="text-decoration-none">FAQs</a>
+      <section id="about-2" data-section="about-2" class="about-secondary-section section-space">
+        <div class="container">
+          <div class="section-header"><h2 class="section-heading section-heading-left">See the World <br>Through My Lens</h2></div>
+          <div class="section-body row about-gallery-layout">
+            <div class="col-lg-6 about-gallery-primary"><div class="position-relative media-frame"><img src="assets/img/about-2-rect-c.webp" alt="" class="bg-image bg-rect-tall" aria-hidden="true"><img src="assets/img/about-2-a.webp" class="foreground-image" alt="Perfume arranged for a product photograph"></div></div>
+            <div class="divider-line d-none d-lg-block" aria-hidden="true"></div>
+            <div class="col-lg-5 right-side">
+              <div class="position-relative media-frame"><img src="assets/img/about-2-rect-b.webp" alt="" class="bg-image bg-rect-square" aria-hidden="true"><img src="assets/img/about-2-b.webp" class="foreground-image gallery-portrait-image" alt="Modern architecture photographed in daylight"></div>
+              <div class="position-relative media-frame"><img src="assets/img/about-2-rect-a.webp" alt="" class="bg-image bg-rect-square gallery-rect-fill" aria-hidden="true"><img src="assets/img/about-2-c.webp" class="foreground-image gallery-portrait-image" alt="Bride wearing traditional jewellery"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4 text-md-end text-center small mt-4 mt-md-0">
-          © 2025 [Your Photography Brand Name]
+      </section>
+      <div class="background-line-wrap" aria-hidden="true"><img src="assets/img/design-line-b.svg" alt="" class="background-lines background-lines-tall"></div>
+    </div>
+
+    <div class="bg-design-wrapper">
+      <section id="testimonials" data-section="testimonials" class="testimonials-section section-space">
+        <div class="container">
+          <div class="section-header"><h2 class="section-heading section-heading-left">Loved by Clients, Trusted <br>by Professionals</h2></div>
+          <div class="section-body"><div class="swiper testimonial-swiper"><div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="testimonial-card position-relative"><span class="left-border testimonial-border-upper" aria-hidden="true"></span><p>An incredible experience from start to finish. The attention to detail and quality exceeded expectations through the lens of a true professional.</p><div class="testimonial-client"><span class="testimonial-avatar"><img src="assets/img/testimonial-a.webp" alt="Portrait of Kunal Gupta"></span><span>Kunal Gupta, Rajasthan, India</span></div></div></div>
+            <div class="swiper-slide"><div class="testimonial-card testimonial-card-reverse position-relative"><span class="left-border testimonial-border-middle" aria-hidden="true"></span><p>I was amazed by the level of professionalism and creativity. Every shot was perfectly captured and their images were beyond expectations.</p><div class="testimonial-client"><span class="testimonial-avatar"><img src="assets/img/testimonial-b.webp" alt="Portrait of Anjali Singh"></span><span>Anjali Singh, Kerala, India</span></div></div></div>
+          </div><div class="swiper-pagination"></div></div></div>
         </div>
+      </section>
+
+      <section id="logo" data-section="logo" class="logo-ribbon-section section-space">
+        <div class="container-fluid"><div class="row"><div class="col-12"><div class="ribbon-container">
+          <div class="ribbon ribbon-top" data-zg-editable="surface"><div class="ribbon-logo"><img src="assets/img/logo-1.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-1.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-2.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-3.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-4.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-1.webp" alt="Generic partner logo"></div></div>
+          <div class="ribbon ribbon-bottom" data-zg-editable="surface"><div class="ribbon-logo"><img src="assets/img/logo-2.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-3.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-4.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-1.webp" alt="Generic partner logo"></div><div class="ribbon-logo"><img src="assets/img/logo-2.webp" alt="Generic partner logo"></div></div>
+        </div></div></div></div>
+      </section>
+      <div class="background-line-wrap" aria-hidden="true"><img src="assets/img/design-line-c.svg" alt="" class="background-lines background-lines-tall"></div>
+    </div>
+
+    <section id="service-2" data-section="service-2" class="service-secondary-section section-space">
+      <div class="container">
+        <div class="section-header"><h2 class="section-heading section-heading-left">Behind the Lens: Insights <br>&amp; Inspirations</h2></div>
+        <div class="section-body"><div class="swiper service-swiper"><div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="service-card position-relative"><span class="left-border" aria-hidden="true"></span><div class="service-card-container"><div class="service-card-media"><img src="assets/img/service-2-i.webp" alt="Corporate photography session" class="service-card-image service-card-image-a"></div><div class="card-content"><h3 class="card-title">Corporate Visuals</h3><p>Create professional corporate photos that enhance your business brand.</p><a href="#contact-form" class="service-link service-link-light">Learn More</a></div></div></div></div>
+          <div class="swiper-slide"><div class="service-card position-relative"><span class="left-border service-border-upper" aria-hidden="true"></span><div class="service-card-container service-card-reverse"><div class="service-card-media service-card-media-after"><img src="assets/img/service-2-k.webp" alt="Wedding venue prepared for a ceremony" class="service-card-image service-card-image-b"></div><div class="card-content"><h3 class="card-title">Wedding Trends</h3><p>Discover the latest wedding photography styles to make your big day unforgettable.</p><a href="#contact-form" class="service-link service-link-light">Learn More</a></div></div></div></div>
+          <div class="swiper-slide"><div class="service-card position-relative"><span class="left-border" aria-hidden="true"></span><div class="service-card-container"><div class="service-card-media"><img src="assets/img/service-2-j.webp" alt="Fashion portrait with flowing red hair" class="service-card-image service-card-image-b"></div><div class="card-content"><h3 class="card-title">Fashion Poses</h3><p>Master the art of posing for stunning and confident fashion photography.</p><a href="#contact-form" class="service-link service-link-light">Learn More</a></div></div></div></div>
+        </div><div class="swiper-pagination"></div></div></div>
       </div>
+    </section>
+
+    <div class="bg-design-wrapper">
+      <section id="contact-form" data-section="contact-form" class="contact-section section-space">
+        <div class="container">
+          <div class="section-header contact-section-header"><h2 class="section-heading section-heading-right">Block Your Shoot <br>Today!</h2></div>
+          <div class="section-body row contact-layout">
+            <div class="col-md-5 contact-media-column"><div class="position-relative media-frame"><img src="assets/img/contact-form-rect.webp" alt="" class="bg-image bg-rect-tall" aria-hidden="true"><img src="assets/img/contact-form.webp" class="foreground-image contact-main-image" alt="Photographer holding a camera"></div></div>
+            <div class="col-md-1 d-none d-md-flex contact-divider-column"><div class="orange-divider" aria-hidden="true"></div></div>
+            <div class="col-md-6 contact-form-column"><div class="form-wrapper">
+              <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="contact-form-ui">
+                <input type="hidden" name="domain" value=""><input type="hidden" name="form_key" value="booking"><input type="hidden" name="page_url" value=""><input type="hidden" name="_company" value="">
+                <div form-question-zigrow><label for="firstName">First Name</label><input type="text" id="firstName" name="first_name" placeholder="Kunal" required></div>
+                <div form-question-zigrow><label for="lastName">Last Name</label><input type="text" id="lastName" name="last_name" placeholder="Gupta" required></div>
+                <div form-question-zigrow><label for="email">Email</label><input type="email" id="email" name="email" placeholder="kunal@example.com" required maxlength="254"></div>
+                <div form-question-zigrow><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Please enter a valid phone number." placeholder="+91 XXXXXXXXXX" required></div>
+                <div form-question-zigrow><label for="message">Message</label><textarea id="message" name="message" rows="3" placeholder="Hi Kunal, I'm interested in booking a..."></textarea></div>
+                <button type="submit" class="primary-btn form-submit">Submit</button>
+              </form>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" data-section="faq" class="faq-section section-space">
+        <div class="container">
+          <div class="section-header"><h2 class="section-heading section-heading-left">Frequently Asked <br>Questions</h2></div>
+          <div class="section-body row g-lg-4 g-0">
+            <div class="col-lg-6 faq-column"><div class="accordion accordion-flush" id="faqLeft">
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">How do I book a photoshoot?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqLeft" aria-labelledby="flush-headingOne"><div class="accordion-body"><span>Booking a photoshoot is simple! Click the “Book a Photoshoot” button on the contact page, or reach out via WhatsApp, call, or email.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What photography do you specialize in?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqLeft" aria-labelledby="flush-headingTwo"><div class="accordion-body"><span>I specialize in weddings, corporate, lifestyle, and editorial photography.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Do you offer destination shoots?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqLeft" aria-labelledby="flush-headingThree"><div class="accordion-body"><span>Yes, I travel for destination shoots — get in touch to discuss your vision.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingFour"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">When will I get my photos?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqLeft" aria-labelledby="flush-headingFour"><div class="accordion-body"><span>Typically, within 7–10 business days depending on the shoot.</span></div></div></div>
+            </div></div>
+            <div class="col-lg-6 faq-column"><div class="accordion accordion-flush" id="faqRight">
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingFive"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Do you provide raw images?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqRight" aria-labelledby="flush-headingFive"><div class="accordion-body"><span>I usually deliver only the final edited images unless raw files are specifically requested.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingSix"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">What are your prices and packages?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqRight" aria-labelledby="flush-headingSix"><div class="accordion-body"><span>I offer various packages based on shoot type. Please check the Pricing &amp; Services section or contact me for a custom quote.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingSeven"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">Is a deposit required?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqRight" aria-labelledby="flush-headingSeven"><div class="accordion-body"><span>Yes, a small deposit is required to confirm your booking.</span></div></div></div>
+              <div class="accordion-item faq-card"><h3 class="accordion-header" id="flush-headingEight"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">How can I contact you quickly?<i class="bi bi-chevron-down" data-icon="faq-toggle" aria-hidden="true"></i></button></h3><div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqRight" aria-labelledby="flush-headingEight"><div class="accordion-body"><span>You can WhatsApp me, email, or use the contact form for a quick reply.</span></div></div></div>
+            </div></div>
+          </div>
+        </div>
+      </section>
+      <div class="background-line-wrap" aria-hidden="true"><img src="assets/img/design-line-d.svg" alt="" class="background-lines background-lines-tall"></div>
+    </div>
+  </main>
+
+  <footer id="footer" data-section="footer" class="site-footer section-space">
+    <div class="container">
+      <div class="row gy-4 footer-main">
+        <div class="col-lg-7"><h2 class="footer-title">Stay Connected &amp; Inspired</h2><p class="footer-intro">Follow my journey on social media and subscribe for the latest updates in visual storytelling.</p></div>
+        <div class="col-lg-5"><div class="row">
+          <div class="col-md-6 footer-contact-column"><p class="footer-contact-line"><span class="footer-contact-icon"><i class="fas fa-map-marker-alt" data-icon="location" aria-hidden="true"></i></span>Delhi, India</p><p class="footer-contact-line"><span class="footer-contact-icon"><i class="fas fa-phone" data-icon="phone" aria-hidden="true"></i></span>+91 123456789</p></div>
+          <div class="col-md-6 footer-fax-column"><p class="footer-contact-line"><span class="footer-contact-icon"><i class="fas fa-fax" data-icon="fax" aria-hidden="true"></i></span>+91 1234567890</p></div>
+          <div class="col-12"><ul class="footer-social-list"><li><a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f" data-icon="facebook" aria-hidden="true"></i></a></li><li><a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter" data-icon="twitter" aria-hidden="true"></i></a></li><li><a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" data-icon="linkedin" aria-hidden="true"></i></a></li><li><a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube" data-icon="youtube" aria-hidden="true"></i></a></li><li><a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram" data-icon="instagram" aria-hidden="true"></i></a></li></ul></div>
+        </div></div>
+      </div>
+      <hr class="footer-divider">
+      <div class="row footer-bottom"><div class="col-md-8"><ul class="footer-links"><li><a href="#hero">Home</a></li><li><a href="#about-2">Portfolio</a></li><li><a href="#about-1">About</a></li><li><a href="#service-1">Services &amp; Pricing</a></li><li><a href="#service-2">Blog</a></li><li><a href="#faq">FAQs</a></li></ul></div><div class="col-md-4 footer-copyright"><span>© 2025 [Your Photography Brand Name]</span></div></div>
+      <div class="row powered-by-zigrow-row"><div class="col-12"><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></div></div>
     </div>
   </footer>
 
-  <!-- Footer Ends Here -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
-
-<!-- Gsap animation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
 </html>

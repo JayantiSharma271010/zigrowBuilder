@@ -18398,14 +18398,9 @@ function refreshSwiperIfRequired(element) {
 
   if (!swiper || swiper.destroyed) return;
 
-  // Swiper reads the final DOM once.
+  // Swiper.update() also refreshes its pagination, navigation and overflow
+  // state. Calling those module methods separately can refresh controls twice.
   swiper.update();
-
-  // Keep controls synchronized with current slides.
-  swiper.pagination?.render?.();
-  swiper.pagination?.update?.();
-  swiper.navigation?.update?.();
-  swiper.checkOverflow?.();
 }
 
 function reindexSwiper(swiperContainer) {

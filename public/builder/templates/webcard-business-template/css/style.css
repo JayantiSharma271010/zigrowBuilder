@@ -19,7 +19,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 button {
@@ -28,13 +27,12 @@ button {
 
 :root {
   /* Brand */
-  --primary-colors: #6a6cff;
-  --secondary-colors: #5dd6ff;
-  --territory-colors: #ffd166;
+  --primary-colors: #5b5ee6;
+  --secondary-colors: #0f1b3a;
+  --territory-colors: #5dd6ff;
   /* Neutrals */
   --bg: #eef1fb;
   --surface: #ffffff;
-  --ink: #0f1b3a;
   --muted: #5c6b8a;
   --border: rgba(255, 255, 255, 0.6);
   --shadow: 0 22px 55px rgba(15, 27, 58, 0.26);
@@ -43,10 +41,33 @@ button {
   --r-xl: 24px;
 }
 
+.site-header {
+  display: none;
+}
+
+.site-footer {
+  background-color: var(--surface);
+  color: var(--muted);
+  padding-block: 16px;
+  text-align: center;
+}
+.site-footer .powered-by-zigrow-row a,
+.site-footer .powered-by-zigrow-row a:hover,
+.site-footer .powered-by-zigrow-row a:focus-visible,
+.site-footer .powered-by-zigrow-row a:active,
+.site-footer .powered-by-zigrow-row a:visited {
+  color: var(--primary-colors, #5b5ee6);
+}
+.site-footer .powered-by-zigrow-row a:focus-visible {
+  outline: 3px solid var(--secondary-colors, #0f1b3a);
+  outline-offset: 3px;
+}
+
 /* ---------------- Hero Section ---------------- */
 .influencer-hero {
   background-color: var(--surface);
   position: relative;
+  width: 100vw;
   overflow-x: hidden;
   /* Center the card both ways */
   min-height: 100svh;
@@ -56,61 +77,51 @@ button {
   /* remove side padding so vw sizes are exact */
   padding: 0;
   /* ---------- Wrapper ---------- */
-  /* ---------- Text Side ---------- */
-  /* ---------- Visual Side ---------- */
-  /* ---------- Floating Chips ---------- */
-  /* ---------- Reduced Motion ---------- */
-  /* ---------- Responsive Breakpoints ---------- */
-  /* Tablet and below: single column, keep 80vw/80vh */
-  /* Small phones: 90vw x 90vh and centered */
 }
 .influencer-hero .hero-wrap {
   /* Desktop/laptop exact size */
   width: 80vw;
   height: 80vh;
-  margin: 0 auto;
+  margin-block: 0;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   /* keep inner content visually centered */
   place-items: center;
   gap: clamp(16px, 5vw, 48px);
-  padding: clamp(16px, 3vw, 32px);
+  padding: 24px;
   border-radius: var(--r-lg);
-  background: radial-gradient(1200px 600px at 75% 20%, rgba(93, 214, 255, 0.25) 0%, rgba(207, 233, 255, 0) 60%) var(--bg);
+  background-color: transparent;
+  background-image: radial-gradient(1200px 600px at 75% 20%, color-mix(in srgb, var(--territory-colors, #5dd6ff) 25%, var(--bg)) 0%, var(--bg) 60%);
   box-shadow: var(--shadow);
+}
+.influencer-hero {
+  /* ---------- Text Side ---------- */
 }
 .influencer-hero .hero-copy {
   max-width: 680px;
+  width: 100%;
+  min-width: 0;
+  padding-inline: 0;
 }
 .influencer-hero .hero-copy .hero-subtitle {
-  color: var(--secondary-colors);
+  color: var(--territory-colors, #5dd6ff);
   font-weight: 600;
   letter-spacing: 0.02em;
   margin-bottom: 0.6rem;
   font-size: clamp(1.1rem, 1.8vw, 1.6rem);
 }
 .influencer-hero .hero-copy .hero-title {
-  color: var(--ink);
+  color: var(--secondary-colors, #0f1b3a);
   font-weight: 700;
   line-height: 1.1;
   font-size: clamp(2rem, 4vw, 3.2rem);
   margin-bottom: 1rem;
 }
 .influencer-hero .hero-copy .hero-title .type-holder {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.influencer-hero .hero-copy .hero-title .type-holder #typewriter {
+  display: inline;
   white-space: nowrap;
-}
-.influencer-hero .hero-copy .hero-title .type-holder .cursor {
-  width: 2px;
-  height: 1.1em;
-  background: var(--primary-colors);
-  display: inline-block;
-  animation: caretBlink 0.9s linear infinite;
 }
 .influencer-hero .hero-copy .hero-sub {
   color: var(--muted);
@@ -120,9 +131,17 @@ button {
 }
 .influencer-hero .hero-copy .cta-row {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   margin-bottom: 1.5rem;
+}
+.influencer-hero .hero-copy .zg-align-center {
+  align-items: center;
 }
 .influencer-hero .hero-copy .btn-pill {
   -webkit-appearance: none;
@@ -140,28 +159,50 @@ button {
   letter-spacing: 0.4px;
   background: transparent;
   color: #fff;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .influencer-hero .hero-copy .btn-pill.primary {
-  background: linear-gradient(135deg, var(--primary-colors), var(--secondary-colors));
+  background-color: var(--primary-colors, #5b5ee6);
+  background-image: none;
   color: #fff;
   border: 2px solid #fff;
 }
+.influencer-hero .hero-copy .btn-pill,
+.influencer-hero .hero-copy .btn-pill:hover,
+.influencer-hero .hero-copy .btn-pill:focus,
+.influencer-hero .hero-copy .btn-pill:active,
+.influencer-hero .hero-copy .btn-pill:visited {
+  color: #fff;
+  text-decoration: none;
+}
 .influencer-hero .hero-copy .btn-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(90, 100, 255, 0.3);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--primary-colors, #5b5ee6) 30%, transparent);
 }
 .influencer-hero .hero-copy .btn-pill:active {
   transform: translateY(0);
 }
 .influencer-hero .hero-copy .btn-pill:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline: 3px solid var(--secondary-colors, #0f1b3a);
   outline-offset: 2px;
 }
 .influencer-hero .hero-copy .social-icons {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 0.8rem;
   flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .influencer-hero .hero-copy .social-icons a {
   width: 40px;
@@ -181,11 +222,16 @@ button {
   background: var(--primary-colors);
   color: #fff;
 }
+.influencer-hero {
+  /* ---------- Visual Side ---------- */
+}
 .influencer-hero .hero-visual {
   position: relative;
   display: grid;
   place-items: center;
   min-height: 340px;
+  width: auto;
+  padding-inline: 0;
 }
 .influencer-hero .blob {
   position: absolute;
@@ -194,9 +240,8 @@ button {
   width: clamp(180px, 30vw, 360px);
   height: clamp(180px, 30vw, 360px);
   border-radius: 50%;
-  background: conic-gradient(from 60deg, #f3f6ff 0%, #e8ecff 25%, #e2fbff 50%, var(--territory-colors) 75%, #f3f6ff 100%);
+  background-image: conic-gradient(from 60deg, #f3f6ff 0%, #e8ecff 25%, #e2fbff 50%, #ffd166 75%, #f3f6ff 100%);
   filter: blur(6px);
-  animation: floatBlob 8s ease-in-out infinite;
 }
 .influencer-hero .photo {
   position: relative;
@@ -204,8 +249,9 @@ button {
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
-  animation: popIn 0.7s ease both 0.2s;
   isolation: isolate;
+  line-height: 0;
+  text-align: center;
 }
 .influencer-hero .photo img {
   width: 100%;
@@ -220,36 +266,39 @@ button {
   transform: scale(1.05);
   filter: brightness(1.05);
 }
+.influencer-hero {
+  /* ---------- Floating Chips ---------- */
+}
 .influencer-hero .chip {
   position: absolute;
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 10px 12px;
   background: rgba(255, 255, 255, 0.78);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow);
-  animation: floatY 6s ease-in-out infinite;
   z-index: 2;
-  /* Name chip: text only */
+  text-align: center;
 }
 .influencer-hero .chip.chip-sm {
   left: 8%;
   top: 10%;
-  animation-delay: 0.2s;
 }
-.influencer-hero .chip.chip-sm .ico {
-  width: 16px;
-  height: 16px;
-  fill: #1d9bf0;
+.influencer-hero .chip.chip-sm > .bi {
+  color: #1d9bf0;
+  font-size: 16px;
 }
 .influencer-hero .chip.chip-lg {
   right: 2%;
   bottom: 5%;
-  animation-delay: 0.9s;
 }
 .influencer-hero .chip.chip-lg .avatar {
   width: 30px;
@@ -259,7 +308,7 @@ button {
 }
 .influencer-hero .chip.chip-lg .count strong {
   font-size: 14px;
-  color: var(--ink);
+  color: var(--secondary-colors, #0f1b3a);
 }
 .influencer-hero .chip.chip-lg .count span {
   font-size: 11px;
@@ -270,7 +319,6 @@ button {
   right: -5%;
   top: 8%;
   border-radius: 999px;
-  animation-delay: 0.5s;
 }
 .influencer-hero .chip.chip-mini img {
   width: 24px;
@@ -281,11 +329,14 @@ button {
 .influencer-hero .chip.chip-mini img:not(:first-child) {
   margin-left: -6px;
 }
+.influencer-hero .chip {
+  /* Name chip: text only */
+}
 .influencer-hero .chip.chip-name {
   left: 2%;
   bottom: 4%;
-  animation-delay: 0.7s;
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  background-color: var(--primary-colors, #5b5ee6);
+  background-image: none;
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.4);
   padding: 12px 26px;
@@ -294,13 +345,12 @@ button {
   font-weight: 700;
   font-size: 15px;
   text-transform: capitalize;
-  box-shadow: 0 0 18px rgba(142, 45, 226, 0.4);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--primary-colors, #5b5ee6) 40%, transparent);
+  backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
 .influencer-hero .chip.chip-name:hover {
-  box-shadow: 0 0 30px rgba(142, 45, 226, 0.6);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--primary-colors, #5b5ee6) 60%, transparent);
   transform: translateY(-2px);
 }
 .influencer-hero .chip.chip-name .meta {
@@ -314,6 +364,9 @@ button {
   font-size: 12px;
   opacity: 0.85;
 }
+.influencer-hero {
+  /* ---------- Reduced Motion ---------- */
+}
 @media (prefers-reduced-motion: reduce) {
   .influencer-hero .blob,
   .influencer-hero .chip {
@@ -322,6 +375,13 @@ button {
   .influencer-hero .photo {
     animation: none;
   }
+  .influencer-hero .cursor {
+    animation: none;
+  }
+}
+.influencer-hero {
+  /* ---------- Responsive Breakpoints ---------- */
+  /* Tablet and below: single column, keep 80vw/80vh */
 }
 @media (max-width: 991.98px) {
   .influencer-hero .hero-wrap {
@@ -330,10 +390,10 @@ button {
     grid-template-columns: 1fr;
     text-align: center;
     /* keep padding but not too large */
-    padding: clamp(16px, 4vw, 28px);
+    padding: 24px;
   }
-  .influencer-hero .btn-pill {
-    margin: 0 auto;
+  .influencer-hero .cta-row {
+    justify-content: center;
   }
   .influencer-hero .hero-visual {
     order: -1;
@@ -359,15 +419,19 @@ button {
     top: 0.6rem;
   }
 }
+.influencer-hero {
+  /* Small phones: 90vw x 90vh and centered */
+}
 @media (max-width: 575.98px) {
   .influencer-hero .hero-wrap {
     width: 90vw;
     height: 100%;
-    margin: 0 auto;
+    margin-block: 0;
+    margin-inline: auto;
     grid-template-columns: 1fr;
     place-items: center;
     text-align: center;
-    padding: clamp(12px, 4vw, 20px);
+    padding: 24px;
   }
   .influencer-hero .hero-title {
     font-size: clamp(1.8rem, 7vw, 2.5rem);
@@ -394,6 +458,11 @@ button {
   .influencer-hero .chip.chip-name {
     font-size: 13px;
     padding: 8px 16px;
+  }
+}
+@media (max-width: 340px) {
+  .influencer-hero {
+    width: 100%;
   }
 }
 

@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   /* Default body text color is Primary on a white background */
@@ -1234,4 +1239,202 @@ video {
 
 .img-wrapper-style {
   text-align: center;
+}
+
+:root {
+  --primary-colors: #bc5c27;
+  --secondary-colors: #111112;
+  --territory-colors: #f8e9d5;
+}
+
+.brand-logo,
+.footer-brand-logo {
+  color: var(--primary-colors, #bc5c27);
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.brand-logo:hover,
+.brand-logo:focus-visible,
+.footer-brand-logo:hover,
+.footer-brand-logo:focus-visible {
+  color: var(--primary-colors, #bc5c27);
+  text-decoration: none;
+}
+
+nav .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+nav .hamburger {
+  border: 0;
+  padding: 8px;
+  background: transparent;
+  color: var(--primary-colors, #bc5c27);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+nav .hamburger i {
+  flex: 0 0 auto;
+}
+
+nav .mobile-social-icons {
+  display: none;
+}
+
+nav .desktop-social-icons {
+  display: flex;
+}
+
+.zg-align-center {
+  align-items: center;
+}
+
+main > section,
+footer {
+  scroll-margin-top: 104px;
+}
+
+.coffee-hero,
+.coffee-story,
+.menu-section,
+.offer-section,
+.team-section,
+.partners-testimonial,
+.office-locations {
+  overflow-x: clip;
+}
+
+.hero-actions,
+.menu-actions,
+.offer-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-actions,
+.offer-actions {
+  justify-content: flex-start;
+}
+
+.menu-actions {
+  justify-content: center;
+}
+
+.menu-footer-row {
+  margin-top: 3rem;
+}
+
+.story-layout {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.team-layout,
+.logos-row,
+.testimonial-row {
+  align-items: center;
+}
+
+.custom-btn,
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:focus-visible,
+.custom-btn:active,
+.custom-btn:visited {
+  text-decoration: none;
+}
+
+.custom-btn:focus-visible {
+  outline: 3px solid var(--territory-colors, #f8e9d5);
+  outline-offset: 3px;
+}
+
+.clonable-card {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.menu-section .clonable-card > .menu-item {
+  height: 100%;
+}
+
+.stars,
+.social-icons,
+.scroll-top,
+.hamburger {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.stars {
+  display: flex;
+}
+
+.social-icons a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-brand-logo {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer-attribution {
+  border-top: 1px solid var(--territory-colors, #f8e9d5);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-attribution a {
+  color: var(--primary-colors, #bc5c27);
+  text-decoration: none;
+}
+
+.footer-attribution a:hover,
+.footer-attribution a:focus-visible {
+  color: var(--primary-colors, #92471e);
+  text-decoration: underline;
+}
+
+@media (max-width: 767.98px) {
+  nav .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav .mobile-social-icons {
+    display: flex;
+  }
+  nav .desktop-social-icons {
+    display: none;
+  }
+  .hero-actions,
+  .offer-actions {
+    justify-content: center;
+  }
 }/*# sourceMappingURL=style.css.map */

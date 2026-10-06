@@ -7,6 +7,20 @@ navToggle.addEventListener("click", () => {
 
   const expanded = navToggle.classList.contains("is-active");
   navToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+  const menuIcon = navToggle.querySelector("i");
+  menuIcon.classList.toggle("bi-list", !expanded);
+  menuIcon.classList.toggle("bi-x-lg", expanded);
+});
+
+document.querySelectorAll('#navMenu a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    navToggle.classList.remove("is-active");
+    navToggle.setAttribute("aria-expanded", "false");
+    const menuIcon = navToggle.querySelector("i");
+    menuIcon.classList.add("bi-list");
+    menuIcon.classList.remove("bi-x-lg");
+  });
 });
 
 // back to top button
@@ -21,11 +35,12 @@ window.onscroll = () => {
 };
 
 backToTopBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
 };
 // sticky navbar
 window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
+  const navbar = document.getElementById("header");
   if (window.scrollY > 50) {
     navbar.classList.add("sticky");
   } else {
@@ -76,9 +91,20 @@ document
 // gsap animations
 
 gsap.registerPlugin(ScrollTrigger);
+const safeGsapFrom = (targets, variables) => {
+  const hasTargets =
+    typeof targets !== "string" || document.querySelector(targets);
+  const trigger = variables?.scrollTrigger?.trigger;
+  const hasTrigger =
+    typeof trigger !== "string" || document.querySelector(trigger);
+
+  if (hasTargets && hasTrigger) {
+    gsap.from(targets, variables);
+  }
+};
 if (window.innerWidth > 768) {
   // Hero Section Animations
-  gsap.from(".hero-subtitle", {
+  safeGsapFrom(".hero-subtitle", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%",
@@ -89,7 +115,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from(".hero-title", {
+  safeGsapFrom(".hero-title", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 75%",
@@ -101,7 +127,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from(".hero-text", {
+  safeGsapFrom(".hero-text", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 70%",
@@ -113,7 +139,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from(".hero-image img", {
+  safeGsapFrom(".hero-image img", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 70%",
@@ -126,7 +152,7 @@ if (window.innerWidth > 768) {
   });
 
   /* ==========================*/
-  gsap.from("#facilities .facilities-image img", {
+  safeGsapFrom("#facilities .facilities-image img", {
     scrollTrigger: {
       trigger: "#facilities",
       start: "top 80%",
@@ -137,7 +163,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#facilities .card-box", {
+  safeGsapFrom("#facilities .card-box", {
     scrollTrigger: {
       trigger: "#facilities",
       start: "top 75%",
@@ -152,7 +178,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Research Section
    ========================== */
-  gsap.from("#research .research-image img", {
+  safeGsapFrom("#research .research-image img", {
     scrollTrigger: {
       trigger: "#research",
       start: "top 80%",
@@ -163,7 +189,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#research .research-content h2", {
+  safeGsapFrom("#research .research-content h2", {
     scrollTrigger: {
       trigger: "#research",
       start: "top 75%",
@@ -175,7 +201,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from(
+  safeGsapFrom(
     "#research .research-content p, #research .research-content hr, #research blockquote, #research .author",
     {
       scrollTrigger: {
@@ -194,7 +220,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Trust Us Section
    ========================== */
-  gsap.from("#trust-us .trust-image", {
+  safeGsapFrom("#trust-us .trust-image", {
     scrollTrigger: {
       trigger: "#trust-us",
       start: "top 80%",
@@ -205,7 +231,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#trust-us .trust-content h2", {
+  safeGsapFrom("#trust-us .trust-content h2", {
     scrollTrigger: {
       trigger: "#trust-us",
       start: "top 78%",
@@ -217,7 +243,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#trust-us .trust-content p", {
+  safeGsapFrom("#trust-us .trust-content p", {
     scrollTrigger: {
       trigger: "#trust-us",
       start: "top 75%",
@@ -229,7 +255,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#trust-us .feature-item", {
+  safeGsapFrom("#trust-us .feature-item", {
     scrollTrigger: {
       trigger: "#trust-us",
       start: "top 70%",
@@ -244,7 +270,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Case Studies Section
    ========================== */
-  gsap.from("#case-studies .case-header h2", {
+  safeGsapFrom("#case-studies .case-header h2", {
     scrollTrigger: {
       trigger: "#case-studies",
       start: "top 80%",
@@ -255,7 +281,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#case-studies .case-header p", {
+  safeGsapFrom("#case-studies .case-header p", {
     scrollTrigger: {
       trigger: "#case-studies",
       start: "top 78%",
@@ -267,7 +293,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#case-studies .case-item", {
+  safeGsapFrom("#case-studies .case-item", {
     scrollTrigger: {
       trigger: "#case-studies",
       start: "top 75%",
@@ -282,7 +308,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Testimonial (Left + Right Layout)
    ========================== */
-  gsap.from("#testimonial .testimonial-info", {
+  safeGsapFrom("#testimonial .testimonial-info", {
     scrollTrigger: {
       trigger: "#testimonial",
       start: "top 80%",
@@ -293,7 +319,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#testimonial .testimonial-card", {
+  safeGsapFrom("#testimonial .testimonial-card", {
     scrollTrigger: {
       trigger: "#testimonial",
       start: "top 75%",
@@ -307,7 +333,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Appointment Section
    ========================== */
-  gsap.from("#appointment-section .appointment-content h2", {
+  safeGsapFrom("#appointment-section .appointment-content h2", {
     scrollTrigger: {
       trigger: "#appointment-section",
       start: "top 85%",
@@ -318,7 +344,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#appointment-section .appointment-content p", {
+  safeGsapFrom("#appointment-section .appointment-content p", {
     scrollTrigger: {
       trigger: "#appointment-section",
       start: "top 80%",
@@ -330,7 +356,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#appointment-section .btn-appointment", {
+  safeGsapFrom("#appointment-section .btn-appointment", {
     scrollTrigger: {
       trigger: "#appointment-section",
       start: "top 78%",
@@ -345,7 +371,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Newsletter Section
    ========================== */
-  gsap.from("#newsletter-section .newsletter-left", {
+  safeGsapFrom("#newsletter-section .newsletter-left", {
     scrollTrigger: {
       trigger: "#newsletter-section",
       start: "top 80%",
@@ -356,7 +382,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#newsletter-section .newsletter-right", {
+  safeGsapFrom("#newsletter-section .newsletter-right", {
     scrollTrigger: {
       trigger: "#newsletter-section",
       start: "top 80%",
@@ -368,7 +394,7 @@ if (window.innerWidth > 768) {
     delay: 0.2,
   });
 
-  gsap.from("#newsletter-section .contact-item", {
+  safeGsapFrom("#newsletter-section .contact-item", {
     scrollTrigger: {
       trigger: "#newsletter-section .contact-row",
       start: "top 85%",
@@ -383,7 +409,7 @@ if (window.innerWidth > 768) {
   /* ==========================
    Footer Section
    ========================== */
-  gsap.from("#footer-section .footer-about", {
+  safeGsapFrom("#footer-section .footer-about", {
     scrollTrigger: {
       trigger: "#footer-section",
       start: "top 85%",
@@ -394,7 +420,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#footer-section .footer-col", {
+  safeGsapFrom("#footer-section .footer-col", {
     scrollTrigger: {
       trigger: "#footer-section",
       start: "top 80%",
@@ -406,7 +432,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#footer-section .footer-bottom p", {
+  safeGsapFrom("#footer-section .footer-bottom p", {
     scrollTrigger: {
       trigger: "#footer-section",
       start: "top 78%",

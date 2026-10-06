@@ -43,30 +43,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- My local css -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/customutility.css" />
-    <link rel="icon" href="assets/images/fevicon.png">
+    <link rel="stylesheet" href="css/style.css?v=20260928-1" />
+    <link rel="stylesheet" href="css/customutility.css?v=20260928-1" />
+    <link rel="icon" href="assets/images/favicon.webp" type="image/webp">
 
 </head>
 
 <body>
     <!-- Navbar -->
+    <header id="header" data-section="header">
     <nav class="navbar-section navbar navbar-expand-lg sticky-top py-3-style navbar-animate" id="navbarSection"
-        data-section="navbarSection">
+        aria-label="Primary navigation">
         <div class="container">
 
-            <div class="navbar-brand-name" data-logo="navbar">
-                <i class="fa-solid fa-industry" data-icon="industry"></i>
-                <span class="fw-bold-style">ENERGY</span>STEEL
-            </div>
+            <a href="#home" class="brand-logo" data-logo="navbar">ENERGYSTEEL</a>
 
             <!-- Hamburger -->
             <div class="d-lg-none d-flex align-items-center-style justify-content-lg-end-style h-100">
-                <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
+                <button type="button" class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle"
+                    aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false">
                     <div class="hamburger-box">
                         <div class="hamburger-inner"></div>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- Nav links -->
@@ -87,12 +86,15 @@
                 </ul>
             </div>
 
-            <div class="d-none d-lg-block">
-                <a class="btn btn-custom phone-number-button"><span>9123456789</span></a>
-                <a class="btn btn-custom"><span>CONTACT US</span></a>
+            <div class="navbar-actions zg-align-center d-none d-lg-flex">
+                <a href="tel:+919123456789" class="btn btn-custom phone-number-button" data-btn="nav">9123456789</a>
+                <a href="#footer" class="btn btn-custom" data-btn="nav">CONTACT US</a>
             </div>
         </div>
     </nav>
+    </header>
+
+    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero-section" id="home" data-section="home">
@@ -104,28 +106,28 @@
             </h1>
             <p>Building a stronger future,<br>one steel beam at a time.</p>
 
-            <a href="#"
-                class="btn start-collaborating text-start-style d-inline-flex flex-column align-items-start-style px-sm-5-style py-sm-3-style">
-                <div class="contact-subsidiaries">
-                    <span class="pe-md-5-style">CONTACTS<br>SUBSIDIARIES</span>
-                    <i class="bi bi-chevron-right" data-icon="chevron-right"></i>
-                </div>
-            </a>
+            <div class="hero-actions zg-align-center">
+                <a href="#services" data-btn="hero"
+                    class="btn start-collaborating contact-subsidiaries text-start-style px-sm-5-style py-sm-3-style">CONTACTS<br>SUBSIDIARIES
+                    <i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
 
         <div class="video-thumb">
             <div class="img-wrapper-style col-12">
                 <img src="assets/images/hero-2.webp" alt="Welding Thumbnail" />
             </div>
-            <a href="#" target="_blank" class="play-button">
-                <i class="bi bi-play-circle" data-icon="play-circle"></i>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="play-button"
+                aria-label="Open manufacturing video">
+                <i class="bi bi-play-circle" data-icon="play-circle" aria-hidden="true"></i>
             </a>
         </div>
     </section>
 
     <!-- Floating Button -->
-    <a href="#" class="floating-btn">
-        <i class="bi bi-arrow-up" data-icon="arrow-up"></i>
+    <a href="#home" class="floating-btn" aria-label="Back to top">
+        <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
     </a>
 
     <!-- About section -->
@@ -134,13 +136,13 @@
             <div class="row align-items-center-style py-5-style">
 
                 <!-- Left -->
-                <div class="col-lg-6 left-content-div">
-                    <div class="section-name">About Us</div>
-                    <h1 class="each-section-heading">We Explore<br>To Empower</h1>
+                <div class="col-lg-6 left-content-div section-heading about-heading">
+                    <p class="section-name">About Us</p>
+                    <h2 class="each-section-heading">We Explore<br>To Empower</h2>
                 </div>
 
                 <!-- Right -->
-                <div class="col-lg-6 text-end">
+                <div class="col-lg-6 section-body about-media-content">
                     <div class="para-div d-flex flex-column flex-lg-row">
                         <p class="col-lg-6 highlight-text highlight-text1 pe-md-5-style">
                             EnergySteel Co is an international business with an integrated offering...
@@ -167,26 +169,26 @@
                 <h2 class="each-section-heading">Our Business</h2>
             </div>
 
-            <div class="row g-4 pb-5-style">
+            <div class="row g-4 pb-5-style section-body">
 
-                <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+                <div class="col-12 col-sm-6 col-lg-4 clonable-card business-item">
                     <div class="business-card img-wrapper-style col-12">
                         <img src="assets/images/our-business-1.webp" loading="lazy" alt="Aerospace Bar">
-                        <div class="card-title">Aerospace Bar</div>
+                        <span class="card-title">Aerospace Bar</span>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+                <div class="col-12 col-sm-6 col-lg-4 clonable-card business-item">
                     <div class="business-card img-wrapper-style col-12">
                         <img src="assets/images/our-business-2.webp" loading="lazy" alt="Pipe">
-                        <div class="card-title">Pipe</div>
+                        <span class="card-title">Pipe</span>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+                <div class="col-12 col-sm-6 col-lg-4 clonable-card business-item">
                     <div class="business-card img-wrapper-style col-12">
                         <img src="assets/images/our-business-3.webp" loading="lazy" alt="Line Pipe">
-                        <div class="card-title">Line Pipe</div>
+                        <span class="card-title">Line Pipe</span>
                     </div>
                 </div>
             </div>
@@ -202,11 +204,10 @@
                     <h2 class="each-section-heading">Our <br>Directors</h2>
                 </div>
 
-                <div class="swiper mySwiper mb-0 pb-5 swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper mySwiper mb-0-style pb-5-style section-body">
                     <div class="swiper-wrapper" aria-live="polite">
                         <!-- Slide 1 -->
-                        <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3"
-                            style="width: 315px; margin-right: 20px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="swiper-slide" role="group" aria-label="1 / 3">
                             <div class="card">
                                 <div class="img-wrapper-style col-12">
                                     <img src="assets/images/our-directors-1.webp" loading="lazy" alt="Director 1">
@@ -222,8 +223,7 @@
                         </div>
 
                         <!-- Slide 2 -->
-                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3"
-                            style="width: 315px; margin-right: 20px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="swiper-slide" role="group" aria-label="2 / 3">
                             <div class="card">
                                 <div class="img-wrapper-style col-12">
                                     <img src="assets/images/directors-2.webp" loading="lazy" alt="Director 2">
@@ -239,8 +239,7 @@
                         </div>
 
                         <!-- Slide 3 -->
-                        <div class="swiper-slide" role="group" aria-label="3 / 3"
-                            style="width: 315px; margin-right: 20px; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <div class="swiper-slide" role="group" aria-label="3 / 3">
                             <div class="card">
                                 <div class="img-wrapper-style col-12">
                                     <img src="assets/images/directors-3.webp" loading="lazy" alt="Director 3">
@@ -275,7 +274,7 @@
                 </div>
 
                 <div class="col-12">
-                    <div class="swiper latestNewsSwiper pb-5-style">
+                    <div class="swiper latestNewsSwiper pb-5-style section-body">
                         <div class="swiper-wrapper">
 
                             <div class="swiper-slide">
@@ -323,61 +322,58 @@
                 </div>
 
                 <div class="col-lg-6 right-section">
-                    <div class="blue-box text-white-style text-start-style">
+                    <div class="blue-box text-white-style text-start-style" data-zg-editable="surface">
                         <h2 class="heading-text mb-4-style">INFRASTRUCTURE<br>LEADING</h2>
 
-                        <a href="#"
-                            class="btn btn-light text-start-style d-inline-flex flex-column align-items-start-style px-sm-5-style py-sm-3-style">
-                            <div class="contact-subsidiaries">
-                                <span class="pe-md-5-style">CONTACTS<br>SUBSIDIARIES</span>
-                                <i class="bi bi-chevron-right" data-icon="chevron-right"></i>
-                            </div>
-                        </a>
+                        <div class="infrastructure-actions zg-align-center">
+                            <a href="#footer" data-btn="contact"
+                                class="btn btn-light contact-subsidiaries text-start-style px-sm-5-style py-sm-3-style">CONTACTS<br>SUBSIDIARIES
+                                <i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer-section py-0-style" id="footer-section" data-section="footer-section">
+    <footer class="footer-section py-0-style" id="footer" data-section="footer">
         <div class="container each-section-border-left">
 
             <div class="row align-items-start-style d-flex row1-for-padding">
 
                 <div class="col-md-4 mb-4-style mb-md-0-style">
-                    <div class="navbar-brand-name" data-logo="footer">
-                        <i class="fa-solid fa-industry" data-icon="industry"></i>
-                        <span class="fw-bold-style">ENERGY</span>STEEL
-                    </div>
+                    <a href="#home" class="footer-brand-logo" data-logo="footer">ENERGYSTEEL</a>
                 </div>
 
                 <div class="col-md-4 footer-links-div">
                     <ul class="list-unstyled footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Products and Services</a></li>
-                        <li><a href="#">Manufacturing Process</a></li>
-                        <li><a href="#">Research Development</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
+                        <li><a href="#services">Products and Services</a></li>
+                        <li><a href="#services">Manufacturing Process</a></li>
+                        <li><a href="#services">Research Development</a></li>
+                        <li><a href="#news">Case Studies</a></li>
+                        <li><a href="#news">News</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4">
                     <div class="contact-div mb-4-style mb-md-0-style">
-                        <h1 class="mb-3-style">+91-9123456789</h1>
+                        <a class="footer-contact-phone mb-3-style" href="tel:+919123456789">+91-9123456789</a>
                         <address class="mb-0-style text-md-start text-center-style">
                             E-123, ABC Plaza, XYZ Street, New Delhi - 110077
                         </address>
                     </div>
 
-                    <div class="social-icons d-flex gap-3 mt-3-style">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"
-                                data-icon="fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f" data-icon="facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter" data-icon="twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube" data-icon="youtube"></i></a>
+                    <div class="social-icons mt-3-style">
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"
+                                data-icon="linkedin" aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f" data-icon="facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube" data-icon="youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -385,13 +381,21 @@
 
             <div class="row footer-bottom-section mt-5-style py-5-style">
                 <div class="col-12 mb-2-style mb-md-4-style footer-div">
-                    <a href="#" class="footer-bottom-link">Contact us</a>
-                    <a href="#" class="footer-bottom-link">Terms of use</a>
-                    <a href="#" class="footer-bottom-link">Privacy Cookie</a>
-                    <a href="#" class="footer-bottom-link">Policy</a>
+                    <ul class="footer-policy-links">
+                        <li><a href="#footer" class="footer-bottom-link">Contact us</a></li>
+                        <li><a href="#" class="footer-bottom-link">Terms of use</a></li>
+                        <li><a href="#" class="footer-bottom-link">Privacy Cookie</a></li>
+                        <li><a href="#" class="footer-bottom-link">Policy</a></li>
+                    </ul>
                 </div>
                 <div class="copyright-div">
                     <small>© 2025 ENERGY Steel Group</small>
+                </div>
+            </div>
+
+            <div class="row powered-by-zigrow-row">
+                <div class="col-12">
+                    <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
                 </div>
             </div>
 
@@ -409,111 +413,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="js/script.js"></script>
-    <script>
-        (function () {
-            // Find ALL Zigrow forms
-            const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
-            if (!forms.length) return;
-
-            // Helper: turn FormData into a plain object
-            function serializeForm(form) {
-                const fd = new FormData(form);
-                const raw = {};
-                for (const [name, value] of fd.entries()) {
-                    const el = form.elements[name];
-                    const isGroup = el && (el.length && el[0] && el[0].type === 'checkbox');
-                    if (isGroup) {
-                        if (!raw[name]) raw[name] = [];
-                        raw[name].push(value === '' ? true : value);
-                    } else {
-                        raw[name] = value;
-                    }
-                }
-                return raw;
-            }
-
-            // Helper: pick primary value for quick list view
-            function pickPrimaryValue(raw) {
-                if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
-                if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-                const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
-                if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
-                if (nameCombo) return nameCombo;
-                if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
-                return '';
-            }
-
-            forms.forEach((form) => {
-                // Ensure hidden fields are filled
-                const domainInput = form.querySelector('input[name="domain"]');
-                const pageUrlInput = form.querySelector('input[name="page_url"]');
-                if (domainInput) domainInput.value = location.host;
-                if (pageUrlInput) pageUrlInput.value = location.href;
-
-                // Create a container for messages if not already exists
-                let msgContainer = form.querySelector('.form-submit-message');
-                if (!msgContainer) {
-                    msgContainer = document.createElement('div');
-                    msgContainer.className = 'form-submit-message mt-2 text-sm';
-                    form.appendChild(msgContainer);
-                }
-
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-
-                    const submitBtn = form.querySelector('[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.dataset._oldText = submitBtn.innerText;
-                        submitBtn.innerText = 'Submitting...';
-                    }
-
-                    // Clear previous message
-                    msgContainer.innerText = '';
-                    msgContainer.style.color = '';
-
-                    try {
-                        const raw = serializeForm(form);
-                        const body = new URLSearchParams();
-                        body.set('domain', (form.querySelector('input[name="domain"]')?.value || location.host));
-                        body.set('form_key', (form.querySelector('input[name="form_key"]')?.value || 'contact'));
-                        body.set('page_url', (form.querySelector('input[name="page_url"]')?.value || location.href));
-                        body.set('payload', JSON.stringify(raw));
-
-                        const primary = pickPrimaryValue(raw);
-                        if (primary) body.set('value', primary);
-
-                        if (raw._company) body.set('_company', raw._company);
-
-                        const res = await fetch(form.action, {
-                            method: 'POST',
-                            headers: { 'Accept': 'application/json' },
-                            body
-                        });
-
-                        const data = await res.json().catch(() => ({}));
-                        if (res.ok && (data.ok ?? true)) {
-                            form.reset();
-                            msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
-                            msgContainer.style.color = '#28a745'; // green success
-                        } else {
-                            msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
-                            msgContainer.style.color = '#dc3545'; // red error
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        msgContainer.innerText = '❌ Something went wrong. Please try again.';
-                        msgContainer.style.color = '#dc3545';
-                    } finally {
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
-                        }
-                    }
-                });
-            });
-        })();
-    </script>
 </body>
 
 </html>

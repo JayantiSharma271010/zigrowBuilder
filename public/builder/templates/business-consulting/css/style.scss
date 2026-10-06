@@ -1,8 +1,246 @@
 :root {
   --primary-colors: #2a2aff;
-  --secondary-colors: #555;
+  --secondary-colors: #222;
+  --territory-colors: #278c75;
+  --muted-colors: #555;
   --light-colors: #fff;
-  --dark-colors: #000;
+  --dark-colors: var(--secondary-colors);
+}
+
+/* Zigrow Builder compatibility layer */
+.featured-section,
+.topics-section,
+.services-section,
+.about-section,
+.client-review-section,
+.cta-section,
+.footer-section {
+  padding: 3rem 0;
+}
+
+.zg-align-center {
+  align-items: center;
+}
+
+.nav-section__actions,
+.nav-section__mobile-actions,
+.hero-section__actions,
+.services-section__cta-wrap,
+.about-section__actions,
+.cta-section__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-section__actions,
+.services-section__cta-wrap,
+.about-section__actions {
+  justify-content: flex-start;
+}
+
+.cta-section__actions,
+.nav-section__mobile-actions {
+  justify-content: center;
+}
+
+[data-btn],
+[data-btn]:hover,
+[data-btn]:focus,
+[data-btn]:active,
+[data-btn]:visited {
+  text-decoration: none;
+}
+
+.nav-section .social-icons a,
+.nav-section .social-icons a:hover,
+.nav-section .social-icons a:focus,
+.nav-section .social-icons a:focus-visible,
+.nav-section .social-icons a:active,
+.nav-section .social-icons a:visited {
+  text-decoration: none;
+}
+
+[data-btn],
+.nav-section .social-icons a,
+.footer-section__social-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+[data-btn] > i,
+.nav-section .social-icons a > i,
+.footer-section__social-link > i,
+.menu-toggle > i,
+.back-to-top > i {
+  flex: 0 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-brand-logo,
+.footer-brand-logo {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--light-colors);
+  line-height: 1.25;
+  letter-spacing: 3px;
+  text-decoration: none;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.nav-brand-logo::first-line,
+.footer-brand-logo::first-line {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+.nav-brand-logo::after,
+.footer-brand-logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  width: 3.75rem;
+  height: 1px;
+  background: currentColor;
+  pointer-events: none;
+}
+
+.footer-brand-logo {
+  color: var(--secondary-colors);
+  margin-bottom: 1rem;
+}
+
+.nav-links__mobile-action {
+  display: none;
+}
+
+.nav-section .menu-toggle,
+.back-to-top {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-section .menu-toggle {
+  border: 0;
+  padding: 0.25rem;
+  background: transparent;
+}
+
+.back-to-top {
+  display: none;
+}
+
+.back-to-top.is-visible {
+  display: inline-flex;
+}
+
+.clonable-card {
+  min-width: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.featured-section__logo-item {
+  margin-inline: auto;
+}
+
+.cta-section__column {
+  margin-inline: auto;
+}
+
+.footer-section__attribution-row {
+  margin-top: 1rem;
+}
+
+.footer-section__attribution {
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.footer-section__attribution a {
+  color: var(--secondary-colors);
+}
+
+.topics-section__text,
+.client-review-section__text,
+.cta-section__text,
+.footer-section__text,
+.footer-section__item,
+.footer-section__item--plain,
+.footer-section__link,
+.footer-section__bottom-text {
+  color: var(--muted-colors);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-colors);
+  outline-offset: 3px;
+}
+
+@media (max-width: 992px) {
+  .nav-links__mobile-action {
+    display: block;
+  }
+
+  .nav-section .nav-links .nav-links__mobile-action .nav-btn {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--primary-colors);
+    border-radius: 4px;
+    background: var(--primary-colors);
+    color: var(--light-colors);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .nav-section .nav-links .nav-links__mobile-action .nav-btn::after {
+    content: none;
+  }
+
+  .nav-section__mobile-actions {
+    flex-direction: column;
+  }
+
+  .nav-section .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero-section__actions,
+  .services-section__cta-wrap,
+  .about-section__actions {
+    justify-content: center;
+  }
 }
 .py-6 {
   padding: 3rem 0;
@@ -12,7 +250,7 @@
   align-items: center;
   padding: 10px 30px;
   background: var(--light-colors);
-  color: #333;
+  color: var(--secondary-colors);
   text-decoration: none;
   font-weight: 600;
   border-radius: 5px;
@@ -197,7 +435,7 @@
       margin: 0;
 
       li a {
-        color: #333;
+        color: var(--secondary-colors);
 
         &::after {
           background: var(--primary-colors);
@@ -224,7 +462,7 @@
   }
 }
 
-#backToTopBtn {
+.back-to-top {
   position: fixed;
   bottom: 5%;
   right: 1%;
@@ -308,7 +546,7 @@
 
     .hero-section__content {
       max-width: 90%;
-      margin: 0 auto; // ✅ center block
+      margin-inline: auto; // center block without resetting vertical rhythm
       padding-top: 0;
       padding-bottom: 0;
       text-align: center; // ✅ center text
@@ -375,7 +613,7 @@
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #333;
+    color: var(--secondary-colors);
   }
 
   .featured-section__logo-item {
@@ -428,7 +666,7 @@
     margin: 0 0 10px;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #222;
+    color: var(--secondary-colors);
   }
 
   .topics-section__text {
@@ -638,7 +876,7 @@
     }
 
     .about-section__signature {
-      margin: 0 auto;
+      margin-inline: auto;
     }
   }
 
@@ -687,7 +925,7 @@
   text-align: center;
 
   .client-review-section__wrap {
-    margin: 0 auto;
+    margin-inline: auto;
   }
 
   .client-review-section__heading {
@@ -711,7 +949,8 @@
     text-align: center;
     width: clamp(64px, 6vw, 72px);
     height: clamp(64px, 6vw, 72px);
-    margin: 0 auto 1rem;
+    margin-inline: auto;
+    margin-bottom: 1rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.04);
     padding: 4px;
@@ -719,6 +958,7 @@
 
   .client-review-section__img {
     max-width: 100%;
+    max-height: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
@@ -760,7 +1000,7 @@
   .cta-section__wrap {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin-inline: auto;
   }
 
   .cta-section__heading {
@@ -876,6 +1116,7 @@
     margin-right: 1rem;
     color: var(--dark-colors);
     font-size: 1.1rem;
+    text-decoration: none;
     transition: all 0.3s ease;
   }
 
@@ -920,4 +1161,67 @@
       text-align: left;
     }
   }
+}
+
+/* Final precedence for Builder-managed action and icon parents. */
+[data-btn],
+.nav-section .social-icons a,
+.footer-section__social-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.topics-section .topics-section__text,
+.client-review-section .client-review-section__text,
+.cta-section .cta-section__text,
+.footer-section .footer-section__text,
+.footer-section .footer-section__item,
+.footer-section .footer-section__item--plain,
+.footer-section .footer-section__link,
+.footer-section .footer-section__bottom-text {
+  color: var(--muted-colors);
+}
+
+@media (max-width: 992px) {
+  .nav-section .menu-toggle {
+    display: inline-flex;
+  }
+}
+
+.nav-section [data-btn],
+.hero-section [data-btn],
+.services-section [data-btn],
+.about-section [data-btn],
+.cta-section [data-btn],
+.footer-section .footer-section__social-link {
+  display: inline-flex;
+}
+
+.hero-section__header {
+  margin-bottom: 1.5rem;
+}
+
+.hero-section .hero-section__text,
+.services-section .services-section__title,
+.client-review-section .client-review-section__heading,
+.cta-section .cta-section__text {
+  margin-bottom: 0;
+}
+
+.services-section__header {
+  margin-bottom: 1.5rem;
+}
+
+.client-review-section__header {
+  margin-bottom: calc(clamp(1.5rem, 2vw, 2.5rem) + 0.5rem);
+}
+
+.cta-section__header {
+  margin-bottom: 2rem;
 }

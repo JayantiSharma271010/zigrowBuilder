@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Interiors</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
-  <link rel="icon" href="assets/images/LOGO.png" />
+  <link rel="icon" href="assets/images/logo.webp" />
   <!-- Google font -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -21,23 +21,16 @@
   <!-- Swiper bundle -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- My local css -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260824-6" />
 </head>
 
 <body data-bs-offset="100" tabindex="0">
-  <!-- Navbar section (kept unchanged as requested) -->
-  <nav class="navbar navbar-expand-md py-3-style sticky-top">
-    <div class="container d-flex align-items-center justify-content-between col-md-4 col-lg-3">
+  <header id="header" data-section="header">
+  <nav class="navbar navbar-expand-md py-3-style sticky-top" aria-label="Primary navigation">
+    <div class="container d-flex align-items-center-style justify-content-between-style col-md-4 col-lg-3">
       <!-- Left: Logo and Brand -->
-      <div class="d-flex align-items-center">
-        <a class="navbar-brand me-2-style" href="#">
-          <div class="img-wrapper-style col-12">
-            <img src="assets/images/logo.png" width="30" height="30" alt="Logo" />
-          </div>
-        </a>
-        <a class="navbar-brand" href="#">
-          <span class="A-of-ashiyana">A</span>ASHIYANA
-        </a>
+      <div class="d-flex align-items-center-style">
+        <a class="navbar-brand-logo" href="#home" data-logo="navbar">AASHIYANA</a>
       </div>
 
       <!-- Hamburger Button for Mobile -->
@@ -49,8 +42,8 @@
     </div>
 
     <!-- Collapsible Section -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarCentered">
-      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+    <div class="collapse navbar-collapse justify-content-center-style" id="navbarCentered">
+      <div class="d-flex flex-column flex-md-row align-items-center-style justify-content-between-style w-100">
         <!-- Center: Navigation Links (Always Centered) -->
         <ul class="navbar-nav mx-auto-style mb-2-style mb-md-0-style">
           <li class="nav-item"><a class="nav-link" href="#home" data-bs-target="home">Home</a></li>
@@ -63,75 +56,78 @@
     </div>
     <div>
       <!-- Right: Social Media Icons -->
-      <div class="d-flex align-items-center gap-2 ms-md-auto-style mt-3-style mt-md-0-style">
-        <a class="navbar-brand" href="#"><i class="bi bi-twitter" data-icon="twitter"></i></a>
-        <a class="navbar-brand" href="#"><i class="bi bi-facebook" data-icon="facebook"></i></a>
-        <a class="navbar-brand" href="#"><i class="bi bi-instagram" data-icon="instagram"></i></a>
+      <div class="d-flex align-items-center-style gap-2 ms-md-auto-style mt-3-style mt-md-0-style navbar-socials">
+        <a class="navbar-social-link" href="#" aria-label="X"><i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+        <a class="navbar-social-link" href="#" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i></a>
+        <a class="navbar-social-link" href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
       </div>
     </div>
   </nav>
+  </header>
+
+  <main>
 
   <!-- Section 1 -->
   <section class="py-lg-5-style section1 pt-md-0-style" id="home" data-section="home">
     <div class="container">
       <!-- Ensured row wrapper for .col elements -->
-      <div class="row align-items-center">
+      <div class="row align-items-center-style">
         <!-- Text Content -->
         <div class="col-lg-6 mb-4-style mb-lg-0-style section1-text-content text-md-start-style text-center-style">
-          <h1 class="text-dark-style mb-4-style d-lg-flex flex-lg-nowrap flex-wrap justify-content-center d-xl-block heading-letter-spacing">
+          <h1 class="text-dark-style mb-4-style d-lg-flex flex-lg-nowrap flex-wrap justify-content-center-style d-xl-block heading-letter-spacing">
             Make Your Place with<br />Modern Furniture
           </h1>
-          <p class="text-muted-style mb-4-style pe-md-5 col-lg-10 text-md-start-style text-center-style">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea co.
+          <p class="text-muted-style mb-4-style pe-md-5-style col-lg-10 text-md-start-style text-center-style">
+            Thoughtful interiors begin with furniture that balances comfort,
+            function, and enduring style. Our designers shape practical rooms
+            around your daily routines, using considered materials, warm
+            finishes, and tailored details for a home that feels entirely yours.
           </p>
-          <a href="#" class="btn px-4-style rounded-pill book-appointment-button">
-            Book Appointment
-          </a>
+          <div class="hero-actions zg-align-center">
+            <a href="#contact" class="btn px-4-style rounded-pill book-appointment-button" data-btn="hero">Book Appointment</a>
+          </div>
         </div>
 
         <!-- Image Content: replaced <divabout> with standard <div> and preserved classes -->
-        <div class="section1-image-content mt-md-2 col-lg-6 d-flex justify-content-center gap-4">
+        <div class="section1-image-content mt-md-2-style col-lg-6 d-flex justify-content-center-style gap-4">
           <div class="img-wrapper-style col-sm-auto col-12">
-            <img src="assets/images/homeinteriorswebsitetemplate-hero-a.webp" alt="Image 1" class="img-fluid rounded-bottom-5 rounded-pill image1" style="object-fit: cover" width="270" height="420" />
+            <img src="assets/images/homeinteriorswebsitetemplate-hero-a.webp" alt="Modern living-room shelving" class="img-fluid rounded-bottom-5 rounded-pill image1" width="270" height="420" />
           </div>
 
           <div class="img-wrapper-style col-sm-auto col-12">
-            <img src="assets/images/homeinteriorswebsitetemplate-hero-b.webp" alt="Image 2" class="img-fluid rounded-top-5 rounded-pill image2" style="object-fit: cover" width="270" height="420" />
+            <img src="assets/images/homeinteriorswebsitetemplate-hero-b.webp" alt="Contemporary fitted kitchen" class="img-fluid rounded-top-5 rounded-pill image2" width="270" height="420" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <a href="#" class="btn rounded-circle floating-btn">
-    <i class="bi bi-arrow-up"></i>
+  <a href="#home" class="btn rounded-circle floating-btn" aria-label="Back to top">
+    <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
   </a>
 
   <!-- Section 2 -->
   <section class="py-sm-5-style py-3-style section2" id="about" data-section="about">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row align-items-center-style">
         <!-- Image content -->
         <div class="col-lg-6 text-center-style mb-4-style mb-lg-0-style img-wrapper-style">
           <img src="assets/images/homeinteriorswebsitetemplate-2.webp" alt="Image 1" width="500" height="400" class="img-fluid rounded-pill aboutus-image" loading="lazy" />
         </div>
 
-        <div class="col-lg-6 text-center-style mb-0-style d-flex flex-column align-items-center justify-content-center about-us-section-text-section">
+        <div class="col-lg-6 text-center-style mb-0-style d-flex flex-column align-items-center-style justify-content-center-style about-us-section-text-section">
           <h2 class="text-center-style fs-1-style py-3-style fonts-for-heading aboutus-heading">
             ABOUT US
           </h2>
-          <hr class="mx-auto-style mx-md-0-style hr-color-style" style="width: 210px; " />
-          <p class="text-muted-style my-4-style w-100 text-center-style justify-content-center p-of-aboutus col-md-10 aboutus-para">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex
+          <hr class="mx-auto-style mx-md-0-style hr-color-style about-rule" />
+          <p class="text-muted-style my-4-style w-100 text-center-style justify-content-center-style p-of-aboutus col-md-10 aboutus-para">
+            We create welcoming interiors that reflect how you live, work,
+            gather, and recharge. From early sketches to final installation,
+            our team combines clear planning, dependable craftsmanship, and
+            carefully chosen materials to deliver rooms with lasting character.
           </p>
           <h5 class="fw-semibold-style mb-0-style text-center-style director-name">
-            Patricia C. Alcorn
+            Ananya Mehra
           </h5>
           <p class="fw-medium-style small-style mt-1-style text-center-style director-title">
             EXECUTIVE DIRECTOR
@@ -145,56 +141,39 @@
   <section class="py-5-style section3" id="services" data-section="services">
     <div class="container">
       <!-- Added a row wrapper around the heading block to enforce strict grid -->
-      <div class="row align-items-center">
-        <div class="col-12 text-center-style d-flex align-items-center mb-4-style mb-lg-0-style justify-content-center">
-          <div class="row align-items-center justify-content-center w-100">
+      <div class="row align-items-center-style">
+        <div class="col-12 text-center-style d-flex align-items-center-style mb-4-style mb-lg-0-style justify-content-center-style">
+          <div class="row align-items-center-style justify-content-center-style w-100">
             <div class="col-12">
-              <h1 class="text-uppercase text-center-style py-3-style fonts-for-heading section3-heading">
+              <h2 class="text-uppercase text-center-style py-3-style fonts-for-heading section3-heading">
                 WHAT WE OFFER
-              </h1>
-              <hr class="mx-auto-style mx-md-0-style justify-content-center hr-color-style" style="width: 180px; " />
+              </h2>
+              <hr class="mx-auto-style mx-md-0-style justify-content-center-style hr-color-style section-rule" />
             </div>
           </div>
         </div>
       </div>
 
       <!-- Image cards section: wrap columns in a row -->
-      <div class="row">
-        <div class="col-12 d-flex justify-content-evenly gap-4  flex-lg-nowrap flex-wrap">
-          <div class="position-relative section3-card">
-            <div class="img-wrapper-style col-12">
-              <img src="assets/images/homeinteriorswebsitetemplate-3a.webp" alt="Image 1" class="rounded-bottom-5 rounded-pill section3-image img-fluid" width="290" />
-            </div>
-            <div class="position-absolute start-50 translate-middle text-white text-center-style w-100 text-over-image fw-semibold-style">
-              STORAGE & SEATING
-            </div>
+      <div class="row g-4 services-grid">
+        <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+          <div class="section3-card service-card-surface service-card-storage">
+            <h3 class="text-over-image fw-semibold-style">STORAGE &amp; SEATING</h3>
           </div>
-
-          <div class="position-relative section3-card">
-            <div class="img-wrapper-style col-12">
-              <img src="assets/images/homeinteriorswebsitetemplate-3b.webp" alt="Image 2" class="rounded-top-5 rounded-pill section3-image img-fluid" width="290" />
-            </div>
-            <div class="position-absolute start-50 translate-middle text-white text-center-style w-100 text-over-image fw-semibold-style">
-              TABLES & DESKS
-            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+          <div class="section3-card service-card-surface service-card-tables">
+            <h3 class="text-over-image fw-semibold-style">TABLES &amp; DESKS</h3>
           </div>
-
-          <div class="position-relative section3-card">
-            <div class="img-wrapper-style  col-2black">
-              <img src="assets/images/homeinteriorswebsitetemplate-3c.webp" alt="Image 1" class="rounded-bottom-5 rounded-pill section3-image img-fluid" width="290" />
-            </div>
-            <div class="position-absolute start-50 translate-middle text-white text-center-style w-100 text-over-image fw-semibold-style">
-              LIGHTING & DECOR
-            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+          <div class="section3-card service-card-surface service-card-lighting">
+            <h3 class="text-over-image fw-semibold-style">LIGHTING &amp; DECOR</h3>
           </div>
-
-          <div class="position-relative section3-card">
-            <div class="img-wrapper-style col-12">
-              <img src="assets/images/homeinteriorswebsitetemplate-3d.webp" alt="Image 2" class="rounded-top-5 rounded-pill section3-image img-fluid" width="290" />
-            </div>
-            <div class="position-absolute start-50 translate-middle text-white text-center-style w-100 text-over-image fw-semibold-style">
-              OFFICE ACCESSORIES
-            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 clonable-card">
+          <div class="section3-card service-card-surface service-card-office">
+            <h3 class="text-over-image fw-semibold-style">OFFICE ACCESSORIES</h3>
           </div>
         </div>
       </div>
@@ -204,65 +183,62 @@
   <!-- Section 4 -->
   <section class="py-5-style section4" id="blogs" data-section="blogs">
     <div class="container">
-      <div class="row align-items-center justify-content-around">
+      <div class="row align-items-center-style justify-content-around-style">
         <!-- Text Content -->
-        <div class="col-lg-5 text-center-style d-flex row align-items-center mb-0-style text-md-start-style justify-content-center">
-          <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-lg-5 text-center-style d-flex row align-items-center-style mb-0-style text-md-start-style justify-content-center-style">
+          <div class="row align-items-center-style justify-content-center-style">
             <div class="col-12">
               <h2 class="text-center-style fs-1-style py-3-style fonts-for-heading">
                 OUR PROJECTS
               </h2>
-              <hr class="mx-auto-style mx-md-0-style hr-color-style" style="width: 200px; " />
+              <hr class="mx-auto-style mx-md-0-style hr-color-style projects-rule" />
             </div>
           </div>
 
           <p class="my-4-style text-center-style our-projects-small-text">
-            LOREM IPSUM, DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT, SED DO
-            EIUSMOD TEMPOR INCIDIDUNT.
+            BESPOKE ROOMS, DESIGNED AROUND EVERYDAY COMFORT, CRAFT, AND CHARACTER.
           </p>
 
           <p class="text-muted-style my-4-style text-center-style text-justify p-of-projects">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea co.
+            Explore kitchens and living spaces shaped through careful planning,
+            balanced materials, and precise installation. Each project responds
+            to the client's routines, storage needs, and preferred atmosphere,
+            creating an interior that remains useful, welcoming, and distinctly personal.
           </p>
 
-          <div class="row">
-            <div class="col-12 col-md-5 text-center-style d-flex flex-wrap align-items-center mb-0-style text-md-start-style justify-content-center w-auto">
-              <div class="image-room1" data-large="assets/images/homeinteriorswebsitetemplate-hero-a.webp">
+          <div class="row project-thumbnails g-2">
+              <div class="col-6 col-md-4 clonable-card image-room1" data-large="assets/images/homeinteriorswebsitetemplate-hero-a.webp">
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/homeinteriorswebsitetemplate-hero-a.webp" alt="Room Image" class="image-room-img img-fluid" loading="lazy" />
                 </div>
                 <h3 class="image-room-text">BACKSPLASH <br />INSTALLATION</h3>
               </div>
 
-              <div class="image-room1" data-large="assets/images/homeinteriorswebsitetemplate-3d.webp">
+              <div class="col-6 col-md-4 clonable-card image-room1" data-large="assets/images/homeinteriorswebsitetemplate-3d.webp">
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/homeinteriorswebsitetemplate-3d.webp" alt="Room Image" class="image-room-img img-fluid" loading="lazy" />
                 </div>
                 <h3 class="image-room-text">COUNTERTOP <br />SELECTION</h3>
               </div>
 
-              <div class="image-room1" data-large="assets/images/homeinteriorswebsitetemplate-3b.webp">
+              <div class="col-6 col-md-4 clonable-card image-room1" data-large="assets/images/homeinteriorswebsitetemplate-3b.webp">
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/homeinteriorswebsitetemplate-3b.webp" alt="Room Image" class="image-room-img img-fluid" loading="lazy" />
                 </div>
-                <h3 class="image-room-text">CABIET <br />REFINISHING</h3>
+                <h3 class="image-room-text">CABINET <br />REFINISHING</h3>
               </div>
 
-              <div class="image-room1" data-large="assets/images/homeinteriorswebsitetemplate-hero-a.webp">
+              <div class="col-6 col-md-4 clonable-card image-room1" data-large="assets/images/homeinteriorswebsitetemplate-hero-a.webp">
                 <div class="img-wrapper-style col-12">
                   <img src="assets/images/homeinteriorswebsitetemplate-2.webp" alt="Room Image" class="image-room-img img-fluid" loading="lazy" />
                 </div>
                 <h3 class="image-room-text">CABINET <br />REFINISHING</h3>
               </div>
-            </div>
           </div>
         </div>
 
         <!-- Image content -->
-        <div class="col-lg-4 text-center-style mb-4-style mb-lg-0-style py-2-style">
+        <div class="col-12 col-lg-4 text-center-style mb-4-style mb-lg-0-style py-2-style">
           <img src="assets/images/homeinteriorswebsitetemplate-4.webp" alt="Image 1" class="img-fluid rounded-pill image-kitchen1" id="mainPreviewImage" loading="lazy" />
         </div>
       </div>
@@ -272,27 +248,31 @@
   <!-- Section 5 -->
   <section class="py-5-style section5" id="stats-section" data-section="stats-section">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="d-flex justify-content-around section5-box-container">
-            <div class="section5-each-box">
-              <div class="section5-number w-100">98</div>
-              <div class="section5-projects">Projects</div>
+      <div class="row g-3 section5-box-container">
+            <div class="col-6 col-lg-3 clonable-card">
+              <div class="section5-each-box">
+              <span class="section5-number w-100">98</span>
+              <span class="section5-projects">Projects</span>
+              </div>
             </div>
-            <div class="section5-each-box">
-              <div class="section5-number w-100">65</div>
-              <div class="section5-projects">People</div>
+            <div class="col-6 col-lg-3 clonable-card">
+              <div class="section5-each-box">
+              <span class="section5-number w-100">65</span>
+              <span class="section5-projects">People</span>
+              </div>
             </div>
-            <div class="section5-each-box">
-              <div class="section5-number w-100">10</div>
-              <div class="section5-projects">Years</div>
+            <div class="col-6 col-lg-3 clonable-card">
+              <div class="section5-each-box">
+              <span class="section5-number w-100">10</span>
+              <span class="section5-projects">Years</span>
+              </div>
             </div>
-            <div class="section5-each-box">
-              <div class="section5-number w-100">15</div>
-              <div class="section5-projects">Offices</div>
+            <div class="col-6 col-lg-3 clonable-card">
+              <div class="section5-each-box">
+              <span class="section5-number w-100">15</span>
+              <span class="section5-projects">Offices</span>
+              </div>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -300,12 +280,12 @@
   <!-- Section 6 -->
   <section class="pt-5-style pb-3-style section6" id="testimonials" data-section="testimonials">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 text-center-style d-flex align-items-center mb-4-style mb-lg-0-style justify-content-center">
-          <div class="row align-items-center justify-content-center w-100">
+      <div class="row align-items-center-style">
+        <div class="col-12 text-center-style d-flex align-items-center-style mb-4-style mb-lg-0-style justify-content-center-style">
+          <div class="row align-items-center-style justify-content-center-style w-100">
             <div class="col-12">
-              <h1 class="text-center-style py-3-style fonts-for-heading">TESTIMONIALS</h1>
-              <hr class="mx-auto-style mx-md-0-style justify-content-center hr-color-style" style="width: 180px; " />
+              <h2 class="text-center-style py-3-style fonts-for-heading">TESTIMONIALS</h2>
+              <hr class="mx-auto-style mx-md-0-style justify-content-center-style hr-color-style section-rule" />
             </div>
           </div>
         </div>
@@ -319,11 +299,11 @@
             <div class="swiper-slide">
               <div class="boxes-text">
                 <div class="star-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                 </div>
                 <p class="p-below-star">
                   Just to let you know your team is the best I've ever had the pleasure
@@ -337,11 +317,11 @@
             <div class="swiper-slide">
               <div class="boxes-text">
                 <div class="star-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                 </div>
                 <p class="p-below-star">
                   Monday morning my bathroom was in shambles and by Friday afternoon, I had a dream bathroom.
@@ -354,11 +334,11 @@
             <div class="swiper-slide">
               <div class="boxes-text">
                 <div class="star-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                 </div>
                 <p class="p-below-star">
                   We like this company so well that we are going to hire them...
@@ -370,17 +350,17 @@
             <div class="swiper-slide">
               <div class="boxes-text">
                 <div class="star-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                 </div>
                 <p class="p-below-star">
-                  We like this company so well that we are going to hire them...
+                  Our compact living room now feels warm, practical, and beautifully organized...
                 </p>
-                <h4 class="name-below-pstar">Vinit Sharma</h4>
-                <p class="testimonial-speaker-address">Meghalaya, India</p>
+                <h4 class="name-below-pstar">Priya Mehta</h4>
+                <p class="testimonial-speaker-address">Pune, India</p>
               </div>
             </div>
 
@@ -391,7 +371,7 @@
         </div>
 
         <!-- Carousel version (mobile) -->
-        <div id="testimonialCarousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
+        <div id="testimonialCarousel" class="carousel slide d-lg-none testimonial-carousel" data-bs-ride="carousel">
           <div class="carousel-indicators" id="carouselPagination">
             <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -400,75 +380,75 @@
 
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center-style">
                 <div class="boxes-text">
                   <div class="star-rating">
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                   </div>
                   <p class="p-below-star">
                     Just to let you know your team is the best I've ever had the pleasure
                     of working with! They were professional, polite, and the work was exceptional.
                   </p>
-                  <h4 class="name-below-pstar">Chalsea Murray</h4>
-                  <p class="testimonial-speaker-address">MINNEAPOLIS, MN</p>
+                  <h4 class="name-below-pstar">Chitra Verma</h4>
+                  <p class="testimonial-speaker-address">BHOPAL, MP</p>
                 </div>
               </div>
             </div>
 
             <div class="carousel-item">
-              <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center-style">
                 <div class="boxes-text">
                   <div class="star-rating">
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                   </div>
                   <p class="p-below-star">
                     Monday morning my bathroom was in shambles and by Friday afternoon, I had a dream bathroom.
                     It’s a sanctuary. I helped design it myself, the guys were great and it’s satisfaction
                     guaranteed…
                   </p>
-                  <h4 class="name-below-pstar">Thomas Williams</h4>
-                  <p class="testimonial-speaker-address">OAKLAND, CA</p>
+                  <h4 class="name-below-pstar">Sachin Yadav</h4>
+                  <p class="testimonial-speaker-address">DEHRADUN, UK</p>
                 </div>
               </div>
             </div>
 
             <div class="carousel-item">
-              <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center-style">
                 <div class="boxes-text">
                   <div class="star-rating">
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
-                    <i class="bi bi-star-fill" data-icon="star-fill"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                    <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                   </div>
                   <p class="p-below-star">
                     We like this company so well that we are going to hire them to help us get our condo ready to
                     sell.
                     We are bringing them aboard next year to build a master bedroom.
                   </p>
-                  <h4 class="name-below-pstar">Vanessa Hall</h4>
-                  <p class="testimonial-speaker-address">MINNEAPOLIS, MN</p>
+                  <h4 class="name-below-pstar">Vinit Sharma</h4>
+                  <p class="testimonial-speaker-address">SHILLONG, ML</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+            <i class="bi bi-chevron-left" data-icon="chevron-left" aria-hidden="true"></i>
             <span class="visually-hidden">Previous</span>
           </button>
 
-          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+            <i class="bi bi-chevron-right" data-icon="chevron-right" aria-hidden="true"></i>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
@@ -480,66 +460,73 @@
   <!-- Section 7 -->
   <section class="py-5-style section7" id="contact" data-section="contact">
     <div class="container">
-      <div class="row align-items-center justify-content-center mx-auto-style">
-        <div class="col-lg-12 text-center-style row d-flex align-items-center mb-4-style mb-lg-0-style justify-content-center contact-us-container-for-max-width">
-          <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center-style justify-content-center-style mx-auto-style">
+        <div class="col-lg-12 text-center-style row d-flex align-items-center-style mb-4-style mb-lg-0-style justify-content-center-style contact-us-container-for-max-width">
+          <div class="row align-items-center-style justify-content-center-style">
             <div class="col-12">
-              <h1 class="text-center-style py-3-style fonts-for-heading">
+              <h2 class="text-center-style py-3-style fonts-for-heading">
                 CONTACT US
-              </h1>
-              <hr class="mx-auto-style mx-md-0-style justify-content-center hr-color-style" style="width: 180px;" />
+              </h2>
+              <hr class="mx-auto-style mx-md-0-style justify-content-center-style hr-color-style section-rule" />
             </div>
           </div>
 
-          <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="form-of-section7 w-100">
-
+          <form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="form-of-section7">
+            <input type="hidden" name="domain" value="">
+            <input type="hidden" name="form_key" value="contact">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="_company" value="">
             <div form-question-zigrow>
-              <input type="Name" name="name" value="" placeholder="Your Name" required />
+              <label for="contact-name">Your Name</label>
+              <input id="contact-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" />
             </div>
 
             <div form-question-zigrow>
-              <input type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="Enter your phone number here" name="phone">
+              <label for="contact-phone">Phone Number</label>
+              <input id="contact-phone" type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Please enter a valid phone number." placeholder="Enter your phone number here" name="phone" required autocomplete="tel">
             </div>
-            <button type="submit" class="btn w-100 submit-button-contactus">
-              Get In Touch
-            </button>
+            <button class="submit-button-contactus" type="submit">Get In Touch</button>
           </form>
 
         </div>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer container-fluid footer-my-css" id="footer" data-section="footer">
     <div class="container">
-      <div class="row justify-content-between align-items-center">
+      <div class="row justify-content-between-style align-items-center-style">
         <div class="col-md-6">
-          <div class="lets-talk mb-2-style">Let's Talk</div>
+          <p class="lets-talk mb-2-style">Let's Talk</p>
 
-          <div class="headline mb-4-style we-create-nice">
+          <h2 class="headline mb-4-style we-create-nice">
             We Create Nice <span>Homes</span>
-          </div>
+          </h2>
 
-          <div class="nav-links mb-4-style">
-            <a href="#" class="">Home</a>
-            <a href="#" class="">About</a>
-            <a href="#" class="">Services</a>
-            <a href="#" class="">Blogs</a>
-            <a href="#" class="">Contact</a>
-          </div>
+          <ul class="nav-links mb-4-style">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
 
-        <div class="col-md-3 d-flex justify-content-center text-md-end-style mt-4-style mt-md-0-style">
+        <div class="col-md-3 d-flex justify-content-center-style text-md-end-style mt-4-style mt-md-0-style">
           <div class="social-icons">
-            <a class="aboutus-image" href="#"><i class="fab fa-twitter" data-icon="twitter"></i></a>
-            <a class="aboutus-image" href="#"><i class="fab fa-facebook-f" data-icon="facebook"></i></a>
-            <a class="aboutus-image" href="#"><i class="fab fa-instagram" data-icon="instagram"></i></a>
+            <a class="aboutus-image" href="#" aria-label="X"><i class="fab fa-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+            <a class="aboutus-image" href="#" aria-label="Facebook"><i class="fab fa-facebook-f" data-icon="facebook" aria-hidden="true"></i></a>
+            <a class="aboutus-image" href="#" aria-label="Instagram"><i class="fab fa-instagram" data-icon="instagram" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom mt-4-style">© 2025. All rights reserved.</div>
+      <p class="footer-bottom mt-4-style">© <span id="currentYear">2025</span>. All rights reserved.</p>
+      <div class="zigrow-attribution-row">
+        <p><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
+      </div>
     </div>
   </footer>
 
@@ -606,12 +593,11 @@
   </script>
 
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=20260824-4"></script>
 
   <script>
     (function() {
-      // Find ALL Zigrow forms
-      const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
+      const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
       if (!forms.length) return;
 
       // Helper: turn FormData into a plain object
@@ -619,14 +605,10 @@
         const fd = new FormData(form);
         const raw = {};
         for (const [name, value] of fd.entries()) {
-          const el = form.elements[name];
-          const isGroup = el && (el.length && el[0] && el[0].type === 'checkbox');
-          if (isGroup) {
-            if (!raw[name]) raw[name] = [];
-            raw[name].push(value === '' ? true : value);
-          } else {
-            raw[name] = value;
-          }
+          const existing = raw[name];
+          if (existing === undefined) raw[name] = value;
+          else if (Array.isArray(existing)) existing.push(value === '' ? true : value);
+          else raw[name] = [existing, value === '' ? true : value];
         }
         return raw;
       }
@@ -635,7 +617,7 @@
       function pickPrimaryValue(raw) {
         if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
         if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-        const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
+        const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim();
         if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
         if (nameCombo) return nameCombo;
         if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
@@ -643,33 +625,32 @@
       }
 
       forms.forEach((form) => {
-        // Ensure hidden fields are filled
         const domainInput = form.querySelector('input[name="domain"]');
         const pageUrlInput = form.querySelector('input[name="page_url"]');
         if (domainInput) domainInput.value = location.host;
         if (pageUrlInput) pageUrlInput.value = location.href;
 
-        // Create a container for messages if not already exists
         let msgContainer = form.querySelector('.form-submit-message');
         if (!msgContainer) {
           msgContainer = document.createElement('div');
-          msgContainer.className = 'form-submit-message mt-2 text-sm';
+          msgContainer.className = 'form-submit-message';
+          msgContainer.setAttribute('role', 'status');
+          msgContainer.setAttribute('aria-live', 'polite');
           form.appendChild(msgContainer);
         }
 
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
 
-          const submitBtn = form.querySelector('[type="submit"]');
+          const submitBtn = form.querySelector(':scope > [type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.dataset._oldText = submitBtn.innerText;
-            submitBtn.innerText = 'Submitting...';
+            submitBtn.dataset.oldText = submitBtn.textContent || '';
+            submitBtn.textContent = 'Submitting...';
           }
 
-          // Clear previous message
-          msgContainer.innerText = '';
-          msgContainer.style.color = '';
+          msgContainer.textContent = '';
+          msgContainer.removeAttribute('data-status');
 
           try {
             const raw = serializeForm(form);
@@ -695,24 +676,25 @@
             const data = await res.json().catch(() => ({}));
             if (res.ok && (data.ok ?? true)) {
               form.reset();
-              msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
-              msgContainer.style.color = '#28a745'; // green success
+              msgContainer.textContent = 'Thanks! Your request has been submitted.';
+              msgContainer.dataset.status = 'success';
             } else {
-              msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
-              msgContainer.style.color = '#dc3545'; // red error
+              msgContainer.textContent = data.message || `Failed (HTTP ${res.status})`;
+              msgContainer.dataset.status = 'error';
             }
           } catch (err) {
             console.error(err);
-            msgContainer.innerText = '❌ Something went wrong. Please try again.';
-            msgContainer.style.color = '#dc3545';
+            msgContainer.textContent = 'Something went wrong. Please try again.';
+            msgContainer.dataset.status = 'error';
           } finally {
             if (submitBtn) {
               submitBtn.disabled = false;
-              submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
+              submitBtn.textContent = submitBtn.dataset.oldText || 'Send';
             }
           }
         });
       });
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
     })();
   </script>
 

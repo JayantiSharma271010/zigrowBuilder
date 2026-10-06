@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motivational Speaker</title>
     <!-- Fav Icon -->
-    <link rel="icon" href="assets/fav-icon.png" type="image/png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/img/logo.webp" type="image/webp" />
 
     <!-- Bootstrap link -->
     <link
@@ -24,7 +23,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-      integrity="sha512-...your-integrity-hash..."
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -44,26 +42,27 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css?v=2.14.0" />
   </head>
   <body>
     <!-- Back to Top Button -->
     <button
       id="backToTop"
-      class="back-to-top d-flex align-items-center justify-content-center"
+      class="back-to-top"
       aria-label="Back to Top"
     >
-      <i class="bi bi-arrow-up-short fs-3"></i>
+      <i class="bi bi-arrow-up-short" data-icon="arrow-up" aria-hidden="true"></i>
     </button>
 
 
       <!-- Header -->
-  <header>
-    <nav id="mainNavbar" class="navbar navbar-expand-lg py-3 transition-navbar">
+  <header id="header" data-section="header">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg transition-navbar navbar-shell">
       <div class="container">
 
         <!-- Logo -->
-        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
-        <img src="assets/img/logo.png" alt="" class="img-fluid">
+        <a class="navbar-brand brand-logo" href="#hero" data-logo="navbar">
+        <img src="assets/img/logo.webp" alt="Jane Cooper motivational speaker logo">
         </a>
 
         <!-- Toggle button -->
@@ -77,83 +76,89 @@
 
 
         <!-- Menu Items -->
-        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
-          <ul class="navbar-nav mx-auto gap-lg-4 text-center font-montserrat">
-            <li class="nav-item py-lg-2 py-3 font-montserrat"><a class="nav-link p-0 " href="#hero">Home</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#about">About</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#features">Events</a></li>
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#testimonials">Testimonials</a></li>
+        <div class="collapse navbar-collapse navbar-content" id="navbarContent">
+          <ul class="navbar-nav navbar-menu font-montserrat">
+            <li class="nav-item nav-item-spacing font-montserrat"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item nav-item-spacing"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item nav-item-spacing"><a class="nav-link" href="#features">Events</a></li>
+            <li class="nav-item nav-item-spacing"><a class="nav-link" href="#testimonials">Testimonials</a></li>
 
-            <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#download-ebook">Contact</a></li>
+            <li class="nav-item nav-item-spacing"><a class="nav-link" href="#download-ebook">Contact</a></li>
 
           </ul>
-         <div class="d-lg-block ">
-                        <a href="tel:+1234567890" class="call-now-btn nav-btn">
-                            <i class="bi bi-telephone-fill me-2"></i> Book a Call
+         <div class="navbar-actions zg-align-center">
+                        <a href="tel:+1234567890" class="call-now-btn nav-btn" data-btn="nav">
+                            <i class="bi bi-telephone-fill" data-icon="telephone" aria-hidden="true"></i> Book a Call
                         </a>
                     </div>
 
+        </div>
       </div>
     </nav>
 
 
   </header>
   <!-- Header Ends Here -->
+  <main>
     <!-- ===================== Hero Section Start ===================== -->
-<section id="hero" class="position-relative text-center text-white py-5">
-  <div class="hero-content  px-3">
-    <h1 class="display-3 fw-normal playfair-font">Find Your Professional Life Coach</h1>
-    <p class="lead mx-auto mb-4" style="max-width: 640px;">
+<section id="hero" data-section="hero" class="hero-section">
+  <div class="hero-content section-header">
+    <h1 class="hero-title playfair-font">Find Your Professional Life Coach</h1>
+    <p class="hero-description">
       Empowering Lives Through Inspiring Stories and Transformative Words That Ignite Change and Foster Growth in Every Individual
     </p>
-    <div class="social-icons mb-4">
-      <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
-      <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+    <div class="social-icons">
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter" data-icon="twitter" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook" data-icon="facebook" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram" data-icon="instagram" aria-hidden="true"></i></a>
     </div>
-    <a href="#" class="secondary-btn rounded-3 fw-semibold ">
+    <div class="hero-actions zg-align-center">
+    <a href="#about" class="secondary-btn" data-btn="hero">
       Get Started For Free!
     </a>
+    </div>
   </div>
 
   <div class="hero-image-wrapper">
-    <img src="assets/img/Motivational hero.webp" alt="Hero" class="img-fluid shadow ">
+    <img src="assets/img/motivational-hero.webp" alt="Motivational speaker presenting to an audience" class="hero-image">
   </div>
 </section>
 
     <!-- ===================== Hero Section End ======================= -->
 
     <!-- ===================== About Section Start ==================== -->
-    <section id="about" class="position-relative py-6">
-      <div class="">
-        <div class="text-center mb-5">
-           <h6 class="main-heading mb-md-3 mb-2">About Me</h6>
+    <section id="about" data-section="about" class="about-section section-spacing">
+      <div class="about-container">
+        <div class="section-header section-header-centered">
+           <h2 class="main-heading">About Me</h2>
         </div>
-        <div class="row align-items-center g-lg-5 g-0 ">
+        <div class="row about-layout g-lg-5 g-0 section-body">
           <!-- Left: Image -->
-          <div class="col-lg-6 position-relative">
+          <div class="col-lg-6 about-image-column">
             <img
-              src="assets/img/Motivation Section 2.webp"
-              alt="user"
-              class="img-fluid rounded-4 shadow about-img"
+              src="assets/img/motivation-section-2.webp"
+              alt="Abhijeet Jain speaking at a coaching session"
+              class="about-img"
             />
           </div>
 
           <!-- Right: Text Card -->
           <div class="col-lg-6">
             <div
-              class="about-card bg-white rounded-4  shadow position-relative"
+              class="about-card"
             >
-              <h5 class="fw-semibold mb-2 playfair-font heading">Abhijeet Jain</h5>
-              <p class=" mb-4 sub-heading">Empowering Lives Through Words</p>
-              <p class="mb-4 main-subpara">
+              <h3 class="playfair-font heading">Abhijeet Jain</h3>
+              <p class="sub-heading">Empowering Lives Through Words</p>
+              <p class="main-subpara">
                 Hello, I’m Abhijeet Jain, a motivational speaker, storyteller, and
                 advocate for personal growth. With years of experience inspiring
                 individuals, teams, and organizations, I believe in the
                 transformative power of words. My journey is a testament to
                 resilience, determination, and the pursuit of purpose.
               </p>
-              <a href="#" class="primary-btn">Read more</a>
+              <div class="about-actions zg-align-center">
+                <a href="#services" class="primary-btn" data-btn="about">Read more</a>
+              </div>
             </div>
           </div>
         </div>
@@ -163,27 +168,29 @@
     <!-- ===================== About Section End ====================== -->
 
     <!-- ===================== Services Section Start ================= -->
-    <section id="services" class="py-6">
-      <div class="container text-center">
+    <section id="services" data-section="services" class="section-spacing">
+      <div class="container services-container">
         <!-- Heading -->
-        <h6 class="main-heading mb-md-3 mb-2">My Values</h6>
-        <p class="main-subpara mb-5">
+        <div class="section-header section-header-centered">
+        <h2 class="main-heading">My Values</h2>
+        <p class="main-subpara">
           As a motivational speaker, storyteller, and advocate for personal
           growth, I believe in the power of resilience, authenticity, and
           connection. My mission is to inspire individuals to embrace their
           unique journeys.
         </p>
+        </div>
 
         <!-- Cards Row -->
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 services-grid section-body">
           <!-- Card 1 -->
-          <div class="col-md-4">
+          <div class="col-md-4 clonable-card">
             <div
-              class="service-card h-100 text-start p-4 rounded-4 shadow-sm transition"
+              class="service-card"
             >
-              <h5 class="mb-3">Commitment</h5>
-              <p class="mb-0">
-                Hello, I'm [Speaker’s Name], a motivational speaker,
+              <h3>Commitment</h3>
+              <p>
+                Hello, I'm Abhijeet Jain, a motivational speaker,
                 storyteller, and advocate for personal growth. With years of
                 experience.
               </p>
@@ -191,13 +198,13 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-md-4">
+          <div class="col-md-4 clonable-card">
             <div
-              class="service-card h-100 text-start p-4 rounded-4 shadow-sm transition"
+              class="service-card"
             >
-              <h5 class="fw-semibold mb-3">Inspiration</h5>
-              <p class="mb-0">
-                My journey began in [Year], when I realized the power of words
+              <h3>Inspiration</h3>
+              <p>
+                My journey began when I realized the powerful way that words
                 to transform lives. I have dedicated my life to helping others
                 find their voices.
               </p>
@@ -205,12 +212,12 @@
           </div>
 
           <!-- Card 3 (Highlighted) -->
-          <div class="col-md-4">
+          <div class="col-md-4 clonable-card">
             <div
-              class="service-card h-100 text-start p-4 rounded-4 shadow-sm transition"
+              class="service-card"
             >
-              <h5 class="fw-semibold mb-3">Empowerment</h5>
-              <p class="mb-0">
+              <h3>Empowerment</h3>
+              <p>
                 Through workshops and seminars, I empower individuals to take
                 charge of their lives, embrace change, and turn their dreams
                 into actionable goals.
@@ -224,33 +231,33 @@
     <!-- ===================== Services Section End =================== -->
 
     <!-- ===================== Stats / Achievements Start ============= -->
-    <section id="stats" class="bg-light py-lg-5">
+    <section id="stats" data-section="stats" class="stats-section">
       <div class="container">
         <!-- Desktop View -->
         <div
-          class=" d-flex flex-md-row flex-column justify-content-between align-items-center text-center"
+          class="stats-list"
         >
-          <div class="stat-item px-4">
-            <h4 class="fw-semibold mb-1">15+</h4>
-            <p class="small mb-0 text-muted">Years Experience</p>
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p class="stat-label">Years Experience</p>
           </div>
           <div class="divider"></div>
 
-          <div class="stat-item px-4">
-            <h4 class="fw-semibold mb-1">30+</h4>
-            <p class="small mb-0 text-muted">Trusted Partners</p>
+          <div class="stat-item">
+            <h3>30+</h3>
+            <p class="stat-label">Trusted Partners</p>
           </div>
           <div class="divider"></div>
 
-          <div class="stat-item px-4">
-            <h4 class="fw-semibold mb-1">95%</h4>
-            <p class="small mb-0 text-muted">Problem Solved</p>
+          <div class="stat-item">
+            <h3>95%</h3>
+            <p class="stat-label">Problem Solved</p>
           </div>
           <div class="divider"></div>
 
-          <div class="stat-item px-4">
-            <h4 class="fw-semibold mb-1">2,000+</h4>
-            <p class="small mb-0 text-muted">Satisfied Clients</p>
+          <div class="stat-item">
+            <h3>2,000+</h3>
+            <p class="stat-label">Satisfied Clients</p>
           </div>
         </div>
 
@@ -260,126 +267,127 @@
 
     <!-- ===================== Stats / Achievements End =============== -->
 
-    <section id="video" class="py-6">
+    <section id="video" data-section="video" class="section-spacing">
       <div class="container">
         <div
-          class="video-wrapper position-relative rounded overflow-hidden shadow"
+          class="video-wrapper"
         >
           <img
             src="assets/img/video-img.webp"
             alt="Video Preview"
-            class="img-fluid w-100 video-image"
+            class="video-image"
           />
           <a
             href="#"
-            class="play-button position-absolute top-50 start-50 translate-middle"
+            class="play-button"
+            aria-label="Play featured video"
           >
-            <i class="bi bi-play-circle-fill"></i>
+            <i class="bi bi-play-circle-fill" data-icon="play-circle" aria-hidden="true"></i>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ===================== Featured Video or Image Section Start == -->
-    <section id="features" class="py-5">
+    <section id="features" data-section="features" class="features-section section-spacing">
       <div class="container">
-        <div class="text-center">
-          <h6 class="main-heading mb-md-3 mb-2">Event Schedule</h6>
-          <p class="main-subpara mb-5">
-            Hello, I’m [Speaker’s Name], a motivational speaker, storyteller,
+        <div class="section-header section-header-centered">
+          <h2 class="main-heading">Event Schedule</h2>
+          <p class="main-subpara">
+            Hello, I’m Abhijeet Jain, a motivational speaker and storyteller,
             and advocate for personal growth. With years of experience inspiring
             individuals.
           </p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 event-grid section-body">
           <!-- Event Card -->
-          <div class="col-md-6 col-lg-6">
-            <div class="event-card d-flex py-sm-4 px-3 py-3 align-items-start">
-              <div class="event-date text-center me-4">
+          <div class="col-md-6 col-lg-6 clonable-card">
+            <div class="event-card">
+              <div class="event-date">
                 <span class="day">9</span>
                 <span class="month">Nov</span>
               </div>
               <div class="event-details">
-                <div class="d-flex flex-sm-row flex-column gap-5 mb-3">
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-geo-alt-fill me-1"></i>BNDC Nusa Dua
+                <div class="event-meta">
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-geo-alt-fill" data-icon="location" aria-hidden="true"></i></span>BNDC Nusa Dua
                   </p>
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-clock-fill me-1"></i>10:00 A.M – End
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-clock-fill" data-icon="clock" aria-hidden="true"></i></span>10:00 A.M – End
                   </p>
                 </div>
-                <h6 class="mb-0">
+                <h3>
                   Discovering Your Inner Strength: A Life Coaching Workshop
-                </h6>
+                </h3>
               </div>
             </div>
             <div class="divider "></div>
           </div>
 
-          <div class="col-md-6 col-lg-6">
-            <div class="event-card d-flex py-sm-4 px-3 py-3 align-items-start">
-              <div class="event-date text-center me-4">
+          <div class="col-md-6 col-lg-6 clonable-card">
+            <div class="event-card">
+              <div class="event-date">
                 <span class="day">9</span>
                 <span class="month">Nov</span>
               </div>
               <div class="event-details">
-                <div class="d-flex flex-sm-row flex-column gap-5 mb-3">
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-geo-alt-fill me-1"></i>BNDC Nusa Dua
+                <div class="event-meta">
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-geo-alt-fill" data-icon="location" aria-hidden="true"></i></span>BNDC Nusa Dua
                   </p>
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-clock-fill me-1"></i>10:00 A.M – End
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-clock-fill" data-icon="clock" aria-hidden="true"></i></span>10:00 A.M – End
                   </p>
                 </div>
-                <h6 class="mb-0">
+                <h3>
                   Discovering Your Inner Strength: A Life Coaching Workshop
-                </h6>
+                </h3>
               </div>
             </div>
             <div class="divider "></div>
           </div>
 
-           <div class="col-md-6 col-lg-6">
-            <div class="event-card d-flex py-sm-4 px-3 py-3 align-items-start">
-              <div class="event-date text-center me-4">
+           <div class="col-md-6 col-lg-6 clonable-card">
+            <div class="event-card">
+              <div class="event-date">
                 <span class="day">9</span>
                 <span class="month">Nov</span>
               </div>
               <div class="event-details">
-                <div class="d-flex flex-sm-row flex-column gap-5 mb-3">
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-geo-alt-fill me-1"></i>BNDC Nusa Dua
+                <div class="event-meta">
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-geo-alt-fill" data-icon="location" aria-hidden="true"></i></span>BNDC Nusa Dua
                   </p>
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-clock-fill me-1"></i>10:00 A.M – End
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-clock-fill" data-icon="clock" aria-hidden="true"></i></span>10:00 A.M – End
                   </p>
                 </div>
-                <h6 class="mb-0">
+                <h3>
                   Discovering Your Inner Strength: A Life Coaching Workshop
-                </h6>
+                </h3>
               </div>
             </div>
       
           </div>
 
-           <div class="col-md-6 col-lg-6">
-            <div class="event-card d-flex py-sm-4 px-3 py-3 align-items-start">
-              <div class="event-date text-center me-4">
+           <div class="col-md-6 col-lg-6 clonable-card">
+            <div class="event-card">
+              <div class="event-date">
                 <span class="day">9</span>
                 <span class="month">Nov</span>
               </div>
               <div class="event-details">
-                <div class="d-flex flex-sm-row flex-column gap-5 mb-3">
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-geo-alt-fill me-1"></i>BNDC Nusa Dua
+                <div class="event-meta">
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-geo-alt-fill" data-icon="location" aria-hidden="true"></i></span>BNDC Nusa Dua
                   </p>
-                  <p class="mb-1 text-muted">
-                    <i class="bi bi-clock-fill me-1"></i>10:00 A.M – End
+                  <p>
+                    <span class="event-meta-icon"><i class="bi bi-clock-fill" data-icon="clock" aria-hidden="true"></i></span>10:00 A.M – End
                   </p>
                 </div>
-                <h6 class="mb-0">
+                <h3>
                   Discovering Your Inner Strength: A Life Coaching Workshop
-                </h6>
+                </h3>
               </div>
             </div>
           </div>
@@ -392,12 +400,12 @@
     <!-- ===================== Featured Video or Image Section End ==== -->
 
     <!-- ===================== Testimonials Section Start ============= -->
-    <section id="testimonials" class="py-6">
+    <section id="testimonials" data-section="testimonials" class="section-spacing">
       <div class="container">
 
-        <div class="text-center">
-          <h6 class="main-heading mb-md-3 mb-2">Testimonials</h6>
-         <h2 class="fw-bold main-subpara mb-5">What People Say About Me</h2>
+        <div class="section-header section-header-centered">
+          <h2 class="main-heading">Testimonials</h2>
+         <p class="testimonial-heading main-subpara">What People Say About Me</p>
         </div>
        
 
@@ -405,69 +413,75 @@
           <div class="swiper-wrapper">
             <!-- Testimonial Slide 1 -->
             <div class="swiper-slide">
-              <div class="testimonial-card p-4 ">
-                <div class="stars text-warning mb-2">★★★★★</div>
-                <p class="testimonial-text mb-4 col-md-9  ">
-                  “I was very impressed by the avion service, lorem ipsum is
-                  simply free text used by copytyping.”
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  “The session gave me practical tools and renewed confidence
+                  to lead my team through change with greater clarity.”
                 </p>
                 <div class="divider"></div>
-                <div class="d-flex align-items-center">
-                  <img
-                    src="assets/img/testimonial a.webp"
-                    alt="Edna"
-                    class="rounded-circle me-3"
-                    width="50"
-                    height="50"
-                  />
+                <div class="testimonial-person">
+                  <div class="testimonial-avatar-wrapper">
+                    <img
+                      src="assets/img/testimonial-a.webp"
+                      alt="Deepak Tiwari"
+                      class="testimonial-avatar"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
                   <div>
-                    <h6 class="mb-0 customer-full_name">Deepak Tiwari</h6>
+                    <h3 class="customer-full_name">Deepak Tiwari</h3>
                     <small class="customer-name">Customer</small>
                   </div>
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="testimonial-card p-4 ">
-                <div class="stars text-warning mb-2">★★★★★</div>
-                <p class="testimonial-text mb-4 col-md-9  ">
-                  “I was very impressed by the avion service, lorem ipsum is
-                  simply free text used by copytyping.”
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  “Every story felt relevant and honest. I left with a clear
+                  plan to improve my habits and stay focused on meaningful goals.”
                 </p>
                 <div class="divider"></div>
-                <div class="d-flex align-items-center">
-                  <img
-                    src="assets/img/testimonial b.webp"
-                    alt="Edna"
-                    class="rounded-circle me-3"
-                    width="50"
-                    height="50"
-                  />
+                <div class="testimonial-person">
+                  <div class="testimonial-avatar-wrapper">
+                    <img
+                      src="assets/img/testimonial-b.webp"
+                      alt="Neha Verma"
+                      class="testimonial-avatar"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
                   <div>
-                    <h6 class="mb-0  customer-full_name">Neha Verma</h6>
+                    <h3 class="customer-full_name">Neha Verma</h3>
                     <small class="customer-name">Customer</small>
                   </div>
                 </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="testimonial-card p-4 ">
-                <div class="stars text-warning mb-2">★★★★★</div>
-                <p class="testimonial-text mb-4 col-md-9  ">
-                  “I was very impressed by the avion service, lorem ipsum is
-                  simply free text used by copytyping.”
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  “Abhijeet connected with everyone in the room and turned
+                  complex ideas into simple actions we could begin immediately.”
                 </p>
                 <div class="divider"></div>
-                <div class="d-flex align-items-center">
-                  <img
-                    src="assets/img/testimonial c.webp"
-                    alt="Edna"
-                    class="rounded-circle me-3"
-                    width="50"
-                    height="50"
-                  />
+                <div class="testimonial-person">
+                  <div class="testimonial-avatar-wrapper">
+                    <img
+                      src="assets/img/testimonial-c.webp"
+                      alt="Manish Tyagi"
+                      class="testimonial-avatar"
+                      width="50"
+                      height="50"
+                    />
+                  </div>
                   <div>
-                    <h6 class="mb-0 customer-full_name">Manish Tyagi</h6>
+                    <h3 class="customer-full_name">Manish Tyagi</h3>
                     <small class="customer-name">Customer</small>
                   </div>
                 </div>
@@ -480,7 +494,7 @@
           </div>
 
           <!-- Optional Pagination -->
-          <div class="swiper-pagination mt-4"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -488,29 +502,35 @@
     <!-- ===================== Testimonials Section End =============== -->
 
     <!-- ===================== Download eBook CTA Start ===================== -->
-<section id="download-ebook" class="py-5 bg-light">
-  <div class="container text-center">
-    <h5 class="fw-bold mb-2">Get My Free eBook</h5>
-    <p class="text-muted mb-4" style="max-width:500px;margin:auto;">
+<section id="download-ebook" data-section="download-ebook" class="download-section section-spacing">
+  <div class="container download-container">
+    <div class="section-header section-header-centered">
+    <h2>Get My Free eBook</h2>
+    <p class="download-description">
       Learn practical steps to improve your mindset and productivity. Enter your email to receive instant access.
     </p>
+    </div>
 
-    <form id="ebookForm" class="row g-2 justify-content-center" style="max-width:700px;margin:auto;">
-      <div class="col-md-3">
-        <input type="text" class="form-control" id="fullName" placeholder="Your Name" required>
+    <form id="ebookForm" class="ebook-form" action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form>
+      <input type="hidden" name="domain" value="">
+      <input type="hidden" name="form_key" value="download">
+      <input type="hidden" name="page_url" value="">
+      <input type="hidden" name="_company" value="">
+      <div form-question-zigrow>
+        <label for="fullName">Your Name</label>
+        <input type="text" id="fullName" name="name" placeholder="Your Name" required>
       </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+      <div form-question-zigrow>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required maxlength="254" title="Please enter a valid email address.">
       </div>
-      <div class="col-md-3 d-grid">
-        <button type="submit" class="primary-btn rounded-3">Download</button>
-      </div>
+      <button type="submit" class="primary-btn">Download</button>
     </form>
 
-    <div class="small text-muted mt-2">
-      <i class="bi bi-shield-check me-1"></i>No spam. Unsubscribe anytime.
+    <div class="download-privacy">
+      <span class="download-privacy-icon"><i class="bi bi-shield-check" data-icon="shield-check" aria-hidden="true"></i></span><span>No spam. Unsubscribe anytime.</span>
     </div>
-    <div id="ebookMessage" class="small mt-2"></div>
+    <div id="ebookMessage" class="form-submit-message" role="status" aria-live="polite"></div>
   </div>
 </section>
 
@@ -518,41 +538,36 @@
 
 
     <!-- ===================== Footer Section Start =================== -->
-    <footer id="footer" class="py-5">
+    </main>
+    <footer id="footer" data-section="footer" class="footer-section">
       <div class="container">
-        <div class="row border-top pt-4 text-white">
-          <div class="col-md-5 mb-4 mb-md-0">
-            <a href="#">
+        <div class="row footer-main">
+          <div class="col-md-5 footer-brand-column">
+            <a href="#hero" class="footer-brand-logo" data-logo="footer">
 
-              <img src="assets/img/logo.png" alt="" class="footer-logo img-fluid">
+              <img src="assets/img/logo.webp" alt="Jane Cooper motivational speaker logo" class="footer-logo">
             </a>
             </div>
 
-          <div class="col-md-3 mb-4 mb-md-0">
-            <h6 class=" fw-semibold mb-3">Reach us</h6>
-            <p class="mb-1">
-              <i class="bi bi-telephone me-2"></i>+91 12345 67859
-            </p>
-            <p class="mb-1">
-              <i class="bi bi-envelope me-2"></i>yourname@domainname.com
-            </p>
-            <p>
-              <i class="bi bi-geo-alt me-2"></i>E-123, ABC Plaza, XYZ Street, New Delhi - 110077 
-            </p>
+          <div class="col-md-3 footer-column">
+            <h2>Reach us</h2>
+            <div class="footer-contact-item"><span class="footer-contact-icon"><i class="bi bi-telephone" data-icon="telephone" aria-hidden="true"></i></span><p>+91 12345 67859</p></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon"><i class="bi bi-envelope" data-icon="email" aria-hidden="true"></i></span><p>yourname@domainname.com</p></div>
+            <div class="footer-contact-item"><span class="footer-contact-icon"><i class="bi bi-geo-alt" data-icon="location" aria-hidden="true"></i></span><p>E-123, ABC Plaza, XYZ Street, New Delhi - 110077</p></div>
           </div>
 
-          <div class="col-md-2 mb-4 mb-md-0">
-            <h6 class="text-uppercase fw-semibold mb-3">Company</h6>
-            <ul class="list-unstyled">
+          <div class="col-md-2 footer-column">
+            <h2>Company</h2>
+            <ul class="footer-links">
               <li><a href="#about">About</a></li>
               <li><a href="#features">Services</a></li>
               <li><a href="#download-ebook">Contact</a></li>
             </ul>
           </div>
 
-          <div class="col-md-2">
-            <h6 class="text-uppercase fw-semibold mb-3">Legal</h6>
-            <ul class="list-unstyled">
+          <div class="col-md-2 footer-column">
+            <h2>Legal</h2>
+            <ul class="footer-links">
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms & Services</a></li>
               <li><a href="#">Terms of Use</a></li>
@@ -561,14 +576,15 @@
           </div>
         </div>
       </div>
+      <div class="powered-by-zigrow-row">
+        <a href="https://zigrow.com" target="_blank" rel="noopener noreferrer nofollow sponsored">Powered by Zigrow</a>
+      </div>
     </footer>
 
     <!-- ===================== Footer Section End ===================== -->
-  </body>
-
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=2.14.0"></script>
 
   <!-- Gsap animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -580,4 +596,5 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"
   ></script>
+  </body>
 </html>

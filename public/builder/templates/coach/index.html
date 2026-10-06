@@ -8,28 +8,33 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=2.13.0-1" />
   </head>
   <body>
     <!-- header section -->
-    <header class="site-header" id="navbar" data-section="navbar">
+    <header class="site-header" id="header" data-section="header">
       <div class="container">
         <div class="header-inner">
-          <div class="brand" data-logo="navbar">
-            <a class="brand-logo" href="#">Vivek Bindra</a>
+          <div class="brand">
+            <a class="brand-logo" data-logo="navbar" href="#hero">Vivek Bindra</a>
+            <span class="brand-tagline">Motivational Speaker</span>
           </div>
 
           <div class="nav-center">
-            <button class="nav-toggle" type="button" aria-label="Toggle menu">
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
               <span></span><span></span><span></span>
             </button>
 
-            <nav class="nav-wrap">
+            <nav class="nav-wrap" id="primary-navigation" aria-label="Primary navigation">
               <ul class="nav-list">
                 <li><a class="nav-link is-active" href="#hero">Home</a></li>
                 <li><a class="nav-link" href="#what-do">About</a></li>
-                <li><a class="nav-link" href="#Advice-section">e-Book</a></li>
-                <li><a class="nav-link" href="#Advice-section">Courses</a></li>
+                <li><a class="nav-link" href="#advice">e-Book</a></li>
+                <li><a class="nav-link" href="#advice">Courses</a></li>
                 <li><a class="nav-link" href="#help">Contact</a></li>
               </ul>
             </nav>
@@ -38,6 +43,7 @@
       </div>
     </header>
 
+    <main>
     <!-- hero section -->
     <section class="hero-section" data-section="hero" id="hero">
       <div class="container">
@@ -55,9 +61,9 @@
                 create results you can measure—without burning out.
               </p>
 
-              <div class="hero-actions">
-                <a href="#start" class="hero-btn hero-btn-primary">Start Now</a>
-                <a href="#learn" class="hero-btn hero-btn-outline">Read More</a>
+              <div class="hero-actions zg-align-center">
+                <a href="#help" class="hero-btn hero-btn-primary" data-btn="hero">Start Now</a>
+                <a href="#what-do" class="hero-btn hero-btn-outline" data-btn="hero">Read More</a>
               </div>
             </div>
           </div>
@@ -67,7 +73,7 @@
 
     <!-- featured section -->
     <section
-      class="featured-section py-6"
+      class="featured-section"
       data-section="featured"
       id="featured"
     >
@@ -83,65 +89,54 @@
         </div>
 
         <div class="row featured-logos-row">
-          <div class="col-6 col-sm-4 col-md-3">
+          <div class="col-6 col-sm-4 col-md-3 clonable-card featured-logo-col">
             <div class="featured-logo-box">
               <a href="#" class="featured-link">
                 <img
-                  src="assets/logos/logo-1.png"
-                  alt="featured logo"
+                  src="assets/logos/logo-1.webp"
+                  alt="Lorem Ipsum partner logo"
                   class="featured-logo"
                 />
               </a>
             </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3">
+          <div class="col-6 col-sm-4 col-md-3 clonable-card featured-logo-col">
             <div class="featured-logo-box">
               <a href="#" class="featured-link">
                 <img
-                  src="assets/logos/logo-2.png"
-                  alt="featured logo"
+                  src="assets/logos/logo-2.webp"
+                  alt="Lorem Ipsum partner logo"
                   class="featured-logo"
                 />
               </a>
             </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3">
+          <div class="col-6 col-sm-4 col-md-3 clonable-card featured-logo-col">
             <div class="featured-logo-box">
               <a href="#" class="featured-link">
                 <img
-                  src="assets/logos/logo-1.png"
-                  alt="featured logo"
+                  src="assets/logos/logo-1.webp"
+                  alt="Lorem Ipsum partner logo"
                   class="featured-logo"
                 />
               </a>
             </div>
           </div>
 
-          <div class="col-6 col-sm-4 col-md-3">
+          <div class="col-6 col-sm-4 col-md-3 clonable-card featured-logo-col">
             <div class="featured-logo-box">
               <a href="#" class="featured-link">
                 <img
-                  src="assets/logos/logo-2.png"
-                  alt="featured logo"
+                  src="assets/logos/logo-2.webp"
+                  alt="Lorem Ipsum partner logo"
                   class="featured-logo"
                 />
               </a>
             </div>
           </div>
 
-          <!-- <div class="col-6 col-sm-4 col-md-3">
-            <div class="featured-logo-box">
-              <a href="#" class="featured-link">
-                <img
-                  src="assets/logos/logo-1.png"
-                  alt="featured logo"
-                  class="featured-logo"
-                />
-              </a>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -164,7 +159,7 @@
 
         <div class="row what-do-row">
           <!-- Card 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card what-do-col">
             <div class="what-do-card">
               <p class="what-do-line"></p>
               <h3 class="what-do-card-title">I Coach.</h3>
@@ -174,12 +169,12 @@
                 confusion and more consistency.
               </p>
 
-              <a href="#coaching" class="what-do-link">Read More</a>
+              <div class="what-do-actions zg-align-center"><a href="#advice" class="what-do-link" data-btn="services">Read More</a></div>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card what-do-col">
             <div class="what-do-card">
               <p class="what-do-line"></p>
               <h3 class="what-do-card-title">I Mentor.</h3>
@@ -189,12 +184,12 @@
                 and scale with confidence.
               </p>
 
-              <a href="#mentoring" class="what-do-link">Read More</a>
+              <div class="what-do-actions zg-align-center"><a href="#advice" class="what-do-link" data-btn="services">Read More</a></div>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 clonable-card what-do-col">
             <div class="what-do-card">
               <p class="what-do-line"></p>
               <h3 class="what-do-card-title">I Speak.</h3>
@@ -204,7 +199,7 @@
                 take action after the talk.
               </p>
 
-              <a href="#speaking" class="what-do-link">Read More</a>
+              <div class="what-do-actions zg-align-center"><a href="#help" class="what-do-link" data-btn="services">Read More</a></div>
             </div>
           </div>
         </div>
@@ -217,7 +212,7 @@
         <div class="row advice-row">
           <!-- Left card -->
           <div class="col-12 col-md-4">
-            <div class="advice-card advice-card--small">
+            <div class="advice-card advice-card--small" data-zg-editable="surface">
               <h3 class="advice-title">Need <br />Advice?</h3>
 
               <p class="advice-text">
@@ -227,13 +222,13 @@
                 confidence.
               </p>
 
-              <a href="tel:+910000000000" class="advice-link">Call Me</a>
+              <div class="advice-actions zg-align-center"><a href="tel:+910000000000" class="advice-link" data-btn="contact">Call Me</a></div>
             </div>
           </div>
 
           <!-- Right big card -->
           <div class="col-12 col-md-8">
-            <div class="advice-card advice-card--wide">
+            <div class="advice-card advice-card--wide" data-zg-editable="surface">
               <div class="row advice-wide-row">
                 <!-- Image -->
                 <div class="col-3">
@@ -263,7 +258,7 @@
                       helps you move faster and avoid costly mistakes.
                     </p>
 
-                    <a href="#ebooks" class="advice-link">Read More</a>
+                    <div class="advice-actions zg-align-center"><a href="#help" class="advice-link" data-btn="advice">Read More</a></div>
                   </div>
                 </div>
               </div>
@@ -277,7 +272,7 @@
     <section
       class="testimonial-section"
       data-section="testimonial"
-      id="testimomnial"
+      id="testimonial"
     >
       <div class="container">
         <div class="row testimonial-row">
@@ -326,13 +321,13 @@
     </section>
 
     <!-- my story section-->
-    <section class="story-section py-6" data-section="my-story" id="my-story">
+    <section class="story-section" data-section="my-story" id="my-story">
       <div class="container">
-        <div class="row story-wrap">
+        <div class="row story-wrap" data-zg-editable="surface">
           <!-- Text -->
           <div class="col-12 col-lg-6">
             <div class="story-content">
-              <h1 class="story-title">My Story</h1>
+              <h2 class="story-title">My Story</h2>
 
               <p class="story-text">
                 I didn’t start with a perfect plan—I started with a strong
@@ -353,7 +348,7 @@
                 frameworks that actually work in real life—not just on paper.
               </p>
 
-              <a href="#vivek-story" class="story-link">Read Vivek’s Story</a>
+              <div class="story-actions zg-align-center"><a href="#testimonial" class="story-link" data-btn="about">Read Vivek’s Story</a></div>
             </div>
           </div>
 
@@ -379,17 +374,19 @@
         <div class="row help-row">
           <div class="col-12">
             <div class="help-box">
-              <h1 class="help-title">
+              <h2 class="help-title">
                 Let’s Build Clear Strategy, Strong Execution, and Real Business
                 Growth.
-              </h1>
+              </h2>
 
-              <a href="#start" class="help-cta">Start Now</a>
+              <div class="help-actions zg-align-center"><a href="tel:+910000000000" class="help-cta" data-btn="contact">Start Now</a></div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    </main>
 
     <footer class="site-footer" data-section="footer" id="footer">
       <div class="container">
@@ -401,7 +398,12 @@
 
           <!-- Right -->
           <div class="col-12 col-md-6">
-            <p class="footer-text footer-right">Powered by Coach</p>
+            <p class="footer-text footer-right">Business coaching for focused growth.</p>
+          </div>
+        </div>
+        <div class="row powered-by-zigrow-row">
+          <div class="col-12">
+            <a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a>
           </div>
         </div>
       </div>

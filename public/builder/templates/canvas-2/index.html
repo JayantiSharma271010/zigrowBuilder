@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <a href="#" id="backToTopBtn" aria-label="Back to top"
+    <a href="#hero" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top"
       ><i class="bi bi-arrow-up" data-icon="arrow"></i
     ></a>
     <!-- Header -->
@@ -27,9 +27,9 @@
           <div class="row site-header__row">
             <!-- Left: Brand -->
             <div class="col-9 col-md-3">
-              <a class="site-header__brand" data-logo="navbar" href="#">
-                <p>Business Logo</p>
-              </a>
+              <a class="site-header__brand" data-logo="navbar" href="#hero"
+                >Business Logo</a
+              >
             </div>
 
             <!-- Center: Links (Desktop only) -->
@@ -59,16 +59,22 @@
                 aria-controls="navMobile"
                 type="button"
               >
-                <span></span><span></span><span></span>
+                <i
+                  class="bi bi-list"
+                  data-icon="menu"
+                  aria-hidden="true"
+                ></i>
               </button>
 
               <!-- ✅ Desktop only (IMPORTANT: add this class) -->
-              <a
-                class="site-header__btn site-header__btn--desktop"
-                href="#contact"
-              >
-                Contact Us
-              </a>
+              <div class="site-header__actions zg-align-center">
+                <a
+                  class="site-header__btn site-header__btn--desktop"
+                  href="#footer"
+                  data-btn="header-contact"
+                  >Contact Us</a
+                >
+              </div>
             </div>
           </div>
 
@@ -84,13 +90,15 @@
       </div>
     </header>
 
+    <main>
     <!-- Hero Section -->
-    <section id="hero" data-section="here" class="hero-section py-6">
+    <section id="hero" data-section="hero" class="hero-section section-spacing">
       <div class="container">
         <div class="row g-4">
           <!-- Text -->
           <div class="col-12 col-lg-6">
             <div class="hero-section__content">
+              <div class="hero-section__header">
               <h1 class="hero-section__heading">Your Business, Online Ready</h1>
 
               <p class="hero-section__text">
@@ -101,15 +109,24 @@
                 complicated tools or tech headaches. Keep it simple, look
                 professional, and grow faster.
               </p>
+              </div>
 
-              <a href="#" class="hero-section__btn">Know More</a>
+              <div class="hero-section__actions zg-align-center">
+                <a href="#about" class="hero-section__btn" data-btn="hero-about"
+                  >Know More</a
+                >
+              </div>
             </div>
           </div>
 
           <!-- Image -->
           <div class="col-12 col-lg-6">
             <div class="hero-section__image-wrap">
-              <img src="assets/1.webp" alt="Hero" class="hero-section__image" />
+              <img
+                src="assets/1.webp"
+                alt="Historic city building on a quiet street"
+                class="hero-section__image"
+              />
             </div>
           </div>
         </div>
@@ -117,7 +134,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" data-section="about" class="about-section py-6">
+    <section id="about" data-section="about" class="about-section section-spacing">
       <div class="container">
         <div class="row g-4">
           <!-- Image -->
@@ -125,7 +142,7 @@
             <div class="about-section__image-wrap">
               <img
                 src="assets/2.webp"
-                alt="About"
+                alt="Sunlit trees in a calm woodland"
                 class="about-section__image"
               />
             </div>
@@ -134,8 +151,11 @@
           <!-- Text -->
           <div class="col-12 col-lg-6">
             <div class="about-section__content">
-              <h4 class="about-section__heading">About the company</h4>
+              <div class="about-section__header">
+              <h2 class="about-section__heading">About the company</h2>
+              </div>
 
+              <div class="about-section__body">
               <p class="about-section__text">
                 We help small businesses grow with smart, practical solutions
                 that improve visibility, build customer trust, and increase
@@ -150,6 +170,7 @@
                 what you do best. Our goal is to create consistent results, not
                 just a good-looking design.
               </p>
+              </div>
             </div>
           </div>
         </div>
@@ -157,22 +178,28 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" data-section="cta" class="cta-section py-6">
+    <section id="cta" data-section="cta" class="cta-section section-spacing">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+          <div class="col-12 col-lg-10 col-xl-8 centered-column">
             <div class="cta-section__wrap">
-              <h1 class="cta-section__heading">
+              <div class="cta-section__header">
+              <h2 class="cta-section__heading">
                 Ready to Grow Your Business Online?
-              </h1>
+              </h2>
 
               <p class="cta-section__text">
                 Whether you need a new website or want to improve your current
                 one, we’ll help you look professional, build trust, and get more
                 enquiries from the people who matter.
               </p>
+              </div>
 
-              <a class="cta-section__btn" href="#contact">Get in Touch</a>
+              <div class="cta-section__actions zg-align-center">
+                <a class="cta-section__btn" href="#footer" data-btn="cta-contact"
+                  >Get in Touch</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -181,7 +208,7 @@
 
     <!-- Gallery Section -->
 
-    <section id="gallery" data-section="gallery" class="gallery-section py-6">
+    <section id="gallery" data-section="gallery" class="gallery-section section-spacing">
       <div class="container">
         <div class="gallery-section__header">
           <h2 class="gallery-section__heading">Our Work Gallery</h2>
@@ -191,64 +218,40 @@
           </p>
         </div>
 
-        <div class="row g-3">
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 1"
-                class="gallery-section__img"
-              />
+        <div class="gallery-section__body row g-3">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 1">
+              <span class="d-none">Project 1</span>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 2"
-                class="gallery-section__img"
-              />
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 2">
+              <span class="d-none">Project 2</span>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 3"
-                class="gallery-section__img"
-              />
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 3">
+              <span class="d-none">Project 3</span>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 4"
-                class="gallery-section__img"
-              />
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 4">
+              <span class="d-none">Project 4</span>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 5"
-                class="gallery-section__img"
-              />
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 5">
+              <span class="d-none">Project 5</span>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="gallery-section__box">
-              <img
-                src="assets/3.webp"
-                alt="Project 6"
-                class="gallery-section__img"
-              />
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
+            <div class="gallery-section__box" role="img" aria-label="Project 6">
+              <span class="d-none">Project 6</span>
             </div>
           </div>
         </div>
@@ -259,15 +262,16 @@
     <section
       id="testimonial"
       data-section="testimonial"
-      class="testimonial-section py-6"
+      class="testimonial-section section-spacing"
     >
       <div class="container">
         <div class="row g-3">
           <!-- Card 1 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Aarav Sharma</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -306,10 +310,11 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Meera Iyer</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -348,10 +353,11 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Rohan Patel</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -390,10 +396,11 @@
           </div>
 
           <!-- Card 4 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Ananya Singh</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -432,10 +439,11 @@
           </div>
 
           <!-- Card 5 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Kabir Mehta</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -474,10 +482,11 @@
           </div>
 
           <!-- Card 6 -->
-          <div class="col-12 col-sm-6 col-lg-4">
+          <div class="col-12 col-sm-6 col-lg-4 clonable-card">
             <div class="testimonial-section__card">
               <div class="testimonial-section__head">
                 <span class="testimonial-section__avatar"></span>
+                <strong class="testimonial-section__name">Priya Nair</strong>
                 <span
                   class="testimonial-section__stars"
                   aria-label="5 star rating"
@@ -517,22 +526,21 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer id="footer" data-section="footer" class="site-footer py-6">
+    <footer id="footer" data-section="footer" class="site-footer section-spacing">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+          <div class="col-12 col-lg-10 col-xl-8 centered-column">
             <div class="site-footer__wrap">
               <!-- Logo -->
-              <div class="site-footer__logo" data-logo="footer">
-                <p class="site-footer__logo-text">Business Logo</p>
-              </div>
+              <p class="site-footer__logo" data-logo="footer">Business Logo</p>
 
               <!-- Socials -->
               <div class="site-footer__socials" aria-label="Social links">
                 <a
-                  href="#"
+                  href="#footer"
                   class="site-footer__social-link"
                   aria-label="Facebook"
                 >
@@ -544,7 +552,7 @@
                 </a>
 
                 <a
-                  href="#"
+                  href="#footer"
                   class="site-footer__social-link"
                   aria-label="Instagram"
                 >
@@ -556,7 +564,7 @@
                 </a>
 
                 <a
-                  href="#"
+                  href="#footer"
                   class="site-footer__social-link"
                   aria-label="WhatsApp"
                 >
@@ -569,19 +577,19 @@
               </div>
 
               <!-- Contact -->
-              <div class="site-footer__contact">
-                <div class="site-footer__contact-item">
+              <ul class="site-footer__contact">
+                <li class="site-footer__contact-item">
                   <i
                     class="bi bi-geo-alt"
                     data-icon="location"
                     aria-hidden="true"
                   ></i>
-                  <a class="site-footer__contact-link" href="#">
+                  <span class="site-footer__contact-text">
                     E-123, ABC Plaza, XYZ Street, New Delhi - 110077
-                  </a>
-                </div>
+                  </span>
+                </li>
 
-                <div class="site-footer__contact-item">
+                <li class="site-footer__contact-item">
                   <i
                     class="bi bi-telephone"
                     data-icon="phone"
@@ -590,9 +598,9 @@
                   <a class="site-footer__contact-link" href="tel:+919123456789">
                     +91-9123456789
                   </a>
-                </div>
+                </li>
 
-                <div class="site-footer__contact-item">
+                <li class="site-footer__contact-item">
                   <i
                     class="bi bi-envelope"
                     data-icon="email"
@@ -604,14 +612,25 @@
                   >
                     yourname@domainname.com
                   </a>
-                </div>
-              </div>
+                </li>
+              </ul>
 
               <!-- Copyright -->
               <p class="site-footer__copy">
-                © 2025 Helping small businesses grow online.
+                &copy; 2025 Helping small businesses grow online.
               </p>
             </div>
+          </div>
+        </div>
+        <div class="row site-footer__attribution-row">
+          <div class="col-12">
+            <a
+              class="site-footer__attribution-link"
+              href="https://zigrow.com"
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              >Powered by Zigrow</a
+            >
           </div>
         </div>
       </div>

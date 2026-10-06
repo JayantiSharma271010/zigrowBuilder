@@ -57,17 +57,6 @@
     line-height: 1;
     display: inline-block;
 
-    &::after {
-      content: "motivational speaker";
-      display: block;
-      margin-top: 6px;
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: var(--primary-colors);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
     @media (max-width: 420px) {
       font-size: 1.35rem;
     }
@@ -207,7 +196,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
     pointer-events: none;
   }
@@ -525,11 +514,7 @@
 
 // testimonial section
 .testimonial-section {
-  background: linear-gradient(
-    to right,
-    var(--light-colors),
-    var(--primary-colors)
-  );
+  background: var(--primary-colors);
 
   /* ================= IMAGE ================= */
 
@@ -624,6 +609,35 @@
       font-size: 2rem;
     }
   }
+}
+
+/* Zigrow Builder configuration */
+.featured-section,
+.story-section { padding: 3rem 0; }
+.brand-tagline { display:block; margin-top:6px; font-size:13px; letter-spacing:2px; color:var(--primary-colors); font-weight:600; text-transform:uppercase; }
+.featured-logo-col,
+.what-do-col { padding:12px; }
+.featured-logo-box,
+.what-do-card { box-sizing:border-box; }
+.zg-align-center { align-items:center; }
+.hero-actions,
+.what-do-actions,
+.advice-actions,
+.story-actions,
+.help-actions { display:flex; flex-direction:row; flex-wrap:wrap; gap:12px; min-width:0; max-width:100%; box-sizing:border-box; }
+.hero-actions { justify-content:flex-start; }
+.what-do-actions,
+.advice-actions,
+.story-actions,
+.help-actions { justify-content:flex-start; }
+.help-actions { justify-content:center; }
+[data-btn], [data-btn]:hover, [data-btn]:focus, [data-btn]:focus-visible, [data-btn]:active, [data-btn]:visited { text-decoration:none; }
+[data-btn]:focus-visible, .nav-toggle:focus-visible, .nav-link:focus-visible { outline:3px solid color-mix(in srgb, var(--primary-colors) 65%, white); outline-offset:3px; }
+.powered-by-zigrow-row { border-top:1px solid #e4e4e4; margin-top:12px; padding-top:12px; text-align:center; }
+.powered-by-zigrow-row a { color:var(--secondary-colors); }
+@media (max-width:767px) {
+  .hero-actions { justify-content:center; }
+  .hero-actions > .hero-btn { width:auto; flex:1 1 140px; margin:0; }
 }
 
 // my-story

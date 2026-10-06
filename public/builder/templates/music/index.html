@@ -1,656 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Portfolio</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Bootstrap link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-
-    <!-- jonsuh hamburger icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-  </head>
-
-  <body>
-    <!-- Back to Top Button -->
-    <a id="backToTop" href="#" class="back-to-top zg-icon-parent" aria-label="Back to Top">
-      <i class="bi bi-arrow-up-short" data-icon="arrow-up"></i>
-    </a>
-
-    <!-- Header  -->
-    <header id="header" class="site-header" data-section="header">
-      <nav id="mainNavbar" class="site-navbar transition-navbar">
-        <div class="container">
-          <div class="navbar-row">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#" data-logo="navbar">
-              <img
-                src="assets/img/logo.svg"
-                alt="Logo"
-                width="50"
-                class="navbar-logo"
-              />
-            </a>
-
-            <!-- Toggle (same position & behavior) -->
-            <button
-              type="button"
-              class="navbar-toggler hamburger hamburger--elastic only-mobile"
-              aria-controls="navbarContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
-
-            <!-- Menu -->
-            <div class="navbar-collapse" id="navbarContent">
-              <ul class="navbar-nav font-montserrat">
-                <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#experience">Experience</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-              </ul>
-
-              <div class="navbar-cta navbar-actions zg-align-center only-desktop">
-                <a href="#ready-to-light" class="resume-link">Resume</a>
-              </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music and Dance Classes</title>
+    <link rel="icon" href="assets/fav-icon/fav-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header" data-section="header">
+        <nav class="navbar navbar-expand-xl navbar-light navbar-custom main-nav" id="main-nav">
+            <div class="container">
+                <a class="navbar-brand brand-logo" href="#hero" data-logo="navbar">LOGO</a>
+                <button class="navbar-toggler hamburger hamburger--elastic d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
+                    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-menu" id="navbarNav">
+                    <ul class="navbar-nav nav-links">
+                        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#vision-and-mission">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#our-programs">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about-us">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#newsletter">Contact Us</a></li>
+                    </ul>
+                    <div class="nav-actions zg-align-center"><a href="tel:+919123456789" class="primary-btn" data-btn="nav-trial">Book a free trial</a></div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
     </header>
 
-    <!-- Header ends here -->
-
     <main>
-
-    <!-- Hero -->
-    <section id="hero" class="hero-section" data-section="hero">
-      <div class="container">
-        <div class="row hero-row">
-          <!-- Left vertical section (desktop only) -->
-          <div class="col-auto hero-side">
-            <div class="hero-side-inner">
-              <p class="rotate-text-small">Designer</p>
-              <div class="hero-divider"></div>
-              <p class="rotate-text-small">2025</p>
+        <section id="hero" data-section="hero" class="hero-section">
+            <div class="row g-0 hero-row">
+                <div class="col-lg-6 hero-copy-column">
+                    <div class="text-area section-header">
+                        <h1>Unleash Your<br>Inner Artist</h1>
+                        <p>Join our transformative music and dance programs today.</p>
+                        <div class="hero-actions zg-align-center"><a href="tel:+919123456789" class="primary-btn" data-btn="hero-trial">Book a Free Trial Class</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-flex hero-media-column section-body"><div class="media-frame hero-media-frame"><img src="assets/images/hero-right.webp" alt="Dancer performing in a music and dance class" class="hero-img" data-aos="fade-left"></div></div>
             </div>
-          </div>
+        </section>
 
-          <!-- Center content -->
-          <div class="col-md-7 hero-content">
-            <h1 class="hero-title">
-              Freelancer, <span class="hero-highlight">designer</span> and a
-              content creator
-            </h1>
-
-            <!-- Social icons -->
-            <div class="social">
-              <a href="#" class="social-link zg-icon-parent" aria-label="Twitter">
-                <i class="bi bi-twitter" data-icon="twitter"></i>
-              </a>
-              <a href="#" class="social-link zg-icon-parent" aria-label="LinkedIn">
-                <i class="bi bi-linkedin" data-icon="linkedin"></i>
-              </a>
-              <a href="#" class="social-link zg-icon-parent" aria-label="Behance">
-                <i class="bi bi-behance" data-icon="behance"></i>
-              </a>
+        <section id="media-gallery" data-section="media-gallery" class="section-pad media-gallery-section">
+            <div class="container">
+                <div class="section-header media-gallery-header"><h2 class="heading-font">Experience the Rhythm &amp; Melody</h2><p>Watch our students in action and feel the passion for music and dance!</p></div>
+                <div class="section-body row g-4 media-gallery-grid">
+                    <div class="col-md-7"><div class="ratio-16x9 tall-video media-frame media-frame-orange"><img src="assets/images/media-1.webp" alt="Music student performing during a class"></div></div>
+                    <div class="col-md-5 media-gallery-stack"><div class="ratio-16x9 media-frame media-frame-blue"><img src="assets/images/media-2.webp" alt="Dance students practicing together"></div><div class="ratio-16x9 media-frame media-frame-orange"><img src="assets/images/media-3.webp" alt="Student learning music with an instructor"></div></div>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Right image section -->
-          <div class="col-md-4 hero-image-col">
-            <div class="hero-image-wrap">
-              <div class="hero-image">
-                <img
-                  src="assets/img/portfolio-template-hero.webp"
-                  alt="Profile"
-                />
-              </div>
+        <div class="bg-design-wrapper">
+            <section id="vision-and-mission" data-section="vision-and-mission" class="section-pad vision-section">
+                <div class="vision-bg section-header"><h2 class="heading-font">Our Vision &amp; Mission</h2><p>Shaping Artists, Inspiring Creativity</p></div>
+                <div class="section-body container vision-cards-wrapper">
+                    <div class="row g-4 vision-cards-desktop">
+                        <div class="col-md-6"><div class="vision-card vision"><span class="badge-style">Our Vision</span><p>We envision a world where everyone can express themselves through music and dance. Our goal is to be a leading institution that fosters artistic excellence, innovation, and inclusivity—empowering individuals to achieve their creative dreams and make a lasting impact in the performing arts community.</p></div></div>
+                        <div class="col-md-6"><div class="vision-card mission"><span class="badge-style">Our Mission</span><p>Our mission is to inspire and nurture creativity through exceptional music and dance education. We strive to provide a supportive environment where learners of all ages can explore their artistic potential, build confidence, and develop lifelong skills through structured, engaging sessions led by expert instructors.</p></div></div>
+                    </div>
+                    <div class="swiper vision-mission-swiper d-lg-none"><div class="swiper-wrapper"><div class="swiper-slide"><div class="vision-card vision"><span class="badge-style">Our Vision</span><p>We envision a world where everyone can express themselves through music and dance. Our goal is to be a leading institution that fosters artistic excellence, innovation, and inclusivity—empowering individuals to achieve their creative dreams and make a lasting impact in the performing arts community.</p></div></div><div class="swiper-slide"><div class="vision-card mission"><span class="badge-style">Our Mission</span><p>Our mission is to inspire and nurture creativity through exceptional music and dance education. We strive to provide a supportive environment where learners of all ages can explore their artistic potential, build confidence, and develop lifelong skills through structured, engaging sessions led by expert instructors.</p></div></div></div><div class="swiper-pagination"></div></div>
+                </div>
+            </section>
 
-              <!-- Scroll down icon -->
-              <a
-                id="scrollDown"
-                href="#about"
-                class="scroll-down zg-icon-parent"
-                aria-label="Scroll Down"
-              >
-                scroll down
-                <i class="bi bi-arrow-down" data-icon="arrow-down"></i>
-              </a>
-            </div>
-          </div>
+            <section id="our-programs" data-section="our-programs" class="section-pad our-programs-section">
+                <div class="container">
+                    <div class="section-header programs-overview-header"><h2 class="heading-font">Our Programs</h2><div class="program-overview-actions zg-align-center"><a class="primary-btn" href="#programs" data-btn="view-programs">View All Faculties</a></div></div>
+                    <div class="section-body swiper mySwiper"><div class="swiper-wrapper" data-aos="fade-up">
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">1</div><h5>Classical Dance</h5><p>Master traditional dance forms, emphasizing rhythm, flow, and expression.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">2</div><h5>Hip-Hop Moves</h5><p>Groove with style in dynamic sessions focusing on moves and expression.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">3</div><h5>Guitar Basics</h5><p>Start your musical journey by mastering chords and rhythms on guitar.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">4</div><h5>Piano for Beginners</h5><p>Learn to play piano through interactive and simplified sessions.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">5</div><h5>Vocal Training</h5><p>Improve your singing techniques, pitch, and performance skills.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">6</div><h5>Ballet Fundamentals</h5><p>Build strength and grace through the basics of classical ballet.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">7</div><h5>Drumming Circles</h5><p>Explore rhythm and coordination through fun drumming sessions.</p><a href="#programs">Learn More</a></div></div>
+                        <div class="swiper-slide"><div class="program-card"><div class="program-number">8</div><h5>Music Theory</h5><p>Learn the fundamentals of reading, writing, and understanding music.</p><a href="#programs">Learn More</a></div></div>
+                    </div><div class="swiper-pagination"></div></div>
+                </div>
+            </section>
+            <div class="media-frame decorative-frame"><img src="assets/images/curvy-abstract.svg" alt="" class="background-lines"></div>
         </div>
 
-        <!-- Logos row -->
-        <div class="row hero-logos">
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 1">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-1.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
+        <div class="bg-design-wrapper">
+            <section id="choose-us" data-section="choose-us" class="section-pad choose-us-section">
+                <div class="container"><div class="row choose-us-row">
+                    <div class="col-md-6 choose-us-media section-body"><div class="media-frame"><img src="assets/images/guitarist-illustration.webp" alt="Guitarist illustration"></div></div>
+                    <div class="col-md-6 choose-us-copy"><div class="section-header choose-us-header"><h2 class="heading-font">Why Choose Us?</h2><p>Unlock Your Creative Potential with the Best in Music &amp; Dance</p></div><div class="section-body"><ul class="choose-us-list">
+                        <li class="hover-effect-translate"><span class="feature-icon"><i class="bi bi-check-lg" data-icon="expert-instructors" aria-hidden="true"></i></span><h6>Expert Instructors</h6></li>
+                        <li class="hover-effect-translate"><span class="feature-icon"><i class="bi bi-check-lg" data-icon="personalized-learning" aria-hidden="true"></i></span><h6>Personalized Learning</h6></li>
+                        <li class="hover-effect-translate"><span class="feature-icon"><i class="bi bi-check-lg" data-icon="performance-opportunities" aria-hidden="true"></i></span><h6>Performance Opportunities</h6></li>
+                        <li class="hover-effect-translate"><span class="feature-icon"><i class="bi bi-check-lg" data-icon="facilities" aria-hidden="true"></i></span><h6>State-of-the-Art Facilities</h6></li>
+                    </ul></div></div>
+                </div></div>
+            </section>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 2">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-2.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
+            <section id="programs" data-section="programs" class="section-pad programs-section">
+                <div class="container"><div class="section-header programs-header"><h2 class="heading-font">Top-Rated Programs to Master Your Skills</h2></div><div class="section-body row g-4 program-grid">
+                    <div class="col-lg-4 col-md-6 clonable-card"><div class="custom-program-card hover-effect-translate"><div class="program-meta"><div class="student-count"><span class="media-frame meta-icon"><img src="assets/images/programs-2.svg" alt=""></span><span>150+ Students</span></div><div class="program-stars territory-stars">★★★★★</div></div><div class="media-frame program-image"><img src="assets/images/programs-main.webp" alt="Beginner guitar class"></div><div class="program-card-body"><h6>Beginner Guitar Mastery<br>for All Age Groups</h6><div class="instructor-row"><span class="media-frame instructor-avatar"><img src="assets/images/programs-1.webp" alt="Rohan Singh"></span><div class="instructor-copy"><p>Rohan Singh</p><span>Instructor</span></div><div class="lesson-count"><span class="lesson-icon"><i class="bi bi-journal-text" data-icon="lessons" aria-hidden="true"></i></span><span>12 Lessons</span></div></div></div><div class="program-card-actions zg-align-center"><a href="#newsletter" class="secondary-btn" data-btn="join-guitar">Join Now</a></div></div></div>
+                    <div class="col-lg-4 col-md-6 clonable-card"><div class="custom-program-card hover-effect-translate"><div class="program-meta"><div class="student-count"><span class="media-frame meta-icon"><img src="assets/images/programs-5.svg" alt=""></span><span>200+ Students</span></div><div class="program-stars primary-stars">★★★★★</div></div><div class="media-frame program-image"><img src="assets/images/programs-main-2.webp" alt="Hip-hop dance class"></div><div class="program-card-body"><h6>Hip-Hop Dance Fundamentals for New Learners</h6><div class="instructor-row"><span class="media-frame instructor-avatar"><img src="assets/images/programs-7.webp" alt="Swati Kapoor"></span><div class="instructor-copy"><p>Swati Kapoor</p><span>Instructor</span></div><div class="lesson-count"><span class="lesson-icon"><i class="bi bi-journal-text" data-icon="lessons" aria-hidden="true"></i></span><span>10 Lessons</span></div></div></div><div class="program-card-actions zg-align-center"><a href="#newsletter" class="primary-btn" data-btn="join-dance">Join Now</a></div></div></div>
+                    <div class="col-lg-4 col-md-6 clonable-card"><div class="custom-program-card hover-effect-translate"><div class="program-meta"><div class="student-count"><span class="media-frame meta-icon"><img src="assets/images/programs-2.svg" alt=""></span><span>130+ Students</span></div><div class="program-stars territory-stars">★★★★★</div></div><div class="media-frame program-image"><img src="assets/images/programs-main-3.webp" alt="Classical vocal training"></div><div class="program-card-body"><h6>Classical Vocal Training for<br>Aspiring Singers</h6><div class="instructor-row"><span class="media-frame instructor-avatar"><img src="assets/images/programs-8.webp" alt="Deepak Tiwari"></span><div class="instructor-copy"><p>Prof. Deepak Tiwari</p><span>Instructor</span></div><div class="lesson-count"><span class="lesson-icon"><i class="bi bi-journal-text" data-icon="lessons" aria-hidden="true"></i></span><span>10 Lessons</span></div></div></div><div class="program-card-actions zg-align-center"><a href="#newsletter" class="secondary-btn" data-btn="join-vocals">Join Now</a></div></div></div>
+                </div></div>
+            </section>
 
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 3">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-3.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 4">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-1.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 5">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-2.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-auto clonable-card hero-logo-card">
-            <div class="logo-pill">
-              <a href="#" class="logo-link" aria-label="Lorem Ipsum partner logo 6">
-                <div class="logo-img">
-                  <img src="assets/img/hero-logo-3.webp" alt="Lorem Ipsum partner logo" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hero ends here -->
-
-    <!-- About -->
-    <section id="about" class="about-section" data-section="about">
-      <div class="container">
-        <div class="about-head">
-          <span class="about-pill-btn">About me</span>
-
-          <h2 class="about-title">
-            Design is not just a job for me, it’s a passion that drives me
-          </h2>
-
-          <p class="about-desc">
-            I’m Rohit, a self-taught product designer based in Boston. Four years
-            ago, during my final year of university, I co-founded a mobile
-            marketplace and created its entire front-end myself, teaching me how
-            products are built from scratch. I build websites, mobile-first UIs,
-            emails, and internal tools — all designed around everything I’d want.
-          </p>
+            <section id="our-experts" data-section="our-experts" class="section-pad experts-section">
+                <div class="container"><div class="row experts-row">
+                    <div class="col-lg-3 experts-intro section-header"><h2 class="heading-font">Our Experts</h2><p>Learn from seasoned professionals dedicated to helping you master music and dance effortlessly.</p><div class="expert-actions zg-align-center"><a class="primary-btn" href="#newsletter" data-btn="more-members">More Members</a></div></div>
+                    <div class="col-lg-9 section-body"><div class="row g-4 expert-cards-desktop">
+                        <div class="col-md-4 clonable-card"><div class="expert-card dashed-orange-border hover-effect-translate"><div class="media-frame expert-image"><img src="assets/images/our-experts-1.webp" alt="Rohan Singh"></div><h6>Rohan Singh</h6><p>Guitar &amp; Piano Specialist</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Facebook"><i class="bi bi-facebook icon orange" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Twitter"><i class="bi bi-twitter icon orange" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Instagram"><i class="bi bi-instagram icon orange" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                        <div class="col-md-4 clonable-card"><div class="expert-card dashed-purple-border hover-effect-translate"><div class="media-frame expert-image"><img src="assets/images/our-experts-2.webp" alt="Swati Kapoor"></div><h6>Swati Kapoor</h6><p>Contemporary Dance Instructor</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Facebook"><i class="bi bi-facebook icon purple" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Twitter"><i class="bi bi-twitter icon purple" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Instagram"><i class="bi bi-instagram icon purple" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                        <div class="col-md-4 clonable-card"><div class="expert-card dashed-orange-border hover-effect-translate"><div class="media-frame expert-image"><img src="assets/images/our-experts-3.webp" alt="Deepak Tiwari"></div><h6>Deepak Tiwari</h6><p>Classical &amp; Bollywood Vocal Coach</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Facebook"><i class="bi bi-facebook icon orange" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Twitter"><i class="bi bi-twitter icon orange" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Instagram"><i class="bi bi-instagram icon orange" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                    </div><div class="swiper ourExpertsSwiper d-lg-none"><div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="expert-card dashed-orange-border"><div class="media-frame expert-image"><img src="assets/images/our-experts-1.webp" alt="Rohan Singh"></div><h6>Rohan Singh</h6><p>Guitar &amp; Piano Specialist</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Facebook"><i class="bi bi-facebook icon orange" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Twitter"><i class="bi bi-twitter icon orange" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Rohan Singh on Instagram"><i class="bi bi-instagram icon orange" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                        <div class="swiper-slide"><div class="expert-card dashed-purple-border"><div class="media-frame expert-image"><img src="assets/images/our-experts-2.webp" alt="Swati Kapoor"></div><h6>Swati Kapoor</h6><p>Contemporary Dance Instructor</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Facebook"><i class="bi bi-facebook icon purple" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Twitter"><i class="bi bi-twitter icon purple" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Swati Kapoor on Instagram"><i class="bi bi-instagram icon purple" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                        <div class="swiper-slide"><div class="expert-card dashed-orange-border"><div class="media-frame expert-image"><img src="assets/images/our-experts-3.webp" alt="Deepak Tiwari"></div><h6>Deepak Tiwari</h6><p>Classical &amp; Bollywood Vocal Coach</p><div class="social-icons expert-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Facebook"><i class="bi bi-facebook icon orange" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Twitter"><i class="bi bi-twitter icon orange" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Tiwari on Instagram"><i class="bi bi-instagram icon orange" data-icon="instagram" aria-hidden="true"></i></a></div></div></div>
+                    </div><div class="swiper-pagination"></div></div></div>
+                </div></div>
+            </section>
+            <div class="media-frame decorative-frame"><img src="assets/images/curvy-abstract-2.svg" alt="" class="background-lines"></div>
         </div>
 
-        <!-- Image + Stats Row -->
-        <div class="row about-row">
-          <!-- Left: Video Thumbnail -->
-          <div class="col-md-8">
-            <div class="about-media-card">
-              <div class="about-media-img">
-                <img src="assets/img/about.webp" alt="Video thumbnail" />
-              </div>
+        <section id="about-us" data-section="about-us" class="section-pad about-section"><div class="container"><div class="row about-row">
+            <div class="col-lg-7 section-body"><div class="bg-purple" data-zg-editable="surface"><p>Teaching here has been an incredible journey. Seeing students grow in confidence and skill, from beginners to stage performers, is truly rewarding. Our structured approach and personalized training ensure every student thrives in their artistic journey.</p><div class="testimonial-author"><span class="media-frame testimonial-avatar"><img src="assets/images/programs-1.webp" alt="Rohan Singh"></span><div><h6>Rohan Singh</h6><p>Guitar &amp; Piano Instructor</p></div></div></div></div>
+            <div class="col-lg-4 right-card section-header"><div class="testimonial-card dashed-orange-border"><h2>What Student Says About Us</h2><p>Joining this academy was the best decision! The instructors are patient, professional, and truly passionate about music and dance. I gained confidence, improved my skills, and even performed on stage. Highly recommend it to anyone looking to unleash their inner artist!</p><div class="testimonial-actions zg-align-center"><a class="primary-btn" href="#our-experts" data-btn="testimonial-members">More Members</a></div></div></div>
+        </div></div></section>
 
-              <a href="#" class="about-play-btn zg-icon-parent" aria-label="Play video">
-                <i class="bi bi-play-circle-fill" data-icon="play-circle"></i>
-              </a>
-            </div>
-          </div>
+        <div class="bg-design-wrapper">
+            <section id="faq" data-section="faq" class="section-pad faq-section"><div class="container"><div class="row g-4 faq-row">
+                <div class="col-lg-5"><div class="contact-panel dashed-purple-border"><div class="section-header contact-header"><h2>Have Questions? Contact Us</h2></div><form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="contact-form section-body">
+                    <input type="hidden" name="domain" value=""><input type="hidden" name="form_key" value="contact"><input type="hidden" name="page_url" value=""><input type="hidden" name="_company" value="">
+                    <div form-question-zigrow><label for="contact-name">Name</label><input id="contact-name" type="text" name="name" placeholder="Your Name" autocomplete="name" required></div>
+                    <div form-question-zigrow><label for="contact-email">Email</label><input id="contact-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required maxlength="254" title="Please enter a valid email address."></div>
+                    <div form-question-zigrow><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" placeholder="Your Message" required></textarea></div>
+                    <button type="submit" class="secondary-btn">Send Your Question</button>
+                </form></div></div>
+                <div class="col-lg-7 faq-copy"><div class="section-header faq-header"><h2>Frequently Asked Questions</h2></div><div class="section-body accordion" id="faqAccordion">
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">What age groups do you offer classes for?</button></h3><div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>We offer classes for all age groups, from kids aged five and above to adults, with tailored learning programs.</span></div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Do you provide trial classes before enrollment?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Yes. You can book a free trial class to meet an instructor and experience the teaching approach before enrollment.</span></div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Are private lessons available, or only group sessions?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Both private lessons and group sessions are available, depending on the program and your learning goals.</span></div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How can I enroll or book a session?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Use the contact form or call the academy to discuss schedules, select a program, and reserve your session.</span></div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Do students get performance opportunities?</button></h3><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Yes. Students can take part in recitals, showcases, and academy events as they progress through their program.</span></div></div></div>
+                    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">What styles of dance and music do you teach?</button></h3><div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Programs include classical and contemporary dance, hip-hop, guitar, piano, vocals, percussion, and music theory.</span></div></div></div>
+                </div></div>
+            </div></div></section>
 
-          <!-- Right: Stats -->
-          <div class="col-md-4">
-            <div class="about-stats">
-              <div class="stat-block">
-                <h3 class="stat-number">12 startups</h3>
-                <small class="stat-label">worked with</small>
-              </div>
-
-              <div class="stat-block">
-                <h3 class="stat-number">5+ years</h3>
-                <small class="stat-label">experience</small>
-              </div>
-
-              <div class="stat-block">
-                <h3 class="stat-number">20+ projects</h3>
-                <small class="stat-label">completed successfully</small>
-              </div>
-            </div>
-          </div>
+            <section id="newsletter" data-section="newsletter" class="section-pad newsletter-section"><div class="container"><div class="newsletter-container dashed-orange-border"><div class="row newsletter-row">
+                <div class="col-lg-6 section-body"><div class="media-frame newsletter-image"><img src="assets/images/newsletter-img.webp" alt="Music student receiving academy updates"></div></div>
+                <div class="col-lg-6 newsletter-copy"><div class="section-header newsletter-header"><h2>Subscribe for <br>Newsletter</h2></div><form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="newsletter-form section-body"><input type="hidden" name="domain" value=""><input type="hidden" name="form_key" value="newsletter"><input type="hidden" name="page_url" value=""><input type="hidden" name="_company" value=""><div form-question-zigrow><label for="newsletter-email">Email Address</label><input id="newsletter-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required maxlength="254" title="Please enter a valid email address."></div><button type="submit" class="primary-btn">SUBSCRIBE HERE</button></form></div>
+            </div></div></div></section>
+            <div class="media-frame decorative-frame"><img src="assets/images/curvy-abstract-3.svg" alt="" class="background-lines"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- About ends here -->
-
-    <!-- Experience -->
-    <section
-      id="experience"
-      class="experience-section"
-      data-section="experience"
-    >
-      <div class="container">
-        <!-- Section Heading -->
-        <div class="experience-head">
-          <span class="section-pill-btn">Experience</span>
-          <h2 class="experience-title">
-            A Yearly Snapshot of my creative growth
-          </h2>
-        </div>
-
-        <!-- Experience Items -->
-        <div class="row experience-list">
-          <!-- Item -->
-          <div class="col-12 experience-item clonable-card">
-            <div class="experience-item-row">
-              <div class="experience-left">
-                <h3 class="experience-role">Content Strategist at HubSpot</h3>
-                <p class="experience-desc">
-                  Orchestrated complex content strategies that increased organic
-                  traffic by 140%. Collaborated with SEO specialists to optimize
-                  content and improve search rankings.
-                </p>
-              </div>
-
-              <div class="experience-right">2023 – 2025</div>
-            </div>
-          </div>
-
-          <div class="col-12 experience-item clonable-card">
-            <div class="experience-item-row">
-              <div class="experience-left">
-                <h3 class="experience-role">Product Manager at Shopify</h3>
-                <p class="experience-desc">
-                  Led a cross-functional team to develop and launch a new
-                  payment feature that improved user retention by 20%.
-                  Collaborated closely with engineering and design teams to
-                  maximize performance.
-                </p>
-              </div>
-
-              <div class="experience-right">2021 – 2023</div>
-            </div>
-          </div>
-
-          <div class="col-12 experience-item clonable-card">
-            <div class="experience-item-row">
-              <div class="experience-left">
-                <h3 class="experience-role">Graphic Designer at Zoho</h3>
-                <p class="experience-desc">
-                  Led foundations for interface mockups and created
-                  illustrations that support design thinking and grow knowledge
-                  of web development. Built modern, accessible, and fast
-                  workflows for editors, approval teams, and the UI team.
-                </p>
-              </div>
-
-              <div class="experience-right">2019 – 2021</div>
-            </div>
-          </div>
-
-          <div class="col-12 experience-item experience-item-last clonable-card">
-            <div class="experience-item-row">
-              <div class="experience-left">
-                <h3 class="experience-role">Frontend Developer at Atlassian</h3>
-                <p class="experience-desc">
-                  Built dynamic user interfaces and applications using ReactJS,
-                  ensuring user engagement through intuitive UIs. Worked on
-                  Atlassian’s design system for faster feature rollout and
-                  easier reusability.
-                </p>
-              </div>
-
-              <div class="experience-right">2018 – 2020</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience ends here -->
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio-section" data-section="portfolio">
-      <div class="container">
-        <!-- Badge + Heading -->
-        <div class="portfolio-head">
-          <span class="section-pill-btn">Portfolio</span>
-          <h2 class="portfolio-title">
-            Explore my portfolio of creative Solutions
-          </h2>
-        </div>
-
-        <!-- Portfolio Grid (grid only) -->
-        <div class="row portfolio-grid">
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-1" role="img" aria-label="Mobile cleaning campaign design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-2" role="img" aria-label="Comedy podcast cover design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-3" role="img" aria-label="Romance book cover design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-4" role="img" aria-label="Organic honey packaging design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-5" role="img" aria-label="SaaS launch campaign design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 clonable-card portfolio-card-col">
-            <div class="portfolio-item portfolio-item-6" role="img" aria-label="Pencil brand identity design">
-              <div class="portfolio-overlay">
-                <a
-                  href="#"
-                  class="portfolio-link"
-                  aria-label="Open portfolio item"
-                >
-                  <span class="portfolio-arrow zg-icon-parent">
-                    <i class="bi bi-arrow-up-right" data-icon="open-portfolio"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio ends here -->
-
-    <!-- Testimonials -->
-    <section
-      id="testimonials"
-      class="testimonials-section"
-      data-section="testimonials"
-    >
-      <div class="container">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">
-                  <div class="quote-img">
-                    <img src="assets/img/inverted_comma.svg" alt="" />
-                  </div>
-                </div>
-
-                <p class="testimonial-text">
-                  “I was impressed by how reliable, friendly, and professional
-                  they were—the entire process felt personal and tailored to my
-                  needs, and I wouldn’t hesitate to recommend them to anyone.”
-                </p>
-
-                <div class="testimonial-user">
-                  <div class="user-img">
-                    <img src="assets/img/testimonial-1.webp" alt="User" />
-                  </div>
-                  <div class="user-meta">
-                    <p class="user-name">Ananya Sharma</p>
-                    <small class="user-role">Founder, Denq</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="quote-mark">
-                  <div class="quote-img">
-                    <img src="assets/img/inverted_comma.svg" alt="" />
-                  </div>
-                </div>
-
-                <p class="testimonial-text">
-                  “I couldn’t be happier with the level of professionalism and
-                  care they provided—every detail was handled perfectly, and the
-                  entire experience was smooth, efficient, and stress-free from
-                  beginning to end.”
-                </p>
-
-                <div class="testimonial-user">
-                  <div class="user-img">
-                    <img src="assets/img/testimonial-2.webp" alt="User" />
-                  </div>
-                  <div class="user-meta">
-                    <p class="user-name">Tanvi</p>
-                    <small class="user-role">CEO, Aarna Labs</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card testimonial-card-shadow">
-                <div class="quote-mark">
-                  <div class="quote-img">
-                    <img src="assets/img/inverted_comma.svg" alt="" />
-                  </div>
-                </div>
-
-                <p class="testimonial-text">
-                  “The team exceeded my expectations with their timely
-                  communication, expert knowledge, and genuine dedication to
-                  helping me succeed—I felt supported, valued, and completely
-                  confident in their services throughout the process.”
-                </p>
-
-                <div class="testimonial-user">
-                  <div class="user-img">
-                    <img src="assets/img/testimonial-3.webp" alt="User" />
-                  </div>
-                  <div class="user-meta">
-                    <p class="user-name">Abhijeet Kumar</p>
-                    <small class="user-role">CTO, Yuva Labs</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation buttons (keep Swiper default classes) -->
-          <div class="swiper-button-next custom-nav zg-icon-parent">
-            <div class="nav-img">
-              <i class="bi bi-arrow-right" data-icon="arrow-right"></i>
-            </div>
-          </div>
-          <div class="swiper-button-prev custom-nav zg-icon-parent">
-            <div class="nav-img">
-              <i class="bi bi-arrow-left" data-icon="arrow-left"></i>
-            </div>
-          </div>
-
-          <!-- Pagination dots -->
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials ends here -->
-
     </main>
 
-    <!-- footer -->
-    <footer id="footer" class="footer-section" data-section="footer">
-      <div id="ready-to-light" class="container footer-top">
-        <div id="contact" class="row footer-top-row">
-          <!-- Text content -->
-          <div class="col-md-8 footer-top-left">
-            <h2 class="footer-title">Let's build something today!</h2>
-            <p class="footer-desc">
-              If you would like to work with me or have an opportunity in mind,
-              let's get in touch.
-            </p>
-          </div>
-
-          <!-- CTA Button -->
-          <div class="col-md-4 footer-top-right footer-actions zg-align-center">
-            <a href="#contact" class="footer-cta" data-btn="contact">Get in touch</a>
-          </div>
+    <footer id="footer" data-section="footer" class="section-pad footer-section"><div class="container">
+        <div class="row footer-main">
+            <div class="col-md-4 footer-brand-column"><a class="footer-brand-logo" href="#hero" data-logo="footer">LOGO</a><p>Your one-stop destination for expert-led music and dance classes, fostering creativity and confidence.</p><div class="social-icons footer-social"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Academy on Facebook"><i class="bi bi-facebook icon pink" data-icon="facebook" aria-hidden="true"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Academy on Twitter"><i class="bi bi-twitter icon pink" data-icon="twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Academy on Instagram"><i class="bi bi-instagram icon pink" data-icon="instagram" aria-hidden="true"></i></a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Academy on YouTube"><i class="bi bi-youtube icon pink" data-icon="youtube" aria-hidden="true"></i></a></div></div>
+            <div class="col-md-2 footer-column"><h2>Quick Links</h2><ul class="footer-link"><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="quick-link" aria-hidden="true"></i></span><a href="#hero">Home</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="quick-link" aria-hidden="true"></i></span><a href="#our-programs">Courses</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="quick-link" aria-hidden="true"></i></span><a href="#programs">Pricing</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="quick-link" aria-hidden="true"></i></span><a href="#newsletter">Contact Us</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="quick-link" aria-hidden="true"></i></span><a href="#footer">Privacy Policy</a></li></ul></div>
+            <div class="col-md-2 footer-column"><h2>Courses Category</h2><ul class="footer-link"><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="course-link" aria-hidden="true"></i></span><a href="#our-programs">Instrumental Music</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="course-link" aria-hidden="true"></i></span><a href="#our-programs">Bollywood Singing</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="course-link" aria-hidden="true"></i></span><a href="#our-programs">Contemporary Dance</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="course-link" aria-hidden="true"></i></span><a href="#our-programs">Ballet &amp; Jazz Dance</a></li><li><span class="footer-link-icon"><i class="bi bi-arrow-right-short" data-icon="course-link" aria-hidden="true"></i></span><a href="#our-programs">Private &amp; Group Lessons</a></li></ul></div>
+            <div class="col-md-3 footer-contact"><h2>Address &amp; Contact</h2><ul><li>Location: 12 Harmony Lane, New Delhi 110001</li><li>Call Us: <a href="tel:+919123456789">+91 91234 56789</a></li><li>Email: <a href="mailto:info@harmony.in">info@harmony.in</a></li><li>WhatsApp: <a href="https://wa.me/919123456789" target="_blank" rel="noopener noreferrer">Chat Now</a></li></ul></div>
         </div>
-      </div>
+        <div class="footer-bottom">© 2026 Harmony Academy. All Rights Reserved.</div>
+        <div class="zigrow-attribution"><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></div>
+    </div></footer>
 
-      <!-- Footer bottom -->
-      <div class="container footer-bottom">
-        <div class="row footer-bottom-row">
-          <ul class="col-md-6 footer-links">
-            <li><a href="#" class="footer-link">Behance</a></li>
-            <li><a href="#" class="footer-link">Medium</a></li>
-            <li><a href="#" class="footer-link">Twitter</a></li>
-            <li><a href="#" class="footer-link">LinkedIn</a></li>
-          </ul>
-
-          <div class="col-md-6 footer-copy">
-            <span>© 2024-25 Zigrow</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="container powered-by-zigrow-row">
-        <a
-          href="https://zigrow.com/"
-          target="_blank"
-          rel="noopener noreferrer nofollow sponsored"
-        >Powered by Zigrow</a>
-      </div>
-    </footer>
-
-    <!-- footer ends here -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- Gsap animation -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up-short" data-icon="back-to-top" aria-hidden="true"></i></button>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <!-- Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="js/animation.js"></script>
+    <script>
+    (function () {
+      const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
+      if (!forms.length) return;
+      function serializeForm(form) { const fd = new FormData(form); const raw = {}; for (const [name, value] of fd.entries()) { const existing = raw[name]; if (existing === undefined) raw[name] = value; else if (Array.isArray(existing)) existing.push(value === '' ? true : value); else raw[name] = [existing, value === '' ? true : value]; } return raw; }
+      function pickPrimaryValue(raw) { if (raw.email && String(raw.email).trim()) return String(raw.email).trim(); if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim(); const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim(); if (raw.name && String(raw.name).trim()) return String(raw.name).trim(); if (nameCombo) return nameCombo; if (raw.message && String(raw.message).trim()) return String(raw.message).trim(); return ''; }
+      forms.forEach((form) => {
+        const domainInput = form.querySelector('input[name="domain"]'); const pageUrlInput = form.querySelector('input[name="page_url"]'); if (domainInput) domainInput.value = location.host; if (pageUrlInput) pageUrlInput.value = location.href;
+        let message = form.querySelector('.form-submit-message'); if (!message) { message = document.createElement('div'); message.className = 'form-submit-message'; message.setAttribute('role', 'status'); message.setAttribute('aria-live', 'polite'); form.appendChild(message); }
+        form.addEventListener('submit', async (event) => { event.preventDefault(); const submitButton = form.querySelector(':scope > [type="submit"]'); if (submitButton) { submitButton.disabled = true; submitButton.dataset.oldText = submitButton.textContent || ''; submitButton.textContent = 'Submitting...'; } message.textContent = ''; message.removeAttribute('data-status');
+          try { const raw = serializeForm(form); const body = new URLSearchParams(); body.set('domain', form.querySelector('input[name="domain"]')?.value || location.host); body.set('form_key', form.querySelector('input[name="form_key"]')?.value || 'contact'); body.set('page_url', form.querySelector('input[name="page_url"]')?.value || location.href); body.set('payload', JSON.stringify(raw)); const primary = pickPrimaryValue(raw); if (primary) body.set('value', primary); if (raw._company) body.set('_company', raw._company); const response = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body }); const result = await response.json().catch(() => ({})); if (response.ok && (result.ok ?? true)) { form.reset(); message.textContent = 'Thanks! Your request has been submitted.'; message.dataset.status = 'success'; } else { message.textContent = result.message || `Failed (HTTP ${response.status})`; message.dataset.status = 'error'; } }
+          catch (error) { console.error(error); message.textContent = 'Something went wrong. Please try again.'; message.dataset.status = 'error'; }
+          finally { if (submitButton) { submitButton.disabled = false; submitButton.textContent = submitButton.dataset.oldText || 'Send'; } }
+        });
+      });
+    })();
+    </script>
+</body>
 </html>

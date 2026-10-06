@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("is-active");
+    const expanded = hamburger.classList.contains("is-active");
+    hamburger.setAttribute("aria-expanded", expanded ? "true" : "false");
+    const menuIcon = hamburger.querySelector("i");
+    menuIcon.classList.toggle("bi-list", !expanded);
+    menuIcon.classList.toggle("bi-x-lg", expanded);
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
     } else {
@@ -31,10 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close on link click
   document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (event) => {
       if (menu.classList.contains("show")) {
+        const target = document.querySelector(link.getAttribute("href"));
+        event.preventDefault();
+        menu.addEventListener(
+          "hidden.bs.collapse",
+          () => {
+            if (target) {
+              const alignTarget = (behavior = "auto") =>
+                target.scrollIntoView({ behavior, block: "start" });
+              alignTarget("smooth");
+              window.setTimeout(() => alignTarget(), 1200);
+              history.pushState(null, "", link.getAttribute("href"));
+            }
+          },
+          { once: true }
+        );
         bsCollapse.hide();
         hamburger.classList.remove("is-active");
+        hamburger.setAttribute("aria-expanded", "false");
+        const menuIcon = hamburger.querySelector("i");
+        menuIcon.classList.add("bi-list");
+        menuIcon.classList.remove("bi-x-lg");
         navbarSection.classList.remove("nav-dark");
       }
     });
@@ -48,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       bsCollapse.hide();
       hamburger.classList.remove("is-active");
+      hamburger.setAttribute("aria-expanded", "false");
+      const menuIcon = hamburger.querySelector("i");
+      menuIcon.classList.add("bi-list");
+      menuIcon.classList.remove("bi-x-lg");
       navbarSection.classList.remove("nav-dark");
     }
   });
@@ -61,6 +89,35 @@ window.addEventListener("scroll", () => {
   } else {
     navRef.classList.remove("nav-dark");
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const floatingButton = document.querySelector(".floating-btn");
+  if (!floatingButton) return;
+
+  const updateFloatingButton = () => {
+    const visible = window.scrollY >= 10;
+    floatingButton.style.opacity = visible ? "1" : "0";
+    floatingButton.style.transform = visible
+      ? "translateY(0)"
+      : "translateY(50px)";
+    floatingButton.style.pointerEvents = visible ? "auto" : "none";
+  };
+
+  floatingButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
+    history.pushState(null, "", "#header");
+  });
+
+  window.addEventListener("scroll", updateFloatingButton);
+  updateFloatingButton();
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -93,22 +150,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // Floating button js
     const btn = document.querySelector(".floating-btn");
 
-    // Show/hide button on scroll
-    window.addEventListener("scroll", () => {
-      if (window.scrollY >= 10) {
-        // Show button
-        btn.style.opacity = 1;
-        btn.style.transform = "translateY(0)";
-        btn.style.pointerEvents = "auto";
-      } else {
-        // Hide button
-        btn.style.opacity = 0;
-        btn.style.transform = "translateY(50px)";
-        btn.style.pointerEvents = "none";
-      }
-    });
-
     gsap.registerPlugin(ScrollTrigger);
+    const safeGsapFrom = (targets, variables) => {
+      const hasTargets =
+        typeof targets !== "string" || document.querySelector(targets);
+      const trigger = variables?.scrollTrigger?.trigger;
+      const hasTrigger =
+        typeof trigger !== "string" || document.querySelector(trigger);
+
+      if (hasTargets && hasTrigger) {
+        gsap.from(targets, variables);
+      }
+    };
 
     // Bounce animation on hover
     if (btn) {
@@ -126,7 +179,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector("#navbarSection");
 
     // Initial load animation for navbar
-    gsap.from(navbar, {
+    safeGsapFrom(navbar, {
       y: -80, // slide down from above
       opacity: 0, // fade in
       duration: 0.8,
@@ -134,14 +187,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Home section
-    gsap.from(".hero-section .hero-heading", {
+    safeGsapFrom(".hero-section .hero-heading", {
       y: 50,
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
     });
 
-    gsap.from(".hero-section p", {
+    safeGsapFrom(".hero-section p", {
       y: 30,
       opacity: 0,
       duration: 0.8,
@@ -149,7 +202,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.3,
     });
 
-    gsap.from(".hero-section .btn", {
+    safeGsapFrom(".hero-section .btn", {
       scale: 0.8,
       opacity: 0,
       duration: 0.6,
@@ -160,7 +213,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //////////////////// Welcome section
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".welcome-section .each-section-heading", {
+    safeGsapFrom(".welcome-section .each-section-heading", {
       scrollTrigger: {
         trigger: ".welcome-section",
         start: "top 80%",
@@ -172,7 +225,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out",
     });
 
-    gsap.from(".welcome-section .each-section-para", {
+    safeGsapFrom(".welcome-section .each-section-para", {
       scrollTrigger: {
         trigger: ".welcome-section",
         start: "top 75%",
@@ -185,7 +238,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.2,
     });
 
-    gsap.from(".welcome-section .d-flex", {
+    safeGsapFrom(".welcome-section .d-flex", {
       scrollTrigger: {
         trigger: ".welcome-section",
         start: "top 70%",
@@ -198,7 +251,7 @@ window.addEventListener("DOMContentLoaded", () => {
       stagger: 0.2,
     });
 
-    gsap.from(".welcome-section .view-google-btn", {
+    safeGsapFrom(".welcome-section .view-google-btn", {
       scrollTrigger: {
         trigger: ".welcome-section",
         start: "top 65%",
@@ -211,7 +264,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.2,
     });
 
-    gsap.from(".welcome-section .img-wrapper", {
+    safeGsapFrom(".welcome-section .img-wrapper", {
       scrollTrigger: {
         trigger: ".welcome-section",
         start: "top 70%",
@@ -224,7 +277,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // New Patient section
-    gsap.from(".new-patient-section .left-content-div", {
+    safeGsapFrom(".new-patient-section .left-content-div", {
       scrollTrigger: {
         trigger: ".new-patient-section",
         start: "top 80%",
@@ -236,7 +289,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from(".new-patient-section .form-card", {
+    safeGsapFrom(".new-patient-section .form-card", {
       scrollTrigger: {
         trigger: ".new-patient-section",
         start: "top 75%",
@@ -249,7 +302,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from(".new-patient-section .right-div", {
+    safeGsapFrom(".new-patient-section .right-div", {
       scrollTrigger: {
         trigger: ".new-patient-section",
         start: "top 80%",
@@ -262,7 +315,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Dental Excellence
-    gsap.from(".dental-excellence-section .img-wrapper .img1", {
+    safeGsapFrom(".dental-excellence-section .img-wrapper .img1", {
       scrollTrigger: {
         trigger: ".dental-excellence-section",
         start: "top 80%",
@@ -273,7 +326,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from(".dental-excellence-section .img-wrapper .img2", {
+    safeGsapFrom(".dental-excellence-section .img-wrapper .img2", {
       scrollTrigger: {
         trigger: ".dental-excellence-section",
         start: "top 80%",
@@ -285,7 +338,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.3,
     });
 
-    gsap.from(".dental-excellence-section .pattern-bg", {
+    safeGsapFrom(".dental-excellence-section .pattern-bg", {
       scrollTrigger: {
         trigger: ".dental-excellence-section",
         start: "top 80%",
@@ -297,7 +350,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.5,
     });
 
-    gsap.from(".dental-excellence-section .col-lg-6.my-lg-0.my-5 > *", {
+    safeGsapFrom(".dental-excellence-section .col-lg-6.my-lg-0.my-5 > *", {
       scrollTrigger: {
         trigger: ".dental-excellence-section",
         start: "top 80%",
@@ -311,7 +364,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Customer care excellence
-    gsap.from(".services-section .service-card", {
+    safeGsapFrom(".services-section .service-card", {
       scrollTrigger: {
         trigger: ".services-section",
         start: "top 80%", // starts when section is in view
@@ -319,14 +372,13 @@ window.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play none none reverse",
       },
       opacity: 1,
-      y: 0,
       duration: 0.8,
       stagger: 0.2,
       ease: "power2.out",
     });
 
     // Lifestyle section
-    gsap.from("#services .service-card2", {
+    safeGsapFrom("#services .service-card2", {
       scrollTrigger: {
         trigger: "#services",
         start: "top 80%",
@@ -339,7 +391,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from("#services .insurance-card", {
+    safeGsapFrom("#services .insurance-card", {
       scrollTrigger: {
         trigger: "#services",
         start: "top 80%",
@@ -352,7 +404,7 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 0.5,
     });
 
-    gsap.from("#services .heading-card", {
+    safeGsapFrom("#services .heading-card", {
       scrollTrigger: {
         trigger: "#services",
         start: "top 85%",
@@ -365,7 +417,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Discount section
-    gsap.from(".discount-section .discount-image", {
+    safeGsapFrom(".discount-section .discount-image", {
       scrollTrigger: {
         trigger: ".discount-section",
         start: "top 80%",
@@ -377,7 +429,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from(".discount-section .discount-content", {
+    safeGsapFrom(".discount-section .discount-content", {
       scrollTrigger: {
         trigger: ".discount-section",
         start: "top 80%",
@@ -391,7 +443,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Happy section
-    gsap.from("#reviews .story-card", {
+    safeGsapFrom("#reviews .story-card", {
       scrollTrigger: {
         trigger: "#reviews",
         start: "top 80%",
@@ -399,13 +451,12 @@ window.addEventListener("DOMContentLoaded", () => {
         toggleActions: "play none none reverse",
       },
       opacity: 0,
-      y: 0,
       duration: 0.8,
       stagger: 0.2,
       ease: "power2.out",
     });
 
-    gsap.from("#reviews .each-section-heading, #reviews .each-section-para", {
+    safeGsapFrom("#reviews .each-section-heading, #reviews .each-section-para", {
       scrollTrigger: {
         trigger: "#reviews",
         start: "top 85%",
@@ -419,7 +470,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // contact section
-    gsap.from("#contactus .each-section-heading", {
+    safeGsapFrom("#contactus .each-section-heading", {
       scrollTrigger: {
         trigger: "#contactus",
         start: "top 80%",
@@ -431,7 +482,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from("#contactus .each-section-para", {
+    safeGsapFrom("#contactus .each-section-para", {
       scrollTrigger: {
         trigger: "#contactus",
         start: "top 80%",
@@ -444,7 +495,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from("#contactus .btn-view-on-googlemaps", {
+    safeGsapFrom("#contactus .btn-view-on-googlemaps", {
       scrollTrigger: {
         trigger: "#contactus",
         start: "top 80%",
@@ -457,7 +508,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "back.out(1.7)",
     });
 
-    gsap.from("#contactus form, #contactus .map-div", {
+    safeGsapFrom("#contactus form, #contactus .map-div", {
       scrollTrigger: {
         trigger: "#contactus",
         start: "top 70%",
@@ -471,7 +522,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // footer section
-    gsap.from(".footer-section .footer-logo img", {
+    safeGsapFrom(".footer-section .footer-logo img", {
       scrollTrigger: {
         trigger: ".footer-section",
         start: "top 85%",
@@ -483,7 +534,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power2.out",
     });
 
-    gsap.from(".footer-section .social-icons a", {
+    safeGsapFrom(".footer-section .social-icons a", {
       scrollTrigger: {
         trigger: ".footer-section",
         start: "top 85%",
@@ -496,7 +547,7 @@ window.addEventListener("DOMContentLoaded", () => {
       stagger: 0.15,
     });
 
-    gsap.from(".footer-section p", {
+    safeGsapFrom(".footer-section p", {
       scrollTrigger: {
         trigger: ".footer-section",
         start: "top 85%",

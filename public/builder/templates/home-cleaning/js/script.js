@@ -47,15 +47,24 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle: false,
   });
 
+  menu.addEventListener("shown.bs.collapse", () => {
+    hamburger.setAttribute("aria-expanded", "true");
+  });
+  menu.addEventListener("hidden.bs.collapse", () => {
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+
   // Toggle hamburger and menu
   hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("is-active");
     if (menu.classList.contains("show")) {
       bsCollapse.hide();
+      hamburger.setAttribute("aria-expanded", "false");
       navbarSection.classList.remove("on-click-hamburger-button-navbar"); // 🔻 Remove background
       navbarSection.classList.add("navbar-color"); // 🔺 Add background
     } else {
       bsCollapse.show();
+      hamburger.setAttribute("aria-expanded", "true");
       navbarSection.classList.add("on-click-hamburger-button-navbar"); // 🔺 Add background
       navbarSection.classList.remove("navbar-color"); // 🔻 Remove background
     }
@@ -67,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (menu.classList.contains("show")) {
         bsCollapse.hide();
         hamburger.classList.remove("is-active");
+        hamburger.setAttribute("aria-expanded", "false");
         navbarSection.classList.remove("on-click-hamburger-button-navbar"); // 🔻 Remove background
         navbarSection.classList.add("navbar-color"); // 🔺 Add background
       }
@@ -81,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       bsCollapse.hide();
       hamburger.classList.remove("is-active");
+      hamburger.setAttribute("aria-expanded", "false");
       navbarSection.classList.remove("on-click-hamburger-button-navbar"); // 🔻 Remove background
       navbarSection.classList.add("navbar-color"); // 🔺 Add background
     }
@@ -89,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // For the testimonials section
 const swiper = new Swiper(".testimonial-swiper", {
-  loop: true,
+  loop: false,
   spaceBetween: 24,
   pagination: {
     el: ".swiper-pagination",
@@ -576,7 +587,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     testimonialTimeline
       .from(
-        ".testimonial-section p.text-muted",
+        ".testimonial-section-header .each-section-name, .testimonial-section-header .each-section-heading",
         {
           y: 30,
           opacity: 0,
@@ -596,7 +607,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "-=0.3"
       )
       .from(
-        ".testimonial-section .trusted-by-div, .testimonial-section .review-star, .testimonial-section .fw-semibold",
+        ".testimonial-section .star-div, .testimonial-section .text-start-style",
         {
           opacity: 0,
           y: 30,

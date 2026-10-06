@@ -26,8 +26,6 @@
   background: transparent;
   border-bottom: 1px solid transparent;
   transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  /* ✅ becomes sticky only after scroll */
-  /* Responsive tweaks */
 }
 .zg-navbar__logo {
   font-family: "Brush Script MT", cursive;
@@ -166,16 +164,21 @@
   top: 21px;
   transform: rotate(-45deg);
 }
+.zg-navbar {
+  /* ✅ becomes sticky only after scroll */
+}
 .zg-navbar.is-sticky {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   background: rgba(253, 253, 253, 0.92);
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom-color: rgba(17, 17, 17, 0.08);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.zg-navbar {
+  /* Responsive tweaks */
 }
 @media (max-width: 991px) {
   .zg-navbar__logo {
@@ -200,15 +203,9 @@
 .zg-hero {
   position: relative;
   margin-top: 40px; /* avoid navbar overlap */
-  background: url("assets/images/c9513631-5a81-4302-820b-1bdb7b3e88ea.png") no-repeat center center/cover;
   background-color: var(--light-colors);
   overflow: hidden;
   /* soft overlay like old design */
-  /* ============ Desktop base (same as old) ============ */
-  /* ✅ Match old offsets (no grid/flex needed) */
-  /* ============ Tablet + Mobile (same layout feel, stacked) ============ */
-  /* ============ Small phones ============ */
-  /* ============ Very small devices ============ */
 }
 .zg-hero::before {
   content: "";
@@ -226,6 +223,9 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
+}
+.zg-hero {
+  /* ============ Desktop base (same as old) ============ */
 }
 .zg-hero__row {
   position: relative;
@@ -298,6 +298,9 @@
   color: var(--dark-colors);
   margin: 0;
 }
+.zg-hero {
+  /* ✅ Match old offsets (no grid/flex needed) */
+}
 @media (min-width: 992px) {
   .zg-hero__left {
     left: 8%; /* same as: right:-10% effect */
@@ -307,6 +310,9 @@
     left: -16%;
     text-align: left;
   }
+}
+.zg-hero {
+  /* ============ Tablet + Mobile (same layout feel, stacked) ============ */
 }
 @media (max-width: 991.98px) {
   .zg-hero__left, .zg-hero__center, .zg-hero__right {
@@ -334,6 +340,9 @@
     max-width: 420px; /* looks closer to old even on tablets */
   }
 }
+.zg-hero {
+  /* ============ Small phones ============ */
+}
 @media (max-width: 576px) {
   .zg-hero {
     margin-top: 72px;
@@ -356,6 +365,9 @@
     padding: 0.78rem 1.55rem;
     border-radius: 8px;
   }
+}
+.zg-hero {
+  /* ============ Very small devices ============ */
 }
 @media (max-width: 380px) {
   .zg-hero__right-title {
@@ -384,7 +396,6 @@
 
 .zg-services {
   background: var(--light-colors);
-  /* ✅ Responsive fine-tuning */
 }
 .zg-services__row {
   margin-left: -12px;
@@ -454,6 +465,9 @@
 .zg-services__link:hover i {
   transform: translateX(3px);
 }
+.zg-services {
+  /* ✅ Responsive fine-tuning */
+}
 @media (max-width: 576px) {
   .zg-services__card {
     padding: 1.6rem;
@@ -463,22 +477,6 @@
 .zg-join {
   position: relative;
   /* Outer box background */
-  /* Bootstrap row spacing (no flex/grid usage) */
-  /* =========================
-     LEFT SIDE (IMAGE + CIRCLE)
-     ========================= */
-  /* Image wrapper */
-  /* Circle clipping layer (circle must not escape) */
-  /* =========================
-     RIGHT SIDE (TEXT)
-     ========================= */
-  /* =========================
-     RESPONSIVE BREAKPOINTS
-     ========================= */
-  /* Circle resize like your old code */
-  /* Tablet & below: stack + center */
-  /* Mobile: circle centered + image smaller */
-  /* Very small phones */
 }
 .zg-join__box {
   background: #f5faff;
@@ -486,6 +484,9 @@
   position: relative;
   /* ✅ IMPORTANT: allow top overflow for image */
   overflow: visible;
+}
+.zg-join {
+  /* Bootstrap row spacing (no flex/grid usage) */
 }
 .zg-join__row {
   margin-left: 0;
@@ -495,10 +496,18 @@
 .zg-join__left, .zg-join__right {
   padding: 0;
 }
+.zg-join {
+  /* =========================
+     LEFT SIDE (IMAGE + CIRCLE)
+     ========================= */
+}
 .zg-join__left {
   position: relative;
   overflow: visible; /* ✅ allow image overflow */
   min-height: 380px;
+}
+.zg-join {
+  /* Image wrapper */
 }
 .zg-join__img-wrap {
   text-align: center;
@@ -518,6 +527,9 @@
   /* ✅ MAIN EFFECT: overflow from top */
   margin-top: -100px;
 }
+.zg-join {
+  /* Circle clipping layer (circle must not escape) */
+}
 .zg-join__circle-clip {
   position: absolute;
   inset: 0;
@@ -533,6 +545,11 @@
   height: 350px;
   border-radius: 90% 50%;
   background: var(--primary-colors);
+}
+.zg-join {
+  /* =========================
+     RIGHT SIDE (TEXT)
+     ========================= */
 }
 .zg-join__right {
   padding: 2rem;
@@ -571,6 +588,12 @@
 .zg-join__link:hover i {
   transform: translateX(3px);
 }
+.zg-join {
+  /* =========================
+     RESPONSIVE BREAKPOINTS
+     ========================= */
+  /* Circle resize like your old code */
+}
 @media (max-width: 1200px) {
   .zg-join__circle {
     width: 280px;
@@ -578,6 +601,9 @@
     left: -30px;
     bottom: -80px;
   }
+}
+.zg-join {
+  /* Tablet & below: stack + center */
 }
 @media (max-width: 992px) {
   .zg-join__circle {
@@ -612,12 +638,18 @@
     margin-right: auto;
   }
 }
+.zg-join {
+  /* Mobile: circle centered + image smaller */
+}
 @media (max-width: 768px) {
   .zg-join__img-wrap img {
     height: 320px;
     /* ✅ overflow still visible on mobile */
     margin-top: -45px;
   }
+}
+.zg-join {
+  /* Very small phones */
 }
 @media (max-width: 420px) {
   .zg-join__img-wrap img {
@@ -634,8 +666,6 @@
 
 .zg-mission {
   background: var(--light-colors);
-  /* spacing between bootstrap columns like old "gap" */
-  /* Mobile spacing polish */
 }
 .zg-mission__header {
   text-align: center;
@@ -653,6 +683,9 @@
   color: var(--secondary-colors);
   line-height: 1.6;
   margin: 0;
+}
+.zg-mission {
+  /* spacing between bootstrap columns like old "gap" */
 }
 .zg-mission__row {
   margin-left: -12px;
@@ -707,6 +740,9 @@
   box-shadow: 0 4px 20px var(--primary-colors);
   transform: translateY(-3px);
 }
+.zg-mission {
+  /* Mobile spacing polish */
+}
 @media (max-width: 576px) {
   .zg-mission__header {
     margin-bottom: 2.2rem;
@@ -721,10 +757,6 @@
 
 .zg-projects {
   background-color: #f5faff;
-  /* spacing like old "gap: 30px" */
-  /* Optional link styling if you use it later */
-  /* ✅ Responsive heading alignment like old */
-  /* Optional: reduce spacing a bit on small screens */
 }
 .zg-projects__heading {
   text-align: left;
@@ -742,6 +774,9 @@
   line-height: 1.6;
   color: var(--secondary-colors);
   margin: 0;
+}
+.zg-projects {
+  /* spacing like old "gap: 30px" */
 }
 .zg-projects__row {
   margin-left: -15px;
@@ -785,6 +820,9 @@
   font-weight: 600;
   color: var(--dark-colors);
 }
+.zg-projects {
+  /* Optional link styling if you use it later */
+}
 .zg-projects__link {
   display: inline-block;
   margin-top: 0.35rem;
@@ -804,6 +842,9 @@
 .zg-projects__link:hover i {
   transform: translateX(3px);
 }
+.zg-projects {
+  /* ✅ Responsive heading alignment like old */
+}
 @media (max-width: 768px) {
   .zg-projects__heading {
     max-width: 100%;
@@ -815,6 +856,9 @@
     text-align: center;
   }
 }
+.zg-projects {
+  /* Optional: reduce spacing a bit on small screens */
+}
 @media (max-width: 576px) {
   .zg-projects__col {
     margin-bottom: 22px;
@@ -823,8 +867,6 @@
 
 .zg-partners {
   background: var(--light-colors);
-  /* logo grid spacing (replaces CSS grid gap) */
-  /* ✅ Responsive */
 }
 .zg-partners__row {
   margin-left: -12px;
@@ -859,6 +901,9 @@
 .zg-partners__link:hover i {
   transform: translateX(3px);
 }
+.zg-partners {
+  /* logo grid spacing (replaces CSS grid gap) */
+}
 .zg-partners__logos-row {
   margin-left: -12px;
   margin-right: -12px;
@@ -880,6 +925,9 @@
 }
 .zg-partners__logo-col img:hover {
   transform: scale(1.03);
+}
+.zg-partners {
+  /* ✅ Responsive */
 }
 @media (max-width: 991.98px) {
   .zg-partners__text {
@@ -906,7 +954,6 @@
   background: url("../assets/images/charity-2-testimonial-bg.webp") no-repeat center center/cover;
   position: relative;
   /* dark overlay */
-  /* ✅ Responsive: center on tablet/mobile */
 }
 .zg-testimonial::before {
   content: "";
@@ -956,6 +1003,9 @@
   color: rgba(253, 253, 253, 0.85);
   margin: 0;
 }
+.zg-testimonial {
+  /* ✅ Responsive: center on tablet/mobile */
+}
 @media (max-width: 991.98px) {
   .zg-testimonial__content {
     margin-left: auto;
@@ -976,22 +1026,11 @@
   }
 }
 
-:root {
-  --primary-colors: #ff3366;
-  --secondary-colors: #555;
-  --territory-colors: #f5faff;
-  --dark-colors: #111;
-  --light-colors: #fdfdfd;
-}
-
 .zg-footer {
   background: #222;
   color: #ddd;
   font-size: 0.95rem;
   /* spacing between columns (replacing grid gap) */
-  /* bottom (avoid flex — use float + clearfix) */
-  /* left + right on desktop */
-  /* ✅ Mobile center */
 }
 .zg-footer__top {
   margin-left: -15px;
@@ -1044,10 +1083,14 @@
   margin-right: 12px;
   font-size: 1.1rem;
   color: #ddd;
+  text-decoration: none;
   transition: color 0.25s ease;
 }
 .zg-footer__social a:hover {
   color: var(--primary-colors);
+}
+.zg-footer {
+  /* bottom (avoid flex — use float + clearfix) */
 }
 .zg-footer__bottom {
   border-top: 1px solid #444;
@@ -1063,6 +1106,9 @@
   font-size: 0.85rem;
   color: #aaa;
 }
+.zg-footer {
+  /* left + right on desktop */
+}
 @media (min-width: 577px) {
   .zg-footer__copy:first-child {
     float: left;
@@ -1070,6 +1116,9 @@
   .zg-footer__copy:last-child {
     float: right;
   }
+}
+.zg-footer {
+  /* ✅ Mobile center */
 }
 @media (max-width: 576px) {
   .zg-footer {
@@ -1081,5 +1130,132 @@
   }
   .zg-footer__copy {
     float: none;
+  }
+}
+
+/* Zigrow Builder configuration */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.zg-hero, .zg-services, .zg-join, .zg-mission, .zg-projects, .zg-partners, .zg-testimonial, .zg-footer {
+  padding: 3rem 0;
+}
+
+.zg-join__box, .zg-projects {
+  background-color: color-mix(in srgb, var(--territory-colors, #468cd3) 8%, white);
+}
+
+.zg-navbar__mobile-links a:hover {
+  background-color: color-mix(in srgb, var(--territory-colors, #468cd3) 8%, white);
+}
+
+.zg-services__col, .zg-mission__col, .zg-projects__col, .zg-partners__logo-col {
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.zg-services__card, .zg-mission__item, .zg-projects__card, .zg-partners__logo-tile {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.zg-partners__logo-tile {
+  text-align: center;
+}
+
+.zg-align-center {
+  align-items: center;
+}
+
+.zg-hero__actions, .zg-services__actions, .zg-join__actions, .zg-mission__btnwrap, .zg-partners__actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.zg-mission__btnwrap {
+  justify-content: center;
+}
+
+.zg-services__link, .zg-join__link, .zg-mission__btn, .zg-partners__link, .zg-footer__social, #backToTopBtn, .zg-services__icon, .zg-mission__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.zg-services__link, .zg-join__link, .zg-mission__btn, .zg-partners__link {
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.zg-services__icon, .zg-mission__icon, #backToTopBtn {
+  justify-content: center;
+}
+
+.zg-services__icon i, .zg-mission__icon i, [data-btn] > i, .zg-footer__social > a > i, #backToTopBtn > i {
+  flex: 0 0 auto;
+}
+
+[data-btn], [data-btn]:hover, [data-btn]:focus, [data-btn]:focus-visible, [data-btn]:active, [data-btn]:visited {
+  text-decoration: none;
+}
+
+[data-btn]:focus-visible, .zg-navbar__toggle:focus-visible, .zg-navbar a:focus-visible, #backToTopBtn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-colors) 60%, white);
+  outline-offset: 3px;
+}
+
+#backToTopBtn {
+  width: 48px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.zg-navbar__toggle {
+  padding: 0;
+}
+
+.zg-footer__social {
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.zg-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+}
+
+.powered-by-zigrow-row {
+  clear: both;
+  border-top: 1px solid #444;
+  margin-top: 12px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.powered-by-zigrow-row a {
+  color: #ddd;
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .zg-hero__actions, .zg-join__actions, .zg-partners__actions {
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */

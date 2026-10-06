@@ -23,20 +23,22 @@
 </head>
 
 <body>
+    <header id="header" data-section="header">
     <nav class="navbar navbar-expand-lg bg-white-style sticky-top navbar-color py-3-style navbar-animate"
-        id="navbarSection" data-section>
+        id="navbarSection" aria-label="Primary navigation">
         <div class="container">
             <a class="navbar-brand" href="#" data-logo="navbar">
                 <div class="img-wrapper-style">
-                    <img src="assets/images/2.png" class="img-fluid" alt="Logo">
+                    <img src="assets/images/aurahome-logo.webp" class="img-fluid" alt="AuraHome logo">
                 </div>
             </a>
             <div class="d-lg-none d-flex align-items-center justify-content-lg-end">
-                <div class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle">
+                <button class="hamburger hamburger--spring js-hamburger" id="hamburger-toggle" type="button"
+                    aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false">
                     <div class="hamburger-box">
                         <div class="hamburger-inner"></div>
                     </div>
-                </div>
+                </button>
             </div>
 
             <div class="collapse navbar-collapse justify-content-center navbar-menu-div" id="navbarMenu">
@@ -53,17 +55,20 @@
                     <li class="nav-item">
                         <a class="btn btn-custom btn-custom2" href="#faq">Help</a>
                     </li>
-                    <li class="nav-item d-lg-none">
-                        <a class="btn btn-custom">Get the App</a>
+                    <li class="nav-item d-lg-none navbar-mobile-actions zg-align-center">
+                        <a class="btn btn-custom" href="#footer" data-btn="nav">Get the App</a>
                     </li>
                 </ul>
             </div>
 
-            <div class="d-none d-lg-block">
-                <a class="btn btn-custom">Get the App</a>
+            <div class="d-none d-lg-flex navbar-desktop-actions zg-align-center">
+                <a class="btn btn-custom" href="#footer" data-btn="nav">Get the App</a>
             </div>
         </div>
     </nav>
+    </header>
+
+    <main>
 
     <section class="hero-section py-sm-5-style" id="hero-section" data-section="hero-section">
         <div class="container position-relative">
@@ -74,18 +79,19 @@
                 </div>
             </div>
 
-            <div class="smart-card floating-card lamp-card">
+            <div class="smart-card floating-card lamp-card" data-zg-editable="surface">
                 <div class="title">
                     <div class="smart-icon">
-                        <i class="bi bi-lightbulb-fill" data-icon="bi-lightbulb-fill"></i>
+                        <i class="bi bi-lightbulb-fill" data-icon="lightbulb-fill" aria-hidden="true"></i>
                     </div>
                     <div class="title-name">
-                        <div class="smart-title">Aura Light</div>
-                        <div class="smart-subtitle">8 units</div>
+                        <span class="smart-title">Aura Light</span>
+                        <span class="smart-subtitle">8 units</span>
                     </div>
                 </div>
                 <div class="smart-consume">
-                    <i class="bi bi-lightning-fill" data-icon="bi-lightbulb-fill"></i> Usage 18 kWh
+                    <i class="bi bi-lightning-fill" data-icon="lightning-fill" aria-hidden="true"></i>
+                    <span>Usage 18 kWh</span>
                 </div>
                 <hr>
                 <div class="smart-toggle">
@@ -96,18 +102,18 @@
                 </div>
             </div>
 
-            <div class="smart-card2 floating-card tv-card">
+            <div class="smart-card2 floating-card tv-card" data-zg-editable="surface">
                 <div class="d-flex justify-content-between align-items-start">
                     <div class="d-flex align-items-center">
                         <div class="smart-icon">
-                            <i class="bi bi-tv" data-icon="bi-tv"></i>
+                            <i class="bi bi-tv" data-icon="tv" aria-hidden="true"></i>
                         </div>
                         <div class="ms-2-style">
-                            <div class="smart-title">Periodically<br>active Media Hub</div>
-                            <div class="smart-subtitle">Daily • at 6:30 PM</div>
+                            <span class="smart-title">Periodically<br>active Media Hub</span>
+                            <span class="smart-subtitle">Daily • at 6:30 PM</span>
                         </div>
                     </div>
-                    <div class="unit-badge">3 units</div>
+                    <span class="unit-badge">3 units</span>
                 </div>
 
                 <hr>
@@ -121,8 +127,8 @@
         </div>
     </section>
 
-    <a href="#" class="rounded-circle floating-btn">
-        <i class="bi bi-arrow-up" data-icon="bi-arrow-up"></i>
+    <a href="#header" class="rounded-circle floating-btn" aria-label="Back to top">
+        <i class="bi bi-arrow-up" data-icon="arrow-up" aria-hidden="true"></i>
     </a>
 
     <section class="smart-hero py-sm-5-style" id="smart-hero" data-section="smart-hero">
@@ -138,21 +144,25 @@
 
                 <form class="email-form" action="https://api.zigrow.com/api/forms/submit" method="post"
                     data-zigrow-form>
+                    <input type="hidden" name="domain" value="">
+                    <input type="hidden" name="form_key" value="newsletter">
+                    <input type="hidden" name="page_url" value="">
+                    <input type="hidden" name="_company" value="">
                     <div form-question-zigrow>
-                        <input type="text" name="email" placeholder="Enter your email" required>
-                    </div>                
-                    <button type="submit">
-                        Get Started <span>&rarr;</span>
-                    </button>
+                        <label for="newsletter-email">Email address</label>
+                        <input id="newsletter-email" type="email" name="email" placeholder="Enter your email" required maxlength="254"
+                            title="Please enter a valid email address.">
+                    </div>
+                    <button type="submit">Get Started →</button>
                 </form>
 
                 <div class="rating">
                     <div class="stars">
-                        <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
-                        <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
-                        <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
-                        <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
-                        <i class="bi bi-star-fill" data-icon="bi-star-fill"></i>
+                        <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                        <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                        <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                        <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
+                        <i class="bi bi-star-fill" data-icon="star-fill" aria-hidden="true"></i>
                     </div>
                     <div class="rating-info">
                         <strong>4.9</strong>
@@ -173,32 +183,32 @@
                 <div class="swiper-wrapper mb-5-style">
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-1.png" loading="lazy" alt="BestBank">
+                            <img src="assets/images/bestbank-logo.webp" loading="lazy" alt="Lorem BestBank logo">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-2.png" loading="lazy" alt="Nextflows">
+                            <img src="assets/images/nextflows-logo.webp" loading="lazy" alt="Lorem Nextflows logo">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-3.png" loading="lazy" alt="dataBites">
+                            <img src="assets/images/databites-logo.webp" loading="lazy" alt="Lorem dataBites logo">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-4.png" loading="lazy" alt="Globalchart">
+                            <img src="assets/images/globalchart-logo.webp" loading="lazy" alt="Lorem Globalchart logo">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-5.png" loading="lazy" alt="Selfast">
+                            <img src="assets/images/selfast-logo.webp" loading="lazy" alt="Lorem Selfast logo">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="img-wrapper-style col-12">
-                            <img src="assets/images/lorem-6.png" loading="lazy" alt="Roomates">
+                            <img src="assets/images/roomates-logo.webp" loading="lazy" alt="Lorem Roomates logo">
                         </div>
                     </div>
                 </div>
@@ -208,32 +218,32 @@
             <!-- <div class="row justify-content-center trusted-logos d-none d-md-flex">
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-1.png" loading="lazy" alt="BestBank">
+                        <img src="assets/images/bestbank-logo.webp" loading="lazy" alt="Lorem BestBank logo">
                     </div>
                 </div>
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-2.png" loading="lazy" alt="Nextflows">
+                        <img src="assets/images/nextflows-logo.webp" loading="lazy" alt="Lorem Nextflows logo">
                     </div>
                 </div>
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-3.png" loading="lazy" alt="dataBites">
+                        <img src="assets/images/databites-logo.webp" loading="lazy" alt="Lorem dataBites logo">
                     </div>
                 </div>
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-4.png" loading="lazy" alt="Globalchart">
+                        <img src="assets/images/globalchart-logo.webp" loading="lazy" alt="Lorem Globalchart logo">
                     </div>
                 </div>
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-5.png" loading="lazy" alt="Selfast">
+                        <img src="assets/images/selfast-logo.webp" loading="lazy" alt="Lorem Selfast logo">
                     </div>
                 </div>
                 <div class="col-6 col-md-auto">
                     <div class="img-wrapper-style col-12">
-                        <img src="assets/images/lorem-6.png" loading="lazy" alt="Roomates">
+                        <img src="assets/images/roomates-logo.webp" loading="lazy" alt="Lorem Roomates logo">
                     </div>
                 </div>
             </div> -->
@@ -248,7 +258,7 @@
             </div>
             <div class="play-button-main-div">
                 <div class="play-button-second-div">
-                    <i class="bi bi-play-fill" data-section="bi-play-fill"></i>
+                    <i class="bi bi-play-fill" data-icon="play-fill" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
@@ -262,9 +272,9 @@
                         Design the future <br><span class="emoji">✨</span> with the magic of<br>
                         <span class="highlight">Aura Connectivity.</span>
                     </h2>
-                    <a href="#" class="read-more-btn">
-                        Read more <span class="arrow">→</span>
-                    </a>
+                    <div class="smart-tech-actions zg-align-center">
+                        <a href="#update" class="read-more-btn" data-btn="smart-tech-section">Read more →</a>
+                    </div>
                 </div>
 
                 <div class="col-lg-7 col-md-12 mt-lg-0-style mt-4-style right-side-div">
@@ -282,12 +292,12 @@
                         support for leading smart home brands and voice assistants.
                     </p>
 
-                    <div class="info-box info-box1">
+                    <div class="info-box info-box1" data-zg-editable="surface">
                         <span class="label">Activations <span class="emoji">🚀</span></span>
                         <span class="value">42.810.250 Million</span>
                     </div>
 
-                    <div class="info-box info-box2">
+                    <div class="info-box info-box2" data-zg-editable="surface">
                         <span class="label">Awwwards <span class="emoji">⭐</span></span>
                         <span class="value">120 World Achievements</span>
                     </div>
@@ -307,7 +317,7 @@
 
             <div class="row mb-sm-5-style">
                 <div class="col-12 col-md-12 mb-4-style">
-                    <div class="background-color-only d-flex p-md-4-style">
+                    <div class="background-color-only d-flex p-md-4-style" data-zg-editable="surface">
                         <div class="feature-card d-md-flex flex-column col-lg-6">
                             <div class="feature-card-div">
                                 <h4 class="each-section-heading">Unified Family <br>Coordination <span
@@ -322,7 +332,9 @@
                                     fostering fluid teamwork and expert house control between all family
                                     members or housemates.
                                 </p>
-                                <a href="#" class="read-more-btn">Read more <span class="arrow">→</span></a>
+                                <div class="feature-primary-actions zg-align-center">
+                                    <a href="#ecosystem" class="read-more-btn" data-btn="update">Read more →</a>
+                                </div>
                             </div>
                         </div>
 
@@ -335,7 +347,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 main-feature">
+                <div class="col-12 col-md-6 main-feature clonable-card">
                     <div class="feature-card feature-card2 p-md-5-style">
                         <h4>Advanced Voice Command</h4>
                         <p>
@@ -343,10 +355,12 @@
                             making it much more fluid and natural to manage tools, build scenes,
                             and get tailored suggestions.
                         </p>
-                        <a href="#" class="read-more-btn2">Read more <span class="arrow">→</span></a>
+                        <div class="feature-card-actions zg-align-center">
+                            <a href="#ecosystem" class="read-more-btn2">Read more →</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 main-feature">
+                <div class="col-12 col-md-6 main-feature clonable-card">
                     <div class="feature-card feature-card2 p-md-5-style">
                         <h4>Presence Recognition</h4>
                         <p>
@@ -354,13 +368,15 @@
                             allowing for instant tweaks to bulbs, climate, and power stats for maximum
                             utility and savings.
                         </p>
-                        <a href="#" class="read-more-btn2">Read more <span class="arrow">→</span></a>
+                        <div class="feature-card-actions zg-align-center">
+                            <a href="#ecosystem" class="read-more-btn2">Read more →</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="cta-button">
-                <a href="#" class="view-all-btn">View All New Features <span class="arrow">→</span></a>
+            <div class="cta-button zg-align-center">
+                <a href="#ecosystem" class="view-all-btn" data-btn="update">View All New Features →</a>
             </div>
         </div>
     </section>
@@ -377,7 +393,8 @@
 
             <div class="row">
                 <div class="top-feature pt-3-style">
-                    <div class="d-flex flex-column top-feature-container flex-md-row for-only-border">
+                    <div class="d-flex flex-column top-feature-container flex-md-row for-only-border"
+                        data-zg-editable="surface">
                         <div class="col-12 col-md-8 highlight-card">
                             <h4>Glowing Ambience</h4>
                             <p>
@@ -397,8 +414,8 @@
                     </div>
                 </div>
 
-                <div class="bottom-features">
-                    <div class="col-12 col-md-6">
+                <div class="bottom-features row">
+                    <div class="col-12 col-md-6 clonable-card">
                         <div class="feature-card me-md-3-style">
                             <h4>Glowing Ambience</h4>
                             <p>
@@ -416,7 +433,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 clonable-card">
                         <div class="feature-card ms-md-3-style">
                             <h4>Media Integration</h4>
                             <p>
@@ -453,9 +470,11 @@
 
     <section class="customer-story py-sm-5-style" id="testimonials" data-section="testimonials">
         <div class="container">
-            <h2 class="each-section-heading mb-md-5-style">
-                What is our <br><span class="highlight">customer story</span>
-            </h2>
+            <div class="section-header">
+                <h2 class="each-section-heading mb-md-5-style">
+                    What is our <br><span class="highlight">customer story</span>
+                </h2>
+            </div>
 
             <div class="swiper customerStorySwiper">
                 <div class="swiper-wrapper mb-5-style">
@@ -581,7 +600,9 @@
 
     <section class="faq-section py-5-style" id="faq" data-section="faq">
         <div class="container">
-            <h2 class="each-section-heading mb-md-3-style mb-2-style faq-title">Frequently Asked Questions</h2>
+            <div class="section-header">
+                <h2 class="each-section-heading mb-md-3-style mb-2-style faq-title">Frequently Asked Questions</h2>
+            </div>
 
             <div class="accordion col-md-6" id="faqAccordion">
 
@@ -595,7 +616,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            <p> Smart home automation cores work by linking sensors and defining
+                            <p>Smart home automation cores work by linking sensors and defining
                                 specific tasks based on certain triggers like hours, motion, or
                                 external climate changes.
                             </p>
@@ -711,7 +732,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="img-wrapper-style col-12" data-logo="footer">
-                    <img src="assets/images/2.png" alt="Aura Logo" loading="lazy" class="img-fluid hero-logo">
+                    <img src="assets/images/aurahome-logo.webp" alt="AuraHome logo" loading="lazy"
+                        class="img-fluid hero-logo">
                 </div>
                 <span class="gradient-text">
                     Craft your smart life,
@@ -721,15 +743,17 @@
         </div>
     </section>
 
-    <footer class="footer-section" id="footer-section" data-section="footer-section">
+    </main>
+
+    <footer class="footer-section" id="footer" data-section="footer">
         <div class="container">
             <div class="row footer-top">
                 <div class="col-md-2 footer-column download-div">
                     <h5 class="only-download-text">Download</h5>
-                    <a href="#" class="store-badge-div"><img src="assets/images/technology-website-template-footer-image-1.png"
-                            alt="App Store" class="img-fluid store-badge" loading="lazy"></a>
-                    <a href="#" class="store-badge-div"><img src="assets/images/technology-website-template-footer-image-2.png"
-                            alt="Google Play" class="img-fluid store-badge" loading="lazy"></a>
+                    <a href="#" class="store-badge-div"><img src="assets/images/app-store-badge.webp"
+                            alt="Download on the App Store" class="img-fluid store-badge" loading="lazy"></a>
+                    <a href="#" class="store-badge-div"><img src="assets/images/google-play-badge.webp"
+                            alt="Get it on Google Play" class="img-fluid store-badge" loading="lazy"></a>
                 </div>
                 <div class="col-md-2 footer-column">
                     <h5>Company</h5>
@@ -788,9 +812,17 @@
                 <div class="col-sm-6 footer-copy">
                     <p>© Copyright 2025 — All Rights Reserved.</p>
                 </div>
-                <div class="col-sm-6 footer-links">
-                    <a href="#">Terms and Conditions</a>
-                    <a href="#">Privacy Policy</a>
+                <div class="col-sm-6">
+                    <ul class="footer-links">
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="powered-by-zigrow-row row">
+                <div class="col-12">
+                    <p><a href="https://zigrow.com" target="_blank"
+                            rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></p>
                 </div>
             </div>
         </div>
@@ -804,32 +836,25 @@
 
     <script>
         (function () {
-            // Find ALL Zigrow forms
-            const forms = Array.from(document.querySelectorAll('[data-zigrow-form]'));
+            const forms = Array.from(document.querySelectorAll('form[data-zigrow-form]'));
             if (!forms.length) return;
 
-            // Helper: turn FormData into a plain object
             function serializeForm(form) {
                 const fd = new FormData(form);
                 const raw = {};
                 for (const [name, value] of fd.entries()) {
-                    const el = form.elements[name];
-                    const isGroup = el && (el.length && el[0] && el[0].type === 'checkbox');
-                    if (isGroup) {
-                        if (!raw[name]) raw[name] = [];
-                        raw[name].push(value === '' ? true : value);
-                    } else {
-                        raw[name] = value;
-                    }
+                    const existing = raw[name];
+                    if (existing === undefined) raw[name] = value;
+                    else if (Array.isArray(existing)) existing.push(value === '' ? true : value);
+                    else raw[name] = [existing, value === '' ? true : value];
                 }
                 return raw;
             }
 
-            // Helper: pick primary value for quick list view
             function pickPrimaryValue(raw) {
                 if (raw.email && String(raw.email).trim()) return String(raw.email).trim();
                 if (raw.phone && String(raw.phone).trim()) return String(raw.phone).trim();
-                const nameCombo = [raw.firstName, raw.lastName].filter(Boolean).join(' ').trim();
+                const nameCombo = [raw.first_name, raw.last_name].filter(Boolean).join(' ').trim();
                 if (raw.name && String(raw.name).trim()) return String(raw.name).trim();
                 if (nameCombo) return nameCombo;
                 if (raw.message && String(raw.message).trim()) return String(raw.message).trim();
@@ -837,70 +862,64 @@
             }
 
             forms.forEach((form) => {
-                // Ensure hidden fields are filled
                 const domainInput = form.querySelector('input[name="domain"]');
                 const pageUrlInput = form.querySelector('input[name="page_url"]');
                 if (domainInput) domainInput.value = location.host;
                 if (pageUrlInput) pageUrlInput.value = location.href;
 
-                // Create a container for messages if not already exists
-                let msgContainer = form.querySelector('.form-submit-message');
-                if (!msgContainer) {
-                    msgContainer = document.createElement('div');
-                    msgContainer.className = 'form-submit-message mt-2 text-sm';
-                    form.appendChild(msgContainer);
+                let message = form.querySelector('.form-submit-message');
+                if (!message) {
+                    message = document.createElement('div');
+                    message.className = 'form-submit-message';
+                    message.setAttribute('role', 'status');
+                    message.setAttribute('aria-live', 'polite');
+                    form.appendChild(message);
                 }
 
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-
-                    const submitBtn = form.querySelector('[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.dataset._oldText = submitBtn.innerText;
-                        submitBtn.innerText = 'Submitting...';
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const submitButton = form.querySelector(':scope > [type="submit"]');
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                        submitButton.dataset.oldText = submitButton.textContent || '';
+                        submitButton.textContent = 'Submitting...';
                     }
-
-                    // Clear previous message
-                    msgContainer.innerText = '';
-                    msgContainer.style.color = '';
+                    message.textContent = '';
+                    message.removeAttribute('data-status');
 
                     try {
                         const raw = serializeForm(form);
                         const body = new URLSearchParams();
-                        body.set('domain', (form.querySelector('input[name="domain"]')?.value || location.host));
-                        body.set('form_key', (form.querySelector('input[name="form_key"]')?.value || 'contact'));
-                        body.set('page_url', (form.querySelector('input[name="page_url"]')?.value || location.href));
+                        body.set('domain', form.querySelector('input[name="domain"]')?.value || location.host);
+                        body.set('form_key', form.querySelector('input[name="form_key"]')?.value || 'contact');
+                        body.set('page_url', form.querySelector('input[name="page_url"]')?.value || location.href);
                         body.set('payload', JSON.stringify(raw));
-
                         const primary = pickPrimaryValue(raw);
                         if (primary) body.set('value', primary);
-
                         if (raw._company) body.set('_company', raw._company);
 
-                        const res = await fetch(form.action, {
+                        const response = await fetch(form.action, {
                             method: 'POST',
-                            headers: { 'Accept': 'application/json' },
+                            headers: { Accept: 'application/json' },
                             body
                         });
-
-                        const data = await res.json().catch(() => ({}));
-                        if (res.ok && (data.ok ?? true)) {
+                        const result = await response.json().catch(() => ({}));
+                        if (response.ok && (result.ok ?? true)) {
                             form.reset();
-                            msgContainer.innerText = '✅ Thanks! Your request has been submitted.';
-                            msgContainer.style.color = '#28a745'; // green success
+                            message.textContent = 'Thanks! Your request has been submitted.';
+                            message.dataset.status = 'success';
                         } else {
-                            msgContainer.innerText = `❌ ${data.message || `Failed (HTTP ${res.status})`}`;
-                            msgContainer.style.color = '#dc3545'; // red error
+                            message.textContent = result.message || `Failed (HTTP ${response.status})`;
+                            message.dataset.status = 'error';
                         }
-                    } catch (err) {
-                        console.error(err);
-                        msgContainer.innerText = '❌ Something went wrong. Please try again.';
-                        msgContainer.style.color = '#dc3545';
+                    } catch (error) {
+                        console.error(error);
+                        message.textContent = 'Something went wrong. Please try again.';
+                        message.dataset.status = 'error';
                     } finally {
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.innerText = submitBtn.dataset._oldText || 'Send';
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                            submitButton.textContent = submitButton.dataset.oldText || 'Send';
                         }
                     }
                 });

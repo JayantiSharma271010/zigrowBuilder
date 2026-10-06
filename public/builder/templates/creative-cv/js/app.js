@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
   });
 
+  navLinks.addEventListener("click", (event) => {
+    if (!event.target.closest("a")) return;
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+
   // Sticky header
   const headerOffset = header.offsetHeight;
   document.body.style.setProperty("--header-offset", `${headerOffset}px`);
@@ -37,12 +44,27 @@ window.addEventListener("scroll", () => {
   }
 });
 
+backToTop.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+  });
+});
+
 // gsap animations start here
-if (window.innerWidth > 768) {
+if (
+  window.innerWidth > 768 &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  typeof gsap !== "undefined" &&
+  typeof ScrollTrigger !== "undefined"
+) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Hero Animation
-  gsap.from("#hero .hero-heading h1", {
+  gsap.from("#hero .hero__heading h1", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 80%", // when top of hero hits 80% of viewport
@@ -54,7 +76,7 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#hero .hero-image img", {
+  gsap.from("#hero .hero__image img", {
     scrollTrigger: {
       trigger: "#hero",
       start: "top 75%",
@@ -68,7 +90,7 @@ if (window.innerWidth > 768) {
   });
 
   gsap.from(
-    "#hero .hero-text h4, #hero .hero-text p, #hero .hero-text, #hero .hero-text .signature",
+    "#hero .hero__content h2, #hero .hero__content p, #hero .hero__cta",
     {
       scrollTrigger: {
         trigger: "#hero",
@@ -83,8 +105,6 @@ if (window.innerWidth > 768) {
       ease: "power3.out",
     }
   );
-  gsap.registerPlugin(ScrollTrigger);
-
   // ===== Education Section =====
   gsap.from("#education h2", {
     scrollTrigger: {
@@ -98,9 +118,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#education .contact-info .info-item", {
+  gsap.from("#education .section-education__contact .contact-card", {
     scrollTrigger: {
-      trigger: "#education .contact-info",
+      trigger: "#education .section-education__contact",
       start: "top 75%",
       toggleActions: "play none none",
     },
@@ -113,7 +133,7 @@ if (window.innerWidth > 768) {
 
   gsap.from("#education .edu-item", {
     scrollTrigger: {
-      trigger: "#education .education-grid",
+      trigger: "#education .section-education__list-row",
       start: "top 70%",
       toggleActions: "play none none",
     },
@@ -137,9 +157,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#experience .experience-item", {
+  gsap.from("#experience .section-experience__item", {
     scrollTrigger: {
-      trigger: "#experience .experience-list",
+      trigger: "#experience .section-experience__list",
       start: "top 70%",
       toggleActions: "play none none",
     },
@@ -162,9 +182,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#services .services-desc", {
+  gsap.from("#services .section-services__desc", {
     scrollTrigger: {
-      trigger: "#services .services-desc",
+      trigger: "#services .section-services__desc",
       start: "top 85%",
       toggleActions: "play none none",
     },
@@ -212,7 +232,7 @@ if (window.innerWidth > 768) {
   });
 
   // ===== Clients Section =====
-  gsap.from("#clients h3", {
+  gsap.from("#clients h2", {
     scrollTrigger: {
       trigger: "#clients",
       start: "top 80%",
@@ -224,9 +244,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#clients .clients-logos img", {
+  gsap.from("#clients .client-logo img", {
     scrollTrigger: {
-      trigger: "#clients .clients-logos",
+      trigger: "#clients .section-clients__logos-row",
       start: "top 75%",
       toggleActions: "play none none",
     },
@@ -262,9 +282,9 @@ if (window.innerWidth > 768) {
     ease: "power3.out",
   });
 
-  gsap.from("#footer .footer-bottom", {
+  gsap.from("#footer .section-footer__bottom-row", {
     scrollTrigger: {
-      trigger: "#footer .footer-bottom",
+      trigger: "#footer .section-footer__bottom-row",
       start: "top 85%",
       toggleActions: "play none none",
     },

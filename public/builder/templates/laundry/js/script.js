@@ -8,32 +8,34 @@ window.addEventListener("scroll", () => {
   }
 });
 
-console.log('hey')
-// Smooth scroll with offset on anchor click
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    // Set active manually
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
+// Close the mobile menu before calculating internal-link scroll positions.
+document.querySelectorAll('#mainNavbar a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
 
-    // Close navbar in mobile
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('#navbarContent');
-
-    if (navbarToggler && navbarCollapse.classList.contains('show')) {
-      navbarToggler.click();
+    event.preventDefault();
+    if (link.classList.contains('nav-link')) {
+      document.querySelectorAll('.nav-link').forEach((item) => item.classList.remove('active'));
+      link.classList.add('active');
     }
-  });
-});
 
-// Close navbar on link click (mobile)
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('#navbarContent');
+    const navbarCollapse = document.getElementById('navbarContent');
+    const navigate = () => {
+      window.history.pushState(null, '', link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
-    if (navbarToggler && navbarCollapse.classList.contains('show')) {
-      navbarToggler.click();
+    if (navbarCollapse.classList.contains('show')) {
+      if (window.bootstrap?.Collapse) {
+        navbarCollapse.addEventListener('hidden.bs.collapse', navigate, { once: true });
+        bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
+      } else {
+        document.querySelector('.navbar-toggler')?.click();
+        window.setTimeout(navigate, 350);
+      }
+    } else {
+      navigate();
     }
   });
 });
@@ -49,15 +51,6 @@ document.addEventListener('click', function (event) {
   if (!isClickInside && navbarCollapse.classList.contains('show')) {
     toggler.click();
   }
-});
-
-// Hamburger menu animation
-document.addEventListener("DOMContentLoaded", function () {
-  const toggler = document.querySelector(".navbar-toggler");
-
-  toggler.addEventListener("click", function () {
-    toggler.classList.toggle("is-active");
-  });
 });
 
 // Update active nav link on scroll
@@ -86,27 +79,29 @@ window.addEventListener("scroll", () => {
 });
 
 // Swiper slider
-let swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
+if (window.Swiper) {
+  new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
     },
-    992: {
-      slidesPerView: 3,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
-  },
-});
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+    },
+  });
+}
 
 // Back to top button
 const backToTopBtn = document.getElementById("backToTop");
@@ -126,4 +121,6 @@ backToTopBtn.addEventListener("click", () => {
   });
 });
 
-window.addEventListener('resize', AOS.refresh);
+if (window.AOS) {
+  window.addEventListener('resize', AOS.refresh);
+}

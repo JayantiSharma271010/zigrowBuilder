@@ -1,530 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fitness Trainer</title>
-
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Bootstrap link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-
-  <!-- jonsuh hamburger icon  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
-    integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <!-- Google Material Icons CDN -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- Google fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+  <title>Fit Buddy Personal Training</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hamburgers@1.2.1/dist/hamburgers.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.13.0-gym-4">
 </head>
-
 <body>
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to Top">
-    <i class="bi bi-arrow-up-short fs-3"></i>
-  </button>
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section d-flex align-items-center">
-    <div class="container">
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-arrow-up-short" data-icon="arrow-up"></i></button>
 
-      <!-- Navbar -->
-      <nav id="mainNavbar" class="navbar navbar-expand-lg py-3 transition-navbar">
-        <div class="container">
-
-          <!-- Logo -->
-          <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
-            <img src="assets/img/logo.png" alt="" class="img-fluid">
-          </a>
-
-          <!-- Toggle button -->
-          <!-- Toggle button with Elastic Hamburger -->
-          <button class="navbar-toggler hamburger hamburger--elastic d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarContent" aria-label="Toggle navigation">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
-
-
-          <!-- Menu Items -->
-          <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
-            <ul class="navbar-nav mx-auto gap-lg-4 text-center font-montserrat">
-              <li class="nav-item py-lg-2 py-3 font-montserrat"><a class="nav-link p-0 " href="#hero">Home</a></li>
-              <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#about">About</a></li>
-              <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#programs">Services</a></li>
-              <li class="nav-item py-lg-2 py-3"><a class="nav-link p-0" href="#contact">Contact</a></li>
-
-
-
-            </ul>
-            <div class="d-lg-block ">
-              <a href="tel:+1234567890" class="call-now-btn nav-btn">
-                Book a Call
-              </a>
-            </div>
-
-          </div>
-      </nav>
-      <!-- Navbar Ends Here -->
-      <div class="" style="padding-block: 3rem;">
-
-
-        <div class="row align-items-center">
-          <!-- Left Content -->
-          <div class="col-md-5 text-white hero-content">
-            <h1 class="hero-title">TRANSFORM YOUR BODY, <br>TRANSFORM LIFE</h1>
-            <p class="hero-subtitle">Expert training programs tailored for you, designed to help you achieve your
-              fitness goals</p>
-            <a  href="tel:+1234567890" class="call-now-btn mt-4"><i class="bi bi-telephone-fill me-3"></i><span>
-
-                Book a <span class="fw-bold">FREE </span>Consultation </span> </a>
-            <div class=" mt-4">
-              <div class="social-icons d-flex gap-4">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Image & Text -->
-          <div class="col-md-7 position-relative hero-image-container">
-            <!-- Background Text -->
-            <h2 class="bg-text text-center">LEVEL<br>UP</h2>
-            <img src="assets/img/Gym hero section.webp " alt="Hero Man" class="img-fluid hero-image">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero Section Ends Here -->
-
-
-  <!-- About Section -->
-  <section id="about" class="py-6">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Left Text Column -->
-        <div class="col-lg-7 mb-lg-0 mb-4 about-card">
-          <h2 class=" main-heading">WHO IS JOHN?</h2>
-          <p class="lead description my-md-4 my-3">
-            A passionate fitness coach dedicated to helping individuals achieve their health goals through personalized
-            training. With over 10 years of experience, I have transformed the lives of hundreds by creating customized
-            workout and nutrition plans tailored to their unique needs.
-          </p>
-          <div class="stats d-flex flex-wrap justify-content-between mb-4 mt-5">
-            <div class="stat me-4">
-              <h3>2000+</h3>
-              <p>Satisfied Clients</p>
-            </div>
-            <div class="stat me-4">
-              <h3>10</h3>
-              <p>Years of Experience</p>
-            </div>
-            <div class="stat">
-              <h3>15</h3>
-              <p>Years in Sport</p>
-            </div>
-          </div>
-
-          <h5 class="certifications-heading mb-4"> Certifications</h5>
-          <div class="certifications d-flex flex-sm-nowrap flex-wrap gap-3">
-            <div class="cert-box">NASM<br><small>Certified Personal Trainer</small></div>
-            <div class="cert-box">ISSA<br><small>Nutrition & Goal Planning</small></div>
-            <div class="cert-box">ACE<br><small>Yoga & Flexibility Coach</small></div>
-          </div>
-        </div>
-
-        <!-- Right Image Column -->
-        <div class="col-lg-5 text-center">
-          <img src="assets/img/about.webp" alt="John lifting weights" class="img-fluid rounded about-img" />
-        </div>
-      </div>
-    </div>
-  </section>
- <!-- About Section Ends Here-->
-
-  <!-- Training Programs -->
-  <section id="programs" class="py-6 ">
-    <div class="container">
-      <h2 class=" main-heading mb-5">TRAINING PROGRAMS</h2>
-      <div class="row gy-4">
-        <!-- Program Item 1 -->
-        <div class="col-md-6 d-flex align-items-start program-item">
-          <div class="icon-box me-3">
-            <span class="material-icons">local_fire_department</span>
-          </div>
-          <div>
-            <h5 class="fw-bold">Weight Loss & Fat Burning</h5>
-            <p>Designed to help clients shed excess fat through high-intensity workouts, caloric deficit meal plans, and
-              metabolism-boosting techniques.</p>
-          </div>
-        </div>
-
-        <!-- Program Item 2 -->
-        <div class="col-md-6 d-flex align-items-start program-item">
-          <div class="icon-box me-3">
-            <span class="material-icons">self_improvement</span>
-          </div>
-          <div>
-            <h5 class="fw-bold">Yoga & Flexibility Improvement</h5>
-            <p>A holistic approach that combines stretching, breath control, and mindfulness to enhance flexibility,
-              reduce stress, and prevent injuries.</p>
-          </div>
-        </div>
-
-        <!-- Program Item 3 -->
-        <div class="col-md-6 d-flex align-items-start program-item">
-          <div class="icon-box me-3">
-            <span class="material-icons">fitness_center</span>
-          </div>
-          <div>
-            <h5 class="fw-bold">Muscle Gain & Strength Training</h5>
-            <p>Focused on progressive overload techniques, compound movements, and proper nutrition to build muscle mass
-              and strength.</p>
-          </div>
-        </div>
-
-        <!-- Program Item 4 -->
-        <div class="col-md-6 d-flex align-items-start program-item">
-          <div class="icon-box me-3">
-            <span class="material-icons">accessibility</span>
-          </div>
-          <div>
-            <h5 class="fw-bold">Posture Correction & Injury Recovery</h5>
-            <p>Helps clients correct muscle imbalances, back pain, and joint discomfort through targeted strengthening
-              and mobility exercises.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- <!-- Training Programs Ends Here-->
-
-  <!-- Success Stories -->
-  <section id="testimonials" class="py-6">
-    <div class="testmonial-container">
-      <h2 class="section-title mb-4">SUCCESS STORIES</h2>
-      <!-- Lines image on left section -->
-      <img src="assets/img/testimonial bg.png" alt="" class="before-quote-lines">
-      <div class="swiper testimonial-swiper">
-        <div class="swiper-wrapper">
-
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="row align-items-center g-4 flex-md-row flex-column">
-              <!-- Left: Testimonial Card -->
-              <div class="col-md-8">
-                <div class="testimonial-card p-4 position-relative">
-                  <div class="quote-lines">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                  </div>
-                  <p class="testimonial-text">
-                    "I’ve never felt stronger! John pushed me to my limits while providing the support I needed to
-                    succeed. Highly recommended!"
-                  </p>
-                  <p class="testimonial-author">Daniele Debbians</p>
-                </div>
-              </div>
-
-              <!-- Right: Image -->
-              <div class="col-md-4">
-                <div class="testimonial-image">
-                  <img src="assets/img/testimonial a.webp" alt="Success Story" class="img-fluid rounded">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="row align-items-center g-4 flex-md-row flex-column">
-              <!-- Left: Testimonial Card -->
-              <div class="col-md-8">
-                <div class="testimonial-card p-4 position-relative">
-                  <div class="quote-lines">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                  </div>
-                  <p class="testimonial-text">
-                   "John truly changed my approach to fitness. He kept me motivated, challenged me just confident, and finally consistent. Couldn’t have done it without him!"
-
-                  </p>
-                  <p class="testimonial-author"> Anjali Verma</p>
-                </div>
-              </div>
-
-              <!-- Right: Image -->
-              <div class="col-md-4">
-                <div class="testimonial-image">
-                  <img src="assets/img/testimonial b.webp" alt="Success Story" class="img-fluid rounded">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="swiper-slide">
-            <div class="row align-items-center g-4 flex-md-row flex-column">
-              <!-- Left: Testimonial Card -->
-              <div class="col-md-8">
-                <div class="testimonial-card p-4 position-relative">
-                  <div class="quote-lines">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                  </div>
-                  <p class="testimonial-text">
-                    "Working with John was a game-changer. His methods are clear, effective, and actually fun. I saw real results without burnout!"
-                  </p>
-                  <p class="testimonial-author">Rohit Sinha</p>
-                </div>
-              </div>
-
-              <!-- Right: Image -->
-              <div class="col-md-4">
-                <div class="testimonial-image">
-                  <img src="assets/img/testimonial c.webp" alt="Success Story" class="img-fluid rounded">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pagination & Arrows -->
-        <div class="swiper-pagination"></div>
-
-      </div>
-    </div>
-  </section>
-  <!-- Success Stories Ends Here-->
-
-
-  <!-- Pricing -->
-  <section id="pricing" class="py-6">
-    <div class="container">
-
-      <!-- Header and Toggle -->
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
-        <div>
-          <p class="main-subpara mb-1">Pricing Plan</p>
-          <h2 class="main-heading">JOIN TODAY</h2>
-        </div>
-        <div class="mt-3 mt-md-0">
-          <ul class="nav nav-pills bg-white shadow-sm rounded px-1 py-1" id="pricingToggle">
-            <li class="nav-item">
-              <button class="nav-link active" data-plan="monthly">Monthly</button>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" data-plan="yearly">Yearly</button>
-            </li>
+  <header id="header" class="site-header" data-section="header">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg transition-navbar" aria-label="Primary navigation">
+      <div class="container navbar-layout">
+        <a class="gym-brand-logo" href="#hero" data-logo="navbar">Fit Buddy</a>
+        <button class="navbar-toggler hamburger hamburger--elastic d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        <div class="collapse navbar-collapse navbar-menu" id="navbarContent">
+          <ul class="navbar-nav navbar-links">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programs">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
+          <div class="navbar-actions zg-align-center"><a href="tel:+911234567859" class="call-now-btn nav-btn" data-btn="navbar-book-call">Book a Call</a></div>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <!-- Cards -->
-      <div class="row d-none d-md-flex" id="pricingCards"></div>
-
-      <!-- Mobile Swiper -->
-      <div class="swiper mobile-swiper d-block d-md-none">
-        <div class="swiper-wrapper" id="swiperSlides"></div>
-        <div class="swiper-pagination"></div>
-
-      </div>
-    </div>
-  </section>
-  <!-- Pricing Ends Here -->
-
-  <!-- FAQs -->
-  <section id="faqs" class="py-5 faq-section">
-    <div class="container">
-      <h2 class="main-heading mb-2">COMMONLY ASKED QUESTIONS</h2>
-      <p class="main-subpara mb-5">I am here to help!</p>
-
-      <div class="accordion mt-4" id="faqAccordion">
-        <!-- FAQ Item -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button d-flex justify-content-between align-items-center collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#faq1">
-              <span class="accordian-header_text">How often should I exercise?</span>
-              <span class="material-icons icon">add</span>
-            </button>
-          </h2>
-          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Lorem ipsum dolor sit amet consectetur. Velit gravida malesuada quis ullamcorper...
-            </div>
+  <main>
+    <section id="hero" class="hero-section" data-section="hero">
+      <div class="container hero-shell"><div class="row hero-row">
+        <div class="col-md-5 hero-content">
+          <div class="section-header hero-section-header"><h1 class="hero-title">TRANSFORM YOUR BODY,<br>TRANSFORM LIFE</h1><p class="hero-subtitle">Expert training programs tailored for you, designed to help you achieve your fitness goals.</p></div>
+          <div class="section-body hero-section-body">
+            <div class="hero-actions zg-align-center"><a href="tel:+911234567859" class="call-now-btn" data-btn="hero-consultation"><i class="bi bi-telephone-fill" data-icon="telephone"></i>Book a FREE Consultation</a></div>
+            <div class="social-icons hero-social-icons"><a href="#" aria-label="Fit Buddy on Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a><a href="#" aria-label="Fit Buddy on Facebook"><i class="bi bi-facebook" data-icon="facebook"></i></a><a href="#" aria-label="Fit Buddy on Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a></div>
           </div>
         </div>
+        <div class="col-md-7 hero-image-container"><h2 class="bg-text">LEVEL<br>UP</h2><div class="hero-media"><img src="assets/img/gym-hero-section.webp" alt="Athlete completing a strength workout" class="hero-image"></div></div>
+      </div></div>
+    </section>
 
-        <!-- Repeat Item 2 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-              <span class="accordian-header_text">What's the best workout routine for weight loss?</span>
-              <span class="material-icons icon">add</span>
-            </button>
-          </h2>
-          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Add your answer here.
-            </div>
+    <section id="about" class="section-space" data-section="about">
+      <div class="container"><div class="row about-row">
+        <div class="col-lg-7 about-card">
+          <div class="section-header about-section-header"><h2 class="main-heading">WHO IS ARJUN?</h2><p class="description">A passionate fitness coach dedicated to helping individuals achieve their health goals through personalized training. With over 10 years of experience, I have transformed hundreds of lives with workout and nutrition plans tailored to individual needs.</p></div>
+          <div class="section-body about-section-body">
+            <div class="stats"><div class="stat"><h3>2000+</h3><p>Satisfied Clients</p></div><div class="stat"><h3>10</h3><p>Years of Experience</p></div><div class="stat"><h3>15</h3><p>Years in Sport</p></div></div>
+            <h3 class="certifications-heading">Certifications</h3>
+            <div class="row certifications"><div class="col-sm-4 clonable-card certification-item"><div class="cert-box">NASM<small>Certified Personal Trainer</small></div></div><div class="col-sm-4 clonable-card certification-item"><div class="cert-box">ISSA<small>Nutrition &amp; Goal Planning</small></div></div><div class="col-sm-4 clonable-card certification-item"><div class="cert-box">ACE<small>Yoga &amp; Flexibility Coach</small></div></div></div>
           </div>
         </div>
+        <div class="col-lg-5 about-media"><img src="assets/img/about.webp" alt="Personal trainer performing a barbell exercise" class="about-img"></div>
+      </div></div>
+    </section>
 
-        <!-- Item 3 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-              <span class="accordian-header_text">What should I eat before and after a workout?</span>
-              <span class="material-icons icon">add</span>
-            </button>
-          </h2>
-          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Add your answer here.
-            </div>
-          </div>
-        </div>
+    <section id="programs" class="section-space" data-section="programs">
+      <div class="container"><div class="section-header programs-section-header"><h2 class="main-heading">TRAINING PROGRAMS</h2></div><div class="section-body"><div class="row programs-grid">
+        <div class="col-md-6 clonable-card program-item"><div class="program-card"><div class="icon-box"><i class="bi bi-fire" data-icon="fire"></i></div><div><h3>Weight Loss &amp; Fat Burning</h3><p>High-intensity training, practical meal planning, and sustainable habits that support healthy fat loss.</p></div></div></div>
+        <div class="col-md-6 clonable-card program-item"><div class="program-card"><div class="icon-box"><i class="bi bi-flower1" data-icon="mobility"></i></div><div><h3>Yoga &amp; Flexibility Improvement</h3><p>Stretching, breath control, and mindful movement to improve mobility, reduce stress, and prevent injury.</p></div></div></div>
+        <div class="col-md-6 clonable-card program-item"><div class="program-card"><div class="icon-box"><i class="bi bi-lightning-charge-fill" data-icon="strength"></i></div><div><h3>Muscle Gain &amp; Strength Training</h3><p>Progressive resistance, compound movements, and sound nutrition to build lasting strength and muscle.</p></div></div></div>
+        <div class="col-md-6 clonable-card program-item"><div class="program-card"><div class="icon-box"><i class="bi bi-universal-access" data-icon="posture"></i></div><div><h3>Posture Correction &amp; Injury Recovery</h3><p>Targeted mobility and strengthening sessions that address imbalances, joint discomfort, and posture.</p></div></div></div>
+      </div></div></div>
+    </section>
 
-        <!-- Item 4 -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-              <span class="accordian-header_text">How can I build muscle effectively?</span>
-              <span class="material-icons icon">add</span>
-            </button>
-          </h2>
-          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Add your answer here.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- FAQs Ends Here-->
+    <section id="testimonials" class="section-space" data-section="testimonials">
+      <div class="testmonial-container"><div class="section-header testimonials-section-header"><h2 class="section-title">SUCCESS STORIES</h2></div><div class="section-body">
+        <div class="testimonial-decoration"><img src="assets/img/testimonial-bg.webp" alt=""></div>
+        <div class="swiper testimonial-swiper"><div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="row testimonial-row"><div class="col-md-8"><div class="testimonial-card"><div class="quote-lines"><div class="line"></div><div class="line"></div></div><p class="testimonial-text">“I have never felt stronger. Arjun challenged me while giving me the support I needed to stay consistent.”</p><p class="testimonial-author">Kavya Rao</p></div></div><div class="col-md-4"><div class="testimonial-image"><img src="assets/img/testimonial-a.webp" alt="Kavya Rao after completing her fitness program"></div></div></div></div>
+          <div class="swiper-slide"><div class="row testimonial-row"><div class="col-md-8"><div class="testimonial-card"><div class="quote-lines"><div class="line"></div><div class="line"></div></div><p class="testimonial-text">“Arjun changed my approach to fitness. The sessions kept me motivated, confident, and finally consistent.”</p><p class="testimonial-author">Anjali Verma</p></div></div><div class="col-md-4"><div class="testimonial-image"><img src="assets/img/testimonial-b.webp" alt="Anjali Verma after a personal training session"></div></div></div></div>
+          <div class="swiper-slide"><div class="row testimonial-row"><div class="col-md-8"><div class="testimonial-card"><div class="quote-lines"><div class="line"></div><div class="line"></div></div><p class="testimonial-text">“The plan was clear, effective, and enjoyable. I made real progress without feeling burned out.”</p><p class="testimonial-author">Rohit Sinha</p></div></div><div class="col-md-4"><div class="testimonial-image"><img src="assets/img/testimonial-c.webp" alt="Rohit Sinha after reaching his training goal"></div></div></div></div>
+        </div><div class="swiper-pagination"></div></div>
+      </div></div>
+    </section>
 
+    <section id="pricing" class="section-space" data-section="pricing">
+      <div class="container"><div class="section-header pricing-section-header"><div><p class="main-subpara">Pricing Plan</p><h2 class="main-heading">JOIN TODAY</h2></div><div class="pricing-toggle" data-component-tabs><ul class="nav nav-pills" id="pricingToggle" role="tablist" aria-label="Pricing periods"><li class="nav-item" role="presentation"><button class="nav-link active" id="pricing-monthly-tab" type="button" role="tab" data-bs-toggle="pill" data-bs-target="#pricing-monthly-panel" aria-controls="pricing-monthly-panel" aria-selected="true" data-plan="monthly">Monthly</button></li><li class="nav-item" role="presentation"><button class="nav-link" id="pricing-yearly-tab" type="button" role="tab" data-bs-toggle="pill" data-bs-target="#pricing-yearly-panel" aria-controls="pricing-yearly-panel" aria-selected="false" data-plan="yearly">Yearly</button></li></ul></div></div><div class="section-body tab-content" id="pricingTabContent"><div class="tab-pane fade show active" id="pricing-monthly-panel" role="tabpanel" aria-labelledby="pricing-monthly-tab" tabindex="0"><div class="row pricing-grid d-none d-md-flex" id="pricingCardsMonthly"></div><div class="swiper mobile-swiper monthly-pricing-swiper d-block d-md-none"><div class="swiper-wrapper" id="swiperSlidesMonthly"></div><div class="swiper-pagination"></div></div></div><div class="tab-pane fade" id="pricing-yearly-panel" role="tabpanel" aria-labelledby="pricing-yearly-tab" tabindex="0"><div class="row pricing-grid d-none d-md-flex" id="pricingCardsYearly"></div><div class="swiper mobile-swiper yearly-pricing-swiper d-block d-md-none"><div class="swiper-wrapper" id="swiperSlidesYearly"></div><div class="swiper-pagination"></div></div></div></div></div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-6 bg-light">
-    <div class="container">
-      <div class=" mb-5">
-        <h2 class="main-heading">WANT TO TRAIN WITH ME?</h2>
-        <p class="main-subpara">Feel free to contact me if you want to train with me.</p>
-      </div>
-      <div class="row contact-section">
-        <!-- Left Section with background and contact info -->
-        <div class="col-md-4 left-contact d-flex flex-column justify-content-center text-white">
-          <div class=" p-4">
-            <h5 class="section-heading mb-5">Contact Information</h5>
-            <p><i class="bi bi-telephone-fill me-2"></i>+91 12345 67859</p>
-            <p><i class="bi bi-envelope-fill me-2"></i>demo@gmail.com</p>
-            <p><i class="bi bi-geo-alt-fill me-2"></i>132 Dartmouth Street, Bengaluru, 560098</p>
-            <div class="social-icons mt-5">
-              <a href="#"><i class="bi bi-twitter me-3"></i></a>
-              <a href="#"><i class="bi bi-facebook me-3"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
-            </div>
-          </div>
-        </div>
+    <section id="faqs" class="section-space faq-section" data-section="faqs">
+      <div class="container"><div class="section-header faq-section-header"><h2 class="main-heading">COMMONLY ASKED QUESTIONS</h2><p class="main-subpara">I am here to help!</p></div><div class="section-body"><div class="accordion" id="faqAccordion">
+        <div class="accordion-item"><h3 class="accordion-header" id="faqHeading1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1"><span class="accordian-header_text">How often should I exercise?</span><span class="accordion-icon"><i class="bi bi-plus-lg" data-icon="expand"></i></span></button></h3><div id="faq1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Most people progress well with three to five planned sessions each week, balanced with recovery.</span></div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="faqHeading2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2"><span class="accordian-header_text">What is the best workout routine for weight loss?</span><span class="accordion-icon"><i class="bi bi-plus-lg" data-icon="expand"></i></span></button></h3><div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>A mix of strength training, cardio, daily movement, and a realistic nutrition plan works best.</span></div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="faqHeading3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3"><span class="accordian-header_text">What should I eat around a workout?</span><span class="accordion-icon"><i class="bi bi-plus-lg" data-icon="expand"></i></span></button></h3><div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Choose a light meal with carbohydrate and protein before training, then refuel with a balanced meal.</span></div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="faqHeading4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4"><span class="accordian-header_text">How can I build muscle effectively?</span><span class="accordion-icon"><i class="bi bi-plus-lg" data-icon="expand"></i></span></button></h3><div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion"><div class="accordion-body"><span>Train each muscle group consistently, increase resistance gradually, eat enough protein, and sleep well.</span></div></div></div>
+      </div></div></div>
+    </section>
 
-        <!-- Right Section: Contact Form -->
-        <div class="col-md-8 bg-white p-4">
-          <form>
-            <div class="row mb-3">
-              <div class="col-sm-6">
-                <label for="first-name">First Name</label>
-                <input id="first-name" type="text" class="form-control custom-input">
-              </div>
-              <div class="col-sm-6">
-                <label for="last-name">Last Name</label>
-                <input id="last-name" type="text" class="form-control custom-input">
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-sm-6">
-                <label for="email">Email</label>
-                <input id="email" type="email" class="form-control custom-input">
-              </div>
-              <div class="col-sm-6">
-                <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" class="form-control custom-input">
-              </div>
-            </div>
+    <section id="contact" class="section-space contact-outer" data-section="contact">
+      <div class="container"><div class="section-header contact-section-header"><h2 class="main-heading">WANT TO TRAIN WITH ME?</h2><p class="main-subpara">Share your goals and I will help you plan the next step.</p></div><div class="section-body"><div class="row contact-section">
+        <div class="col-md-4 left-contact" data-zg-editable="surface"><div class="contact-panel"><h3 class="section-heading">Contact Information</h3><ul class="contact-details"><li><span class="contact-icon"><i class="bi bi-telephone-fill" data-icon="telephone"></i></span><a href="tel:+911234567859">+91 12345 67859</a></li><li><span class="contact-icon"><i class="bi bi-envelope-fill" data-icon="email"></i></span><a href="mailto:hello@fitbuddy.example">hello@fitbuddy.example</a></li><li><span class="contact-icon"><i class="bi bi-geo-alt-fill" data-icon="location"></i></span><span>132 Dartmouth Street, Bengaluru 560098</span></li></ul><div class="social-icons contact-social-icons"><a href="#" aria-label="Fit Buddy on Twitter"><i class="bi bi-twitter" data-icon="twitter"></i></a><a href="#" aria-label="Fit Buddy on Facebook"><i class="bi bi-facebook" data-icon="facebook"></i></a><a href="#" aria-label="Fit Buddy on Instagram"><i class="bi bi-instagram" data-icon="instagram"></i></a></div></div></div>
+        <div class="col-md-8 contact-form-panel"><form action="https://api.zigrow.com/api/forms/submit" method="post" data-zigrow-form class="contact-form">
+          <input type="hidden" name="domain" value=""><input type="hidden" name="form_key" value="contact"><input type="hidden" name="page_url" value=""><input type="hidden" name="_company" value="">
+          <div form-question-zigrow><label for="gym-name">Name</label><input id="gym-name" type="text" name="name" placeholder="Your name" required></div>
+          <div form-question-zigrow><label for="gym-email">Email</label><input id="gym-email" type="email" name="email" placeholder="you@example.com" required></div>
+          <div form-question-zigrow><label for="gym-phone">Phone Number</label><input id="gym-phone" type="tel" name="phone" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a phone number using 7 to 15 digits, spaces, or hyphens" placeholder="+91 98765 43210" required></div>
+          <div form-question-zigrow><label for="gym-message">Message</label><textarea id="gym-message" name="message" rows="3" placeholder="Tell me about your fitness goal"></textarea></div>
+          <button type="submit" class="primary-btn">Book a Call</button>
+        </form></div>
+      </div></div></div>
+    </section>
+  </main>
 
-            <div class="mb-3">
-              <label for="message">Message</label>
-              <textarea id="message" class="form-control custom-input" rows="3"></textarea>
-            </div>
-            <div class="text-md-end text-center mt-5">
-
-              <button type="submit" class="primary-btn ">Book a Call</button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- Contact Section Ends Here-->
-
-  <!-- Footer -->
-  <footer id="footer" class="footer">
+  <footer id="footer" class="footer" data-section="footer">
     <div class="footer-container">
-      <div class="footer-section">
-        <img src="assets/img/logo.png" alt="">
-      </div>
-      <div class="footer-section">
-        <h4>Reach us</h4>
-        <p><i class="bi bi-telephone-fill me-3"></i>+91 12345 67859</p>
-        <p><i class="bi bi-envelope-fill me-3"></i>demo@gmail.com</p>
-        <p><i class="bi bi-geo-alt-fill me-3"></i>E-123, ABC Plaza, XYZ Street, New Delhi - 110077</p>
-      </div>
-      <div class="footer-section">
-        <h4>Company</h4>
-        <p><a href="#about">About</a></p>
-        <p><a href="#programs">Services</a></p>
-        <p><a href="#contact">Contact</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">Terms & Services</a></p>
-        <p><a href="#">Terms of Use</a></p>
-        <p><a href="#">Refund Policy</a></p>
-      </div>
+      <div class="footer-section footer-brand-section"><a class="footer-brand-logo" href="#hero" data-logo="footer">Fit Buddy</a></div>
+      <div class="footer-section"><h2>Reach us</h2><ul class="footer-contact-list"><li><span class="footer-icon"><i class="bi bi-telephone-fill" data-icon="telephone"></i></span><a href="tel:+911234567859">+91 12345 67859</a></li><li><span class="footer-icon"><i class="bi bi-envelope-fill" data-icon="email"></i></span><a href="mailto:hello@fitbuddy.example">hello@fitbuddy.example</a></li><li><span class="footer-icon"><i class="bi bi-geo-alt-fill" data-icon="location"></i></span><span>E-123, ABC Plaza, New Delhi 110077</span></li></ul></div>
+      <div class="footer-section"><h2>Company</h2><ul class="footer-links"><li><a href="#about">About</a></li><li><a href="#programs">Services</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-section"><h2>Legal</h2><ul class="footer-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms &amp; Services</a></li><li><a href="#">Terms of Use</a></li><li><a href="#">Refund Policy</a></li></ul></div>
     </div>
+    <div class="powered-by-zigrow-row"><a href="https://zigrow.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Powered by Zigrow</a></div>
   </footer>
- <!-- Footer Ends Here-->
 
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js/script.js?v=2.13.0-gym-4"></script>
 </body>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
-
-<!-- Gsap animation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
 </html>
